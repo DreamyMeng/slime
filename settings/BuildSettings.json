@@ -1,4 +1,19 @@
 {
-  "name": "LayaProject1",
-  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965"
+  "name": "slime",
+  "displayName": "开局一只史莱姆",
+  "minifyJS": true,
+  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
+  "android": {
+    "renderMode": "webgl",
+    "bundleIdentifier": "com.goodgame.slime",
+    "versionCode": "40",
+    "screenOrientation": "sensorPortrait",
+    "targetArchitectures": {
+      "ARMv7": true,
+      "ARM64": false,
+      "x86": false,
+      "x86-64": false
+    },
+    "exportFormat": "APK"
+  }
 }

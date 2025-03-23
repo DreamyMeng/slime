@@ -6,5 +6,7 @@
   "right": 0,
   "top": 0,
   "bottom": 0,
-  "name": "Scene2D"
+  "name": "Scene2D",
+  "width": 720,
+  "height": 1280
 }

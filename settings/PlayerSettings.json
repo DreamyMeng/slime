@@ -1,6 +1,19 @@
 {
-    "modules": {
-        "laya.ui": true,
-        "laya.d3": true
-    }
+  "resolution": {
+    "designWidth": 720,
+    "designHeight": 1280,
+    "scaleMode": "fixedwidth",
+    "screenMode": "vertical",
+    "backgroundColor": "rgba(0, 0, 0, 1)"
+  },
+  "2D": {
+    "useRetinalCanvas": true
+  },
+  "modules": {
+    "laya.ui": true
+  },
+  "splash": {
+    "enabled": false,
+    "fit": "center"
+  }
 }

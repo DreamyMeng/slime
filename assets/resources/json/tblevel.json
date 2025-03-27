@@ -1,0 +1,1594 @@
+[
+  {
+    "id": 1,
+    "exp_need": 100,
+    "exp_dead": 50,
+    "attack": 1000,
+    "defence": 500,
+    "health": 5000
+  },
+  {
+    "id": 2,
+    "exp_need": 150,
+    "exp_dead": 55,
+    "attack": 1100,
+    "defence": 550,
+    "health": 5500
+  },
+  {
+    "id": 3,
+    "exp_need": 200,
+    "exp_dead": 60,
+    "attack": 1210,
+    "defence": 605,
+    "health": 6050
+  },
+  {
+    "id": 4,
+    "exp_need": 250,
+    "exp_dead": 65,
+    "attack": 1331,
+    "defence": 666,
+    "health": 6655
+  },
+  {
+    "id": 5,
+    "exp_need": 300,
+    "exp_dead": 70,
+    "attack": 1464,
+    "defence": 733,
+    "health": 7321
+  },
+  {
+    "id": 6,
+    "exp_need": 350,
+    "exp_dead": 75,
+    "attack": 1610,
+    "defence": 806,
+    "health": 8053
+  },
+  {
+    "id": 7,
+    "exp_need": 400,
+    "exp_dead": 80,
+    "attack": 1771,
+    "defence": 887,
+    "health": 8858
+  },
+  {
+    "id": 8,
+    "exp_need": 450,
+    "exp_dead": 85,
+    "attack": 1948,
+    "defence": 976,
+    "health": 9744
+  },
+  {
+    "id": 9,
+    "exp_need": 500,
+    "exp_dead": 90,
+    "attack": 2143,
+    "defence": 1074,
+    "health": 10718
+  },
+  {
+    "id": 10,
+    "exp_need": 550,
+    "exp_dead": 95,
+    "attack": 2357,
+    "defence": 1181,
+    "health": 11790
+  },
+  {
+    "id": 11,
+    "exp_need": 600,
+    "exp_dead": 100,
+    "attack": 2593,
+    "defence": 1299,
+    "health": 12969
+  },
+  {
+    "id": 12,
+    "exp_need": 650,
+    "exp_dead": 105,
+    "attack": 2852,
+    "defence": 1429,
+    "health": 14266
+  },
+  {
+    "id": 13,
+    "exp_need": 700,
+    "exp_dead": 110,
+    "attack": 3137,
+    "defence": 1572,
+    "health": 15693
+  },
+  {
+    "id": 14,
+    "exp_need": 750,
+    "exp_dead": 115,
+    "attack": 3451,
+    "defence": 1729,
+    "health": 17262
+  },
+  {
+    "id": 15,
+    "exp_need": 800,
+    "exp_dead": 120,
+    "attack": 3796,
+    "defence": 1902,
+    "health": 18988
+  },
+  {
+    "id": 16,
+    "exp_need": 850,
+    "exp_dead": 125,
+    "attack": 4176,
+    "defence": 2092,
+    "health": 20887
+  },
+  {
+    "id": 17,
+    "exp_need": 900,
+    "exp_dead": 130,
+    "attack": 4594,
+    "defence": 2301,
+    "health": 22976
+  },
+  {
+    "id": 18,
+    "exp_need": 950,
+    "exp_dead": 135,
+    "attack": 5053,
+    "defence": 2531,
+    "health": 25274
+  },
+  {
+    "id": 19,
+    "exp_need": 1000,
+    "exp_dead": 140,
+    "attack": 5558,
+    "defence": 2784,
+    "health": 27801
+  },
+  {
+    "id": 20,
+    "exp_need": 1050,
+    "exp_dead": 145,
+    "attack": 6114,
+    "defence": 3062,
+    "health": 30581
+  },
+  {
+    "id": 21,
+    "exp_need": 1100,
+    "exp_dead": 150,
+    "attack": 6725,
+    "defence": 3368,
+    "health": 33639
+  },
+  {
+    "id": 22,
+    "exp_need": 1150,
+    "exp_dead": 155,
+    "attack": 7398,
+    "defence": 3705,
+    "health": 37003
+  },
+  {
+    "id": 23,
+    "exp_need": 1200,
+    "exp_dead": 160,
+    "attack": 8138,
+    "defence": 4076,
+    "health": 40703
+  },
+  {
+    "id": 24,
+    "exp_need": 1250,
+    "exp_dead": 165,
+    "attack": 8952,
+    "defence": 4484,
+    "health": 44773
+  },
+  {
+    "id": 25,
+    "exp_need": 1300,
+    "exp_dead": 170,
+    "attack": 9847,
+    "defence": 4932,
+    "health": 49250
+  },
+  {
+    "id": 26,
+    "exp_need": 1350,
+    "exp_dead": 175,
+    "attack": 10832,
+    "defence": 5425,
+    "health": 54175
+  },
+  {
+    "id": 27,
+    "exp_need": 1400,
+    "exp_dead": 180,
+    "attack": 11915,
+    "defence": 5968,
+    "health": 59593
+  },
+  {
+    "id": 28,
+    "exp_need": 1450,
+    "exp_dead": 185,
+    "attack": 13107,
+    "defence": 6565,
+    "health": 65552
+  },
+  {
+    "id": 29,
+    "exp_need": 1500,
+    "exp_dead": 190,
+    "attack": 14418,
+    "defence": 7222,
+    "health": 72107
+  },
+  {
+    "id": 30,
+    "exp_need": 1550,
+    "exp_dead": 195,
+    "attack": 15860,
+    "defence": 7944,
+    "health": 79318
+  },
+  {
+    "id": 31,
+    "exp_need": 1600,
+    "exp_dead": 200,
+    "attack": 17446,
+    "defence": 8738,
+    "health": 87250
+  },
+  {
+    "id": 32,
+    "exp_need": 1650,
+    "exp_dead": 205,
+    "attack": 19191,
+    "defence": 9612,
+    "health": 95975
+  },
+  {
+    "id": 33,
+    "exp_need": 1700,
+    "exp_dead": 210,
+    "attack": 21110,
+    "defence": 10573,
+    "health": 105573
+  },
+  {
+    "id": 34,
+    "exp_need": 1750,
+    "exp_dead": 215,
+    "attack": 23221,
+    "defence": 11630,
+    "health": 116130
+  },
+  {
+    "id": 35,
+    "exp_need": 1800,
+    "exp_dead": 220,
+    "attack": 25543,
+    "defence": 12793,
+    "health": 127743
+  },
+  {
+    "id": 36,
+    "exp_need": 1850,
+    "exp_dead": 225,
+    "attack": 28097,
+    "defence": 14072,
+    "health": 140517
+  },
+  {
+    "id": 37,
+    "exp_need": 1900,
+    "exp_dead": 230,
+    "attack": 30907,
+    "defence": 15479,
+    "health": 154569
+  },
+  {
+    "id": 38,
+    "exp_need": 1950,
+    "exp_dead": 235,
+    "attack": 33998,
+    "defence": 17027,
+    "health": 170026
+  },
+  {
+    "id": 39,
+    "exp_need": 2000,
+    "exp_dead": 240,
+    "attack": 37398,
+    "defence": 18730,
+    "health": 187029
+  },
+  {
+    "id": 40,
+    "exp_need": 2050,
+    "exp_dead": 245,
+    "attack": 41138,
+    "defence": 20603,
+    "health": 205732
+  },
+  {
+    "id": 41,
+    "exp_need": 2100,
+    "exp_dead": 250,
+    "attack": 45252,
+    "defence": 22663,
+    "health": 226305
+  },
+  {
+    "id": 42,
+    "exp_need": 2150,
+    "exp_dead": 255,
+    "attack": 49777,
+    "defence": 24929,
+    "health": 248936
+  },
+  {
+    "id": 43,
+    "exp_need": 2200,
+    "exp_dead": 260,
+    "attack": 54755,
+    "defence": 27422,
+    "health": 273830
+  },
+  {
+    "id": 44,
+    "exp_need": 2250,
+    "exp_dead": 265,
+    "attack": 60231,
+    "defence": 30164,
+    "health": 301213
+  },
+  {
+    "id": 45,
+    "exp_need": 2300,
+    "exp_dead": 270,
+    "attack": 66254,
+    "defence": 33180,
+    "health": 331334
+  },
+  {
+    "id": 46,
+    "exp_need": 2350,
+    "exp_dead": 275,
+    "attack": 72879,
+    "defence": 36498,
+    "health": 364467
+  },
+  {
+    "id": 47,
+    "exp_need": 2400,
+    "exp_dead": 280,
+    "attack": 80167,
+    "defence": 40148,
+    "health": 400914
+  },
+  {
+    "id": 48,
+    "exp_need": 2450,
+    "exp_dead": 285,
+    "attack": 88184,
+    "defence": 44163,
+    "health": 441005
+  },
+  {
+    "id": 49,
+    "exp_need": 2500,
+    "exp_dead": 290,
+    "attack": 97002,
+    "defence": 48579,
+    "health": 485106
+  },
+  {
+    "id": 50,
+    "exp_need": 2550,
+    "exp_dead": 295,
+    "attack": 106702,
+    "defence": 53437,
+    "health": 533617
+  },
+  {
+    "id": 51,
+    "exp_need": 2600,
+    "exp_dead": 300,
+    "attack": 117372,
+    "defence": 58781,
+    "health": 586979
+  },
+  {
+    "id": 52,
+    "exp_need": 2650,
+    "exp_dead": 305,
+    "attack": 129109,
+    "defence": 64659,
+    "health": 645677
+  },
+  {
+    "id": 53,
+    "exp_need": 2700,
+    "exp_dead": 310,
+    "attack": 142020,
+    "defence": 71125,
+    "health": 710245
+  },
+  {
+    "id": 54,
+    "exp_need": 2750,
+    "exp_dead": 315,
+    "attack": 156222,
+    "defence": 78238,
+    "health": 781270
+  },
+  {
+    "id": 55,
+    "exp_need": 2800,
+    "exp_dead": 320,
+    "attack": 171844,
+    "defence": 86062,
+    "health": 859397
+  },
+  {
+    "id": 56,
+    "exp_need": 2850,
+    "exp_dead": 325,
+    "attack": 189028,
+    "defence": 94668,
+    "health": 945337
+  },
+  {
+    "id": 57,
+    "exp_need": 2900,
+    "exp_dead": 330,
+    "attack": 207931,
+    "defence": 104135,
+    "health": 1039871
+  },
+  {
+    "id": 58,
+    "exp_need": 2950,
+    "exp_dead": 335,
+    "attack": 228724,
+    "defence": 114549,
+    "health": 1143858
+  },
+  {
+    "id": 59,
+    "exp_need": 3000,
+    "exp_dead": 340,
+    "attack": 251596,
+    "defence": 126004,
+    "health": 1258244
+  },
+  {
+    "id": 60,
+    "exp_need": 3050,
+    "exp_dead": 345,
+    "attack": 276756,
+    "defence": 138604,
+    "health": 1384068
+  },
+  {
+    "id": 61,
+    "exp_need": 3100,
+    "exp_dead": 350,
+    "attack": 304432,
+    "defence": 152464,
+    "health": 1522475
+  },
+  {
+    "id": 62,
+    "exp_need": 3150,
+    "exp_dead": 355,
+    "attack": 334875,
+    "defence": 167710,
+    "health": 1674723
+  },
+  {
+    "id": 63,
+    "exp_need": 3200,
+    "exp_dead": 360,
+    "attack": 368363,
+    "defence": 184481,
+    "health": 1842195
+  },
+  {
+    "id": 64,
+    "exp_need": 3250,
+    "exp_dead": 365,
+    "attack": 405199,
+    "defence": 202929,
+    "health": 2026415
+  },
+  {
+    "id": 65,
+    "exp_need": 3300,
+    "exp_dead": 370,
+    "attack": 445719,
+    "defence": 223222,
+    "health": 2229057
+  },
+  {
+    "id": 66,
+    "exp_need": 3350,
+    "exp_dead": 375,
+    "attack": 490291,
+    "defence": 245544,
+    "health": 2451963
+  },
+  {
+    "id": 67,
+    "exp_need": 3400,
+    "exp_dead": 380,
+    "attack": 539320,
+    "defence": 270098,
+    "health": 2697159
+  },
+  {
+    "id": 68,
+    "exp_need": 3450,
+    "exp_dead": 385,
+    "attack": 593252,
+    "defence": 297108,
+    "health": 2966875
+  },
+  {
+    "id": 69,
+    "exp_need": 3500,
+    "exp_dead": 390,
+    "attack": 652577,
+    "defence": 326819,
+    "health": 3263563
+  },
+  {
+    "id": 70,
+    "exp_need": 3550,
+    "exp_dead": 395,
+    "attack": 717835,
+    "defence": 359501,
+    "health": 3589919
+  },
+  {
+    "id": 71,
+    "exp_need": 3600,
+    "exp_dead": 400,
+    "attack": 789619,
+    "defence": 395451,
+    "health": 3948911
+  },
+  {
+    "id": 72,
+    "exp_need": 3650,
+    "exp_dead": 405,
+    "attack": 868581,
+    "defence": 434996,
+    "health": 4343802
+  },
+  {
+    "id": 73,
+    "exp_need": 3700,
+    "exp_dead": 410,
+    "attack": 955439,
+    "defence": 478496,
+    "health": 4778182
+  },
+  {
+    "id": 74,
+    "exp_need": 3750,
+    "exp_dead": 415,
+    "attack": 1050983,
+    "defence": 526346,
+    "health": 5256000
+  },
+  {
+    "id": 75,
+    "exp_need": 3800,
+    "exp_dead": 420,
+    "attack": 1156081,
+    "defence": 578981,
+    "health": 5781600
+  },
+  {
+    "id": 76,
+    "exp_need": 3850,
+    "exp_dead": 425,
+    "attack": 1271689,
+    "defence": 636879,
+    "health": 6359760
+  },
+  {
+    "id": 77,
+    "exp_need": 3900,
+    "exp_dead": 430,
+    "attack": 1398858,
+    "defence": 700567,
+    "health": 6995736
+  },
+  {
+    "id": 78,
+    "exp_need": 3950,
+    "exp_dead": 435,
+    "attack": 1538744,
+    "defence": 770624,
+    "health": 7695310
+  },
+  {
+    "id": 79,
+    "exp_need": 4000,
+    "exp_dead": 440,
+    "attack": 1692618,
+    "defence": 847686,
+    "health": 8464841
+  },
+  {
+    "id": 80,
+    "exp_need": 4050,
+    "exp_dead": 445,
+    "attack": 1861880,
+    "defence": 932455,
+    "health": 9311325
+  },
+  {
+    "id": 81,
+    "exp_need": 4100,
+    "exp_dead": 450,
+    "attack": 2048068,
+    "defence": 1025701,
+    "health": 10242458
+  },
+  {
+    "id": 82,
+    "exp_need": 4150,
+    "exp_dead": 455,
+    "attack": 2252875,
+    "defence": 1128271,
+    "health": 11266704
+  },
+  {
+    "id": 83,
+    "exp_need": 4200,
+    "exp_dead": 460,
+    "attack": 2478163,
+    "defence": 1241098,
+    "health": 12393374
+  },
+  {
+    "id": 84,
+    "exp_need": 4250,
+    "exp_dead": 465,
+    "attack": 2725979,
+    "defence": 1365208,
+    "health": 13632711
+  },
+  {
+    "id": 85,
+    "exp_need": 4300,
+    "exp_dead": 470,
+    "attack": 2998577,
+    "defence": 1501729,
+    "health": 14995982
+  },
+  {
+    "id": 86,
+    "exp_need": 4350,
+    "exp_dead": 475,
+    "attack": 3298435,
+    "defence": 1651902,
+    "health": 16495580
+  },
+  {
+    "id": 87,
+    "exp_need": 4400,
+    "exp_dead": 480,
+    "attack": 3628279,
+    "defence": 1817092,
+    "health": 18145138
+  },
+  {
+    "id": 88,
+    "exp_need": 4450,
+    "exp_dead": 485,
+    "attack": 3991107,
+    "defence": 1998801,
+    "health": 19959652
+  },
+  {
+    "id": 89,
+    "exp_need": 4500,
+    "exp_dead": 490,
+    "attack": 4390218,
+    "defence": 2198681,
+    "health": 21955617
+  },
+  {
+    "id": 90,
+    "exp_need": 4550,
+    "exp_dead": 495,
+    "attack": 4829240,
+    "defence": 2418549,
+    "health": 24151179
+  },
+  {
+    "id": 91,
+    "exp_need": 4600,
+    "exp_dead": 500,
+    "attack": 5312164,
+    "defence": 2660404,
+    "health": 26566297
+  },
+  {
+    "id": 92,
+    "exp_need": 4650,
+    "exp_dead": 505,
+    "attack": 5843380,
+    "defence": 2926444,
+    "health": 29222927
+  },
+  {
+    "id": 93,
+    "exp_need": 4700,
+    "exp_dead": 510,
+    "attack": 6427718,
+    "defence": 3219088,
+    "health": 32145220
+  },
+  {
+    "id": 94,
+    "exp_need": 4750,
+    "exp_dead": 515,
+    "attack": 7070490,
+    "defence": 3540997,
+    "health": 35359742
+  },
+  {
+    "id": 95,
+    "exp_need": 4800,
+    "exp_dead": 520,
+    "attack": 7777539,
+    "defence": 3895097,
+    "health": 38895716
+  },
+  {
+    "id": 96,
+    "exp_need": 4850,
+    "exp_dead": 525,
+    "attack": 8555293,
+    "defence": 4284607,
+    "health": 42785288
+  },
+  {
+    "id": 97,
+    "exp_need": 4900,
+    "exp_dead": 530,
+    "attack": 9410822,
+    "defence": 4713068,
+    "health": 47063817
+  },
+  {
+    "id": 98,
+    "exp_need": 4950,
+    "exp_dead": 535,
+    "attack": 10351904,
+    "defence": 5184375,
+    "health": 51770199
+  },
+  {
+    "id": 99,
+    "exp_need": 5000,
+    "exp_dead": 540,
+    "attack": 11387094,
+    "defence": 5702813,
+    "health": 56947219
+  },
+  {
+    "id": 100,
+    "exp_need": 5250,
+    "exp_dead": 567,
+    "attack": 11500965,
+    "defence": 5759841,
+    "health": 57516691
+  },
+  {
+    "id": 101,
+    "exp_need": 5513,
+    "exp_dead": 595,
+    "attack": 11615975,
+    "defence": 5817439,
+    "health": 58091858
+  },
+  {
+    "id": 102,
+    "exp_need": 5789,
+    "exp_dead": 625,
+    "attack": 11732135,
+    "defence": 5875613,
+    "health": 58672777
+  },
+  {
+    "id": 103,
+    "exp_need": 6078,
+    "exp_dead": 656,
+    "attack": 11849456,
+    "defence": 5934369,
+    "health": 59259505
+  },
+  {
+    "id": 104,
+    "exp_need": 6382,
+    "exp_dead": 689,
+    "attack": 11967951,
+    "defence": 5993713,
+    "health": 59852100
+  },
+  {
+    "id": 105,
+    "exp_need": 6701,
+    "exp_dead": 723,
+    "attack": 12087631,
+    "defence": 6053650,
+    "health": 60450621
+  },
+  {
+    "id": 106,
+    "exp_need": 7036,
+    "exp_dead": 759,
+    "attack": 12208507,
+    "defence": 6114187,
+    "health": 61055127
+  },
+  {
+    "id": 107,
+    "exp_need": 7388,
+    "exp_dead": 797,
+    "attack": 12330592,
+    "defence": 6175329,
+    "health": 61665678
+  },
+  {
+    "id": 108,
+    "exp_need": 7757,
+    "exp_dead": 837,
+    "attack": 12453898,
+    "defence": 6237082,
+    "health": 62282335
+  },
+  {
+    "id": 109,
+    "exp_need": 8145,
+    "exp_dead": 879,
+    "attack": 12578437,
+    "defence": 6299453,
+    "health": 62905158
+  },
+  {
+    "id": 110,
+    "exp_need": 8552,
+    "exp_dead": 923,
+    "attack": 12704221,
+    "defence": 6362448,
+    "health": 63534210
+  },
+  {
+    "id": 111,
+    "exp_need": 8980,
+    "exp_dead": 969,
+    "attack": 12831263,
+    "defence": 6426072,
+    "health": 64169552
+  },
+  {
+    "id": 112,
+    "exp_need": 9429,
+    "exp_dead": 1017,
+    "attack": 12959576,
+    "defence": 6490333,
+    "health": 64811248
+  },
+  {
+    "id": 113,
+    "exp_need": 9900,
+    "exp_dead": 1068,
+    "attack": 13089172,
+    "defence": 6555236,
+    "health": 65459360
+  },
+  {
+    "id": 114,
+    "exp_need": 10395,
+    "exp_dead": 1121,
+    "attack": 13220064,
+    "defence": 6620788,
+    "health": 66113954
+  },
+  {
+    "id": 115,
+    "exp_need": 10915,
+    "exp_dead": 1177,
+    "attack": 13352265,
+    "defence": 6686996,
+    "health": 66775094
+  },
+  {
+    "id": 116,
+    "exp_need": 11461,
+    "exp_dead": 1236,
+    "attack": 13485788,
+    "defence": 6753866,
+    "health": 67442845
+  },
+  {
+    "id": 117,
+    "exp_need": 12034,
+    "exp_dead": 1298,
+    "attack": 13620646,
+    "defence": 6821405,
+    "health": 68117273
+  },
+  {
+    "id": 118,
+    "exp_need": 12636,
+    "exp_dead": 1363,
+    "attack": 13756852,
+    "defence": 6889619,
+    "health": 68798446
+  },
+  {
+    "id": 119,
+    "exp_need": 13268,
+    "exp_dead": 1431,
+    "attack": 13894421,
+    "defence": 6958515,
+    "health": 69486430
+  },
+  {
+    "id": 120,
+    "exp_need": 13931,
+    "exp_dead": 1503,
+    "attack": 14033365,
+    "defence": 7028100,
+    "health": 70181294
+  },
+  {
+    "id": 121,
+    "exp_need": 14628,
+    "exp_dead": 1578,
+    "attack": 14173699,
+    "defence": 7098381,
+    "health": 70883107
+  },
+  {
+    "id": 122,
+    "exp_need": 15359,
+    "exp_dead": 1657,
+    "attack": 14315436,
+    "defence": 7169365,
+    "health": 71591938
+  },
+  {
+    "id": 123,
+    "exp_need": 16127,
+    "exp_dead": 1740,
+    "attack": 14458590,
+    "defence": 7241059,
+    "health": 72307857
+  },
+  {
+    "id": 124,
+    "exp_need": 16933,
+    "exp_dead": 1827,
+    "attack": 14603176,
+    "defence": 7313470,
+    "health": 73030936
+  },
+  {
+    "id": 125,
+    "exp_need": 17780,
+    "exp_dead": 1918,
+    "attack": 14749208,
+    "defence": 7386605,
+    "health": 73761245
+  },
+  {
+    "id": 126,
+    "exp_need": 18669,
+    "exp_dead": 2014,
+    "attack": 14896700,
+    "defence": 7460471,
+    "health": 74498857
+  },
+  {
+    "id": 127,
+    "exp_need": 19602,
+    "exp_dead": 2115,
+    "attack": 15045667,
+    "defence": 7535076,
+    "health": 75243846
+  },
+  {
+    "id": 128,
+    "exp_need": 20582,
+    "exp_dead": 2221,
+    "attack": 15196124,
+    "defence": 7610427,
+    "health": 75996284
+  },
+  {
+    "id": 129,
+    "exp_need": 21611,
+    "exp_dead": 2332,
+    "attack": 15348085,
+    "defence": 7686531,
+    "health": 76756247
+  },
+  {
+    "id": 130,
+    "exp_need": 22692,
+    "exp_dead": 2449,
+    "attack": 15501566,
+    "defence": 7763396,
+    "health": 77523809
+  },
+  {
+    "id": 131,
+    "exp_need": 23827,
+    "exp_dead": 2571,
+    "attack": 15656582,
+    "defence": 7841030,
+    "health": 78299047
+  },
+  {
+    "id": 132,
+    "exp_need": 25018,
+    "exp_dead": 2700,
+    "attack": 15813148,
+    "defence": 7919440,
+    "health": 79082037
+  },
+  {
+    "id": 133,
+    "exp_need": 26269,
+    "exp_dead": 2835,
+    "attack": 15971279,
+    "defence": 7998634,
+    "health": 79872857
+  },
+  {
+    "id": 134,
+    "exp_need": 27582,
+    "exp_dead": 2977,
+    "attack": 16130992,
+    "defence": 8078620,
+    "health": 80671586
+  },
+  {
+    "id": 135,
+    "exp_need": 28961,
+    "exp_dead": 3126,
+    "attack": 16292302,
+    "defence": 8159406,
+    "health": 81478302
+  },
+  {
+    "id": 136,
+    "exp_need": 30409,
+    "exp_dead": 3282,
+    "attack": 16455225,
+    "defence": 8241000,
+    "health": 82293085
+  },
+  {
+    "id": 137,
+    "exp_need": 31929,
+    "exp_dead": 3446,
+    "attack": 16619777,
+    "defence": 8323410,
+    "health": 83116016
+  },
+  {
+    "id": 138,
+    "exp_need": 33525,
+    "exp_dead": 3618,
+    "attack": 16785975,
+    "defence": 8406644,
+    "health": 83947176
+  },
+  {
+    "id": 139,
+    "exp_need": 35201,
+    "exp_dead": 3799,
+    "attack": 16953835,
+    "defence": 8490710,
+    "health": 84786648
+  },
+  {
+    "id": 140,
+    "exp_need": 36961,
+    "exp_dead": 3989,
+    "attack": 17123373,
+    "defence": 8575617,
+    "health": 85634514
+  },
+  {
+    "id": 141,
+    "exp_need": 38809,
+    "exp_dead": 4188,
+    "attack": 17294607,
+    "defence": 8661373,
+    "health": 86490859
+  },
+  {
+    "id": 142,
+    "exp_need": 40749,
+    "exp_dead": 4397,
+    "attack": 17467553,
+    "defence": 8747987,
+    "health": 87355768
+  },
+  {
+    "id": 143,
+    "exp_need": 42786,
+    "exp_dead": 4617,
+    "attack": 17642229,
+    "defence": 8835467,
+    "health": 88229326
+  },
+  {
+    "id": 144,
+    "exp_need": 44925,
+    "exp_dead": 4848,
+    "attack": 17818651,
+    "defence": 8923822,
+    "health": 89111619
+  },
+  {
+    "id": 145,
+    "exp_need": 47171,
+    "exp_dead": 5090,
+    "attack": 17996838,
+    "defence": 9013060,
+    "health": 90002735
+  },
+  {
+    "id": 146,
+    "exp_need": 49530,
+    "exp_dead": 5345,
+    "attack": 18176806,
+    "defence": 9103191,
+    "health": 90902762
+  },
+  {
+    "id": 147,
+    "exp_need": 52007,
+    "exp_dead": 5612,
+    "attack": 18358574,
+    "defence": 9194223,
+    "health": 91811790
+  },
+  {
+    "id": 148,
+    "exp_need": 54607,
+    "exp_dead": 5893,
+    "attack": 18542160,
+    "defence": 9286165,
+    "health": 92729908
+  },
+  {
+    "id": 149,
+    "exp_need": 57337,
+    "exp_dead": 6188,
+    "attack": 18727582,
+    "defence": 9379027,
+    "health": 93657207
+  },
+  {
+    "id": 150,
+    "exp_need": 60204,
+    "exp_dead": 6497,
+    "attack": 18914858,
+    "defence": 9472817,
+    "health": 94593779
+  },
+  {
+    "id": 151,
+    "exp_need": 63214,
+    "exp_dead": 6822,
+    "attack": 19104007,
+    "defence": 9567545,
+    "health": 95539717
+  },
+  {
+    "id": 152,
+    "exp_need": 66375,
+    "exp_dead": 7163,
+    "attack": 19295047,
+    "defence": 9663220,
+    "health": 96495114
+  },
+  {
+    "id": 153,
+    "exp_need": 69694,
+    "exp_dead": 7521,
+    "attack": 19487997,
+    "defence": 9759852,
+    "health": 97460065
+  },
+  {
+    "id": 154,
+    "exp_need": 73179,
+    "exp_dead": 7897,
+    "attack": 19682877,
+    "defence": 9857451,
+    "health": 98434666
+  },
+  {
+    "id": 155,
+    "exp_need": 76838,
+    "exp_dead": 8292,
+    "attack": 19879706,
+    "defence": 9956026,
+    "health": 99419013
+  },
+  {
+    "id": 156,
+    "exp_need": 80680,
+    "exp_dead": 8707,
+    "attack": 20078503,
+    "defence": 10055586,
+    "health": 100413203
+  },
+  {
+    "id": 157,
+    "exp_need": 84714,
+    "exp_dead": 9142,
+    "attack": 20279288,
+    "defence": 10156142,
+    "health": 101417335
+  },
+  {
+    "id": 158,
+    "exp_need": 88950,
+    "exp_dead": 9599,
+    "attack": 20482081,
+    "defence": 10257703,
+    "health": 102431508
+  },
+  {
+    "id": 159,
+    "exp_need": 93398,
+    "exp_dead": 10079,
+    "attack": 20686902,
+    "defence": 10360280,
+    "health": 103455823
+  },
+  {
+    "id": 160,
+    "exp_need": 98068,
+    "exp_dead": 10583,
+    "attack": 20893771,
+    "defence": 10463883,
+    "health": 104490381
+  },
+  {
+    "id": 161,
+    "exp_need": 102971,
+    "exp_dead": 11112,
+    "attack": 21102709,
+    "defence": 10568522,
+    "health": 105535285
+  },
+  {
+    "id": 162,
+    "exp_need": 108120,
+    "exp_dead": 11668,
+    "attack": 21313736,
+    "defence": 10674207,
+    "health": 106590638
+  },
+  {
+    "id": 163,
+    "exp_need": 113526,
+    "exp_dead": 12251,
+    "attack": 21526873,
+    "defence": 10780949,
+    "health": 107656544
+  },
+  {
+    "id": 164,
+    "exp_need": 119202,
+    "exp_dead": 12864,
+    "attack": 21742142,
+    "defence": 10888758,
+    "health": 108733109
+  },
+  {
+    "id": 165,
+    "exp_need": 125162,
+    "exp_dead": 13507,
+    "attack": 21959563,
+    "defence": 10997646,
+    "health": 109820440
+  },
+  {
+    "id": 166,
+    "exp_need": 131420,
+    "exp_dead": 14182,
+    "attack": 22179159,
+    "defence": 11107622,
+    "health": 110918644
+  },
+  {
+    "id": 167,
+    "exp_need": 137991,
+    "exp_dead": 14891,
+    "attack": 22400951,
+    "defence": 11218698,
+    "health": 112027830
+  },
+  {
+    "id": 168,
+    "exp_need": 144891,
+    "exp_dead": 15636,
+    "attack": 22624961,
+    "defence": 11330885,
+    "health": 113148108
+  },
+  {
+    "id": 169,
+    "exp_need": 152136,
+    "exp_dead": 16418,
+    "attack": 22851211,
+    "defence": 11444194,
+    "health": 114279589
+  },
+  {
+    "id": 170,
+    "exp_need": 159743,
+    "exp_dead": 17239,
+    "attack": 23079723,
+    "defence": 11558636,
+    "health": 115422385
+  },
+  {
+    "id": 171,
+    "exp_need": 167730,
+    "exp_dead": 18101,
+    "attack": 23310520,
+    "defence": 11674222,
+    "health": 116576609
+  },
+  {
+    "id": 172,
+    "exp_need": 176117,
+    "exp_dead": 19006,
+    "attack": 23543625,
+    "defence": 11790964,
+    "health": 117742375
+  },
+  {
+    "id": 173,
+    "exp_need": 184923,
+    "exp_dead": 19956,
+    "attack": 23779061,
+    "defence": 11908874,
+    "health": 118919799
+  },
+  {
+    "id": 174,
+    "exp_need": 194169,
+    "exp_dead": 20954,
+    "attack": 24016852,
+    "defence": 12027963,
+    "health": 120108997
+  },
+  {
+    "id": 175,
+    "exp_need": 203877,
+    "exp_dead": 22002,
+    "attack": 24257021,
+    "defence": 12148243,
+    "health": 121310087
+  },
+  {
+    "id": 176,
+    "exp_need": 214071,
+    "exp_dead": 23102,
+    "attack": 24499591,
+    "defence": 12269725,
+    "health": 122523188
+  },
+  {
+    "id": 177,
+    "exp_need": 224775,
+    "exp_dead": 24257,
+    "attack": 24744587,
+    "defence": 12392422,
+    "health": 123748420
+  },
+  {
+    "id": 178,
+    "exp_need": 236014,
+    "exp_dead": 25470,
+    "attack": 24992033,
+    "defence": 12516346,
+    "health": 124985904
+  },
+  {
+    "id": 179,
+    "exp_need": 247815,
+    "exp_dead": 26744,
+    "attack": 25241953,
+    "defence": 12641509,
+    "health": 126235763
+  },
+  {
+    "id": 180,
+    "exp_need": 260206,
+    "exp_dead": 28081,
+    "attack": 25494373,
+    "defence": 12767924,
+    "health": 127498121
+  },
+  {
+    "id": 181,
+    "exp_need": 273216,
+    "exp_dead": 29485,
+    "attack": 25749317,
+    "defence": 12895603,
+    "health": 128773102
+  },
+  {
+    "id": 182,
+    "exp_need": 286877,
+    "exp_dead": 30959,
+    "attack": 26006810,
+    "defence": 13024559,
+    "health": 130060833
+  },
+  {
+    "id": 183,
+    "exp_need": 301221,
+    "exp_dead": 32507,
+    "attack": 26266878,
+    "defence": 13154805,
+    "health": 131361441
+  },
+  {
+    "id": 184,
+    "exp_need": 316282,
+    "exp_dead": 34132,
+    "attack": 26529547,
+    "defence": 13286353,
+    "health": 132675055
+  },
+  {
+    "id": 185,
+    "exp_need": 332096,
+    "exp_dead": 35839,
+    "attack": 26794842,
+    "defence": 13419217,
+    "health": 134001806
+  },
+  {
+    "id": 186,
+    "exp_need": 348701,
+    "exp_dead": 37631,
+    "attack": 27062790,
+    "defence": 13553409,
+    "health": 135341824
+  },
+  {
+    "id": 187,
+    "exp_need": 366136,
+    "exp_dead": 39513,
+    "attack": 27333418,
+    "defence": 13688943,
+    "health": 136695242
+  },
+  {
+    "id": 188,
+    "exp_need": 384443,
+    "exp_dead": 41489,
+    "attack": 27606752,
+    "defence": 13825832,
+    "health": 138062194
+  },
+  {
+    "id": 189,
+    "exp_need": 403665,
+    "exp_dead": 43563,
+    "attack": 27882820,
+    "defence": 13964090,
+    "health": 139442816
+  },
+  {
+    "id": 190,
+    "exp_need": 423848,
+    "exp_dead": 45741,
+    "attack": 28161648,
+    "defence": 14103731,
+    "health": 140837244
+  },
+  {
+    "id": 191,
+    "exp_need": 445040,
+    "exp_dead": 48028,
+    "attack": 28443264,
+    "defence": 14244768,
+    "health": 142245616
+  },
+  {
+    "id": 192,
+    "exp_need": 467292,
+    "exp_dead": 50429,
+    "attack": 28727697,
+    "defence": 14387216,
+    "health": 143668072
+  },
+  {
+    "id": 193,
+    "exp_need": 490657,
+    "exp_dead": 52950,
+    "attack": 29014974,
+    "defence": 14531088,
+    "health": 145104753
+  },
+  {
+    "id": 194,
+    "exp_need": 515190,
+    "exp_dead": 55598,
+    "attack": 29305124,
+    "defence": 14676399,
+    "health": 146555801
+  },
+  {
+    "id": 195,
+    "exp_need": 540950,
+    "exp_dead": 58378,
+    "attack": 29598175,
+    "defence": 14823163,
+    "health": 148021359
+  },
+  {
+    "id": 196,
+    "exp_need": 567998,
+    "exp_dead": 61297,
+    "attack": 29894157,
+    "defence": 14971395,
+    "health": 149501573
+  },
+  {
+    "id": 197,
+    "exp_need": 596398,
+    "exp_dead": 64362,
+    "attack": 30193099,
+    "defence": 15121109,
+    "health": 150996589
+  },
+  {
+    "id": 198,
+    "exp_need": 626218,
+    "exp_dead": 67580,
+    "attack": 30495030,
+    "defence": 15272320,
+    "health": 152506555
+  },
+  {
+    "id": 199,
+    "exp_need": 657529,
+    "exp_dead": 70959,
+    "attack": 30799980,
+    "defence": 15425043,
+    "health": 154031621
+  }
+]

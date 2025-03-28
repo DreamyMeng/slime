@@ -8,33 +8,383 @@
 //------------------------------------------------------------------------------
 
 
-export namespace role { 
-export enum Quality {
+ 
+export enum RoleQuality {
     /**
      * 无
      */
-    NONE = 0,
+    none = 0,
     /**
      * 灵
      */
-    LING = 1,
+    ling = 1,
     /**
      * 仙
      */
-    XIAN = 2,
+    xian = 2,
     /**
      * 神
      */
-    SHEN = 3,
+    shen = 3,
 }
 
-} 
+ 
+ 
+export enum SkillTrigger {
+    none = 0,
+    /**
+     * 战斗准备
+     */
+    ready = 1,
+    /**
+     * 战斗开始
+     */
+    start = 2,
+    /**
+     * 回合开始
+     */
+    round = 3,
+    /**
+     * 攻击前
+     */
+    attack = 4,
+    /**
+     * 攻击时
+     */
+    attacking = 5,
+    /**
+     * 攻击后
+     */
+    attacked = 6,
+    /**
+     * 受击前
+     */
+    hit = 7,
+    /**
+     * 受击时
+     */
+    hitting = 8,
+    /**
+     * 受击后
+     */
+    hitted = 9,
+}
+
+ 
+ 
+export enum SkillType {
+    none = 0,
+    health = 1,
+    revive = 2,
+    all = 3,
+    change = 4,
+    damage = 5,
+    miss = 6,
+    hit = 7,
+    skip = 8,
+    ban = 9,
+    replace = 10,
+    skill = 11,
+    learn = 12,
+}
+
+ 
+ 
+export enum Target {
+    /**
+     * 自身
+     */
+    self = 0,
+    /**
+     * 对手
+     */
+    enemy = 1,
+}
+
+ 
 
 
 
 
 
-export class level {
+export class achieve {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.type === undefined) { throw new Error() }
+        this.type = _json_.type
+        if(_json_.target != undefined) { this.target = _json_.target } else { this.target = undefined }
+        if (_json_.count === undefined) { throw new Error() }
+        this.count = _json_.count
+        if (_json_.description === undefined) { throw new Error() }
+        this.description = _json_.description
+        if (_json_.reward_type === undefined) { throw new Error() }
+        this.rewardType = _json_.reward_type
+        if (_json_.reward_str === undefined) { throw new Error() }
+        this.rewardStr = _json_.reward_str
+    }
+
+    /**
+     * id
+     */
+    readonly id: number
+    /**
+     * 类型
+     */
+    readonly type: string
+    /**
+     * 目标
+     */
+    readonly target: string|undefined
+    /**
+     * 达成数
+     */
+    readonly count: number
+    /**
+     * 描述
+     */
+    readonly description: string
+    /**
+     * 奖励类型
+     */
+    readonly rewardType: string
+    /**
+     * 奖励描述
+     */
+    readonly rewardStr: string
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
+
+
+
+
+export class map_level {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.level_min === undefined) { throw new Error() }
+        this.levelMin = _json_.level_min
+        if (_json_.level_max === undefined) { throw new Error() }
+        this.levelMax = _json_.level_max
+        if (_json_.health_rate === undefined) { throw new Error() }
+        this.healthRate = _json_.health_rate
+        if (_json_.defence_rate === undefined) { throw new Error() }
+        this.defenceRate = _json_.defence_rate
+        if (_json_.attack_rate === undefined) { throw new Error() }
+        this.attackRate = _json_.attack_rate
+        if (_json_.monsters === undefined) { throw new Error() }
+        { this.monsters = []; for(let _ele0 of _json_.monsters) { let _e0; _e0 = _ele0; this.monsters.push(_e0);}}
+    }
+
+    /**
+     * id
+     */
+    readonly id: number
+    /**
+     * 生物最小等级
+     */
+    readonly levelMin: number
+    /**
+     * 生物最大等级
+     */
+    readonly levelMax: number
+    /**
+     * 生物生命值倍率
+     */
+    readonly healthRate: number
+    /**
+     * 生物防御力倍率
+     */
+    readonly defenceRate: number
+    /**
+     * 生物攻击力倍率
+     */
+    readonly attackRate: number
+    readonly monsters: number[]
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+    }
+}
+
+
+
+
+
+export class ohter {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.map === undefined) { throw new Error() }
+        this.map = new Map<string, string>(); for(var _entry0_ of _json_.map) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.map.set(_k0, _v0);  }
+    }
+
+    /**
+     * id
+     */
+    readonly id: string
+    /**
+     * 进化所需等级
+     */
+    readonly map: Map<string, string>
+
+    resolve(tables:Tables) {
+        
+        
+    }
+}
+
+
+
+
+
+export class role {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.name === undefined) { throw new Error() }
+        this.name = _json_.name
+        if (_json_.rare === undefined) { throw new Error() }
+        this.rare = _json_.rare
+        if (_json_.quality_type === undefined) { throw new Error() }
+        this.qualityType = _json_.quality_type
+        if (_json_.quality === undefined) { throw new Error() }
+        this.quality = _json_.quality
+        if (_json_.race === undefined) { throw new Error() }
+        this.race = _json_.race
+        if (_json_.remain === undefined) { throw new Error() }
+        this.remain = _json_.remain
+        if (_json_.exp_need === undefined) { throw new Error() }
+        this.expNeed = _json_.exp_need
+        if (_json_.exp_dead === undefined) { throw new Error() }
+        this.expDead = _json_.exp_dead
+        if (_json_.attack_rate === undefined) { throw new Error() }
+        this.attackRate = _json_.attack_rate
+        if (_json_.defence_rate === undefined) { throw new Error() }
+        this.defenceRate = _json_.defence_rate
+        if (_json_.health_rate === undefined) { throw new Error() }
+        this.healthRate = _json_.health_rate
+        if (_json_.attack_add === undefined) { throw new Error() }
+        this.attackAdd = _json_.attack_add
+        if (_json_.defence_add === undefined) { throw new Error() }
+        this.defenceAdd = _json_.defence_add
+        if (_json_.health_add === undefined) { throw new Error() }
+        this.healthAdd = _json_.health_add
+        if (_json_.ralations === undefined) { throw new Error() }
+        this.ralations = new RoleRelation(_json_.ralations)
+        if (_json_.skills === undefined) { throw new Error() }
+        { this.skills = []; for(let _ele0 of _json_.skills) { let _e0; _e0 = _ele0; this.skills.push(_e0);}}
+    }
+
+    /**
+     * id
+     */
+    readonly id: number
+    /**
+     * 名字
+     */
+    readonly name: string
+    /**
+     * 稀有度
+     */
+    readonly rare: number
+    /**
+     * 品类
+     */
+    readonly qualityType: RoleQuality
+    /**
+     * 品质
+     */
+    readonly quality: number
+    /**
+     * 种族
+     */
+    readonly race: number
+    /**
+     * 保留
+     */
+    readonly remain: number
+    /**
+     * 升级所需经验比例
+     */
+    readonly expNeed: number
+    /**
+     * 死亡获得经验比例
+     */
+    readonly expDead: number
+    /**
+     * 攻击比例
+     */
+    readonly attackRate: number
+    /**
+     * 防御比例
+     */
+    readonly defenceRate: number
+    /**
+     * 血量比例
+     */
+    readonly healthRate: number
+    /**
+     * 图鉴攻击
+     */
+    readonly attackAdd: number
+    /**
+     * 图鉴防御
+     */
+    readonly defenceAdd: number
+    /**
+     * 图鉴血量
+     */
+    readonly healthAdd: number
+    readonly ralations: RoleRelation
+    readonly skills: string[]
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        this.ralations?.resolve(tables);
+        
+    }
+}
+
+
+
+
+
+export class role_level {
 
     constructor(_json_: any) {
         if (_json_.id === undefined) { throw new Error() }
@@ -90,134 +440,7 @@ export class level {
 
 
 
-export class role {
-
-    constructor(_json_: any) {
-        if (_json_.id === undefined) { throw new Error() }
-        this.id = _json_.id
-        if (_json_.name === undefined) { throw new Error() }
-        this.name = _json_.name
-        if (_json_.rare === undefined) { throw new Error() }
-        this.rare = _json_.rare
-        if (_json_.quality_type === undefined) { throw new Error() }
-        this.qualityType = _json_.quality_type
-        if (_json_.quality === undefined) { throw new Error() }
-        this.quality = _json_.quality
-        if (_json_.race === undefined) { throw new Error() }
-        this.race = _json_.race
-        if (_json_.remain === undefined) { throw new Error() }
-        this.remain = _json_.remain
-        if (_json_.exp_need === undefined) { throw new Error() }
-        this.expNeed = _json_.exp_need
-        if (_json_.exp_dead === undefined) { throw new Error() }
-        this.expDead = _json_.exp_dead
-        if (_json_.attack_rate === undefined) { throw new Error() }
-        this.attackRate = _json_.attack_rate
-        if (_json_.defence_rate === undefined) { throw new Error() }
-        this.defenceRate = _json_.defence_rate
-        if (_json_.health_rate === undefined) { throw new Error() }
-        this.healthRate = _json_.health_rate
-        if (_json_.attack_add === undefined) { throw new Error() }
-        this.attackAdd = _json_.attack_add
-        if (_json_.defence_add === undefined) { throw new Error() }
-        this.defenceAdd = _json_.defence_add
-        if (_json_.health_add === undefined) { throw new Error() }
-        this.healthAdd = _json_.health_add
-        if (_json_.ralations === undefined) { throw new Error() }
-        this.ralations = new role.Relation(_json_.ralations)
-        if (_json_.skills === undefined) { throw new Error() }
-        { this.skills = []; for(let _ele0 of _json_.skills) { let _e0; _e0 = _ele0; this.skills.push(_e0);}}
-    }
-
-    /**
-     * id
-     */
-    readonly id: number
-    /**
-     * 名字
-     */
-    readonly name: string
-    /**
-     * 稀有度
-     */
-    readonly rare: number
-    /**
-     * 品类
-     */
-    readonly qualityType: role.Quality
-    /**
-     * 品质
-     */
-    readonly quality: number
-    /**
-     * 种族
-     */
-    readonly race: number
-    /**
-     * 保留
-     */
-    readonly remain: number
-    /**
-     * 升级所需经验比例
-     */
-    readonly expNeed: number
-    /**
-     * 死亡获得经验比例
-     */
-    readonly expDead: number
-    /**
-     * 攻击比例
-     */
-    readonly attackRate: number
-    /**
-     * 防御比例
-     */
-    readonly defenceRate: number
-    /**
-     * 血量比例
-     */
-    readonly healthRate: number
-    /**
-     * 图鉴攻击
-     */
-    readonly attackAdd: number
-    /**
-     * 图鉴防御
-     */
-    readonly defenceAdd: number
-    /**
-     * 图鉴血量
-     */
-    readonly healthAdd: number
-    readonly ralations: role.Relation
-    readonly skills: string[]
-
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        this.ralations?.resolve(tables);
-        
-    }
-}
-
-
-
-
-export namespace role {
-export class Relation {
+export class RoleRelation {
 
     constructor(_json_: any) {
         if(_json_.chi != undefined) { this.chi = _json_.chi } else { this.chi = undefined }
@@ -260,7 +483,104 @@ export class Relation {
     }
 }
 
+
+
+
+
+export class skill {
+
+    constructor(_json_: any) {
+        if (_json_.id === undefined) { throw new Error() }
+        this.id = _json_.id
+        if (_json_.name === undefined) { throw new Error() }
+        this.name = _json_.name
+        if (_json_.effect_str === undefined) { throw new Error() }
+        this.effectStr = _json_.effect_str
+        if (_json_.description === undefined) { throw new Error() }
+        this.description = _json_.description
+        if (_json_.forever === undefined) { throw new Error() }
+        this.forever = _json_.forever
+        if (_json_.type === undefined) { throw new Error() }
+        this.type = _json_.type
+        if (_json_.target === undefined) { throw new Error() }
+        this.target = _json_.target
+        if (_json_.trigger === undefined) { throw new Error() }
+        this.trigger = _json_.trigger
+        if (_json_.condition === undefined) { throw new Error() }
+        this.condition = new Map<string, number>(); for(var _entry0_ of _json_.condition) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.condition.set(_k0, _v0);  }
+        if(_json_.buff_round != undefined) { this.buffRound = _json_.buff_round } else { this.buffRound = undefined }
+        if (_json_.rate === undefined) { throw new Error() }
+        this.rate = _json_.rate
+        if (_json_.values === undefined) { throw new Error() }
+        this.values = new Map<string, number>(); for(var _entry0_ of _json_.values) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.values.set(_k0, _v0);  }
+    }
+
+    /**
+     * id
+     */
+    readonly id: string
+    /**
+     * 名字
+     */
+    readonly name: string
+    /**
+     * 效果描述
+     */
+    readonly effectStr: string
+    /**
+     * 描述
+     */
+    readonly description: string
+    /**
+     * 战斗内永久改变
+     */
+    readonly forever: boolean
+    /**
+     * 技能类型
+     */
+    readonly type: SkillType
+    /**
+     * 生效目标
+     */
+    readonly target: Target
+    /**
+     * 时机
+     */
+    readonly trigger: SkillTrigger
+    /**
+     * 条件
+     */
+    readonly condition: Map<string, number>
+    /**
+     * 持续回合
+     */
+    readonly buffRound: number|undefined
+    /**
+     * 概率
+     */
+    readonly rate: number
+    /**
+     * 效果值
+     */
+    readonly values: Map<string, number>
+
+    resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
 }
+
+
 
 
 
@@ -343,24 +663,86 @@ export class vector4 {
 
 
 
-export class Tblevel {
-    private _dataMap: Map<number, level>
-    private _dataList: level[]
+export class Tbachieve {
+    private _dataMap: Map<number, achieve>
+    private _dataList: achieve[]
     constructor(_json_: any) {
-        this._dataMap = new Map<number, level>()
+        this._dataMap = new Map<number, achieve>()
         this._dataList = []
         for(var _json2_ of _json_) {
-            let _v: level
-            _v = new level(_json2_)
+            let _v: achieve
+            _v = new achieve(_json2_)
             this._dataList.push(_v)
             this._dataMap.set(_v.id, _v)
         }
     }
 
-    getDataMap(): Map<number, level> { return this._dataMap; }
-    getDataList(): level[] { return this._dataList; }
+    getDataMap(): Map<number, achieve> { return this._dataMap; }
+    getDataList(): achieve[] { return this._dataList; }
 
-    get(key: number): level | undefined { return this._dataMap.get(key); }
+    get(key: number): achieve | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
+export class Tbmap_level {
+    private _dataMap: Map<number, map_level>
+    private _dataList: map_level[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<number, map_level>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: map_level
+            _v = new map_level(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, map_level> { return this._dataMap; }
+    getDataList(): map_level[] { return this._dataList; }
+
+    get(key: number): map_level | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
+export class Tbohter {
+    private _dataMap: Map<string, ohter>
+    private _dataList: ohter[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<string, ohter>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: ohter
+            _v = new ohter(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<string, ohter> { return this._dataMap; }
+    getDataList(): ohter[] { return this._dataList; }
+
+    get(key: string): ohter | undefined { return this._dataMap.get(key); }
 
     resolve(tables:Tables) {
         for(let  data of this._dataList)
@@ -405,20 +787,98 @@ export class Tbrole {
 
 
 
+export class Tbrole_level {
+    private _dataMap: Map<number, role_level>
+    private _dataList: role_level[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<number, role_level>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: role_level
+            _v = new role_level(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<number, role_level> { return this._dataMap; }
+    getDataList(): role_level[] { return this._dataList; }
+
+    get(key: number): role_level | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
+export class Tbskill {
+    private _dataMap: Map<string, skill>
+    private _dataList: skill[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<string, skill>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: skill
+            _v = new skill(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.id, _v)
+        }
+    }
+
+    getDataMap(): Map<string, skill> { return this._dataMap; }
+    getDataList(): skill[] { return this._dataList; }
+
+    get(key: string): skill | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
 type JsonLoader = (file: string) => any
 
 export class Tables {
-    private _Tblevel: Tblevel
-    get Tblevel(): Tblevel  { return this._Tblevel;}
+    private _Tbachieve: Tbachieve
+    get Tbachieve(): Tbachieve  { return this._Tbachieve;}
+    private _Tbmap_level: Tbmap_level
+    get Tbmap_level(): Tbmap_level  { return this._Tbmap_level;}
+    private _Tbohter: Tbohter
+    get Tbohter(): Tbohter  { return this._Tbohter;}
     private _Tbrole: Tbrole
     get Tbrole(): Tbrole  { return this._Tbrole;}
+    private _Tbrole_level: Tbrole_level
+    get Tbrole_level(): Tbrole_level  { return this._Tbrole_level;}
+    private _Tbskill: Tbskill
+    get Tbskill(): Tbskill  { return this._Tbskill;}
 
     constructor(loader: JsonLoader) {
-        this._Tblevel = new Tblevel(loader('tblevel'))
+        this._Tbachieve = new Tbachieve(loader('tbachieve'))
+        this._Tbmap_level = new Tbmap_level(loader('tbmap_level'))
+        this._Tbohter = new Tbohter(loader('tbohter'))
         this._Tbrole = new Tbrole(loader('tbrole'))
+        this._Tbrole_level = new Tbrole_level(loader('tbrole_level'))
+        this._Tbskill = new Tbskill(loader('tbskill'))
 
-        this._Tblevel.resolve(this)
+        this._Tbachieve.resolve(this)
+        this._Tbmap_level.resolve(this)
+        this._Tbohter.resolve(this)
         this._Tbrole.resolve(this)
+        this._Tbrole_level.resolve(this)
+        this._Tbskill.resolve(this)
     }
 }
 

@@ -1,0 +1,384 @@
+[
+  {
+    "id": 1,
+    "type": "map",
+    "count": 5,
+    "description": "通关第5层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 2,
+    "type": "map",
+    "count": 10,
+    "description": "通关第10层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 3,
+    "type": "map",
+    "count": 15,
+    "description": "通关第15层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 4,
+    "type": "map",
+    "count": 20,
+    "description": "通关第20层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 5,
+    "type": "map",
+    "count": 25,
+    "description": "通关第25层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 6,
+    "type": "map",
+    "count": 30,
+    "description": "通关第30层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 7,
+    "type": "map",
+    "count": 35,
+    "description": "通关第35层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 8,
+    "type": "map",
+    "count": 40,
+    "description": "通关第40层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 9,
+    "type": "map",
+    "count": 45,
+    "description": "通关第45层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 10,
+    "type": "map",
+    "count": 50,
+    "description": "通关第50层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 11,
+    "type": "map",
+    "count": 55,
+    "description": "通关第55层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 12,
+    "type": "map",
+    "count": 60,
+    "description": "通关第60层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 13,
+    "type": "map",
+    "count": 65,
+    "description": "通关第65层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 14,
+    "type": "map",
+    "count": 70,
+    "description": "通关第70层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 15,
+    "type": "map",
+    "count": 75,
+    "description": "通关第75层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 16,
+    "type": "map",
+    "count": 80,
+    "description": "通关第80层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 17,
+    "type": "map",
+    "count": 85,
+    "description": "通关第85层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 18,
+    "type": "map",
+    "count": 90,
+    "description": "通关第90层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 19,
+    "type": "map",
+    "count": 95,
+    "description": "通关第95层",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 20,
+    "type": "map",
+    "count": 100,
+    "description": "通关第100层",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 21,
+    "type": "kill",
+    "target": "129",
+    "count": 20,
+    "description": "击杀凡兽鲤鱼20次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 22,
+    "type": "kill",
+    "target": "105",
+    "count": 20,
+    "description": "击杀凡兽野猪20次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 23,
+    "type": "kill",
+    "target": "88",
+    "count": 20,
+    "description": "击杀凡兽鲸鱼20次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 24,
+    "type": "kill",
+    "target": "3",
+    "count": 10,
+    "description": "击杀灵兽白蛇10次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 25,
+    "type": "kill",
+    "target": "31",
+    "count": 10,
+    "description": "击杀灵兽吊睛白虎10次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 26,
+    "type": "kill",
+    "target": "87",
+    "count": 10,
+    "description": "击杀灵兽九尾妖狐10次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 27,
+    "type": "kill",
+    "target": "139",
+    "count": 5,
+    "description": "击杀仙兽锦毛鼠5次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 28,
+    "type": "kill",
+    "target": "101",
+    "count": 5,
+    "description": "击杀仙兽哮天犬5次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 29,
+    "type": "kill",
+    "target": "79",
+    "count": 5,
+    "description": "击杀仙兽灵明石猴5次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 30,
+    "type": "kill",
+    "target": "125",
+    "count": 2,
+    "description": "击杀神兽河蟹2次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 31,
+    "type": "kill",
+    "target": "140",
+    "count": 2,
+    "description": "击杀神兽平头哥2次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 32,
+    "type": "kill",
+    "target": "48",
+    "count": 2,
+    "description": "击杀神兽五色鹿2次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 33,
+    "type": "kill",
+    "target": "11",
+    "count": 1,
+    "description": "击杀神兽青龙1次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 34,
+    "type": "kill",
+    "target": "35",
+    "count": 1,
+    "description": "击杀神兽白虎1次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 35,
+    "type": "kill",
+    "target": "27",
+    "count": 1,
+    "description": "击杀神兽朱雀1次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 36,
+    "type": "kill",
+    "target": "44",
+    "count": 1,
+    "description": "击杀神兽玄武1次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 37,
+    "type": "kill",
+    "target": "52",
+    "count": 1,
+    "description": "击杀神兽麒麟1次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 38,
+    "type": "rebirth",
+    "count": 5,
+    "description": "转生5次",
+    "reward_type": "skill",
+    "reward_str": "奖励:可获得技能数+1"
+  },
+  {
+    "id": 39,
+    "type": "rebirth",
+    "count": 10,
+    "description": "转生10次",
+    "reward_type": "skill",
+    "reward_str": "奖励:可获得技能数+1"
+  },
+  {
+    "id": 40,
+    "type": "rebirth",
+    "count": 20,
+    "description": "转生20次",
+    "reward_type": "skill",
+    "reward_str": "奖励:可获得技能数+1"
+  },
+  {
+    "id": 41,
+    "type": "kill",
+    "target": "141",
+    "count": 1,
+    "description": "击杀牛魔王1次",
+    "reward_type": "skill",
+    "reward_str": "奖励:可获得技能数+1"
+  },
+  {
+    "id": 42,
+    "type": "kill",
+    "target": "142",
+    "count": 1,
+    "description": "击杀妲己1次",
+    "reward_type": "random",
+    "reward_str": "奖励:随机图鉴解锁"
+  },
+  {
+    "id": 43,
+    "type": "kill",
+    "target": "143",
+    "count": 1,
+    "description": "击杀哪吒1次",
+    "reward_type": "max",
+    "reward_str": "奖励:最大等级+10"
+  },
+  {
+    "id": 44,
+    "type": "kill",
+    "target": "144",
+    "count": 1,
+    "description": "击杀杨戬1次",
+    "reward_type": "skill",
+    "reward_str": "奖励:可获得技能数+1"
+  },
+  {
+    "id": 45,
+    "type": "kill",
+    "target": "145",
+    "count": 1,
+    "description": "击杀孙悟空1次",
+    "reward_type": "boss",
+    "reward_str": "奖励:boss可以拟态"
+  }
+]

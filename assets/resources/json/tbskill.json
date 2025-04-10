@@ -4,7 +4,6 @@
     "name": "吞噬",
     "effect_str": "+[#×伤害值]的生命值",
     "description": "攻击后20%的概率使自身+[50%×伤害值]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 0,
     "trigger": 6,
@@ -22,11 +21,11 @@
     "name": "蛇噬",
     "effect_str": "-#防御力",
     "description": "攻击时20%的概率使对手-50%防御力。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 5,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.2,
     "values": [
       [
@@ -40,7 +39,6 @@
     "name": "缠绕",
     "effect_str": "放弃攻击",
     "description": "攻击后20%的概率使对手放弃攻击，持续1回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 6,
@@ -53,12 +51,12 @@
     "id": "long1",
     "name": "龙脉",
     "effect_str": "+#攻防",
-    "description": "回合开始时使自身+5%攻防，永久。",
-    "forever": true,
+    "description": "回合开始时使自身+5%攻防，永久",
     "type": 3,
     "target": 0,
     "trigger": 3,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -76,7 +74,6 @@
     "name": "龙息",
     "effect_str": "+#造成的伤害",
     "description": "攻击时20%的概率使自身+100%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -93,12 +90,12 @@
     "id": "long2",
     "name": "真龙血脉",
     "effect_str": "+#攻防",
-    "description": "回合开始时使自身+10%攻防，永久。",
-    "forever": true,
+    "description": "回合开始时使自身+10%攻防，永久",
     "type": 3,
     "target": 0,
     "trigger": 3,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -115,12 +112,12 @@
     "id": "longwei1",
     "name": "龙威",
     "effect_str": "-#攻防",
-    "description": "回合开始时使对手-5%攻防，永久。",
-    "forever": true,
+    "description": "回合开始时使对手-5%攻防，永久",
     "type": 3,
     "target": 1,
     "trigger": 3,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -137,8 +134,7 @@
     "id": "zhulong1",
     "name": "阴阳",
     "effect_str": "攻防交换",
-    "description": "战斗开始时使对手攻防交换，永久。",
-    "forever": true,
+    "description": "战斗开始时使对手攻防交换。",
     "type": 4,
     "target": 1,
     "trigger": 2,
@@ -151,11 +147,11 @@
     "name": "飞行",
     "effect_str": "闪避",
     "description": "受击时20%的概率使自身闪避。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 8,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.2,
     "values": []
   },
@@ -164,7 +160,6 @@
     "name": "喙击",
     "effect_str": "+#造成的伤害",
     "description": "攻击时20%的概率使自身+50%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -181,8 +176,7 @@
     "id": "baonu1",
     "name": "暴怒",
     "effect_str": "+#攻击力",
-    "description": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久。",
-    "forever": true,
+    "description": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久",
     "type": 3,
     "target": 0,
     "trigger": 4,
@@ -192,6 +186,7 @@
         0.5
       ]
     ],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -205,11 +200,11 @@
     "name": "锐利目光",
     "effect_str": "无视闪避",
     "description": "攻击时使自身无视闪避。",
-    "forever": false,
     "type": 7,
     "target": 0,
     "trigger": 5,
     "condition": [],
+    "buff_round": 0,
     "rate": 1,
     "values": []
   },
@@ -218,7 +213,6 @@
     "name": "孔雀开屏",
     "effect_str": "放弃攻击",
     "description": "攻击后15%的概率使对手放弃攻击，持续2回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 6,
@@ -232,7 +226,6 @@
     "name": "五色神光",
     "effect_str": "+#造成的伤害",
     "description": "攻击时10%的概率使自身+400%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -250,7 +243,6 @@
     "name": "扶摇直上",
     "effect_str": "闪避",
     "description": "攻击后30%的概率使自身闪避，持续2回合。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 6,
@@ -264,7 +256,6 @@
     "name": "灾厄",
     "effect_str": "-#攻击力",
     "description": "攻击前20%的概率使对手-50%攻击力，持续2回合。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 4,
@@ -283,11 +274,11 @@
     "name": "高飞",
     "effect_str": "闪避",
     "description": "受击时40%的概率使自身闪避。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 8,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.4,
     "values": []
   },
@@ -296,7 +287,6 @@
     "name": "涅槃",
     "effect_str": "+#最大生命并清除buff，1次",
     "description": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
-    "forever": false,
     "type": 2,
     "target": 0,
     "trigger": 9,
@@ -318,12 +308,12 @@
     "id": "xiangrui",
     "name": "祥瑞",
     "effect_str": "-#攻击力",
-    "description": "攻击前使对手-10%攻击力，永久。",
-    "forever": true,
+    "description": "攻击前使对手-10%攻击力，永久",
     "type": 3,
     "target": 1,
     "trigger": 4,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -337,11 +327,11 @@
     "name": "光芒",
     "effect_str": "闪避",
     "description": "受击时50%的概率使自身闪避。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 8,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.5,
     "values": []
   },
@@ -350,7 +340,6 @@
     "name": "神火",
     "effect_str": "-[#×伤害值]的生命值",
     "description": "受击后使对手-[40%×伤害值]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 1,
     "trigger": 9,
@@ -368,7 +357,6 @@
     "name": "撕咬",
     "effect_str": "+#造成的伤害",
     "description": "攻击时20%的概率使自身+100%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -386,30 +374,24 @@
     "name": "威严",
     "effect_str": "放弃攻击",
     "description": "攻击时20%的概率使对手放弃攻击，持续1回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 5,
     "condition": [],
     "buff_round": 1,
     "rate": 0.2,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "lizhua",
     "name": "利爪",
     "effect_str": "-#防御力",
     "description": "攻击时20%的概率使对手-50%防御力。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 5,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.2,
     "values": [
       [
@@ -423,7 +405,6 @@
     "name": "金风",
     "effect_str": "+#造成的伤害",
     "description": "攻击时30%的概率使自身+200%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -441,7 +422,6 @@
     "name": "硬壳",
     "effect_str": "-#所受的伤害",
     "description": "受击时90%的概率使自身-20%所受的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 8,
@@ -459,7 +439,6 @@
     "name": "坚甲",
     "effect_str": "-#所受的伤害",
     "description": "受击时90%的概率使自身-30%所受的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 8,
@@ -477,7 +456,6 @@
     "name": "龟咬",
     "effect_str": "+#造成的伤害",
     "description": "攻击时10%的概率使自身+150%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -495,7 +473,6 @@
     "name": "龟蛇合击",
     "effect_str": "+#造成的伤害",
     "description": "攻击时25%的概率使自身+150%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -513,7 +490,6 @@
     "name": "尖甲",
     "effect_str": "-[#×伤害值]的生命值",
     "description": "受击后使对手-[50%×伤害值]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 1,
     "trigger": 9,
@@ -531,7 +507,6 @@
     "name": "龟寿",
     "effect_str": "+[#×攻击力]的生命值",
     "description": "回合开始时50%的概率使自身+[40%×攻击力]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 0,
     "trigger": 3,
@@ -549,48 +524,37 @@
     "name": "撞击",
     "effect_str": "跳过回合",
     "description": "攻击后25%的概率使对手跳过回合，持续1回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 1,
     "rate": 0.25,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "xianling",
     "name": "仙灵",
     "effect_str": "放弃攻击",
     "description": "受击前25%的概率使对手放弃攻击。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.25,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "xiangrui2",
     "name": "祥瑞",
     "effect_str": "-#攻击力",
-    "description": "战斗开始时使对手-30%攻击力，永久。",
-    "forever": true,
+    "description": "战斗开始时使对手-30%攻击力，永久",
     "type": 3,
     "target": 1,
     "trigger": 2,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -603,9 +567,8 @@
     "id": "tongxiao",
     "name": "通晓",
     "effect_str": "禁用3个技能",
-    "description": "战斗准备阶段使对手禁用3个技能，永久。",
-    "forever": true,
-    "type": 9,
+    "description": "战斗准备阶段使对手禁用3个技能。",
+    "type": 10,
     "target": 1,
     "trigger": 1,
     "condition": [],
@@ -621,12 +584,12 @@
     "id": "zuie",
     "name": "辨别",
     "effect_str": "+#攻击力",
-    "description": "战斗开始时50%的概率使自身+100%攻击力，永久。",
-    "forever": true,
+    "description": "战斗开始时50%的概率使自身+100%攻击力，永久",
     "type": 3,
     "target": 0,
     "trigger": 2,
     "condition": [],
+    "buff_round": -1,
     "rate": 0.5,
     "values": [
       [
@@ -640,30 +603,24 @@
     "name": "震慑",
     "effect_str": "放弃攻击",
     "description": "攻击后30%的概率使对手放弃攻击，持续1回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 1,
     "rate": 0.3,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "biyou",
     "name": "庇佑",
     "effect_str": "-#攻防",
-    "description": "受击后30%的概率使对手-30%攻防，永久。",
-    "forever": true,
+    "description": "受击后30%的概率使对手-30%攻防，永久",
     "type": 3,
     "target": 1,
     "trigger": 9,
     "condition": [],
+    "buff_round": -1,
     "rate": 0.3,
     "values": [
       [
@@ -681,7 +638,6 @@
     "name": "践踏",
     "effect_str": "+#造成的伤害",
     "description": "攻击时40%的概率使自身+50%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -699,26 +655,19 @@
     "name": "后踹",
     "effect_str": "跳过回合",
     "description": "攻击后20%的概率使对手跳过回合，持续1回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 1,
     "rate": 0.2,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "feiben",
     "name": "奔马",
     "effect_str": "闪避",
     "description": "攻击后20%的概率使自身闪避，持续1回合。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 6,
@@ -732,11 +681,11 @@
     "name": "口水",
     "effect_str": "-#防御力",
     "description": "攻击时20%的概率使对手-100%防御力。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 5,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.2,
     "values": [
       [
@@ -750,7 +699,6 @@
     "name": "蔑视",
     "effect_str": "+#防御力",
     "description": "回合开始时20%的概率使自身+50%防御力，持续1回合。",
-    "forever": false,
     "type": 3,
     "target": 0,
     "trigger": 3,
@@ -769,7 +717,6 @@
     "name": "冲撞",
     "effect_str": "+#造成的伤害",
     "description": "攻击时25%的概率使自身+100%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -787,7 +734,6 @@
     "name": "硬皮",
     "effect_str": "-#所受的伤害",
     "description": "受击时50%的概率使自身-30%所受的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 8,
@@ -805,26 +751,19 @@
     "name": "震地",
     "effect_str": "跳过回合",
     "description": "攻击后10%的概率使对手跳过回合，持续2回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 2,
     "rate": 0.1,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "mingjiao",
     "name": "鸣叫",
     "effect_str": "-#攻击力",
     "description": "攻击后30%的概率使对手-30%攻击力，持续2回合。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 6,
@@ -842,12 +781,12 @@
     "id": "xiangrui3",
     "name": "祥瑞化身",
     "effect_str": "-#攻击力",
-    "description": "攻击后70%的概率使对手-5%攻击力，永久。",
-    "forever": true,
+    "description": "攻击后70%的概率使对手-5%攻击力，永久",
     "type": 3,
     "target": 1,
     "trigger": 6,
     "condition": [],
+    "buff_round": -1,
     "rate": 0.7,
     "values": [
       [
@@ -861,7 +800,6 @@
     "name": "吞噬",
     "effect_str": "+[#×攻击力]的生命值",
     "description": "攻击后20%的概率使自身+[100%×攻击力]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 0,
     "trigger": 6,
@@ -878,12 +816,12 @@
     "id": "zuie2",
     "name": "凶兆",
     "effect_str": "-#防御力",
-    "description": "攻击前50%的概率使对手-5%防御力，永久。",
-    "forever": true,
+    "description": "攻击前50%的概率使对手-5%防御力，永久",
     "type": 3,
     "target": 1,
     "trigger": 4,
     "condition": [],
+    "buff_round": -1,
     "rate": 0.5,
     "values": [
       [
@@ -897,7 +835,6 @@
     "name": "咆哮",
     "effect_str": "-#防御力",
     "description": "回合开始时30%的概率使对手-50%防御力，持续2回合。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 3,
@@ -916,11 +853,11 @@
     "name": "机敏",
     "effect_str": "闪避",
     "description": "受击时20%的概率使自身闪避。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 8,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.2,
     "values": []
   },
@@ -928,12 +865,12 @@
     "id": "shouchi",
     "name": "拾取",
     "effect_str": "+#攻击力",
-    "description": "战斗开始时50%的概率使自身+50%攻击力，永久。",
-    "forever": true,
+    "description": "战斗开始时50%的概率使自身+50%攻击力，永久",
     "type": 3,
     "target": 0,
     "trigger": 2,
     "condition": [],
+    "buff_round": -1,
     "rate": 0.5,
     "values": [
       [
@@ -946,9 +883,8 @@
     "id": "bianhua",
     "name": "变化",
     "effect_str": "获得1个技能",
-    "description": "回合开始时使自身获得1个技能，永久。",
-    "forever": true,
-    "type": 11,
+    "description": "回合开始时使自身获得1个技能。",
+    "type": 12,
     "target": 0,
     "trigger": 3,
     "condition": [],
@@ -965,25 +901,19 @@
     "name": "人言",
     "effect_str": "放弃攻击",
     "description": "受击前30%的概率使对手放弃攻击。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.3,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "dali",
     "name": "大力",
     "effect_str": "+#造成的伤害",
     "description": "攻击时40%的概率使自身+20%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1001,7 +931,6 @@
     "name": "巨力",
     "effect_str": "+#造成的伤害",
     "description": "攻击时40%的概率使自身+50%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1019,7 +948,6 @@
     "name": "神力",
     "effect_str": "+#造成的伤害",
     "description": "攻击时40%的概率使自身+100%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1037,11 +965,11 @@
     "name": "迷惑",
     "effect_str": "变更目标",
     "description": "受击前15%的概率使对手变更目标。",
-    "forever": false,
-    "type": 10,
+    "type": 11,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.15,
     "values": []
   },
@@ -1050,11 +978,11 @@
     "name": "迷惑",
     "effect_str": "变更目标",
     "description": "受击前20%的概率使对手变更目标。",
-    "forever": false,
-    "type": 10,
+    "type": 11,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.2,
     "values": []
   },
@@ -1063,64 +991,45 @@
     "name": "魅惑",
     "effect_str": "放弃攻击",
     "description": "攻击后20%的概率使对手放弃攻击，持续1回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 1,
     "rate": 0.2,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "meihuo1",
     "name": "魅惑",
     "effect_str": "放弃攻击",
     "description": "攻击后20%的概率使对手放弃攻击，持续2回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 2,
     "rate": 0.2,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "meihuo2",
     "name": "魅惑",
     "effect_str": "放弃攻击",
     "description": "攻击后20%的概率使对手放弃攻击，持续3回合。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 3,
     "rate": 0.2,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "shengzhang",
     "name": "生长",
     "effect_str": "+[#×攻击力]的生命值",
     "description": "回合开始时使自身+[25%×攻击力]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 0,
     "trigger": 3,
@@ -1138,26 +1047,19 @@
     "name": "撼海",
     "effect_str": "跳过回合",
     "description": "攻击后25%的概率使对手跳过回合，持续1回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 1,
     "rate": 0.25,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "dengying",
     "name": "蹬鹰",
     "effect_str": "+#造成的伤害",
     "description": "攻击时15%的概率使自身+200%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1175,11 +1077,11 @@
     "name": "可爱",
     "effect_str": "-#攻击力",
     "description": "受击前70%的概率使对手-30%攻击力。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.7,
     "values": [
       [
@@ -1193,43 +1095,32 @@
     "name": "装死",
     "effect_str": "放弃攻击",
     "description": "受击前15%的概率使对手放弃攻击。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.15,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "zhuangsi1",
     "name": "装死",
     "effect_str": "放弃攻击",
     "description": "受击前30%的概率使对手放弃攻击。",
-    "forever": false,
     "type": 8,
     "target": 1,
     "trigger": 7,
     "condition": [],
+    "buff_round": 0,
     "rate": 0.3,
-    "values": [
-      [
-        "1",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "dajian",
     "name": "搭肩",
-    "effect_str": "-[#×伤害值]的生命值",
-    "description": "战斗开始时30%的概率使对手-[200%×伤害值]的生命值。",
-    "forever": false,
+    "effect_str": "-[#×攻击力]的生命值",
+    "description": "战斗开始时30%的概率使对手-[200%×攻击力]的生命值。",
     "type": 1,
     "target": 1,
     "trigger": 2,
@@ -1237,7 +1128,7 @@
     "rate": 0.3,
     "values": [
       [
-        "2",
+        "1",
         -2
       ]
     ]
@@ -1247,7 +1138,6 @@
     "name": "食日",
     "effect_str": "+[#×伤害值]的生命值",
     "description": "攻击后30%的概率使自身+[100%×伤害值]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 0,
     "trigger": 6,
@@ -1264,9 +1154,8 @@
     "id": "xuexi",
     "name": "学习",
     "effect_str": "(生物)随机获得5个技能。(玩家)增加5个技能上限",
-    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限，永久。",
-    "forever": true,
-    "type": 12,
+    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
+    "type": 13,
     "target": 0,
     "trigger": 1,
     "condition": [],
@@ -1283,7 +1172,6 @@
     "name": "哮月",
     "effect_str": "+#攻击力",
     "description": "回合开始时30%的概率使自身+50%攻击力，持续2回合。",
-    "forever": false,
     "type": 3,
     "target": 0,
     "trigger": 3,
@@ -1302,7 +1190,6 @@
     "name": "哮天",
     "effect_str": "+#攻击力",
     "description": "回合开始时30%的概率使自身+100%攻击力，持续2回合。",
-    "forever": false,
     "type": 3,
     "target": 0,
     "trigger": 3,
@@ -1321,7 +1208,6 @@
     "name": "狮吼",
     "effect_str": "-#攻击力",
     "description": "攻击后30%的概率使对手-30%攻击力，持续1回合。",
-    "forever": false,
     "type": 3,
     "target": 1,
     "trigger": 6,
@@ -1340,7 +1226,6 @@
     "name": "撕咬",
     "effect_str": "+#造成的伤害",
     "description": "攻击时30%的概率使自身+100%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1358,7 +1243,6 @@
     "name": "拍击",
     "effect_str": "+#造成的伤害",
     "description": "攻击时40%的概率使自身+50%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1376,7 +1260,6 @@
     "name": "不死",
     "effect_str": "+#最大生命并清除buff，1次",
     "description": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
-    "forever": false,
     "type": 2,
     "target": 0,
     "trigger": 9,
@@ -1399,7 +1282,6 @@
     "name": "九命",
     "effect_str": "+#最大生命并清除buff，9次",
     "description": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
-    "forever": false,
     "type": 2,
     "target": 0,
     "trigger": 9,
@@ -1426,7 +1308,6 @@
     "name": "河蟹",
     "effect_str": "-#所受的伤害",
     "description": "受击时50%的概率使自身-80%所受的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 8,
@@ -1444,7 +1325,6 @@
     "name": "河蟹",
     "effect_str": "+#造成的伤害",
     "description": "攻击时1%的概率使自身+9900%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1461,12 +1341,12 @@
     "id": "zhanyi",
     "name": "战意",
     "effect_str": "+#攻击力",
-    "description": "回合开始时使自身+20%攻击力，永久。",
-    "forever": true,
+    "description": "回合开始时使自身+20%攻击力，永久",
     "type": 3,
     "target": 0,
     "trigger": 3,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -1480,7 +1360,6 @@
     "name": "反击",
     "effect_str": "-[#×伤害值]的生命值",
     "description": "受击后30%的概率使对手-[20%×伤害值]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 1,
     "trigger": 9,
@@ -1498,7 +1377,6 @@
     "name": "泡泡",
     "effect_str": "释放技能，但是失败了！",
     "description": "回合开始时30%的概率使自身释放技能，但是失败了！。",
-    "forever": false,
     "type": 0,
     "target": 0,
     "trigger": 3,
@@ -1511,7 +1389,6 @@
     "name": "空",
     "effect_str": "释放技能，但是失败了！",
     "description": "回合开始时0%的概率使自身释放技能，但是失败了！。",
-    "forever": false,
     "type": 0,
     "target": 0,
     "trigger": 3,
@@ -1523,9 +1400,8 @@
     "id": "jiexi",
     "name": "解析",
     "effect_str": "(生物)随机获得5个技能。(玩家)增加5个技能上限",
-    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限，永久。",
-    "forever": true,
-    "type": 12,
+    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
+    "type": 13,
     "target": 0,
     "trigger": 1,
     "condition": [],
@@ -1542,7 +1418,6 @@
     "name": "法天象地",
     "effect_str": "+#攻防",
     "description": "回合开始时20%的概率使自身+200%攻防，持续3回合。",
-    "forever": false,
     "type": 3,
     "target": 0,
     "trigger": 3,
@@ -1564,9 +1439,8 @@
     "id": "xiulian",
     "name": "修炼",
     "effect_str": "(生物)随机获得5个技能。(玩家)增加5个技能上限",
-    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限，永久。",
-    "forever": true,
-    "type": 12,
+    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
+    "type": 13,
     "target": 0,
     "trigger": 1,
     "condition": [],
@@ -1582,9 +1456,8 @@
     "id": "qishier",
     "name": "七十二变",
     "effect_str": "获得1个技能",
-    "description": "回合开始时30%的概率使自身获得1个技能，永久。",
-    "forever": true,
-    "type": 11,
+    "description": "回合开始时30%的概率使自身获得1个技能。",
+    "type": 12,
     "target": 0,
     "trigger": 3,
     "condition": [],
@@ -1601,30 +1474,24 @@
     "name": "混铁棍",
     "effect_str": "跳过回合",
     "description": "攻击后25%的概率使对手跳过回合，持续2回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 2,
     "rate": 0.25,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "qingcheng",
     "name": "倾城",
     "effect_str": "-#攻击力",
-    "description": "战斗开始时使对手-50%攻击力。",
-    "forever": false,
+    "description": "战斗开始时使对手-50%攻击力，永久",
     "type": 3,
     "target": 1,
     "trigger": 2,
     "condition": [],
+    "buff_round": -1,
     "rate": 1,
     "values": [
       [
@@ -1638,7 +1505,6 @@
     "name": "九尾",
     "effect_str": "+#最大生命并清除buff，9次",
     "description": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
-    "forever": false,
     "type": 2,
     "target": 0,
     "trigger": 9,
@@ -1665,7 +1531,6 @@
     "name": "三头六臂",
     "effect_str": "+#攻击力",
     "description": "回合开始时30%的概率使自身+200%攻击力，持续3回合。",
-    "forever": false,
     "type": 3,
     "target": 0,
     "trigger": 3,
@@ -1684,7 +1549,6 @@
     "name": "莲花化身",
     "effect_str": "-#所受的伤害",
     "description": "受击时使自身-50%所受的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 8,
@@ -1702,45 +1566,32 @@
     "name": "混天绫",
     "effect_str": "跳过回合",
     "description": "攻击后15%的概率使对手跳过回合，持续3回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 3,
     "rate": 0.15,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "qiankun",
     "name": "乾坤圈",
     "effect_str": "跳过回合",
     "description": "攻击后25%的概率使对手跳过回合，持续1回合。",
-    "forever": false,
-    "type": 8,
+    "type": 9,
     "target": 1,
     "trigger": 6,
     "condition": [],
     "buff_round": 1,
     "rate": 0.25,
-    "values": [
-      [
-        "2",
-        1
-      ]
-    ]
+    "values": []
   },
   {
     "id": "jiulong",
     "name": "九龙神火罩",
     "effect_str": "-[#×攻击力]的生命值",
     "description": "回合开始时10%的概率使对手-[100%×攻击力]的生命值。",
-    "forever": false,
     "type": 1,
     "target": 1,
     "trigger": 3,
@@ -1758,7 +1609,6 @@
     "name": "风火轮",
     "effect_str": "闪避",
     "description": "回合开始时15%的概率使自身闪避，持续2回合。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 3,
@@ -1772,7 +1622,6 @@
     "name": "火尖枪",
     "effect_str": "+#造成的伤害",
     "description": "攻击时80%的概率使自身+50%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1789,9 +1638,8 @@
     "id": "bajiu",
     "name": "八九玄功",
     "effect_str": "获得1个技能",
-    "description": "回合开始时50%的概率使自身获得1个技能，永久。",
-    "forever": true,
-    "type": 11,
+    "description": "回合开始时50%的概率使自身获得1个技能。",
+    "type": 12,
     "target": 0,
     "trigger": 3,
     "condition": [],
@@ -1807,10 +1655,9 @@
     "id": "tianyan",
     "name": "天眼",
     "effect_str": "禁用1个技能",
-    "description": "回合开始时60%的概率使自身禁用1个技能，永久。",
-    "forever": true,
-    "type": 9,
-    "target": 0,
+    "description": "回合开始时60%的概率使对手禁用1个技能。",
+    "type": 10,
+    "target": 1,
     "trigger": 3,
     "condition": [],
     "rate": 0.6,
@@ -1826,7 +1673,6 @@
     "name": "三尖两刃刀",
     "effect_str": "+#造成的伤害",
     "description": "攻击时70%的概率使自身+100%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1844,7 +1690,6 @@
     "name": "金箍棒",
     "effect_str": "+#造成的伤害",
     "description": "攻击时60%的概率使自身+200%造成的伤害。",
-    "forever": false,
     "type": 5,
     "target": 0,
     "trigger": 5,
@@ -1861,9 +1706,8 @@
     "id": "huoyan2",
     "name": "火眼金睛",
     "effect_str": "禁用1个技能",
-    "description": "回合开始时50%的概率使对手禁用1个技能，永久。",
-    "forever": true,
-    "type": 9,
+    "description": "回合开始时50%的概率使对手禁用1个技能。",
+    "type": 10,
     "target": 1,
     "trigger": 3,
     "condition": [],
@@ -1880,7 +1724,6 @@
     "name": "分身",
     "effect_str": "闪避",
     "description": "回合开始时15%的概率使自身闪避，持续3回合。",
-    "forever": false,
     "type": 6,
     "target": 0,
     "trigger": 3,
@@ -1892,17 +1735,16 @@
   {
     "id": "chimei",
     "name": "魑魅魍魉",
-    "effect_str": "(生物)随机获得5个技能。(玩家)增加5个技能上限",
-    "description": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限，永久。",
-    "forever": true,
-    "type": 12,
+    "effect_str": "(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100",
+    "description": "战斗准备阶段使自身(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100。",
+    "type": 13,
     "target": 0,
     "trigger": 1,
     "condition": [],
     "rate": 1,
     "values": [
       [
-        "1",
+        "2",
         5
       ]
     ]

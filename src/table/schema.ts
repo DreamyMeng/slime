@@ -81,11 +81,12 @@ export enum SkillType {
     damage = 5,
     miss = 6,
     hit = 7,
-    skip = 8,
-    ban = 9,
-    replace = 10,
-    skill = 11,
-    learn = 12,
+    abandon = 8,
+    skip = 9,
+    ban = 10,
+    replace = 11,
+    skill = 12,
+    learn = 13,
 }
 
  
@@ -229,7 +230,7 @@ export class map_level {
 
 
 
-export class ohter {
+export class other {
 
     constructor(_json_: any) {
         if (_json_.id === undefined) { throw new Error() }
@@ -498,8 +499,6 @@ export class skill {
         this.effectStr = _json_.effect_str
         if (_json_.description === undefined) { throw new Error() }
         this.description = _json_.description
-        if (_json_.forever === undefined) { throw new Error() }
-        this.forever = _json_.forever
         if (_json_.type === undefined) { throw new Error() }
         this.type = _json_.type
         if (_json_.target === undefined) { throw new Error() }
@@ -532,10 +531,6 @@ export class skill {
      */
     readonly description: string
     /**
-     * 战斗内永久改变
-     */
-    readonly forever: boolean
-    /**
      * 技能类型
      */
     readonly type: SkillType
@@ -552,7 +547,7 @@ export class skill {
      */
     readonly condition: Map<string, number>
     /**
-     * 持续回合
+     * 持续回合<br/>没有值则不属于buff类，-1永久，0本轮攻击生效，&gt;0buff时间。Buff属性状态、攻防
      */
     readonly buffRound: number|undefined
     /**
@@ -565,7 +560,6 @@ export class skill {
     readonly values: Map<string, number>
 
     resolve(tables:Tables) {
-        
         
         
         
@@ -725,24 +719,24 @@ export class Tbmap_level {
 
 
 
-export class Tbohter {
-    private _dataMap: Map<string, ohter>
-    private _dataList: ohter[]
+export class Tbother {
+    private _dataMap: Map<string, other>
+    private _dataList: other[]
     constructor(_json_: any) {
-        this._dataMap = new Map<string, ohter>()
+        this._dataMap = new Map<string, other>()
         this._dataList = []
         for(var _json2_ of _json_) {
-            let _v: ohter
-            _v = new ohter(_json2_)
+            let _v: other
+            _v = new other(_json2_)
             this._dataList.push(_v)
             this._dataMap.set(_v.id, _v)
         }
     }
 
-    getDataMap(): Map<string, ohter> { return this._dataMap; }
-    getDataList(): ohter[] { return this._dataList; }
+    getDataMap(): Map<string, other> { return this._dataMap; }
+    getDataList(): other[] { return this._dataList; }
 
-    get(key: string): ohter | undefined { return this._dataMap.get(key); }
+    get(key: string): other | undefined { return this._dataMap.get(key); }
 
     resolve(tables:Tables) {
         for(let  data of this._dataList)
@@ -856,8 +850,8 @@ export class Tables {
     get Tbachieve(): Tbachieve  { return this._Tbachieve;}
     private _Tbmap_level: Tbmap_level
     get Tbmap_level(): Tbmap_level  { return this._Tbmap_level;}
-    private _Tbohter: Tbohter
-    get Tbohter(): Tbohter  { return this._Tbohter;}
+    private _Tbother: Tbother
+    get Tbother(): Tbother  { return this._Tbother;}
     private _Tbrole: Tbrole
     get Tbrole(): Tbrole  { return this._Tbrole;}
     private _Tbrole_level: Tbrole_level
@@ -868,14 +862,14 @@ export class Tables {
     constructor(loader: JsonLoader) {
         this._Tbachieve = new Tbachieve(loader('tbachieve'))
         this._Tbmap_level = new Tbmap_level(loader('tbmap_level'))
-        this._Tbohter = new Tbohter(loader('tbohter'))
+        this._Tbother = new Tbother(loader('tbother'))
         this._Tbrole = new Tbrole(loader('tbrole'))
         this._Tbrole_level = new Tbrole_level(loader('tbrole_level'))
         this._Tbskill = new Tbskill(loader('tbskill'))
 
         this._Tbachieve.resolve(this)
         this._Tbmap_level.resolve(this)
-        this._Tbohter.resolve(this)
+        this._Tbother.resolve(this)
         this._Tbrole.resolve(this)
         this._Tbrole_level.resolve(this)
         this._Tbskill.resolve(this)

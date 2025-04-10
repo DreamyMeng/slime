@@ -1,0 +1,4 @@
+# 针对所有.meta文件设置合并策略
+*.meta binary merge=union
+# 强制使用LF换行符
+*.meta text eol=lf

@@ -17,12 +17,13 @@ export class BuffMgr {
     static playerBuff: BaseBuff[] = [];
     /** 敌人阵营的buff列表 */
     static enemyBuff: BaseBuff[] = [];
+
     /** 临时buff列表（每回合结束时清空） */
     static tempBuff: BaseBuff[] = [];
     /** 永久生效的buff列表 */
     static permanentBuff: BaseBuff[] = [];
-    /** 按触发条件分类的buff存储（键格式：阵营+触发类型） */
-    static buffs: Map<string, BaseBuff[]> = new Map();
+    /** 按触发条件分类的buff存储（键格式：阵营+技能名称） */
+    static buffs: Map<string, BaseBuff> = new Map();
 
     /**
      * 根据阵营获取对应的buff列表
@@ -83,11 +84,10 @@ export class BuffMgr {
             return;
         }
 
-        let key = role.camp + data.trigger;
+        let key = role.camp + data.name;
         if (!this.buffs.has(key)) {
-            this.buffs.set(key, []);
+            this.buffs.set(key, buff);
         }
-        this.buffs.get(key).push(buff);
     }
 
     /**
@@ -118,33 +118,28 @@ export class BuffMgr {
     static clearByRevive(owner: BaseRole) {
         this.clearTemp();
 
-        // 清理buffs Map中的记录
-        for (const [key, buffs] of this.buffs) {
-            this.buffs.set(key, buffs.filter((b: BaseBuff) => {
-                if (b.owner === owner) {
-                    b.remove();
-                    return false;
-                }
-                return true;
-            }));
+        // 先收集需要删除的键
+        const keysToDelete: string[] = [];
+        for (const [key, buff] of this.buffs) {
+            if (buff.owner === owner) {
+                buff.remove();
+                keysToDelete.push(key);
+            }
         }
+
+        // 批量删除已收集的键
+        keysToDelete.forEach(key => this.buffs.delete(key));
     }
 
     static updateBuffs(key: string) {
         if (this.buffs.has(key)) {
-            const currentBuffs = this.buffs.get(key)!;
-            const toRemove = new Set<BaseBuff>();
+            const currentBuff = this.buffs.get(key)!;
 
-            // 第一阶段：检测需要移除的buff
-            for (const buff of currentBuffs) {
-                if (buff.updateBuffs()) {
-                    toRemove.add(buff);
-                }
-            }
-
-            // 第二阶段：批量移除过期buff
-            if (toRemove.size > 0) {
-                this.buffs.set(key, currentBuffs.filter(b => !toRemove.has(b)));
+            // 直接检查单个buff是否需要更新
+            if (currentBuff.updateBuffs()) {
+                // 需要移除时直接删除整个键值
+                this.buffs.delete(key);
+                currentBuff.remove();
             }
         }
     }

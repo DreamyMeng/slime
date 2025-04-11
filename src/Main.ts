@@ -8,6 +8,12 @@ export async function main() {
 
     await Config.load();
 
+//    new Laya.Image().on(Laya.Event.CLICK, null, () => {
+//         //点击后，打开UI场景示例
+//         console.log("uiBtn");
+//         Laya.Scene.open("scenes/UiMain.ls");
+//     });
+
     // let hero = table.Tbdemo.get(1001);
 
     // console.log(hero.name);
@@ -16,8 +22,8 @@ export async function main() {
     // const test = new EventDispatcherTest();
     // test.runTests();
 
-    const player = new BaseRole().init('player', 110, 90, 1000, ['xiulian']);
-    const enemy = new BaseRole().init('enemy', 150, 30, 800, ['chimei']);
+    const player = new BaseRole().init('player', 110, 90, 1000, ['feixing2','xiaoyue']);
+    const enemy = new BaseRole().init('enemy', 150, 30, 800, ['zaie','zhendi']);
 
     const battle = new Battle(player, enemy);
 

@@ -1,5 +1,5 @@
 // Skill.ts
-import { skill, SkillType, Target } from '../table/schema';
+import { skill, SkillTrigger, SkillType, Target } from '../table/schema';
 import { Battle } from './battle';
 import { BuffMgr } from './buff';
 import { Config } from './config';
@@ -94,6 +94,13 @@ export class SkillMgr {
         return skill;
     }
 
+    // static triggerSkill(owner: BaseRole, type: SkillTrigger) {
+    //     this.getList(owner.camp).forEach(skill => {
+    //         if (skill.data.trigger === type) {
+    //             skill.onTrigger();
+    //         }
+    //     });
+    // }
 }
 /**
  *  技能基类
@@ -117,8 +124,8 @@ export class BaseSkill {
         owner.on(data.trigger.toString(), this, this.onTrigger);
     }
 
-    private onTrigger() {
-        BuffMgr.updateBuffs(this.owner.camp + this.data.trigger.toString());
+    onTrigger() {
+        BuffMgr.updateBuffs(this.owner.camp + this.data.name);
         if (this.checkCondition()) this.trigger();
     }
 

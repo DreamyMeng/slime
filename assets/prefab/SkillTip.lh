@@ -1,0 +1,105 @@
+{
+  "_$ver": 1,
+  "_$id": "3s98mfg2",
+  "_$var": true,
+  "_$runtime": "res://4de063eb-bcca-4f0c-a67e-62e97117ff03",
+  "_$type": "Image",
+  "name": "SkillTip",
+  "x": 360,
+  "y": 640,
+  "width": 720,
+  "height": 1280,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_mouseState": 2,
+  "centerX": 0,
+  "centerY": 0,
+  "color": "#ffffff",
+  "_$child": [
+    {
+      "_$id": "ecyn9419",
+      "_$type": "Image",
+      "name": "Image",
+      "x": 360,
+      "y": 640,
+      "width": 600,
+      "height": 400,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "centerX": 0,
+      "centerY": 0,
+      "skin": "res://260d7a45-b5ca-42fb-abf6-39b869308c6a",
+      "sizeGrid": "25,20,20,23,0",
+      "color": "#78243d"
+    },
+    {
+      "_$id": "3ny13ib3",
+      "_$var": true,
+      "_$type": "Label",
+      "name": "Label",
+      "x": 80,
+      "y": 460,
+      "width": 560,
+      "height": 260,
+      "centerX": 0,
+      "centerY": -50,
+      "text": "回合开始时30%概率对手防御力降低为50%,持续2回合",
+      "fontSize": 32,
+      "color": "rgba(233, 234, 196, 1)",
+      "align": "center",
+      "valign": "middle",
+      "wordWrap": true,
+      "padding": "0,0,0,0"
+    },
+    {
+      "_$id": "jvphpq4p",
+      "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+      "_$var": true,
+      "name": "ok",
+      "active": true,
+      "x": 140,
+      "y": 720,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "3mo5miu3",
+          "color": "#d50c94"
+        },
+        {
+          "_$override": "au8mtcie",
+          "text": "遗忘",
+          "color": "rgba(0, 0, 0, 1)"
+        },
+        {
+          "_$override": "qnb9iybi",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "y6ek77jm",
+      "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+      "_$var": true,
+      "name": "no",
+      "active": true,
+      "x": 440,
+      "y": 720,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "3mo5miu3",
+          "color": "#2dcb7a"
+        },
+        {
+          "_$override": "au8mtcie",
+          "text": "返回",
+          "color": "rgba(0, 0, 0, 1)"
+        },
+        {
+          "_$override": "qnb9iybi",
+          "visible": false
+        }
+      ]
+    }
+  ]
+}

@@ -2,17 +2,20 @@ import { Battle } from "./core/battle";
 import { Config } from "./core/config";
 import { EventDispatcher } from "./core/event";
 import { BaseRole } from "./core/role";
+import { Save } from "./core/save";
 
 export async function main() {
     console.log("Hello, world!");
 
     await Config.load();
 
-//    new Laya.Image().on(Laya.Event.CLICK, null, () => {
-//         //点击后，打开UI场景示例
-//         console.log("uiBtn");
-//         Laya.Scene.open("scenes/UiMain.ls");
-//     });
+    Save.init();// test
+
+    //    new Laya.Image().on(Laya.Event.CLICK, null, () => {
+    //         //点击后，打开UI场景示例
+    //         console.log("uiBtn");
+    //         Laya.Scene.open("scenes/UiMain.ls");
+    //     });
 
     // let hero = table.Tbdemo.get(1001);
 
@@ -22,12 +25,15 @@ export async function main() {
     // const test = new EventDispatcherTest();
     // test.runTests();
 
-    const player = new BaseRole().init('player', 110, 90, 1000, ['feixing2','xiaoyue']);
-    const enemy = new BaseRole().init('enemy', 150, 30, 800, ['zaie','zhendi']);
+    Laya.Scene.open("Scene.ls");
 
-    const battle = new Battle(player, enemy);
-
-    battle.start();
+    // 测试战斗系统
+    /*     const player = new BaseRole().init('player', 110, 90, 1000, ['feixing2', 'xiaoyue']);
+        const enemy = new BaseRole().init('enemy', 150, 30, 800, ['zaie', 'zhendi']);
+    
+        const battle = new Battle(player, enemy);
+    
+        battle.start(); */
 }
 
 class EventDispatcherTest {

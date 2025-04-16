@@ -18,6 +18,16 @@ export class GameLog {
     }
 }
 
+export function delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+export function tweenTo(target: any, props: any, duration: number, ease?: Function | null) {
+    return new Promise((resolve) => {
+        Laya.Tween.to(target, props, duration, ease, Laya.Handler.create(null, resolve));
+    });
+}
+
 /**
  * 数值取整工具函数
  * @param value 需要处理的浮点数
@@ -25,4 +35,32 @@ export class GameLog {
  */
 export function toInt(value: number) {
     return Math.floor(value);
+}
+
+export function toPerStr(value: number): string {
+    const percentage = Math.floor(value * 1000) / 10; // 保留一位小数
+    return `${percentage}%`;
+}
+
+export function getValueStr(num: number): string {
+    const units = [
+        { value: 1e12, symbol: '兆' },  // 万亿
+        { value: 1e8, symbol: '亿' },
+        { value: 1e4, symbol: '万' }
+    ];
+
+    for (const unit of units) {
+        if (num >= unit.value) {
+            const formatted = (num / unit.value).toFixed(2);
+            // 移除末尾无用的零和小数点（如1.00万→1万）
+            return formatted.replace(/\.?0+$/, '') + unit.symbol;
+        }
+    }
+    return num.toString();
+}
+
+// 新增数字转中文方法
+export function numberToChinese(num: number): string {
+    const chineseNumbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    return num.toString().split('').map(n => chineseNumbers[parseInt(n)]).join('');
 }

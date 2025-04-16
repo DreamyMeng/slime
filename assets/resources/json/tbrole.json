@@ -1,9 +1,9 @@
 [
   {
-    "id": 1,
+    "id": "h1",
     "name": "史莱姆",
     "rare": 0,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 0,
     "race": 0,
     "remain": 1,
@@ -15,28 +15,16 @@
     "attack_add": 200,
     "defence_add": 100,
     "health_add": 1000,
-    "ralations": {
-      "chi": 0,
-      "hui": 0,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
-    },
+    "ralations": {},
     "skills": [
       "tunshi1"
     ]
   },
   {
-    "id": 2,
+    "id": "h2",
     "name": "青蛇",
     "rare": 1,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 0,
     "race": 90,
     "remain": 0.9,
@@ -50,26 +38,17 @@
     "health_add": 2000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "lin": 0.5
     },
     "skills": [
       "pofang1"
     ]
   },
   {
-    "id": 3,
+    "id": "h3",
     "name": "白蛇",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -83,26 +62,17 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "lin": 0.5
     },
     "skills": [
       "pofang1"
     ]
   },
   {
-    "id": 4,
+    "id": "h4",
     "name": "蟒蛇",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -116,26 +86,17 @@
     "health_add": 8000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0.6,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "lin": 0.6
     },
     "skills": [
       "chanrao1"
     ]
   },
   {
-    "id": 5,
+    "id": "h5",
     "name": "蛟蛇",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -149,26 +110,18 @@
     "health_add": 17600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.6,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "chanrao1"
     ]
   },
   {
-    "id": 6,
+    "id": "h6",
     "name": "蛟龙",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -182,16 +135,9 @@
     "health_add": 36800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "long1",
@@ -199,10 +145,10 @@
     ]
   },
   {
-    "id": 7,
+    "id": "h7",
     "name": "飞龙",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -216,16 +162,9 @@
     "health_add": 73600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "long1",
@@ -233,10 +172,10 @@
     ]
   },
   {
-    "id": 8,
+    "id": "h8",
     "name": "真龙",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -250,14 +189,8 @@
     "health_add": 153600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.1,
       "zhi": 0.1
     },
@@ -267,10 +200,10 @@
     ]
   },
   {
-    "id": 9,
+    "id": "h9",
     "name": "应龙",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -284,14 +217,9 @@
     "health_add": 153600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.4,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.1,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.15,
       "zhi": 0.1
     },
@@ -301,10 +229,10 @@
     ]
   },
   {
-    "id": 10,
+    "id": "h10",
     "name": "五爪金龙",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 16640,
     "remain": 0.2,
@@ -318,14 +246,8 @@
     "health_add": 307200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.4,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.1,
       "zhi": 0.1
     },
@@ -335,10 +257,10 @@
     ]
   },
   {
-    "id": 11,
+    "id": "h11",
     "name": "青龙",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 34560,
     "remain": 0.1,
@@ -352,14 +274,8 @@
     "health_add": 640000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.4,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.15,
       "zhi": 0.2
     },
@@ -369,10 +285,10 @@
     ]
   },
   {
-    "id": 12,
+    "id": "h12",
     "name": "烛龙",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 35840,
     "remain": 0.1,
@@ -386,14 +302,8 @@
     "health_add": 640000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.15,
       "zhi": 0.1
     },
@@ -403,10 +313,10 @@
     ]
   },
   {
-    "id": 13,
+    "id": "h13",
     "name": "麻雀",
     "rare": 1,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 0,
     "race": 80,
     "remain": 0.9,
@@ -419,27 +329,19 @@
     "defence_add": 200,
     "health_add": 1800,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.5,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "shanbi1"
     ]
   },
   {
-    "id": 14,
+    "id": "h14",
     "name": "鸡",
     "rare": 1,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 0,
     "race": 90,
     "remain": 0.9,
@@ -452,27 +354,19 @@
     "defence_add": 200,
     "health_add": 2000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.4,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "huiji1"
     ]
   },
   {
-    "id": 15,
+    "id": "h15",
     "name": "锦鸡",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 210,
     "remain": 0.8,
@@ -485,27 +379,19 @@
     "defence_add": 400,
     "health_add": 4000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.6,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "huiji1"
     ]
   },
   {
-    "id": 16,
+    "id": "h16",
     "name": "白鹤",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -518,16 +404,9 @@
     "defence_add": 800,
     "health_add": 8000,
     "ralations": {
-      "chi": 0,
       "hui": 0.2,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.5,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -536,10 +415,10 @@
     ]
   },
   {
-    "id": 17,
+    "id": "h17",
     "name": "白鹅",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -554,15 +433,8 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.2,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.5,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "baonu1",
@@ -570,10 +442,10 @@
     ]
   },
   {
-    "id": 18,
+    "id": "h18",
     "name": "金鹰",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -586,17 +458,9 @@
     "defence_add": 1600,
     "health_add": 16000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.5,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "shanbi1",
@@ -604,10 +468,10 @@
     ]
   },
   {
-    "id": 19,
+    "id": "h19",
     "name": "孔雀",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -620,17 +484,9 @@
     "defence_add": 3200,
     "health_add": 35200,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.7,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "shanbi1",
@@ -638,10 +494,10 @@
     ]
   },
   {
-    "id": 20,
+    "id": "h20",
     "name": "大鹏",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -654,27 +510,19 @@
     "defence_add": 3200,
     "health_add": 35200,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.6,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "feixing2"
     ]
   },
   {
-    "id": 21,
+    "id": "h21",
     "name": "毕方",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -687,17 +535,9 @@
     "defence_add": 6400,
     "health_add": 64000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.5,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "shanbi1",
@@ -705,10 +545,10 @@
     ]
   },
   {
-    "id": 22,
+    "id": "h22",
     "name": "鸿鹄",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -721,27 +561,19 @@
     "defence_add": 6400,
     "health_add": 64000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.6,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "shanbi2"
     ]
   },
   {
-    "id": 23,
+    "id": "h23",
     "name": "金翅大鹏",
     "rare": 6,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -754,17 +586,9 @@
     "defence_add": 6400,
     "health_add": 70400,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.7,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "feixing2",
@@ -772,10 +596,10 @@
     ]
   },
   {
-    "id": 24,
+    "id": "h24",
     "name": "凤凰",
     "rare": 7,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -788,16 +612,9 @@
     "defence_add": 14080,
     "health_add": 128000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.7,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -806,10 +623,10 @@
     ]
   },
   {
-    "id": 25,
+    "id": "h25",
     "name": "青鸾",
     "rare": 7,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -822,16 +639,9 @@
     "defence_add": 14080,
     "health_add": 140800,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.6,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -840,10 +650,10 @@
     ]
   },
   {
-    "id": 26,
+    "id": "h26",
     "name": "金乌",
     "rare": 8,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 640,
     "race": 16640,
     "remain": 0.2,
@@ -856,16 +666,9 @@
     "defence_add": 25600,
     "health_add": 256000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.7,
       "zhao": 0.05,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -874,10 +677,10 @@
     ]
   },
   {
-    "id": 27,
+    "id": "h27",
     "name": "朱雀",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 34560,
     "remain": 0.1,
@@ -890,16 +693,9 @@
     "defence_add": 61440,
     "health_add": 614400,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.6,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -908,10 +704,10 @@
     ]
   },
   {
-    "id": 28,
+    "id": "h28",
     "name": "猞猁",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -925,26 +721,18 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.15
     },
     "skills": [
       "siyao"
     ]
   },
   {
-    "id": 29,
+    "id": "h29",
     "name": "老虎",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -958,16 +746,8 @@
     "health_add": 8800,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.15
     },
     "skills": [
       "siyao",
@@ -975,10 +755,10 @@
     ]
   },
   {
-    "id": 30,
+    "id": "h30",
     "name": "黑虎",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -992,16 +772,8 @@
     "health_add": 17600,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.2,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.2
     },
     "skills": [
       "siyao",
@@ -1009,10 +781,10 @@
     ]
   },
   {
-    "id": 31,
+    "id": "h31",
     "name": "吊睛白虎",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -1026,16 +798,8 @@
     "health_add": 35200,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.2,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.2
     },
     "skills": [
       "siyao",
@@ -1043,10 +807,10 @@
     ]
   },
   {
-    "id": 32,
+    "id": "h32",
     "name": "插翅虎",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -1060,16 +824,9 @@
     "health_add": 70400,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.15,
-      "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.15
     },
     "skills": [
       "lizhua",
@@ -1077,10 +834,10 @@
     ]
   },
   {
-    "id": 33,
+    "id": "h33",
     "name": "狴犴",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -1094,15 +851,8 @@
     "health_add": 153600,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -1111,10 +861,10 @@
     ]
   },
   {
-    "id": 34,
+    "id": "h34",
     "name": "穷奇",
     "rare": 8,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 640,
     "race": 16000,
     "remain": 0.2,
@@ -1128,15 +878,9 @@
     "health_add": 307200,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.15,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1145,10 +889,10 @@
     ]
   },
   {
-    "id": 35,
+    "id": "h35",
     "name": "白虎",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 34560,
     "remain": 0.1,
@@ -1162,15 +906,8 @@
     "health_add": 665600,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.2,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -1179,10 +916,10 @@
     ]
   },
   {
-    "id": 36,
+    "id": "h36",
     "name": "乌龟",
     "rare": 1,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 5,
     "race": 90,
     "remain": 0.9,
@@ -1197,25 +934,18 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "yingke"
     ]
   },
   {
-    "id": 37,
+    "id": "h37",
     "name": "海龟",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -1230,25 +960,18 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "yingke"
     ]
   },
   {
-    "id": 38,
+    "id": "h38",
     "name": "巨龟",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 400,
     "remain": 0.7,
@@ -1263,25 +986,18 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "jianjia"
     ]
   },
   {
-    "id": 39,
+    "id": "h39",
     "name": "千年老龟",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 800,
     "remain": 0.6,
@@ -1296,14 +1012,8 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -1312,10 +1022,10 @@
     ]
   },
   {
-    "id": 40,
+    "id": "h40",
     "name": "万年灵龟",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1600,
     "remain": 0.5,
@@ -1330,14 +1040,8 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1346,10 +1050,10 @@
     ]
   },
   {
-    "id": 41,
+    "id": "h41",
     "name": "龟蛇",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3520,
     "remain": 0.4,
@@ -1365,13 +1069,8 @@
       "chi": 0.05,
       "hui": 0.1,
       "lin": 0.15,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1380,10 +1079,10 @@
     ]
   },
   {
-    "id": 42,
+    "id": "h42",
     "name": "龙龟",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 7040,
     "remain": 0.3,
@@ -1398,13 +1097,8 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
       "jiao": 0.1,
       "zhi": 0.1
     },
@@ -1414,10 +1108,10 @@
     ]
   },
   {
-    "id": 43,
+    "id": "h43",
     "name": "玄龟",
     "rare": 8,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 640,
     "race": 15360,
     "remain": 0.2,
@@ -1432,14 +1126,8 @@
     "ralations": {
       "chi": 0.05,
       "hui": 0.1,
-      "lin": 0,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1448,10 +1136,10 @@
     ]
   },
   {
-    "id": 44,
+    "id": "h44",
     "name": "玄武",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 33280,
     "remain": 0.1,
@@ -1467,13 +1155,8 @@
       "chi": 0.05,
       "hui": 0.1,
       "lin": 0.15,
-      "mao": 0,
       "jia": 0.5,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1482,10 +1165,10 @@
     ]
   },
   {
-    "id": 45,
+    "id": "h45",
     "name": "山羊",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -1499,26 +1182,19 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "zhuangji"
     ]
   },
   {
-    "id": 46,
+    "id": "h46",
     "name": "白鹿",
     "rare": 3,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -1532,16 +1208,9 @@
     "health_add": 8400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0.2,
-      "zhi": 0
+      "jiao": 0.2
     },
     "skills": [
       "zhuangji",
@@ -1549,10 +1218,10 @@
     ]
   },
   {
-    "id": 47,
+    "id": "h47",
     "name": "葱聋",
     "rare": 4,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 40,
     "race": 920,
     "remain": 0.6,
@@ -1566,16 +1235,9 @@
     "health_add": 16800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0.2,
-      "zhi": 0
+      "jiao": 0.2
     },
     "skills": [
       "zhuangji",
@@ -1583,10 +1245,10 @@
     ]
   },
   {
-    "id": 48,
+    "id": "h48",
     "name": "五色鹿",
     "rare": 5,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 80,
     "race": 1920,
     "remain": 0.5,
@@ -1600,13 +1262,7 @@
     "health_add": 44800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.2,
       "zhi": 0.2
@@ -1617,10 +1273,10 @@
     ]
   },
   {
-    "id": 49,
+    "id": "h49",
     "name": "四不像",
     "rare": 6,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 160,
     "race": 4160,
     "remain": 0.4,
@@ -1634,13 +1290,7 @@
     "health_add": 67200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.2,
       "zhi": 0.1
@@ -1650,10 +1300,10 @@
     ]
   },
   {
-    "id": 50,
+    "id": "h50",
     "name": "白泽",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -1667,13 +1317,7 @@
     "health_add": 140800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.1,
       "zhi": 0.2
@@ -1684,10 +1328,10 @@
     ]
   },
   {
-    "id": 51,
+    "id": "h51",
     "name": "獬豸",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 16000,
     "remain": 0.2,
@@ -1701,12 +1345,7 @@
     "health_add": 294400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
       "jiao": 0.1,
       "zhi": 0.2
@@ -1717,10 +1356,10 @@
     ]
   },
   {
-    "id": 52,
+    "id": "h52",
     "name": "麒麟",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 33280,
     "remain": 0.1,
@@ -1734,13 +1373,7 @@
     "health_add": 614400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.4,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.2,
       "zhi": 0.2
@@ -1751,10 +1384,10 @@
     ]
   },
   {
-    "id": 53,
+    "id": "h53",
     "name": "大象",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 460,
     "remain": 0.7,
@@ -1768,16 +1401,8 @@
     "health_add": 10400,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
       "luo": 0.5,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0.1,
-      "jiao": 0,
-      "zhi": 0
+      "ti": 0.1
     },
     "skills": [
       "chanrao1",
@@ -1785,10 +1410,10 @@
     ]
   },
   {
-    "id": 54,
+    "id": "h54",
     "name": "白象",
     "rare": 5,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 80,
     "race": 1920,
     "remain": 0.5,
@@ -1802,15 +1427,8 @@
     "health_add": 41600,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0,
       "luo": 0.5,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1819,10 +1437,10 @@
     ]
   },
   {
-    "id": 55,
+    "id": "h55",
     "name": "野马",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 210,
     "remain": 0.8,
@@ -1836,26 +1454,19 @@
     "health_add": 4400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.25,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0.1,
-      "jiao": 0,
-      "zhi": 0
+      "ti": 0.1
     },
     "skills": [
       "mati"
     ]
   },
   {
-    "id": 56,
+    "id": "h56",
     "name": "白马",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -1869,16 +1480,9 @@
     "health_add": 9200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.25,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0.1,
-      "jiao": 0,
-      "zhi": 0
+      "ti": 0.1
     },
     "skills": [
       "mati",
@@ -1886,10 +1490,10 @@
     ]
   },
   {
-    "id": 57,
+    "id": "h57",
     "name": "千里马",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -1903,16 +1507,9 @@
     "health_add": 19200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.25,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0.1,
-      "jiao": 0,
-      "zhi": 0
+      "ti": 0.1
     },
     "skills": [
       "mati",
@@ -1920,10 +1517,10 @@
     ]
   },
   {
-    "id": 58,
+    "id": "h58",
     "name": "飞马",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -1937,16 +1534,10 @@
     "health_add": 38400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.25,
-      "jia": 0,
       "luo": 0.25,
       "yu": 0.15,
-      "zhao": 0,
-      "ti": 0.1,
-      "jiao": 0,
-      "zhi": 0
+      "ti": 0.1
     },
     "skills": [
       "shanbi1",
@@ -1954,10 +1545,10 @@
     ]
   },
   {
-    "id": 59,
+    "id": "h59",
     "name": "鹿蜀",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -1971,15 +1562,10 @@
     "health_add": 76800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.25,
-      "jia": 0,
       "luo": 0.25,
       "yu": 0.15,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -1988,10 +1574,10 @@
     ]
   },
   {
-    "id": 60,
+    "id": "h60",
     "name": "龙马",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 7680,
     "remain": 0.3,
@@ -2005,15 +1591,9 @@
     "health_add": 153600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.3,
       "mao": 0.25,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2022,10 +1602,10 @@
     ]
   },
   {
-    "id": 61,
+    "id": "h61",
     "name": "草泥马",
     "rare": 8,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 640,
     "race": 16640,
     "remain": 0.2,
@@ -2039,15 +1619,8 @@
     "health_add": 256000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2056,10 +1629,10 @@
     ]
   },
   {
-    "id": 62,
+    "id": "h62",
     "name": "黄牛",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 400,
     "remain": 0.7,
@@ -2073,26 +1646,20 @@
     "health_add": 9200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.1,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "chongzhuang"
     ]
   },
   {
-    "id": 63,
+    "id": "h63",
     "name": "蛮牛",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 800,
     "remain": 0.6,
@@ -2106,16 +1673,9 @@
     "health_add": 19200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.4,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "chongzhuang",
@@ -2123,10 +1683,10 @@
     ]
   },
   {
-    "id": 64,
+    "id": "h64",
     "name": "撼地神牛",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -2140,13 +1700,8 @@
     "health_add": 38400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.1,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.1,
       "zhi": 0.15
@@ -2157,10 +1712,10 @@
     ]
   },
   {
-    "id": 65,
+    "id": "h65",
     "name": "五色神牛",
     "rare": 6,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -2174,13 +1729,8 @@
     "health_add": 83200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.1,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.1,
       "zhi": 0.15
@@ -2191,10 +1741,10 @@
     ]
   },
   {
-    "id": 66,
+    "id": "h66",
     "name": "夔牛",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 7680,
     "remain": 0.3,
@@ -2208,15 +1758,9 @@
     "health_add": 153600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.1,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.05,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2225,10 +1769,10 @@
     ]
   },
   {
-    "id": 67,
+    "id": "h67",
     "name": "青牛",
     "rare": 8,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 640,
     "race": 16640,
     "remain": 0.2,
@@ -2242,13 +1786,8 @@
     "health_add": 307200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.1,
-      "jia": 0,
       "luo": 0.25,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
       "jiao": 0.1,
       "zhi": 0.15
@@ -2259,10 +1798,10 @@
     ]
   },
   {
-    "id": 68,
+    "id": "h68",
     "name": "貔貅",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 7680,
     "remain": 0.3,
@@ -2276,14 +1815,9 @@
     "health_add": 153600,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.3,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.1,
       "zhao": 0.1,
-      "ti": 0,
       "jiao": 0.1,
       "zhi": 0.1
     },
@@ -2293,10 +1827,10 @@
     ]
   },
   {
-    "id": 69,
+    "id": "h69",
     "name": "混沌",
     "rare": 8,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 640,
     "race": 15360,
     "remain": 0.2,
@@ -2310,15 +1844,8 @@
     "health_add": 332800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2327,10 +1854,10 @@
     ]
   },
   {
-    "id": 70,
+    "id": "h70",
     "name": "梼杌",
     "rare": 8,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 640,
     "race": 15360,
     "remain": 0.2,
@@ -2344,15 +1871,8 @@
     "health_add": 332800,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2361,10 +1881,10 @@
     ]
   },
   {
-    "id": 71,
+    "id": "h71",
     "name": "饕餮",
     "rare": 8,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 640,
     "race": 15360,
     "remain": 0.2,
@@ -2378,14 +1898,8 @@
     "health_add": 332800,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
       "jiao": 0.1,
       "zhi": 0.1
     },
@@ -2395,10 +1909,10 @@
     ]
   },
   {
-    "id": 72,
+    "id": "h72",
     "name": "金丝猴",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -2412,15 +1926,8 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2429,10 +1936,10 @@
     ]
   },
   {
-    "id": 73,
+    "id": "h73",
     "name": "猕猴",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 400,
     "remain": 0.7,
@@ -2446,15 +1953,8 @@
     "health_add": 8000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2462,10 +1962,10 @@
     ]
   },
   {
-    "id": 74,
+    "id": "h74",
     "name": "山魈",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 840,
     "remain": 0.6,
@@ -2479,15 +1979,8 @@
     "health_add": 16000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2496,10 +1989,10 @@
     ]
   },
   {
-    "id": 75,
+    "id": "h75",
     "name": "通臂猿",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1680,
     "remain": 0.5,
@@ -2513,15 +2006,8 @@
     "health_add": 32000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2530,10 +2016,10 @@
     ]
   },
   {
-    "id": 76,
+    "id": "h76",
     "name": "狌狌",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3520,
     "remain": 0.4,
@@ -2547,15 +2033,8 @@
     "health_add": 64000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2564,10 +2043,10 @@
     ]
   },
   {
-    "id": 77,
+    "id": "h77",
     "name": "朱厌",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 7040,
     "remain": 0.3,
@@ -2581,15 +2060,8 @@
     "health_add": 128000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2598,10 +2070,10 @@
     ]
   },
   {
-    "id": 78,
+    "id": "h78",
     "name": "通臂猿猴",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 16000,
     "remain": 0.2,
@@ -2615,15 +2087,8 @@
     "health_add": 332800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2632,10 +2097,10 @@
     ]
   },
   {
-    "id": 79,
+    "id": "h79",
     "name": "灵明石猴",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 16000,
     "remain": 0.2,
@@ -2649,15 +2114,8 @@
     "health_add": 307200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2666,10 +2124,10 @@
     ]
   },
   {
-    "id": 80,
+    "id": "h80",
     "name": "赤尻马猴",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 16000,
     "remain": 0.2,
@@ -2683,15 +2141,8 @@
     "health_add": 307200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2700,10 +2151,10 @@
     ]
   },
   {
-    "id": 81,
+    "id": "h81",
     "name": "六耳猕猴",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 16000,
     "remain": 0.2,
@@ -2717,15 +2168,8 @@
     "health_add": 281600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2734,10 +2178,10 @@
     ]
   },
   {
-    "id": 82,
+    "id": "h82",
     "name": "狐狸",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -2751,15 +2195,8 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -2768,10 +2205,10 @@
     ]
   },
   {
-    "id": 83,
+    "id": "h83",
     "name": "白狐",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -2785,15 +2222,8 @@
     "health_add": 8000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -2802,10 +2232,10 @@
     ]
   },
   {
-    "id": 84,
+    "id": "h84",
     "name": "妖狐",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 840,
     "remain": 0.6,
@@ -2819,15 +2249,8 @@
     "health_add": 16000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -2836,10 +2259,10 @@
     ]
   },
   {
-    "id": 85,
+    "id": "h85",
     "name": "三尾妖狐",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -2853,15 +2276,8 @@
     "health_add": 33600,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2870,10 +2286,10 @@
     ]
   },
   {
-    "id": 86,
+    "id": "h86",
     "name": "六尾妖狐",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3680,
     "remain": 0.4,
@@ -2887,15 +2303,8 @@
     "health_add": 67200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.55,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -2904,10 +2313,10 @@
     ]
   },
   {
-    "id": 87,
+    "id": "h87",
     "name": "九尾妖狐",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 7680,
     "remain": 0.3,
@@ -2921,15 +2330,8 @@
     "health_add": 134400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.55,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.25
     },
     "skills": [
@@ -2938,10 +2340,10 @@
     ]
   },
   {
-    "id": 88,
+    "id": "h88",
     "name": "鲸鱼",
     "rare": 4,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -2955,15 +2357,8 @@
     "health_add": 32000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.6,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -2971,10 +2366,10 @@
     ]
   },
   {
-    "id": 89,
+    "id": "h89",
     "name": "瀚海巨鲸",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3680,
     "remain": 0.4,
@@ -2988,15 +2383,8 @@
     "health_add": 192000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.6,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3005,10 +2393,10 @@
     ]
   },
   {
-    "id": 90,
+    "id": "h90",
     "name": "兔",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 190,
     "remain": 0.8,
@@ -3022,16 +2410,8 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "dengying",
@@ -3039,10 +2419,10 @@
     ]
   },
   {
-    "id": 91,
+    "id": "h91",
     "name": "讹兽",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -3056,15 +2436,8 @@
     "health_add": 8000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -3073,10 +2446,10 @@
     ]
   },
   {
-    "id": 92,
+    "id": "h92",
     "name": "犼",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -3090,16 +2463,8 @@
     "health_add": 16000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "tunshi1",
@@ -3107,10 +2472,10 @@
     ]
   },
   {
-    "id": 93,
+    "id": "h93",
     "name": "犰狳",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -3123,16 +2488,9 @@
     "defence_add": 3200,
     "health_add": 32000,
     "ralations": {
-      "chi": 0,
       "hui": 0.1,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -3140,10 +2498,10 @@
     ]
   },
   {
-    "id": 94,
+    "id": "h94",
     "name": "金毛犼",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3680,
     "remain": 0.4,
@@ -3157,15 +2515,8 @@
     "health_add": 64000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -3174,10 +2525,10 @@
     ]
   },
   {
-    "id": 95,
+    "id": "h95",
     "name": "玉兔",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 7680,
     "remain": 0.3,
@@ -3191,15 +2542,8 @@
     "health_add": 115200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -3208,10 +2552,10 @@
     ]
   },
   {
-    "id": 96,
+    "id": "h96",
     "name": "野狗",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 200,
     "remain": 0.8,
@@ -3225,15 +2569,8 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3241,10 +2578,10 @@
     ]
   },
   {
-    "id": 97,
+    "id": "h97",
     "name": "野狼",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 400,
     "remain": 0.7,
@@ -3258,15 +2595,8 @@
     "health_add": 8000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3275,10 +2605,10 @@
     ]
   },
   {
-    "id": 98,
+    "id": "h98",
     "name": "狼王",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 840,
     "remain": 0.6,
@@ -3292,15 +2622,8 @@
     "health_add": 16000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3309,10 +2632,10 @@
     ]
   },
   {
-    "id": 99,
+    "id": "h99",
     "name": "哮月狼",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -3326,15 +2649,8 @@
     "health_add": 32000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3343,10 +2659,10 @@
     ]
   },
   {
-    "id": 100,
+    "id": "h100",
     "name": "银月狼王",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3520,
     "remain": 0.4,
@@ -3360,15 +2676,8 @@
     "health_add": 64000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3377,10 +2686,10 @@
     ]
   },
   {
-    "id": 101,
+    "id": "h101",
     "name": "哮天犬",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 7360,
     "remain": 0.3,
@@ -3394,15 +2703,8 @@
     "health_add": 128000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -3411,10 +2713,10 @@
     ]
   },
   {
-    "id": 102,
+    "id": "h102",
     "name": "谛听",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 7360,
     "remain": 0.3,
@@ -3428,14 +2730,9 @@
     "health_add": 128000,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
       "lin": 0.2,
       "mao": 0.2,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.05,
       "zhi": 0.2
     },
@@ -3445,10 +2742,10 @@
     ]
   },
   {
-    "id": 103,
+    "id": "h103",
     "name": "食日天狗",
     "rare": 8,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 640,
     "race": 16640,
     "remain": 0.2,
@@ -3462,15 +2759,8 @@
     "health_add": 281600,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -3479,10 +2769,10 @@
     ]
   },
   {
-    "id": 104,
+    "id": "h104",
     "name": "家猪",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 190,
     "remain": 0.8,
@@ -3496,15 +2786,9 @@
     "health_add": 4800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3512,10 +2796,10 @@
     ]
   },
   {
-    "id": 105,
+    "id": "h105",
     "name": "野猪",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -3529,15 +2813,9 @@
     "health_add": 9600,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3546,10 +2824,10 @@
     ]
   },
   {
-    "id": 106,
+    "id": "h106",
     "name": "狸力",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -3563,15 +2841,9 @@
     "health_add": 20800,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3580,10 +2852,10 @@
     ]
   },
   {
-    "id": 107,
+    "id": "h107",
     "name": "当康",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -3597,15 +2869,9 @@
     "health_add": 41600,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3614,10 +2880,10 @@
     ]
   },
   {
-    "id": 108,
+    "id": "h108",
     "name": "凡人",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 220,
     "remain": 0.8,
@@ -3631,15 +2897,9 @@
     "health_add": 4000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -3647,10 +2907,10 @@
     ]
   },
   {
-    "id": 109,
+    "id": "h109",
     "name": "武人",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -3664,15 +2924,9 @@
     "health_add": 8000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -3680,10 +2934,10 @@
     ]
   },
   {
-    "id": 110,
+    "id": "h110",
     "name": "修士",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -3697,15 +2951,9 @@
     "health_add": 16000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -3713,10 +2961,10 @@
     ]
   },
   {
-    "id": 111,
+    "id": "h111",
     "name": "真人",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1760,
     "remain": 0.5,
@@ -3730,15 +2978,9 @@
     "health_add": 32000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -3746,10 +2988,10 @@
     ]
   },
   {
-    "id": 112,
+    "id": "h112",
     "name": "地仙",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3520,
     "remain": 0.4,
@@ -3763,15 +3005,9 @@
     "health_add": 64000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.25
     },
     "skills": [
@@ -3779,10 +3015,10 @@
     ]
   },
   {
-    "id": 113,
+    "id": "h113",
     "name": "真仙",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 7040,
     "remain": 0.3,
@@ -3796,15 +3032,9 @@
     "health_add": 128000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.25
     },
     "skills": [
@@ -3812,10 +3042,10 @@
     ]
   },
   {
-    "id": 114,
+    "id": "h114",
     "name": "金仙",
     "rare": 8,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 640,
     "race": 14080,
     "remain": 0.2,
@@ -3829,15 +3059,9 @@
     "health_add": 256000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.25
     },
     "skills": [
@@ -3845,10 +3069,10 @@
     ]
   },
   {
-    "id": 115,
+    "id": "h115",
     "name": "大罗金仙",
     "rare": 9,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 1280,
     "race": 28160,
     "remain": 0.1,
@@ -3862,15 +3086,9 @@
     "health_add": 512000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.3
     },
     "skills": [
@@ -3878,10 +3096,10 @@
     ]
   },
   {
-    "id": 116,
+    "id": "h116",
     "name": "狮子",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -3895,16 +3113,8 @@
     "health_add": 8800,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.15
     },
     "skills": [
       "shihou",
@@ -3912,10 +3122,10 @@
     ]
   },
   {
-    "id": 117,
+    "id": "h117",
     "name": "避水金睛兽",
     "rare": 4,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -3929,14 +3139,9 @@
     "health_add": 17600,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
       "lin": 0.3,
       "mao": 0.15,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
       "jiao": 0.1,
       "zhi": 0.05
     },
@@ -3946,10 +3151,10 @@
     ]
   },
   {
-    "id": 118,
+    "id": "h118",
     "name": "青狮",
     "rare": 5,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -3963,15 +3168,8 @@
     "health_add": 35200,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -3980,10 +3178,10 @@
     ]
   },
   {
-    "id": 119,
+    "id": "h119",
     "name": "雪狮",
     "rare": 6,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 160,
     "race": 3680,
     "remain": 0.4,
@@ -3997,15 +3195,8 @@
     "health_add": 70400,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -4014,10 +3205,10 @@
     ]
   },
   {
-    "id": 120,
+    "id": "h120",
     "name": "九头狮子",
     "rare": 7,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -4031,15 +3222,8 @@
     "health_add": 140800,
     "ralations": {
       "chi": 0.2,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.5,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -4048,10 +3232,10 @@
     ]
   },
   {
-    "id": 121,
+    "id": "h121",
     "name": "猫",
     "rare": 2,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 10,
     "race": 190,
     "remain": 0.8,
@@ -4065,15 +3249,8 @@
     "health_add": 3200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4082,10 +3259,10 @@
     ]
   },
   {
-    "id": 122,
+    "id": "h122",
     "name": "黑猫",
     "rare": 3,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 20,
     "race": 380,
     "remain": 0.7,
@@ -4099,15 +3276,8 @@
     "health_add": 6400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -4116,10 +3286,10 @@
     ]
   },
   {
-    "id": 123,
+    "id": "h123",
     "name": "招财猫",
     "rare": 4,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 40,
     "race": 760,
     "remain": 0.6,
@@ -4133,15 +3303,8 @@
     "health_add": 12800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -4149,10 +3312,10 @@
     ]
   },
   {
-    "id": 124,
+    "id": "h124",
     "name": "九命猫",
     "rare": 5,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -4166,15 +3329,8 @@
     "health_add": 22400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -4183,10 +3339,10 @@
     ]
   },
   {
-    "id": 125,
+    "id": "h125",
     "name": "河蟹",
     "rare": 6,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 160,
     "race": 3360,
     "remain": 0.4,
@@ -4199,17 +3355,7 @@
     "defence_add": 8320,
     "health_add": 57600,
     "ralations": {
-      "chi": 0,
-      "hui": 0,
-      "lin": 0,
-      "mao": 0,
-      "jia": 0.9,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "jia": 0.9
     },
     "skills": [
       "hexie",
@@ -4217,10 +3363,10 @@
     ]
   },
   {
-    "id": 126,
+    "id": "h126",
     "name": "熊",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 420,
     "remain": 0.7,
@@ -4234,15 +3380,8 @@
     "health_add": 9200,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4251,10 +3390,10 @@
     ]
   },
   {
-    "id": 127,
+    "id": "h127",
     "name": "黑熊",
     "rare": 4,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 40,
     "race": 840,
     "remain": 0.6,
@@ -4268,15 +3407,8 @@
     "health_add": 18400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4285,10 +3417,10 @@
     ]
   },
   {
-    "id": 128,
+    "id": "h128",
     "name": "熊猫",
     "rare": 5,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 80,
     "race": 2080,
     "remain": 0.5,
@@ -4302,15 +3434,8 @@
     "health_add": 36800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.45,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.2
     },
     "skills": [
@@ -4319,10 +3444,10 @@
     ]
   },
   {
-    "id": 129,
+    "id": "h129",
     "name": "鲤鱼",
     "rare": 2,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 10,
     "race": 160,
     "remain": 0.8,
@@ -4335,27 +3460,17 @@
     "defence_add": 360,
     "health_add": 3600,
     "ralations": {
-      "chi": 0,
-      "hui": 0,
-      "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "lin": 0.5
     },
     "skills": [
       "paopao"
     ]
   },
   {
-    "id": 130,
+    "id": "h130",
     "name": "锦鲤",
     "rare": 3,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -4368,16 +3483,7 @@
     "defence_add": 720,
     "health_add": 7200,
     "ralations": {
-      "chi": 0,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4385,10 +3491,10 @@
     ]
   },
   {
-    "id": 131,
+    "id": "h131",
     "name": "金龙鱼",
     "rare": 4,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 40,
     "race": 880,
     "remain": 0.6,
@@ -4401,16 +3507,7 @@
     "defence_add": 1600,
     "health_add": 16000,
     "ralations": {
-      "chi": 0,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4419,10 +3516,10 @@
     ]
   },
   {
-    "id": 132,
+    "id": "h132",
     "name": "鱼龙",
     "rare": 5,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 80,
     "race": 1840,
     "remain": 0.5,
@@ -4435,16 +3532,7 @@
     "defence_add": 3520,
     "health_add": 32000,
     "ralations": {
-      "chi": 0,
-      "hui": 0,
       "lin": 0.5,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4453,10 +3541,10 @@
     ]
   },
   {
-    "id": 133,
+    "id": "h133",
     "name": "鲲",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3840,
     "remain": 0.4,
@@ -4469,16 +3557,7 @@
     "defence_add": 9600,
     "health_add": 128000,
     "ralations": {
-      "chi": 0,
-      "hui": 0,
       "lin": 0.8,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4486,10 +3565,10 @@
     ]
   },
   {
-    "id": 134,
+    "id": "h134",
     "name": "鲲鹏",
     "rare": 7,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 320,
     "race": 8000,
     "remain": 0.3,
@@ -4503,15 +3582,9 @@
     "health_add": 192000,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.2,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
       "yu": 0.35,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4520,10 +3593,10 @@
     ]
   },
   {
-    "id": 135,
+    "id": "h135",
     "name": "鳄鱼",
     "rare": 3,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -4537,16 +3610,9 @@
     "health_add": 8800,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
       "lin": 0.2,
-      "mao": 0,
       "jia": 0.25,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
-      "zhi": 0
+      "zhao": 0.1
     },
     "skills": [
       "siyao1",
@@ -4554,10 +3620,10 @@
     ]
   },
   {
-    "id": 136,
+    "id": "h136",
     "name": "猪婆龙",
     "rare": 6,
-    "quality_type": 1,
+    "quality_type": "ling",
     "quality": 160,
     "race": 3680,
     "remain": 0.4,
@@ -4571,15 +3637,9 @@
     "health_add": 70400,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
       "lin": 0.2,
-      "mao": 0,
       "jia": 0.25,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -4588,10 +3648,10 @@
     ]
   },
   {
-    "id": 137,
+    "id": "h137",
     "name": "老鼠",
     "rare": 1,
-    "quality_type": 0,
+    "quality_type": "none",
     "quality": 0,
     "race": 70,
     "remain": 0.9,
@@ -4605,15 +3665,8 @@
     "health_add": 1400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.3,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.05
     },
     "skills": [
@@ -4621,10 +3674,10 @@
     ]
   },
   {
-    "id": 138,
+    "id": "h138",
     "name": "寻宝鼠",
     "rare": 2,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 10,
     "race": 180,
     "remain": 0.8,
@@ -4638,15 +3691,8 @@
     "health_add": 2800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.3,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -4655,10 +3701,10 @@
     ]
   },
   {
-    "id": 139,
+    "id": "h139",
     "name": "锦毛鼠",
     "rare": 3,
-    "quality_type": 2,
+    "quality_type": "xian",
     "quality": 20,
     "race": 440,
     "remain": 0.7,
@@ -4672,15 +3718,8 @@
     "health_add": 6400,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.3,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.15
     },
     "skills": [
@@ -4689,10 +3728,10 @@
     ]
   },
   {
-    "id": 140,
+    "id": "h140",
     "name": "平头哥",
     "rare": 4,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 40,
     "race": 960,
     "remain": 0.6,
@@ -4706,15 +3745,8 @@
     "health_add": 20800,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.3,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.1
     },
     "skills": [
@@ -4723,10 +3755,10 @@
     ]
   },
   {
-    "id": 141,
+    "id": "h141",
     "name": "牛魔王",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 25600,
     "remain": 0.1,
@@ -4740,16 +3772,9 @@
     "health_add": 0,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
       "lin": 0.4,
-      "mao": 0,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
-      "zhao": 0,
       "ti": 0.1,
-      "jiao": 0.1,
-      "zhi": 0
+      "jiao": 0.1
     },
     "skills": [
       "chongzhuang",
@@ -4761,10 +3786,10 @@
     ]
   },
   {
-    "id": 142,
+    "id": "h142",
     "name": "妲己",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 30720,
     "remain": 0.1,
@@ -4778,15 +3803,8 @@
     "health_add": 0,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.55,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.3
     },
     "skills": [
@@ -4799,10 +3817,10 @@
     ]
   },
   {
-    "id": 143,
+    "id": "h143",
     "name": "哪吒",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 28160,
     "remain": 0.1,
@@ -4816,15 +3834,9 @@
     "health_add": 0,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.3
     },
     "skills": [
@@ -4840,10 +3852,10 @@
     ]
   },
   {
-    "id": 144,
+    "id": "h144",
     "name": "杨戬",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 28160,
     "remain": 0.1,
@@ -4857,15 +3869,9 @@
     "health_add": 0,
     "ralations": {
       "chi": 0.1,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.05,
-      "jia": 0,
       "luo": 0.3,
-      "yu": 0,
       "zhao": 0.15,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.3
     },
     "skills": [
@@ -4877,10 +3883,10 @@
     ]
   },
   {
-    "id": 145,
+    "id": "h145",
     "name": "孙悟空",
     "rare": 9,
-    "quality_type": 3,
+    "quality_type": "shen",
     "quality": 1280,
     "race": 32000,
     "remain": 0.1,
@@ -4894,15 +3900,8 @@
     "health_add": 0,
     "ralations": {
       "chi": 0.15,
-      "hui": 0,
-      "lin": 0,
       "mao": 0.4,
-      "jia": 0,
-      "luo": 0,
-      "yu": 0,
       "zhao": 0.1,
-      "ti": 0,
-      "jiao": 0,
       "zhi": 0.35
     },
     "skills": [

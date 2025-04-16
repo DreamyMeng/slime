@@ -1,10 +1,11 @@
 import { SkillTrigger, SkillType } from "../table/schema";
+import { RoleView } from "../ui/RoleView";
 import { Battle } from "./battle";
 import { BuffMgr } from "./buff";
 import { Config } from "./config";
 import { EventDispatcher } from "./event";
 import { SkillMgr } from "./skill";
-import { GameLog, toInt } from "./utils";
+import { delay, GameLog, toInt, tweenTo } from "./utils";
 
 export class BaseRole extends EventDispatcher {
     camp: string;
@@ -15,11 +16,12 @@ export class BaseRole extends EventDispatcher {
     hurt: number = 0; // 造成伤害的倍率
     bear: number = 0; // 承受伤害的倍率
 
-    constructor() {
+    constructor(camp: string, protected view: RoleView) {
         super();
-
+        this.camp = camp;
         this.health = new Health((cur, per) => {
             console.log(this.camp, ' health remain:', cur, per);
+            view.hpBar?.setValue(per);
         });
         this.attack = new Attribute((cur, max) => {
             console.log(this.camp, ' attack change:', cur - max, ' remian:', cur);
@@ -27,11 +29,14 @@ export class BaseRole extends EventDispatcher {
         this.defence = new Attribute((cur, max) => {
             console.log(this.camp, ' defence change:', cur - max, ' remian:', cur);
         });
-
     }
 
-    init(camp: string, attack: number, defence: number, health: number, skills: string[]): BaseRole {
-        this.camp = camp;
+    clear(): void {
+        this.health.reset();
+        this.offAll(); // 移除所有事件监听
+    }
+
+    init(attack: number, defence: number, health: number, skills: string[]): void {
         this.attack.init(attack);
         this.defence.init(defence);
         this.health.init(health);
@@ -45,8 +50,6 @@ export class BaseRole extends EventDispatcher {
                 console.log(`Skill ${skill} not found!`);
             }
         }
-
-        return this;
     }
 
     async round(target: BaseRole): Promise<void> {
@@ -68,8 +71,25 @@ export class BaseRole extends EventDispatcher {
         await this.attackAction(target);
     }
 
-    async attackAction(target: BaseRole): Promise<void> {
+    // async attackAnimation(func: Function): Promise<void> {
+    //     let owner = this.view.owner;
+    //     owner.parent.setChildIndex(owner, owner.parent.numChildren - 1);
+    //     await tweenTo(
+    //         owner,
+    //         { x: this.target.view.original_x, y: this.target.view.original_y },
+    //         200,
+    //         Laya.Ease.strongIn,
+    //     );
+    //     func();
+    //     await tweenTo(
+    //         owner,
+    //         { x: this.view.original_x, y: this.view.original_y },
+    //         200,
+    //         Laya.Ease.strongOut
+    //     );
+    // }
 
+    async attackAction(target: BaseRole): Promise<void> {
         if (BuffMgr.is(this, SkillType.abandon)) { console.log(`${this.camp} abandon!`); return; }
         if (BuffMgr.is(target, SkillType.miss)) {
             console.log(`${target.camp} miss!`);
@@ -81,15 +101,26 @@ export class BaseRole extends EventDispatcher {
             target = target.target;
         }
 
+        let owner = this.view.owner;
+        owner.parent.setChildIndex(owner, owner.parent.numChildren - 1);
+        this.view.play_anim(this.camp);
+        await delay(200);
         // damage action
+        // await this.attackAnimation(() => {
         Battle.damage = toInt(target.getDamage(this.attack.value) * (1 + this.hurt) * (1 + target.bear));
         GameLog.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
         target.takeDamage(Battle.damage);
-        // await this.dispatchAsync(SkillTrigger.attacked.toString(), role, target);
+        // });
 
         await this.dispatchAsync(SkillTrigger.attacked.toString());
         await target.dispatchAsync(SkillTrigger.hitted.toString());
     }
+
+    // damage_action() {
+    //     Battle.damage = toInt(target.getDamage(this.attack.value) * (1 + this.hurt) * (1 + target.bear));
+    //     GameLog.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
+    //     target.takeDamage(Battle.damage);
+    // }
 
     getDamage(damage: number): number {
         return Math.max(0, damage - this.defence.value);

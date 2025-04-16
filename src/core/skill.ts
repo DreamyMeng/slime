@@ -23,7 +23,7 @@ export class ProbabilityCondition implements TriggerCondition {
     constructor(protected data: skill) { }
 
     check(_role: BaseRole): boolean {
-        var random = Math.random();
+        let random = Math.random();
         console.log("random: ", random, "probability: ", this.data.rate);
         return random <= this.data.rate;
     }
@@ -92,6 +92,11 @@ export class SkillMgr {
         }
         this.getList(owner.camp).push(skill);
         return skill;
+    }
+
+    static clear() {
+        this.playerSkills.length = 0;
+        this.enemySkills.length = 0;
     }
 
     // static triggerSkill(owner: BaseRole, type: SkillTrigger) {

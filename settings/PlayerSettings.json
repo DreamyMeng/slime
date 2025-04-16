@@ -2,7 +2,9 @@
   "resolution": {
     "designWidth": 720,
     "designHeight": 1280,
-    "scaleMode": "fixedwidth",
+    "scaleMode": "fixedauto",
+    "alignV": "middle",
+    "alignH": "center",
     "screenMode": "vertical",
     "backgroundColor": "rgba(0, 0, 0, 1)"
   },
@@ -15,5 +17,6 @@
   "splash": {
     "enabled": false,
     "fit": "center"
-  }
+  },
+  "stat": true
 }

@@ -131,6 +131,14 @@ export class BuffMgr {
         keysToDelete.forEach(key => this.buffs.delete(key));
     }
 
+    static clear(): void {
+        this.playerBuff.length = 0;
+        this.enemyBuff.length = 0;
+        this.tempBuff.length = 0;
+        this.permanentBuff.length = 0;
+        this.buffs.clear();
+    }
+
     static updateBuffs(key: string) {
         if (this.buffs.has(key)) {
             const currentBuff = this.buffs.get(key)!;

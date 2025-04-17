@@ -16,7 +16,7 @@ export class BaseRole extends EventDispatcher {
     hurt: number = 0; // 造成伤害的倍率
     bear: number = 0; // 承受伤害的倍率
 
-    constructor(camp: string, protected view: RoleView) {
+    constructor(camp: string, public view: RoleView) {
         super();
         this.camp = camp;
         this.health = new Health((cur, per) => {

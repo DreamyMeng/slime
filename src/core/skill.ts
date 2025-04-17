@@ -290,7 +290,7 @@ export class GetSkill extends BaseSkill {
             let ownedSkills = SkillMgr.getList(target.camp);
 
             // 获取未拥有的技能
-            const newSkills = this.getNewSkills(allSkills, ownedSkills, value);
+            const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
 
             // 创建并添加新技能
             newSkills.forEach(skillData => {
@@ -301,7 +301,7 @@ export class GetSkill extends BaseSkill {
     }
 
     /** 从全部技能中筛选未拥有的 */
-    private getNewSkills(all: skill[], owned: BaseSkill[], count: number): skill[] {
+    static getNewSkills(all: skill[], owned: BaseSkill[], count: number): skill[] {
         const ownedIds = new Set(owned.map(s => s.data.id));
         const available = all.filter(s => !ownedIds.has(s.id));
 
@@ -309,8 +309,8 @@ export class GetSkill extends BaseSkill {
         return this.getRandomSkills(available, count);
     }
 
-    /** 复用ban类的随机选择逻辑 */
-    private getRandomSkills(arr: skill[], n: number): skill[] {
+    /** 从数组随机获取n个不重复元素 */
+    static getRandomSkills(arr: skill[], n: number): skill[] {
         const shuffled = [...arr].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, Math.min(n, shuffled.length));
     }
@@ -333,7 +333,7 @@ export class learn extends BaseSkill {
             let ownedSkills = SkillMgr.getList(target.camp);
 
             // 获取未拥有的技能
-            const newSkills = this.getNewSkills(allSkills, ownedSkills, value);
+            const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
 
             // 创建并添加新技能
             newSkills.forEach(skillData => {
@@ -350,7 +350,7 @@ export class learn extends BaseSkill {
             let ownedSkills = SkillMgr.getList(target.camp);
 
             // 获取未拥有的技能
-            const newSkills = this.getNewSkills(allSkills, ownedSkills, value);
+            const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
 
             // 创建并添加新技能
             newSkills.forEach(skillData => {
@@ -358,19 +358,5 @@ export class learn extends BaseSkill {
                 GameLog.log(`${target.camp} 获得新技能: ${skillData.name}`);
             });
         }
-    }
-    /** 从全部技能中筛选未拥有的 */
-    private getNewSkills(all: skill[], owned: BaseSkill[], count: number): skill[] {
-        const ownedIds = new Set(owned.map(s => s.data.id));
-        const available = all.filter(s => !ownedIds.has(s.id));
-
-        // 随机选择指定数量的新技能
-        return this.getRandomSkills(available, count);
-    }
-
-    /** 复用ban类的随机选择逻辑 */
-    private getRandomSkills(arr: skill[], n: number): skill[] {
-        const shuffled = [...arr].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, Math.min(n, shuffled.length));
     }
 }

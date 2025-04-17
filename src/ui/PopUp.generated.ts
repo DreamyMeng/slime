@@ -3,9 +3,9 @@
 import { MyButton } from "./MyButton";
 
 /**
- * prefab/SkillTip.lh
+ * resources/prefab/PopUp.lh
  */
-export class SkillTipBase extends Laya.Image {
+export class PopUpBase extends Laya.Sprite {
     public Label!: Laya.Label;
     public ok!: MyButton;
     public no!: MyButton;

@@ -20,12 +20,53 @@
       "x": 360,
       "y": 640,
       "visible": false,
-      "centerX": 0,
-      "centerY": 0,
+      "_gcmds": [],
+      "_$comp": [
+        {
+          "_$type": "4de063eb-bcca-4f0c-a67e-62e97117ff03",
+          "scriptPath": "../src/ui/SkillTip.ts"
+        }
+      ],
       "_$child": [
         {
+          "_$override": "ecyn9419",
+          "color": "#78243d",
+          "skin": "res://260d7a45-b5ca-42fb-abf6-39b869308c6a"
+        },
+        {
           "_$override": "3ny13ib3",
-          "html": true
+          "html": true,
+          "color": "rgba(233, 234, 196, 1)"
+        },
+        {
+          "_$override": [
+            "jvphpq4p",
+            "3mo5miu3"
+          ],
+          "color": "#c228bf"
+        },
+        {
+          "_$override": [
+            "jvphpq4p",
+            "au8mtcie"
+          ],
+          "color": "rgba(0, 0, 0, 1)",
+          "text": "遗忘"
+        },
+        {
+          "_$override": [
+            "y6ek77jm",
+            "3mo5miu3"
+          ],
+          "color": "#28c2c1"
+        },
+        {
+          "_$override": [
+            "y6ek77jm",
+            "au8mtcie"
+          ],
+          "color": "rgba(0, 0, 0, 1)",
+          "text": "返回"
         }
       ]
     },
@@ -190,8 +231,8 @@
               "x": 20,
               "y": 180,
               "width": 360,
-              "height": 160,
-              "_mouseState": 2,
+              "height": 126,
+              "_mouseState": 1,
               "itemTemplate": {
                 "_$ref": "213iflp9",
                 "_$tmpl": "itemRender"
@@ -796,6 +837,14 @@
               ]
             }
           ]
+        },
+        {
+          "_$id": "w2ck8n6e",
+          "_$var": true,
+          "_$type": "Sprite",
+          "name": "Damages",
+          "width": 700,
+          "height": 500
         }
       ]
     },
@@ -845,6 +894,136 @@
               "fontSize": 24,
               "color": "#FFFFFF",
               "valign": "top",
+              "padding": "0,0,0,0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "v5cx4at6",
+      "_$prefab": "7ccb3cb4-0500-463b-9867-ef45865cfdeb",
+      "_$var": true,
+      "name": "Cuilian",
+      "active": true,
+      "x": 360,
+      "y": 640,
+      "visible": false,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "percent": true,
+          "lineWidth": 1,
+          "fillColor": "rgba(20, 20, 20, 0.9019607843137255)"
+        }
+      ],
+      "_$comp": [
+        {
+          "_$type": "2ce74eea-7c55-49a5-bd2c-a3ebe4a89b01",
+          "scriptPath": "../src/ui/Cuilian.ts"
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "ecyn9419",
+          "skin": "res://cc301462-15dd-4f5b-bcd1-a9ef34fe4099"
+        },
+        {
+          "_$override": [
+            "jvphpq4p",
+            "au8mtcie"
+          ],
+          "text": "确定"
+        },
+        {
+          "_$override": [
+            "y6ek77jm",
+            "au8mtcie"
+          ],
+          "text": "取消"
+        },
+        {
+          "_$id": "a2aojspn",
+          "_$index": 4,
+          "_$type": "Image",
+          "name": "Image(1)",
+          "x": 363,
+          "y": 300,
+          "width": 600,
+          "height": 250,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "centerX": 3,
+          "centerY": -340,
+          "skin": "res://cc301462-15dd-4f5b-bcd1-a9ef34fe4099",
+          "sizeGrid": "25,20,20,23,0",
+          "color": "#4b4b4b"
+        },
+        {
+          "_$id": "pea5y55t",
+          "_$index": 5,
+          "_$type": "Label",
+          "name": "Label(1)",
+          "x": 80,
+          "y": 191,
+          "width": 560,
+          "height": 43,
+          "centerX": 0,
+          "centerY": -428,
+          "text": "淬炼后属性",
+          "fontSize": 40,
+          "color": "rgba(194, 182, 167, 1)",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true,
+          "padding": "0,0,0,0"
+        },
+        {
+          "_$id": "2fg3tlzx",
+          "_$index": 6,
+          "_$type": "Image",
+          "name": "Image(2)",
+          "x": 200,
+          "y": 245,
+          "width": 300,
+          "height": 8,
+          "skin": "res://afb422d2-5f76-4c2f-b5ab-954fd908b645",
+          "color": "#5e4b40"
+        },
+        {
+          "_$id": "gn2p0i22",
+          "_$type": "List",
+          "name": "list_shuxing",
+          "x": 84,
+          "y": 268,
+          "width": 560,
+          "height": 135,
+          "_mouseState": 2,
+          "itemTemplate": {
+            "_$ref": "zz9s8gq2",
+            "_$tmpl": "itemRender"
+          },
+          "repeatX": 3,
+          "repeatY": 4,
+          "spaceX": 10,
+          "_$child": [
+            {
+              "_$id": "zz9s8gq2",
+              "_$type": "Label",
+              "name": "Label",
+              "width": 180,
+              "height": 32,
+              "text": "齿：9999",
+              "fontSize": 24,
+              "color": "rgba(247, 197, 141, 1)",
+              "html": true,
+              "templateVars": true,
+              "valign": "middle",
               "padding": "0,0,0,0"
             }
           ]

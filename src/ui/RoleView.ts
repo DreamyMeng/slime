@@ -11,12 +11,12 @@ const { regClass } = Laya;
 @regClass()
 export class RoleView extends Laya.Script {
     declare owner: MyButton;
-    private data: role;
-    private level: number;
+    data: role;
+    level: number;
     private attack: number;
     private defence: number;
     private health: number;
-
+    isBoss: boolean = false;
     hpBar: HPBar;
     original_x: number;
     original_y: number;
@@ -64,9 +64,9 @@ export class RoleView extends Laya.Script {
 
     animator: Laya.Animator2D;
 
-    event_damage(): void {
-        console.log(":event_damage");
-    }
+    // event_damage(): void {
+    //     console.log(":event_damage");
+    // }
 
     play_anim(name: string): void {
         this.animator.play(name, 0, 0);

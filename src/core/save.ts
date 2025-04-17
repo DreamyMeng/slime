@@ -43,29 +43,29 @@ export class Save {
     public static data: SaveData;
     public static readonly SAVE_KEY = "game_save";
 
-    static reset(name: string): SaveData["player"] {
+    static reset(name: string = 'h1'): SaveData["player"] {
         let data = {
             name: name,
             quality: {
                 None: 0
             },
             relation: {
-                chi: 0,
-                hui: 0,
-                lin: 0,
-                mao: 0,
-                jia: 0,
-                luo: 0,
-                yu: 0,
-                zhao: 0,
-                ti: 0,
-                jiao: 0,
-                zhi: 0
+                chi: 4524520,
+                hui: 454250,
+                lin: 24654153150,
+                mao: 1230,
+                jia: 4524520,
+                luo: 36630,
+                yu: 40,
+                zhao: 2456320,
+                ti: 1230,
+                jiao: 4120,
+                zhi: 1230
             },
             exp: 0,
-            level: 1,
+            level: 91,
             forget: 0,
-            skills: [] as string[],
+            skills: ['tunshi1'] as string[],
             curScene: 1,
             scenes: {} as { [key: string]: SaveData_Scene },
         }
@@ -85,7 +85,7 @@ export class Save {
     }
 
     static newGame(): SaveData {
-        let name = "h1";
+        let name = "h14";
         return {
             player: Save.reset(name),
             game: {

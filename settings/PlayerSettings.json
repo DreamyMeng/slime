@@ -17,6 +17,5 @@
   "splash": {
     "enabled": false,
     "fit": "center"
-  },
-  "stat": true
+  }
 }

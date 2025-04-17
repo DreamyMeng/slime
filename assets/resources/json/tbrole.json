@@ -15,7 +15,7 @@
     "attack_add": 200,
     "defence_add": 100,
     "health_add": 1000,
-    "ralations": {},
+    "relations": {},
     "skills": [
       "tunshi1"
     ]
@@ -36,7 +36,7 @@
     "attack_add": 400,
     "defence_add": 200,
     "health_add": 2000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.5
     },
@@ -60,7 +60,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.5
     },
@@ -84,7 +84,7 @@
     "attack_add": 1600,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.6
     },
@@ -108,7 +108,7 @@
     "attack_add": 3520,
     "defence_add": 1760,
     "health_add": 17600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.6,
       "jiao": 0.1
@@ -133,7 +133,7 @@
     "attack_add": 7360,
     "defence_add": 3680,
     "health_add": 36800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.5,
       "zhao": 0.1,
@@ -160,7 +160,7 @@
     "attack_add": 14720,
     "defence_add": 7360,
     "health_add": 73600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.5,
       "zhao": 0.1,
@@ -187,7 +187,7 @@
     "attack_add": 30720,
     "defence_add": 15360,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.5,
       "zhao": 0.15,
@@ -215,7 +215,7 @@
     "attack_add": 30720,
     "defence_add": 15360,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.4,
       "yu": 0.1,
@@ -244,7 +244,7 @@
     "attack_add": 61440,
     "defence_add": 30720,
     "health_add": 307200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.4,
       "zhao": 0.15,
@@ -272,7 +272,7 @@
     "attack_add": 128000,
     "defence_add": 64000,
     "health_add": 640000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.4,
       "zhao": 0.15,
@@ -300,7 +300,7 @@
     "attack_add": 128000,
     "defence_add": 64000,
     "health_add": 640000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.5,
       "zhao": 0.15,
@@ -328,7 +328,7 @@
     "attack_add": 440,
     "defence_add": 200,
     "health_add": 1800,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.5,
       "zhao": 0.1
@@ -353,7 +353,7 @@
     "attack_add": 440,
     "defence_add": 200,
     "health_add": 2000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.4,
       "zhao": 0.1
@@ -378,7 +378,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.6,
       "zhao": 0.1
@@ -403,7 +403,7 @@
     "attack_add": 1920,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "hui": 0.2,
       "yu": 0.5,
       "zhao": 0.1,
@@ -430,7 +430,7 @@
     "attack_add": 1920,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.2,
       "yu": 0.5,
@@ -457,7 +457,7 @@
     "attack_add": 3520,
     "defence_add": 1600,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.5,
       "zhao": 0.1
@@ -483,7 +483,7 @@
     "attack_add": 6400,
     "defence_add": 3200,
     "health_add": 35200,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.7,
       "zhao": 0.1
@@ -509,7 +509,7 @@
     "attack_add": 7040,
     "defence_add": 3200,
     "health_add": 35200,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.6,
       "zhao": 0.1
@@ -534,7 +534,7 @@
     "attack_add": 14080,
     "defence_add": 6400,
     "health_add": 64000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.5,
       "zhao": 0.1
@@ -560,7 +560,7 @@
     "attack_add": 12800,
     "defence_add": 6400,
     "health_add": 64000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.6,
       "zhao": 0.1
@@ -585,7 +585,7 @@
     "attack_add": 15360,
     "defence_add": 6400,
     "health_add": 70400,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.7,
       "zhao": 0.1
@@ -611,7 +611,7 @@
     "attack_add": 30720,
     "defence_add": 14080,
     "health_add": 128000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.7,
       "zhao": 0.1,
@@ -638,7 +638,7 @@
     "attack_add": 28160,
     "defence_add": 14080,
     "health_add": 140800,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.6,
       "zhao": 0.1,
@@ -665,7 +665,7 @@
     "attack_add": 66560,
     "defence_add": 25600,
     "health_add": 256000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.7,
       "zhao": 0.05,
@@ -692,7 +692,7 @@
     "attack_add": 133120,
     "defence_add": 61440,
     "health_add": 614400,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "yu": 0.6,
       "zhao": 0.1,
@@ -719,7 +719,7 @@
     "attack_add": 880,
     "defence_add": 360,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15
@@ -744,7 +744,7 @@
     "attack_add": 1840,
     "defence_add": 720,
     "health_add": 8800,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15
@@ -770,7 +770,7 @@
     "attack_add": 3680,
     "defence_add": 1440,
     "health_add": 17600,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "mao": 0.4,
       "zhao": 0.2
@@ -796,7 +796,7 @@
     "attack_add": 7360,
     "defence_add": 2880,
     "health_add": 35200,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "mao": 0.4,
       "zhao": 0.2
@@ -822,7 +822,7 @@
     "attack_add": 14720,
     "defence_add": 6400,
     "health_add": 70400,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "yu": 0.15,
@@ -849,7 +849,7 @@
     "attack_add": 30720,
     "defence_add": 12800,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15,
@@ -876,7 +876,7 @@
     "attack_add": 61440,
     "defence_add": 25600,
     "health_add": 307200,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "yu": 0.15,
@@ -904,7 +904,7 @@
     "attack_add": 133120,
     "defence_add": 56320,
     "health_add": 665600,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "mao": 0.4,
       "zhao": 0.2,
@@ -931,7 +931,7 @@
     "attack_add": 400,
     "defence_add": 240,
     "health_add": 2000,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -957,7 +957,7 @@
     "attack_add": 800,
     "defence_add": 480,
     "health_add": 4400,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -983,7 +983,7 @@
     "attack_add": 1600,
     "defence_add": 960,
     "health_add": 9200,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -1009,7 +1009,7 @@
     "attack_add": 3200,
     "defence_add": 1840,
     "health_add": 18400,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -1037,7 +1037,7 @@
     "attack_add": 6400,
     "defence_add": 3680,
     "health_add": 36800,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -1065,7 +1065,7 @@
     "attack_add": 14720,
     "defence_add": 7680,
     "health_add": 76800,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "lin": 0.15,
@@ -1094,7 +1094,7 @@
     "attack_add": 29440,
     "defence_add": 15360,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -1123,7 +1123,7 @@
     "attack_add": 58880,
     "defence_add": 33280,
     "health_add": 332800,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "jia": 0.5,
@@ -1151,7 +1151,7 @@
     "attack_add": 122880,
     "defence_add": 71680,
     "health_add": 665600,
-    "ralations": {
+    "relations": {
       "chi": 0.05,
       "hui": 0.1,
       "lin": 0.15,
@@ -1180,7 +1180,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "ti": 0.1,
@@ -1206,7 +1206,7 @@
     "attack_add": 1600,
     "defence_add": 800,
     "health_add": 8400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "ti": 0.1,
@@ -1233,7 +1233,7 @@
     "attack_add": 3360,
     "defence_add": 1680,
     "health_add": 16800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "ti": 0.1,
@@ -1260,7 +1260,7 @@
     "attack_add": 8960,
     "defence_add": 4480,
     "health_add": 44800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "ti": 0.1,
@@ -1288,7 +1288,7 @@
     "attack_add": 13440,
     "defence_add": 6720,
     "health_add": 67200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "ti": 0.1,
@@ -1315,7 +1315,7 @@
     "attack_add": 28160,
     "defence_add": 14080,
     "health_add": 140800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "ti": 0.1,
@@ -1343,7 +1343,7 @@
     "attack_add": 58880,
     "defence_add": 29440,
     "health_add": 294400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -1371,7 +1371,7 @@
     "attack_add": 122880,
     "defence_add": 61440,
     "health_add": 614400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.4,
       "ti": 0.1,
@@ -1399,7 +1399,7 @@
     "attack_add": 1600,
     "defence_add": 880,
     "health_add": 10400,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "luo": 0.5,
       "ti": 0.1
@@ -1425,7 +1425,7 @@
     "attack_add": 6400,
     "defence_add": 3520,
     "health_add": 41600,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "luo": 0.5,
       "ti": 0.1,
@@ -1452,7 +1452,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.25,
       "luo": 0.25,
@@ -1478,7 +1478,7 @@
     "attack_add": 1600,
     "defence_add": 800,
     "health_add": 9200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.25,
       "luo": 0.25,
@@ -1505,7 +1505,7 @@
     "attack_add": 3200,
     "defence_add": 1600,
     "health_add": 19200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.25,
       "luo": 0.25,
@@ -1532,7 +1532,7 @@
     "attack_add": 6400,
     "defence_add": 3200,
     "health_add": 38400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.25,
       "luo": 0.25,
@@ -1560,7 +1560,7 @@
     "attack_add": 12800,
     "defence_add": 6400,
     "health_add": 76800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.25,
       "luo": 0.25,
@@ -1589,7 +1589,7 @@
     "attack_add": 29440,
     "defence_add": 14720,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.3,
       "mao": 0.25,
@@ -1617,7 +1617,7 @@
     "attack_add": 76800,
     "defence_add": 25600,
     "health_add": 256000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.5,
       "ti": 0.1,
@@ -1644,7 +1644,7 @@
     "attack_add": 1680,
     "defence_add": 800,
     "health_add": 9200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.1,
       "luo": 0.25,
@@ -1671,7 +1671,7 @@
     "attack_add": 3520,
     "defence_add": 1600,
     "health_add": 19200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.4,
       "ti": 0.1,
@@ -1698,7 +1698,7 @@
     "attack_add": 7040,
     "defence_add": 3200,
     "health_add": 38400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.1,
       "luo": 0.25,
@@ -1727,7 +1727,7 @@
     "attack_add": 14720,
     "defence_add": 7040,
     "health_add": 83200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.1,
       "luo": 0.25,
@@ -1756,7 +1756,7 @@
     "attack_add": 29440,
     "defence_add": 14080,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.1,
       "luo": 0.25,
@@ -1784,7 +1784,7 @@
     "attack_add": 56320,
     "defence_add": 26880,
     "health_add": 307200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.1,
       "luo": 0.25,
@@ -1813,7 +1813,7 @@
     "attack_add": 32000,
     "defence_add": 14080,
     "health_add": 153600,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.3,
       "yu": 0.1,
@@ -1842,7 +1842,7 @@
     "attack_add": 64000,
     "defence_add": 28160,
     "health_add": 332800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -1869,7 +1869,7 @@
     "attack_add": 64000,
     "defence_add": 28160,
     "health_add": 332800,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.5,
       "zhao": 0.1,
@@ -1896,7 +1896,7 @@
     "attack_add": 66560,
     "defence_add": 28160,
     "health_add": 332800,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.1,
@@ -1924,7 +1924,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -1951,7 +1951,7 @@
     "attack_add": 1600,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -1977,7 +1977,7 @@
     "attack_add": 3840,
     "defence_add": 1600,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2004,7 +2004,7 @@
     "attack_add": 7040,
     "defence_add": 3200,
     "health_add": 32000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2031,7 +2031,7 @@
     "attack_add": 15360,
     "defence_add": 6400,
     "health_add": 64000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -2058,7 +2058,7 @@
     "attack_add": 30720,
     "defence_add": 12800,
     "health_add": 128000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2085,7 +2085,7 @@
     "attack_add": 66560,
     "defence_add": 28160,
     "health_add": 332800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2112,7 +2112,7 @@
     "attack_add": 66560,
     "defence_add": 33280,
     "health_add": 307200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2139,7 +2139,7 @@
     "attack_add": 66560,
     "defence_add": 28160,
     "health_add": 307200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2166,7 +2166,7 @@
     "attack_add": 66560,
     "defence_add": 28160,
     "health_add": 281600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2193,7 +2193,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -2220,7 +2220,7 @@
     "attack_add": 1600,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.5,
       "zhao": 0.1,
@@ -2247,7 +2247,7 @@
     "attack_add": 3200,
     "defence_add": 1600,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.5,
       "zhao": 0.1,
@@ -2274,7 +2274,7 @@
     "attack_add": 6720,
     "defence_add": 3360,
     "health_add": 33600,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.5,
       "zhao": 0.1,
@@ -2301,7 +2301,7 @@
     "attack_add": 13440,
     "defence_add": 6720,
     "health_add": 67200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.55,
       "zhao": 0.1,
@@ -2328,7 +2328,7 @@
     "attack_add": 26880,
     "defence_add": 13440,
     "health_add": 134400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.55,
       "zhao": 0.1,
@@ -2355,7 +2355,7 @@
     "attack_add": 3200,
     "defence_add": 1600,
     "health_add": 32000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.05,
       "luo": 0.6,
@@ -2381,7 +2381,7 @@
     "attack_add": 12800,
     "defence_add": 6400,
     "health_add": 192000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.05,
       "luo": 0.6,
@@ -2408,7 +2408,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1
@@ -2434,7 +2434,7 @@
     "attack_add": 1680,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -2461,7 +2461,7 @@
     "attack_add": 3840,
     "defence_add": 1600,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.45,
       "zhao": 0.1
@@ -2487,7 +2487,7 @@
     "attack_add": 7040,
     "defence_add": 3200,
     "health_add": 32000,
-    "ralations": {
+    "relations": {
       "hui": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -2513,7 +2513,7 @@
     "attack_add": 16640,
     "defence_add": 6400,
     "health_add": 64000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.45,
       "zhao": 0.1,
@@ -2540,7 +2540,7 @@
     "attack_add": 20480,
     "defence_add": 11520,
     "health_add": 115200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -2567,7 +2567,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2593,7 +2593,7 @@
     "attack_add": 1600,
     "defence_add": 800,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -2620,7 +2620,7 @@
     "attack_add": 3520,
     "defence_add": 1600,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15,
@@ -2647,7 +2647,7 @@
     "attack_add": 7360,
     "defence_add": 3200,
     "health_add": 32000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15,
@@ -2674,7 +2674,7 @@
     "attack_add": 15360,
     "defence_add": 6400,
     "health_add": 64000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15,
@@ -2701,7 +2701,7 @@
     "attack_add": 32000,
     "defence_add": 12800,
     "health_add": 128000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15,
@@ -2728,7 +2728,7 @@
     "attack_add": 28160,
     "defence_add": 12800,
     "health_add": 128000,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "lin": 0.2,
       "mao": 0.2,
@@ -2757,7 +2757,7 @@
     "attack_add": 61440,
     "defence_add": 28160,
     "health_add": 281600,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.15,
@@ -2784,7 +2784,7 @@
     "attack_add": 800,
     "defence_add": 400,
     "health_add": 4800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -2811,7 +2811,7 @@
     "attack_add": 1760,
     "defence_add": 800,
     "health_add": 9600,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.05,
       "luo": 0.3,
@@ -2839,7 +2839,7 @@
     "attack_add": 3840,
     "defence_add": 1600,
     "health_add": 20800,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.05,
       "luo": 0.3,
@@ -2867,7 +2867,7 @@
     "attack_add": 7680,
     "defence_add": 3200,
     "health_add": 41600,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "mao": 0.05,
       "luo": 0.3,
@@ -2895,7 +2895,7 @@
     "attack_add": 720,
     "defence_add": 360,
     "health_add": 4000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -2922,7 +2922,7 @@
     "attack_add": 1440,
     "defence_add": 720,
     "health_add": 8000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -2949,7 +2949,7 @@
     "attack_add": 2880,
     "defence_add": 1440,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -2976,7 +2976,7 @@
     "attack_add": 5760,
     "defence_add": 2880,
     "health_add": 32000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3003,7 +3003,7 @@
     "attack_add": 11520,
     "defence_add": 5760,
     "health_add": 64000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3030,7 +3030,7 @@
     "attack_add": 23040,
     "defence_add": 11520,
     "health_add": 128000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3057,7 +3057,7 @@
     "attack_add": 46080,
     "defence_add": 23040,
     "health_add": 256000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3084,7 +3084,7 @@
     "attack_add": 92160,
     "defence_add": 46080,
     "health_add": 512000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3111,7 +3111,7 @@
     "attack_add": 1840,
     "defence_add": 800,
     "health_add": 8800,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.5,
       "zhao": 0.15
@@ -3137,7 +3137,7 @@
     "attack_add": 3680,
     "defence_add": 1760,
     "health_add": 17600,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "lin": 0.3,
       "mao": 0.15,
@@ -3166,7 +3166,7 @@
     "attack_add": 7360,
     "defence_add": 3520,
     "health_add": 35200,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.5,
       "zhao": 0.15,
@@ -3193,7 +3193,7 @@
     "attack_add": 14720,
     "defence_add": 7040,
     "health_add": 70400,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.5,
       "zhao": 0.15,
@@ -3220,7 +3220,7 @@
     "attack_add": 32000,
     "defence_add": 14080,
     "health_add": 140800,
-    "ralations": {
+    "relations": {
       "chi": 0.2,
       "mao": 0.5,
       "zhao": 0.15,
@@ -3247,7 +3247,7 @@
     "attack_add": 800,
     "defence_add": 320,
     "health_add": 3200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -3274,7 +3274,7 @@
     "attack_add": 1600,
     "defence_add": 640,
     "health_add": 6400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -3301,7 +3301,7 @@
     "attack_add": 2560,
     "defence_add": 1280,
     "health_add": 12800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -3327,7 +3327,7 @@
     "attack_add": 6400,
     "defence_add": 2560,
     "health_add": 22400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -3354,7 +3354,7 @@
     "attack_add": 15360,
     "defence_add": 8320,
     "health_add": 57600,
-    "ralations": {
+    "relations": {
       "jia": 0.9
     },
     "skills": [
@@ -3378,7 +3378,7 @@
     "attack_add": 1760,
     "defence_add": 880,
     "health_add": 9200,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -3405,7 +3405,7 @@
     "attack_add": 3520,
     "defence_add": 1760,
     "health_add": 18400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.4,
       "zhao": 0.1,
@@ -3432,7 +3432,7 @@
     "attack_add": 7360,
     "defence_add": 3520,
     "health_add": 36800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.45,
       "zhao": 0.1,
@@ -3459,7 +3459,7 @@
     "attack_add": 400,
     "defence_add": 360,
     "health_add": 3600,
-    "ralations": {
+    "relations": {
       "lin": 0.5
     },
     "skills": [
@@ -3482,7 +3482,7 @@
     "attack_add": 800,
     "defence_add": 720,
     "health_add": 7200,
-    "ralations": {
+    "relations": {
       "lin": 0.5,
       "zhi": 0.05
     },
@@ -3506,7 +3506,7 @@
     "attack_add": 2240,
     "defence_add": 1600,
     "health_add": 16000,
-    "ralations": {
+    "relations": {
       "lin": 0.5,
       "zhi": 0.05
     },
@@ -3531,7 +3531,7 @@
     "attack_add": 7040,
     "defence_add": 3520,
     "health_add": 32000,
-    "ralations": {
+    "relations": {
       "lin": 0.5,
       "zhi": 0.05
     },
@@ -3556,7 +3556,7 @@
     "attack_add": 15360,
     "defence_add": 9600,
     "health_add": 128000,
-    "ralations": {
+    "relations": {
       "lin": 0.8,
       "zhi": 0.05
     },
@@ -3580,7 +3580,7 @@
     "attack_add": 33280,
     "defence_add": 16640,
     "health_add": 192000,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.2,
       "yu": 0.35,
@@ -3608,7 +3608,7 @@
     "attack_add": 2000,
     "defence_add": 960,
     "health_add": 8800,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "lin": 0.2,
       "jia": 0.25,
@@ -3635,7 +3635,7 @@
     "attack_add": 16000,
     "defence_add": 7680,
     "health_add": 70400,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "lin": 0.2,
       "jia": 0.25,
@@ -3663,7 +3663,7 @@
     "attack_add": 360,
     "defence_add": 140,
     "health_add": 1400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.3,
       "zhao": 0.1,
@@ -3689,7 +3689,7 @@
     "attack_add": 560,
     "defence_add": 280,
     "health_add": 2800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.3,
       "zhao": 0.1,
@@ -3716,7 +3716,7 @@
     "attack_add": 1280,
     "defence_add": 640,
     "health_add": 6400,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.3,
       "zhao": 0.1,
@@ -3743,7 +3743,7 @@
     "attack_add": 4800,
     "defence_add": 1600,
     "health_add": 20800,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.3,
       "zhao": 0.1,
@@ -3770,7 +3770,7 @@
     "attack_add": 0,
     "defence_add": 0,
     "health_add": 0,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "lin": 0.4,
       "ti": 0.1,
@@ -3801,7 +3801,7 @@
     "attack_add": 0,
     "defence_add": 0,
     "health_add": 0,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.55,
       "zhao": 0.1,
@@ -3832,7 +3832,7 @@
     "attack_add": 0,
     "defence_add": 0,
     "health_add": 0,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3867,7 +3867,7 @@
     "attack_add": 0,
     "defence_add": 0,
     "health_add": 0,
-    "ralations": {
+    "relations": {
       "chi": 0.1,
       "mao": 0.05,
       "luo": 0.3,
@@ -3898,7 +3898,7 @@
     "attack_add": 0,
     "defence_add": 0,
     "health_add": 0,
-    "ralations": {
+    "relations": {
       "chi": 0.15,
       "mao": 0.4,
       "zhao": 0.1,

@@ -1,13 +1,14 @@
 const { regClass } = Laya;
-import { MainBase } from "./Main.generated";
-import * as cfg from "../table/schema";
-import * as utils from "../core/utils";
+import { Battle } from "../core/battle";
 import { color_config, Config, shuxing_config } from "../core/config";
 import { Save } from "../core/save";
-import { SkillView } from "./SkillView";
+import * as utils from "../core/utils";
+import * as cfg from "../table/schema";
+import { Cuilian } from "./Cuilian";
+import { MainBase } from "./Main.generated";
+import { MessageBox } from "./MessageBox";
 import { RoleView } from "./RoleView";
-import { BaseRole } from "../core/role";
-import { Battle } from "../core/battle";
+import { SkillView } from "./SkillView";
 
 @regClass()
 export class Main extends MainBase {
@@ -21,6 +22,8 @@ export class Main extends MainBase {
         this.list_xuexi.scrollBar.autoHide = true;
 
         this.show_map();
+        this.update_player();
+        this.update_skill();
 
         this.btn_jineng.onClick = () => {
             this.img_jineng.visible = true;
@@ -54,6 +57,46 @@ export class Main extends MainBase {
         this.btn_taopao.onClick = () => {
             this.battle.escape = true;
         }
+        this.btn_cuilian.onClick = () => {
+            if (Save.data.player.level > Cuilian.level) {
+                this.Cuilian.getComponent(Cuilian).show();
+            } else {
+                MessageBox.tip(`<font color='#FF0000'>等级不足</font>`);
+            }
+        }
+
+        this.btn_zhuansheng.onClick = () => {
+            let rebirth = Save.data.game.rebirth;
+
+            if (rebirth > 999) {
+                MessageBox.tip(`<font color='#FF0000'>已达到最大转生数</font>`);
+                return;
+            }
+            let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(rebirth);
+            if (Save.data.player.level < rebirthData.need) {
+                MessageBox.tip(`<font color='#FF0000'>等级不足</font>`);
+                return;
+            }
+            let per = 10;
+            if (rebirth > 99) per = 1;
+            if (rebirth > 199) per = 0.1;
+
+            MessageBox.show(`是否进行转生，等级、种族重置为初始状态，全属性永久额外增加${per}%`, () => {
+                Save.data.game.rebirth++;
+                if (Save.data.game.rebirth == 1) MessageBox.show("解锁：自动战斗", null, null, false);
+                if (Save.data.game.rebirth == 2) MessageBox.show("解锁：定向拟态", null, null, false);
+                if (Save.data.game.rebirth == 3) {
+                    var skill = Config.table.Tbskill.get("jiexi");
+                    MessageBox.show(`习得：${skill.name}`, null, null, false);
+                }
+                Save.data.player = Save.reset();
+                MessageBox.tip(`转生成功，属性成长提升。`);
+                // CollectionScene.addCount(CollectionType.reincarnation);
+                this.show_map();
+                this.update_player();
+                this.update_skill();
+            });
+        }
     }
 
     battle: Battle;
@@ -61,9 +104,6 @@ export class Main extends MainBase {
     show_map(): void {
         this.Map.visible = true;
         this.Battle.visible = false;
-
-        this.update_player();
-        this.update_skill();
         this.update_map();
     }
 
@@ -100,13 +140,15 @@ export class Main extends MainBase {
 
         this.list_shuxing.dataSource = Object.keys(playerData.relation).map(key => {
             const typedKey = key as keyof typeof shuxing_config;
-            return `${shuxing_config[typedKey]}:<font color='#AFAFAF'>${utils.getValueStr(playerData.relation[key])}</color>`;
+            return `${shuxing_config[typedKey]}:<font color='#AFAFAF'>${utils.getValueStr(playerData.relation[key])}</font>`;
         });
 
         this.player0.getComponent(RoleView).show(playerData.name, playerData.level, power);
         this.battle.player.init(attack, defence, health, roleData.skills.concat(playerData.skills));
         this.Player.getComponent(RoleView).show(playerData.name, playerData.level);
 
+        this.btn_cuilian.tip.text = "消耗等级:" + Cuilian.level;
+        this.btn_zhuansheng.tip.text = "需要等级:" + rebirthData.need;
     }
 
     update_skill(): void {
@@ -121,7 +163,7 @@ export class Main extends MainBase {
             item.getComponent(SkillView).init(roleData.skills[index]);
         }, null, false);
 
-        let list = playerData.skills.concat(new Array<string>(Main.getMaxSkill() - playerData.skills.length).fill(''));
+        let list = playerData.skills.concat(new Array<string>(Main.getSkillMax() - playerData.skills.length).fill(''));
         this.list_xuexi.array = list;
         this.list_xuexi.renderHandler = Laya.Handler.create(this, (item: Laya.Sprite, index: number) => {
             item.getComponent(SkillView).init(list[index], true);
@@ -172,7 +214,7 @@ export class Main extends MainBase {
         return '凡';
     }
 
-    static getMaxSkill(): number {
+    static getSkillMax(): number {
         let playerData = Save.data.player;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.name);
 
@@ -189,8 +231,109 @@ export class Main extends MainBase {
         return num;
     }
 
+    // 当前最大99+90，少一个成就。
+    static getLevelMax(): number {
+        return 99
+        // + CollectionScene.getCount(RewardType.level) * 10;
+    }
+
+    static addExp(num: number) {
+        // 获取当前经验和等级
+        let playerData = Save.data.player;
+        let curExp = Math.floor(playerData.exp + num);
+        let levelData = Config.table.Tbrole_level.get(playerData.level);
+        let roleData: cfg.role = Config.table.Tbrole.get(playerData.name);
+
+        while (true) {
+            // 获取当前等级的最大经验值
+            const maxExp = levelData.need * roleData.expNeed;
+
+            if (curExp >= maxExp) {
+                curExp -= maxExp; // 多余的经验值
+                this.addLevel();
+            } else {
+                break; // 经验值不足以升级，退出循环
+            }
+        }
+
+        // 更新经验值和等级
+        playerData.exp = curExp;
+    }
+
+    static addLevel() {
+        let playerData = Save.data.player;
+        if (playerData.level >= this.getLevelMax()) {
+            MessageBox.tip("已达到最高等级！");
+            return;
+        }
+        playerData.level++;
+        MessageBox.tip("等级+1");
+    }
+
+    static addValue(role: cfg.role) {
+        let playerData = Save.data.player;
+        const shift = 0.1;
+        var qualityValue = Math.floor(role.quality * shift);
+        playerData.quality[role.qualityType] = (playerData.quality[role.qualityType] ?? 0) + qualityValue;
+        // if (qualityValue > 0) MessageBox.tip(`<font color=${color_config.QUALITY[role.qualityType]}>◈ ${Config.getQualityStr(role.qualityType)}:+${qualityValue} </font>`);
+        var sr = playerData.relation;
+        var cr = role.relations as unknown as { [key: string]: number };
+        var keys = Object.keys(sr);
+        var r = role.race * role.remain * shift;
+        var des = "";
+        shuxing_config
+        for (let i = 0; i < keys.length; i++) {
+            const key = keys[i];
+
+            var v = Math.floor((cr[key] ?? 0) * r);
+            sr[key] += v;
+
+            if (v > 0) {
+                const typedKey = key as keyof typeof shuxing_config;
+                des += `${shuxing_config[typedKey]}:+${v}，\t\t`;
+            }
+        }
+        if (des.length > 0) des = des.substring(0, des.lastIndexOf('，\t\t'));
+        MessageBox.tip(des);
+    }
+
+    static unlockRole(id: string) {
+        let roleData: cfg.role = Config.table.Tbrole.get(id);
+        MessageBox.tip(`解锁图鉴：${this.getRoleName(roleData)}`);
+        Save.data.game.roles[id] = true;
+    }
+
+    static learn(targetData: cfg.role) {
+        if (Math.random() > 0.2) return;
+        let max = this.getSkillMax();
+        let playerData = Save.data.player;
+        let roleData: cfg.role = Config.table.Tbrole.get(playerData.name);
+        let owner = roleData.skills.concat(playerData.skills);
+
+        if (playerData.skills.length >= max) {
+            MessageBox.tip("技能已满！");
+            return;
+        }
+
+        const ownedIds = new Set(owner);
+        const available = targetData.skills.filter(s => !ownedIds.has(s));
+
+        const shuffled = [...available].sort(() => 0.5 - Math.random());
+        const newSkills = shuffled.slice(0, Math.min(1, shuffled.length));
+
+        if (newSkills.length > 0) {
+            const skillId = newSkills[0];
+            const skillData = Config.table.Tbskill.get(skillId);
+            if (skillData) {
+                playerData.skills.push(skillId);
+                MessageBox.tip(`习得：${skillData.name}`);
+                Main.instance.update_skill();
+            }
+        }
+    }
+
     static role_shift: number = 1.05; // 角色数值修正量
-    static power_shift: number = 10;// 战斗力数值修正量（为了好看）
+    static power_shift: number = 10; // 战斗力数值修正量（为了好看）
 
     static getAddition(): { [key: string]: number } {
         let addition: { [key: string]: number } = { attack: 0, defence: 0, health: 0 };

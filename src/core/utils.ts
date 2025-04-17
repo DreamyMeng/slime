@@ -5,16 +5,42 @@
  * 用于记录游戏运行过程中的各种事件信息
  */
 export class GameLog {
+    static instance: GameLog;
     /** 存储日志内容的静态数组 */
-    static logs: string[] = [];
+    private logs: string[];
+    public callback: () => void;
+
+    constructor(private maxLength: number = 200) {
+        this.logs = [];
+        this.maxLength = maxLength;
+    }
+
+    add(log: string) {
+        if (this.logs.length >= this.maxLength) {
+            this.logs.shift(); // 删除最早的元素
+        }
+        this.logs.push(log);
+
+        console.log(log);
+        if (this.callback) this.callback();
+    }
 
     /**
      * 记录日志并输出到控制台
      * @param message 需要记录的日志信息
      */
     static log(message: string) {
-        this.logs.push(message);
+        if (!this.instance) this.instance = new GameLog();
+        this.instance.add(message);
         console.log(`[LOG]: ${message}`);
+    }
+
+    static get() {
+        return this.instance.logs;
+    }
+
+    static clear() {
+        this.instance.logs.length = 0;
     }
 }
 

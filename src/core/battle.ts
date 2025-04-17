@@ -1,9 +1,12 @@
 // Battle.ts
-import { SkillTrigger } from '../table/schema';
+import { role, SkillTrigger } from '../table/schema';
 import { Main } from '../ui/Main';
+import { MessageBox } from '../ui/MessageBox';
 import { RoleView } from '../ui/RoleView';
 import { BuffMgr } from './buff';
+import { Config } from './config';
 import { BaseRole } from './role';
+import { Save } from './save';
 import { SkillMgr } from './skill';
 import { delay, GameLog } from './utils';
 
@@ -12,6 +15,7 @@ export class Battle {
     enemy: BaseRole;
     static damage: number = 0;// 每轮攻击造成的伤害
     escape: boolean = false; // 是否逃跑
+    static skill_rate: number = 0.2; // 获得技能概率
 
     constructor() {
         this.player = new BaseRole('player', Main.instance.Player.getComponent(RoleView)); // 创建玩家角色实例
@@ -55,12 +59,15 @@ export class Battle {
         }
 
         if (this.escape) {
-            GameLog.log('Player escapes the battle!');
+            GameLog.log('player escapes the battle!');
         } else {
-            const winner = this.player.isAlive() ? 'Player' : 'Enemy';
-            GameLog.log(`${winner} wins the battle!`);
-
             // 处理胜利失败逻辑
+            if (this.player.isAlive()) {
+                GameLog.log(`${this.player.camp} wins the battle!`);
+                this.victory(this.enemy.view.data, this.enemy.view.level, this.enemy.view.isBoss);
+            } else {
+                GameLog.log(`${this.enemy.camp} wins the battle!`);
+            }
         }
 
         SkillMgr.clear(); // 清除技能
@@ -71,4 +78,62 @@ export class Battle {
         Main.instance.show_map();
     }
 
+    victory(roleData: role, level: number, boss: boolean): void {
+        MessageBox.tip(`战斗胜利！，吞噬：${Main.getRoleName(roleData)}`);
+
+        // CollectionScene.addCount(CollectionType.other, id);
+
+        let playerData = Save.data.player;
+        playerData.scenes[playerData.curScene].count++;
+        let levelData = Config.table.Tbrole_level.get(level);
+
+        Main.addExp(levelData.exp * roleData.expDead);
+        Main.addValue(roleData);
+
+        Main.learn(roleData);// 获得技能
+
+        Main.instance.update_player();
+
+        // if (Battle.isAuto) {
+        //     // 自动战斗逻辑
+        //     var sceneData = Config.getSceneConfig(parseInt(Config.save.player.curScene.level));
+        //     var id = Main.getMonsterByScene(sceneData);
+        //     var roleData = Config.getRoleConfig(id);
+        //     var levelData = Config.getLevelConfig(Enemy.getLevel(sceneData));
+        //     var attack = toInt(levelData.roleAttribute.attack * roleData.attribute.attack * sceneData.roleAttribute.attack);
+        //     var defence = toInt(levelData.roleAttribute.defence * roleData.attribute.defence * sceneData.roleAttribute.defence);
+        //     var health = toInt(levelData.roleAttribute.health * roleData.attribute.health * sceneData.roleAttribute.health);
+        //     var level = levelData.id;
+        //     this.onShow(true, (view, role) => {
+        //         view.Name.text = Config.getRoleName(roleData);
+        //         view.setLevel(level);
+        //         role.level = level;
+        //         role.isBoss = false;
+        //         role.init(roleData.id, attack, defence, health, roleData.skillList);
+        //     });
+        //     return;
+        // }
+
+        // 如果是boss，胜利后将直接进入下一关
+        // 解锁tip，最大值限制
+        // if (boss) {
+        //     MessageBox.tip("闯关成功！");
+        //     // 解锁最大值
+        //     Config.save.player.scenes[curScene.level].pass = true;
+        //     var max = Math.min(parseInt(curScene.max) + 1, Config.tables.Tbscene.getDataList().length);
+        //     curScene.max = max.toString();
+        //     CollectionScene.addCount(CollectionType.level);
+        //     Main.instance.forward();
+
+        //     // 地图解锁
+        //     Config.tables.Tbmap.getDataList().forEach((item) => {
+        //         if (max >= item.unlock) {
+        //             if (!Config.save.player.map[item.id]) {
+        //                 Config.save.player.map[item.id] = true;
+        //                 MessageBox.show(`解锁地图：<font color=${item.color}>${item.id}</font>`, null, null, true);
+        //             }
+        //         }
+        //     });
+        // }
+    }
 }

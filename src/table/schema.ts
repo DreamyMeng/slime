@@ -774,8 +774,8 @@ export class role {
         this.defenceAdd = _json_.defence_add
         if (_json_.health_add === undefined) { throw new Error() }
         this.healthAdd = _json_.health_add
-        if (_json_.ralations === undefined) { throw new Error() }
-        this.ralations = new RoleRelation(_json_.ralations)
+        if (_json_.relations === undefined) { throw new Error() }
+        this.relations = new RoleRelation(_json_.relations)
         if (_json_.skills === undefined) { throw new Error() }
         { this.skills = []; for(let _ele0 of _json_.skills) { let _e0; _e0 = _ele0; this.skills.push(_e0);}}
     }
@@ -840,7 +840,7 @@ export class role {
      * 图鉴血量
      */
     readonly healthAdd: number
-    readonly ralations: RoleRelation
+    readonly relations: RoleRelation
     readonly skills: string[]
 
     resolve(tables:Tables) {
@@ -859,7 +859,7 @@ export class role {
         
         
         
-        this.ralations?.resolve(tables);
+        this.relations?.resolve(tables);
         
     }
 }

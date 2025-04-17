@@ -3,6 +3,7 @@ import { Config } from "../core/config";
 import { skill } from "../table/schema";
 import { Main } from "./Main";
 import { MyButton } from "./MyButton";
+import { SkillTip } from "./SkillTip";
 
 @regClass()
 export class SkillView extends Laya.Script {
@@ -13,7 +14,7 @@ export class SkillView extends Laya.Script {
         btn.color = '#FF4900';
         btn.onClick = () => {
             if (!this.data) return;
-            Main.instance.SkillTip.show(this.data, this.isForget);
+            Main.instance.SkillTip.getComponent(SkillTip).show(this.data, this.isForget);
         }
     }
 

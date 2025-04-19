@@ -3,9 +3,7 @@
   "displayName": "开局一只史莱姆",
   "minifyJS": true,
   "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
-  "alwaysIncluded": [
-    "resources"
-  ],
+  "alwaysIncluded": [],
   "android": {
     "renderMode": "webgl",
     "bundleIdentifier": "com.goodgame.slime",

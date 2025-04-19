@@ -36,7 +36,7 @@
     "type": "map",
     "count": 25,
     "description": "通关第25层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -52,7 +52,7 @@
     "type": "map",
     "count": 35,
     "description": "通关第35层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -68,7 +68,7 @@
     "type": "map",
     "count": 45,
     "description": "通关第45层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -84,7 +84,7 @@
     "type": "map",
     "count": 55,
     "description": "通关第55层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -100,7 +100,7 @@
     "type": "map",
     "count": 65,
     "description": "通关第65层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -116,7 +116,7 @@
     "type": "map",
     "count": 75,
     "description": "通关第75层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -132,7 +132,7 @@
     "type": "map",
     "count": 85,
     "description": "通关第85层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -148,7 +148,7 @@
     "type": "map",
     "count": 95,
     "description": "通关第95层",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
@@ -162,7 +162,7 @@
   {
     "id": 21,
     "type": "kill",
-    "target": "129",
+    "target": "h129",
     "count": 20,
     "description": "击杀凡兽鲤鱼20次",
     "reward_type": "random",
@@ -171,7 +171,7 @@
   {
     "id": 22,
     "type": "kill",
-    "target": "105",
+    "target": "h105",
     "count": 20,
     "description": "击杀凡兽野猪20次",
     "reward_type": "random",
@@ -180,7 +180,7 @@
   {
     "id": 23,
     "type": "kill",
-    "target": "88",
+    "target": "h88",
     "count": 20,
     "description": "击杀凡兽鲸鱼20次",
     "reward_type": "random",
@@ -189,7 +189,7 @@
   {
     "id": 24,
     "type": "kill",
-    "target": "3",
+    "target": "h3",
     "count": 10,
     "description": "击杀灵兽白蛇10次",
     "reward_type": "random",
@@ -198,7 +198,7 @@
   {
     "id": 25,
     "type": "kill",
-    "target": "31",
+    "target": "h31",
     "count": 10,
     "description": "击杀灵兽吊睛白虎10次",
     "reward_type": "random",
@@ -207,7 +207,7 @@
   {
     "id": 26,
     "type": "kill",
-    "target": "87",
+    "target": "h87",
     "count": 10,
     "description": "击杀灵兽九尾妖狐10次",
     "reward_type": "random",
@@ -216,7 +216,7 @@
   {
     "id": 27,
     "type": "kill",
-    "target": "139",
+    "target": "h139",
     "count": 5,
     "description": "击杀仙兽锦毛鼠5次",
     "reward_type": "random",
@@ -225,7 +225,7 @@
   {
     "id": 28,
     "type": "kill",
-    "target": "101",
+    "target": "h101",
     "count": 5,
     "description": "击杀仙兽哮天犬5次",
     "reward_type": "random",
@@ -234,7 +234,7 @@
   {
     "id": 29,
     "type": "kill",
-    "target": "79",
+    "target": "h79",
     "count": 5,
     "description": "击杀仙兽灵明石猴5次",
     "reward_type": "random",
@@ -243,7 +243,7 @@
   {
     "id": 30,
     "type": "kill",
-    "target": "125",
+    "target": "h125",
     "count": 2,
     "description": "击杀神兽河蟹2次",
     "reward_type": "random",
@@ -252,7 +252,7 @@
   {
     "id": 31,
     "type": "kill",
-    "target": "140",
+    "target": "h140",
     "count": 2,
     "description": "击杀神兽平头哥2次",
     "reward_type": "random",
@@ -261,7 +261,7 @@
   {
     "id": 32,
     "type": "kill",
-    "target": "48",
+    "target": "h48",
     "count": 2,
     "description": "击杀神兽五色鹿2次",
     "reward_type": "random",
@@ -270,7 +270,7 @@
   {
     "id": 33,
     "type": "kill",
-    "target": "11",
+    "target": "h11",
     "count": 1,
     "description": "击杀神兽青龙1次",
     "reward_type": "random",
@@ -279,7 +279,7 @@
   {
     "id": 34,
     "type": "kill",
-    "target": "35",
+    "target": "h35",
     "count": 1,
     "description": "击杀神兽白虎1次",
     "reward_type": "random",
@@ -288,7 +288,7 @@
   {
     "id": 35,
     "type": "kill",
-    "target": "27",
+    "target": "h27",
     "count": 1,
     "description": "击杀神兽朱雀1次",
     "reward_type": "random",
@@ -297,7 +297,7 @@
   {
     "id": 36,
     "type": "kill",
-    "target": "44",
+    "target": "h44",
     "count": 1,
     "description": "击杀神兽玄武1次",
     "reward_type": "random",
@@ -306,7 +306,7 @@
   {
     "id": 37,
     "type": "kill",
-    "target": "52",
+    "target": "h52",
     "count": 1,
     "description": "击杀神兽麒麟1次",
     "reward_type": "random",
@@ -339,7 +339,7 @@
   {
     "id": 41,
     "type": "kill",
-    "target": "141",
+    "target": "b1",
     "count": 1,
     "description": "击杀牛魔王1次",
     "reward_type": "skill",
@@ -348,7 +348,7 @@
   {
     "id": 42,
     "type": "kill",
-    "target": "142",
+    "target": "b2",
     "count": 1,
     "description": "击杀妲己1次",
     "reward_type": "random",
@@ -357,16 +357,16 @@
   {
     "id": 43,
     "type": "kill",
-    "target": "143",
+    "target": "b3",
     "count": 1,
     "description": "击杀哪吒1次",
-    "reward_type": "max",
+    "reward_type": "level",
     "reward_str": "奖励:最大等级+10"
   },
   {
     "id": 44,
     "type": "kill",
-    "target": "144",
+    "target": "b4",
     "count": 1,
     "description": "击杀杨戬1次",
     "reward_type": "skill",
@@ -375,7 +375,7 @@
   {
     "id": 45,
     "type": "kill",
-    "target": "145",
+    "target": "b5",
     "count": 1,
     "description": "击杀孙悟空1次",
     "reward_type": "boss",

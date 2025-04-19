@@ -3755,7 +3755,7 @@
     ]
   },
   {
-    "id": "h141",
+    "id": "b1",
     "name": "牛魔王",
     "rare": 9,
     "quality_type": "shen",
@@ -3786,7 +3786,7 @@
     ]
   },
   {
-    "id": "h142",
+    "id": "b2",
     "name": "妲己",
     "rare": 9,
     "quality_type": "shen",
@@ -3817,7 +3817,7 @@
     ]
   },
   {
-    "id": "h143",
+    "id": "b3",
     "name": "哪吒",
     "rare": 9,
     "quality_type": "shen",
@@ -3852,7 +3852,7 @@
     ]
   },
   {
-    "id": "h144",
+    "id": "b4",
     "name": "杨戬",
     "rare": 9,
     "quality_type": "shen",
@@ -3883,7 +3883,7 @@
     ]
   },
   {
-    "id": "h145",
+    "id": "b5",
     "name": "孙悟空",
     "rare": 9,
     "quality_type": "shen",

@@ -3,11 +3,13 @@ import { Config } from "./core/config";
 import { EventDispatcher } from "./core/event";
 import { BaseRole } from "./core/role";
 import { Save } from "./core/save";
+import { GameLog } from "./core/utils";
 
 export async function main() {
-    console.log("Hello, world!");
+    GameLog.log("开局一只史莱姆");
 
-    await Config.load();
+    await Config.load_config();
+    await Config.load_sound();
 
     Save.init();// test
 

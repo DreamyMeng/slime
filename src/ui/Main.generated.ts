@@ -22,7 +22,7 @@ export class MainBase extends Laya.Scene {
     public label_titile!: Laya.Label;
     public Map!: Laya.Sprite;
     public btn_tujian!: MyButton;
-    public btn_nitai!: MyButton;
+    public btn_jinhua!: MyButton;
     public btn_fanhui!: MyButton;
     public btn_sousuo!: MyButton;
     public btn_shenru!: MyButton;
@@ -39,5 +39,9 @@ export class MainBase extends Laya.Scene {
     public Damages!: Laya.Sprite;
     public List!: Laya.List;
     public Cuilian!: PopUp;
+    public Tujian!: PopUp;
+    public Jinhua!: PopUp;
+    public ad!: MyButton;
+    public "Label(1)"!: Laya.Label;
 }
 

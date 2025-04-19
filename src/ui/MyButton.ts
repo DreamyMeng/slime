@@ -1,4 +1,5 @@
 const { regClass } = Laya;
+import { Config } from "../core/config";
 import { MyButtonBase } from "./MyButton.generated";
 
 @regClass()
@@ -45,6 +46,7 @@ export class MyButton extends MyButtonBase {
         this.image.color = this.color; // 按下时改变颜色
         // 缩放动画
         Laya.Tween.to(this.image, { scaleX: 0.9, scaleY: 0.9 }, 100, Laya.Ease.quadIn);
+        Laya.SoundManager.playSound(Config.sounds.get("ui_anniu"));
     }
 
     private onRelease(): void {
@@ -53,6 +55,7 @@ export class MyButton extends MyButtonBase {
             // 碰撞检测判断是否有效点击
             if (this.image.hitTestPoint(Laya.stage.mouseX, Laya.stage.mouseY)) {
                 if (this.onClick) this.onClick();
+                Laya.SoundManager.playSound(Config.sounds.get("ui_anniu2"));
             }
         }
         this.image.color = this.originalColor; // 恢复原始颜色

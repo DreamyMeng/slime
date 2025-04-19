@@ -1,9 +1,10 @@
 import { Main } from "../ui/Main";
 import { Config } from "./config";
+import { GameLog } from "./utils";
 
 export interface SaveData_Scene {
     count: number;
-    pass: boolean;
+    pass: number;
     boss: string;
     level: number;
 }
@@ -12,27 +13,30 @@ export interface SaveData_Scene {
 export interface SaveData {
     // 每轮游戏产生的数据
     player: {
-        name: string;
+        id: string;
         quality: { [key: string]: number };
         relation: { [key: string]: number };
         exp: number;
         level: number;
         forget: number;
         skills: string[];
-
         curScene: number;
+        maxScene: number;
         scenes: { [key: string]: SaveData_Scene };
     };
     // 永久数据
     game: {
         isNew: boolean;
         rebirth: number;
-        roles: { [key: string]: boolean };
+        roles: { [key: string]: number };
         kills: { [key: string]: number };
-        collection: { [key: string]: number };
+        achieves: { [key: number]: number };
+        rewards: { [key: string]: number };
     }
     // 设置
     setting: {
+        auto: boolean;
+        mute: boolean;
         music: number;
         sound: number;
     };
@@ -43,67 +47,87 @@ export class Save {
     public static data: SaveData;
     public static readonly SAVE_KEY = "game_save";
 
-    static reset(name: string = 'h1'): SaveData["player"] {
+    static reset(id: string = 'h1'): SaveData["player"] {
         let data = {
-            name: name,
+            id: id,
             quality: {
-                None: 0
+                none: 0
             },
             relation: {
-                chi: 4524520,
-                hui: 454250,
-                lin: 24654153150,
-                mao: 1230,
-                jia: 4524520,
-                luo: 36630,
-                yu: 40,
-                zhao: 2456320,
-                ti: 1230,
-                jiao: 4120,
-                zhi: 1230
+                chi: 0,
+                hui: 0,
+                lin: 0,
+                mao: 0,
+                jia: 0,
+                luo: 0,
+                yu: 0,
+                zhao: 0,
+                ti: 0,
+                jiao: 0,
+                zhi: 0
             },
             exp: 0,
-            level: 91,
+            level: 1,
             forget: 0,
-            skills: ['tunshi1'] as string[],
+            skills: [] as string[],
             curScene: 1,
+            maxScene: 0,
             scenes: {} as { [key: string]: SaveData_Scene },
         }
 
         Config.table.Tbmap_level.getDataList().forEach((scene) => {
             data.scenes[scene.id] = {
                 count: 0,
-                pass: false,
+                pass: 0,
                 boss: Main.getBoss(scene),
                 level: Main.getLevel(scene)
             };
         });
 
-        if (this.data?.game.rebirth > 3) data.skills.push("jiexi");
+        if (this.data?.game.rebirth >= 3) data.skills.push("jiexi");
 
         return data;
     }
 
     static newGame(): SaveData {
-        let name = "h14";
-        return {
-            player: Save.reset(name),
+        const id = 'h1';// 测试使用
+        let data = {
+            player: Save.reset(id),
             game: {
                 isNew: true,
-                rebirth: 1,
-                roles: { name: true },
-                kills: {},
-                collection: {}
+                rebirth: 10,
+                roles: {} as { [key: string]: number },
+                kills: {} as { [key: string]: number },
+                achieves: {} as { [key: string]: number },
+                rewards: {
+                    'level': 0,
+                    'skill': 0,
+                    'boss': 0
+                }
             },
             setting: {
+                auto: false,
+                mute: false,
                 music: 0.5,
                 sound: 0.5
             }
         };
+
+        Config.table.Tbrole.getDataList().forEach((role) => {
+            data.game.roles[role.id] = 0;
+            data.game.kills[role.id] = 0;
+        });
+        data.game.roles[data.player.id] = 1;
+        Config.table.Tbachieve.getDataList().forEach((achieve) => {
+            data.game.achieves[achieve.id] = 0;
+        });
+
+        return data;
     }
 
     static init(): void {
-        this.data = /* this.loadGame() || */ this.newGame();
+        // this.deleteSave();
+        this.data = this.loadGame();
     }
 
     // 保存游戏
@@ -111,28 +135,25 @@ export class Save {
         try {
             const jsonData = JSON.stringify(this.data);
             Laya.LocalStorage.setItem(Save.SAVE_KEY, jsonData);
-            console.log("Game saved successfully!");
+            GameLog.log("存档保存成功!");
         } catch (error) {
             console.error("Failed to save game:", error);
         }
     }
 
     // 读取游戏
-    static loadGame(): SaveData | null {
+    static loadGame(): SaveData {
         try {
             const jsonData = Laya.LocalStorage.getItem(Save.SAVE_KEY);
             if (jsonData) {
-                const data: SaveData = JSON.parse(jsonData);
-                console.log("Game loaded successfully!");
-
-                return data;
+                GameLog.log("存档加载成功!");
+                return JSON.parse(jsonData);
             }
-            console.warn("No saved game found.");
-            return this.newGame();
+            console.log("No saved found.");
         } catch (error) {
             console.error("Failed to load game:", error);
-            return null;
         }
+        return this.newGame();
     }
 
     // 删除存档

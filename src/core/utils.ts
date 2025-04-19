@@ -20,8 +20,6 @@ export class GameLog {
             this.logs.shift(); // 删除最早的元素
         }
         this.logs.push(log);
-
-        console.log(log);
         if (this.callback) this.callback();
     }
 
@@ -89,4 +87,19 @@ export function getValueStr(num: number): string {
 export function numberToChinese(num: number): string {
     const chineseNumbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
     return num.toString().split('').map(n => chineseNumbers[parseInt(n)]).join('');
+}
+
+export function getMaxKey(data: { [key: string]: number }): string | null {
+    // 获取所有键值对，并找到值最大的键
+    let maxKey: string | null = null;
+    let maxValue: number = -Infinity;
+
+    for (const key in data) {
+        if (data[key] > maxValue) {
+            maxValue = data[key];
+            maxKey = key;
+        }
+    }
+
+    return maxKey;
 }

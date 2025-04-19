@@ -2,7 +2,7 @@
 
 
 /**
- * prefab/Role.lh
+ * prefab/Button.lh
  */
 export class MyButtonBase extends Laya.Sprite {
 }

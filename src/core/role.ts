@@ -1,4 +1,6 @@
 import { SkillTrigger, SkillType } from "../table/schema";
+import { DamagePool, Status } from "../ui/DamagePool";
+import { Main } from "../ui/Main";
 import { RoleView } from "../ui/RoleView";
 import { Battle } from "./battle";
 import { BuffMgr } from "./buff";
@@ -15,6 +17,7 @@ export class BaseRole extends EventDispatcher {
     target: BaseRole;
     hurt: number = 0; // 造成伤害的倍率
     bear: number = 0; // 承受伤害的倍率
+    isBoss: boolean = false; // 是否是boss
 
     constructor(camp: string, public view: RoleView) {
         super();
@@ -22,6 +25,7 @@ export class BaseRole extends EventDispatcher {
         this.health = new Health((cur, per) => {
             console.log(this.camp, ' health remain:', cur, per);
             view.hpBar?.setValue(per);
+            if (this.isBoss) Main.instance.battle.bossHp?.setValue(per);
         });
         this.attack = new Attribute((cur, max) => {
             console.log(this.camp, ' attack change:', cur - max, ' remian:', cur);
@@ -32,11 +36,12 @@ export class BaseRole extends EventDispatcher {
     }
 
     clear(): void {
-        this.health.reset();
+        // this.view.hpBar.setValue(1, false);
         this.offAll(); // 移除所有事件监听
     }
 
-    init(attack: number, defence: number, health: number, skills: string[]): void {
+    init(attack: number, defence: number, health: number, skills: string[], isBoss: boolean = false): void {
+        this.isBoss = isBoss;
         this.attack.init(attack);
         this.defence.init(defence);
         this.health.init(health);
@@ -91,29 +96,43 @@ export class BaseRole extends EventDispatcher {
 
     async attackAction(target: BaseRole): Promise<void> {
         if (BuffMgr.is(this, SkillType.abandon)) { console.log(`${this.camp} abandon!`); return; }
+
+        let owner = this.view.owner;
+        owner.parent.setChildIndex(owner, owner.parent.numChildren - 1);
+        this.view.play_anim(this.camp);
+        await delay(100);
+
+        Laya.SoundManager.playSound(Config.sounds.get("att"));
+
+        let miss = false;
         if (BuffMgr.is(target, SkillType.miss)) {
             console.log(`${target.camp} miss!`);
             if (BuffMgr.is(this, SkillType.hit)) console.log(`${this.camp} hit!`);
-            else return;
+            else miss = true;
         }
+
         if (BuffMgr.is(this, SkillType.replace)) {
             console.log(`${this.camp} replace!`);
             target = target.target;
         }
 
-        let owner = this.view.owner;
-        owner.parent.setChildIndex(owner, owner.parent.numChildren - 1);
-        this.view.play_anim(this.camp);
-        await delay(200);
         // damage action
         // await this.attackAnimation(() => {
         Battle.damage = toInt(target.getDamage(this.attack.value) * (1 + this.hurt) * (1 + target.bear));
-        GameLog.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
-        target.takeDamage(Battle.damage);
+        Battle.damage = Math.max(0, Battle.damage);
+        if (miss || Battle.damage === 0) {
+            Laya.SoundManager.playSound(Config.sounds.get("def"));
+            if (miss) DamagePool.showStatus(Status.Miss, this.view);
+            else DamagePool.showStatus(Status.Block, target.view);
+        } else {
+            GameLog.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
+            target.takeDamage(-Battle.damage);
+        }
         // });
 
+        await delay(100);
         await this.dispatchAsync(SkillTrigger.attacked.toString());
-        await target.dispatchAsync(SkillTrigger.hitted.toString());
+        if (!miss) await target.dispatchAsync(SkillTrigger.hitted.toString());
     }
 
     // damage_action() {
@@ -128,7 +147,9 @@ export class BaseRole extends EventDispatcher {
 
     takeDamage(damage: number): void {
         if (damage === 0) return;
-        this.health.add(-damage);
+        this.health.add(damage);
+        if (damage > 0) DamagePool.showHeal(damage, this.view);
+        if (damage < 0) DamagePool.showDamage(damage, this.view);
     }
 
     isAlive(): boolean {

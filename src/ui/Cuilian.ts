@@ -39,6 +39,8 @@ export class Cuilian extends Laya.Script {
             Main.instance.update_player();
             this.owner.close();
             MessageBox.tip(`精炼成功，属性向拟态生物靠拢。`);
+            Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
+            Save.saveGame();
         }
         this.owner.no.onClick = () => {
             this.owner.close();
@@ -47,7 +49,7 @@ export class Cuilian extends Laya.Script {
 
     refining(): { [key: string]: number } {
         let playerData = Save.data.player;
-        let roleData: cfg.role = Config.table.Tbrole.get(playerData.name);
+        let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
         var sr = playerData.relation;
         var cr = roleData.relations as unknown as { [key: string]: number };
         var keys = Object.keys(sr);

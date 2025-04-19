@@ -1,5 +1,12 @@
 [
   {
+    "id": 0,
+    "need": 20,
+    "health": 0,
+    "attack": 0,
+    "defence": 0
+  },
+  {
     "id": 1,
     "need": 20,
     "health": 0.1,

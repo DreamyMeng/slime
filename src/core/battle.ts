@@ -1,5 +1,6 @@
 // Battle.ts
-import { role, SkillTrigger } from '../table/schema';
+import * as cfg from "../table/schema";
+import * as utils from "../core/utils";
 import { Main } from '../ui/Main';
 import { MessageBox } from '../ui/MessageBox';
 import { RoleView } from '../ui/RoleView';
@@ -8,7 +9,8 @@ import { Config } from './config';
 import { BaseRole } from './role';
 import { Save } from './save';
 import { SkillMgr } from './skill';
-import { delay, GameLog } from './utils';
+import { Chengjiu } from "../ui/Chengjiu";
+import { HPBar } from "../ui/HPBar";
 
 export class Battle {
     player: BaseRole;
@@ -16,34 +18,70 @@ export class Battle {
     static damage: number = 0;// 每轮攻击造成的伤害
     escape: boolean = false; // 是否逃跑
     static skill_rate: number = 0.2; // 获得技能概率
-
+    static bossData = {
+        attackRate: 1.2, // boss攻击倍数
+        defenceRate: 1.2, // boss防御倍数
+        healthRate: 2, // boss血量倍数
+    }
+    bossHp: HPBar;
     constructor() {
+        this.bossHp = Main.instance.Battle.getComponent(HPBar);
         this.player = new BaseRole('player', Main.instance.Player.getComponent(RoleView)); // 创建玩家角色实例
         this.enemy = new BaseRole('enemy', Main.instance.Enemy.getComponent(RoleView)); // 创建敌人角色实例
         this.player.target = this.enemy; // 设置玩家的目标为敌人
         this.enemy.target = this.player; // 设置敌人的目标为玩家
     }
 
+    init(id: string, level: number, isBoss: boolean): void {
+        let playerData = Save.data.player;
+        let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
+        let levelData: cfg.role_level = Config.table.Tbrole_level.get(playerData.level);
+        let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(Save.data.game.rebirth);
+        let addition = Main.getAddition();
+        let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
+        let defence = Main.getDefence(roleData, levelData, rebirthData, addition);
+        let health = Main.getHealth(roleData, levelData, rebirthData, addition);
+
+        this.player.init(attack, defence, health, roleData.skills.concat(playerData.skills));
+
+        let sceneData: cfg.map_level = Config.table.Tbmap_level.get(playerData.curScene);
+        roleData = Config.table.Tbrole.get(id);
+        levelData = Config.table.Tbrole_level.get(level);
+        attack = utils.toInt(levelData.attack * roleData.attackRate * sceneData.attackRate);
+        defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
+        health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
+
+        if (isBoss) { // 是boss
+            attack = utils.toInt(attack * Battle.bossData.attackRate);
+            defence = utils.toInt(defence * Battle.bossData.defenceRate);
+            health = utils.toInt(health * Battle.bossData.healthRate);
+        }
+        this.bossHp.bg.visible = isBoss;
+        this.enemy.init(attack, defence, health, roleData.skills, isBoss);
+    }
+
     async start(): Promise<void> {
+        Laya.SoundManager.playMusic(Config.sounds.get("battle_bgm"));
+
         this.player.health.reset();
         this.enemy.health.reset();
 
-        GameLog.log("Battle starts!");
+        utils.GameLog.log("Battle starts!");
         this.escape = false; // 重置逃跑标志
         let role = this.player;
         let target = this.enemy;
 
         // 开始战斗
-        role.dispatchAsync(SkillTrigger.ready.toString());
-        target.dispatchAsync(SkillTrigger.ready.toString());
+        role.dispatchAsync(cfg.SkillTrigger.ready.toString());
+        target.dispatchAsync(cfg.SkillTrigger.ready.toString());
 
-        role.dispatchAsync(SkillTrigger.start.toString());
-        target.dispatchAsync(SkillTrigger.start.toString());
+        role.dispatchAsync(cfg.SkillTrigger.start.toString());
+        target.dispatchAsync(cfg.SkillTrigger.start.toString());
 
-        await delay(200);
+        await utils.delay(200);
 
         while (!this.escape && (role.isAlive() && target.isAlive())) {
-            GameLog.log(`${role.camp} Turn!`);
+            utils.GameLog.log(`${role.camp} Turn!`);
             // // 更新自身 Buff
             // role.buff.updateBuffs();
             // // 如果被控制（如眩晕），跳过行动
@@ -58,30 +96,40 @@ export class Battle {
             [role, target] = [target, role];
         }
 
-        if (this.escape) {
-            GameLog.log('player escapes the battle!');
-        } else {
-            // 处理胜利失败逻辑
-            if (this.player.isAlive()) {
-                GameLog.log(`${this.player.camp} wins the battle!`);
-                this.victory(this.enemy.view.data, this.enemy.view.level, this.enemy.view.isBoss);
-            } else {
-                GameLog.log(`${this.enemy.camp} wins the battle!`);
-            }
-        }
-
         SkillMgr.clear(); // 清除技能
         BuffMgr.clear(); // 清除buff
         this.player.clear(); // 清除玩家
         this.enemy.clear(); // 清除敌人
 
+        // await utils.delay(200);
+
+        if (this.escape) {
+            utils.GameLog.log('player escapes the battle!');
+        } else {
+            // 处理胜利失败逻辑
+            if (this.player.isAlive()) {
+                Laya.SoundManager.playSound(Config.sounds.get("win"));
+                utils.GameLog.log(`${this.player.camp} wins the battle!`);
+                this.victory(this.enemy.view.data, this.enemy.view.level, this.enemy.isBoss);
+
+                if (Save.data.setting.auto) {
+                    Main.instance.auto_fight();
+                    return;
+                }
+            } else {
+                Main.player_dead();
+                utils.GameLog.log(`${this.enemy.camp} wins the battle!`);
+            }
+        }
+
+        Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
         Main.instance.show_map();
+        Save.saveGame();
     }
 
-    victory(roleData: role, level: number, boss: boolean): void {
+    victory(roleData: cfg.role, level: number, isBoss: boolean): void {
         MessageBox.tip(`战斗胜利！，吞噬：${Main.getRoleName(roleData)}`);
-
-        // CollectionScene.addCount(CollectionType.other, id);
+        Chengjiu.addCount('kill', roleData.id);
 
         let playerData = Save.data.player;
         playerData.scenes[playerData.curScene].count++;
@@ -92,48 +140,14 @@ export class Battle {
 
         Main.learn(roleData);// 获得技能
 
+        if (isBoss) {
+            MessageBox.tip("闯关成功！");
+            playerData.scenes[playerData.curScene].pass = 1;
+            playerData.maxScene = playerData.curScene;
+            Chengjiu.addCount('map');
+            Main.instance.update_map();
+        }
+
         Main.instance.update_player();
-
-        // if (Battle.isAuto) {
-        //     // 自动战斗逻辑
-        //     var sceneData = Config.getSceneConfig(parseInt(Config.save.player.curScene.level));
-        //     var id = Main.getMonsterByScene(sceneData);
-        //     var roleData = Config.getRoleConfig(id);
-        //     var levelData = Config.getLevelConfig(Enemy.getLevel(sceneData));
-        //     var attack = toInt(levelData.roleAttribute.attack * roleData.attribute.attack * sceneData.roleAttribute.attack);
-        //     var defence = toInt(levelData.roleAttribute.defence * roleData.attribute.defence * sceneData.roleAttribute.defence);
-        //     var health = toInt(levelData.roleAttribute.health * roleData.attribute.health * sceneData.roleAttribute.health);
-        //     var level = levelData.id;
-        //     this.onShow(true, (view, role) => {
-        //         view.Name.text = Config.getRoleName(roleData);
-        //         view.setLevel(level);
-        //         role.level = level;
-        //         role.isBoss = false;
-        //         role.init(roleData.id, attack, defence, health, roleData.skillList);
-        //     });
-        //     return;
-        // }
-
-        // 如果是boss，胜利后将直接进入下一关
-        // 解锁tip，最大值限制
-        // if (boss) {
-        //     MessageBox.tip("闯关成功！");
-        //     // 解锁最大值
-        //     Config.save.player.scenes[curScene.level].pass = true;
-        //     var max = Math.min(parseInt(curScene.max) + 1, Config.tables.Tbscene.getDataList().length);
-        //     curScene.max = max.toString();
-        //     CollectionScene.addCount(CollectionType.level);
-        //     Main.instance.forward();
-
-        //     // 地图解锁
-        //     Config.tables.Tbmap.getDataList().forEach((item) => {
-        //         if (max >= item.unlock) {
-        //             if (!Config.save.player.map[item.id]) {
-        //                 Config.save.player.map[item.id] = true;
-        //                 MessageBox.show(`解锁地图：<font color=${item.color}>${item.id}</font>`, null, null, true);
-        //             }
-        //         }
-        //     });
-        // }
     }
 }

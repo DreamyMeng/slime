@@ -12,9 +12,9 @@ export class Config {
      * 异步加载所有JSON配置表
      * 加载顺序按照数组定义顺序执行
      */
-    static async load() {
+    static async load_config() {
         // 配置文件路径列表
-        let jsonArr = [
+        const jsonArr = [
             "resources/json/tbachieve.json",
             "resources/json/tbmap_level.json",
             "resources/json/tbother.json",
@@ -39,6 +39,25 @@ export class Config {
 
         // 清理加载器缓存
         jsonArr.forEach((res) => { Laya.loader.clearRes(res) });
+    }
+
+    static sounds: Map<string, string> = new Map<string, string>();
+    // 初始化加载声音资源
+    static async load_sound() {
+        // 预加载所有音效资源
+        this.sounds.set("bgm", "resources/sound/bgm.mp3");
+        this.sounds.set("ui_anniu", "resources/sound/ui_anniu.mp3");
+        this.sounds.set("ui_anniu2", "resources/sound/ui_anniu2.mp3");
+        this.sounds.set("att", "resources/sound/att.mp3");
+        this.sounds.set("def", "resources/sound/def.mp3");
+        this.sounds.set("die", "resources/sound/die.mp3");
+        this.sounds.set("upgrade", "resources/sound/upgrade.mp3");
+        this.sounds.set("win", "resources/sound/win.mp3");
+        this.sounds.set("battle_bgm", "resources/sound/battle_bgm.mp3");
+
+        await Laya.loader.load(Array.from(this.sounds.values()));
+
+        Laya.SoundManager.playMusic(this.sounds.get("bgm"));
     }
 }
 

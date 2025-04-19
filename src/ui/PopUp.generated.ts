@@ -5,7 +5,7 @@ import { MyButton } from "./MyButton";
 /**
  * resources/prefab/PopUp.lh
  */
-export class PopUpBase extends Laya.Sprite {
+export class PopUpBase extends Laya.Box {
     public Label!: Laya.Label;
     public ok!: MyButton;
     public no!: MyButton;

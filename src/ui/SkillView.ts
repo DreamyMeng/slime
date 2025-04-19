@@ -21,7 +21,7 @@ export class SkillView extends Laya.Script {
     private data: skill;
     private isForget: boolean;
 
-    init(id: string, isForget: boolean = false): void {
+    show(id: string, isForget: boolean = false): void {
         this.isForget = isForget;
         this.data = Config.table.Tbskill.get(id);
         if (id && !this.data) {

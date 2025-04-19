@@ -23,6 +23,7 @@ export class SkillTip extends Laya.Script {
             Main.instance.update_player();
             Main.instance.update_skill();
             this.owner.close();
+            Save.saveGame();
         }
         this.owner.no.onClick = () => {
             this.owner.close();

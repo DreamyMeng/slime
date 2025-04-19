@@ -177,13 +177,13 @@ export class health extends BaseSkill {
             let per = Number(this.data.values.get("1"));
             value = toInt(per * this.owner.attack.value);
             GameLog.log(`${target.camp} health + ${value}`);
-            target.takeDamage(-value);
+            target.takeDamage(value);
         }
         if (this.data.values.has("2")) {
             let per = Number(this.data.values.get("2"));
             value = toInt(per * Battle.damage);
             GameLog.log(`${target.camp} health + ${value}`);
-            target.takeDamage(-value);
+            target.takeDamage(value);
         }
     }
 }

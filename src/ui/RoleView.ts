@@ -13,10 +13,6 @@ export class RoleView extends Laya.Script {
     declare owner: MyButton;
     data: role;
     level: number;
-    private attack: number;
-    private defence: number;
-    private health: number;
-    isBoss: boolean = false;
     hpBar: HPBar;
     original_x: number;
     original_y: number;
@@ -32,9 +28,8 @@ export class RoleView extends Laya.Script {
             // Save.data.player.scenes[Save.data.player.curScene].count++;
             // Main.instance.update_map();
 
-            Main.instance.battle.enemy.init(this.attack, this.defence, this.health, this.data.skills);
             Main.instance.Enemy.getComponent(RoleView).show(this.data.id, this.level);
-            Main.instance.show_battle();
+            Main.instance.show_battle(this.data.id, this.level, false);
 
         }; // 绑定点击事件 
     }
@@ -46,10 +41,10 @@ export class RoleView extends Laya.Script {
         this.owner.title.text = Main.getRoleName(roleData);
         (this.owner.image.getChildByName('Level') as Laya.Label).text = `Lv.${level}`;
         let levelData = Config.table.Tbrole_level.get(level);
-        this.attack = utils.toInt(levelData.attack * roleData.attackRate * sceneData.attackRate);
-        this.defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
-        this.health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
-        let power = Main.getPower(this.attack, this.defence, this.health);
+        let attack = utils.toInt(levelData.attack * roleData.attackRate * sceneData.attackRate);
+        let defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
+        let health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
+        let power = Main.getPower(attack, defence, health);
         (this.owner.image.getChildByName('Tip') as Laya.Label).text = `战力:${utils.getValueStr(power)}`;
     }
 
@@ -63,9 +58,12 @@ export class RoleView extends Laya.Script {
     }
 
     animator: Laya.Animator2D;
+    // role_action: (target: BaseRole) => boolean;
 
     // event_damage(): void {
-    //     console.log(":event_damage");
+    //     // console.log(":event_damage");
+    //     if (this.role_action) this.role_action();
+    //     Laya.SoundManager.playSound(Config.sounds.get("att"));
     // }
 
     play_anim(name: string): void {

@@ -5,7 +5,7 @@
     {
       "name": "Base Layer",
       "defaultStateName": "attack2",
-      "playOnWake": true,
+      "playOnWake": false,
       "blendingMode": 0,
       "states": [
         {

@@ -1,9 +1,9 @@
 {
   "_$ver": 1,
-  "_$id": "qolxmmcm",
+  "_$id": "fyb7ya4o",
   "_$var": true,
   "_$runtime": "res://36947a58-ffc9-4f8b-bffa-26849c293894",
-  "_$type": "Sprite",
+  "_$type": "Box",
   "name": "PopUp",
   "x": 360,
   "y": 640,
@@ -12,19 +12,28 @@
   "anchorX": 0.5,
   "anchorY": 0.5,
   "_mouseState": 2,
-  "_gcmds": [
-    {
-      "_$type": "DrawRectCmd",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1,
-      "percent": true,
-      "lineWidth": 1,
-      "fillColor": "rgba(20, 20, 20, 0.9019607843137255)"
-    }
-  ],
+  "centerX": 0,
+  "centerY": 0,
   "_$child": [
+    {
+      "_$id": "63szkx1s",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 720,
+      "height": 1280,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "percent": true,
+          "lineWidth": 1,
+          "fillColor": "rgba(20, 20, 20, 0.9019607843137255)"
+        }
+      ]
+    },
     {
       "_$id": "ecyn9419",
       "_$type": "Image",
@@ -35,9 +44,7 @@
       "height": 400,
       "anchorX": 0.5,
       "anchorY": 0.5,
-      "centerX": 0,
-      "centerY": 0,
-      "skin": "res://cc301462-15dd-4f5b-bcd1-a9ef34fe4099",
+      "skin": "res://f70ad7f2-7a6b-48e1-9c8a-2ede6c3f385b",
       "sizeGrid": "25,20,20,23,0",
       "color": "#4b4b4b"
     },
@@ -50,11 +57,10 @@
       "y": 460,
       "width": 560,
       "height": 260,
-      "centerX": 0,
-      "centerY": -50,
       "text": "回合开始时30%概率对手防御力降低为50%,持续2回合",
       "fontSize": 32,
       "color": "rgba(255, 255, 255, 1)",
+      "html": true,
       "align": "center",
       "valign": "middle",
       "wordWrap": true,

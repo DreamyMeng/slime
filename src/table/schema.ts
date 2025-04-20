@@ -664,34 +664,6 @@ export class MonsterProbability {
 
 
 
-export class other {
-
-    constructor(_json_: any) {
-        if (_json_.id === undefined) { throw new Error() }
-        this.id = _json_.id
-        if (_json_.map === undefined) { throw new Error() }
-        this.map = new Map<string, string>(); for(var _entry0_ of _json_.map) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.map.set(_k0, _v0);  }
-    }
-
-    /**
-     * id
-     */
-    readonly id: string
-    /**
-     * 进化所需等级
-     */
-    readonly map: Map<string, string>
-
-    resolve(tables:Tables) {
-        
-        
-    }
-}
-
-
-
-
-
 export class rebirth {
 
     constructor(_json_: any) {
@@ -1202,37 +1174,6 @@ export class Tbmap_level {
 
 
 
-export class Tbother {
-    private _dataMap: Map<string, other>
-    private _dataList: other[]
-    constructor(_json_: any) {
-        this._dataMap = new Map<string, other>()
-        this._dataList = []
-        for(var _json2_ of _json_) {
-            let _v: other
-            _v = new other(_json2_)
-            this._dataList.push(_v)
-            this._dataMap.set(_v.id, _v)
-        }
-    }
-
-    getDataMap(): Map<string, other> { return this._dataMap; }
-    getDataList(): other[] { return this._dataList; }
-
-    get(key: string): other | undefined { return this._dataMap.get(key); }
-
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
-            data.resolve(tables)
-        }
-    }
-
-}
-
-
-
-
 export class Tbrebirth {
     private _dataMap: Map<number, rebirth>
     private _dataList: rebirth[]
@@ -1364,8 +1305,6 @@ export class Tables {
     get Tbachieve(): Tbachieve  { return this._Tbachieve;}
     private _Tbmap_level: Tbmap_level
     get Tbmap_level(): Tbmap_level  { return this._Tbmap_level;}
-    private _Tbother: Tbother
-    get Tbother(): Tbother  { return this._Tbother;}
     private _Tbrebirth: Tbrebirth
     get Tbrebirth(): Tbrebirth  { return this._Tbrebirth;}
     private _Tbrole: Tbrole
@@ -1378,7 +1317,6 @@ export class Tables {
     constructor(loader: JsonLoader) {
         this._Tbachieve = new Tbachieve(loader('tbachieve'))
         this._Tbmap_level = new Tbmap_level(loader('tbmap_level'))
-        this._Tbother = new Tbother(loader('tbother'))
         this._Tbrebirth = new Tbrebirth(loader('tbrebirth'))
         this._Tbrole = new Tbrole(loader('tbrole'))
         this._Tbrole_level = new Tbrole_level(loader('tbrole_level'))
@@ -1386,7 +1324,6 @@ export class Tables {
 
         this._Tbachieve.resolve(this)
         this._Tbmap_level.resolve(this)
-        this._Tbother.resolve(this)
         this._Tbrebirth.resolve(this)
         this._Tbrole.resolve(this)
         this._Tbrole_level.resolve(this)

@@ -17,7 +17,6 @@ export class Config {
         const jsonArr = [
             "resources/json/tbachieve.json",
             "resources/json/tbmap_level.json",
-            "resources/json/tbother.json",
             "resources/json/tbrebirth.json",
             "resources/json/tbrole.json",
             "resources/json/tbrole_level.json",
@@ -56,58 +55,35 @@ export class Config {
         this.sounds.set("battle_bgm", "resources/sound/battle_bgm.mp3");
 
         await Laya.loader.load(Array.from(this.sounds.values()));
+    }
 
-        Laya.SoundManager.playMusic(this.sounds.get("bgm"));
+    static prefabs: Map<string, string> = new Map<string, string>();
+
+    static async load_prefab() {
+        // 加载所有prefab资源
+        this.prefabs.set("PopUp", "resources/prefab/PopUp.lh");
+        this.prefabs.set("Damage", "resources/prefab/Damage.lh");
+
+        await Laya.loader.load(Array.from(this.prefabs.values()));
     }
 }
 
-export let xinximoban = {
-    zhandou: {
-        kaishi: "--------开始战斗---------",
-        jineng1: "你使用了技能*,&",
-        jineng2: "*使用了技能&,^",
-
-        shanbi1: "你闪避了*的攻击",
-        shanbi2: "*闪避了你的攻击",
-        baoji1: "你对*的攻击触发了暴击,造成了#点伤害.",
-        baoji2: "*对你的攻击触发了暴击,造成了#点伤害.",
-        huihe1: "你对*发动了攻击,造成了&点伤害.",
-        huihe2: "*对你发动了攻击,造成了&点伤害.",
-        huifu1: "你恢复了*点生命.",
-        huifu2: "*恢复了&点生命.",
-
-        siwang1: "你已经被*吞噬.",
-        siwang2: "*已经被你吞噬.",
-        jieshu: "--------战斗结束---------",
-        taopao: "你逃出生天!"
-    },
-    qianjin: "你遇到了*,&,^!",
-    zhandouli: "当前战斗力为:*.",
-    shenru: "你来到第*层.",
-    shengji: "你的等级为:*.",
-    zhuansheng: "转生成功，属性成长提升.",
-    cuilian: "淬炼成功，属性向拟态生物靠拢",
-    jinhua: {
-        chenggong: "拟态成功,拟态为*.",
-        shibai1: "拟态失败,肉身崩坏死亡！",
-        shibai2: "拟态失败，损失等级10级。"
-    },
-    tunshi: "你吞噬了*,解析成功获得技能&",
+export let skill_rate: number = 0.2; // 获得技能概率
+export let bossData = {
+    attackRate: 1.2, // boss攻击倍数
+    defenceRate: 1.2, // boss防御倍数
+    healthRate: 2, // boss血量倍数
 }
-
-export let shuxing_config = {
-    "chi": "齿",
-    "hui": "喙",
-    "lin": "鳞",
-    "mao": "毛",
-    "jia": "甲",
-    "luo": "蠃",
-    "yu": "羽",
-    "zhao": "爪",
-    "ti": "蹄",
-    "jiao": "角",
-    "zhi": "智"
+// 计算公式，数值修正
+export let shift_config = {
+    role_shift: 1.05, // 角色数值修正量
+    power_shift: 10, // 战斗力数值修正量（为了好看）
+    zhongzu_shift: 0.1, // 种族数值修正量
 }
+// 根据稀有度击杀足够数量可解锁角色
+export let killCount = [100, 150, 200];
+// 根据稀有度获得进化所需等级
+export let jinhua_need = [10, 20, 30, 40, 45, 50, 55, 60, 65];
 
 export let color_config = {
     xinximoban: {
@@ -139,3 +115,64 @@ export let color_config = {
         9: "#ff0000",
     },
 }
+
+export let xinximoban = {
+    zhandou: {
+        kaishi: "----------开始战斗----------",
+        jineng1: `<font color='${color_config.xinximoban.player}'>你使用了技能·<font color='${color_config.xinximoban.skill}'>*</font>,&</font>`,
+        jineng2: `<font color='${color_config.xinximoban.enemy}'>^使用了技能·<font color='${color_config.xinximoban.skill}'>*</font>,&</font>`,
+        shanbi1: `<font color='${color_config.xinximoban.player}'>你闪避了!</font>`,
+        shanbi2: `<font color='${color_config.xinximoban.enemy}'>*闪避了!</font>`,
+        gedang1: `<font color='${color_config.xinximoban.player}'>你格挡了!</font>`,
+        gedang2: `<font color='${color_config.xinximoban.enemy}'>*格挡了!</font>`,
+        huihe1: `<font color='${color_config.xinximoban.player}'>你对*发动了攻击,造成了<font color='${color_config.xinximoban.shanghai}'>&</font>点伤害.</font>`,
+        huihe2: `<font color='${color_config.xinximoban.enemy}'>*对你发动了攻击,造成了<font color='${color_config.xinximoban.shanghai}'>&</font>点伤害.</font>`,
+        huifu1: `<font color='${color_config.xinximoban.player}'>你恢复了<font color='${color_config.xinximoban.huixue}'>&</font>点生命.</font>`,
+        huifu2: `<font color='${color_config.xinximoban.enemy}'>*恢复了<font color='${color_config.xinximoban.huixue}'>&</font>点生命.</font>`,
+        siwang1: `你吞噬了*.`,
+        siwang2: `*吞噬了你.`,
+        jieshu: "----------战斗结束----------",
+        taopao: `你逃出生天!`
+    },
+    qianjin: "你遇到了{0},{1},{2}!",
+    zhandouli: "当前战斗力为:*.",
+    shenru: "你来到第*层.",
+    shengji: "你的等级为:*.",
+    zhuansheng: "转生成功，属性成长提升.",
+    cuilian: "淬炼成功，属性向拟态生物靠拢",
+    jinhua: {
+        chenggong: "拟态成功,拟态为*.",
+        shibai1: "拟态失败,肉身崩坏死亡！",
+        shibai2: "拟态失败，损失等级10级。"
+    },
+    tunshi: "你吞噬了*,解析成功获得技能&",
+    buzu: "<font color='#FF0000'>等级不足</font>"
+}
+
+export let shuxing_config = {
+    "chi": "齿",
+    "hui": "喙",
+    "lin": "鳞",
+    "mao": "毛",
+    "jia": "甲",
+    "luo": "蠃",
+    "yu": "羽",
+    "zhao": "爪",
+    "ti": "蹄",
+    "jiao": "角",
+    "zhi": "智"
+}
+
+export let tishi = [
+    "拟态失败有可能死亡，拟态需谨慎",
+    "转生3次后，史莱姆会获得专属技能“解析”",
+    "拟态时，属性匹配度越高、属性值越高成功率越高",
+    "自动战斗可不一定是什么好事",
+    "偷偷说一下，人族非常厉害",
+    "淬炼可以让属性变得更纯粹",
+    "拟态只会拟态成灵属性最高或无属性的生物",
+    "已解锁的图鉴会给史莱姆提供属性加成",
+    "等级超过99级后升级获得的属性会大幅下降",
+    "所有生物20%概率吞噬敌人获得新的技能",
+    "转生超过99次、199次后转生获得的属性会大幅下降",
+]

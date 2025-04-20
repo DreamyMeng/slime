@@ -16,10 +16,10 @@
       "btn": {
         "_$ref": "gdkh6iqp"
       },
-      "animator": {
-        "_$ref": "4duu9782",
-        "_$type": "Animator2D"
-      }
+      "label": {
+        "_$ref": "6rnk1nkh"
+      },
+      "clip": null
     }
   ],
   "_$child": [
@@ -33,7 +33,7 @@
       "y": 260,
       "anchorX": 0.5,
       "anchorY": 0.5,
-      "visible": true,
+      "visible": false,
       "_mouseState": 1,
       "_$comp": [
         {
@@ -64,6 +64,7 @@
                   "soloTransitions": []
                 }
               ],
+              "playOnWake": false,
               "defaultStateName": "player"
             }
           ]
@@ -81,9 +82,22 @@
       "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
       "name": "Button",
       "active": true,
-      "x": 180,
-      "y": 550,
-      "visible": true
+      "x": 576,
+      "y": 101,
+      "width": 230,
+      "height": 120,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "3mo5miu3",
+          "width": 230,
+          "height": 120,
+          "x": 115,
+          "y": 60
+        }
+      ]
     },
     {
       "_$id": "dy13jouu",
@@ -93,6 +107,7 @@
       "y": 768,
       "width": 360,
       "height": 170,
+      "visible": false,
       "text": "<span>齿:<font color='#DCDCDC'>157.76万</font></span>\t\t<span>喙:<font color='#DCDCDC'>2.54万</font></span>\t\t<span>鳞:<font color='#DCDCDC'>125.25万</font></span>\t\t<br /><span>毛:<font color='#DCDCDC'>1241.41万</font></span>\t\t<span>甲:<font color='#DCDCDC'>1000兆</font></span>\t\t<span>蠃:<font color='#DCDCDC'>657.57万</font></span>\t\t<br /><span>羽:<font color='#DCDCDC'>2340</font></span>\t\t<span>爪:<font color='#DCDCDC'>570</font></span>\t\t<span>蹄:<font color='#DCDCDC'>0</font></span>\t\t<br /><span>角:<font color='#DCDCDC'>0</font></span>\t\t<span>智:<font color='#DCDCDC'>550</font></span>\t\t",
       "fontSize": 20,
       "color": "#FFFFFF",
@@ -108,7 +123,9 @@
       "active": true,
       "x": 360,
       "y": 640,
-      "visible": true,
+      "visible": false,
+      "centerX": 0,
+      "centerY": 0,
       "_$child": [
         {
           "_$override": "ecyn9419",
@@ -150,18 +167,6 @@
           ],
           "text": "2转解锁",
           "y": 60
-        },
-        {
-          "_$override": "y6ek77jm",
-          "x": 480,
-          "y": 485
-        },
-        {
-          "_$override": [
-            "y6ek77jm",
-            "au8mtcie"
-          ],
-          "text": "返回"
         },
         {
           "_$id": "5ubmstth",
@@ -255,6 +260,18 @@
               ]
             }
           ]
+        },
+        {
+          "_$override": "y6ek77jm",
+          "x": 480,
+          "y": 485
+        },
+        {
+          "_$override": [
+            "y6ek77jm",
+            "au8mtcie"
+          ],
+          "text": "返回"
         },
         {
           "_$id": "mnvm3p4s",
@@ -399,6 +416,114 @@
                   ]
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "u8ofmb49",
+      "_$prefab": "a5d025af-0362-4938-826d-47b1e702609e",
+      "name": "Damage",
+      "active": true,
+      "x": 205,
+      "y": 730,
+      "visible": true
+    },
+    {
+      "_$id": "kfzn7whe",
+      "_$prefab": "819108f6-545f-4a86-a92f-245f6129bbb9",
+      "_$var": true,
+      "name": "Player(1)",
+      "active": true,
+      "x": 205,
+      "y": 730,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "visible": true,
+      "_mouseState": 1,
+      "_$comp": [
+        {
+          "_$type": "b8edf63e-ed13-4a15-b25c-843107d5cccb",
+          "scriptPath": "../src/ui/HPBar.ts",
+          "bg": null,
+          "bar": null
+        },
+        {
+          "_$type": "Animator2D",
+          "controller": {
+            "_$uuid": "77cd7607-1fb0-4e17-9b75-4ef528e0288e",
+            "_$type": "AnimationController2D"
+          },
+          "controllerLayers": [
+            {
+              "_$type": "AnimatorControllerLayer2D",
+              "name": "Base Layer",
+              "states": [
+                {
+                  "_$type": "AnimatorState2D",
+                  "name": "player",
+                  "clipStart": 0,
+                  "clip": {
+                    "_$uuid": "607760e0-83fc-4ed6-805d-028aaf9fb252",
+                    "_$type": "AnimationClip2D"
+                  },
+                  "soloTransitions": []
+                }
+              ],
+              "playOnWake": false,
+              "defaultStateName": "player"
+            }
+          ]
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "4p57p0ot",
+          "visible": false
+        }
+      ]
+    },
+    {
+      "_$id": "6rnk1nkh",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 205,
+      "y": 650,
+      "width": 300,
+      "height": 40,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "text": "Text",
+      "fontSize": 40,
+      "color": "#FFFFFF",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "_$comp": [
+        {
+          "_$type": "Animator2D",
+          "controller": {
+            "_$uuid": "66dd5167-ef53-4792-840f-5eb06b67439d",
+            "_$type": "AnimationController2D"
+          },
+          "controllerLayers": [
+            {
+              "_$type": "AnimatorControllerLayer2D",
+              "name": "Base Layer",
+              "states": [
+                {
+                  "_$type": "AnimatorState2D",
+                  "name": "player_damage",
+                  "clipStart": 0,
+                  "clip": {
+                    "_$uuid": "e60b51bc-adc0-4534-9d8c-07aaf092dc4c",
+                    "_$type": "AnimationClip2D"
+                  },
+                  "soloTransitions": []
+                }
+              ],
+              "defaultStateName": "player_damage"
             }
           ]
         }

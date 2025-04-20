@@ -1,3 +1,4 @@
+import { getValueStr } from "../core/utils";
 import { Main } from "./Main";
 import { RoleView } from "./RoleView";
 
@@ -9,9 +10,10 @@ export class DamagePool {
         if (!label) {
             label = new Laya.Label();
             label.bold = true;
-            label.fontSize = 24;
+            label.fontSize = 32;
             label.anchorX = 0.5;
-            label.anchorY = 0.5;
+            label.width = 300;
+            label.align = "center";
         }
         label.visible = true;
         label.alpha = 1;
@@ -26,100 +28,110 @@ export class DamagePool {
         this.damageLabelPool.push(label);
     }
 
-    private static show(label: Laya.Label, role: RoleView, customOffset = true) {
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 30 + Math.random() * 10;
-        const offsetX = customOffset ? Math.cos(angle) * distance : 0;
-        const offsetY = customOffset ? Math.sin(angle) * distance : 0;
-
-        label.pos(role.original_x + offsetX, role.original_y + offsetY);
-
-        // 向上飘 + 缩放 + 淡出动画
-        Laya.Tween.to(
-            label,
-            {
-                scaleX: 1.5,
-                scaleY: 1.5,
-                y: label.y - 50
-            },
-            100,
-            Laya.Ease.backOut,
-            Laya.Handler.create(this, () => {
-                Laya.Tween.to(
-                    label,
-                    {
-                        scaleX: 1,
-                        scaleY: 1,
-                        alpha: 0
-                    },
-                    400,
-                    Laya.Ease.backIn,
-                    Laya.Handler.create(this, () => this.recycleDamageLabel(label))
-                );
-            })
-        );
+    private static show(label: Laya.Label) {
+        const duration = 1000; // 动画持续时间
+        const y = label.y; // 初始位置
+        label.alpha = 0; // 初始透明
+        // label.fontSize = 32;
+        // 渐显
+        Laya.Tween.to(label, { alpha: 1 }, 200);
+        // 向上移动 + 缩小
+        Laya.Tween.to(label, { y: y - 50, scale: 1.5 }, duration / 2, null, Laya.Handler.create(this, () => {
+            // 继续移动 + 缩小
+            Laya.Tween.to(label, { y: y - 100, scale: 0.5, alpha: 0 }, duration / 2, null, Laya.Handler.create(this, () => {
+                DamagePool.recycleDamageLabel(label); // 动画结束后移除
+            }));
+        }));
     }
 
     static showDamage(value: number, role: RoleView) {
         const label = this.getDamageLabel();
-        label.text = value.toString();
-        label.color = "#ff0000";
-        this.show(label, role);
+        label.text = `-${getValueStr(-value)}`;
+        label.color = "#ee123d";
+        label.pos(role.original_x, role.original_y - 80);
+        this.show(label);
     }
 
     static showHeal(value: number, role: RoleView) {
         const label = this.getDamageLabel();
-        label.text = "+" + value;
-        label.color = "#00ff00";
-        this.show(label, role);
-    }
-
-    static showStatus(type: Status, role: RoleView) {
-        const label = this.getDamageLabel();
-
-        switch (type) {
-            case Status.Block:
-                label.text = "格挡";
-                label.color = "#0000ff";
-                break;
-            case Status.Crit:
-                label.text = "暴击";
-                label.color = "#ff9900";
-                break;
-            case Status.Miss:
-                label.text = "闪避";
-                label.color = "#00ccff";
-                break;
-            case Status.Hit:
-                label.text = "必中";
-                label.color = "#ffff00";
-                break;
-        }
-
+        label.text = `+${getValueStr(value)}`;
+        label.color = "#12ee64";
         label.pos(role.original_x, role.original_y);
-
-        // 放大缩小动画
-        Laya.Tween.to(
-            label,
-            { scaleX: 1.5, scaleY: 1.5 },
-            200,
-            Laya.Ease.backOut,
-            Laya.Handler.create(this, () => {
-                Laya.Tween.to(label, { scaleX: 1, scaleY: 1 }, 800, Laya.Ease.backIn);
-            })
-        );
-
-        // 上升并淡出动画
-        Laya.Tween.to(
-            label,
-            { y: role.original_y - 20, alpha: 0 },
-            1200,
-            Laya.Ease.sineIn,
-            Laya.Handler.create(this, () => this.recycleDamageLabel(label))
-        );
+        const x = label.x; // 初始位置
+        label.x = x + (Math.random() * 100 - 50); // 轻微位置随机
+        this.show(label);
     }
-}
 
-export enum Status {
-    Crit, Miss, Block, Hit
+    static showDodge(role: RoleView) {
+        const label = this.getDamageLabel();
+        label.text = "闪避";
+        label.color = "#12eee0";
+        label.pos(role.original_x, role.original_y);
+        // label.fontSize = 24;
+        const bounceHeight = 30;
+        const duration = 600; // 动画持续时间
+        const x = label.x; // 初始位置
+        const y = label.y; // 初始位置
+        label.x = x + (Math.random() * 100 - 50); // 轻微位置随机
+        label.y = y;
+        label.alpha = 0; // 初始透明
+
+        // 初级闪烁
+        Laya.Tween.to(label, { alpha: 1 }, 200, null, null, 0);
+        Laya.Tween.to(label, { alpha: 0.8 }, 100, null, null, 200);
+        Laya.Tween.to(label, { alpha: 1 }, 100, null, null, 300);
+
+        // 第一次弹跳
+        Laya.Tween.to(label, {
+            y: y - bounceHeight,
+            scale: 1.2
+        }, duration / 4, null, Laya.Handler.create(this, () => {
+            // 第二次弹跳
+            Laya.Tween.to(label, {
+                y: y - bounceHeight / 2,
+                scale: 1.0
+            }, duration / 4, null, Laya.Handler.create(this, () => {
+                // 第三次弹跳
+                Laya.Tween.to(label, {
+                    y: y - 10,
+                    scale: 0.8,
+                    alpha: 0
+                }, duration / 2, null, Laya.Handler.create(this, () => {
+                    DamagePool.recycleDamageLabel(label); // 动画结束后移除
+                }));
+            }));
+        }
+        ), 400);
+    }
+
+    static showBlock(role: RoleView) {
+        const label = this.getDamageLabel();
+        label.text = "格挡";
+        label.color = "#eee712";
+        label.pos(role.original_x, role.original_y);
+        // label.fontSize = 28;
+        const duration = 1000; // 动画持续时间
+        const x = label.x; // 初始位置
+        const y = label.y; // 初始位置
+        label.x = x + (Math.random() * 100 - 50); // 轻微位置随机
+        label.y = y;
+        label.alpha = 0; // 初始透明
+
+        // 初始渐显
+        Laya.Tween.to(label, { alpha: 1 }, 300);
+
+        // 缓慢上浮
+        Laya.Tween.to(label, {
+            y: y - 80,
+            scale: 1.2
+        }, duration / 2, null, Laya.Handler.create(this, () => {
+            Laya.Tween.to(label, {
+                y: y - 100,
+                scale: 1.0,
+                alpha: 0
+            }, duration / 2, null, Laya.Handler.create(this, () => {
+                DamagePool.recycleDamageLabel(label); // 动画结束后移除
+            }));
+        }));
+    }
 }

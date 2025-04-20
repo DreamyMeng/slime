@@ -43,5 +43,7 @@ export class MainBase extends Laya.Scene {
     public Jinhua!: PopUp;
     public ad!: MyButton;
     public "Label(1)"!: Laya.Label;
+    public Button!: MyButton;
+    public Sound!: MyButton;
 }
 

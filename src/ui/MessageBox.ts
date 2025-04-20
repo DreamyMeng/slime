@@ -1,3 +1,4 @@
+import { Config } from "../core/config";
 import { GameLog } from "../core/utils";
 import { PopUp } from "./PopUp";
 
@@ -59,28 +60,27 @@ export class MessageBox {
     }
 
     static show(msg: string, ok_callback?: () => void, no_callback?: () => void, isOk: boolean = true) {
-        Laya.loader.load("resources/prefab/PopUp.lh").then((res) => {
-            let message: PopUp = res.create();
-            Laya.stage.addChild(message);
-            message.Label.text = msg;
-            message.open();
+        let message: PopUp = Laya.loader.getRes(Config.prefabs.get("PopUp")).create();
+        Laya.stage.addChild(message);
+        message.Label.text = msg;
+        message.open();
 
-            if (!isOk) {
-                message.ok.visible = false;
-                message.no.x = 285;
-            } else {
-                message.ok.visible = true;
-                message.no.x = 420;
-            }
+        if (!isOk) {
+            message.ok.visible = false;
+            message.no.x = 285;
+            GameLog.log(msg);
+        } else {
+            message.ok.visible = true;
+            message.no.x = 420;
+        }
 
-            message.ok.onClick = () => {
-                message.close(() => { message.destroy() });
-                if (ok_callback) ok_callback();
-            }
-            message.no.onClick = () => {
-                message.close(() => { message.destroy() });
-                if (no_callback) no_callback();
-            }
-        });
+        message.ok.onClick = () => {
+            message.close(() => { message.destroy() });
+            if (ok_callback) ok_callback();
+        }
+        message.no.onClick = () => {
+            message.close(() => { message.destroy() });
+            if (no_callback) no_callback();
+        }
     }
 }

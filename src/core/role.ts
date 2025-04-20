@@ -1,13 +1,13 @@
 import { SkillTrigger, SkillType } from "../table/schema";
-import { DamagePool, Status } from "../ui/DamagePool";
+import { DamagePool } from "../ui/DamagePool";
 import { Main } from "../ui/Main";
 import { RoleView } from "../ui/RoleView";
 import { Battle } from "./battle";
 import { BuffMgr } from "./buff";
-import { Config } from "./config";
+import { Config, xinximoban } from "./config";
 import { EventDispatcher } from "./event";
 import { SkillMgr } from "./skill";
-import { delay, GameLog, toInt, tweenTo } from "./utils";
+import { delay, GameLog, getValueStr, toInt } from "./utils";
 
 export class BaseRole extends EventDispatcher {
     camp: string;
@@ -122,11 +122,29 @@ export class BaseRole extends EventDispatcher {
         Battle.damage = Math.max(0, Battle.damage);
         if (miss || Battle.damage === 0) {
             Laya.SoundManager.playSound(Config.sounds.get("def"));
-            if (miss) DamagePool.showStatus(Status.Miss, this.view);
-            else DamagePool.showStatus(Status.Block, target.view);
+            if (miss) {
+                DamagePool.showDodge(target.view);
+                let str;
+                if (target.camp === 'player') str = xinximoban.zhandou.shanbi1;
+                else {
+                    str = xinximoban.zhandou.shanbi2;
+                    str = str.replace('*', Main.getRoleName(target.view.data));
+                }
+                GameLog.log(str); // 闪避
+            }
+            else {
+                DamagePool.showBlock(target.view);
+                let str;
+                if (target.camp === 'player') str = xinximoban.zhandou.gedang1;
+                else {
+                    str = xinximoban.zhandou.gedang2;
+                    str = str.replace('*', Main.getRoleName(target.view.data));
+                }
+                GameLog.log(str); // 闪避
+            }
         } else {
-            GameLog.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
-            target.takeDamage(-Battle.damage);
+            console.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
+            target.takeDamage(this, -Battle.damage);
         }
         // });
 
@@ -145,11 +163,29 @@ export class BaseRole extends EventDispatcher {
         return Math.max(0, damage - this.defence.value);
     }
 
-    takeDamage(damage: number): void {
+    takeDamage(owner: BaseRole, damage: number): void {
         if (damage === 0) return;
         this.health.add(damage);
-        if (damage > 0) DamagePool.showHeal(damage, this.view);
-        if (damage < 0) DamagePool.showDamage(damage, this.view);
+        if (damage > 0) {
+            DamagePool.showHeal(damage, this.view);
+            let str;
+            if (owner.camp === 'player') str = xinximoban.zhandou.huifu1;
+            else {
+                str = xinximoban.zhandou.huifu2;
+                str = str.replace('*', Main.getRoleName(this.view.data));
+            }
+            str = str.replace('&', "+" + getValueStr(damage));
+            GameLog.log(str);
+        }
+        if (damage < 0) {
+            DamagePool.showDamage(damage, this.view);
+            let str;
+            if (owner.camp === 'player') str = xinximoban.zhandou.huihe1;
+            else str = xinximoban.zhandou.huihe2;
+            str = str.replace('*', Main.getRoleName(this.view.data));
+            str = str.replace('&', "-" + getValueStr(Math.abs(damage)));
+            GameLog.log(str);
+        }
     }
 
     isAlive(): boolean {

@@ -95,7 +95,7 @@ export class Save {
             player: Save.reset(id),
             game: {
                 isNew: true,
-                rebirth: 10,
+                rebirth: 0,
                 roles: {} as { [key: string]: number },
                 kills: {} as { [key: string]: number },
                 achieves: {} as { [key: string]: number },

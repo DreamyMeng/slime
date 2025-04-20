@@ -1,29 +1,24 @@
 // Battle.ts
-import * as cfg from "../table/schema";
 import * as utils from "../core/utils";
+import * as cfg from "../table/schema";
+import { Chengjiu } from "../ui/Chengjiu";
+import { HPBar } from "../ui/HPBar";
 import { Main } from '../ui/Main';
 import { MessageBox } from '../ui/MessageBox';
 import { RoleView } from '../ui/RoleView';
 import { BuffMgr } from './buff';
-import { Config } from './config';
+import { bossData, Config, xinximoban } from './config';
 import { BaseRole } from './role';
 import { Save } from './save';
 import { SkillMgr } from './skill';
-import { Chengjiu } from "../ui/Chengjiu";
-import { HPBar } from "../ui/HPBar";
 
 export class Battle {
     player: BaseRole;
     enemy: BaseRole;
-    static damage: number = 0;// 每轮攻击造成的伤害
-    escape: boolean = false; // 是否逃跑
-    static skill_rate: number = 0.2; // 获得技能概率
-    static bossData = {
-        attackRate: 1.2, // boss攻击倍数
-        defenceRate: 1.2, // boss防御倍数
-        healthRate: 2, // boss血量倍数
-    }
     bossHp: HPBar;
+    escape: boolean; // 是否逃跑
+    static damage: number;// 每轮攻击造成的伤害
+
     constructor() {
         this.bossHp = Main.instance.Battle.getComponent(HPBar);
         this.player = new BaseRole('player', Main.instance.Player.getComponent(RoleView)); // 创建玩家角色实例
@@ -52,21 +47,23 @@ export class Battle {
         health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
 
         if (isBoss) { // 是boss
-            attack = utils.toInt(attack * Battle.bossData.attackRate);
-            defence = utils.toInt(defence * Battle.bossData.defenceRate);
-            health = utils.toInt(health * Battle.bossData.healthRate);
+            attack = utils.toInt(attack * bossData.attackRate);
+            defence = utils.toInt(defence * bossData.defenceRate);
+            health = utils.toInt(health * bossData.healthRate);
         }
+
+        Main.instance.Enemy.getComponent(RoleView).show_skin(isBoss);
         this.bossHp.bg.visible = isBoss;
         this.enemy.init(attack, defence, health, roleData.skills, isBoss);
     }
 
     async start(): Promise<void> {
+        utils.GameLog.log(xinximoban.zhandou.kaishi);
         Laya.SoundManager.playMusic(Config.sounds.get("battle_bgm"));
 
         this.player.health.reset();
         this.enemy.health.reset();
 
-        utils.GameLog.log("Battle starts!");
         this.escape = false; // 重置逃跑标志
         let role = this.player;
         let target = this.enemy;
@@ -81,7 +78,7 @@ export class Battle {
         await utils.delay(200);
 
         while (!this.escape && (role.isAlive() && target.isAlive())) {
-            utils.GameLog.log(`${role.camp} Turn!`);
+            console.log(`${role.camp} Turn!`);
             // // 更新自身 Buff
             // role.buff.updateBuffs();
             // // 如果被控制（如眩晕），跳过行动
@@ -104,31 +101,34 @@ export class Battle {
         // await utils.delay(200);
 
         if (this.escape) {
-            utils.GameLog.log('player escapes the battle!');
+            console.log('player escapes the battle!');
+            utils.GameLog.log(xinximoban.zhandou.taopao);
         } else {
             // 处理胜利失败逻辑
             if (this.player.isAlive()) {
-                Laya.SoundManager.playSound(Config.sounds.get("win"));
-                utils.GameLog.log(`${this.player.camp} wins the battle!`);
+                console.log(`${this.player.camp} wins the battle!`);
+                utils.GameLog.log(xinximoban.zhandou.siwang1.replace('*', Main.getRoleName(this.enemy.view.data)));
                 this.victory(this.enemy.view.data, this.enemy.view.level, this.enemy.isBoss);
-
                 if (Save.data.setting.auto) {
                     Main.instance.auto_fight();
                     return;
                 }
             } else {
+                console.log(`${this.enemy.camp} wins the battle!`);
+                utils.GameLog.log(xinximoban.zhandou.siwang2.replace('*', Main.getRoleName(this.enemy.view.data)));
                 Main.player_dead();
-                utils.GameLog.log(`${this.enemy.camp} wins the battle!`);
             }
         }
 
+        utils.GameLog.log(xinximoban.zhandou.jieshu);
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
         Main.instance.show_map();
         Save.saveGame();
     }
 
     victory(roleData: cfg.role, level: number, isBoss: boolean): void {
-        MessageBox.tip(`战斗胜利！，吞噬：${Main.getRoleName(roleData)}`);
+        Laya.SoundManager.playSound(Config.sounds.get("win"));
+        // MessageBox.tip(`战斗胜利！，吞噬：${Main.getRoleName(roleData)}`);
         Chengjiu.addCount('kill', roleData.id);
 
         let playerData = Save.data.player;

@@ -181,7 +181,7 @@ export class BaseBuff {
         this.name = data.name;
         this.duration = data.buffRound;
         this.type = data.type;
-        GameLog.log(`${this.name} created with duration: ${this.duration} `);
+        console.log(`${this.name} created with duration: ${this.duration} `);
     }
 
     /** 应用buff效果（子类实现） */
@@ -189,7 +189,7 @@ export class BaseBuff {
 
     /** 移除buff的通用逻辑 */
     remove(): void {
-        GameLog.log(`${this.name} removed from ${this.owner.camp} `);
+        console.log(`${this.name} removed from ${this.owner.camp} `);
         BuffMgr.removeBuffByOwner(this.owner, this);
     };
 
@@ -204,7 +204,7 @@ export class BaseBuff {
      */
     updateBuffs(): boolean {
         this.duration--;
-        GameLog.log(`${this.name} remaining duration: ${this.duration} `);
+        console.log(`${this.name} remaining duration: ${this.duration} `);
         if (this.duration <= 0) {
             this.remove();
             return true;
@@ -227,17 +227,17 @@ export class all extends BaseBuff {
      * 应用百分比加成的属性效果
      */
     apply() {
-        GameLog.log(`Applying ${this.name} to ${this.owner.camp} `);
+        console.log(`Applying ${this.name} to ${this.owner.camp} `);
         if (this.data.values.has("1")) {
             let per = Number(this.data.values.get("1"));
             this.attack = toInt(per * this.owner.attack.value);
-            GameLog.log(`${this.owner.camp} gains + ${this.attack} attack.`);
+            console.log(`${this.owner.camp} gains + ${this.attack} attack.`);
             this.owner.attack.add(this.attack);
         }
         if (this.data.values.has("2")) {
             let per = Number(this.data.values.get("2"));
             this.defence = toInt(per * this.owner.defence.value);
-            GameLog.log(`${this.owner.camp} gains + ${this.defence} defence.`);
+            console.log(`${this.owner.camp} gains + ${this.defence} defence.`);
             this.owner.defence.add(this.defence);
         }
     }
@@ -246,14 +246,14 @@ export class all extends BaseBuff {
      * 移除时还原属性加成
      */
     remove() {
-        GameLog.log(`Removing ${this.name} from ${this.owner.camp} `);
+        console.log(`Removing ${this.name} from ${this.owner.camp} `);
         if (this.attack != 0) {
             this.owner.attack.add(-this.attack);
-            GameLog.log(`${this.owner.camp} loses ${this.attack} attack.`);
+            console.log(`${this.owner.camp} loses ${this.attack} attack.`);
         }
         if (this.defence != 0) {
             this.owner.defence.add(-this.defence);
-            GameLog.log(`${this.owner.camp} loses ${this.defence} defence.`);
+            console.log(`${this.owner.camp} loses ${this.defence} defence.`);
         }
 
         super.remove();
@@ -268,7 +268,7 @@ export class all extends BaseBuff {
             let temp = this.attack;
             let per = Number(this.data.values.get("1"));
             this.attack = toInt(per * this.owner.attack.value) + temp;
-            GameLog.log(`${this.owner.camp} gains + ${this.attack} attack.`);
+            console.log(`${this.owner.camp} gains + ${this.attack} attack.`);
             this.owner.attack.add(-temp);
             this.owner.attack.add(this.attack);
         }
@@ -276,7 +276,7 @@ export class all extends BaseBuff {
             let temp = this.defence;
             let per = Number(this.data.values.get("2"));
             this.defence = toInt(per * this.owner.defence.value) + temp;
-            GameLog.log(`${this.owner.camp} gains + ${this.defence} defence.`);
+            console.log(`${this.owner.camp} gains + ${this.defence} defence.`);
             this.owner.defence.add(-temp);
             this.owner.defence.add(this.defence);
         }

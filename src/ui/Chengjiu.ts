@@ -1,4 +1,4 @@
-import { Config } from "../core/config";
+import { Config, killCount } from "../core/config";
 import { Save } from "../core/save";
 import { achieve } from "../table/schema";
 import { Main } from "./Main";
@@ -78,8 +78,6 @@ export class Chengjiu extends Laya.Script {
         return 0;
     }
 
-    static killCount = [100, 150, 200];
-
     static addCount(type: string, target?: string) {
         let achieves = Config.table.Tbachieve.getDataList();
         let achievesData = Save.data.game.achieves;
@@ -89,7 +87,7 @@ export class Chengjiu extends Laya.Script {
             Save.data.game.kills[target]++;
             var role = Config.table.Tbrole.get(target);
             if (role.rare < 4 && !Save.data.game.roles[target]) {
-                if (Save.data.game.kills[target] >= Chengjiu.killCount[role.rare - 1]) {
+                if (Save.data.game.kills[target] >= killCount[role.rare - 1]) {
                     Main.unlockRole(target);
                 }
             }

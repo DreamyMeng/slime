@@ -20,8 +20,8 @@ export class HPBar extends Laya.Script {
             this.bg.pos(35, 88); // 血条位置
             this.bar.size(158, 14); // 血条宽度和高度
             this.bar.pos(1, 1); // 血条位置
-            this.bg.graphics.drawRect(0, 0, 1, 1, "rgba(255, 255, 255, 0)", "rgb(255, 255, 255)").percent = true;
-            this.drawRect = this.bar.graphics.drawRect(0, 0, 1, 1, "rgb(255, 0, 0)");
+            this.bg.graphics.drawRect(0, 0, 1, 1, "#313c3c", "#ffffff").percent = true;
+            this.drawRect = this.bar.graphics.drawRect(0, 0, 1, 1, "#ff0000");
             this.drawRect.percent = true;
         }
 

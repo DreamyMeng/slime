@@ -1,7 +1,7 @@
 import * as cfg from "../table/schema";
-import { Config } from "../core/config";
+import { Config, xinximoban } from "../core/config";
 import { Save } from "../core/save";
-import { getMaxKey, getValueStr, toPerStr } from "../core/utils";
+import { GameLog, getMaxKey, getValueStr, toPerStr } from "../core/utils";
 import { Main } from "./Main";
 import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
@@ -90,11 +90,11 @@ export class Jinhua extends Laya.Script {
             const siwang = 0.15;
             if (Math.random() < siwang) {
                 Main.player_dead();
-                MessageBox.tip(`拟态失败,肉身崩坏死亡!`);
+                MessageBox.tip(xinximoban.jinhua.shibai1);
                 this.owner.close();
             } else {
                 playerData.level = Math.max(1, playerData.level - 10);
-                MessageBox.tip(`拟态失败,损失等级10级!`);
+                MessageBox.tip(xinximoban.jinhua.shibai2);
                 if (playerData.level <= 10) this.owner.close();
             }
         }
@@ -135,7 +135,7 @@ export class Jinhua extends Laya.Script {
             Main.unlockRole(id);
         }
 
-        MessageBox.tip(`拟态 ${Main.getRoleName(roleData)} 成功!`);
+        MessageBox.tip(xinximoban.jinhua.chenggong.replace('*', Main.getRoleName(roleData)));
     }
 
     list_jinhua(isAd: boolean): Array<[string, number][]> {

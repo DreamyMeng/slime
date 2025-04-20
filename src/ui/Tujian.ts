@@ -1,4 +1,4 @@
-import { Config, shuxing_config } from "../core/config";
+import { Config, killCount, shift_config, shuxing_config } from "../core/config";
 import { Save } from "../core/save";
 import * as utils from "../core/utils";
 import { role } from "../table/schema";
@@ -81,7 +81,7 @@ export class Tujian extends Laya.Script {
         let lock = !Save.data.game.roles[roleData.id];
         let str = '';
         if (roleData.rare < 4 && lock) {
-            str = `击杀解锁\n(${Save.data.game.kills[roleData.id]}/${Chengjiu.killCount[roleData.rare - 1]})`;
+            str = `击杀解锁\n(${Save.data.game.kills[roleData.id]}/${killCount[roleData.rare - 1]})`;
         }
         if (Main.isBoss(roleData) && Save.data.game.rewards['boss'] === 0) {
             str = '无法拟态\n需成就解锁';
@@ -92,7 +92,7 @@ export class Tujian extends Laya.Script {
 
         let list_shuxing = this.owner.getChildByName('list_shuxing') as Laya.List;
         var cr = roleData.relations as unknown as { [key: string]: number };
-        var r = roleData.race * roleData.remain * Main.zhongzu_shift;
+        var r = roleData.race * roleData.remain * shift_config.zhongzu_shift;
         let relations = [];
         for (let key in roleData.relations) {
             var v = utils.toInt((cr[key] ?? 0) * r);

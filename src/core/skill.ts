@@ -1,8 +1,9 @@
 // Skill.ts
-import { skill, SkillTrigger, SkillType, Target } from '../table/schema';
+import { skill, SkillType, Target } from '../table/schema';
+import { Main } from '../ui/Main';
 import { Battle } from './battle';
 import { BuffMgr } from './buff';
-import { Config } from './config';
+import { Config, xinximoban } from './config';
 import { BaseRole } from './role';
 import { GameLog, toInt } from './utils';
 
@@ -145,7 +146,15 @@ export class BaseSkill {
 
     private checkCondition(): boolean {
         if (this.condition.check(this.owner)) {
-            GameLog.log(`${this.owner.camp} trigger ${this.name}!`);
+            let str;
+            if (this.owner.camp === 'player') str = xinximoban.zhandou.jineng1;
+            else {
+                str = xinximoban.zhandou.jineng2;
+                str = str.replace('^', Main.getRoleName(this.owner.view.data));
+            }
+            str = str.replace('*', this.data.name);
+            str = str.replace('&', this.data.effectStr);
+            GameLog.log(str);
             return true;
         }
 
@@ -164,7 +173,7 @@ export class BaseSkill {
 
     // 移除技能触发器，状态提示
     ban() {
-        GameLog.log(`${this.owner.camp} ban ${this.name}!`);
+        console.log(`${this.owner.camp} ban ${this.name}!`);
         this.owner.off(this.data.trigger.toString(), this, this.onTrigger);
     }
 }
@@ -176,14 +185,14 @@ export class health extends BaseSkill {
         if (this.data.values.has("1")) {
             let per = Number(this.data.values.get("1"));
             value = toInt(per * this.owner.attack.value);
-            GameLog.log(`${target.camp} health + ${value}`);
-            target.takeDamage(value);
+            console.log(`${target.camp} health + ${value}`);
+            target.takeDamage(this.owner, value);
         }
         if (this.data.values.has("2")) {
             let per = Number(this.data.values.get("2"));
             value = toInt(per * Battle.damage);
-            GameLog.log(`${target.camp} health + ${value}`);
-            target.takeDamage(value);
+            console.log(`${target.camp} health + ${value}`);
+            target.takeDamage(this.owner, value);
         }
     }
 }
@@ -198,7 +207,7 @@ export class revive extends BaseSkill {
     }
     trigger(): void {
         if (this.count < 1) {
-            GameLog.log(`复活次数已用尽！`);
+            console.log(`复活次数已用尽！`);
             return;
         }
 
@@ -206,7 +215,7 @@ export class revive extends BaseSkill {
         let target = this.getTarget();
         target.health.reset();
         BuffMgr.clearByRevive(target);
-        GameLog.log(`${target.camp} revive!`);
+        console.log(`${target.camp} revive!`);
     }
 }
 
@@ -227,12 +236,12 @@ export class damage extends BaseSkill {
         if (this.data.values.has("1")) {
             value = Number(this.data.values.get("1"));
             target.hurt += value;
-            GameLog.log(`${target.camp} hurt + ${value}`);
+            console.log(`${target.camp} hurt + ${value}`);
         }
         if (this.data.values.has("2")) {
             value = Number(this.data.values.get("2"));
             target.bear += value;
-            GameLog.log(`${target.camp} bear + ${value}`);
+            console.log(`${target.camp} bear + ${value}`);
         }
     }
 }
@@ -295,7 +304,7 @@ export class GetSkill extends BaseSkill {
             // 创建并添加新技能
             newSkills.forEach(skillData => {
                 SkillMgr.createSkill(target, skillData);
-                GameLog.log(`${target.camp} 获得新技能: ${skillData.name}`);
+                console.log(`${target.camp} 获得新技能: ${skillData.name}`);
             });
         }
     }
@@ -338,7 +347,7 @@ export class learn extends BaseSkill {
             // 创建并添加新技能
             newSkills.forEach(skillData => {
                 SkillMgr.createSkill(target, skillData);
-                GameLog.log(`${target.camp} 获得新技能: ${skillData.name}`);
+                console.log(`${target.camp} 获得新技能: ${skillData.name}`);
             });
         }
 
@@ -355,7 +364,7 @@ export class learn extends BaseSkill {
             // 创建并添加新技能
             newSkills.forEach(skillData => {
                 SkillMgr.createSkill(target, skillData);
-                GameLog.log(`${target.camp} 获得新技能: ${skillData.name}`);
+                console.log(`${target.camp} 获得新技能: ${skillData.name}`);
             });
         }
     }

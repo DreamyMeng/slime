@@ -1,6 +1,6 @@
 const { regClass } = Laya;
 import { Battle } from "../core/battle";
-import { color_config, Config, shuxing_config } from "../core/config";
+import { color_config, Config, jinhua_need, shift_config, shuxing_config, skill_rate, xinximoban } from "../core/config";
 import { Save } from "../core/save";
 import * as utils from "../core/utils";
 import * as cfg from "../table/schema";
@@ -16,6 +16,12 @@ import { Tujian } from "./Tujian";
 @regClass()
 export class Main extends MainBase {
     static instance: Main;
+
+    show(): void {
+        (this.getChildByName('Top') as Laya.Image).visible = true;
+        (this.getChildByName('Middle') as Laya.Image).visible = true;
+        (this.getChildByName('Bottom') as Laya.Image).visible = true;
+    }
 
     onAwake(): void {
         Main.instance = this;
@@ -50,12 +56,14 @@ export class Main extends MainBase {
 
         this.btn_shenru.onClick = () => {
             Save.data.player.curScene++;
+            utils.GameLog.log(xinximoban.shenru.replace('*', utils.numberToChinese(Save.data.player.curScene)));
             Main.instance.update_map();
             Save.saveGame();
         }
-
+        utils.GameLog.log(xinximoban.shenru.replace('*', utils.numberToChinese(Save.data.player.curScene)));
         this.btn_fanhui.onClick = () => {
             Save.data.player.curScene--;
+            utils.GameLog.log(xinximoban.shenru.replace('*', utils.numberToChinese(Save.data.player.curScene)));
             Main.instance.update_map();
             Save.saveGame();
         }
@@ -73,11 +81,12 @@ export class Main extends MainBase {
         this.btn_jinhua.onClick = () => {
             let playerData = Save.data.player;
             let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-            let level = Number(Config.table.Tbother.get('need').map.get(Math.min(9, roleData.rare + 1).toString()));
+            let level = jinhua_need[Math.min(jinhua_need.length - 1, roleData.rare)];
+
             if (Save.data.player.level > level) {
                 this.Jinhua.getComponent(Jinhua).show();
             } else {
-                MessageBox.tip(`<font color='#FF0000'>等级不足</font>`);
+                MessageBox.tip(xinximoban.buzu);
             }
         }
 
@@ -85,7 +94,7 @@ export class Main extends MainBase {
             if (Save.data.player.level > Cuilian.level) {
                 this.Cuilian.getComponent(Cuilian).show();
             } else {
-                MessageBox.tip(`<font color='#FF0000'>等级不足</font>`);
+                MessageBox.tip(xinximoban.buzu);
             }
         }
 
@@ -98,7 +107,7 @@ export class Main extends MainBase {
             }
             let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(rebirth === 0 ? 1 : rebirth);
             if (Save.data.player.level < rebirthData.need) {
-                MessageBox.tip(`<font color='#FF0000'>等级不足</font>`);
+                MessageBox.tip(xinximoban.buzu);
                 return;
             }
             let per = 10;
@@ -114,7 +123,7 @@ export class Main extends MainBase {
                     MessageBox.show(`习得：${skill.name}`, null, null, false);
                 }
                 Save.data.player = Save.reset();
-                MessageBox.tip(`转生成功，属性成长提升。`);
+                MessageBox.tip(xinximoban.zhuansheng);
                 Chengjiu.addCount('rebirth');
                 Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
 
@@ -204,7 +213,8 @@ export class Main extends MainBase {
         this.btn_zidong.active = Save.data.game.rebirth > 0;
         this.btn_cuilian.tip.text = "消耗等级:" + Cuilian.level;
         this.btn_zhuansheng.tip.text = "需要等级:" + rebirthData.need;
-        this.btn_jinhua.tip.text = "需要等级:" + Config.table.Tbother.get('need').map.get(Math.min(9, roleData.rare + 1).toString());
+        this.btn_jinhua.tip.text = "需要等级:" + jinhua_need[Math.min(jinhua_need.length - 1, roleData.rare)];
+        utils.GameLog.log(xinximoban.zhandouli.replace('*', utils.getValueStr(power)));
     }
 
     update_skill(): void {
@@ -255,6 +265,12 @@ export class Main extends MainBase {
         this.monster0.getComponent(RoleView).init(sceneData, list[0], Main.getLevel(sceneData));
         this.monster1.getComponent(RoleView).init(sceneData, list[1], Main.getLevel(sceneData));
         this.monster2.getComponent(RoleView).init(sceneData, list[2], Main.getLevel(sceneData));
+
+        let str = xinximoban.qianjin;;
+        list.forEach((id, index) => {
+            str = str.replace(`{${index}}`, Main.getRoleName(Config.table.Tbrole.get(id)));
+        });
+        utils.GameLog.log(str);
     }
 
     static player_dead(): void {
@@ -269,6 +285,7 @@ export class Main extends MainBase {
 
         Laya.SoundManager.playSound(Config.sounds.get("die"));
         Main.instance.update_player();
+        MessageBox.show(`你死了！等级降为1级。`, null, null, false);
     }
 
     static getRoleName(role: cfg.role) {
@@ -337,19 +354,18 @@ export class Main extends MainBase {
         }
         playerData.level++;
         MessageBox.tip("等级+1");
+        utils.GameLog.log(xinximoban.shengji.replace('*', playerData.level.toString()));
     }
-
-    static zhongzu_shift: number = 0.1; // 种族数值修正量
 
     static addValue(role: cfg.role) {
         let playerData = Save.data.player;
-        var qualityValue = utils.toInt(role.quality * this.zhongzu_shift);
+        var qualityValue = utils.toInt(role.quality * shift_config.zhongzu_shift);
         playerData.quality[role.qualityType] = (playerData.quality[role.qualityType] ?? 0) + qualityValue;
         // if (qualityValue > 0) MessageBox.tip(`<font color=${color_config.QUALITY[role.qualityType]}>◈ ${Config.getQualityStr(role.qualityType)}:+${qualityValue} </font>`);
         var sr = playerData.relation;
         var cr = role.relations as unknown as { [key: string]: number };
         var keys = Object.keys(sr);
-        var r = role.race * role.remain * this.zhongzu_shift;
+        var r = role.race * role.remain * shift_config.zhongzu_shift;
         var des = "";
         shuxing_config
         for (let i = 0; i < keys.length; i++) {
@@ -374,7 +390,7 @@ export class Main extends MainBase {
     }
 
     static learn(targetData: cfg.role) {
-        if (Math.random() > 0.2) return;
+        if (Math.random() > skill_rate) return;
         let max = this.getSkillMax();
         let playerData = Save.data.player;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
@@ -396,14 +412,11 @@ export class Main extends MainBase {
             const skillData = Config.table.Tbskill.get(skillId);
             if (skillData) {
                 playerData.skills.push(skillId);
-                MessageBox.tip(`习得：${skillData.name}`);
+                MessageBox.tip(xinximoban.tunshi.replace('*', Main.getRoleName(targetData)).replace('&', skillData.name));
                 Main.instance.update_skill();
             }
         }
     }
-
-    static role_shift: number = 1.05; // 角色数值修正量
-    static power_shift: number = 10; // 战斗力数值修正量（为了好看）
 
     static getAddition(): { [key: string]: number } {
         let addition: { [key: string]: number } = { attack: 0, defence: 0, health: 0 };
@@ -426,7 +439,7 @@ export class Main extends MainBase {
         let value: number;
         value = (levelData.attack * roleData.attackRate * (1 + rebirthData.attack));
         value += (addition.attack);
-        return utils.toInt(value * this.role_shift);
+        return utils.toInt(value * shift_config.role_shift);
     }
 
     /**
@@ -436,7 +449,7 @@ export class Main extends MainBase {
         let value: number;
         value = (levelData.defence * roleData.defenceRate * (1 + rebirthData.defence));
         value += (addition.defence);
-        return utils.toInt(value * this.role_shift);
+        return utils.toInt(value * shift_config.role_shift);
     }
 
     /**
@@ -446,11 +459,11 @@ export class Main extends MainBase {
         let value: number;
         value = (levelData.health * roleData.healthRate * (1 + rebirthData.health));
         value += (addition.health);
-        return utils.toInt(value * this.role_shift);
+        return utils.toInt(value * shift_config.role_shift);
     }
 
     static getPower(attack: number, defence: number, health: number) {
-        return utils.toInt((attack + defence) * this.power_shift + health);
+        return utils.toInt((attack + defence) * shift_config.power_shift + health);
     }
 
     static isBoss(roleData: cfg.role): boolean {

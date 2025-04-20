@@ -1,8 +1,9 @@
 const { regClass } = Laya;
+import { xinximoban } from "../core/config";
 import { Save } from "../core/save";
-import { GameLog } from "../core/utils";
 import { skill } from "../table/schema";
 import { Main } from "./Main";
+import { MessageBox } from "./MessageBox";
 import { PopUp } from "./PopUp";
 
 @regClass()
@@ -14,7 +15,7 @@ export class SkillTip extends Laya.Script {
             let playerData = Save.data.player;
             let level = (playerData.forget + 1) * 5;
             if (playerData.level < level) {
-                GameLog.log(`<font color='#FF0000'>等级不足</font>`);
+                MessageBox.tip(xinximoban.buzu);
                 return;
             }
             playerData.level -= level;

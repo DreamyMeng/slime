@@ -1,0 +1,51 @@
+{
+  "_$type": "Animator2D",
+  "enabled": true,
+  "controllerLayers": [
+    {
+      "name": "Base Layer",
+      "defaultStateName": "damage",
+      "playOnWake": false,
+      "blendingMode": 0,
+      "states": [
+        {
+          "name": "damage",
+          "clip": {
+            "_$uuid": "c4c5fc1b-1385-4660-8801-58b56b5d433a"
+          },
+          "loop": -1,
+          "speed": 1,
+          "clipEnd": 1,
+          "x": 520.5392777255946,
+          "y": 269.08180190098483,
+          "id": "0"
+        },
+        {
+          "x": 10,
+          "y": 100,
+          "_isLooping": 0,
+          "id": "-1",
+          "name": "进入",
+          "speed": 1,
+          "clipEnd": 1,
+          "soloTransitions": [
+            {
+              "id": "0"
+            }
+          ]
+        },
+        {
+          "x": 479.60003662109375,
+          "y": 82.40000915527344,
+          "_isLooping": 0,
+          "id": "-2",
+          "name": "任何状态",
+          "speed": 1,
+          "clipEnd": 1
+        }
+      ],
+      "defaultWeight": 1
+    }
+  ],
+  "layerW": 150
+}

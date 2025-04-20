@@ -1,17 +1,25 @@
 import { Battle } from "./core/battle";
-import { Config } from "./core/config";
+import { Config, tishi } from "./core/config";
 import { EventDispatcher } from "./core/event";
 import { BaseRole } from "./core/role";
 import { Save } from "./core/save";
-import { GameLog } from "./core/utils";
+import { delay, GameLog } from "./core/utils";
 
 export async function main() {
-    GameLog.log("开局一只史莱姆");
+    GameLog.log("----------开局一只史莱姆----------");
+
+    let label = Laya.stage.addChild(new Laya.Label());
+    label.dataSource = { width: Laya.stage.width, height: Laya.stage.height, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
+
+    await delay(200);
+
+    label.text = tishi[Math.floor(Math.random() * tishi.length)];
 
     await Config.load_config();
     await Config.load_sound();
+    await Config.load_prefab();
 
-    Save.init();// test
+    Save.init();
 
     //    new Laya.Image().on(Laya.Event.CLICK, null, () => {
     //         //点击后，打开UI场景示例
@@ -27,7 +35,8 @@ export async function main() {
     // const test = new EventDispatcherTest();
     // test.runTests();
 
-    Laya.Scene.open("Scene.ls");
+    await Laya.Scene.open("Scene.ls");
+    label.destroy();
 
     // 测试战斗系统
     /*     const player = new BaseRole().init('player', 110, 90, 1000, ['feixing2', 'xiaoyue']);

@@ -50,16 +50,21 @@ export class MyButton extends MyButtonBase {
     }
 
     private onRelease(): void {
+        this.image.color = this.originalColor; // 恢复原始颜色
+
         if (this.isPressed) {
             this.isPressed = false;
             // 碰撞检测判断是否有效点击
             if (this.image.hitTestPoint(Laya.stage.mouseX, Laya.stage.mouseY)) {
-                if (this.onClick) this.onClick();
                 Laya.SoundManager.playSound(Config.sounds.get("ui_anniu2"));
+                Laya.Tween.to(this.image, { scaleX: 1, scaleY: 1 }, 100, Laya.Ease.quadOut, Laya.Handler.create(this, () => {
+                    if (this.onClick) this.onClick();
+                }));
+                return;
             }
         }
-        this.image.color = this.originalColor; // 恢复原始颜色
+
         // 恢复动画
-        Laya.Tween.to(this.image, { scaleX: 1, scaleY: 1 }, 100, Laya.Ease.quadOut);
+        Laya.Tween.to(this.image, { scaleX: 1, scaleY: 1 }, 100);
     }
 }

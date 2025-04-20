@@ -1,5 +1,4 @@
 import { Config } from "../core/config";
-import { BaseRole } from "../core/role";
 import * as utils from "../core/utils";
 import { map_level, role } from "../table/schema";
 import { HPBar } from "./HPBar";
@@ -55,6 +54,17 @@ export class RoleView extends Laya.Script {
         this.owner.title.text = Main.getRoleName(roleData);
         (this.owner.image.getChildByName('Level') as Laya.Label).text = `Lv.${level}`;
         if (power) (this.owner.image.getChildByName('Tip') as Laya.Label).text = `战力:${utils.getValueStr(power)}`;
+    }
+
+    show_skin(isBoss: boolean): void {
+        if (isBoss) {
+            this.owner.image.skin = `resources/image/boss.png`;
+            this.owner.image.color = '#9A1919';
+        } else {
+            this.owner.image.skin = `resources/image/enemy.png`;
+            this.owner.image.color = '#666b6f'
+        }
+        // this.hpBar.bg.visible = !isBoss;
     }
 
     animator: Laya.Animator2D;

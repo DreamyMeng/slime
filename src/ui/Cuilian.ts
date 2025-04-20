@@ -1,4 +1,4 @@
-import { Config, shuxing_config } from "../core/config";
+import { Config, shuxing_config, xinximoban } from "../core/config";
 import { PopUp } from "./PopUp";
 import * as cfg from "../table/schema";
 import * as utils from "../core/utils";
@@ -38,7 +38,7 @@ export class Cuilian extends Laya.Script {
             playerData.relation = this.refined;
             Main.instance.update_player();
             this.owner.close();
-            MessageBox.tip(`精炼成功，属性向拟态生物靠拢。`);
+            MessageBox.tip(xinximoban.cuilian);
             Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
             Save.saveGame();
         }

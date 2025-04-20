@@ -1,0 +1,63 @@
+{
+  "_$ver": 1,
+  "_$id": "esynsuw9",
+  "_$type": "Sprite",
+  "name": "Damage",
+  "width": 0,
+  "height": 0,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_$comp": [
+    {
+      "_$type": "Animator2D",
+      "controller": {
+        "_$uuid": "0e9a9e9d-d55a-4549-860e-feb8472c545e",
+        "_$type": "AnimationController2D"
+      },
+      "controllerLayers": [
+        {
+          "_$type": "AnimatorControllerLayer2D",
+          "name": "Base Layer",
+          "states": [
+            {
+              "_$type": "AnimatorState2D",
+              "name": "damage",
+              "clipStart": 0,
+              "clip": {
+                "_$uuid": "c4c5fc1b-1385-4660-8801-58b56b5d433a",
+                "_$type": "AnimationClip2D"
+              },
+              "soloTransitions": []
+            }
+          ],
+          "playOnWake": false,
+          "defaultStateName": "damage"
+        }
+      ]
+    },
+    {
+      "_$type": "67409000-ad1d-4f64-a0d6-73a0c1190dc4",
+      "scriptPath": "../src/DamageMove.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "6nyz8h6t",
+      "_$var": true,
+      "_$type": "Text",
+      "name": "label",
+      "y": -130,
+      "width": 256,
+      "height": 64,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "alpha": 0,
+      "text": "-123456789",
+      "fontSize": 40,
+      "color": "rgba(225, 87, 0, 1)",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2
+    }
+  ]
+}

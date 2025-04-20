@@ -19,6 +19,8 @@ export interface SaveData {
         exp: number;
         level: number;
         forget: number;
+        revive: number;
+        mimicry: number;
         skills: string[];
         curScene: number;
         maxScene: number;
@@ -69,6 +71,8 @@ export class Save {
             exp: 0,
             level: 1,
             forget: 0,
+            revive: 3,
+            mimicry: 1,
             skills: [] as string[],
             curScene: 1,
             maxScene: 0,

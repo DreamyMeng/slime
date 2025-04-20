@@ -113,6 +113,7 @@ export class Battle {
                     Main.instance.auto_fight();
                     return;
                 }
+                Save.saveGame();
             } else {
                 console.log(`${this.enemy.camp} wins the battle!`);
                 utils.GameLog.log(xinximoban.zhandou.siwang2.replace('*', Main.getRoleName(this.enemy.view.data)));
@@ -123,7 +124,6 @@ export class Battle {
         utils.GameLog.log(xinximoban.zhandou.jieshu);
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
         Main.instance.show_map();
-        Save.saveGame();
     }
 
     victory(roleData: cfg.role, level: number, isBoss: boolean): void {

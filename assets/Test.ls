@@ -422,15 +422,6 @@
       ]
     },
     {
-      "_$id": "u8ofmb49",
-      "_$prefab": "a5d025af-0362-4938-826d-47b1e702609e",
-      "name": "Damage",
-      "active": true,
-      "x": 205,
-      "y": 730,
-      "visible": true
-    },
-    {
       "_$id": "kfzn7whe",
       "_$prefab": "819108f6-545f-4a86-a92f-245f6129bbb9",
       "_$var": true,
@@ -499,35 +490,7 @@
       "color": "#FFFFFF",
       "align": "center",
       "valign": "middle",
-      "leading": 2,
-      "_$comp": [
-        {
-          "_$type": "Animator2D",
-          "controller": {
-            "_$uuid": "66dd5167-ef53-4792-840f-5eb06b67439d",
-            "_$type": "AnimationController2D"
-          },
-          "controllerLayers": [
-            {
-              "_$type": "AnimatorControllerLayer2D",
-              "name": "Base Layer",
-              "states": [
-                {
-                  "_$type": "AnimatorState2D",
-                  "name": "player_damage",
-                  "clipStart": 0,
-                  "clip": {
-                    "_$uuid": "e60b51bc-adc0-4534-9d8c-07aaf092dc4c",
-                    "_$type": "AnimationClip2D"
-                  },
-                  "soloTransitions": []
-                }
-              ],
-              "defaultStateName": "player_damage"
-            }
-          ]
-        }
-      ]
+      "leading": 2
     }
   ]
 }

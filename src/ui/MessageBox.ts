@@ -59,7 +59,7 @@ export class MessageBox {
         MessageBox.tipsQueue.push(message);
     }
 
-    static show(msg: string, ok_callback?: () => void, no_callback?: () => void, isOk: boolean = true) {
+    static show(msg: string, ok_callback?: () => void, no_callback?: () => void, isOk: boolean = true): PopUp {
         let message: PopUp = Laya.loader.getRes(Config.prefabs.get("PopUp")).create();
         Laya.stage.addChild(message);
         message.Label.text = msg;
@@ -68,6 +68,7 @@ export class MessageBox {
         if (!isOk) {
             message.ok.visible = false;
             message.no.x = 285;
+            message.no.title.text = "确认";
             GameLog.log(msg);
         } else {
             message.ok.visible = true;
@@ -82,5 +83,7 @@ export class MessageBox {
             message.close(() => { message.destroy() });
             if (no_callback) no_callback();
         }
+
+        return message;
     }
 }

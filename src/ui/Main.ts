@@ -69,9 +69,11 @@ export class Main extends MainBase {
         }
 
         this.btn_taopao.onClick = () => {
+            let flag = Save.data.setting.auto;
             this.battle.escape = true;
             Save.data.setting.auto = false;
             this.update_auto();
+            if (flag) Save.saveGame();
         }
 
         this.btn_tujian.onClick = () => {
@@ -106,7 +108,7 @@ export class Main extends MainBase {
                 return;
             }
             let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(rebirth === 0 ? 1 : rebirth);
-            if (Save.data.player.level < rebirthData.need) {
+            if (Save.data.player.level <= rebirthData.need) {
                 MessageBox.tip(xinximoban.buzu);
                 return;
             }
@@ -211,9 +213,9 @@ export class Main extends MainBase {
         this.Player.getComponent(RoleView).show(playerData.id, playerData.level);
 
         this.btn_zidong.active = Save.data.game.rebirth > 0;
-        this.btn_cuilian.tip.text = "消耗等级:" + Cuilian.level;
-        this.btn_zhuansheng.tip.text = "需要等级:" + rebirthData.need;
-        this.btn_jinhua.tip.text = "需要等级:" + jinhua_need[Math.min(jinhua_need.length - 1, roleData.rare)];
+        this.btn_cuilian.tip.text = "需要等级>" + Cuilian.level;
+        this.btn_zhuansheng.tip.text = "需要等级>" + rebirthData.need;
+        this.btn_jinhua.tip.text = "需要等级>" + jinhua_need[Math.min(jinhua_need.length - 1, roleData.rare)];
         utils.GameLog.log(xinximoban.zhandouli.replace('*', utils.getValueStr(power)));
     }
 
@@ -275,17 +277,29 @@ export class Main extends MainBase {
 
     static player_dead(): void {
         console.log('广告时刻');
-        // if(复活){return;}
-
+        Laya.SoundManager.playSound(Config.sounds.get("die"));
         Save.data.setting.auto = false;
         this.instance.update_auto();
 
-        Save.data.player.level = 1;
-        Save.data.player.exp = 0;
-
-        Laya.SoundManager.playSound(Config.sounds.get("die"));
-        Main.instance.update_player();
-        MessageBox.show(`你死了！等级降为1级。`, null, null, false);
+        let tip = MessageBox.show(`<font color='${color_config.xinximoban.shanghai}'>你死了</font>\n等级将降为1级`, () => {
+            Save.data.player.revive--;
+            MessageBox.tip(`<font color='${color_config.xinximoban.huixue}'>你复活了</font>`);
+            Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
+            Save.saveGame();
+        }, () => {
+            MessageBox.tip(`<font color='${color_config.xinximoban.shanghai}'>你死了</font>,等级降为1级`);
+            Save.data.player.level = 1;
+            Save.data.player.exp = 0;
+            Main.instance.update_player();
+            Save.saveGame();
+        });
+        if (Save.data.player.revive <= 0) {
+            tip.ok.active = false;
+        } else {
+            tip.ok.active = true;
+            tip.ok.title.text = '复活';
+            tip.ok.tip.text = `剩余次数:${Save.data.player.revive}`;
+        }
     }
 
     static getRoleName(role: cfg.role) {

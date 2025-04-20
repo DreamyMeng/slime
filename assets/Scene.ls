@@ -1636,7 +1636,7 @@
           "x": 285,
           "y": 485,
           "height": 60,
-          "visible": false,
+          "visible": true,
           "_$child": [
             {
               "_$override": "3mo5miu3",
@@ -1644,7 +1644,7 @@
             },
             {
               "_$override": "au8mtcie",
-              "text": "看广告",
+              "text": "激活血脉",
               "color": "rgba(252, 220, 170, 1)"
             },
             {

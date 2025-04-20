@@ -62,7 +62,7 @@ export class Config {
     static async load_prefab() {
         // 加载所有prefab资源
         this.prefabs.set("PopUp", "resources/prefab/PopUp.lh");
-        this.prefabs.set("Damage", "resources/prefab/Damage.lh");
+        // this.prefabs.set("Damage", "resources/prefab/Damage.lh");
 
         await Laya.loader.load(Array.from(this.prefabs.values()));
     }
@@ -135,17 +135,17 @@ export let xinximoban = {
         taopao: `你逃出生天!`
     },
     qianjin: "你遇到了{0},{1},{2}!",
-    zhandouli: "当前战斗力为:*.",
+    zhandouli: `当前战斗力为:<font color='ff8c00'>*</font>`,
     shenru: "你来到第*层.",
     shengji: "你的等级为:*.",
-    zhuansheng: "转生成功，属性成长提升.",
-    cuilian: "淬炼成功，属性向拟态生物靠拢",
+    zhuansheng: `<font color='${color_config.xinximoban.huixue}'>转生成功</font>,属性成长提升`,
+    cuilian: `<font color='${color_config.xinximoban.huixue}'>淬炼成功</font>,属性向拟态生物靠拢`,
     jinhua: {
-        chenggong: "拟态成功,拟态为*.",
-        shibai1: "拟态失败,肉身崩坏死亡！",
-        shibai2: "拟态失败，损失等级10级。"
+        chenggong: `<font color='${color_config.xinximoban.huixue}'>拟态成功</font>,拟态为*`,
+        shibai1: `<font color='${color_config.xinximoban.shanghai}'>拟态失败</font>,肉身崩坏死亡！`,
+        shibai2: `<font color='${color_config.xinximoban.shanghai}'>拟态失败</font>,损失等级10级。`
     },
-    tunshi: "你吞噬了*,解析成功获得技能&",
+    tunshi: `你吞噬了*,解析成功获得技能·<font color='${color_config.xinximoban.skill}'>&</font>`,
     buzu: "<font color='#FF0000'>等级不足</font>"
 }
 

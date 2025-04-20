@@ -40,7 +40,7 @@ export class Jinhua extends Laya.Script {
     show(isAd: boolean = false): void {
         if (!isAd) this.owner.open();
 
-        this.ad.visible = !isAd;
+        this.ad.active = !isAd;
         this.owner.ok.active = Save.data.game.rebirth > 1;
 
         let roles = this.list_jinhua(isAd);
@@ -74,6 +74,7 @@ export class Jinhua extends Laya.Script {
 
     onClick(id: string, rate: number): void {
         let playerData = Save.data.player;
+        playerData.mimicry--;
 
         if (Math.random() < rate) {
             this.owner.close();
@@ -130,6 +131,7 @@ export class Jinhua extends Laya.Script {
         });
         playerData.id = id;
         playerData.forget = 0;
+        playerData.mimicry = 1;
 
         if (!Save.data.game.roles[id]) {
             Main.unlockRole(id);

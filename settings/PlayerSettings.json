@@ -10,7 +10,7 @@
   },
   "2D": {
     "useRetinalCanvas": true,
-    "defaultFont": ""
+    "defaultFont": "res://3145f1fc-e1b3-4854-8b74-700c3ca3666d"
   },
   "modules": {
     "laya.ui": true
@@ -18,6 +18,5 @@
   "splash": {
     "enabled": false,
     "fit": "center"
-  },
-  "stat": true
+  }
 }

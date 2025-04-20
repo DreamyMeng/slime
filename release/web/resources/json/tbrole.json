@@ -1,0 +1,3916 @@
+[
+  {
+    "id": "h1",
+    "name": "史莱姆",
+    "rare": 0,
+    "quality_type": "none",
+    "quality": 0,
+    "race": 0,
+    "remain": 1,
+    "exp_need": 0.8,
+    "exp_dead": 1,
+    "attack_rate": 1,
+    "defence_rate": 1,
+    "health_rate": 1,
+    "attack_add": 200,
+    "defence_add": 100,
+    "health_add": 1000,
+    "relations": {},
+    "skills": [
+      "tunshi1"
+    ]
+  },
+  {
+    "id": "h2",
+    "name": "青蛇",
+    "rare": 1,
+    "quality_type": "none",
+    "quality": 0,
+    "race": 90,
+    "remain": 0.9,
+    "exp_need": 1,
+    "exp_dead": 1,
+    "attack_rate": 1,
+    "defence_rate": 1,
+    "health_rate": 1,
+    "attack_add": 400,
+    "defence_add": 200,
+    "health_add": 2000,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.5
+    },
+    "skills": [
+      "pofang1"
+    ]
+  },
+  {
+    "id": "h3",
+    "name": "白蛇",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.5
+    },
+    "skills": [
+      "pofang1"
+    ]
+  },
+  {
+    "id": "h4",
+    "name": "蟒蛇",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1600,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.6
+    },
+    "skills": [
+      "chanrao1"
+    ]
+  },
+  {
+    "id": "h5",
+    "name": "蛟蛇",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.87,
+    "defence_rate": 1.87,
+    "health_rate": 1.87,
+    "attack_add": 3520,
+    "defence_add": 1760,
+    "health_add": 17600,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.6,
+      "jiao": 0.1
+    },
+    "skills": [
+      "chanrao1"
+    ]
+  },
+  {
+    "id": "h6",
+    "name": "蛟龙",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.3,
+    "defence_rate": 2.3,
+    "health_rate": 2.3,
+    "attack_add": 7360,
+    "defence_add": 3680,
+    "health_add": 36800,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.5,
+      "zhao": 0.1,
+      "jiao": 0.1
+    },
+    "skills": [
+      "long1",
+      "chanrao1"
+    ]
+  },
+  {
+    "id": "h7",
+    "name": "飞龙",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.76,
+    "defence_rate": 2.76,
+    "health_rate": 2.76,
+    "attack_add": 14720,
+    "defence_add": 7360,
+    "health_add": 73600,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.5,
+      "zhao": 0.1,
+      "jiao": 0.1
+    },
+    "skills": [
+      "long1",
+      "longxi1"
+    ]
+  },
+  {
+    "id": "h8",
+    "name": "真龙",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.48,
+    "defence_rate": 3.48,
+    "health_rate": 3.48,
+    "attack_add": 30720,
+    "defence_add": 15360,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.5,
+      "zhao": 0.15,
+      "jiao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "long2",
+      "longxi1"
+    ]
+  },
+  {
+    "id": "h9",
+    "name": "应龙",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.48,
+    "defence_rate": 3.48,
+    "health_rate": 3.48,
+    "attack_add": 30720,
+    "defence_add": 15360,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.4,
+      "yu": 0.1,
+      "zhao": 0.15,
+      "jiao": 0.15,
+      "zhi": 0.1
+    },
+    "skills": [
+      "long2",
+      "shanbi1"
+    ]
+  },
+  {
+    "id": "h10",
+    "name": "五爪金龙",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 16640,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.2,
+    "defence_rate": 4.2,
+    "health_rate": 4.2,
+    "attack_add": 61440,
+    "defence_add": 30720,
+    "health_add": 307200,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.4,
+      "zhao": 0.15,
+      "jiao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "long2",
+      "longwei1"
+    ]
+  },
+  {
+    "id": "h11",
+    "name": "青龙",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 34560,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.25,
+    "defence_rate": 5.25,
+    "health_rate": 5.25,
+    "attack_add": 128000,
+    "defence_add": 64000,
+    "health_add": 640000,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.4,
+      "zhao": 0.15,
+      "jiao": 0.15,
+      "zhi": 0.2
+    },
+    "skills": [
+      "long2",
+      "longwei1"
+    ]
+  },
+  {
+    "id": "h12",
+    "name": "烛龙",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 35840,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.25,
+    "defence_rate": 5.25,
+    "health_rate": 5.25,
+    "attack_add": 128000,
+    "defence_add": 64000,
+    "health_add": 640000,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.5,
+      "zhao": 0.15,
+      "jiao": 0.15,
+      "zhi": 0.1
+    },
+    "skills": [
+      "long2",
+      "zhulong1"
+    ]
+  },
+  {
+    "id": "h13",
+    "name": "麻雀",
+    "rare": 1,
+    "quality_type": "none",
+    "quality": 0,
+    "race": 80,
+    "remain": 0.9,
+    "exp_need": 1,
+    "exp_dead": 1,
+    "attack_rate": 1.1,
+    "defence_rate": 1,
+    "health_rate": 0.9,
+    "attack_add": 440,
+    "defence_add": 200,
+    "health_add": 1800,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "shanbi1"
+    ]
+  },
+  {
+    "id": "h14",
+    "name": "鸡",
+    "rare": 1,
+    "quality_type": "none",
+    "quality": 0,
+    "race": 90,
+    "remain": 0.9,
+    "exp_need": 1,
+    "exp_dead": 1,
+    "attack_rate": 1.1,
+    "defence_rate": 1,
+    "health_rate": 1,
+    "attack_add": 440,
+    "defence_add": 200,
+    "health_add": 2000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.4,
+      "zhao": 0.1
+    },
+    "skills": [
+      "huiji1"
+    ]
+  },
+  {
+    "id": "h15",
+    "name": "锦鸡",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 210,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.6,
+      "zhao": 0.1
+    },
+    "skills": [
+      "huiji1"
+    ]
+  },
+  {
+    "id": "h16",
+    "name": "白鹤",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.68,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1920,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "hui": 0.2,
+      "yu": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "huiji1"
+    ]
+  },
+  {
+    "id": "h17",
+    "name": "白鹅",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.68,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1920,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.2,
+      "yu": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "baonu1",
+      "huiji1"
+    ]
+  },
+  {
+    "id": "h18",
+    "name": "金鹰",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.87,
+    "defence_rate": 1.7,
+    "health_rate": 1.7,
+    "attack_add": 3520,
+    "defence_add": 1600,
+    "health_add": 16000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "mingzhong1"
+    ]
+  },
+  {
+    "id": "h19",
+    "name": "孔雀",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2,
+    "defence_rate": 2,
+    "health_rate": 2.2,
+    "attack_add": 6400,
+    "defence_add": 3200,
+    "health_add": 35200,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.7,
+      "zhao": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "kaiping1"
+    ]
+  },
+  {
+    "id": "h20",
+    "name": "大鹏",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.2,
+    "defence_rate": 2,
+    "health_rate": 2.2,
+    "attack_add": 7040,
+    "defence_add": 3200,
+    "health_add": 35200,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.6,
+      "zhao": 0.1
+    },
+    "skills": [
+      "feixing2"
+    ]
+  },
+  {
+    "id": "h21",
+    "name": "毕方",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.64,
+    "defence_rate": 2.4,
+    "health_rate": 2.4,
+    "attack_add": 14080,
+    "defence_add": 6400,
+    "health_add": 64000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "zaie"
+    ]
+  },
+  {
+    "id": "h22",
+    "name": "鸿鹄",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.4,
+    "defence_rate": 2.4,
+    "health_rate": 2.4,
+    "attack_add": 12800,
+    "defence_add": 6400,
+    "health_add": 64000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.6,
+      "zhao": 0.1
+    },
+    "skills": [
+      "shanbi2"
+    ]
+  },
+  {
+    "id": "h23",
+    "name": "金翅大鹏",
+    "rare": 6,
+    "quality_type": "shen",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.88,
+    "defence_rate": 2.4,
+    "health_rate": 2.64,
+    "attack_add": 15360,
+    "defence_add": 6400,
+    "health_add": 70400,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.7,
+      "zhao": 0.1
+    },
+    "skills": [
+      "feixing2",
+      "mingzhong1"
+    ]
+  },
+  {
+    "id": "h24",
+    "name": "凤凰",
+    "rare": 7,
+    "quality_type": "shen",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.48,
+    "defence_rate": 3.19,
+    "health_rate": 2.9,
+    "attack_add": 30720,
+    "defence_add": 14080,
+    "health_add": 128000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.7,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "niepan"
+    ]
+  },
+  {
+    "id": "h25",
+    "name": "青鸾",
+    "rare": 7,
+    "quality_type": "shen",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.19,
+    "defence_rate": 3.19,
+    "health_rate": 3.19,
+    "attack_add": 28160,
+    "defence_add": 14080,
+    "health_add": 140800,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.6,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "xiangrui"
+    ]
+  },
+  {
+    "id": "h26",
+    "name": "金乌",
+    "rare": 8,
+    "quality_type": "shen",
+    "quality": 640,
+    "race": 16640,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.55,
+    "defence_rate": 3.5,
+    "health_rate": 3.5,
+    "attack_add": 66560,
+    "defence_add": 25600,
+    "health_add": 256000,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.7,
+      "zhao": 0.05,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "guangmang"
+    ]
+  },
+  {
+    "id": "h27",
+    "name": "朱雀",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 34560,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.46,
+    "defence_rate": 5.04,
+    "health_rate": 5.04,
+    "attack_add": 133120,
+    "defence_add": 61440,
+    "health_add": 614400,
+    "relations": {
+      "hui": 0.1,
+      "yu": 0.6,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "feixing2",
+      "huoyan"
+    ]
+  },
+  {
+    "id": "h28",
+    "name": "猞猁",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.32,
+    "defence_rate": 1.08,
+    "health_rate": 1.2,
+    "attack_add": 880,
+    "defence_add": 360,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15
+    },
+    "skills": [
+      "siyao"
+    ]
+  },
+  {
+    "id": "h29",
+    "name": "老虎",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.61,
+    "defence_rate": 1.26,
+    "health_rate": 1.54,
+    "attack_add": 1840,
+    "defence_add": 720,
+    "health_add": 8800,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15
+    },
+    "skills": [
+      "siyao",
+      "lizhua"
+    ]
+  },
+  {
+    "id": "h30",
+    "name": "黑虎",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.955,
+    "defence_rate": 1.53,
+    "health_rate": 1.87,
+    "attack_add": 3680,
+    "defence_add": 1440,
+    "health_add": 17600,
+    "relations": {
+      "chi": 0.2,
+      "mao": 0.4,
+      "zhao": 0.2
+    },
+    "skills": [
+      "siyao",
+      "lizhua"
+    ]
+  },
+  {
+    "id": "h31",
+    "name": "吊睛白虎",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.3,
+    "defence_rate": 1.8,
+    "health_rate": 2.2,
+    "attack_add": 7360,
+    "defence_add": 2880,
+    "health_add": 35200,
+    "relations": {
+      "chi": 0.2,
+      "mao": 0.4,
+      "zhao": 0.2
+    },
+    "skills": [
+      "siyao",
+      "lizhua"
+    ]
+  },
+  {
+    "id": "h32",
+    "name": "插翅虎",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.76,
+    "defence_rate": 2.4,
+    "health_rate": 2.64,
+    "attack_add": 14720,
+    "defence_add": 6400,
+    "health_add": 70400,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "yu": 0.15,
+      "zhao": 0.15
+    },
+    "skills": [
+      "lizhua",
+      "shanbi1"
+    ]
+  },
+  {
+    "id": "h33",
+    "name": "狴犴",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.48,
+    "defence_rate": 2.9,
+    "health_rate": 3.48,
+    "attack_add": 30720,
+    "defence_add": 12800,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15,
+      "zhi": 0.2
+    },
+    "skills": [
+      "lizhua",
+      "weiyan"
+    ]
+  },
+  {
+    "id": "h34",
+    "name": "穷奇",
+    "rare": 8,
+    "quality_type": "ling",
+    "quality": 640,
+    "race": 16000,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.2,
+    "defence_rate": 3.5,
+    "health_rate": 4.2,
+    "attack_add": 61440,
+    "defence_add": 25600,
+    "health_add": 307200,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "yu": 0.15,
+      "zhao": 0.15,
+      "zhi": 0.1
+    },
+    "skills": [
+      "lizhua",
+      "shanbi1"
+    ]
+  },
+  {
+    "id": "h35",
+    "name": "白虎",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 34560,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.46,
+    "defence_rate": 4.62,
+    "health_rate": 5.46,
+    "attack_add": 133120,
+    "defence_add": 56320,
+    "health_add": 665600,
+    "relations": {
+      "chi": 0.2,
+      "mao": 0.4,
+      "zhao": 0.2,
+      "zhi": 0.2
+    },
+    "skills": [
+      "lizhua",
+      "jinfeng"
+    ]
+  },
+  {
+    "id": "h36",
+    "name": "乌龟",
+    "rare": 1,
+    "quality_type": "ling",
+    "quality": 5,
+    "race": 90,
+    "remain": 0.9,
+    "exp_need": 1,
+    "exp_dead": 1,
+    "attack_rate": 1,
+    "defence_rate": 1.2,
+    "health_rate": 1,
+    "attack_add": 400,
+    "defence_add": 240,
+    "health_add": 2000,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "yingke"
+    ]
+  },
+  {
+    "id": "h37",
+    "name": "海龟",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.44,
+    "health_rate": 1.32,
+    "attack_add": 800,
+    "defence_add": 480,
+    "health_add": 4400,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "yingke"
+    ]
+  },
+  {
+    "id": "h38",
+    "name": "巨龟",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 400,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.68,
+    "health_rate": 1.61,
+    "attack_add": 1600,
+    "defence_add": 960,
+    "health_add": 9200,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1
+    },
+    "skills": [
+      "jianjia"
+    ]
+  },
+  {
+    "id": "h39",
+    "name": "千年老龟",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 800,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.7,
+    "defence_rate": 1.955,
+    "health_rate": 1.955,
+    "attack_add": 3200,
+    "defence_add": 1840,
+    "health_add": 18400,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "yingke",
+      "shouming"
+    ]
+  },
+  {
+    "id": "h40",
+    "name": "万年灵龟",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1600,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2,
+    "defence_rate": 2.3,
+    "health_rate": 2.3,
+    "attack_add": 6400,
+    "defence_add": 3680,
+    "health_add": 36800,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "xiangrui",
+      "shouming"
+    ]
+  },
+  {
+    "id": "h41",
+    "name": "龟蛇",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3520,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.76,
+    "defence_rate": 2.88,
+    "health_rate": 2.88,
+    "attack_add": 14720,
+    "defence_add": 7680,
+    "health_add": 76800,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "lin": 0.15,
+      "jia": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "jianjia",
+      "pofang3"
+    ]
+  },
+  {
+    "id": "h42",
+    "name": "龙龟",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 7040,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.335,
+    "defence_rate": 3.48,
+    "health_rate": 3.48,
+    "attack_add": 29440,
+    "defence_add": 15360,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "jianjia",
+      "long1"
+    ]
+  },
+  {
+    "id": "h43",
+    "name": "玄龟",
+    "rare": 8,
+    "quality_type": "shen",
+    "quality": 640,
+    "race": 15360,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.025,
+    "defence_rate": 4.55,
+    "health_rate": 4.55,
+    "attack_add": 58880,
+    "defence_add": 33280,
+    "health_add": 332800,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "jia": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "jianjia",
+      "shouming"
+    ]
+  },
+  {
+    "id": "h44",
+    "name": "玄武",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 33280,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.04,
+    "defence_rate": 5.88,
+    "health_rate": 5.46,
+    "attack_add": 122880,
+    "defence_add": 71680,
+    "health_add": 665600,
+    "relations": {
+      "chi": 0.05,
+      "hui": 0.1,
+      "lin": 0.15,
+      "jia": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "jianjia",
+      "pofang3"
+    ]
+  },
+  {
+    "id": "h45",
+    "name": "山羊",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "ti": 0.1,
+      "jiao": 0.1
+    },
+    "skills": [
+      "zhuangji"
+    ]
+  },
+  {
+    "id": "h46",
+    "name": "白鹿",
+    "rare": 3,
+    "quality_type": "xian",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.4,
+    "health_rate": 1.47,
+    "attack_add": 1600,
+    "defence_add": 800,
+    "health_add": 8400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "ti": 0.1,
+      "jiao": 0.2
+    },
+    "skills": [
+      "zhuangji",
+      "xianling"
+    ]
+  },
+  {
+    "id": "h47",
+    "name": "葱聋",
+    "rare": 4,
+    "quality_type": "xian",
+    "quality": 40,
+    "race": 920,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.785,
+    "defence_rate": 1.785,
+    "health_rate": 1.785,
+    "attack_add": 3360,
+    "defence_add": 1680,
+    "health_add": 16800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "ti": 0.1,
+      "jiao": 0.2
+    },
+    "skills": [
+      "zhuangji",
+      "mati"
+    ]
+  },
+  {
+    "id": "h48",
+    "name": "五色鹿",
+    "rare": 5,
+    "quality_type": "shen",
+    "quality": 80,
+    "race": 1920,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.8,
+    "defence_rate": 2.8,
+    "health_rate": 2.8,
+    "attack_add": 8960,
+    "defence_add": 4480,
+    "health_add": 44800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "ti": 0.1,
+      "jiao": 0.2,
+      "zhi": 0.2
+    },
+    "skills": [
+      "xiangrui2",
+      "xianling"
+    ]
+  },
+  {
+    "id": "h49",
+    "name": "四不像",
+    "rare": 6,
+    "quality_type": "shen",
+    "quality": 160,
+    "race": 4160,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.52,
+    "defence_rate": 2.52,
+    "health_rate": 2.52,
+    "attack_add": 13440,
+    "defence_add": 6720,
+    "health_add": 67200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "ti": 0.1,
+      "jiao": 0.2,
+      "zhi": 0.1
+    },
+    "skills": [
+      "kong"
+    ]
+  },
+  {
+    "id": "h50",
+    "name": "白泽",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.19,
+    "defence_rate": 3.19,
+    "health_rate": 3.19,
+    "attack_add": 28160,
+    "defence_add": 14080,
+    "health_add": 140800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "ti": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "xiangrui2",
+      "tongxiao"
+    ]
+  },
+  {
+    "id": "h51",
+    "name": "獬豸",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 16000,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.025,
+    "defence_rate": 4.025,
+    "health_rate": 4.025,
+    "attack_add": 58880,
+    "defence_add": 29440,
+    "health_add": 294400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "zuie",
+      "zhengshe"
+    ]
+  },
+  {
+    "id": "h52",
+    "name": "麒麟",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 33280,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.04,
+    "defence_rate": 5.04,
+    "health_rate": 5.04,
+    "attack_add": 122880,
+    "defence_add": 61440,
+    "health_add": 614400,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.4,
+      "ti": 0.1,
+      "jiao": 0.2,
+      "zhi": 0.2
+    },
+    "skills": [
+      "xiangrui2",
+      "biyou"
+    ]
+  },
+  {
+    "id": "h53",
+    "name": "大象",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 460,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.54,
+    "health_rate": 1.82,
+    "attack_add": 1600,
+    "defence_add": 880,
+    "health_add": 10400,
+    "relations": {
+      "chi": 0.2,
+      "luo": 0.5,
+      "ti": 0.1
+    },
+    "skills": [
+      "chanrao1",
+      "jianta"
+    ]
+  },
+  {
+    "id": "h54",
+    "name": "白象",
+    "rare": 5,
+    "quality_type": "shen",
+    "quality": 80,
+    "race": 1920,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2,
+    "defence_rate": 2.2,
+    "health_rate": 2.6,
+    "attack_add": 6400,
+    "defence_add": 3520,
+    "health_add": 41600,
+    "relations": {
+      "chi": 0.2,
+      "luo": 0.5,
+      "ti": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "chanrao1",
+      "jianta"
+    ]
+  },
+  {
+    "id": "h55",
+    "name": "野马",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 210,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.32,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.25,
+      "luo": 0.25,
+      "ti": 0.1
+    },
+    "skills": [
+      "mati"
+    ]
+  },
+  {
+    "id": "h56",
+    "name": "白马",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.4,
+    "health_rate": 1.61,
+    "attack_add": 1600,
+    "defence_add": 800,
+    "health_add": 9200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.25,
+      "luo": 0.25,
+      "ti": 0.1
+    },
+    "skills": [
+      "mati",
+      "feiben"
+    ]
+  },
+  {
+    "id": "h57",
+    "name": "千里马",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.7,
+    "defence_rate": 1.7,
+    "health_rate": 2.04,
+    "attack_add": 3200,
+    "defence_add": 1600,
+    "health_add": 19200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.25,
+      "luo": 0.25,
+      "ti": 0.1
+    },
+    "skills": [
+      "mati",
+      "feiben"
+    ]
+  },
+  {
+    "id": "h58",
+    "name": "飞马",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2,
+    "defence_rate": 2,
+    "health_rate": 2.4,
+    "attack_add": 6400,
+    "defence_add": 3200,
+    "health_add": 38400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.25,
+      "luo": 0.25,
+      "yu": 0.15,
+      "ti": 0.1
+    },
+    "skills": [
+      "shanbi1",
+      "feiben"
+    ]
+  },
+  {
+    "id": "h59",
+    "name": "鹿蜀",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.4,
+    "defence_rate": 2.4,
+    "health_rate": 2.88,
+    "attack_add": 12800,
+    "defence_add": 6400,
+    "health_add": 76800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.25,
+      "luo": 0.25,
+      "yu": 0.15,
+      "ti": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "xiangrui2",
+      "feiben"
+    ]
+  },
+  {
+    "id": "h60",
+    "name": "龙马",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 7680,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.335,
+    "defence_rate": 3.335,
+    "health_rate": 3.48,
+    "attack_add": 29440,
+    "defence_add": 14720,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.3,
+      "mao": 0.25,
+      "ti": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "long1",
+      "feiben"
+    ]
+  },
+  {
+    "id": "h61",
+    "name": "草泥马",
+    "rare": 8,
+    "quality_type": "shen",
+    "quality": 640,
+    "race": 16640,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 5.25,
+    "defence_rate": 3.5,
+    "health_rate": 3.5,
+    "attack_add": 76800,
+    "defence_add": 25600,
+    "health_add": 256000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.5,
+      "ti": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "koushui",
+      "mieshi"
+    ]
+  },
+  {
+    "id": "h62",
+    "name": "黄牛",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 400,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.47,
+    "defence_rate": 1.4,
+    "health_rate": 1.61,
+    "attack_add": 1680,
+    "defence_add": 800,
+    "health_add": 9200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.1,
+      "luo": 0.25,
+      "ti": 0.1,
+      "jiao": 0.1
+    },
+    "skills": [
+      "chongzhuang"
+    ]
+  },
+  {
+    "id": "h63",
+    "name": "蛮牛",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 800,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.87,
+    "defence_rate": 1.7,
+    "health_rate": 2.04,
+    "attack_add": 3520,
+    "defence_add": 1600,
+    "health_add": 19200,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.4,
+      "ti": 0.1,
+      "jiao": 0.1
+    },
+    "skills": [
+      "chongzhuang",
+      "niupi"
+    ]
+  },
+  {
+    "id": "h64",
+    "name": "撼地神牛",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.2,
+    "defence_rate": 2,
+    "health_rate": 2.4,
+    "attack_add": 7040,
+    "defence_add": 3200,
+    "health_add": 38400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.1,
+      "luo": 0.25,
+      "ti": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "chongzhuang",
+      "zhendi"
+    ]
+  },
+  {
+    "id": "h65",
+    "name": "五色神牛",
+    "rare": 6,
+    "quality_type": "shen",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.76,
+    "defence_rate": 2.64,
+    "health_rate": 3.12,
+    "attack_add": 14720,
+    "defence_add": 7040,
+    "health_add": 83200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.1,
+      "luo": 0.25,
+      "ti": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "chongzhuang",
+      "jianta"
+    ]
+  },
+  {
+    "id": "h66",
+    "name": "夔牛",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 7680,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.335,
+    "defence_rate": 3.19,
+    "health_rate": 3.48,
+    "attack_add": 29440,
+    "defence_add": 14080,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.1,
+      "luo": 0.25,
+      "ti": 0.05,
+      "zhi": 0.1
+    },
+    "skills": [
+      "chongzhuang",
+      "mingjiao"
+    ]
+  },
+  {
+    "id": "h67",
+    "name": "青牛",
+    "rare": 8,
+    "quality_type": "shen",
+    "quality": 640,
+    "race": 16640,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 3.85,
+    "defence_rate": 3.675,
+    "health_rate": 4.2,
+    "attack_add": 56320,
+    "defence_add": 26880,
+    "health_add": 307200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.1,
+      "luo": 0.25,
+      "ti": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "chongzhuang",
+      "jianta"
+    ]
+  },
+  {
+    "id": "h68",
+    "name": "貔貅",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 7680,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.625,
+    "defence_rate": 3.19,
+    "health_rate": 3.48,
+    "attack_add": 32000,
+    "defence_add": 14080,
+    "health_add": 153600,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.3,
+      "yu": 0.1,
+      "zhao": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "xiangrui3",
+      "siyao"
+    ]
+  },
+  {
+    "id": "h69",
+    "name": "混沌",
+    "rare": 8,
+    "quality_type": "ling",
+    "quality": 640,
+    "race": 15360,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.375,
+    "defence_rate": 3.85,
+    "health_rate": 4.55,
+    "attack_add": 64000,
+    "defence_add": 28160,
+    "health_add": 332800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "tunshi2",
+      "zuie2"
+    ]
+  },
+  {
+    "id": "h70",
+    "name": "梼杌",
+    "rare": 8,
+    "quality_type": "ling",
+    "quality": 640,
+    "race": 15360,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.375,
+    "defence_rate": 3.85,
+    "health_rate": 4.55,
+    "attack_add": 64000,
+    "defence_add": 28160,
+    "health_add": 332800,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "siyao",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h71",
+    "name": "饕餮",
+    "rare": 8,
+    "quality_type": "ling",
+    "quality": 640,
+    "race": 15360,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.55,
+    "defence_rate": 3.85,
+    "health_rate": 4.55,
+    "attack_add": 66560,
+    "defence_add": 28160,
+    "health_add": 332800,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "jiao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "tunshi2",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h72",
+    "name": "金丝猴",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shouchi",
+      "shanbi3"
+    ]
+  },
+  {
+    "id": "h73",
+    "name": "猕猴",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 400,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1600,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shouchi"
+    ]
+  },
+  {
+    "id": "h74",
+    "name": "山魈",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 840,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 2.04,
+    "defence_rate": 1.7,
+    "health_rate": 1.7,
+    "attack_add": 3840,
+    "defence_add": 1600,
+    "health_add": 16000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shouchi",
+      "dali"
+    ]
+  },
+  {
+    "id": "h75",
+    "name": "通臂猿",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1680,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.2,
+    "defence_rate": 2,
+    "health_rate": 2,
+    "attack_add": 7040,
+    "defence_add": 3200,
+    "health_add": 32000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shouchi",
+      "dali"
+    ]
+  },
+  {
+    "id": "h76",
+    "name": "狌狌",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3520,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.88,
+    "defence_rate": 2.4,
+    "health_rate": 2.4,
+    "attack_add": 15360,
+    "defence_add": 6400,
+    "health_add": 64000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shouchi",
+      "dali1"
+    ]
+  },
+  {
+    "id": "h77",
+    "name": "朱厌",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 7040,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.48,
+    "defence_rate": 2.9,
+    "health_rate": 2.9,
+    "attack_add": 30720,
+    "defence_add": 12800,
+    "health_add": 128000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shouchi",
+      "dali1"
+    ]
+  },
+  {
+    "id": "h78",
+    "name": "通臂猿猴",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 16000,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.55,
+    "defence_rate": 3.85,
+    "health_rate": 4.55,
+    "attack_add": 66560,
+    "defence_add": 28160,
+    "health_add": 332800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "shouchi",
+      "dali2"
+    ]
+  },
+  {
+    "id": "h79",
+    "name": "灵明石猴",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 16000,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.55,
+    "defence_rate": 4.55,
+    "health_rate": 4.2,
+    "attack_add": 66560,
+    "defence_add": 33280,
+    "health_add": 307200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "shouchi",
+      "bianhua"
+    ]
+  },
+  {
+    "id": "h80",
+    "name": "赤尻马猴",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 16000,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.55,
+    "defence_rate": 3.85,
+    "health_rate": 4.2,
+    "attack_add": 66560,
+    "defence_add": 28160,
+    "health_add": 307200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "shouchi",
+      "renyan"
+    ]
+  },
+  {
+    "id": "h81",
+    "name": "六耳猕猴",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 16000,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.55,
+    "defence_rate": 3.85,
+    "health_rate": 3.85,
+    "attack_add": 66560,
+    "defence_add": 28160,
+    "health_add": 281600,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "shouchi",
+      "tongxiao"
+    ]
+  },
+  {
+    "id": "h82",
+    "name": "狐狸",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "mihuo",
+      "shanbi3"
+    ]
+  },
+  {
+    "id": "h83",
+    "name": "白狐",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1600,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "mihuo",
+      "shanbi3"
+    ]
+  },
+  {
+    "id": "h84",
+    "name": "妖狐",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 840,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.7,
+    "defence_rate": 1.7,
+    "health_rate": 1.7,
+    "attack_add": 3200,
+    "defence_add": 1600,
+    "health_add": 16000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "mihuo",
+      "meihuo"
+    ]
+  },
+  {
+    "id": "h85",
+    "name": "三尾妖狐",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.1,
+    "defence_rate": 2.1,
+    "health_rate": 2.1,
+    "attack_add": 6720,
+    "defence_add": 3360,
+    "health_add": 33600,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.5,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "mihuo1",
+      "meihuo"
+    ]
+  },
+  {
+    "id": "h86",
+    "name": "六尾妖狐",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3680,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.52,
+    "defence_rate": 2.52,
+    "health_rate": 2.52,
+    "attack_add": 13440,
+    "defence_add": 6720,
+    "health_add": 67200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.55,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "mihuo1",
+      "meihuo1"
+    ]
+  },
+  {
+    "id": "h87",
+    "name": "九尾妖狐",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 7680,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.045,
+    "defence_rate": 3.045,
+    "health_rate": 3.045,
+    "attack_add": 26880,
+    "defence_add": 13440,
+    "health_add": 134400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.55,
+      "zhao": 0.1,
+      "zhi": 0.25
+    },
+    "skills": [
+      "mihuo1",
+      "meihuo2"
+    ]
+  },
+  {
+    "id": "h88",
+    "name": "鲸鱼",
+    "rare": 4,
+    "quality_type": "none",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.7,
+    "defence_rate": 1.7,
+    "health_rate": 3.4,
+    "attack_add": 3200,
+    "defence_add": 1600,
+    "health_add": 32000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.05,
+      "luo": 0.6,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shengzhang"
+    ]
+  },
+  {
+    "id": "h89",
+    "name": "瀚海巨鲸",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3680,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.4,
+    "defence_rate": 2.4,
+    "health_rate": 7.2,
+    "attack_add": 12800,
+    "defence_add": 6400,
+    "health_add": 192000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.05,
+      "luo": 0.6,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shengzhang",
+      "hanhai"
+    ]
+  },
+  {
+    "id": "h90",
+    "name": "兔",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 190,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1
+    },
+    "skills": [
+      "dengying",
+      "zhuangsi"
+    ]
+  },
+  {
+    "id": "h91",
+    "name": "讹兽",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.47,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1680,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "dengying",
+      "renyan"
+    ]
+  },
+  {
+    "id": "h92",
+    "name": "犼",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 2.04,
+    "defence_rate": 1.7,
+    "health_rate": 1.7,
+    "attack_add": 3840,
+    "defence_add": 1600,
+    "health_add": 16000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.45,
+      "zhao": 0.1
+    },
+    "skills": [
+      "tunshi1",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h93",
+    "name": "犰狳",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.2,
+    "defence_rate": 2,
+    "health_rate": 2,
+    "attack_add": 7040,
+    "defence_add": 3200,
+    "health_add": 32000,
+    "relations": {
+      "hui": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "zhuangsi1"
+    ]
+  },
+  {
+    "id": "h94",
+    "name": "金毛犼",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3680,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 3.12,
+    "defence_rate": 2.4,
+    "health_rate": 2.4,
+    "attack_add": 16640,
+    "defence_add": 6400,
+    "health_add": 64000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "tunshi1",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h95",
+    "name": "玉兔",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 7680,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 2.32,
+    "defence_rate": 2.61,
+    "health_rate": 2.61,
+    "attack_add": 20480,
+    "defence_add": 11520,
+    "health_add": 115200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "dengying",
+      "keai"
+    ]
+  },
+  {
+    "id": "h96",
+    "name": "野狗",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 200,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.2,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "siyao"
+    ]
+  },
+  {
+    "id": "h97",
+    "name": "野狼",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 400,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.4,
+    "health_rate": 1.4,
+    "attack_add": 1600,
+    "defence_add": 800,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "dajian",
+      "siyao"
+    ]
+  },
+  {
+    "id": "h98",
+    "name": "狼王",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 840,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.87,
+    "defence_rate": 1.7,
+    "health_rate": 1.7,
+    "attack_add": 3520,
+    "defence_add": 1600,
+    "health_add": 16000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15,
+      "zhi": 0.05
+    },
+    "skills": [
+      "dajian",
+      "siyao"
+    ]
+  },
+  {
+    "id": "h99",
+    "name": "哮月狼",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.3,
+    "defence_rate": 2,
+    "health_rate": 2,
+    "attack_add": 7360,
+    "defence_add": 3200,
+    "health_add": 32000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15,
+      "zhi": 0.05
+    },
+    "skills": [
+      "xiaoyue",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h100",
+    "name": "银月狼王",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3520,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.88,
+    "defence_rate": 2.4,
+    "health_rate": 2.4,
+    "attack_add": 15360,
+    "defence_add": 6400,
+    "health_add": 64000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15,
+      "zhi": 0.05
+    },
+    "skills": [
+      "xiaoyue",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h101",
+    "name": "哮天犬",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 7360,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.625,
+    "defence_rate": 2.9,
+    "health_rate": 2.9,
+    "attack_add": 32000,
+    "defence_add": 12800,
+    "health_add": 128000,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15,
+      "zhi": 0.1
+    },
+    "skills": [
+      "xiaotian",
+      "xiongbao"
+    ]
+  },
+  {
+    "id": "h102",
+    "name": "谛听",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 7360,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.19,
+    "defence_rate": 2.9,
+    "health_rate": 2.9,
+    "attack_add": 28160,
+    "defence_add": 12800,
+    "health_add": 128000,
+    "relations": {
+      "chi": 0.15,
+      "lin": 0.2,
+      "mao": 0.2,
+      "zhao": 0.15,
+      "jiao": 0.05,
+      "zhi": 0.2
+    },
+    "skills": [
+      "xiangrui2",
+      "tongxiao"
+    ]
+  },
+  {
+    "id": "h103",
+    "name": "食日天狗",
+    "rare": 8,
+    "quality_type": "shen",
+    "quality": 640,
+    "race": 16640,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 4.2,
+    "defence_rate": 3.85,
+    "health_rate": 3.85,
+    "attack_add": 61440,
+    "defence_add": 28160,
+    "health_add": 281600,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.15,
+      "zhi": 0.1
+    },
+    "skills": [
+      "xiaotian",
+      "shiri"
+    ]
+  },
+  {
+    "id": "h104",
+    "name": "家猪",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 190,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 1.2,
+    "health_rate": 1.44,
+    "attack_add": 800,
+    "defence_add": 400,
+    "health_add": 4800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "ti": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shengzhang"
+    ]
+  },
+  {
+    "id": "h105",
+    "name": "野猪",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.54,
+    "defence_rate": 1.4,
+    "health_rate": 1.68,
+    "attack_add": 1760,
+    "defence_add": 800,
+    "health_add": 9600,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.05,
+      "luo": 0.3,
+      "ti": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "chongzhuang",
+      "niupi"
+    ]
+  },
+  {
+    "id": "h106",
+    "name": "狸力",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 2.04,
+    "defence_rate": 1.7,
+    "health_rate": 2.21,
+    "attack_add": 3840,
+    "defence_add": 1600,
+    "health_add": 20800,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.05,
+      "luo": 0.3,
+      "ti": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "chongzhuang",
+      "niupi"
+    ]
+  },
+  {
+    "id": "h107",
+    "name": "当康",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.4,
+    "defence_rate": 2,
+    "health_rate": 2.6,
+    "attack_add": 7680,
+    "defence_add": 3200,
+    "health_add": 41600,
+    "relations": {
+      "chi": 0.2,
+      "mao": 0.05,
+      "luo": 0.3,
+      "ti": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "chongzhuang",
+      "xiangrui2"
+    ]
+  },
+  {
+    "id": "h108",
+    "name": "凡人",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 220,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.08,
+    "defence_rate": 1.08,
+    "health_rate": 1.2,
+    "attack_add": 720,
+    "defence_add": 360,
+    "health_add": 4000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.15
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h109",
+    "name": "武人",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.26,
+    "defence_rate": 1.26,
+    "health_rate": 1.4,
+    "attack_add": 1440,
+    "defence_add": 720,
+    "health_add": 8000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.15
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h110",
+    "name": "修士",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.53,
+    "defence_rate": 1.53,
+    "health_rate": 1.7,
+    "attack_add": 2880,
+    "defence_add": 1440,
+    "health_add": 16000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.2
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h111",
+    "name": "真人",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1760,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 1.8,
+    "defence_rate": 1.8,
+    "health_rate": 2,
+    "attack_add": 5760,
+    "defence_add": 2880,
+    "health_add": 32000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.2
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h112",
+    "name": "地仙",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3520,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.16,
+    "defence_rate": 2.16,
+    "health_rate": 2.4,
+    "attack_add": 11520,
+    "defence_add": 5760,
+    "health_add": 64000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.25
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h113",
+    "name": "真仙",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 7040,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 2.61,
+    "defence_rate": 2.61,
+    "health_rate": 2.9,
+    "attack_add": 23040,
+    "defence_add": 11520,
+    "health_add": 128000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.25
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h114",
+    "name": "金仙",
+    "rare": 8,
+    "quality_type": "xian",
+    "quality": 640,
+    "race": 14080,
+    "remain": 0.2,
+    "exp_need": 1.9,
+    "exp_dead": 1.9,
+    "attack_rate": 3.15,
+    "defence_rate": 3.15,
+    "health_rate": 3.5,
+    "attack_add": 46080,
+    "defence_add": 23040,
+    "health_add": 256000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.25
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h115",
+    "name": "大罗金仙",
+    "rare": 9,
+    "quality_type": "xian",
+    "quality": 1280,
+    "race": 28160,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 3.78,
+    "defence_rate": 3.78,
+    "health_rate": 4.2,
+    "attack_add": 92160,
+    "defence_add": 46080,
+    "health_add": 512000,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.3
+    },
+    "skills": [
+      "xuexi"
+    ]
+  },
+  {
+    "id": "h116",
+    "name": "狮子",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.61,
+    "defence_rate": 1.4,
+    "health_rate": 1.54,
+    "attack_add": 1840,
+    "defence_add": 800,
+    "health_add": 8800,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.5,
+      "zhao": 0.15
+    },
+    "skills": [
+      "shihou",
+      "siyao"
+    ]
+  },
+  {
+    "id": "h117",
+    "name": "避水金睛兽",
+    "rare": 4,
+    "quality_type": "xian",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.955,
+    "defence_rate": 1.87,
+    "health_rate": 1.87,
+    "attack_add": 3680,
+    "defence_add": 1760,
+    "health_add": 17600,
+    "relations": {
+      "chi": 0.15,
+      "lin": 0.3,
+      "mao": 0.15,
+      "zhao": 0.15,
+      "jiao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shihou",
+      "long1"
+    ]
+  },
+  {
+    "id": "h118",
+    "name": "青狮",
+    "rare": 5,
+    "quality_type": "xian",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.3,
+    "defence_rate": 2.2,
+    "health_rate": 2.2,
+    "attack_add": 7360,
+    "defence_add": 3520,
+    "health_add": 35200,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.5,
+      "zhao": 0.15,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shihou",
+      "tunshi1"
+    ]
+  },
+  {
+    "id": "h119",
+    "name": "雪狮",
+    "rare": 6,
+    "quality_type": "xian",
+    "quality": 160,
+    "race": 3680,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.76,
+    "defence_rate": 2.64,
+    "health_rate": 2.64,
+    "attack_add": 14720,
+    "defence_add": 7040,
+    "health_add": 70400,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.5,
+      "zhao": 0.15,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shihou",
+      "siyao"
+    ]
+  },
+  {
+    "id": "h120",
+    "name": "九头狮子",
+    "rare": 7,
+    "quality_type": "xian",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.625,
+    "defence_rate": 3.19,
+    "health_rate": 3.19,
+    "attack_add": 32000,
+    "defence_add": 14080,
+    "health_add": 140800,
+    "relations": {
+      "chi": 0.2,
+      "mao": 0.5,
+      "zhao": 0.15,
+      "zhi": 0.15
+    },
+    "skills": [
+      "shihou",
+      "weiyan"
+    ]
+  },
+  {
+    "id": "h121",
+    "name": "猫",
+    "rare": 2,
+    "quality_type": "ling",
+    "quality": 10,
+    "race": 190,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 1.2,
+    "defence_rate": 0.96,
+    "health_rate": 0.96,
+    "attack_add": 800,
+    "defence_add": 320,
+    "health_add": 3200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shanbi3",
+      "siyao"
+    ]
+  },
+  {
+    "id": "h122",
+    "name": "黑猫",
+    "rare": 3,
+    "quality_type": "ling",
+    "quality": 20,
+    "race": 380,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.4,
+    "defence_rate": 1.12,
+    "health_rate": 1.12,
+    "attack_add": 1600,
+    "defence_add": 640,
+    "health_add": 6400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "shanbi3",
+      "busi"
+    ]
+  },
+  {
+    "id": "h123",
+    "name": "招财猫",
+    "rare": 4,
+    "quality_type": "ling",
+    "quality": 40,
+    "race": 760,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.36,
+    "defence_rate": 1.36,
+    "health_rate": 1.36,
+    "attack_add": 2560,
+    "defence_add": 1280,
+    "health_add": 12800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "kong"
+    ]
+  },
+  {
+    "id": "h124",
+    "name": "九命猫",
+    "rare": 5,
+    "quality_type": "ling",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2,
+    "defence_rate": 1.6,
+    "health_rate": 1.4,
+    "attack_add": 6400,
+    "defence_add": 2560,
+    "health_add": 22400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "busi",
+      "jiuming"
+    ]
+  },
+  {
+    "id": "h125",
+    "name": "河蟹",
+    "rare": 6,
+    "quality_type": "shen",
+    "quality": 160,
+    "race": 3360,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.88,
+    "defence_rate": 3.12,
+    "health_rate": 2.16,
+    "attack_add": 15360,
+    "defence_add": 8320,
+    "health_add": 57600,
+    "relations": {
+      "jia": 0.9
+    },
+    "skills": [
+      "hexie",
+      "hexie1"
+    ]
+  },
+  {
+    "id": "h126",
+    "name": "熊",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 420,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.54,
+    "defence_rate": 1.54,
+    "health_rate": 1.61,
+    "attack_add": 1760,
+    "defence_add": 880,
+    "health_add": 9200,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "siyao1",
+      "siyao2"
+    ]
+  },
+  {
+    "id": "h127",
+    "name": "黑熊",
+    "rare": 4,
+    "quality_type": "none",
+    "quality": 40,
+    "race": 840,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.87,
+    "defence_rate": 1.87,
+    "health_rate": 1.955,
+    "attack_add": 3520,
+    "defence_add": 1760,
+    "health_add": 18400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "siyao1",
+      "siyao2"
+    ]
+  },
+  {
+    "id": "h128",
+    "name": "熊猫",
+    "rare": 5,
+    "quality_type": "shen",
+    "quality": 80,
+    "race": 2080,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.3,
+    "defence_rate": 2.2,
+    "health_rate": 2.3,
+    "attack_add": 7360,
+    "defence_add": 3520,
+    "health_add": 36800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.45,
+      "zhao": 0.1,
+      "zhi": 0.2
+    },
+    "skills": [
+      "siyao1",
+      "keai"
+    ]
+  },
+  {
+    "id": "h129",
+    "name": "鲤鱼",
+    "rare": 2,
+    "quality_type": "none",
+    "quality": 10,
+    "race": 160,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 0.6,
+    "defence_rate": 1.08,
+    "health_rate": 1.08,
+    "attack_add": 400,
+    "defence_add": 360,
+    "health_add": 3600,
+    "relations": {
+      "lin": 0.5
+    },
+    "skills": [
+      "paopao"
+    ]
+  },
+  {
+    "id": "h130",
+    "name": "锦鲤",
+    "rare": 3,
+    "quality_type": "shen",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 0.7,
+    "defence_rate": 1.26,
+    "health_rate": 1.26,
+    "attack_add": 800,
+    "defence_add": 720,
+    "health_add": 7200,
+    "relations": {
+      "lin": 0.5,
+      "zhi": 0.05
+    },
+    "skills": [
+      "paopao"
+    ]
+  },
+  {
+    "id": "h131",
+    "name": "金龙鱼",
+    "rare": 4,
+    "quality_type": "shen",
+    "quality": 40,
+    "race": 880,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 1.19,
+    "defence_rate": 1.7,
+    "health_rate": 1.7,
+    "attack_add": 2240,
+    "defence_add": 1600,
+    "health_add": 16000,
+    "relations": {
+      "lin": 0.5,
+      "zhi": 0.05
+    },
+    "skills": [
+      "paopao",
+      "xiangrui2"
+    ]
+  },
+  {
+    "id": "h132",
+    "name": "鱼龙",
+    "rare": 5,
+    "quality_type": "xian",
+    "quality": 80,
+    "race": 1840,
+    "remain": 0.5,
+    "exp_need": 1.4,
+    "exp_dead": 1.4,
+    "attack_rate": 2.2,
+    "defence_rate": 2.2,
+    "health_rate": 2,
+    "attack_add": 7040,
+    "defence_add": 3520,
+    "health_add": 32000,
+    "relations": {
+      "lin": 0.5,
+      "zhi": 0.05
+    },
+    "skills": [
+      "siyao",
+      "long1"
+    ]
+  },
+  {
+    "id": "h133",
+    "name": "鲲",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3840,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 2.88,
+    "defence_rate": 3.6,
+    "health_rate": 4.8,
+    "attack_add": 15360,
+    "defence_add": 9600,
+    "health_add": 128000,
+    "relations": {
+      "lin": 0.8,
+      "zhi": 0.05
+    },
+    "skills": [
+      "tunshi2"
+    ]
+  },
+  {
+    "id": "h134",
+    "name": "鲲鹏",
+    "rare": 7,
+    "quality_type": "ling",
+    "quality": 320,
+    "race": 8000,
+    "remain": 0.3,
+    "exp_need": 1.7,
+    "exp_dead": 1.7,
+    "attack_rate": 3.77,
+    "defence_rate": 3.77,
+    "health_rate": 4.35,
+    "attack_add": 33280,
+    "defence_add": 16640,
+    "health_add": 192000,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.2,
+      "yu": 0.35,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "tunshi2",
+      "shanbi1"
+    ]
+  },
+  {
+    "id": "h135",
+    "name": "鳄鱼",
+    "rare": 3,
+    "quality_type": "none",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.75,
+    "defence_rate": 1.68,
+    "health_rate": 1.54,
+    "attack_add": 2000,
+    "defence_add": 960,
+    "health_add": 8800,
+    "relations": {
+      "chi": 0.15,
+      "lin": 0.2,
+      "jia": 0.25,
+      "zhao": 0.1
+    },
+    "skills": [
+      "siyao1",
+      "jianjia"
+    ]
+  },
+  {
+    "id": "h136",
+    "name": "猪婆龙",
+    "rare": 6,
+    "quality_type": "ling",
+    "quality": 160,
+    "race": 3680,
+    "remain": 0.4,
+    "exp_need": 1.5,
+    "exp_dead": 1.5,
+    "attack_rate": 3,
+    "defence_rate": 2.88,
+    "health_rate": 2.64,
+    "attack_add": 16000,
+    "defence_add": 7680,
+    "health_add": 70400,
+    "relations": {
+      "chi": 0.15,
+      "lin": 0.2,
+      "jia": 0.25,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "jianjia",
+      "long1"
+    ]
+  },
+  {
+    "id": "h137",
+    "name": "老鼠",
+    "rare": 1,
+    "quality_type": "none",
+    "quality": 0,
+    "race": 70,
+    "remain": 0.9,
+    "exp_need": 1,
+    "exp_dead": 1,
+    "attack_rate": 0.9,
+    "defence_rate": 0.7,
+    "health_rate": 0.7,
+    "attack_add": 360,
+    "defence_add": 140,
+    "health_add": 1400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.3,
+      "zhao": 0.1,
+      "zhi": 0.05
+    },
+    "skills": [
+      "shanbi3"
+    ]
+  },
+  {
+    "id": "h138",
+    "name": "寻宝鼠",
+    "rare": 2,
+    "quality_type": "xian",
+    "quality": 10,
+    "race": 180,
+    "remain": 0.8,
+    "exp_need": 1.1,
+    "exp_dead": 1.1,
+    "attack_rate": 0.84,
+    "defence_rate": 0.84,
+    "health_rate": 0.84,
+    "attack_add": 560,
+    "defence_add": 280,
+    "health_add": 2800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.3,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "shanbi3",
+      "keai"
+    ]
+  },
+  {
+    "id": "h139",
+    "name": "锦毛鼠",
+    "rare": 3,
+    "quality_type": "xian",
+    "quality": 20,
+    "race": 440,
+    "remain": 0.7,
+    "exp_need": 1.2,
+    "exp_dead": 1.2,
+    "attack_rate": 1.12,
+    "defence_rate": 1.12,
+    "health_rate": 1.12,
+    "attack_add": 1280,
+    "defence_add": 640,
+    "health_add": 6400,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.3,
+      "zhao": 0.1,
+      "zhi": 0.15
+    },
+    "skills": [
+      "shanbi3",
+      "keai"
+    ]
+  },
+  {
+    "id": "h140",
+    "name": "平头哥",
+    "rare": 4,
+    "quality_type": "shen",
+    "quality": 40,
+    "race": 960,
+    "remain": 0.6,
+    "exp_need": 1.3,
+    "exp_dead": 1.3,
+    "attack_rate": 2.55,
+    "defence_rate": 1.7,
+    "health_rate": 2.21,
+    "attack_add": 4800,
+    "defence_add": 1600,
+    "health_add": 20800,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.3,
+      "zhao": 0.1,
+      "zhi": 0.1
+    },
+    "skills": [
+      "zhanyi",
+      "fanji"
+    ]
+  },
+  {
+    "id": "b1",
+    "name": "牛魔王",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 25600,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 4.62,
+    "defence_rate": 4.2,
+    "health_rate": 5.04,
+    "attack_add": 0,
+    "defence_add": 0,
+    "health_add": 0,
+    "relations": {
+      "chi": 0.1,
+      "lin": 0.4,
+      "ti": 0.1,
+      "jiao": 0.1
+    },
+    "skills": [
+      "chongzhuang",
+      "niupi",
+      "faxiang",
+      "xiulian",
+      "qishier",
+      "huntie"
+    ]
+  },
+  {
+    "id": "b2",
+    "name": "妲己",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 30720,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 4.41,
+    "defence_rate": 4.41,
+    "health_rate": 4.41,
+    "attack_add": 0,
+    "defence_add": 0,
+    "health_add": 0,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.55,
+      "zhao": 0.1,
+      "zhi": 0.3
+    },
+    "skills": [
+      "mihuo1",
+      "meihuo2",
+      "qingcheng",
+      "keai",
+      "jiuwei",
+      "xiulian"
+    ]
+  },
+  {
+    "id": "b3",
+    "name": "哪吒",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 28160,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 3.78,
+    "defence_rate": 3.78,
+    "health_rate": 4.2,
+    "attack_add": 0,
+    "defence_add": 0,
+    "health_add": 0,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.3
+    },
+    "skills": [
+      "xuexi",
+      "santou",
+      "lianhua",
+      "huntian",
+      "qiankun",
+      "jiulong",
+      "fenghuo",
+      "huojian",
+      "xiulian"
+    ]
+  },
+  {
+    "id": "b4",
+    "name": "杨戬",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 28160,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 3.78,
+    "defence_rate": 3.78,
+    "health_rate": 4.2,
+    "attack_add": 0,
+    "defence_add": 0,
+    "health_add": 0,
+    "relations": {
+      "chi": 0.1,
+      "mao": 0.05,
+      "luo": 0.3,
+      "zhao": 0.15,
+      "zhi": 0.3
+    },
+    "skills": [
+      "xuexi",
+      "bajiu",
+      "tianyan",
+      "sanjian",
+      "xiulian"
+    ]
+  },
+  {
+    "id": "b5",
+    "name": "孙悟空",
+    "rare": 9,
+    "quality_type": "shen",
+    "quality": 1280,
+    "race": 32000,
+    "remain": 0.1,
+    "exp_need": 2.1,
+    "exp_dead": 2.1,
+    "attack_rate": 5.46,
+    "defence_rate": 5.46,
+    "health_rate": 5.04,
+    "attack_add": 0,
+    "defence_add": 0,
+    "health_add": 0,
+    "relations": {
+      "chi": 0.15,
+      "mao": 0.4,
+      "zhao": 0.1,
+      "zhi": 0.35
+    },
+    "skills": [
+      "jingu",
+      "bianhua",
+      "huoyan2",
+      "fensheng",
+      "xiulian",
+      "faxiang"
+    ]
+  }
+]

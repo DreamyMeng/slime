@@ -1,4 +1,5 @@
 import { getValueStr } from "./core/utils";
+import { CustomButton } from "./test/CustomButton";
 import { DamageMove } from "./ui/DamageMove";
 import { HPBar } from "./ui/HPBar";
 import { MyButton } from "./ui/MyButton";
@@ -21,70 +22,78 @@ export class Test extends Laya.Script {
     @property(Laya.Clip)
     public clip: Laya.Clip;
 
+    // onAwake(): void {
+    //     // this.animator.play();
+
+    //     (this.btn as MyButton).onClick = () => {
+    //         console.log("按钮被点击了");
+    //         // this.clip.play(0, this.clip.total);
+    //         // this.animator.owner.getComponent(DamageMove).init(205, 730, getValueStr(Math.random() * 9999999999));
+
+
+    //         this.showDamageText(getValueStr(Math.random() * 9999999999), 360, 640);
+    //         this.showDodgeText("闪避", 360, 640);
+    //         this.showBlockText("格挡", 360, 640);
+
+
+    //         // this.label.y = 650;
+    //         // Laya.Tween.to(
+    //         //     this.label,
+    //         //     {
+    //         //         scaleX: 1.5,
+    //         //         scaleY: 1.5,
+    //         //         y: this.label.y - 100
+    //         //     },
+    //         //     400,
+    //         //     Laya.Ease.elasticInOut,
+    //         //     // Laya.Handler.create(this, () => {
+    //         //     //     Laya.Tween.to(
+    //         //     //         label,
+    //         //     //         {
+    //         //     //             scaleX: 1,
+    //         //     //             scaleY: 1,
+    //         //     //             alpha: 0
+    //         //     //         },
+    //         //     //         300,
+    //         //     //         Laya.Ease.backIn,
+    //         //     //         Laya.Handler.create(this, () => {
+    //         //     //             Laya.Tween.to(
+    //         //     //                 label,
+    //         //     //                 {
+    //         //     //                     scaleX: 1,
+    //         //     //                     scaleY: 1,
+    //         //     //                     alpha: 0
+    //         //     //                 },
+    //         //     //                 300,
+    //         //     //                 Laya.Ease.backIn,
+    //         //     //                 Laya.Handler.create(this, () => {
+    //         //     //                     this.recycleDamageLabel(label)
+    //         //     //                 })
+    //         //     //             );
+    //         //     //         })
+    //         //     //     );
+    //         //     // })
+    //         // );
+    //     };
+
+    //     // this.list.vScrollBarSkin = "ui/ScrollBar.png"; // 设置垂直滚动条皮肤
+
+    //     // this.btn.onClick = () => {
+    //     //     console.log("按钮被点击了");
+    //     //     this.list.dataSource.push("Item " + (this.list.dataSource.length + 1));
+    //     //     this.list.refresh();
+    //     //     this.list.scrollTo(this.list.dataSource.length - 1); // 滚动到最后一个元素的位置
+    //     // };
+    //     // this.list.dataSource = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20"];
+    //     // this.list.scrollBar.autoHide = true;
+    // }
+
     onAwake(): void {
-        // this.animator.play();
-
-        (this.btn as MyButton).onClick = () => {
-            console.log("按钮被点击了");
-            // this.clip.play(0, this.clip.total);
-            // this.animator.owner.getComponent(DamageMove).init(205, 730, getValueStr(Math.random() * 9999999999));
-
-
-            this.showDamageText(getValueStr(Math.random() * 9999999999), 360, 640);
-            this.showDodgeText("闪避", 360, 640);
-            this.showBlockText("格挡", 360, 640);
-
-
-            // this.label.y = 650;
-            // Laya.Tween.to(
-            //     this.label,
-            //     {
-            //         scaleX: 1.5,
-            //         scaleY: 1.5,
-            //         y: this.label.y - 100
-            //     },
-            //     400,
-            //     Laya.Ease.elasticInOut,
-            //     // Laya.Handler.create(this, () => {
-            //     //     Laya.Tween.to(
-            //     //         label,
-            //     //         {
-            //     //             scaleX: 1,
-            //     //             scaleY: 1,
-            //     //             alpha: 0
-            //     //         },
-            //     //         300,
-            //     //         Laya.Ease.backIn,
-            //     //         Laya.Handler.create(this, () => {
-            //     //             Laya.Tween.to(
-            //     //                 label,
-            //     //                 {
-            //     //                     scaleX: 1,
-            //     //                     scaleY: 1,
-            //     //                     alpha: 0
-            //     //                 },
-            //     //                 300,
-            //     //                 Laya.Ease.backIn,
-            //     //                 Laya.Handler.create(this, () => {
-            //     //                     this.recycleDamageLabel(label)
-            //     //                 })
-            //     //             );
-            //     //         })
-            //     //     );
-            //     // })
-            // );
-        };
-
-        // this.list.vScrollBarSkin = "ui/ScrollBar.png"; // 设置垂直滚动条皮肤
-
-        // this.btn.onClick = () => {
-        //     console.log("按钮被点击了");
-        //     this.list.dataSource.push("Item " + (this.list.dataSource.length + 1));
-        //     this.list.refresh();
-        //     this.list.scrollTo(this.list.dataSource.length - 1); // 滚动到最后一个元素的位置
-        // };
-        // this.list.dataSource = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20"];
-        // this.list.scrollBar.autoHide = true;
+        const button = new CustomButton(150, 50, "点击我");
+        button.pos(325, 275);
+        button.anchorX = 0.5;
+        button.anchorY = 0.5;
+        Laya.stage.addChild(button);
     }
 
     showDamageText(value: string, x: number, y: number, color: string = "#ffffff", duration: number = 1000) {

@@ -34,19 +34,19 @@ export class Chengjiu extends Laya.Script {
             str = `(${cur}/${max})`;
             tip.color = '#6AB548';
         } else {
-            str = '完成';
+            str = '完成'.toStr();
             tip.color = '#c58237';
         }
-        label.text = data.description;
         tip.text = str;
-        this.owner.tip.text = data.rewardStr;
+        label.text = data.description.toStr();
+        this.owner.tip.text = data.rewardStr.toStr();
         let state = Save.data.game.achieves[id];
         if (state === 1) {
-            this.owner.title.text = "领取奖励";
+            this.owner.title.text = "领取奖励".toStr();
             this.owner.active = true;
         } else {
-            if (state === 2) this.owner.title.text = "已领取";
-            else this.owner.title.text = "未完成";
+            if (state === 2) this.owner.title.text = "已领取".toStr();
+            else this.owner.title.text = "未完成".toStr();
             this.owner.active = false;
         }
     }
@@ -100,7 +100,7 @@ export class Chengjiu extends Laya.Script {
                     || (type === 'rebirth' && item.count <= Save.data.game.rebirth
                         || (target && type === 'kill' && item.target === target && item.count <= Save.data.game.kills[target]))) {
                     achievesData[item.id] = 1;
-                    MessageBox.show(`达成：${item.description}`, null, null, false);
+                    MessageBox.show("达成：".toStr() + `${item.description.toStr()}`, null, null, false);
                 }
             }
         });

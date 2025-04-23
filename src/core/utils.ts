@@ -1,5 +1,8 @@
 // GameLog.ts
 
+import { Config } from "./config";
+import { Language } from "./i18n";
+
 /**
  * 游戏日志系统
  * 用于记录游戏运行过程中的各种事件信息
@@ -27,7 +30,8 @@ export class GameLog {
      * 记录日志并输出到控制台
      * @param message 需要记录的日志信息
      */
-    static log(message: string) {
+    static log(message: string, isTranslate: boolean = true) {
+        if (isTranslate) message = message.toStr();
         if (!this.instance) this.instance = new GameLog();
         this.instance.add(message);
         console.log(`[LOG]: ${message}`);
@@ -67,17 +71,35 @@ export function toPerStr(value: number): string {
 }
 
 export function getValueStr(num: number): string {
-    const units = [
-        { value: 1e12, symbol: '兆' },  // 万亿
-        { value: 1e8, symbol: '亿' },
-        { value: 1e4, symbol: '万' }
-    ];
+    if (Language.key === "enUS") {
+        const units = [
+            { value: 1e12, symbol: 'T' },
+            { value: 1e9, symbol: 'B' },
+            { value: 1e6, symbol: 'M' },
+            { value: 1e3, symbol: 'K' }
+        ];
 
-    for (const unit of units) {
-        if (num >= unit.value) {
-            const formatted = (num / unit.value).toFixed(2);
-            // 移除末尾无用的零和小数点（如1.00万→1万）
-            return formatted.replace(/\.?0+$/, '') + unit.symbol;
+        for (const unit of units) {
+            if (num >= unit.value) {
+                const formatted = (num / unit.value).toFixed(2);
+                // 移除末尾无用的零和小数点（如1.00K→1K）
+                return formatted.replace(/\.?0+$/, '') + unit.symbol;
+            }
+        }
+    }
+    else {
+        const units = [
+            { value: 1e12, symbol: '兆' },  // 万亿
+            { value: 1e8, symbol: '亿' },
+            { value: 1e4, symbol: '万' }
+        ];
+
+        for (const unit of units) {
+            if (num >= unit.value) {
+                const formatted = (num / unit.value).toFixed(2);
+                // 移除末尾无用的零和小数点（如1.00万→1万）
+                return formatted.replace(/\.?0+$/, '') + unit.symbol;
+            }
         }
     }
     return num.toString();
@@ -85,6 +107,7 @@ export function getValueStr(num: number): string {
 
 // 新增数字转中文方法
 export function numberToChinese(num: number): string {
+    if (Language.key === "enUS") return num.toString();
     const chineseNumbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
     return num.toString().split('').map(n => chineseNumbers[parseInt(n)]).join('');
 }

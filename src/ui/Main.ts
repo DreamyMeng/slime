@@ -56,14 +56,14 @@ export class Main extends MainBase {
 
         this.btn_shenru.onClick = () => {
             Save.data.player.curScene++;
-            utils.GameLog.log(xinximoban.shenru.replace('*', utils.numberToChinese(Save.data.player.curScene)));
+            utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
             Main.instance.update_map();
             Save.saveGame();
         }
-        utils.GameLog.log(xinximoban.shenru.replace('*', utils.numberToChinese(Save.data.player.curScene)));
+        utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
         this.btn_fanhui.onClick = () => {
             Save.data.player.curScene--;
-            utils.GameLog.log(xinximoban.shenru.replace('*', utils.numberToChinese(Save.data.player.curScene)));
+            utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
             Main.instance.update_map();
             Save.saveGame();
         }
@@ -116,16 +116,16 @@ export class Main extends MainBase {
             if (rebirth > 99) per = 1;
             if (rebirth > 199) per = 0.1;
 
-            MessageBox.show(`是否进行转生，等级、种族重置为初始状态，全属性永久额外增加${per}%`, () => {
+            MessageBox.show("是否进行转生，等级、种族重置为初始状态，全属性永久额外增加".toStr() + `${per}%`, () => {
                 Save.data.game.rebirth++;
-                if (Save.data.game.rebirth == 1) MessageBox.show("解锁：自动战斗", null, null, false);
-                if (Save.data.game.rebirth == 2) MessageBox.show("解锁：定向拟态", null, null, false);
+                if (Save.data.game.rebirth == 1) MessageBox.show("解锁：自动战斗".toStr(), null, null, false);
+                if (Save.data.game.rebirth == 2) MessageBox.show("解锁：定向拟态".toStr(), null, null, false);
                 if (Save.data.game.rebirth == 3) {
                     var skill = Config.table.Tbskill.get("jiexi");
-                    MessageBox.show(`习得：${skill.name}`, null, null, false);
+                    MessageBox.show("习得：".toStr() + `${skill.name.toStr()}`, null, null, false);
                 }
                 Save.data.player = Save.reset();
-                MessageBox.tip(xinximoban.zhuansheng);
+                MessageBox.tip(xinximoban.zhuansheng.toStr().replace('^', color_config.xinximoban.huixue), false);
                 Chengjiu.addCount('rebirth');
                 Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
 
@@ -153,7 +153,7 @@ export class Main extends MainBase {
     }
 
     update_auto(): void {
-        this.btn_zidong.title.text = Save.data.setting.auto ? "停止" : "自动战斗";
+        this.btn_zidong.title.text = (Save.data.setting.auto ? "停止" : "自动战斗").toStr();
     }
 
     auto_fight(): void {
@@ -193,30 +193,30 @@ export class Main extends MainBase {
         let maxExp = roleData.expNeed * levelData.need;
         let roleName = Main.getRoleName(roleData);
 
-        this.label_1.text = `种族:${roleName}`
-            + `\n战力:${utils.getValueStr(power)}`
-            + `\n等级:${playerData.level}(${utils.toPerStr(curExp / maxExp)})`
-            + `\n转生:${Save.data.game.rebirth}`
-            + `\n<font color='#6FD368'>灵气:${utils.getValueStr(playerData.quality['ling'] ?? 0)}</font>`
-            + `\n<font color='#D7AC5E'>仙气:${utils.getValueStr(playerData.quality['xian'] ?? 0)}</font>`
-            + `\n<font color='#C26060'>神韵:${utils.getValueStr(playerData.quality['shen'] ?? 0)}</font>`;
-        this.label_2.text = `攻击:<font color='#DCDCDC'>${utils.getValueStr(attack)}</font>`
-            + `\t防御:<font color='#DCDCDC'>${utils.getValueStr(defence)}</font>`
-            + `\n血量:<font color='#DCDCDC'>${utils.getValueStr(health)}</font>`;
+        this.label_1.text = "种族:".toStr() + `${roleName}`
+            + `\n${"战力:".toStr()}${utils.getValueStr(power)}`
+            + `\n${"等级:".toStr()}${playerData.level}(${utils.toPerStr(curExp / maxExp)})`
+            + `\n${"转生:".toStr()}${Save.data.game.rebirth}`
+            + `\n<font color='#6FD368'>${"灵气:".toStr()}${utils.getValueStr(playerData.quality['ling'] ?? 0)}</font>`
+            + `\n<font color='#D7AC5E'>${"仙气:".toStr()}${utils.getValueStr(playerData.quality['xian'] ?? 0)}</font>`
+            + `\n<font color='#C26060'>${"神韵:".toStr()}${utils.getValueStr(playerData.quality['shen'] ?? 0)}</font>`;
+        this.label_2.text = `${"攻击:".toStr()}<font color='#DCDCDC'>${utils.getValueStr(attack)}</font>`
+            + `\t${"防御:".toStr()}<font color='#DCDCDC'>${utils.getValueStr(defence)}</font>`
+            + `\n${"血量:".toStr()}<font color='#DCDCDC'>${utils.getValueStr(health)}</font>`;
 
         this.list_shuxing.dataSource = Object.keys(playerData.relation).map(key => {
             const typedKey = key as keyof typeof shuxing_config;
-            return `${shuxing_config[typedKey]}:<font color='#AFAFAF'>${utils.getValueStr(playerData.relation[key])}</font>`;
+            return `${shuxing_config[typedKey].toStr()}:<font color='#AFAFAF'>${utils.getValueStr(playerData.relation[key])}</font>`;
         });
 
         this.player0.getComponent(RoleView).show(playerData.id, playerData.level, power);
         this.Player.getComponent(RoleView).show(playerData.id, playerData.level);
 
         this.btn_zidong.active = Save.data.game.rebirth > 0;
-        this.btn_cuilian.tip.text = "需要等级>" + Cuilian.level;
-        this.btn_zhuansheng.tip.text = "需要等级>" + rebirthData.need;
-        this.btn_jinhua.tip.text = "需要等级>" + jinhua_need[Math.min(jinhua_need.length - 1, roleData.rare)];
-        utils.GameLog.log(xinximoban.zhandouli.replace('*', utils.getValueStr(power)));
+        this.btn_cuilian.tip.text = "需要等级>".toStr() + Cuilian.level;
+        this.btn_zhuansheng.tip.text = "需要等级>".toStr() + rebirthData.need;
+        this.btn_jinhua.tip.text = "需要等级>".toStr() + jinhua_need[Math.min(jinhua_need.length - 1, roleData.rare)];
+        utils.GameLog.log(xinximoban.zhandouli.toStr().replace('*', utils.getValueStr(power)), false);
     }
 
     update_skill(): void {
@@ -240,7 +240,7 @@ export class Main extends MainBase {
 
     update_map(): void {
         let mapLevel = Save.data.player.curScene;
-        this.label_titile.text = `第${utils.numberToChinese(mapLevel)}层`;
+        this.label_titile.text = "第*层".toStr().replace('*', utils.numberToChinese(mapLevel));
         let sceneData: cfg.map_level = Config.table.Tbmap_level.get(mapLevel);
 
         let curSceneData = Save.data.player.scenes[mapLevel];
@@ -251,7 +251,7 @@ export class Main extends MainBase {
             this.btn_boss.visible = !curSceneData.pass;
             this.btn_shenru.visible = curSceneData.pass > 0;
         } else {
-            this.btn_sousuo.tip.text = `击败怪物${curSceneData.count}/3`;
+            this.btn_sousuo.tip.text = "击败怪物:".toStr() + `${curSceneData.count}/3`;
             this.btn_shenru.active = false;
             this.btn_boss.visible = false;
         }
@@ -268,11 +268,11 @@ export class Main extends MainBase {
         this.monster1.getComponent(RoleView).init(sceneData, list[1], Main.getLevel(sceneData));
         this.monster2.getComponent(RoleView).init(sceneData, list[2], Main.getLevel(sceneData));
 
-        let str = xinximoban.qianjin;;
+        let str = xinximoban.qianjin.toStr();
         list.forEach((id, index) => {
             str = str.replace(`{${index}}`, Main.getRoleName(Config.table.Tbrole.get(id)));
         });
-        utils.GameLog.log(str);
+        utils.GameLog.log(str, false);
     }
 
     static player_dead(): void {
@@ -281,13 +281,13 @@ export class Main extends MainBase {
         Save.data.setting.auto = false;
         this.instance.update_auto();
 
-        let tip = MessageBox.show(`<font color='${color_config.xinximoban.shanghai}'>你死了</font>\n等级将降为1级`, () => {
+        let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
             Save.data.player.revive--;
-            MessageBox.tip(`<font color='${color_config.xinximoban.huixue}'>你复活了</font>`);
+            MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
             Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
             Save.saveGame();
         }, () => {
-            MessageBox.tip(`<font color='${color_config.xinximoban.shanghai}'>你死了</font>,等级降为1级`);
+            MessageBox.tip(`<font color='^'>你死了</font>,等级降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), false);
             Save.data.player.level = 1;
             Save.data.player.exp = 0;
             Main.instance.update_player();
@@ -297,15 +297,15 @@ export class Main extends MainBase {
             tip.ok.active = false;
         } else {
             tip.ok.active = true;
-            tip.ok.title.text = '复活';
-            tip.ok.tip.text = `剩余次数:${Save.data.player.revive}`;
+            tip.ok.title.text = '复活'.toStr();
+            tip.ok.tip.text = "剩余次数:".toStr() + `${Save.data.player.revive}`;
         }
     }
 
     static getRoleName(role: cfg.role) {
         let color: string = color_config.pinzhi[role.qualityType as keyof typeof color_config.pinzhi];
         let rank: string = color_config.name[role.rare as keyof typeof color_config.name];
-        return `<font color=${color}>${this.getQualityStr(role.qualityType)}</font><font color=${color_config.name.dian}>·</font><font color=${rank}>${role.name}</font>`
+        return `<font color=${color}>${this.getQualityStr(role.qualityType).toStr()}</font><font color=${color_config.name.dian}>·</font><font color=${rank}>${role.name.toStr()}</font>`
     }
 
     static getQualityStr(key: string): string {
@@ -368,7 +368,7 @@ export class Main extends MainBase {
         }
         playerData.level++;
         MessageBox.tip("等级+1");
-        utils.GameLog.log(xinximoban.shengji.replace('*', playerData.level.toString()));
+        utils.GameLog.log(xinximoban.shengji.toStr().replace('*', playerData.level.toString()), false);
     }
 
     static addValue(role: cfg.role) {
@@ -381,7 +381,7 @@ export class Main extends MainBase {
         var keys = Object.keys(sr);
         var r = role.race * role.remain * shift_config.zhongzu_shift;
         var des = "";
-        shuxing_config
+
         for (let i = 0; i < keys.length; i++) {
             const key = keys[i];
 
@@ -390,16 +390,16 @@ export class Main extends MainBase {
 
             if (v > 0) {
                 const typedKey = key as keyof typeof shuxing_config;
-                des += `${shuxing_config[typedKey]}:+${v}，\t\t`;
+                des += `${shuxing_config[typedKey].toStr()}:+${v}，\t\t`;
             }
         }
         if (des.length > 0) des = des.substring(0, des.lastIndexOf('，\t\t'));
-        MessageBox.tip(des);
+        MessageBox.tip(des, false);
     }
 
     static unlockRole(id: string) {
         let roleData: cfg.role = Config.table.Tbrole.get(id);
-        MessageBox.tip(`解锁图鉴：${this.getRoleName(roleData)}`);
+        MessageBox.tip("解锁图鉴：".toStr() + `${this.getRoleName(roleData)}`, false);
         Save.data.game.roles[id] = 1;
     }
 
@@ -426,7 +426,7 @@ export class Main extends MainBase {
             const skillData = Config.table.Tbskill.get(skillId);
             if (skillData) {
                 playerData.skills.push(skillId);
-                MessageBox.tip(xinximoban.tunshi.replace('*', Main.getRoleName(targetData)).replace('&', skillData.name));
+                MessageBox.tip(xinximoban.tunshi.toStr().replace('*', Main.getRoleName(targetData)).replace('&', skillData.name.toStr()).replace('^', color_config.xinximoban.skill), false);
                 Main.instance.update_skill();
             }
         }

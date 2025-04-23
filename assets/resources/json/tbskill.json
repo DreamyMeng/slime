@@ -1045,7 +1045,7 @@
   {
     "id": "hanhai",
     "name": "撼海",
-    "effect_str": "将对手眩晕1回合",
+    "effect_str": "将对手眩晕一回合",
     "description": "攻击后25%的概率使对手跳过回合，持续1回合。",
     "type": 9,
     "target": 1,
@@ -1564,7 +1564,7 @@
   {
     "id": "huntian",
     "name": "混天绫",
-    "effect_str": "将对手束缚3回合",
+    "effect_str": "将对手束缚三回合",
     "description": "攻击后15%的概率使对手跳过回合，持续3回合。",
     "type": 9,
     "target": 1,
@@ -1577,7 +1577,7 @@
   {
     "id": "qiankun",
     "name": "乾坤圈",
-    "effect_str": "将对手眩晕1回合",
+    "effect_str": "将对手眩晕一回合",
     "description": "攻击后25%的概率使对手跳过回合，持续1回合。",
     "type": 9,
     "target": 1,

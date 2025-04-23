@@ -7,7 +7,6 @@ import { Tables } from "../table/schema";
 export class Config {
     /** 静态配置表实例 */
     static table: Tables;
-
     /**
      * 异步加载所有JSON配置表
      * 加载顺序按照数组定义顺序执行
@@ -16,6 +15,7 @@ export class Config {
         // 配置文件路径列表
         const jsonArr = [
             "resources/json/tbachieve.json",
+            "resources/json/tblang.json",
             "resources/json/tbmap_level.json",
             "resources/json/tbrebirth.json",
             "resources/json/tbrole.json",
@@ -119,34 +119,34 @@ export let color_config = {
 export let xinximoban = {
     zhandou: {
         kaishi: "----------开始战斗----------",
-        jineng1: `<font color='${color_config.xinximoban.player}'>你使用了技能·<font color='${color_config.xinximoban.skill}'>*</font>,&</font>`,
-        jineng2: `<font color='${color_config.xinximoban.enemy}'>^使用了技能·<font color='${color_config.xinximoban.skill}'>*</font>,&</font>`,
-        shanbi1: `<font color='${color_config.xinximoban.player}'>你闪避了!</font>`,
-        shanbi2: `<font color='${color_config.xinximoban.enemy}'>*闪避了!</font>`,
-        gedang1: `<font color='${color_config.xinximoban.player}'>你格挡了!</font>`,
-        gedang2: `<font color='${color_config.xinximoban.enemy}'>*格挡了!</font>`,
-        huihe1: `<font color='${color_config.xinximoban.player}'>你对*发动了攻击,造成了<font color='${color_config.xinximoban.shanghai}'>&</font>点伤害.</font>`,
-        huihe2: `<font color='${color_config.xinximoban.enemy}'>*对你发动了攻击,造成了<font color='${color_config.xinximoban.shanghai}'>&</font>点伤害.</font>`,
-        huifu1: `<font color='${color_config.xinximoban.player}'>你恢复了<font color='${color_config.xinximoban.huixue}'>&</font>点生命.</font>`,
-        huifu2: `<font color='${color_config.xinximoban.enemy}'>*恢复了<font color='${color_config.xinximoban.huixue}'>&</font>点生命.</font>`,
+        jineng1: `<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>`,
+        jineng2: `<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>`,
+        shanbi1: `<font color='{p}'>你闪避了!</font>`,
+        shanbi2: `<font color='{e}'>*闪避了!</font>`,
+        gedang1: `<font color='{p}'>你格挡了!</font>`,
+        gedang2: `<font color='{e}'>*格挡了!</font>`,
+        huihe1: `<font color='{p}'>你对*发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>`,
+        huihe2: `<font color='{e}'>*对你发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>`,
+        huifu1: `<font color='{p}'>你恢复了<font color='{s}'>&</font>点生命.</font>`,
+        huifu2: `<font color='{e}'>*恢复了<font color='{s}'>&</font>点生命.</font>`,
         siwang1: `你吞噬了*.`,
         siwang2: `*吞噬了你.`,
         jieshu: "----------战斗结束----------",
-        taopao: `你逃出生天!`
+        taopao: `你逃出生天!`,
+    },
+    jinhua: {
+        chenggong: `<font color='^'>拟态成功</font>,拟态为*`,
+        shibai1: `<font color='^'>拟态失败</font>,肉身崩坏死亡！`,
+        shibai2: `<font color='^'>拟态失败</font>,损失等级10级。`,
     },
     qianjin: "你遇到了{0},{1},{2}!",
-    zhandouli: `当前战斗力为:<font color='ff8c00'>*</font>`,
+    zhandouli: `当前战斗力为:<font color='#ff8c00'>*</font>`,
     shenru: "你来到第*层.",
     shengji: "你的等级为:*.",
-    zhuansheng: `<font color='${color_config.xinximoban.huixue}'>转生成功</font>,属性成长提升`,
-    cuilian: `<font color='${color_config.xinximoban.huixue}'>淬炼成功</font>,属性向拟态生物靠拢`,
-    jinhua: {
-        chenggong: `<font color='${color_config.xinximoban.huixue}'>拟态成功</font>,拟态为*`,
-        shibai1: `<font color='${color_config.xinximoban.shanghai}'>拟态失败</font>,肉身崩坏死亡！`,
-        shibai2: `<font color='${color_config.xinximoban.shanghai}'>拟态失败</font>,损失等级10级。`
-    },
-    tunshi: `你吞噬了*,解析成功获得技能·<font color='${color_config.xinximoban.skill}'>&</font>`,
-    buzu: "<font color='#FF0000'>等级不足</font>"
+    zhuansheng: `<font color='^'>转生成功</font>,属性成长提升`,
+    cuilian: `<font color='^'>淬炼成功</font>,属性向拟态生物靠拢`,
+    tunshi: `你吞噬了*,解析成功获得技能·<font color='^'>&</font>`,
+    buzu: "<font color='#FF0000'>等级不足</font>",
 }
 
 export let shuxing_config = {
@@ -160,7 +160,7 @@ export let shuxing_config = {
     "zhao": "爪",
     "ti": "蹄",
     "jiao": "角",
-    "zhi": "智"
+    "zhi": "智",
 }
 
 export let tishi = [

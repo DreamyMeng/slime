@@ -20,6 +20,6 @@ export class Mingzi extends Laya.Script {
 
     show(data: role): void {
         this.data = data;
-        this.owner.title.text = Save.data.game.roles[this.data.id] ? Main.getRoleName(this.data) : `${Main.getQualityStr(this.data.qualityType)}·${this.data.name}`;
+        this.owner.title.text = Save.data.game.roles[this.data.id] ? Main.getRoleName(this.data) : `${Main.getQualityStr(this.data.qualityType).toStr()}·${this.data.name.toStr()}`;
     }
 }

@@ -30,16 +30,29 @@
           "_$id": "au8mtcie",
           "_$type": "Label",
           "name": "Title",
-          "y": 3,
-          "width": 150,
-          "height": 60,
-          "text": "按钮",
+          "x": 10,
+          "y": 10,
+          "width": 130,
+          "height": 40,
+          "left": 10,
+          "right": 10,
+          "top": 10,
+          "bottom": 10,
+          "text": "",
           "fontSize": 32,
           "color": "rgba(252, 220, 170, 1)",
           "bold": true,
           "align": "center",
           "valign": "middle",
-          "padding": "0,0,0,0"
+          "overflow": "shrink",
+          "wordWrap": true,
+          "padding": "0,0,0,0",
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         }
       ]
     },
@@ -51,12 +64,19 @@
       "width": 150,
       "height": 30,
       "_mouseState": 2,
-      "text": "需要等级：20",
+      "text": "",
       "fontSize": 24,
       "color": "rgba(175, 175, 175, 1)",
       "align": "center",
       "valign": "middle",
-      "padding": "0,0,0,0"
+      "overflow": "shrink",
+      "padding": "0,0,0,0",
+      "_$comp": [
+        {
+          "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+          "scriptPath": "../src/ui/I18nText.ts"
+        }
+      ]
     }
   ]
 }

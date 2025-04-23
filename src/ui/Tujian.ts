@@ -47,13 +47,13 @@ export class Tujian extends Laya.Script {
                 count++;
             }
         });
-        str += '成就完成率:' + utils.toPerStr(count / achieves.length);
+        str += '成就完成率:'.toStr() + utils.toPerStr(count / achieves.length);
         count = 0;
         let roles = Config.table.Tbrole.getDataList();
         roles.forEach(data => {
             if (Save.data.game.roles[data.id]) count++;
         });
-        str += '\n图鉴完成率:' + utils.toPerStr(count / roles.length);
+        str += '\n' + '图鉴完成率:'.toStr() + utils.toPerStr(count / roles.length);
         this.owner.Label.text = str;
 
         let list_chengjiu = this.owner.getChildByName('list_chengjiu') as Laya.List;
@@ -81,14 +81,14 @@ export class Tujian extends Laya.Script {
         let lock = !Save.data.game.roles[roleData.id];
         let str = '';
         if (roleData.rare < 4 && lock) {
-            str = `击杀解锁\n(${Save.data.game.kills[roleData.id]}/${killCount[roleData.rare - 1]})`;
+            str = "击杀解锁".toStr() + `\n(${Save.data.game.kills[roleData.id]}/${killCount[roleData.rare - 1]})`;
         }
         if (Main.isBoss(roleData) && Save.data.game.rewards['boss'] === 0) {
-            str = '无法拟态\n需成就解锁';
+            str = '无法拟态需成就解锁'.toStr();
         }
         (this.owner.getChildByName('Lock') as Laya.Text).text = str;
-        (this.owner.getChildByName('Chengzhang') as Laya.Text).text = `攻击成长:<font color='#78D658'>${roleData.attackRate}</font>\n防御成长:<font color='#78D658'>${roleData.defenceRate}</font>\n血量成长:<font color='#78D658'>${roleData.healthRate}</font>`;
-        (this.owner.getChildByName('Jiacheng') as Laya.Text).text = `攻击:<font color='#ffffff'>${utils.getValueStr(roleData.attackAdd)}</font>\n防御:<font color='#ffffff'>${utils.getValueStr(roleData.defenceAdd)}</font>\n血量:<font color='#ffffff'>${utils.getValueStr(roleData.healthAdd)}</font>`;
+        (this.owner.getChildByName('Chengzhang') as Laya.Text).text = `${"攻击成长:".toStr()}<font color='#78D658'>${roleData.attackRate}</font>\n${"防御成长:".toStr()}<font color='#78D658'>${roleData.defenceRate}</font>\n${"血量成长:".toStr()}<font color='#78D658'>${roleData.healthRate}</font>`;
+        (this.owner.getChildByName('Jiacheng') as Laya.Text).text = `${"攻击:".toStr()}<font color='#ffffff'>${utils.getValueStr(roleData.attackAdd)}</font>\n${"防御:".toStr()}<font color='#ffffff'>${utils.getValueStr(roleData.defenceAdd)}</font>\n${"血量:".toStr()}<font color='#ffffff'>${utils.getValueStr(roleData.healthAdd)}</font>`;
 
         let list_shuxing = this.owner.getChildByName('list_shuxing') as Laya.List;
         var cr = roleData.relations as unknown as { [key: string]: number };
@@ -97,7 +97,7 @@ export class Tujian extends Laya.Script {
         for (let key in roleData.relations) {
             var v = utils.toInt((cr[key] ?? 0) * r);
             const typedKey = key as keyof typeof shuxing_config;
-            if (v > 0) relations.push(`${shuxing_config[typedKey]}:<font color='#ffffff'>${lock ? '???' : utils.getValueStr(v)}</font>`);
+            if (v > 0) relations.push(`${shuxing_config[typedKey].toStr()}:<font color='#ffffff'>${lock ? '???' : utils.getValueStr(v)}</font>`);
         }
         list_shuxing.dataSource = relations;
 

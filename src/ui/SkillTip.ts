@@ -20,7 +20,7 @@ export class SkillTip extends Laya.Script {
             }
             playerData.level -= level;
             playerData.forget += 1;
-            MessageBox.tip(`遗忘技能·<font color='${color_config.xinximoban.skill}'>${this.data.name}</font>`);
+            MessageBox.tip("遗忘技能".toStr() + `·<font color='${color_config.xinximoban.skill}'>${this.data.name.toStr()}</font>`, false);
             playerData.skills.splice(playerData.skills.indexOf(this.data.id), 1);
             Main.instance.update_player();
             Main.instance.update_skill();
@@ -46,8 +46,8 @@ export class SkillTip extends Laya.Script {
         this.owner.parent.setChildIndex(this.owner, this.owner.parent.numChildren - 1);
         this.data = data;
         let level = (Save.data.player.forget + 1) * 5;
-        this.owner.ok.tip.text = `需要等级>${level}`;
-        this.owner.Label.text = `<font color='#ffe900' size=40>${data.name}</font>\n\n${data.description}`
+        this.owner.ok.tip.text = "需要等级>".toStr() + level;
+        this.owner.Label.text = `<font color='#ffe900' size=40>${data.name.toStr()}</font>\n\n${data.description.toStr()}`
         this.owner.open();
     }
 

@@ -64,7 +64,7 @@ export class DamagePool {
 
     static showDodge(role: RoleView) {
         const label = this.getDamageLabel();
-        label.text = "闪避";
+        label.text = "闪避".toStr();
         label.color = "#12eee0";
         label.pos(role.original_x, role.original_y);
         // label.fontSize = 24;
@@ -106,7 +106,7 @@ export class DamagePool {
 
     static showBlock(role: RoleView) {
         const label = this.getDamageLabel();
-        label.text = "格挡";
+        label.text = "格挡".toStr();
         label.color = "#eee712";
         label.pos(role.original_x, role.original_y);
         // label.fontSize = 28;

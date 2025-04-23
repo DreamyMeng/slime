@@ -28,6 +28,6 @@ export class SkillView extends Laya.Script {
             console.error(`技能${id}不存在!`);
             return;
         }
-        this.owner.title.text = this.data?.name ?? '';
+        this.owner.title.text = this.data?.name.toStr() ?? '';
     }
 }

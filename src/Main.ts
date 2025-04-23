@@ -1,25 +1,28 @@
 import { Battle } from "./core/battle";
 import { Config, tishi } from "./core/config";
 import { EventDispatcher } from "./core/event";
+import { Language } from "./core/i18n";
 import { BaseRole } from "./core/role";
 import { Save } from "./core/save";
 import { delay, GameLog } from "./core/utils";
 
+
 export async function main() {
-    GameLog.log("----------开局一只史莱姆----------");
+    // let label = Laya.stage.addChild(new Laya.Label());
+    // label.dataSource = { width: Laya.stage.width, height: Laya.stage.height, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
 
-    let label = Laya.stage.addChild(new Laya.Label());
-    label.dataSource = { width: Laya.stage.width, height: Laya.stage.height, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
-
-    await delay(200);
-
-    label.text = tishi[Math.floor(Math.random() * tishi.length)];
+    // label.text = tishi[Math.floor(Math.random() * tishi.length)];
+    Language.init();
 
     await Config.load_config();
     await Config.load_sound();
     await Config.load_prefab();
 
+    GameLog.log("----------开局一只史莱姆----------");
     Save.init();
+
+    await Laya.Scene.open("Scene.ls");
+    // label.destroy();
 
     //    new Laya.Image().on(Laya.Event.CLICK, null, () => {
     //         //点击后，打开UI场景示例
@@ -34,9 +37,6 @@ export async function main() {
     // 创建测试实例并运行
     // const test = new EventDispatcherTest();
     // test.runTests();
-
-    await Laya.Scene.open("Scene.ls");
-    label.destroy();
 
     // 测试战斗系统
     /*     const player = new BaseRole().init('player', 110, 90, 1000, ['feixing2', 'xiaoyue']);

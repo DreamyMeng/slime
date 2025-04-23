@@ -1,5 +1,5 @@
 import * as cfg from "../table/schema";
-import { Config, xinximoban } from "../core/config";
+import { color_config, Config, xinximoban } from "../core/config";
 import { Save } from "../core/save";
 import { GameLog, getMaxKey, getValueStr, toPerStr } from "../core/utils";
 import { Main } from "./Main";
@@ -52,7 +52,7 @@ export class Jinhua extends Laya.Script {
         list_role.renderHandler = Laya.Handler.create(this, (item: MyButton, index: number) => {
             let data = roles[0][index];
             item.title.text = Main.getRoleName(Config.table.Tbrole.get(data[0])) +
-                `\n<font color='#ffffff' size=24>成功率:${toPerStr(data[1])}</font>`;
+                `\n<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
             item.onClick = () => {
                 this.onClick(data[0], data[1]);
             }
@@ -65,7 +65,7 @@ export class Jinhua extends Laya.Script {
         list_dingxiang.renderHandler = Laya.Handler.create(this, (item: MyButton, index: number) => {
             let data = roles[1][index];
             (item.getChildByName('Title') as Laya.Label).text = Main.getRoleName(Config.table.Tbrole.get(data[0]));
-            item.tip.text = `<font color='#ffffff' size=24>成功率:${toPerStr(data[1])}</font>`;
+            item.tip.text = `<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
             item.onClick = () => {
                 this.onClick(data[0], data[1]);
             }
@@ -85,17 +85,17 @@ export class Jinhua extends Laya.Script {
             let str = '';
             if (power < 0) str = `<font color=red>-${getValueStr(Math.abs(power))}</font>`;
             else str = `<font color=green>+${getValueStr(power)}</font>`;
-            MessageBox.show(`战力: ${str}`, null, null, false);
+            MessageBox.show("战力：".toStr() + `${str}`, null, null, false);
             Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         } else {
             const siwang = 0.15;
             if (Math.random() < siwang) {
                 Main.player_dead();
-                MessageBox.tip(xinximoban.jinhua.shibai1);
+                MessageBox.tip(xinximoban.jinhua.shibai1.toStr().replace('^', color_config.xinximoban.shanghai), false);
                 this.owner.close();
             } else {
                 playerData.level = Math.max(1, playerData.level - 10);
-                MessageBox.tip(xinximoban.jinhua.shibai2);
+                MessageBox.tip(xinximoban.jinhua.shibai2.toStr().replace('^', color_config.xinximoban.shanghai), false);
                 if (playerData.level <= 10) this.owner.close();
             }
         }
@@ -137,7 +137,7 @@ export class Jinhua extends Laya.Script {
             Main.unlockRole(id);
         }
 
-        MessageBox.tip(xinximoban.jinhua.chenggong.replace('*', Main.getRoleName(roleData)));
+        MessageBox.tip(xinximoban.jinhua.chenggong.toStr().replace('*', Main.getRoleName(roleData)).replace('^', color_config.xinximoban.huixue), false);
     }
 
     list_jinhua(isAd: boolean): Array<[string, number][]> {

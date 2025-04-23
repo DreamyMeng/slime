@@ -1,4 +1,4 @@
-import { Config, shuxing_config, xinximoban } from "../core/config";
+import { color_config, Config, shuxing_config, xinximoban } from "../core/config";
 import { PopUp } from "./PopUp";
 import * as cfg from "../table/schema";
 import * as utils from "../core/utils";
@@ -24,21 +24,21 @@ export class Cuilian extends Laya.Script {
             if (value > 0) str = `<font color=green>+${utils.getValueStr(value)}</font>`;
             else if (value < 0) str = `<font size=18 color=red>-${utils.getValueStr(Math.abs(value))}</font>`;
 
-            return `${shuxing_config[typedKey]}:<font color='#AFAFAF'>${utils.getValueStr(playerData.relation[key])}</font> ${str}`;
+            return `${shuxing_config[typedKey].toStr()}:<font color='#AFAFAF'>${utils.getValueStr(playerData.relation[key])}</font> ${str}`;
         });
 
         this.owner.open();
     }
 
     onAwake(): void {
-        this.owner.Label.text = "是否消耗" + Cuilian.level + "级进行淬炼，淬炼后生物属性向当前物种靠拢。";
+        this.owner.Label.text = "是否消耗*级进行淬炼，淬炼后生物属性向当前物种靠拢。".toStr().replace('*', Cuilian.level.toString());
         this.owner.ok.onClick = () => {
             let playerData = Save.data.player;
             playerData.level -= Cuilian.level;
             playerData.relation = this.refined;
             Main.instance.update_player();
             this.owner.close();
-            MessageBox.tip(xinximoban.cuilian);
+            MessageBox.tip(xinximoban.cuilian.toStr().replace('^', color_config.xinximoban.huixue), false);
             Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
             Save.saveGame();
         }

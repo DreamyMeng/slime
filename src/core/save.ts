@@ -69,12 +69,12 @@ export class Save {
                 zhi: 0
             },
             exp: 0,
-            level: 1,
+            level: 66,
             forget: 0,
             revive: 3,
             mimicry: 1,
             skills: [] as string[],
-            curScene: 1,
+            curScene: 30,
             maxScene: 0,
             scenes: {} as { [key: string]: SaveData_Scene },
         }
@@ -99,7 +99,7 @@ export class Save {
             player: Save.reset(id),
             game: {
                 isNew: true,
-                rebirth: 0,
+                rebirth: 10,
                 roles: {} as { [key: string]: number },
                 kills: {} as { [key: string]: number },
                 achieves: {} as { [key: string]: number },
@@ -130,7 +130,7 @@ export class Save {
     }
 
     static init(): void {
-        // this.deleteSave();
+        this.deleteSave();
         this.data = this.loadGame();
     }
 

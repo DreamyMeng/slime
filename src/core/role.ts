@@ -4,7 +4,7 @@ import { Main } from "../ui/Main";
 import { RoleView } from "../ui/RoleView";
 import { Battle } from "./battle";
 import { BuffMgr } from "./buff";
-import { Config, xinximoban } from "./config";
+import { color_config, Config, xinximoban } from "./config";
 import { EventDispatcher } from "./event";
 import { SkillMgr } from "./skill";
 import { delay, GameLog, getValueStr, toInt } from "./utils";
@@ -125,22 +125,22 @@ export class BaseRole extends EventDispatcher {
             if (miss) {
                 DamagePool.showDodge(target.view);
                 let str;
-                if (target.camp === 'player') str = xinximoban.zhandou.shanbi1;
+                if (target.camp === 'player') str = xinximoban.zhandou.shanbi1.toStr().replace('p', color_config.xinximoban.player);
                 else {
-                    str = xinximoban.zhandou.shanbi2;
+                    str = xinximoban.zhandou.shanbi2.toStr().replace('e', color_config.xinximoban.enemy);
                     str = str.replace('*', Main.getRoleName(target.view.data));
                 }
-                GameLog.log(str); // 闪避
+                GameLog.log(str, false); // 闪避
             }
             else {
                 DamagePool.showBlock(target.view);
                 let str;
-                if (target.camp === 'player') str = xinximoban.zhandou.gedang1;
+                if (target.camp === 'player') str = xinximoban.zhandou.gedang1.toStr().replace('p', color_config.xinximoban.player);
                 else {
-                    str = xinximoban.zhandou.gedang2;
+                    str = xinximoban.zhandou.gedang2.toStr().replace('e', color_config.xinximoban.enemy);
                     str = str.replace('*', Main.getRoleName(target.view.data));
                 }
-                GameLog.log(str); // 闪避
+                GameLog.log(str, false); // 闪避
             }
         } else {
             console.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
@@ -169,22 +169,22 @@ export class BaseRole extends EventDispatcher {
         if (damage > 0) {
             DamagePool.showHeal(damage, this.view);
             let str;
-            if (owner.camp === 'player') str = xinximoban.zhandou.huifu1;
+            if (owner.camp === 'player') str = xinximoban.zhandou.huifu1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.huixue);
             else {
-                str = xinximoban.zhandou.huifu2;
+                str = xinximoban.zhandou.huifu2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.huixue);
                 str = str.replace('*', Main.getRoleName(this.view.data));
             }
             str = str.replace('&', "+" + getValueStr(damage));
-            GameLog.log(str);
+            GameLog.log(str, false);
         }
         if (damage < 0) {
             DamagePool.showDamage(damage, this.view);
             let str;
-            if (owner.camp === 'player') str = xinximoban.zhandou.huihe1;
-            else str = xinximoban.zhandou.huihe2;
+            if (owner.camp === 'player') str = xinximoban.zhandou.huihe1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.shanghai);
+            else str = xinximoban.zhandou.huihe2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.shanghai);
             str = str.replace('*', Main.getRoleName(this.view.data));
             str = str.replace('&', "-" + getValueStr(Math.abs(damage)));
-            GameLog.log(str);
+            GameLog.log(str, false);
         }
     }
 

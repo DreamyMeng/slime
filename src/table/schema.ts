@@ -170,6 +170,32 @@ export class achieve {
 
 
 
+export class lang {
+
+    constructor(_json_: any) {
+        if (_json_.key === undefined) { throw new Error() }
+        this.key = _json_.key
+        if (_json_.zh_CN === undefined) { throw new Error() }
+        this.zhCN = _json_.zh_CN
+        if (_json_.en_US === undefined) { throw new Error() }
+        this.enUS = _json_.en_US
+    }
+
+    readonly key: string
+    readonly zhCN: string
+    readonly enUS: string
+
+    resolve(tables:Tables) {
+        
+        
+        
+    }
+}
+
+
+
+
+
 export class map_level {
 
     constructor(_json_: any) {
@@ -1143,6 +1169,37 @@ export class Tbachieve {
 
 
 
+export class Tblang {
+    private _dataMap: Map<string, lang>
+    private _dataList: lang[]
+    constructor(_json_: any) {
+        this._dataMap = new Map<string, lang>()
+        this._dataList = []
+        for(var _json2_ of _json_) {
+            let _v: lang
+            _v = new lang(_json2_)
+            this._dataList.push(_v)
+            this._dataMap.set(_v.key, _v)
+        }
+    }
+
+    getDataMap(): Map<string, lang> { return this._dataMap; }
+    getDataList(): lang[] { return this._dataList; }
+
+    get(key: string): lang | undefined { return this._dataMap.get(key); }
+
+    resolve(tables:Tables) {
+        for(let  data of this._dataList)
+        {
+            data.resolve(tables)
+        }
+    }
+
+}
+
+
+
+
 export class Tbmap_level {
     private _dataMap: Map<number, map_level>
     private _dataList: map_level[]
@@ -1303,6 +1360,8 @@ type JsonLoader = (file: string) => any
 export class Tables {
     private _Tbachieve: Tbachieve
     get Tbachieve(): Tbachieve  { return this._Tbachieve;}
+    private _Tblang: Tblang
+    get Tblang(): Tblang  { return this._Tblang;}
     private _Tbmap_level: Tbmap_level
     get Tbmap_level(): Tbmap_level  { return this._Tbmap_level;}
     private _Tbrebirth: Tbrebirth
@@ -1316,6 +1375,7 @@ export class Tables {
 
     constructor(loader: JsonLoader) {
         this._Tbachieve = new Tbachieve(loader('tbachieve'))
+        this._Tblang = new Tblang(loader('tblang'))
         this._Tbmap_level = new Tbmap_level(loader('tbmap_level'))
         this._Tbrebirth = new Tbrebirth(loader('tbrebirth'))
         this._Tbrole = new Tbrole(loader('tbrole'))
@@ -1323,6 +1383,7 @@ export class Tables {
         this._Tbskill = new Tbskill(loader('tbskill'))
 
         this._Tbachieve.resolve(this)
+        this._Tblang.resolve(this)
         this._Tbmap_level.resolve(this)
         this._Tbrebirth.resolve(this)
         this._Tbrole.resolve(this)

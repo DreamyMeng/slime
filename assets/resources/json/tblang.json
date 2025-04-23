@@ -1,0 +1,2897 @@
+[
+  {
+    "key": "史莱姆",
+    "zh_CN": "史莱姆",
+    "en_US": "Slime"
+  },
+  {
+    "key": "青蛇",
+    "zh_CN": "青蛇",
+    "en_US": "Green Snake"
+  },
+  {
+    "key": "白蛇",
+    "zh_CN": "白蛇",
+    "en_US": "White Snake"
+  },
+  {
+    "key": "蟒蛇",
+    "zh_CN": "蟒蛇",
+    "en_US": "Python"
+  },
+  {
+    "key": "蛟蛇",
+    "zh_CN": "蛟蛇",
+    "en_US": "Flood Snake"
+  },
+  {
+    "key": "蛟龙",
+    "zh_CN": "蛟龙",
+    "en_US": "Flood Dragon"
+  },
+  {
+    "key": "飞龙",
+    "zh_CN": "飞龙",
+    "en_US": "Flying Dragon"
+  },
+  {
+    "key": "真龙",
+    "zh_CN": "真龙",
+    "en_US": "True Dragon"
+  },
+  {
+    "key": "应龙",
+    "zh_CN": "应龙",
+    "en_US": "Winged Dragon"
+  },
+  {
+    "key": "五爪金龙",
+    "zh_CN": "五爪金龙",
+    "en_US": "Five-Clawed Golden Dragon"
+  },
+  {
+    "key": "青龙",
+    "zh_CN": "青龙",
+    "en_US": "Azure Dragon"
+  },
+  {
+    "key": "烛龙",
+    "zh_CN": "烛龙",
+    "en_US": "Torch Dragon"
+  },
+  {
+    "key": "麻雀",
+    "zh_CN": "麻雀",
+    "en_US": "Sparrow"
+  },
+  {
+    "key": "鸡",
+    "zh_CN": "鸡",
+    "en_US": "Chicken"
+  },
+  {
+    "key": "锦鸡",
+    "zh_CN": "锦鸡",
+    "en_US": "Pheasant"
+  },
+  {
+    "key": "白鹤",
+    "zh_CN": "白鹤",
+    "en_US": "White Crane"
+  },
+  {
+    "key": "白鹅",
+    "zh_CN": "白鹅",
+    "en_US": "White Goose"
+  },
+  {
+    "key": "金鹰",
+    "zh_CN": "金鹰",
+    "en_US": "Golden Eagle"
+  },
+  {
+    "key": "孔雀",
+    "zh_CN": "孔雀",
+    "en_US": "Peacock"
+  },
+  {
+    "key": "大鹏",
+    "zh_CN": "大鹏",
+    "en_US": "Garuda"
+  },
+  {
+    "key": "毕方",
+    "zh_CN": "毕方",
+    "en_US": "Bifang"
+  },
+  {
+    "key": "鸿鹄",
+    "zh_CN": "鸿鹄",
+    "en_US": "Great Swan"
+  },
+  {
+    "key": "金翅大鹏",
+    "zh_CN": "金翅大鹏",
+    "en_US": "Golden-Winged Garuda"
+  },
+  {
+    "key": "凤凰",
+    "zh_CN": "凤凰",
+    "en_US": "Phoenix"
+  },
+  {
+    "key": "青鸾",
+    "zh_CN": "青鸾",
+    "en_US": "Blue Luan"
+  },
+  {
+    "key": "金乌",
+    "zh_CN": "金乌",
+    "en_US": "Golden Crow"
+  },
+  {
+    "key": "朱雀",
+    "zh_CN": "朱雀",
+    "en_US": "Vermilion Bird"
+  },
+  {
+    "key": "猞猁",
+    "zh_CN": "猞猁",
+    "en_US": "Lynx"
+  },
+  {
+    "key": "老虎",
+    "zh_CN": "老虎",
+    "en_US": "Tiger"
+  },
+  {
+    "key": "黑虎",
+    "zh_CN": "黑虎",
+    "en_US": "Black Tiger"
+  },
+  {
+    "key": "吊睛白虎",
+    "zh_CN": "吊睛白虎",
+    "en_US": "White-Eyed Tiger"
+  },
+  {
+    "key": "插翅虎",
+    "zh_CN": "插翅虎",
+    "en_US": "Winged Tiger"
+  },
+  {
+    "key": "狴犴",
+    "zh_CN": "狴犴",
+    "en_US": "Bian"
+  },
+  {
+    "key": "穷奇",
+    "zh_CN": "穷奇",
+    "en_US": "Qiongqi"
+  },
+  {
+    "key": "白虎",
+    "zh_CN": "白虎",
+    "en_US": "White Tiger"
+  },
+  {
+    "key": "乌龟",
+    "zh_CN": "乌龟",
+    "en_US": "Turtle"
+  },
+  {
+    "key": "海龟",
+    "zh_CN": "海龟",
+    "en_US": "Sea Turtle"
+  },
+  {
+    "key": "巨龟",
+    "zh_CN": "巨龟",
+    "en_US": "Giant Turtle"
+  },
+  {
+    "key": "千年老龟",
+    "zh_CN": "千年老龟",
+    "en_US": "Thousand-Year Turtle"
+  },
+  {
+    "key": "万年灵龟",
+    "zh_CN": "万年灵龟",
+    "en_US": "Ten-Thousand-Year Spirit Turtle"
+  },
+  {
+    "key": "龟蛇",
+    "zh_CN": "龟蛇",
+    "en_US": "Turtle-Snake"
+  },
+  {
+    "key": "龙龟",
+    "zh_CN": "龙龟",
+    "en_US": "Dragon Turtle"
+  },
+  {
+    "key": "玄龟",
+    "zh_CN": "玄龟",
+    "en_US": "Mystic Turtle"
+  },
+  {
+    "key": "玄武",
+    "zh_CN": "玄武",
+    "en_US": "Black Tortoise"
+  },
+  {
+    "key": "山羊",
+    "zh_CN": "山羊",
+    "en_US": "Mountain Goat"
+  },
+  {
+    "key": "白鹿",
+    "zh_CN": "白鹿",
+    "en_US": "White Deer"
+  },
+  {
+    "key": "葱聋",
+    "zh_CN": "葱聋",
+    "en_US": "Conglong"
+  },
+  {
+    "key": "五色鹿",
+    "zh_CN": "五色鹿",
+    "en_US": "Five-Colored Deer"
+  },
+  {
+    "key": "四不像",
+    "zh_CN": "四不像",
+    "en_US": "Four-Unlike"
+  },
+  {
+    "key": "白泽",
+    "zh_CN": "白泽",
+    "en_US": "Baize"
+  },
+  {
+    "key": "獬豸",
+    "zh_CN": "獬豸",
+    "en_US": "Xiezhi"
+  },
+  {
+    "key": "麒麟",
+    "zh_CN": "麒麟",
+    "en_US": "Qilin"
+  },
+  {
+    "key": "大象",
+    "zh_CN": "大象",
+    "en_US": "Elephant"
+  },
+  {
+    "key": "白象",
+    "zh_CN": "白象",
+    "en_US": "White Elephant"
+  },
+  {
+    "key": "野马",
+    "zh_CN": "野马",
+    "en_US": "Wild Horse"
+  },
+  {
+    "key": "白马",
+    "zh_CN": "白马",
+    "en_US": "White Horse"
+  },
+  {
+    "key": "千里马",
+    "zh_CN": "千里马",
+    "en_US": "Thousand-Mile Horse"
+  },
+  {
+    "key": "飞马",
+    "zh_CN": "飞马",
+    "en_US": "Flying Horse"
+  },
+  {
+    "key": "鹿蜀",
+    "zh_CN": "鹿蜀",
+    "en_US": "Lushu"
+  },
+  {
+    "key": "龙马",
+    "zh_CN": "龙马",
+    "en_US": "Dragon Horse"
+  },
+  {
+    "key": "草泥马",
+    "zh_CN": "草泥马",
+    "en_US": "Alpaca"
+  },
+  {
+    "key": "黄牛",
+    "zh_CN": "黄牛",
+    "en_US": "Yellow Ox"
+  },
+  {
+    "key": "蛮牛",
+    "zh_CN": "蛮牛",
+    "en_US": "Savage Ox"
+  },
+  {
+    "key": "撼地神牛",
+    "zh_CN": "撼地神牛",
+    "en_US": "Earth-Shaking Divine Ox"
+  },
+  {
+    "key": "五色神牛",
+    "zh_CN": "五色神牛",
+    "en_US": "Five-Colored Divine Ox"
+  },
+  {
+    "key": "夔牛",
+    "zh_CN": "夔牛",
+    "en_US": "Kui Ox"
+  },
+  {
+    "key": "青牛",
+    "zh_CN": "青牛",
+    "en_US": "Azure Ox"
+  },
+  {
+    "key": "貔貅",
+    "zh_CN": "貔貅",
+    "en_US": "Pixiu"
+  },
+  {
+    "key": "混沌",
+    "zh_CN": "混沌",
+    "en_US": "Chaos"
+  },
+  {
+    "key": "梼杌",
+    "zh_CN": "梼杌",
+    "en_US": "Taowu"
+  },
+  {
+    "key": "饕餮",
+    "zh_CN": "饕餮",
+    "en_US": "Taotie"
+  },
+  {
+    "key": "金丝猴",
+    "zh_CN": "金丝猴",
+    "en_US": "Golden Snub-Nosed Monkey"
+  },
+  {
+    "key": "猕猴",
+    "zh_CN": "猕猴",
+    "en_US": "Macaque"
+  },
+  {
+    "key": "山魈",
+    "zh_CN": "山魈",
+    "en_US": "Mandrill"
+  },
+  {
+    "key": "通臂猿",
+    "zh_CN": "通臂猿",
+    "en_US": "Gibbon"
+  },
+  {
+    "key": "狌狌",
+    "zh_CN": "狌狌",
+    "en_US": "Xingxing"
+  },
+  {
+    "key": "朱厌",
+    "zh_CN": "朱厌",
+    "en_US": "Zhuyan"
+  },
+  {
+    "key": "通臂猿猴",
+    "zh_CN": "通臂猿猴",
+    "en_US": "Arm-Through Gibbon"
+  },
+  {
+    "key": "灵明石猴",
+    "zh_CN": "灵明石猴",
+    "en_US": "Stone Monkey of Numinous Intelligence"
+  },
+  {
+    "key": "赤尻马猴",
+    "zh_CN": "赤尻马猴",
+    "en_US": "Red-Bottomed Horse Monkey"
+  },
+  {
+    "key": "六耳猕猴",
+    "zh_CN": "六耳猕猴",
+    "en_US": "Six-Eared Macaque"
+  },
+  {
+    "key": "狐狸",
+    "zh_CN": "狐狸",
+    "en_US": "Fox"
+  },
+  {
+    "key": "白狐",
+    "zh_CN": "白狐",
+    "en_US": "White Fox"
+  },
+  {
+    "key": "妖狐",
+    "zh_CN": "妖狐",
+    "en_US": "Demon Fox"
+  },
+  {
+    "key": "三尾妖狐",
+    "zh_CN": "三尾妖狐",
+    "en_US": "Three-Tailed Demon Fox"
+  },
+  {
+    "key": "六尾妖狐",
+    "zh_CN": "六尾妖狐",
+    "en_US": "Six-Tailed Demon Fox"
+  },
+  {
+    "key": "九尾妖狐",
+    "zh_CN": "九尾妖狐",
+    "en_US": "Nine-Tailed Demon Fox"
+  },
+  {
+    "key": "鲸鱼",
+    "zh_CN": "鲸鱼",
+    "en_US": "Whale"
+  },
+  {
+    "key": "瀚海巨鲸",
+    "zh_CN": "瀚海巨鲸",
+    "en_US": "Vast Sea Giant Whale"
+  },
+  {
+    "key": "兔",
+    "zh_CN": "兔",
+    "en_US": "Rabbit"
+  },
+  {
+    "key": "讹兽",
+    "zh_CN": "讹兽",
+    "en_US": "E Beast"
+  },
+  {
+    "key": "犼",
+    "zh_CN": "犼",
+    "en_US": "Hou"
+  },
+  {
+    "key": "犰狳",
+    "zh_CN": "犰狳",
+    "en_US": "Armadillo"
+  },
+  {
+    "key": "金毛犼",
+    "zh_CN": "金毛犼",
+    "en_US": "Golden-Haired Hou"
+  },
+  {
+    "key": "玉兔",
+    "zh_CN": "玉兔",
+    "en_US": "Jade Rabbit"
+  },
+  {
+    "key": "野狗",
+    "zh_CN": "野狗",
+    "en_US": "Wild Dog"
+  },
+  {
+    "key": "野狼",
+    "zh_CN": "野狼",
+    "en_US": "Wild Wolf"
+  },
+  {
+    "key": "狼王",
+    "zh_CN": "狼王",
+    "en_US": "Wolf King"
+  },
+  {
+    "key": "哮月狼",
+    "zh_CN": "哮月狼",
+    "en_US": "Moon-Howling Wolf"
+  },
+  {
+    "key": "银月狼王",
+    "zh_CN": "银月狼王",
+    "en_US": "Silver Moon Wolf King"
+  },
+  {
+    "key": "哮天犬",
+    "zh_CN": "哮天犬",
+    "en_US": "Howling Celestial Dog"
+  },
+  {
+    "key": "谛听",
+    "zh_CN": "谛听",
+    "en_US": "Di Ting"
+  },
+  {
+    "key": "食日天狗",
+    "zh_CN": "食日天狗",
+    "en_US": "Sun-Eating Tengu"
+  },
+  {
+    "key": "家猪",
+    "zh_CN": "家猪",
+    "en_US": "Domestic Pig"
+  },
+  {
+    "key": "野猪",
+    "zh_CN": "野猪",
+    "en_US": "Wild Boar"
+  },
+  {
+    "key": "狸力",
+    "zh_CN": "狸力",
+    "en_US": "Li Li"
+  },
+  {
+    "key": "当康",
+    "zh_CN": "当康",
+    "en_US": "Dangkang"
+  },
+  {
+    "key": "凡人",
+    "zh_CN": "凡人",
+    "en_US": "Mortal"
+  },
+  {
+    "key": "武人",
+    "zh_CN": "武人",
+    "en_US": "Martial Artist"
+  },
+  {
+    "key": "修士",
+    "zh_CN": "修士",
+    "en_US": "Cultivator"
+  },
+  {
+    "key": "真人",
+    "zh_CN": "真人",
+    "en_US": "True Person"
+  },
+  {
+    "key": "地仙",
+    "zh_CN": "地仙",
+    "en_US": "Earth Immortal"
+  },
+  {
+    "key": "真仙",
+    "zh_CN": "真仙",
+    "en_US": "True Immortal"
+  },
+  {
+    "key": "金仙",
+    "zh_CN": "金仙",
+    "en_US": "Golden Immortal"
+  },
+  {
+    "key": "大罗金仙",
+    "zh_CN": "大罗金仙",
+    "en_US": "Great Luo Golden Immortal"
+  },
+  {
+    "key": "狮子",
+    "zh_CN": "狮子",
+    "en_US": "Lion"
+  },
+  {
+    "key": "避水金睛兽",
+    "zh_CN": "避水金睛兽",
+    "en_US": "Water-Avoiding Golden-Eyed Beast"
+  },
+  {
+    "key": "青狮",
+    "zh_CN": "青狮",
+    "en_US": "Azure Lion"
+  },
+  {
+    "key": "雪狮",
+    "zh_CN": "雪狮",
+    "en_US": "Snow Lion"
+  },
+  {
+    "key": "九头狮子",
+    "zh_CN": "九头狮子",
+    "en_US": "Nine-Headed Lion"
+  },
+  {
+    "key": "猫",
+    "zh_CN": "猫",
+    "en_US": "Cat"
+  },
+  {
+    "key": "黑猫",
+    "zh_CN": "黑猫",
+    "en_US": "Black Cat"
+  },
+  {
+    "key": "招财猫",
+    "zh_CN": "招财猫",
+    "en_US": "Fortune Cat"
+  },
+  {
+    "key": "九命猫",
+    "zh_CN": "九命猫",
+    "en_US": "Nine-Lived Cat"
+  },
+  {
+    "key": "河蟹",
+    "zh_CN": "河蟹",
+    "en_US": "River Crab"
+  },
+  {
+    "key": "熊",
+    "zh_CN": "熊",
+    "en_US": "Bear"
+  },
+  {
+    "key": "黑熊",
+    "zh_CN": "黑熊",
+    "en_US": "Black Bear"
+  },
+  {
+    "key": "熊猫",
+    "zh_CN": "熊猫",
+    "en_US": "Panda"
+  },
+  {
+    "key": "鲤鱼",
+    "zh_CN": "鲤鱼",
+    "en_US": "Carp"
+  },
+  {
+    "key": "锦鲤",
+    "zh_CN": "锦鲤",
+    "en_US": "Koi"
+  },
+  {
+    "key": "金龙鱼",
+    "zh_CN": "金龙鱼",
+    "en_US": "Golden Dragon Fish"
+  },
+  {
+    "key": "鱼龙",
+    "zh_CN": "鱼龙",
+    "en_US": "Fish Dragon"
+  },
+  {
+    "key": "鲲",
+    "zh_CN": "鲲",
+    "en_US": "Kun"
+  },
+  {
+    "key": "鲲鹏",
+    "zh_CN": "鲲鹏",
+    "en_US": "Kunpeng"
+  },
+  {
+    "key": "鳄鱼",
+    "zh_CN": "鳄鱼",
+    "en_US": "Crocodile"
+  },
+  {
+    "key": "猪婆龙",
+    "zh_CN": "猪婆龙",
+    "en_US": "Pig Dragon"
+  },
+  {
+    "key": "老鼠",
+    "zh_CN": "老鼠",
+    "en_US": "Rat"
+  },
+  {
+    "key": "寻宝鼠",
+    "zh_CN": "寻宝鼠",
+    "en_US": "Treasure-Seeking Rat"
+  },
+  {
+    "key": "锦毛鼠",
+    "zh_CN": "锦毛鼠",
+    "en_US": "Brocade Rat"
+  },
+  {
+    "key": "平头哥",
+    "zh_CN": "平头哥",
+    "en_US": "Honey Badger"
+  },
+  {
+    "key": "牛魔王",
+    "zh_CN": "牛魔王",
+    "en_US": "Bull Demon King"
+  },
+  {
+    "key": "妲己",
+    "zh_CN": "妲己",
+    "en_US": "Daji"
+  },
+  {
+    "key": "哪吒",
+    "zh_CN": "哪吒",
+    "en_US": "Nezha"
+  },
+  {
+    "key": "杨戬",
+    "zh_CN": "杨戬",
+    "en_US": "Yang Jian"
+  },
+  {
+    "key": "孙悟空",
+    "zh_CN": "孙悟空",
+    "en_US": "Sun Wukong"
+  },
+  {
+    "key": "通关第5层",
+    "zh_CN": "通关第5层",
+    "en_US": "Clear Level 5"
+  },
+  {
+    "key": "通关第10层",
+    "zh_CN": "通关第10层",
+    "en_US": "Clear Level 10"
+  },
+  {
+    "key": "通关第15层",
+    "zh_CN": "通关第15层",
+    "en_US": "Clear Level 15"
+  },
+  {
+    "key": "通关第20层",
+    "zh_CN": "通关第20层",
+    "en_US": "Clear Level 20"
+  },
+  {
+    "key": "通关第25层",
+    "zh_CN": "通关第25层",
+    "en_US": "Clear Level 25"
+  },
+  {
+    "key": "通关第30层",
+    "zh_CN": "通关第30层",
+    "en_US": "Clear Level 30"
+  },
+  {
+    "key": "通关第35层",
+    "zh_CN": "通关第35层",
+    "en_US": "Clear Level 35"
+  },
+  {
+    "key": "通关第40层",
+    "zh_CN": "通关第40层",
+    "en_US": "Clear Level 40"
+  },
+  {
+    "key": "通关第45层",
+    "zh_CN": "通关第45层",
+    "en_US": "Clear Level 45"
+  },
+  {
+    "key": "通关第50层",
+    "zh_CN": "通关第50层",
+    "en_US": "Clear Level 50"
+  },
+  {
+    "key": "通关第55层",
+    "zh_CN": "通关第55层",
+    "en_US": "Clear Level 55"
+  },
+  {
+    "key": "通关第60层",
+    "zh_CN": "通关第60层",
+    "en_US": "Clear Level 60"
+  },
+  {
+    "key": "通关第65层",
+    "zh_CN": "通关第65层",
+    "en_US": "Clear Level 65"
+  },
+  {
+    "key": "通关第70层",
+    "zh_CN": "通关第70层",
+    "en_US": "Clear Level 70"
+  },
+  {
+    "key": "通关第75层",
+    "zh_CN": "通关第75层",
+    "en_US": "Clear Level 75"
+  },
+  {
+    "key": "通关第80层",
+    "zh_CN": "通关第80层",
+    "en_US": "Clear Level 80"
+  },
+  {
+    "key": "通关第85层",
+    "zh_CN": "通关第85层",
+    "en_US": "Clear Level 85"
+  },
+  {
+    "key": "通关第90层",
+    "zh_CN": "通关第90层",
+    "en_US": "Clear Level 90"
+  },
+  {
+    "key": "通关第95层",
+    "zh_CN": "通关第95层",
+    "en_US": "Clear Level 95"
+  },
+  {
+    "key": "通关第100层",
+    "zh_CN": "通关第100层",
+    "en_US": "Clear Level 100"
+  },
+  {
+    "key": "击杀凡兽鲤鱼20次",
+    "zh_CN": "击杀凡兽鲤鱼20次",
+    "en_US": "Kill Mortal Beast Carp 20 Times"
+  },
+  {
+    "key": "击杀凡兽野猪20次",
+    "zh_CN": "击杀凡兽野猪20次",
+    "en_US": "Kill Mortal Beast Wild Boar 20 Times"
+  },
+  {
+    "key": "击杀凡兽鲸鱼20次",
+    "zh_CN": "击杀凡兽鲸鱼20次",
+    "en_US": "Kill Mortal Beast Whale 20 Times"
+  },
+  {
+    "key": "击杀灵兽白蛇10次",
+    "zh_CN": "击杀灵兽白蛇10次",
+    "en_US": "Kill Spirit Beast White Snake 10 Times"
+  },
+  {
+    "key": "击杀灵兽吊睛白虎10次",
+    "zh_CN": "击杀灵兽吊睛白虎10次",
+    "en_US": "Kill Spirit Beast White-Eyed Tiger 10 Times"
+  },
+  {
+    "key": "击杀灵兽九尾妖狐10次",
+    "zh_CN": "击杀灵兽九尾妖狐10次",
+    "en_US": "Kill Spirit Beast Nine-Tailed Demon Fox 10 Times"
+  },
+  {
+    "key": "击杀仙兽锦毛鼠5次",
+    "zh_CN": "击杀仙兽锦毛鼠5次",
+    "en_US": "Kill Immortal Beast Brocade Rat 5 Times"
+  },
+  {
+    "key": "击杀仙兽哮天犬5次",
+    "zh_CN": "击杀仙兽哮天犬5次",
+    "en_US": "Kill Immortal Beast Howling Celestial Dog 5 Times"
+  },
+  {
+    "key": "击杀仙兽灵明石猴5次",
+    "zh_CN": "击杀仙兽灵明石猴5次",
+    "en_US": "Kill Immortal Beast Stone Monkey of Numinous Intelligence 5 Times"
+  },
+  {
+    "key": "击杀神兽河蟹2次",
+    "zh_CN": "击杀神兽河蟹2次",
+    "en_US": "Kill Divine Beast River Crab 2 Times"
+  },
+  {
+    "key": "击杀神兽平头哥2次",
+    "zh_CN": "击杀神兽平头哥2次",
+    "en_US": "Kill Divine Beast Honey Badger 2 Times"
+  },
+  {
+    "key": "击杀神兽五色鹿2次",
+    "zh_CN": "击杀神兽五色鹿2次",
+    "en_US": "Kill Divine Beast Five-Colored Deer 2 Times"
+  },
+  {
+    "key": "击杀神兽青龙1次",
+    "zh_CN": "击杀神兽青龙1次",
+    "en_US": "Kill Divine Beast Azure Dragon 1 Time"
+  },
+  {
+    "key": "击杀神兽白虎1次",
+    "zh_CN": "击杀神兽白虎1次",
+    "en_US": "Kill Divine Beast White Tiger 1 Time"
+  },
+  {
+    "key": "击杀神兽朱雀1次",
+    "zh_CN": "击杀神兽朱雀1次",
+    "en_US": "Kill Divine Beast Vermilion Bird 1 Time"
+  },
+  {
+    "key": "击杀神兽玄武1次",
+    "zh_CN": "击杀神兽玄武1次",
+    "en_US": "Kill Divine Beast Black Tortoise 1 Time"
+  },
+  {
+    "key": "击杀神兽麒麟1次",
+    "zh_CN": "击杀神兽麒麟1次",
+    "en_US": "Kill Divine Beast Qilin 1 Time"
+  },
+  {
+    "key": "转生5次",
+    "zh_CN": "转生5次",
+    "en_US": "Reincarnate 5 Times"
+  },
+  {
+    "key": "转生10次",
+    "zh_CN": "转生10次",
+    "en_US": "Reincarnate 10 Times"
+  },
+  {
+    "key": "转生20次",
+    "zh_CN": "转生20次",
+    "en_US": "Reincarnate 20 Times"
+  },
+  {
+    "key": "击杀牛魔王1次",
+    "zh_CN": "击杀牛魔王1次",
+    "en_US": "Kill Bull Demon King 1 Time"
+  },
+  {
+    "key": "击杀妲己1次",
+    "zh_CN": "击杀妲己1次",
+    "en_US": "Kill Daji 1 Time"
+  },
+  {
+    "key": "击杀哪吒1次",
+    "zh_CN": "击杀哪吒1次",
+    "en_US": "Kill Nezha 1 Time"
+  },
+  {
+    "key": "击杀杨戬1次",
+    "zh_CN": "击杀杨戬1次",
+    "en_US": "Kill Yang Jian 1 Time"
+  },
+  {
+    "key": "击杀孙悟空1次",
+    "zh_CN": "击杀孙悟空1次",
+    "en_US": "Kill Sun Wukong 1 Time"
+  },
+  {
+    "key": "奖励:随机图鉴解锁",
+    "zh_CN": "奖励:随机图鉴解锁",
+    "en_US": "Reward: Random Bestiary Unlock"
+  },
+  {
+    "key": "奖励:最大等级+10",
+    "zh_CN": "奖励:最大等级+10",
+    "en_US": "Reward: Max Level +10"
+  },
+  {
+    "key": "奖励:可获得技能数+1",
+    "zh_CN": "奖励:可获得技能数+1",
+    "en_US": "Reward: Obtainable Skills +1"
+  },
+  {
+    "key": "奖励:boss可以拟态",
+    "zh_CN": "奖励:boss可以拟态",
+    "en_US": "Reward: Boss Can Mimic"
+  },
+  {
+    "key": "吞噬",
+    "zh_CN": "吞噬",
+    "en_US": "Devour"
+  },
+  {
+    "key": "蛇噬",
+    "zh_CN": "蛇噬",
+    "en_US": "Snake Bite"
+  },
+  {
+    "key": "缠绕",
+    "zh_CN": "缠绕",
+    "en_US": "Coil"
+  },
+  {
+    "key": "龙脉",
+    "zh_CN": "龙脉",
+    "en_US": "Dragon Vein"
+  },
+  {
+    "key": "龙息",
+    "zh_CN": "龙息",
+    "en_US": "Dragon Breath"
+  },
+  {
+    "key": "真龙血脉",
+    "zh_CN": "真龙血脉",
+    "en_US": "True Dragon Bloodline"
+  },
+  {
+    "key": "龙威",
+    "zh_CN": "龙威",
+    "en_US": "Dragon Might"
+  },
+  {
+    "key": "阴阳",
+    "zh_CN": "阴阳",
+    "en_US": "Yin-Yang"
+  },
+  {
+    "key": "飞行",
+    "zh_CN": "飞行",
+    "en_US": "Flight"
+  },
+  {
+    "key": "喙击",
+    "zh_CN": "喙击",
+    "en_US": "Beak Strike"
+  },
+  {
+    "key": "暴怒",
+    "zh_CN": "暴怒",
+    "en_US": "Fury"
+  },
+  {
+    "key": "锐利目光",
+    "zh_CN": "锐利目光",
+    "en_US": "Sharp Gaze"
+  },
+  {
+    "key": "孔雀开屏",
+    "zh_CN": "孔雀开屏",
+    "en_US": "Peacock Display"
+  },
+  {
+    "key": "五色神光",
+    "zh_CN": "五色神光",
+    "en_US": "Five-Colored Divine Light"
+  },
+  {
+    "key": "扶摇直上",
+    "zh_CN": "扶摇直上",
+    "en_US": "Soar Upward"
+  },
+  {
+    "key": "灾厄",
+    "zh_CN": "灾厄",
+    "en_US": "Calamity"
+  },
+  {
+    "key": "高飞",
+    "zh_CN": "高飞",
+    "en_US": "High Flight"
+  },
+  {
+    "key": "涅槃",
+    "zh_CN": "涅槃",
+    "en_US": "Nirvana"
+  },
+  {
+    "key": "光芒",
+    "zh_CN": "光芒",
+    "en_US": "Radiance"
+  },
+  {
+    "key": "神火",
+    "zh_CN": "神火",
+    "en_US": "Divine Fire"
+  },
+  {
+    "key": "撕咬",
+    "zh_CN": "撕咬",
+    "en_US": "Rend"
+  },
+  {
+    "key": "威严",
+    "zh_CN": "威严",
+    "en_US": "Majesty"
+  },
+  {
+    "key": "利爪",
+    "zh_CN": "利爪",
+    "en_US": "Sharp Claws"
+  },
+  {
+    "key": "金风",
+    "zh_CN": "金风",
+    "en_US": "Golden Wind"
+  },
+  {
+    "key": "硬壳",
+    "zh_CN": "硬壳",
+    "en_US": "Hard Shell"
+  },
+  {
+    "key": "坚甲",
+    "zh_CN": "坚甲",
+    "en_US": "Sturdy Armor"
+  },
+  {
+    "key": "龟咬",
+    "zh_CN": "龟咬",
+    "en_US": "Turtle Bite"
+  },
+  {
+    "key": "龟蛇合击",
+    "zh_CN": "龟蛇合击",
+    "en_US": "Turtle-Snake Combined Strike"
+  },
+  {
+    "key": "尖甲",
+    "zh_CN": "尖甲",
+    "en_US": "Spiked Armor"
+  },
+  {
+    "key": "龟寿",
+    "zh_CN": "龟寿",
+    "en_US": "Turtle Longevity"
+  },
+  {
+    "key": "撞击",
+    "zh_CN": "撞击",
+    "en_US": "Collision"
+  },
+  {
+    "key": "仙灵",
+    "zh_CN": "仙灵",
+    "en_US": "Immortal Spirit"
+  },
+  {
+    "key": "祥瑞",
+    "zh_CN": "祥瑞",
+    "en_US": "Auspiciousness"
+  },
+  {
+    "key": "通晓",
+    "zh_CN": "通晓",
+    "en_US": "Omniscience"
+  },
+  {
+    "key": "辨别",
+    "zh_CN": "辨别",
+    "en_US": "Discernment"
+  },
+  {
+    "key": "震慑",
+    "zh_CN": "震慑",
+    "en_US": "Intimidation"
+  },
+  {
+    "key": "庇佑",
+    "zh_CN": "庇佑",
+    "en_US": "Blessing"
+  },
+  {
+    "key": "践踏",
+    "zh_CN": "践踏",
+    "en_US": "Trample"
+  },
+  {
+    "key": "后踹",
+    "zh_CN": "后踹",
+    "en_US": "Rear Kick"
+  },
+  {
+    "key": "奔马",
+    "zh_CN": "奔马",
+    "en_US": "Galloping Horse"
+  },
+  {
+    "key": "口水",
+    "zh_CN": "口水",
+    "en_US": "Drool"
+  },
+  {
+    "key": "蔑视",
+    "zh_CN": "蔑视",
+    "en_US": "Disdain"
+  },
+  {
+    "key": "冲撞",
+    "zh_CN": "冲撞",
+    "en_US": "Charge"
+  },
+  {
+    "key": "硬皮",
+    "zh_CN": "硬皮",
+    "en_US": "Tough Hide"
+  },
+  {
+    "key": "震地",
+    "zh_CN": "震地",
+    "en_US": "Earth Shatter"
+  },
+  {
+    "key": "鸣叫",
+    "zh_CN": "鸣叫",
+    "en_US": "Roar"
+  },
+  {
+    "key": "祥瑞化身",
+    "zh_CN": "祥瑞化身",
+    "en_US": "Auspicious Incarnation"
+  },
+  {
+    "key": "凶兆",
+    "zh_CN": "凶兆",
+    "en_US": "Omen"
+  },
+  {
+    "key": "咆哮",
+    "zh_CN": "咆哮",
+    "en_US": "Bellow"
+  },
+  {
+    "key": "机敏",
+    "zh_CN": "机敏",
+    "en_US": "Agility"
+  },
+  {
+    "key": "拾取",
+    "zh_CN": "拾取",
+    "en_US": "Pick Up"
+  },
+  {
+    "key": "变化",
+    "zh_CN": "变化",
+    "en_US": "Transformation"
+  },
+  {
+    "key": "人言",
+    "zh_CN": "人言",
+    "en_US": "Human Speech"
+  },
+  {
+    "key": "大力",
+    "zh_CN": "大力",
+    "en_US": "Great Strength"
+  },
+  {
+    "key": "巨力",
+    "zh_CN": "巨力",
+    "en_US": "Gigantic Strength"
+  },
+  {
+    "key": "神力",
+    "zh_CN": "神力",
+    "en_US": "Divine Strength"
+  },
+  {
+    "key": "迷惑",
+    "zh_CN": "迷惑",
+    "en_US": "Bewilder"
+  },
+  {
+    "key": "魅惑",
+    "zh_CN": "魅惑",
+    "en_US": "Charm"
+  },
+  {
+    "key": "生长",
+    "zh_CN": "生长",
+    "en_US": "Growth"
+  },
+  {
+    "key": "撼海",
+    "zh_CN": "撼海",
+    "en_US": "Sea Shaker"
+  },
+  {
+    "key": "蹬鹰",
+    "zh_CN": "蹬鹰",
+    "en_US": "Eagle Kick"
+  },
+  {
+    "key": "可爱",
+    "zh_CN": "可爱",
+    "en_US": "Cuteness"
+  },
+  {
+    "key": "装死",
+    "zh_CN": "装死",
+    "en_US": "Play Dead"
+  },
+  {
+    "key": "搭肩",
+    "zh_CN": "搭肩",
+    "en_US": "Shoulder Tap"
+  },
+  {
+    "key": "食日",
+    "zh_CN": "食日",
+    "en_US": "Sun Eater"
+  },
+  {
+    "key": "学习",
+    "zh_CN": "学习",
+    "en_US": "Learn"
+  },
+  {
+    "key": "哮月",
+    "zh_CN": "哮月",
+    "en_US": "Moon Howl"
+  },
+  {
+    "key": "哮天",
+    "zh_CN": "哮天",
+    "en_US": "Celestial Howl"
+  },
+  {
+    "key": "狮吼",
+    "zh_CN": "狮吼",
+    "en_US": "Lion Roar"
+  },
+  {
+    "key": "拍击",
+    "zh_CN": "拍击",
+    "en_US": "Slap"
+  },
+  {
+    "key": "不死",
+    "zh_CN": "不死",
+    "en_US": "Undying"
+  },
+  {
+    "key": "九命",
+    "zh_CN": "九命",
+    "en_US": "Nine Lives"
+  },
+  {
+    "key": "战意",
+    "zh_CN": "战意",
+    "en_US": "Battle Will"
+  },
+  {
+    "key": "反击",
+    "zh_CN": "反击",
+    "en_US": "Counterattack"
+  },
+  {
+    "key": "泡泡",
+    "zh_CN": "泡泡",
+    "en_US": "Bubble"
+  },
+  {
+    "key": "空",
+    "zh_CN": "空",
+    "en_US": "Void"
+  },
+  {
+    "key": "解析",
+    "zh_CN": "解析",
+    "en_US": "Analyze"
+  },
+  {
+    "key": "法天象地",
+    "zh_CN": "法天象地",
+    "en_US": "Heaven and Earth"
+  },
+  {
+    "key": "修炼",
+    "zh_CN": "修炼",
+    "en_US": "Cultivation"
+  },
+  {
+    "key": "七十二变",
+    "zh_CN": "七十二变",
+    "en_US": "Seventy-Two Transformations"
+  },
+  {
+    "key": "混铁棍",
+    "zh_CN": "混铁棍",
+    "en_US": "Iron Staff"
+  },
+  {
+    "key": "倾城",
+    "zh_CN": "倾城",
+    "en_US": "City-Toppling Beauty"
+  },
+  {
+    "key": "九尾",
+    "zh_CN": "九尾",
+    "en_US": "Nine Tails"
+  },
+  {
+    "key": "三头六臂",
+    "zh_CN": "三头六臂",
+    "en_US": "Three Heads Six Arms"
+  },
+  {
+    "key": "莲花化身",
+    "zh_CN": "莲花化身",
+    "en_US": "Lotus Incarnation"
+  },
+  {
+    "key": "混天绫",
+    "zh_CN": "混天绫",
+    "en_US": "Heaven-Mixing Silk"
+  },
+  {
+    "key": "乾坤圈",
+    "zh_CN": "乾坤圈",
+    "en_US": "Universe Ring"
+  },
+  {
+    "key": "九龙神火罩",
+    "zh_CN": "九龙神火罩",
+    "en_US": "Nine Dragons Divine Fire Cover"
+  },
+  {
+    "key": "风火轮",
+    "zh_CN": "风火轮",
+    "en_US": "Wind-Fire Wheels"
+  },
+  {
+    "key": "火尖枪",
+    "zh_CN": "火尖枪",
+    "en_US": "Fire-Tipped Spear"
+  },
+  {
+    "key": "八九玄功",
+    "zh_CN": "八九玄功",
+    "en_US": "Eighty-Nine Mysterious Arts"
+  },
+  {
+    "key": "天眼",
+    "zh_CN": "天眼",
+    "en_US": "Celestial Eye"
+  },
+  {
+    "key": "三尖两刃刀",
+    "zh_CN": "三尖两刃刀",
+    "en_US": "Three-Pointed Double-Edged Blade"
+  },
+  {
+    "key": "金箍棒",
+    "zh_CN": "金箍棒",
+    "en_US": "Golden Cudgel"
+  },
+  {
+    "key": "火眼金睛",
+    "zh_CN": "火眼金睛",
+    "en_US": "Fiery Eyes Golden Gaze"
+  },
+  {
+    "key": "分身",
+    "zh_CN": "分身",
+    "en_US": "Clone"
+  },
+  {
+    "key": "魑魅魍魉",
+    "zh_CN": "魑魅魍魉",
+    "en_US": "Chimei Wangliang"
+  },
+  {
+    "key": "对手被魅惑了",
+    "zh_CN": "对手被魅惑了",
+    "en_US": "Opponent is Charmed"
+  },
+  {
+    "key": "无视对手部分防御",
+    "zh_CN": "无视对手部分防御",
+    "en_US": "Ignore Part of Opponent's Defense"
+  },
+  {
+    "key": "对手无法动弹",
+    "zh_CN": "对手无法动弹",
+    "en_US": "Opponent Cannot Move"
+  },
+  {
+    "key": "属性提升",
+    "zh_CN": "属性提升",
+    "en_US": "Attribute Boost"
+  },
+  {
+    "key": "伤害大量强化",
+    "zh_CN": "伤害大量强化",
+    "en_US": "Greatly Enhanced Damage"
+  },
+  {
+    "key": "属性大幅提升",
+    "zh_CN": "属性大幅提升",
+    "en_US": "Significant Attribute Boost"
+  },
+  {
+    "key": "对手属性下降",
+    "zh_CN": "对手属性下降",
+    "en_US": "Opponent's Attributes Decreased"
+  },
+  {
+    "key": "对手攻防属性转换",
+    "zh_CN": "对手攻防属性转换",
+    "en_US": "Opponent's Attack and Defense Swapped"
+  },
+  {
+    "key": "闪避一次攻击",
+    "zh_CN": "闪避一次攻击",
+    "en_US": "Dodge One Attack"
+  },
+  {
+    "key": "伤害强化",
+    "zh_CN": "伤害强化",
+    "en_US": "Enhanced Damage"
+  },
+  {
+    "key": "攻击力提升",
+    "zh_CN": "攻击力提升",
+    "en_US": "Attack Power Increased"
+  },
+  {
+    "key": "无视对方闪避",
+    "zh_CN": "无视对方闪避",
+    "en_US": "Ignore Opponent's Dodge"
+  },
+  {
+    "key": "震慑对手",
+    "zh_CN": "震慑对手",
+    "en_US": "Intimidate Opponent"
+  },
+  {
+    "key": "伤害巨幅提升",
+    "zh_CN": "伤害巨幅提升",
+    "en_US": "Massive Damage Boost"
+  },
+  {
+    "key": "闪避两回合",
+    "zh_CN": "闪避两回合",
+    "en_US": "Dodge for Two Rounds"
+  },
+  {
+    "key": "对手攻击力下降",
+    "zh_CN": "对手攻击力下降",
+    "en_US": "Opponent's Attack Power Decreased"
+  },
+  {
+    "key": "受到的伤害降低",
+    "zh_CN": "受到的伤害降低",
+    "en_US": "Reduced Damage Taken"
+  },
+  {
+    "key": "复活了",
+    "zh_CN": "复活了",
+    "en_US": "Revived"
+  },
+  {
+    "key": "对手眩晕一回合",
+    "zh_CN": "对手眩晕一回合",
+    "en_US": "Opponent Stunned for One Round"
+  },
+  {
+    "key": "回复一定生命值",
+    "zh_CN": "回复一定生命值",
+    "en_US": "Recover Some Health"
+  },
+  {
+    "key": "对手受到火焰灼烧",
+    "zh_CN": "对手受到火焰灼烧",
+    "en_US": "Opponent Burned by Flames"
+  },
+  {
+    "key": "对手对自己造成伤害",
+    "zh_CN": "对手对自己造成伤害",
+    "en_US": "Opponent Damages Themselves"
+  },
+  {
+    "key": "对手受到震慑",
+    "zh_CN": "对手受到震慑",
+    "en_US": "Opponent Intimidated"
+  },
+  {
+    "key": "无视对手防御",
+    "zh_CN": "无视对手防御",
+    "en_US": "Ignore Opponent's Defense"
+  },
+  {
+    "key": "伤害巨量强化",
+    "zh_CN": "伤害巨量强化",
+    "en_US": "Massive Damage Enhancement"
+  },
+  {
+    "key": "生命值恢复了",
+    "zh_CN": "生命值恢复了",
+    "en_US": "Health Restored"
+  },
+  {
+    "key": "对手被骗过了",
+    "zh_CN": "对手被骗过了",
+    "en_US": "Opponent Deceived"
+  },
+  {
+    "key": "使对手攻击力小幅下降",
+    "zh_CN": "使对手攻击力小幅下降",
+    "en_US": "Slightly Reduce Opponent's Attack Power"
+  },
+  {
+    "key": "从冥界归来",
+    "zh_CN": "从冥界归来",
+    "en_US": "Return from the Underworld"
+  },
+  {
+    "key": "对手受到反伤",
+    "zh_CN": "对手受到反伤",
+    "en_US": "Opponent Takes Reflective Damage"
+  },
+  {
+    "key": "攻击力上升",
+    "zh_CN": "攻击力上升",
+    "en_US": "Attack Power Rises"
+  },
+  {
+    "key": "什么也没发生",
+    "zh_CN": "什么也没发生",
+    "en_US": "Nothing Happened"
+  },
+  {
+    "key": "对手不忍袭击仙兽",
+    "zh_CN": "对手不忍袭击仙兽",
+    "en_US": "Opponent Reluctant to Attack Immortal Beast"
+  },
+  {
+    "key": "对手为气息所感化",
+    "zh_CN": "对手为气息所感化",
+    "en_US": "Opponent Swayed by Aura"
+  },
+  {
+    "key": "识破对手数个技能",
+    "zh_CN": "识破对手数个技能",
+    "en_US": "See Through Several of Opponent's Skills"
+  },
+  {
+    "key": "发现对手心中的邪恶",
+    "zh_CN": "发现对手心中的邪恶",
+    "en_US": "Detect Evil in Opponent's Heart"
+  },
+  {
+    "key": "对手被正气所震慑",
+    "zh_CN": "对手被正气所震慑",
+    "en_US": "Opponent Intimidated by Righteousness"
+  },
+  {
+    "key": "对手被天命惩罚",
+    "zh_CN": "对手被天命惩罚",
+    "en_US": "Opponent Punished by Heaven's Will"
+  },
+  {
+    "key": "学会了数个技能",
+    "zh_CN": "学会了数个技能",
+    "en_US": "Learned Several Skills"
+  },
+  {
+    "key": "获得一个技能",
+    "zh_CN": "获得一个技能",
+    "en_US": "Gained One Skill"
+  },
+  {
+    "key": "闪避攻击一回合",
+    "zh_CN": "闪避攻击一回合",
+    "en_US": "Dodge Attack for One Round"
+  },
+  {
+    "key": "完全无视对手防御",
+    "zh_CN": "完全无视对手防御",
+    "en_US": "Completely Ignore Opponent's Defense"
+  },
+  {
+    "key": "防御力提高",
+    "zh_CN": "防御力提高",
+    "en_US": "Defense Increased"
+  },
+  {
+    "key": "将对手眩晕两回合",
+    "zh_CN": "将对手眩晕两回合",
+    "en_US": "Stun Opponent for Two Rounds"
+  },
+  {
+    "key": "受到的伤害少量降低",
+    "zh_CN": "受到的伤害少量降低",
+    "en_US": "Slightly Reduced Damage Taken"
+  },
+  {
+    "key": "将对手束缚三回合",
+    "zh_CN": "将对手束缚三回合",
+    "en_US": "Bind Opponent for Three Rounds"
+  },
+  {
+    "key": "造成大量伤害",
+    "zh_CN": "造成大量伤害",
+    "en_US": "Deal Massive Damage"
+  },
+  {
+    "key": "对手失去战意",
+    "zh_CN": "对手失去战意",
+    "en_US": "Opponent Loses Will to Fight"
+  },
+  {
+    "key": "识破一个技能",
+    "zh_CN": "识破一个技能",
+    "en_US": "See Through One Skill"
+  },
+  {
+    "key": "对手防御力略微下降",
+    "zh_CN": "对手防御力略微下降",
+    "en_US": "Opponent's Defense Slightly Decreased"
+  },
+  {
+    "key": "对手防御力下降两回合",
+    "zh_CN": "对手防御力下降两回合",
+    "en_US": "Opponent's Defense Decreased for Two Rounds"
+  },
+  {
+    "key": "拾取物体当做武器",
+    "zh_CN": "拾取物体当做武器",
+    "en_US": "Pick Up Object as Weapon"
+  },
+  {
+    "key": "迷惑对手使其暂停攻击",
+    "zh_CN": "迷惑对手使其暂停攻击",
+    "en_US": "Bewilder Opponent to Pause Attack"
+  },
+  {
+    "key": "伤害少量强化",
+    "zh_CN": "伤害少量强化",
+    "en_US": "Slightly Enhanced Damage"
+  },
+  {
+    "key": "吞噬对手",
+    "zh_CN": "吞噬对手",
+    "en_US": "Devour Opponent"
+  },
+  {
+    "key": "攻击力大幅上升",
+    "zh_CN": "攻击力大幅上升",
+    "en_US": "Attack Power Greatly Increased"
+  },
+  {
+    "key": "对手的造成的伤害被河蟹了",
+    "zh_CN": "对手的造成的伤害被河蟹了",
+    "en_US": "Opponent's Damage Nullified by River Crab"
+  },
+  {
+    "key": "对手被河蟹了",
+    "zh_CN": "对手被河蟹了",
+    "en_US": "Opponent Nullified by River Crab"
+  },
+  {
+    "key": "属性巨幅提升",
+    "zh_CN": "属性巨幅提升",
+    "en_US": "Massive Attribute Boost"
+  },
+  {
+    "key": "使对手攻击力下降",
+    "zh_CN": "使对手攻击力下降",
+    "en_US": "Reduce Opponent's Attack Power"
+  },
+  {
+    "key": "舍弃一条尾巴复活了",
+    "zh_CN": "舍弃一条尾巴复活了",
+    "en_US": "Sacrificed One Tail to Revive"
+  },
+  {
+    "key": "攻击力巨幅上升",
+    "zh_CN": "攻击力巨幅上升",
+    "en_US": "Massive Attack Power Increase"
+  },
+  {
+    "key": "受到伤害降低",
+    "zh_CN": "受到伤害降低",
+    "en_US": "Reduced Damage Taken"
+  },
+  {
+    "key": "灵活走位",
+    "zh_CN": "灵活走位",
+    "en_US": "Agile Maneuver"
+  },
+  {
+    "key": "藏匿于分身之中",
+    "zh_CN": "藏匿于分身之中",
+    "en_US": "Hide Among Clones"
+  },
+  {
+    "key": "学会了一些技能",
+    "zh_CN": "学会了一些技能",
+    "en_US": "Learned Some Skills"
+  },
+  {
+    "key": "齿",
+    "zh_CN": "齿",
+    "en_US": "Teeth"
+  },
+  {
+    "key": "喙",
+    "zh_CN": "喙",
+    "en_US": "Beak"
+  },
+  {
+    "key": "鳞",
+    "zh_CN": "鳞",
+    "en_US": "Scale"
+  },
+  {
+    "key": "毛",
+    "zh_CN": "毛",
+    "en_US": "Fur"
+  },
+  {
+    "key": "甲",
+    "zh_CN": "甲",
+    "en_US": "Armor"
+  },
+  {
+    "key": "蠃",
+    "zh_CN": "蠃",
+    "en_US": "Skin"
+  },
+  {
+    "key": "羽",
+    "zh_CN": "羽",
+    "en_US": "Feather"
+  },
+  {
+    "key": "爪",
+    "zh_CN": "爪",
+    "en_US": "Claw"
+  },
+  {
+    "key": "蹄",
+    "zh_CN": "蹄",
+    "en_US": "Hoove"
+  },
+  {
+    "key": "角",
+    "zh_CN": "角",
+    "en_US": "Horn"
+  },
+  {
+    "key": "智",
+    "zh_CN": "智",
+    "en_US": "Wisdom"
+  },
+  {
+    "key": "----------开始战斗----------",
+    "zh_CN": "----------开始战斗----------",
+    "en_US": "----------Battle Start----------"
+  },
+  {
+    "key": "<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>",
+    "zh_CN": "<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>",
+    "en_US": "<font color='{p}'>You used skill·<font color='{s}'>*</font>,&</font>"
+  },
+  {
+    "key": "<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>",
+    "zh_CN": "<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>",
+    "en_US": "<font color='{e}'>^ used skill·<font color='{s}'>*</font>,&</font>"
+  },
+  {
+    "key": "<font color='{p}'>你闪避了!</font>",
+    "zh_CN": "<font color='{p}'>你闪避了!</font>",
+    "en_US": "<font color='{p}'>You dodged!</font>"
+  },
+  {
+    "key": "<font color='{e}'>*闪避了!</font>",
+    "zh_CN": "<font color='{e}'>*闪避了!</font>",
+    "en_US": "<font color='{e}'>* dodged!</font>"
+  },
+  {
+    "key": "<font color='{p}'>你格挡了!</font>",
+    "zh_CN": "<font color='{p}'>你格挡了!</font>",
+    "en_US": "<font color='{p}'>You blocked!</font>"
+  },
+  {
+    "key": "<font color='{e}'>*格挡了!</font>",
+    "zh_CN": "<font color='{e}'>*格挡了!</font>",
+    "en_US": "<font color='{e}'>* blocked!</font>"
+  },
+  {
+    "key": "<font color='{p}'>你对*发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
+    "zh_CN": "<font color='{p}'>你对*发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
+    "en_US": "<font color='{p}'>You attacked *, dealing <font color='{s}'>&</font> damage.</font>"
+  },
+  {
+    "key": "<font color='{e}'>*对你发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
+    "zh_CN": "<font color='{e}'>*对你发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
+    "en_US": "<font color='{e}'>* attacked you, dealing <font color='{s}'>&</font>damage.</font>"
+  },
+  {
+    "key": "<font color='{p}'>你恢复了<font color='{s}'>&</font>点生命.</font>",
+    "zh_CN": "<font color='{p}'>你恢复了<font color='{s}'>&</font>点生命.</font>",
+    "en_US": "<font color='{p}'>You recovered <font color='{s}'>&</font> health.</font>"
+  },
+  {
+    "key": "<font color='{e}'>*恢复了<font color='{s}'>&</font>点生命.</font>",
+    "zh_CN": "<font color='{e}'>*恢复了<font color='{s}'>&</font>点生命.</font>",
+    "en_US": "<font color='{e}'>* recovered <font color='{s}'>&</font> health.</font>"
+  },
+  {
+    "key": "你吞噬了*.",
+    "zh_CN": "你吞噬了*.",
+    "en_US": "You devoured *."
+  },
+  {
+    "key": "*吞噬了你.",
+    "zh_CN": "*吞噬了你.",
+    "en_US": "* devoured you."
+  },
+  {
+    "key": "----------战斗结束----------",
+    "zh_CN": "----------战斗结束----------",
+    "en_US": "----------Battle End----------"
+  },
+  {
+    "key": "你逃出生天!",
+    "zh_CN": "你逃出生天!",
+    "en_US": "You escaped to safety!"
+  },
+  {
+    "key": "<font color='^'>拟态成功</font>,拟态为*",
+    "zh_CN": "<font color='^'>拟态成功</font>,拟态为*",
+    "en_US": "<font color='^'>Mimicry successful</font>, mimicked as *"
+  },
+  {
+    "key": "<font color='^'>拟态失败</font>,肉身崩坏死亡！",
+    "zh_CN": "<font color='^'>拟态失败</font>,肉身崩坏死亡！",
+    "en_US": "<font color='^'>Mimicry failed</font>, body collapsed and died!"
+  },
+  {
+    "key": "<font color='^'>拟态失败</font>,损失等级10级。",
+    "zh_CN": "<font color='^'>拟态失败</font>,损失等级10级。",
+    "en_US": "<font color='^'>Mimicry failed</font>, lost 10 levels."
+  },
+  {
+    "key": "你遇到了{0},{1},{2}!",
+    "zh_CN": "你遇到了{0},{1},{2}!",
+    "en_US": "You encountered {0}, {1}, {2}!"
+  },
+  {
+    "key": "当前战斗力为:<font color='#ff8c00'>*</font>",
+    "zh_CN": "当前战斗力为:<font color='#ff8c00'>*</font>",
+    "en_US": "Current combat power: <font color='#ff8c00'>*</font>"
+  },
+  {
+    "key": "你来到第*层.",
+    "zh_CN": "你来到第*层.",
+    "en_US": "You arrived at level *."
+  },
+  {
+    "key": "你的等级为:*.",
+    "zh_CN": "你的等级为:*.",
+    "en_US": "Your level is: *."
+  },
+  {
+    "key": "<font color='^'>转生成功</font>,属性成长提升",
+    "zh_CN": "<font color='^'>转生成功</font>,属性成长提升",
+    "en_US": "<font color='^'>Reincarnation successful</font>, attribute growth increased"
+  },
+  {
+    "key": "<font color='^'>淬炼成功</font>,属性向拟态生物靠拢",
+    "zh_CN": "<font color='^'>淬炼成功</font>,属性向拟态生物靠拢",
+    "en_US": "<font color='^'>Refining successful</font>, attributes align with mimicked creature"
+  },
+  {
+    "key": "你吞噬了*,解析成功获得技能·<font color='^'>&</font>",
+    "zh_CN": "你吞噬了*,解析成功获得技能·<font color='^'>&</font>",
+    "en_US": "You devoured *, analysis successful, gained skill·<font color='^'>&</font>"
+  },
+  {
+    "key": "<font color='#FF0000'>等级不足</font>",
+    "zh_CN": "<font color='#FF0000'>等级不足</font>",
+    "en_US": "<font color='#FF0000'>Insufficient level</font>"
+  },
+  {
+    "key": "攻击后20%的概率使自身+[50%×伤害值]的生命值。",
+    "zh_CN": "攻击后20%的概率使自身+[50%×伤害值]的生命值。",
+    "en_US": "20% chance after attacking to gain [50% × damage dealt] health."
+  },
+  {
+    "key": "攻击时20%的概率使对手-50%防御力。",
+    "zh_CN": "攻击时20%的概率使对手-50%防御力。",
+    "en_US": "20% chance when attacking to reduce opponent's defense by 50%."
+  },
+  {
+    "key": "攻击后20%的概率使对手跳过回合，持续1回合。",
+    "zh_CN": "攻击后20%的概率使对手跳过回合，持续1回合。",
+    "en_US": "20% chance after attacking to make opponent skip turn for 1 rounds."
+  },
+  {
+    "key": "回合开始时使自身+5%攻防，永久",
+    "zh_CN": "回合开始时使自身+5%攻防，永久",
+    "en_US": "At start of turn, permanently increase own attack and defense by 5%."
+  },
+  {
+    "key": "攻击时20%的概率使自身+100%造成的伤害。",
+    "zh_CN": "攻击时20%的概率使自身+100%造成的伤害。",
+    "en_US": "20% chance when attacking to increase own damage by 100%."
+  },
+  {
+    "key": "回合开始时使自身+10%攻防，永久",
+    "zh_CN": "回合开始时使自身+10%攻防，永久",
+    "en_US": "At start of turn, permanently increase own attack and defense by 10%."
+  },
+  {
+    "key": "回合开始时使对手-5%攻防，永久",
+    "zh_CN": "回合开始时使对手-5%攻防，永久",
+    "en_US": "At start of turn, permanently reduce opponent's attack and defense by 5%."
+  },
+  {
+    "key": "战斗开始时使对手攻防交换。",
+    "zh_CN": "战斗开始时使对手攻防交换。",
+    "en_US": "At start of battle, swap opponent's attack and defense."
+  },
+  {
+    "key": "受击时20%的概率使自身闪避。",
+    "zh_CN": "受击时20%的概率使自身闪避。",
+    "en_US": "20% chance when hit to dodge."
+  },
+  {
+    "key": "攻击时20%的概率使自身+50%造成的伤害。",
+    "zh_CN": "攻击时20%的概率使自身+50%造成的伤害。",
+    "en_US": "20% chance when attacking to increase own damage by 50%."
+  },
+  {
+    "key": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久",
+    "zh_CN": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久",
+    "en_US": "Before attacking, if health <50%, permanently increase own attack by 30%."
+  },
+  {
+    "key": "攻击时使自身无视闪避。",
+    "zh_CN": "攻击时使自身无视闪避。",
+    "en_US": "When attacking, ignore opponent's dodge."
+  },
+  {
+    "key": "攻击后15%的概率使对手放弃攻击，持续2回合。",
+    "zh_CN": "攻击后15%的概率使对手放弃攻击，持续2回合。",
+    "en_US": "15% chance after attacking to make opponent skip attack for 2 rounds."
+  },
+  {
+    "key": "攻击时10%的概率使自身+400%造成的伤害。",
+    "zh_CN": "攻击时10%的概率使自身+400%造成的伤害。",
+    "en_US": "10% chance when attacking to increase own damage by 400%."
+  },
+  {
+    "key": "攻击后30%的概率使自身闪避，持续2回合。",
+    "zh_CN": "攻击后30%的概率使自身闪避，持续2回合。",
+    "en_US": "30% chance after attacking to dodge for 2 rounds."
+  },
+  {
+    "key": "攻击前20%的概率使对手-50%攻击力，持续2回合。",
+    "zh_CN": "攻击前20%的概率使对手-50%攻击力，持续2回合。",
+    "en_US": "20% chance before attacking to reduce opponent's attack by 50% for 2 rounds."
+  },
+  {
+    "key": "受击时40%的概率使自身闪避。",
+    "zh_CN": "受击时40%的概率使自身闪避。",
+    "en_US": "40% chance when hit to dodge."
+  },
+  {
+    "key": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
+    "zh_CN": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
+    "en_US": "After being hit and dying, restore 100% max health and clear buffs, 1 times."
+  },
+  {
+    "key": "攻击前使对手-10%攻击力，永久",
+    "zh_CN": "攻击前使对手-10%攻击力，永久",
+    "en_US": "Before attacking, permanently reduce opponent's attack by 10%."
+  },
+  {
+    "key": "受击时50%的概率使自身闪避。",
+    "zh_CN": "受击时50%的概率使自身闪避。",
+    "en_US": "50% chance when hit to dodge."
+  },
+  {
+    "key": "受击后使对手-[40%×伤害值]的生命值。",
+    "zh_CN": "受击后使对手-[40%×伤害值]的生命值。",
+    "en_US": "After being hit, reduce opponent's health by [40% × damage taken]."
+  },
+  {
+    "key": "攻击时40%的概率使自身+50%造成的伤害。",
+    "zh_CN": "攻击时40%的概率使自身+50%造成的伤害。",
+    "en_US": "40% chance when attacking to increase own damage by 50%."
+  },
+  {
+    "key": "攻击时20%的概率使对手放弃攻击，持续1回合。",
+    "zh_CN": "攻击时20%的概率使对手放弃攻击，持续1回合。",
+    "en_US": "20% chance when attacking to make opponent skip attack for 1 rounds."
+  },
+  {
+    "key": "攻击后25%的概率使对手跳过回合，持续1回合。",
+    "zh_CN": "攻击后25%的概率使对手跳过回合，持续1回合。",
+    "en_US": "25% chance after attacking to make opponent skip turn for 1 rounds."
+  },
+  {
+    "key": "攻击时30%的概率使自身+200%造成的伤害。",
+    "zh_CN": "攻击时30%的概率使自身+200%造成的伤害。",
+    "en_US": "30% chance when attacking to increase own damage by 200%."
+  },
+  {
+    "key": "受击时90%的概率使自身-20%所受的伤害。",
+    "zh_CN": "受击时90%的概率使自身-20%所受的伤害。",
+    "en_US": "90% chance when hit to reduce damage taken by 20%."
+  },
+  {
+    "key": "受击时90%的概率使自身-30%所受的伤害。",
+    "zh_CN": "受击时90%的概率使自身-30%所受的伤害。",
+    "en_US": "90% chance when hit to reduce damage taken by 30%."
+  },
+  {
+    "key": "攻击时10%的概率使自身+150%造成的伤害。",
+    "zh_CN": "攻击时10%的概率使自身+150%造成的伤害。",
+    "en_US": "10% chance when attacking to increase own damage by 150%."
+  },
+  {
+    "key": "攻击时25%的概率使自身+150%造成的伤害。",
+    "zh_CN": "攻击时25%的概率使自身+150%造成的伤害。",
+    "en_US": "25% chance when attacking to increase own damage by 150%."
+  },
+  {
+    "key": "受击后使对手-[50%×伤害值]的生命值。",
+    "zh_CN": "受击后使对手-[50%×伤害值]的生命值。",
+    "en_US": "After being hit, reduce opponent's health by [50% × damage taken]."
+  },
+  {
+    "key": "回合开始时50%的概率使自身+[40%×攻击力]的生命值。",
+    "zh_CN": "回合开始时50%的概率使自身+[40%×攻击力]的生命值。",
+    "en_US": "50% chance at start of turn to gain [40% × attack power] health."
+  },
+  {
+    "key": "受击前30%的概率使对手放弃攻击。",
+    "zh_CN": "受击前30%的概率使对手放弃攻击。",
+    "en_US": "30% chance before being hit to make opponent skip attack."
+  },
+  {
+    "key": "受击前25%的概率使对手放弃攻击。",
+    "zh_CN": "受击前25%的概率使对手放弃攻击。",
+    "en_US": "25% chance before being hit to make opponent skip attack."
+  },
+  {
+    "key": "战斗开始时使对手-30%攻击力，永久",
+    "zh_CN": "战斗开始时使对手-30%攻击力，永久",
+    "en_US": "At start of battle, permanently reduce opponent's attack by 30%."
+  },
+  {
+    "key": "战斗准备阶段使对手禁用3个技能。",
+    "zh_CN": "战斗准备阶段使对手禁用3个技能。",
+    "en_US": "During battle preparation, disable 3 of opponent's skills."
+  },
+  {
+    "key": "战斗开始时50%的概率使自身+100%攻击力，永久",
+    "zh_CN": "战斗开始时50%的概率使自身+100%攻击力，永久",
+    "en_US": "50% chance at start of battle to permanently increase own attack by 100%."
+  },
+  {
+    "key": "攻击后30%的概率使对手放弃攻击，持续1回合。",
+    "zh_CN": "攻击后30%的概率使对手放弃攻击，持续1回合。",
+    "en_US": "30% chance after attacking to make opponent skip attack for 1 rounds."
+  },
+  {
+    "key": "受击后30%的概率使对手-30%攻防，永久",
+    "zh_CN": "受击后30%的概率使对手-30%攻防，永久",
+    "en_US": "30% chance after being hit to permanently reduce opponent's attack and defense by 30%."
+  },
+  {
+    "key": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
+    "zh_CN": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
+    "en_US": "During battle preparation, creature randomly gains 5 skills. (Player) skill cap increased by 5."
+  },
+  {
+    "key": "攻击后20%的概率使自身闪避，持续1回合。",
+    "zh_CN": "攻击后20%的概率使自身闪避，持续1回合。",
+    "en_US": "20% chance after attacking to dodge for 1 rounds."
+  },
+  {
+    "key": "攻击时20%的概率使对手-100%防御力。",
+    "zh_CN": "攻击时20%的概率使对手-100%防御力。",
+    "en_US": "20% chance when attacking to reduce opponent's defense by 100%."
+  },
+  {
+    "key": "回合开始时20%的概率使自身+50%防御力，持续1回合。",
+    "zh_CN": "回合开始时20%的概率使自身+50%防御力，持续1回合。",
+    "en_US": "20% chance at start of turn to increase own defense by 50% for 1 rounds."
+  },
+  {
+    "key": "攻击时25%的概率使自身+100%造成的伤害。",
+    "zh_CN": "攻击时25%的概率使自身+100%造成的伤害。",
+    "en_US": "25% chance when attacking to increase own damage by 100%."
+  },
+  {
+    "key": "受击时50%的概率使自身-30%所受的伤害。",
+    "zh_CN": "受击时50%的概率使自身-30%所受的伤害。",
+    "en_US": "50% chance when hit to reduce damage taken by 30%."
+  },
+  {
+    "key": "攻击后10%的概率使对手跳过回合，持续2回合。",
+    "zh_CN": "攻击后10%的概率使对手跳过回合，持续2回合。",
+    "en_US": "10% chance after attacking to make opponent skip turn for 2 rounds."
+  },
+  {
+    "key": "攻击后30%的概率使对手-30%攻击力，持续2回合。",
+    "zh_CN": "攻击后30%的概率使对手-30%攻击力，持续2回合。",
+    "en_US": "30% chance after attacking to reduce opponent's attack by 30% for 2 rounds."
+  },
+  {
+    "key": "攻击后70%的概率使对手-5%攻击力，永久",
+    "zh_CN": "攻击后70%的概率使对手-5%攻击力，永久",
+    "en_US": "70% chance after attacking to permanently reduce opponent's attack by 5%."
+  },
+  {
+    "key": "攻击后20%的概率使自身+[100%×攻击力]的生命值。",
+    "zh_CN": "攻击后20%的概率使自身+[100%×攻击力]的生命值。",
+    "en_US": "20% chance after attacking to gain [100% × attack power] health."
+  },
+  {
+    "key": "攻击前50%的概率使对手-5%防御力，永久",
+    "zh_CN": "攻击前50%的概率使对手-5%防御力，永久",
+    "en_US": "50% chance before attacking to permanently reduce opponent's defense by 5%."
+  },
+  {
+    "key": "回合开始时30%的概率使对手-50%防御力，持续2回合。",
+    "zh_CN": "回合开始时30%的概率使对手-50%防御力，持续2回合。",
+    "en_US": "30% chance at start of turn to reduce opponent's defense by 50% for 2 rounds."
+  },
+  {
+    "key": "战斗开始时50%的概率使自身+50%攻击力，永久",
+    "zh_CN": "战斗开始时50%的概率使自身+50%攻击力，永久",
+    "en_US": "50% chance at start of battle to permanently increase own attack by 50%."
+  },
+  {
+    "key": "回合开始时使自身获得1个技能。",
+    "zh_CN": "回合开始时使自身获得1个技能。",
+    "en_US": "At start of turn, gain 1 skills."
+  },
+  {
+    "key": "攻击时40%的概率使自身+20%造成的伤害。",
+    "zh_CN": "攻击时40%的概率使自身+20%造成的伤害。",
+    "en_US": "40% chance when attacking to increase own damage by 20%."
+  },
+  {
+    "key": "攻击时40%的概率使自身+100%造成的伤害。",
+    "zh_CN": "攻击时40%的概率使自身+100%造成的伤害。",
+    "en_US": "40% chance when attacking to increase own damage by 100%."
+  },
+  {
+    "key": "受击前15%的概率使对手变更目标。",
+    "zh_CN": "受击前15%的概率使对手变更目标。",
+    "en_US": "15% chance before being hit to make opponent change target."
+  },
+  {
+    "key": "受击前20%的概率使对手变更目标。",
+    "zh_CN": "受击前20%的概率使对手变更目标。",
+    "en_US": "20% chance before being hit to make opponent change target."
+  },
+  {
+    "key": "攻击后20%的概率使对手放弃攻击，持续1回合。",
+    "zh_CN": "攻击后20%的概率使对手放弃攻击，持续1回合。",
+    "en_US": "20% chance after attacking to make opponent skip attack for 1 round."
+  },
+  {
+    "key": "攻击后20%的概率使对手放弃攻击，持续2回合。",
+    "zh_CN": "攻击后20%的概率使对手放弃攻击，持续2回合。",
+    "en_US": "20% chance after attacking to make opponent skip attack for 2 rounds."
+  },
+  {
+    "key": "攻击后20%的概率使对手放弃攻击，持续3回合。",
+    "zh_CN": "攻击后20%的概率使对手放弃攻击，持续3回合。",
+    "en_US": "20% chance after attacking to make opponent skip attack for 3 rounds."
+  },
+  {
+    "key": "回合开始时使自身+[25%×攻击力]的生命值。",
+    "zh_CN": "回合开始时使自身+[25%×攻击力]的生命值。",
+    "en_US": "At start of turn, gain [25% × attack power] health."
+  },
+  {
+    "key": "攻击时15%的概率使自身+200%造成的伤害。",
+    "zh_CN": "攻击时15%的概率使自身+200%造成的伤害。",
+    "en_US": "15% chance when attacking to increase own damage by 200%."
+  },
+  {
+    "key": "受击前70%的概率使对手-30%攻击力。",
+    "zh_CN": "受击前70%的概率使对手-30%攻击力。",
+    "en_US": "70% chance before being hit to reduce opponent's attack by 30%."
+  },
+  {
+    "key": "受击前15%的概率使对手放弃攻击。",
+    "zh_CN": "受击前15%的概率使对手放弃攻击。",
+    "en_US": "15% chance before being hit to make opponent skip attack."
+  },
+  {
+    "key": "战斗开始时30%的概率使对手-[200%×攻击力]的生命值。",
+    "zh_CN": "战斗开始时30%的概率使对手-[200%×攻击力]的生命值。",
+    "en_US": "30% chance at start of battle to reduce opponent's health by [200% × attack power]."
+  },
+  {
+    "key": "攻击后30%的概率使自身+[100%×伤害值]的生命值。",
+    "zh_CN": "攻击后30%的概率使自身+[100%×伤害值]的生命值。",
+    "en_US": "30% chance after attacking to gain [100% × damage dealt] health."
+  },
+  {
+    "key": "回合开始时30%的概率使自身+50%攻击力，持续2回合。",
+    "zh_CN": "回合开始时30%的概率使自身+50%攻击力，持续2回合。",
+    "en_US": "30% chance at start of turn to increase own attack by 50% for 2 rounds."
+  },
+  {
+    "key": "回合开始时30%的概率使自身+100%攻击力，持续2回合。",
+    "zh_CN": "回合开始时30%的概率使自身+100%攻击力，持续2回合。",
+    "en_US": "30% chance at start of turn to increase own attack by 100% for 2 rounds."
+  },
+  {
+    "key": "攻击后30%的概率使对手-30%攻击力，持续1回合。",
+    "zh_CN": "攻击后30%的概率使对手-30%攻击力，持续1回合。",
+    "en_US": "30% chance after attacking to reduce opponent's attack by 30% for 1 rounds."
+  },
+  {
+    "key": "攻击时30%的概率使自身+100%造成的伤害。",
+    "zh_CN": "攻击时30%的概率使自身+100%造成的伤害。",
+    "en_US": "30% chance when attacking to increase own damage by 100%."
+  },
+  {
+    "key": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
+    "zh_CN": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
+    "en_US": "After being hit and dying, 50% chance to restore 100% max health and clear buffs, 9 times."
+  },
+  {
+    "key": "受击时50%的概率使自身-80%所受的伤害。",
+    "zh_CN": "受击时50%的概率使自身-80%所受的伤害。",
+    "en_US": "50% chance when hit to reduce damage taken by 80%."
+  },
+  {
+    "key": "攻击时1%的概率使自身+9900%造成的伤害。",
+    "zh_CN": "攻击时1%的概率使自身+9900%造成的伤害。",
+    "en_US": "1% chance when attacking to increase own damage by 9900%."
+  },
+  {
+    "key": "回合开始时使自身+20%攻击力，永久",
+    "zh_CN": "回合开始时使自身+20%攻击力，永久",
+    "en_US": "At start of turn, permanently increase own attack by 20%."
+  },
+  {
+    "key": "受击后30%的概率使对手-[20%×伤害值]的生命值。",
+    "zh_CN": "受击后30%的概率使对手-[20%×伤害值]的生命值。",
+    "en_US": "30% chance after being hit to reduce opponent's health by [20% × damage taken]."
+  },
+  {
+    "key": "回合开始时30%的概率使自身释放技能，但是失败了！。",
+    "zh_CN": "回合开始时30%的概率使自身释放技能，但是失败了！。",
+    "en_US": "30% chance at start of turn to cast a skill, but it failed!"
+  },
+  {
+    "key": "回合开始时0%的概率使自身释放技能，但是失败了！。",
+    "zh_CN": "回合开始时0%的概率使自身释放技能，但是失败了！。",
+    "en_US": "0% chance at start of turn to cast a skill, but it failed!"
+  },
+  {
+    "key": "回合开始时20%的概率使自身+200%攻防，持续3回合。",
+    "zh_CN": "回合开始时20%的概率使自身+200%攻防，持续3回合。",
+    "en_US": "20% chance at start of turn to increase own attack and defense by 200% for 3 rounds."
+  },
+  {
+    "key": "回合开始时30%的概率使自身获得1个技能。",
+    "zh_CN": "回合开始时30%的概率使自身获得1个技能。",
+    "en_US": "30% chance at start of turn to gain 1 skills."
+  },
+  {
+    "key": "攻击后25%的概率使对手跳过回合，持续2回合。",
+    "zh_CN": "攻击后25%的概率使对手跳过回合，持续2回合。",
+    "en_US": "25% chance after attacking to make opponent skip turn for 2 rounds."
+  },
+  {
+    "key": "战斗开始时使对手-50%攻击力，永久",
+    "zh_CN": "战斗开始时使对手-50%攻击力，永久",
+    "en_US": "At start of battle, permanently reduce opponent's attack by 50%."
+  },
+  {
+    "key": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
+    "zh_CN": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
+    "en_US": "After being hit and dying, restore 100% max health and clear buffs, 9 times."
+  },
+  {
+    "key": "回合开始时30%的概率使自身+200%攻击力，持续3回合。",
+    "zh_CN": "回合开始时30%的概率使自身+200%攻击力，持续3回合。",
+    "en_US": "30% chance at start of turn to increase own attack by 200% for 3 rounds."
+  },
+  {
+    "key": "受击时使自身-50%所受的伤害。",
+    "zh_CN": "受击时使自身-50%所受的伤害。",
+    "en_US": "When hit, reduce damage taken by 50%."
+  },
+  {
+    "key": "攻击后15%的概率使对手跳过回合，持续3回合。",
+    "zh_CN": "攻击后15%的概率使对手跳过回合，持续3回合。",
+    "en_US": "15% chance after attacking to make opponent skip turn for 3 rounds."
+  },
+  {
+    "key": "回合开始时10%的概率使对手-[100%×攻击力]的生命值。",
+    "zh_CN": "回合开始时10%的概率使对手-[100%×攻击力]的生命值。",
+    "en_US": "10% chance at start of turn to reduce opponent's health by [100% × attack power]."
+  },
+  {
+    "key": "回合开始时15%的概率使自身闪避，持续2回合。",
+    "zh_CN": "回合开始时15%的概率使自身闪避，持续2回合。",
+    "en_US": "15% chance at start of turn to dodge for 2 rounds."
+  },
+  {
+    "key": "攻击时80%的概率使自身+50%造成的伤害。",
+    "zh_CN": "攻击时80%的概率使自身+50%造成的伤害。",
+    "en_US": "80% chance when attacking to increase own damage by 50%."
+  },
+  {
+    "key": "回合开始时50%的概率使自身获得1个技能。",
+    "zh_CN": "回合开始时50%的概率使自身获得1个技能。",
+    "en_US": "50% chance at start of turn to gain 1 skills."
+  },
+  {
+    "key": "回合开始时60%的概率使对手禁用1个技能。",
+    "zh_CN": "回合开始时60%的概率使对手禁用1个技能。",
+    "en_US": "60% chance at start of turn to disable 1 of opponent's skills."
+  },
+  {
+    "key": "攻击时70%的概率使自身+100%造成的伤害。",
+    "zh_CN": "攻击时70%的概率使自身+100%造成的伤害。",
+    "en_US": "70% chance when attacking to increase own damage by 100%."
+  },
+  {
+    "key": "攻击时60%的概率使自身+200%造成的伤害。",
+    "zh_CN": "攻击时60%的概率使自身+200%造成的伤害。",
+    "en_US": "60% chance when attacking to increase own damage by 200%."
+  },
+  {
+    "key": "回合开始时50%的概率使对手禁用1个技能。",
+    "zh_CN": "回合开始时50%的概率使对手禁用1个技能。",
+    "en_US": "50% chance at start of turn to disable 1 of opponent's skills."
+  },
+  {
+    "key": "回合开始时15%的概率使自身闪避，持续3回合。",
+    "zh_CN": "回合开始时15%的概率使自身闪避，持续3回合。",
+    "en_US": "15% chance at start of turn to dodge for 3 rounds."
+  },
+  {
+    "key": "战斗准备阶段使自身(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100。",
+    "zh_CN": "战斗准备阶段使自身(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100。",
+    "en_US": "During battle preparation, creature randomly gains X skills. (Player) skill cap increased by 5. This skill is auto-added to minions after level 100, X = current level - 100."
+  },
+  {
+    "key": "----------开局一只史莱姆----------",
+    "zh_CN": "----------开局一只史莱姆----------",
+    "en_US": "----------Start with a Slime----------"
+  },
+  {
+    "key": "完成",
+    "zh_CN": "完成",
+    "en_US": "Completed"
+  },
+  {
+    "key": "领取奖励",
+    "zh_CN": "领取奖励",
+    "en_US": "Claim Reward"
+  },
+  {
+    "key": "已领取",
+    "zh_CN": "已领取",
+    "en_US": "Already Claimed"
+  },
+  {
+    "key": "未完成",
+    "zh_CN": "未完成",
+    "en_US": "Not Completed"
+  },
+  {
+    "key": "所有图鉴已解锁",
+    "zh_CN": "所有图鉴已解锁",
+    "en_US": "All Bestiary Unlocked"
+  },
+  {
+    "key": "达成：",
+    "zh_CN": "达成：",
+    "en_US": "Achieved:"
+  },
+  {
+    "key": "确认",
+    "zh_CN": "确认",
+    "en_US": "Confirm"
+  },
+  {
+    "key": "战力：",
+    "zh_CN": "战力：",
+    "en_US": "Combat Power:"
+  },
+  {
+    "key": "是否进行转生，等级、种族重置为初始状态，全属性永久额外增加",
+    "zh_CN": "是否进行转生，等级、种族重置为初始状态，全属性永久额外增加",
+    "en_US": "Reincarnate? Level and race reset to initial state, all attributes permanently increased"
+  },
+  {
+    "key": "解锁：自动战斗",
+    "zh_CN": "解锁：自动战斗",
+    "en_US": "Unlock: Auto-Battle"
+  },
+  {
+    "key": "解锁：定向拟态",
+    "zh_CN": "解锁：定向拟态",
+    "en_US": "Unlock: Targeted Mimicry"
+  },
+  {
+    "key": "习得：",
+    "zh_CN": "习得：",
+    "en_US": "Acquired:"
+  },
+  {
+    "key": "<font color='^'>你死了</font>等级将降为1级",
+    "zh_CN": "<font color='^'>你死了</font>\n等级将降为1级",
+    "en_US": "<font color='^'>You died</font>\nLevel will drop to 1"
+  },
+  {
+    "key": "<font color='^'>你复活了</font>",
+    "zh_CN": "<font color='^'>你复活了</font>",
+    "en_US": "<font color='^'>You revived</font>"
+  },
+  {
+    "key": "<font color='^'>你死了</font>,等级降为1级",
+    "zh_CN": "<font color='^'>你死了</font>,等级降为1级",
+    "en_US": "<font color='^'>You died</font>, level dropped to 1"
+  },
+  {
+    "key": "复活",
+    "zh_CN": "复活",
+    "en_US": "Revive"
+  },
+  {
+    "key": "剩余次数:",
+    "zh_CN": "剩余次数:",
+    "en_US": "Remaining Attempts:"
+  },
+  {
+    "key": "凡",
+    "zh_CN": "凡",
+    "en_US": "MOR"
+  },
+  {
+    "key": "灵",
+    "zh_CN": "灵",
+    "en_US": "SPR"
+  },
+  {
+    "key": "仙",
+    "zh_CN": "仙",
+    "en_US": "IMR"
+  },
+  {
+    "key": "神",
+    "zh_CN": "神",
+    "en_US": "DVN"
+  },
+  {
+    "key": "闯关成功！",
+    "zh_CN": "闯关成功！",
+    "en_US": "Stage Cleared!"
+  },
+  {
+    "key": "遗忘技能",
+    "zh_CN": "遗忘技能",
+    "en_US": "Forget Skill"
+  },
+  {
+    "key": "<font color='#FF0000'>已达到最大转生数</font>",
+    "zh_CN": "<font color='#FF0000'>已达到最大转生数</font>",
+    "en_US": "<font color='#FF0000'>Max reincarnations reached</font>"
+  },
+  {
+    "key": "已达到最高等级！",
+    "zh_CN": "已达到最高等级！",
+    "en_US": "Max level reached!"
+  },
+  {
+    "key": "等级+1",
+    "zh_CN": "等级+1",
+    "en_US": "Level +1"
+  },
+  {
+    "key": "解锁图鉴：",
+    "zh_CN": "解锁图鉴：",
+    "en_US": "Unlock Bestiary:"
+  },
+  {
+    "key": "技能已满！",
+    "zh_CN": "技能已满！",
+    "en_US": "Skills Full!"
+  },
+  {
+    "key": "是否消耗*级进行淬炼，淬炼后生物属性向当前物种靠拢。",
+    "zh_CN": "是否消耗*级进行淬炼，淬炼后生物属性向当前物种靠拢。",
+    "en_US": "Spend * levels to temper? Refining aligns creature attributes with current species."
+  },
+  {
+    "key": "闪避",
+    "zh_CN": "闪避",
+    "en_US": "Dodge"
+  },
+  {
+    "key": "格挡",
+    "zh_CN": "格挡",
+    "en_US": "Block"
+  },
+  {
+    "key": "成功率:",
+    "zh_CN": "成功率:",
+    "en_US": "SUC:"
+  },
+  {
+    "key": "自动战斗",
+    "zh_CN": "自动战斗",
+    "en_US": "Auto-Battle"
+  },
+  {
+    "key": "停止",
+    "zh_CN": "停止",
+    "en_US": "Stop"
+  },
+  {
+    "key": "种族:",
+    "zh_CN": "种族:",
+    "en_US": "RC:"
+  },
+  {
+    "key": "战力:",
+    "zh_CN": "战力:",
+    "en_US": "POW:"
+  },
+  {
+    "key": "等级:",
+    "zh_CN": "等级:",
+    "en_US": "LVL:"
+  },
+  {
+    "key": "转生:",
+    "zh_CN": "转生:",
+    "en_US": "REI:"
+  },
+  {
+    "key": "灵气:",
+    "zh_CN": "灵气:",
+    "en_US": "SPR:"
+  },
+  {
+    "key": "仙气:",
+    "zh_CN": "仙气:",
+    "en_US": "IMR:"
+  },
+  {
+    "key": "神韵:",
+    "zh_CN": "神韵:",
+    "en_US": "DVN:"
+  },
+  {
+    "key": "攻击:",
+    "zh_CN": "攻击:",
+    "en_US": "ATK:"
+  },
+  {
+    "key": "防御:",
+    "zh_CN": "防御:",
+    "en_US": "DEF:"
+  },
+  {
+    "key": "血量:",
+    "zh_CN": "血量:",
+    "en_US": "HP:"
+  },
+  {
+    "key": "需要等级>",
+    "zh_CN": "需要等级>",
+    "en_US": "Required Level >"
+  },
+  {
+    "key": "第*层",
+    "zh_CN": "第*层",
+    "en_US": "Level *"
+  },
+  {
+    "key": "击败怪物:",
+    "zh_CN": "击败怪物:",
+    "en_US": "Defeated Monsters:"
+  },
+  {
+    "key": "成就完成率:",
+    "zh_CN": "成就完成率:",
+    "en_US": "Achievement Completion Rate:"
+  },
+  {
+    "key": "图鉴完成率:",
+    "zh_CN": "图鉴完成率:",
+    "en_US": "Bestiary Completion Rate:"
+  },
+  {
+    "key": "击杀解锁",
+    "zh_CN": "击杀解锁",
+    "en_US": "Unlock by Killing"
+  },
+  {
+    "key": "无法拟态需成就解锁",
+    "zh_CN": "无法拟态\n需成就解锁",
+    "en_US": "Cannot Mimic\nRequires Achievement Unlock"
+  },
+  {
+    "key": "攻击成长:",
+    "zh_CN": "攻击成长:",
+    "en_US": "Attack Growth:"
+  },
+  {
+    "key": "防御成长:",
+    "zh_CN": "防御成长:",
+    "en_US": "Defense Growth:"
+  },
+  {
+    "key": "血量成长:",
+    "zh_CN": "血量成长:",
+    "en_US": "Health Growth:"
+  },
+  {
+    "key": "存档保存成功!",
+    "zh_CN": "存档保存成功!",
+    "en_US": "Save successful!"
+  },
+  {
+    "key": "存档加载成功!",
+    "zh_CN": "存档加载成功!",
+    "en_US": "Load successful!"
+  },
+  {
+    "key": "确定",
+    "zh_CN": "确定",
+    "en_US": "Confirm"
+  },
+  {
+    "key": "取消",
+    "zh_CN": "取消",
+    "en_US": "Cancel"
+  },
+  {
+    "key": "角色属性",
+    "zh_CN": "角色属性",
+    "en_US": "Character Attributes"
+  },
+  {
+    "key": "角色技能",
+    "zh_CN": "角色技能",
+    "en_US": "Character Skills"
+  },
+  {
+    "key": "拟态",
+    "zh_CN": "拟态",
+    "en_US": "Mimicry"
+  },
+  {
+    "key": "遗忘",
+    "zh_CN": "遗忘",
+    "en_US": "Forget"
+  },
+  {
+    "key": "返回",
+    "zh_CN": "返回",
+    "en_US": "Back"
+  },
+  {
+    "key": "淬炼",
+    "zh_CN": "淬炼",
+    "en_US": "Refining"
+  },
+  {
+    "key": "查看技能",
+    "zh_CN": "查看技能",
+    "en_US": "Check Skills"
+  },
+  {
+    "key": "查看属性",
+    "zh_CN": "查看属性",
+    "en_US": "Check Attributes"
+  },
+  {
+    "key": "转生",
+    "zh_CN": "转生",
+    "en_US": "Reincarnation"
+  },
+  {
+    "key": "图鉴",
+    "zh_CN": "图鉴",
+    "en_US": "Bestiary"
+  },
+  {
+    "key": "搜索",
+    "zh_CN": "搜索",
+    "en_US": "Search"
+  },
+  {
+    "key": "深入",
+    "zh_CN": "深入",
+    "en_US": "Next"
+  },
+  {
+    "key": "挑战首领",
+    "zh_CN": "挑战首领",
+    "en_US": "Boss"
+  },
+  {
+    "key": "一转解锁",
+    "zh_CN": "一转解锁",
+    "en_US": "First Reincarnation Unlocked"
+  },
+  {
+    "key": "逃跑",
+    "zh_CN": "逃跑",
+    "en_US": "Escape"
+  },
+  {
+    "key": "全部领取",
+    "zh_CN": "全部领取",
+    "en_US": "Claim All"
+  },
+  {
+    "key": "定向拟态",
+    "zh_CN": "定向拟态",
+    "en_US": "Targeted Mimicry"
+  },
+  {
+    "key": "2转解锁",
+    "zh_CN": "二转解锁",
+    "en_US": "Second Reincarnation Unlocked"
+  },
+  {
+    "key": "激活血脉",
+    "zh_CN": "激活血脉",
+    "en_US": "Awaken Bloodline"
+  },
+  {
+    "key": "提升拟态成功率5%",
+    "zh_CN": "提升拟态成功率5%",
+    "en_US": "+5% Mimicry Success Rate"
+  },
+  {
+    "key": "开局一只史莱姆",
+    "zh_CN": "开局一只史莱姆",
+    "en_US": "Start with a slime  \n  end with a dragon"
+  },
+  {
+    "key": "-测试版",
+    "zh_CN": "-测试版",
+    "en_US": "– that's the grind!"
+  },
+  {
+    "key": "开始游戏",
+    "zh_CN": "开始游戏",
+    "en_US": "Start"
+  },
+  {
+    "key": "抵制不良游戏 拒绝盗版游戏 注意自我保护\n谨防受骗上当 适度游戏益脑 沉迷游戏伤身\n合理安排时间 享受健康生活",
+    "zh_CN": "抵制不良游戏 拒绝盗版游戏 注意自我保护\n谨防受骗上当 适度游戏益脑 沉迷游戏伤身\n合理安排时间 享受健康生活",
+    "en_US": "Reject harmful games. Refuse pirated games. Protect yourself.\nBeware of scams. Game moderately to benefit your mind. Avoid addiction for health.\nManage time wisely. Enjoy a healthy lifestyle."
+  },
+  {
+    "key": "无法拟态",
+    "zh_CN": "无法拟态",
+    "en_US": "Cannot Mimic"
+  },
+  {
+    "key": "拟态时，属性匹配度越高、属性值越高成功率越高!",
+    "zh_CN": "拟态时，属性匹配度越高、属性值越高成功率越高!",
+    "en_US": "Mimicry Success Rate: ↑ with better attribute match & higher stats!"
+  },
+  {
+    "key": "成长:",
+    "zh_CN": "成长:",
+    "en_US": "Growth:"
+  },
+  {
+    "key": "技能:",
+    "zh_CN": "技能:",
+    "en_US": "Skills:"
+  },
+  {
+    "key": "图鉴加成:",
+    "zh_CN": "图鉴加成:",
+    "en_US": "Bonus:"
+  },
+  {
+    "key": "组成:",
+    "zh_CN": "组成:",
+    "en_US": "Composition:"
+  },
+  {
+    "key": "定向拟态成功率提升5%\n定向拟态只能拟态成已解锁图鉴的生物",
+    "zh_CN": "定向拟态成功率提升5%\n定向拟态只能拟态成已解锁图鉴的生物",
+    "en_US": "Targeted Mimicry success rate +5%\nTargeted Mimicry limited to unlocked Bestiary entries"
+  },
+  {
+    "key": "淬炼后属性",
+    "zh_CN": "淬炼后属性",
+    "en_US": "Refined Stats"
+  }
+]

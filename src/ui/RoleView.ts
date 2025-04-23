@@ -44,7 +44,7 @@ export class RoleView extends Laya.Script {
         let defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
         let health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
         let power = Main.getPower(attack, defence, health);
-        (this.owner.image.getChildByName('Tip') as Laya.Label).text = `战力:${utils.getValueStr(power)}`;
+        (this.owner.image.getChildByName('Tip') as Laya.Label).text = "战力:".toStr() + `${utils.getValueStr(power)}`;
     }
 
     show(id: string, level: number, power?: number): void {
@@ -53,7 +53,7 @@ export class RoleView extends Laya.Script {
         this.level = level;
         this.owner.title.text = Main.getRoleName(roleData);
         (this.owner.image.getChildByName('Level') as Laya.Label).text = `Lv.${level}`;
-        if (power) (this.owner.image.getChildByName('Tip') as Laya.Label).text = `战力:${utils.getValueStr(power)}`;
+        if (power) (this.owner.image.getChildByName('Tip') as Laya.Label).text = "战力:".toStr() + `${utils.getValueStr(power)}`;
     }
 
     show_skin(isBoss: boolean): void {

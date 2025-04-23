@@ -3,7 +3,7 @@ import { skill, SkillType, Target } from '../table/schema';
 import { Main } from '../ui/Main';
 import { Battle } from './battle';
 import { BuffMgr } from './buff';
-import { Config, xinximoban } from './config';
+import { color_config, Config, xinximoban } from './config';
 import { BaseRole } from './role';
 import { GameLog, toInt } from './utils';
 
@@ -147,14 +147,14 @@ export class BaseSkill {
     private checkCondition(): boolean {
         if (this.condition.check(this.owner)) {
             let str;
-            if (this.owner.camp === 'player') str = xinximoban.zhandou.jineng1;
+            if (this.owner.camp === 'player') str = xinximoban.zhandou.jineng1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.skill);
             else {
-                str = xinximoban.zhandou.jineng2;
+                str = xinximoban.zhandou.jineng2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.skill);
                 str = str.replace('^', Main.getRoleName(this.owner.view.data));
             }
-            str = str.replace('*', this.data.name);
-            str = str.replace('&', this.data.effectStr);
-            GameLog.log(str);
+            str = str.replace('*', this.data.name.toStr());
+            str = str.replace('&', this.data.effectStr.toStr());
+            GameLog.log(str, false);
             return true;
         }
 

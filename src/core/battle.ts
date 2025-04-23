@@ -107,7 +107,7 @@ export class Battle {
             // 处理胜利失败逻辑
             if (this.player.isAlive()) {
                 console.log(`${this.player.camp} wins the battle!`);
-                utils.GameLog.log(xinximoban.zhandou.siwang1.replace('*', Main.getRoleName(this.enemy.view.data)));
+                utils.GameLog.log(xinximoban.zhandou.siwang1.toStr().replace('*', Main.getRoleName(this.enemy.view.data)), false);
                 this.victory(this.enemy.view.data, this.enemy.view.level, this.enemy.isBoss);
                 if (Save.data.setting.auto) {
                     Main.instance.auto_fight();
@@ -116,7 +116,7 @@ export class Battle {
                 Save.saveGame();
             } else {
                 console.log(`${this.enemy.camp} wins the battle!`);
-                utils.GameLog.log(xinximoban.zhandou.siwang2.replace('*', Main.getRoleName(this.enemy.view.data)));
+                utils.GameLog.log(xinximoban.zhandou.siwang2.toStr().replace('*', Main.getRoleName(this.enemy.view.data)), false);
                 Main.player_dead();
             }
         }

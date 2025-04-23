@@ -10,6 +10,7 @@
   "name": "Scene2D",
   "width": 720,
   "height": 1280,
+  "autoDestroyAtClosed": true,
   "_$child": [
     {
       "_$id": "z4xf602w",
@@ -110,8 +111,8 @@
           "name": "label_1",
           "x": 25,
           "y": 30,
-          "width": 120,
-          "height": 28,
+          "width": 248,
+          "height": 300,
           "left": 25,
           "top": 30,
           "text": "种族:凡·史莱姆\n战力：123456\n等级：2（12%）\n转生：1\n灵气：5\n仙气：4\n神韵：0",
@@ -119,6 +120,7 @@
           "color": "rgba(194, 182, 167, 1)",
           "html": true,
           "valign": "top",
+          "overflow": "shrink",
           "leading": 13,
           "padding": "0,0,0,0"
         },
@@ -141,14 +143,22 @@
               "name": "Label",
               "x": 20,
               "y": 20,
-              "width": 160,
-              "height": 40,
+              "width": 180,
+              "height": 45,
               "text": "角色属性",
               "fontSize": 40,
               "color": "rgba(194, 182, 167, 1)",
               "bold": true,
-              "valign": "top",
-              "padding": "0,0,0,0"
+              "align": "center",
+              "valign": "middle",
+              "overflow": "shrink",
+              "padding": "0,0,0,0",
+              "_$comp": [
+                {
+                  "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+                  "scriptPath": "../src/ui/I18nText.ts"
+                }
+              ]
             },
             {
               "_$id": "ncqw0h5c",
@@ -215,8 +225,8 @@
                 },
                 {
                   "_$override": "au8mtcie",
-                  "width": 130,
-                  "height": 50,
+                  "width": 110,
+                  "height": 30,
                   "fontSize": 28,
                   "text": "查看技能"
                 },
@@ -257,6 +267,7 @@
                   "html": true,
                   "templateVars": true,
                   "valign": "middle",
+                  "overflow": "shrink",
                   "padding": "0,0,0,0"
                 }
               ]
@@ -283,14 +294,22 @@
               "name": "Label",
               "x": 20,
               "y": 20,
-              "width": 160,
-              "height": 40,
+              "width": 180,
+              "height": 45,
               "text": "角色技能",
               "fontSize": 40,
               "color": "rgba(194, 182, 167, 1)",
               "bold": true,
-              "valign": "top",
-              "padding": "0,0,0,0"
+              "align": "center",
+              "valign": "middle",
+              "overflow": "shrink",
+              "padding": "0,0,0,0",
+              "_$comp": [
+                {
+                  "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+                  "scriptPath": "../src/ui/I18nText.ts"
+                }
+              ]
             },
             {
               "_$id": "484z02sw",
@@ -386,8 +405,8 @@
                 },
                 {
                   "_$override": "au8mtcie",
-                  "width": 130,
-                  "height": 50,
+                  "width": 110,
+                  "height": 30,
                   "fontSize": 28,
                   "text": "查看属性"
                 },
@@ -449,6 +468,7 @@
           "bold": true,
           "align": "center",
           "valign": "middle",
+          "overflow": "shrink",
           "padding": "0,0,0,0"
         },
         {
@@ -536,7 +556,7 @@
                 },
                 {
                   "_$override": "qnb9iybi",
-                  "text": "击败怪物0/3",
+                  "text": "",
                   "y": -30
                 }
               ]
@@ -841,7 +861,7 @@
                 },
                 {
                   "_$override": "qnb9iybi",
-                  "text": "击败怪物0/3",
+                  "text": "",
                   "y": -30,
                   "visible": false
                 }
@@ -901,13 +921,14 @@
               "_$id": "5253s4u5",
               "_$type": "Label",
               "name": "Label",
-              "width": 120,
+              "width": 640,
               "height": 30,
               "text": "Label",
               "fontSize": 26,
               "color": "#FFFFFF",
               "html": true,
               "valign": "top",
+              "overflow": "shrink",
               "padding": "0,0,0,0"
             }
           ]
@@ -978,7 +999,13 @@
           "align": "center",
           "valign": "middle",
           "wordWrap": true,
-          "padding": "0,0,0,0"
+          "padding": "0,0,0,0",
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "2fg3tlzx",
@@ -1029,6 +1056,7 @@
               "html": true,
               "templateVars": true,
               "valign": "middle",
+              "overflow": "shrink",
               "padding": "0,0,0,0"
             }
           ]
@@ -1071,10 +1099,12 @@
           "align": "left",
           "valign": "middle",
           "height": 80,
-          "width": 295,
+          "width": 290,
           "color": "rgba(145, 145, 145, 1)",
           "centerX": null,
-          "centerY": null
+          "centerY": null,
+          "overflow": "shrink",
+          "wordWrap": false
         },
         {
           "_$override": "jvphpq4p",
@@ -1209,13 +1239,14 @@
                       "name": "Title",
                       "x": 20,
                       "y": 10,
-                      "width": 150,
+                      "width": 400,
                       "height": 40,
-                      "text": "击杀灵兽九尾妖狐一次",
+                      "text": "",
                       "fontSize": 32,
                       "color": "rgba(255, 255, 255, 1)",
                       "bold": true,
                       "valign": "middle",
+                      "overflow": "shrink",
                       "padding": "0,0,0,0"
                     },
                     {
@@ -1226,7 +1257,7 @@
                       "y": 24,
                       "width": 80,
                       "height": 24,
-                      "text": "(99/100)",
+                      "text": "",
                       "fontSize": 20,
                       "color": "rgba(106, 181, 72, 1)",
                       "align": "right",
@@ -1253,19 +1284,19 @@
                   "bold": true,
                   "html": false,
                   "valign": "middle",
-                  "width": 120,
-                  "height": 40,
+                  "width": 100,
+                  "height": 20,
                   "overflow": "shrink",
-                  "x": 0,
-                  "y": 3,
+                  "x": 10,
+                  "y": 10,
                   "fontSize": 24
                 },
                 {
                   "_$override": "qnb9iybi",
                   "visible": true,
                   "x": 180,
-                  "y": 50,
-                  "text": "奖励：可获得技能数+1",
+                  "y": 45,
+                  "text": "奖励:可获得技能数+1",
                   "color": "rgba(151, 181, 72, 1)",
                   "fontSize": 18,
                   "width": 250,
@@ -1326,15 +1357,20 @@
                 },
                 {
                   "_$override": "au8mtcie",
-                  "width": 180,
+                  "width": 200,
                   "height": 40,
-                  "overflow": "visible",
-                  "text": "仙·金翅大鹏",
-                  "y": 3,
-                  "x": 10,
+                  "overflow": "shrink",
+                  "text": "",
+                  "y": 0,
+                  "x": 0,
                   "fontSize": 24,
                   "color": "rgba(191, 191, 191, 1)",
-                  "html": true
+                  "html": true,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "bottom": 0,
+                  "wordWrap": true
                 },
                 {
                   "_$override": "qnb9iybi",
@@ -1357,24 +1393,31 @@
           "fontSize": 30,
           "color": "rgba(255, 255, 255, 1)",
           "align": "center",
-          "leading": 2
+          "overflow": "shrink",
+          "leading": 2,
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "qctbbfda",
           "_$index": 11,
           "_$type": "Text",
           "name": "Name",
-          "x": 325,
+          "x": 310,
           "y": 625,
           "width": 250,
           "height": 60,
-          "text": "仙·金翅大鹏",
           "fontSize": 36,
           "color": "rgba(194, 182, 167, 1)",
           "bold": true,
           "html": true,
           "align": "center",
           "valign": "middle",
+          "overflow": "shrink",
           "leading": 2
         },
         {
@@ -1390,8 +1433,10 @@
           "fontSize": 18,
           "color": "rgba(0, 255, 12, 1)",
           "bold": true,
+          "html": true,
           "align": "center",
           "valign": "middle",
+          "overflow": "shrink",
           "wordWrap": true,
           "leading": 2
         },
@@ -1407,7 +1452,13 @@
           "text": "成长:",
           "fontSize": 30,
           "color": "rgba(247, 197, 141, 1)",
-          "leading": 2
+          "leading": 2,
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "asqmn9ed",
@@ -1421,7 +1472,13 @@
           "text": "技能:",
           "fontSize": 30,
           "color": "rgba(247, 197, 141, 1)",
-          "leading": 2
+          "leading": 2,
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "fo1zqvz9",
@@ -1437,6 +1494,7 @@
           "color": "rgba(247, 197, 141, 1)",
           "html": true,
           "valign": "middle",
+          "overflow": "shrink",
           "wordWrap": true,
           "leading": 10
         },
@@ -1452,7 +1510,13 @@
           "text": "图鉴加成:",
           "fontSize": 30,
           "color": "rgba(247, 197, 141, 1)",
-          "leading": 2
+          "leading": 2,
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "qmiq35yk",
@@ -1466,7 +1530,13 @@
           "text": "组成:",
           "fontSize": 30,
           "color": "rgba(247, 197, 141, 1)",
-          "leading": 2
+          "leading": 2,
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "qvr0diki",
@@ -1529,7 +1599,7 @@
             "au8mtcie"
           ],
           "text": "返回",
-          "y": 1
+          "y": 10
         },
         {
           "_$id": "fap27w0i",
@@ -1561,6 +1631,7 @@
               "html": true,
               "templateVars": true,
               "valign": "middle",
+              "overflow": "shrink",
               "padding": "0,0,0,0"
             }
           ]
@@ -1604,7 +1675,14 @@
           "centerY": null,
           "height": 80,
           "fontSize": 28,
-          "visible": false
+          "visible": false,
+          "overflow": "shrink",
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$override": "jvphpq4p",
@@ -1698,10 +1776,10 @@
                 },
                 {
                   "_$override": "au8mtcie",
-                  "y": 19,
-                  "width": 185,
-                  "height": 97,
-                  "text": "凡·史莱姆\n<font size=24>成功率:20%</font>",
+                  "y": 10,
+                  "width": 180,
+                  "height": 100,
+                  "text": "",
                   "html": true,
                   "overflow": "shrink",
                   "leading": 16
@@ -1750,19 +1828,25 @@
             },
             {
               "_$id": "pc06dh6f",
-              "_$var": true,
               "_$type": "Label",
               "name": "Label(1)",
               "x": 50,
               "y": 1010,
-              "width": 560,
+              "width": 624,
               "height": 80,
               "text": "定向拟态成功率提升5%\n定向拟态只能拟态成已解锁图鉴的生物",
               "fontSize": 28,
               "color": "rgba(255, 255, 255, 1)",
               "valign": "top",
+              "overflow": "shrink",
               "wordWrap": true,
-              "padding": "0,0,0,0"
+              "padding": "0,0,0,0",
+              "_$comp": [
+                {
+                  "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+                  "scriptPath": "../src/ui/I18nText.ts"
+                }
+              ]
             },
             {
               "_$id": "trpshhu6",
@@ -1817,15 +1901,20 @@
                       "_$type": "Label",
                       "name": "Title",
                       "x": 40,
-                      "y": 15,
-                      "width": 150,
-                      "height": 40,
-                      "text": "灵·九尾妖狐",
+                      "width": 320,
+                      "height": 60,
+                      "left": 40,
+                      "right": 240,
+                      "top": 0,
+                      "bottom": 0,
+                      "text": "",
                       "fontSize": 32,
                       "color": "rgba(255, 255, 255, 1)",
                       "bold": true,
                       "html": true,
-                      "valign": "top",
+                      "valign": "middle",
+                      "overflow": "shrink",
+                      "wordWrap": true,
                       "padding": "0,0,0,0"
                     },
                     {
@@ -1846,11 +1935,11 @@
                       "bold": true,
                       "html": false,
                       "valign": "middle",
-                      "width": 120,
-                      "height": 40,
+                      "width": 100,
+                      "height": 20,
                       "overflow": "shrink",
-                      "x": 0,
-                      "y": 3,
+                      "x": 10,
+                      "y": 10,
                       "fontSize": 30
                     },
                     {
@@ -1858,13 +1947,14 @@
                       "visible": true,
                       "x": 280,
                       "y": 20,
-                      "text": "成功率:99%",
+                      "text": "",
                       "color": "rgba(252, 220, 170, 1)",
                       "fontSize": 24,
                       "width": 164,
                       "height": 30,
                       "valign": "bottom",
-                      "html": true
+                      "html": true,
+                      "align": "right"
                     }
                   ]
                 }
@@ -1898,33 +1988,48 @@
           "_$id": "tp6pdeoj",
           "_$type": "Label",
           "name": "Label",
-          "y": 180,
-          "width": 720,
-          "height": 100,
+          "x": 60,
+          "y": 200,
+          "width": 600,
+          "height": 120,
           "text": "开局一只史莱姆",
           "font": "res://a6f43a95-c377-4909-b0d0-6c9533b1c677",
-          "fontSize": 70,
+          "fontSize": 76,
           "color": "rgba(0, 151, 255, 1)",
           "bold": true,
           "align": "center",
           "valign": "middle",
-          "padding": "0,0,0,0"
+          "overflow": "shrink",
+          "padding": "0,0,0,0",
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "lxy13yg6",
           "_$type": "Label",
           "name": "Label(1)",
           "x": 420,
-          "y": 240,
-          "width": 200,
+          "y": 290,
+          "width": 250,
           "height": 100,
           "text": "-测试版",
-          "fontSize": 36,
+          "fontSize": 56,
           "color": "rgba(210, 213, 210, 1)",
           "bold": true,
           "align": "right",
           "valign": "middle",
-          "padding": "0,0,0,0"
+          "overflow": "shrink",
+          "padding": "0,0,0,0",
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "rsfd2zwo",
@@ -1969,8 +2074,9 @@
           "_$id": "35qjphvt",
           "_$type": "Label",
           "name": "Label(2)",
+          "x": 60,
           "y": 1100,
-          "width": 720,
+          "width": 600,
           "height": 100,
           "text": "抵制不良游戏 拒绝盗版游戏 注意自我保护\n谨防受骗上当 适度游戏益脑 沉迷游戏伤身\n合理安排时间 享受健康生活",
           "fontSize": 30,
@@ -1978,7 +2084,14 @@
           "bold": true,
           "align": "center",
           "valign": "middle",
-          "padding": "0,0,0,0"
+          "overflow": "shrink",
+          "padding": "0,0,0,0",
+          "_$comp": [
+            {
+              "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
+              "scriptPath": "../src/ui/I18nText.ts"
+            }
+          ]
         },
         {
           "_$id": "2qj7apbh",
@@ -2011,6 +2124,25 @@
               "visible": false
             }
           ]
+        },
+        {
+          "_$id": "p4eqvnoc",
+          "_$type": "ComboBox",
+          "name": "ComboBox",
+          "x": 64,
+          "y": 64,
+          "width": 128,
+          "height": 64,
+          "_mouseState": 2,
+          "skin": "res://f64d4387-f2c7-4e48-bea1-a0dfd22a109d",
+          "sizeGrid": "12,62,8,18,0",
+          "labels": "中文,English",
+          "labelSize": 24,
+          "labelBold": true,
+          "itemSize": 18,
+          "itemColors": "#5e95b6,#ffffff,#000000,#8fa4b1,#ffffff",
+          "selectedLabel": "",
+          "defaultLabel": ""
         }
       ]
     }

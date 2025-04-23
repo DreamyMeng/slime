@@ -4,11 +4,12 @@ import { PopUp } from "./PopUp";
 
 export class MessageBox {
     static tipsQueue: Laya.Label[] = [];
-    static tip(msg: string) {
+    static tip(msg: string, isTranslate: boolean = true) {
         if (!msg) return;
+        if (isTranslate) msg = msg.toStr();
         var offsetY = this.tipsQueue.length * 50;
 
-        GameLog.log(msg);
+        GameLog.log(msg, false);
         // 创建一个 Label
         var message = new Laya.Label();
         message.text = msg; // 设置消息内容
@@ -68,8 +69,8 @@ export class MessageBox {
         if (!isOk) {
             message.ok.visible = false;
             message.no.x = 285;
-            message.no.title.text = "确认";
-            GameLog.log(msg);
+            message.no.title.text = "确认".toStr();
+            GameLog.log(msg, false);
         } else {
             message.ok.visible = true;
             message.no.x = 420;

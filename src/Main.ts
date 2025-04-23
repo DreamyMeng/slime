@@ -8,13 +8,14 @@ import { delay, GameLog } from "./core/utils";
 
 
 export async function main() {
-    // let label = Laya.stage.addChild(new Laya.Label());
-    // label.dataSource = { width: Laya.stage.width, height: Laya.stage.height, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
-
-    // label.text = tishi[Math.floor(Math.random() * tishi.length)];
+    // Laya.LocalStorage.removeItem('language');
+    await Config.load_config();
     Language.init();
 
-    await Config.load_config();
+    let label = Laya.stage.addChild(new Laya.Label());
+    label.dataSource = { width: Laya.stage.width - 60, height: Laya.stage.height - 60, wordWrap: true, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
+    label.text = tishi[Math.floor(Math.random() * tishi.length)].toStr();
+
     await Config.load_sound();
     await Config.load_prefab();
 
@@ -22,7 +23,7 @@ export async function main() {
     Save.init();
 
     await Laya.Scene.open("Scene.ls");
-    // label.destroy();
+    label?.destroy();
 
     //    new Laya.Image().on(Laya.Event.CLICK, null, () => {
     //         //点击后，打开UI场景示例

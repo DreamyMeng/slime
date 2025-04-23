@@ -1,2897 +1,5902 @@
 [
   {
     "key": "史莱姆",
-    "zh_CN": "史莱姆",
-    "en_US": "Slime"
+    "CHS": "史莱姆",
+    "EN": "Slime",
+    "CHT": "史萊姆",
+    "JP": "スライム",
+    "KR": "슬라임",
+    "TH": "สไลม์",
+    "VN": "Slime"
   },
   {
     "key": "青蛇",
-    "zh_CN": "青蛇",
-    "en_US": "Green Snake"
+    "CHS": "青蛇",
+    "EN": "Green Snake",
+    "CHT": "青蛇",
+    "JP": "青蛇",
+    "KR": "청사",
+    "TH": "งูเขียว",
+    "VN": "Rắn xanh"
   },
   {
     "key": "白蛇",
-    "zh_CN": "白蛇",
-    "en_US": "White Snake"
+    "CHS": "白蛇",
+    "EN": "White Snake",
+    "CHT": "白蛇",
+    "JP": "白蛇",
+    "KR": "백사",
+    "TH": "งูขาว",
+    "VN": "Rắn trắng"
   },
   {
     "key": "蟒蛇",
-    "zh_CN": "蟒蛇",
-    "en_US": "Python"
+    "CHS": "蟒蛇",
+    "EN": "Python",
+    "CHT": "蟒蛇",
+    "JP": "蟒蛇",
+    "KR": "비단뱀",
+    "TH": "งูเหลือม",
+    "VN": "Trăn"
   },
   {
     "key": "蛟蛇",
-    "zh_CN": "蛟蛇",
-    "en_US": "Flood Snake"
+    "CHS": "蛟蛇",
+    "EN": "Flood Snake",
+    "CHT": "蛟蛇",
+    "JP": "蛟蛇",
+    "KR": "교사",
+    "TH": "งูมังกร",
+    "VN": "Rắn giao"
   },
   {
     "key": "蛟龙",
-    "zh_CN": "蛟龙",
-    "en_US": "Flood Dragon"
+    "CHS": "蛟龙",
+    "EN": "Flood Dragon",
+    "CHT": "蛟龍",
+    "JP": "蛟竜",
+    "KR": "교룡",
+    "TH": "มังกรน้ำ",
+    "VN": "Giao long"
   },
   {
     "key": "飞龙",
-    "zh_CN": "飞龙",
-    "en_US": "Flying Dragon"
+    "CHS": "飞龙",
+    "EN": "Flying Dragon",
+    "CHT": "飛龍",
+    "JP": "飛竜",
+    "KR": "비룡",
+    "TH": "มังกรบิน",
+    "VN": "Phi long"
   },
   {
     "key": "真龙",
-    "zh_CN": "真龙",
-    "en_US": "True Dragon"
+    "CHS": "真龙",
+    "EN": "True Dragon",
+    "CHT": "真龍",
+    "JP": "真竜",
+    "KR": "진룡",
+    "TH": "มังกรแท้",
+    "VN": "Chân long"
   },
   {
     "key": "应龙",
-    "zh_CN": "应龙",
-    "en_US": "Winged Dragon"
+    "CHS": "应龙",
+    "EN": "Winged Dragon",
+    "CHT": "應龍",
+    "JP": "応竜",
+    "KR": "응룡",
+    "TH": "มังกรตอบสนอง",
+    "VN": "Ứng long"
   },
   {
     "key": "五爪金龙",
-    "zh_CN": "五爪金龙",
-    "en_US": "Five-Clawed Golden Dragon"
+    "CHS": "五爪金龙",
+    "EN": "Five-Clawed Golden Dragon",
+    "CHT": "五爪金龍",
+    "JP": "五爪金竜",
+    "KR": "오조금룡",
+    "TH": "มังกรทองห้ากรงเล็บ",
+    "VN": "Ngũ trảo kim long"
   },
   {
     "key": "青龙",
-    "zh_CN": "青龙",
-    "en_US": "Azure Dragon"
+    "CHS": "青龙",
+    "EN": "Azure Dragon",
+    "CHT": "青龍",
+    "JP": "青竜",
+    "KR": "청룡",
+    "TH": "มังกรเขียว",
+    "VN": "Thanh long"
   },
   {
     "key": "烛龙",
-    "zh_CN": "烛龙",
-    "en_US": "Torch Dragon"
+    "CHS": "烛龙",
+    "EN": "Torch Dragon",
+    "CHT": "燭龍",
+    "JP": "燭竜",
+    "KR": "촉룡",
+    "TH": "มังกรเทียน",
+    "VN": "Chúc long"
   },
   {
     "key": "麻雀",
-    "zh_CN": "麻雀",
-    "en_US": "Sparrow"
+    "CHS": "麻雀",
+    "EN": "Sparrow",
+    "CHT": "麻雀",
+    "JP": "雀",
+    "KR": "참새",
+    "TH": "นกกระจอก",
+    "VN": "Chim sẻ"
   },
   {
     "key": "鸡",
-    "zh_CN": "鸡",
-    "en_US": "Chicken"
+    "CHS": "鸡",
+    "EN": "Chicken",
+    "CHT": "雞",
+    "JP": "鶏",
+    "KR": "닭",
+    "TH": "ไก่",
+    "VN": "Gà"
   },
   {
     "key": "锦鸡",
-    "zh_CN": "锦鸡",
-    "en_US": "Pheasant"
+    "CHS": "锦鸡",
+    "EN": "Pheasant",
+    "CHT": "錦雞",
+    "JP": "錦鶏",
+    "KR": "금계",
+    "TH": "ไก่ฟ้าสีทอง",
+    "VN": "Gà lông vàng"
   },
   {
     "key": "白鹤",
-    "zh_CN": "白鹤",
-    "en_US": "White Crane"
+    "CHS": "白鹤",
+    "EN": "White Crane",
+    "CHT": "白鶴",
+    "JP": "白鶴",
+    "KR": "백학",
+    "TH": "นกกระเรียนขาว",
+    "VN": "Hạc trắng"
   },
   {
     "key": "白鹅",
-    "zh_CN": "白鹅",
-    "en_US": "White Goose"
+    "CHS": "白鹅",
+    "EN": "White Goose",
+    "CHT": "白鵝",
+    "JP": "白鵝",
+    "KR": "백鹅",
+    "TH": "ห่านขาว",
+    "VN": "Ngỗng trắng"
   },
   {
     "key": "金鹰",
-    "zh_CN": "金鹰",
-    "en_US": "Golden Eagle"
+    "CHS": "金鹰",
+    "EN": "Golden Eagle",
+    "CHT": "金鷹",
+    "JP": "金鷹",
+    "KR": "금응",
+    "TH": "นกอินทรีทอง",
+    "VN": "Đại bàng vàng"
   },
   {
     "key": "孔雀",
-    "zh_CN": "孔雀",
-    "en_US": "Peacock"
+    "CHS": "孔雀",
+    "EN": "Peacock",
+    "CHT": "孔雀",
+    "JP": "孔雀",
+    "KR": "공작",
+    "TH": "นกยูง",
+    "VN": "Công"
   },
   {
     "key": "大鹏",
-    "zh_CN": "大鹏",
-    "en_US": "Garuda"
+    "CHS": "大鹏",
+    "EN": "Garuda",
+    "CHT": "大鵬",
+    "JP": "大鵬",
+    "KR": "대붕",
+    "TH": "นกใหญ่",
+    "VN": "Đại bàng lớn"
   },
   {
     "key": "毕方",
-    "zh_CN": "毕方",
-    "en_US": "Bifang"
+    "CHS": "毕方",
+    "EN": "Bifang",
+    "CHT": "畢方",
+    "JP": "畢方",
+    "KR": "필방",
+    "TH": "นกพิภพ",
+    "VN": "Tất phương"
   },
   {
     "key": "鸿鹄",
-    "zh_CN": "鸿鹄",
-    "en_US": "Great Swan"
+    "CHS": "鸿鹄",
+    "EN": "Great Swan",
+    "CHT": "鴻鵠",
+    "JP": "鴻鵠",
+    "KR": "홍곡",
+    "TH": "หงส์ใหญ่",
+    "VN": "Hồng hộc"
   },
   {
     "key": "金翅大鹏",
-    "zh_CN": "金翅大鹏",
-    "en_US": "Golden-Winged Garuda"
+    "CHS": "金翅大鹏",
+    "EN": "Golden-Winged Garuda",
+    "CHT": "金翅大鵬",
+    "JP": "金翅大鵬",
+    "KR": "금시대붕",
+    "TH": "นกใหญ่ปีกทอง",
+    "VN": "Kim sí đại bàng"
   },
   {
     "key": "凤凰",
-    "zh_CN": "凤凰",
-    "en_US": "Phoenix"
+    "CHS": "凤凰",
+    "EN": "Phoenix",
+    "CHT": "鳳凰",
+    "JP": "鳳凰",
+    "KR": "봉황",
+    "TH": "ฟีนิกซ์",
+    "VN": "Phượng hoàng"
   },
   {
     "key": "青鸾",
-    "zh_CN": "青鸾",
-    "en_US": "Blue Luan"
+    "CHS": "青鸾",
+    "EN": "Blue Luan",
+    "CHT": "青鸞",
+    "JP": "青鸞",
+    "KR": "청란",
+    "TH": "นกเขียว",
+    "VN": "Thanh loan"
   },
   {
     "key": "金乌",
-    "zh_CN": "金乌",
-    "en_US": "Golden Crow"
+    "CHS": "金乌",
+    "EN": "Golden Crow",
+    "CHT": "金烏",
+    "JP": "金烏",
+    "KR": "금오",
+    "TH": "นกทอง",
+    "VN": "Kim ô"
   },
   {
     "key": "朱雀",
-    "zh_CN": "朱雀",
-    "en_US": "Vermilion Bird"
+    "CHS": "朱雀",
+    "EN": "Vermilion Bird",
+    "CHT": "朱雀",
+    "JP": "朱雀",
+    "KR": "주작",
+    "TH": "นกแดง",
+    "VN": "Chu tước"
   },
   {
     "key": "猞猁",
-    "zh_CN": "猞猁",
-    "en_US": "Lynx"
+    "CHS": "猞猁",
+    "EN": "Lynx",
+    "CHT": "猞猁",
+    "JP": "猞猁",
+    "KR": "삵",
+    "TH": "เสือดาว",
+    "VN": "Linh miêu"
   },
   {
     "key": "老虎",
-    "zh_CN": "老虎",
-    "en_US": "Tiger"
+    "CHS": "老虎",
+    "EN": "Tiger",
+    "CHT": "老虎",
+    "JP": "虎",
+    "KR": "호랑이",
+    "TH": "เสือ",
+    "VN": "Hổ"
   },
   {
     "key": "黑虎",
-    "zh_CN": "黑虎",
-    "en_US": "Black Tiger"
+    "CHS": "黑虎",
+    "EN": "Black Tiger",
+    "CHT": "黑虎",
+    "JP": "黒虎",
+    "KR": "흑호",
+    "TH": "เสือดำ",
+    "VN": "Hổ đen"
   },
   {
     "key": "吊睛白虎",
-    "zh_CN": "吊睛白虎",
-    "en_US": "White-Eyed Tiger"
+    "CHS": "吊睛白虎",
+    "EN": "White-Eyed Tiger",
+    "CHT": "弔睛白虎",
+    "JP": "吊睛白虎",
+    "KR": "조경백호",
+    "TH": "เสือขาวตาแขวน",
+    "VN": "Hổ trắng mắt treo"
   },
   {
     "key": "插翅虎",
-    "zh_CN": "插翅虎",
-    "en_US": "Winged Tiger"
+    "CHS": "插翅虎",
+    "EN": "Winged Tiger",
+    "CHT": "插翅虎",
+    "JP": "插翅虎",
+    "KR": "삽시호",
+    "TH": "เสือมีปีก",
+    "VN": "Hổ có cánh"
   },
   {
     "key": "狴犴",
-    "zh_CN": "狴犴",
-    "en_US": "Bian"
+    "CHS": "狴犴",
+    "EN": "Bian",
+    "CHT": "狴犴",
+    "JP": "狴犴",
+    "KR": "비안",
+    "TH": "พิอัน",
+    "VN": "Tất ngan"
   },
   {
     "key": "穷奇",
-    "zh_CN": "穷奇",
-    "en_US": "Qiongqi"
+    "CHS": "穷奇",
+    "EN": "Qiongqi",
+    "CHT": "窮奇",
+    "JP": "窮奇",
+    "KR": "궁기",
+    "TH": "คิ้งคี่",
+    "VN": "Cùng kỳ"
   },
   {
     "key": "白虎",
-    "zh_CN": "白虎",
-    "en_US": "White Tiger"
+    "CHS": "白虎",
+    "EN": "White Tiger",
+    "CHT": "白虎",
+    "JP": "白虎",
+    "KR": "백호",
+    "TH": "เสือขาว",
+    "VN": "Bạch hổ"
   },
   {
     "key": "乌龟",
-    "zh_CN": "乌龟",
-    "en_US": "Turtle"
+    "CHS": "乌龟",
+    "EN": "Turtle",
+    "CHT": "烏龜",
+    "JP": "亀",
+    "KR": "거북",
+    "TH": "เต่า",
+    "VN": "Rùa"
   },
   {
     "key": "海龟",
-    "zh_CN": "海龟",
-    "en_US": "Sea Turtle"
+    "CHS": "海龟",
+    "EN": "Sea Turtle",
+    "CHT": "海龜",
+    "JP": "海亀",
+    "KR": "바다거북",
+    "TH": "เต่าทะเล",
+    "VN": "Rùa biển"
   },
   {
     "key": "巨龟",
-    "zh_CN": "巨龟",
-    "en_US": "Giant Turtle"
+    "CHS": "巨龟",
+    "EN": "Giant Turtle",
+    "CHT": "巨龜",
+    "JP": "巨亀",
+    "KR": "거대거북",
+    "TH": "เต่ายักษ์",
+    "VN": "Rùa khổng lồ"
   },
   {
     "key": "千年老龟",
-    "zh_CN": "千年老龟",
-    "en_US": "Thousand-Year Turtle"
+    "CHS": "千年老龟",
+    "EN": "Thousand-Year Turtle",
+    "CHT": "千年老龜",
+    "JP": "千年老亀",
+    "KR": "천년노거북",
+    "TH": "เต่าพันปี",
+    "VN": "Rùa ngàn năm"
   },
   {
     "key": "万年灵龟",
-    "zh_CN": "万年灵龟",
-    "en_US": "Ten-Thousand-Year Spirit Turtle"
+    "CHS": "万年灵龟",
+    "EN": "Ten-Thousand-Year Spirit Turtle",
+    "CHT": "萬年靈龜",
+    "JP": "万年霊亀",
+    "KR": "만년영거북",
+    "TH": "เต่าหมื่นปี",
+    "VN": "Rùa vạn năm"
   },
   {
     "key": "龟蛇",
-    "zh_CN": "龟蛇",
-    "en_US": "Turtle-Snake"
+    "CHS": "龟蛇",
+    "EN": "Turtle-Snake",
+    "CHT": "龜蛇",
+    "JP": "亀蛇",
+    "KR": "귀사",
+    "TH": "เต่างู",
+    "VN": "Rùa rắn"
   },
   {
     "key": "龙龟",
-    "zh_CN": "龙龟",
-    "en_US": "Dragon Turtle"
+    "CHS": "龙龟",
+    "EN": "Dragon Turtle",
+    "CHT": "龍龜",
+    "JP": "竜亀",
+    "KR": "용거북",
+    "TH": "เต่ามังกร",
+    "VN": "Long quy"
   },
   {
     "key": "玄龟",
-    "zh_CN": "玄龟",
-    "en_US": "Mystic Turtle"
+    "CHS": "玄龟",
+    "EN": "Mystic Turtle",
+    "CHT": "玄龜",
+    "JP": "玄亀",
+    "KR": "현거북",
+    "TH": "เต่าดำ",
+    "VN": "Huyền quy"
   },
   {
     "key": "玄武",
-    "zh_CN": "玄武",
-    "en_US": "Black Tortoise"
+    "CHS": "玄武",
+    "EN": "Black Tortoise",
+    "CHT": "玄武",
+    "JP": "玄武",
+    "KR": "현무",
+    "TH": "เต่าสวรรค์",
+    "VN": "Huyền vũ"
   },
   {
     "key": "山羊",
-    "zh_CN": "山羊",
-    "en_US": "Mountain Goat"
+    "CHS": "山羊",
+    "EN": "Mountain Goat",
+    "CHT": "山羊",
+    "JP": "山羊",
+    "KR": "산양",
+    "TH": "แพะ",
+    "VN": "Dê núi"
   },
   {
     "key": "白鹿",
-    "zh_CN": "白鹿",
-    "en_US": "White Deer"
+    "CHS": "白鹿",
+    "EN": "White Deer",
+    "CHT": "白鹿",
+    "JP": "白鹿",
+    "KR": "백록",
+    "TH": "กวางขาว",
+    "VN": "Hươu trắng"
   },
   {
     "key": "葱聋",
-    "zh_CN": "葱聋",
-    "en_US": "Conglong"
+    "CHS": "葱聋",
+    "EN": "Conglong",
+    "CHT": "蔥聾",
+    "JP": "葱聾",
+    "KR": "총롱",
+    "TH": "หอมใหญ่",
+    "VN": "Tỏi điếc"
   },
   {
     "key": "五色鹿",
-    "zh_CN": "五色鹿",
-    "en_US": "Five-Colored Deer"
+    "CHS": "五色鹿",
+    "EN": "Five-Colored Deer",
+    "CHT": "五色鹿",
+    "JP": "五色鹿",
+    "KR": "오색록",
+    "TH": "กวางห้าสี",
+    "VN": "Hươu năm màu"
   },
   {
     "key": "四不像",
-    "zh_CN": "四不像",
-    "en_US": "Four-Unlike"
+    "CHS": "四不像",
+    "EN": "Four-Unlike",
+    "CHT": "四不像",
+    "JP": "四不像",
+    "KR": "사불상",
+    "TH": "สี่ไม่เหมือน",
+    "VN": "Tứ bất tượng"
   },
   {
     "key": "白泽",
-    "zh_CN": "白泽",
-    "en_US": "Baize"
+    "CHS": "白泽",
+    "EN": "Baize",
+    "CHT": "白澤",
+    "JP": "白沢",
+    "KR": "백택",
+    "TH": "ไป๋เจ๋อ",
+    "VN": "Bạch trạch"
   },
   {
     "key": "獬豸",
-    "zh_CN": "獬豸",
-    "en_US": "Xiezhi"
+    "CHS": "獬豸",
+    "EN": "Xiezhi",
+    "CHT": "獬豸",
+    "JP": "獬豸",
+    "KR": "해치",
+    "TH": "เซี่ยจื้อ",
+    "VN": "Giải trãi"
   },
   {
     "key": "麒麟",
-    "zh_CN": "麒麟",
-    "en_US": "Qilin"
+    "CHS": "麒麟",
+    "EN": "Qilin",
+    "CHT": "麒麟",
+    "JP": "麒麟",
+    "KR": "기린",
+    "TH": "กิเลน",
+    "VN": "Kỳ lân"
   },
   {
     "key": "大象",
-    "zh_CN": "大象",
-    "en_US": "Elephant"
+    "CHS": "大象",
+    "EN": "Elephant",
+    "CHT": "大象",
+    "JP": "象",
+    "KR": "코끼리",
+    "TH": "ช้าง",
+    "VN": "Voi"
   },
   {
     "key": "白象",
-    "zh_CN": "白象",
-    "en_US": "White Elephant"
+    "CHS": "白象",
+    "EN": "White Elephant",
+    "CHT": "白象",
+    "JP": "白象",
+    "KR": "백상",
+    "TH": "ช้างขาว",
+    "VN": "Voi trắng"
   },
   {
     "key": "野马",
-    "zh_CN": "野马",
-    "en_US": "Wild Horse"
+    "CHS": "野马",
+    "EN": "Wild Horse",
+    "CHT": "野馬",
+    "JP": "野馬",
+    "KR": "야마",
+    "TH": "ม้าป่า",
+    "VN": "Ngựa hoang"
   },
   {
     "key": "白马",
-    "zh_CN": "白马",
-    "en_US": "White Horse"
+    "CHS": "白马",
+    "EN": "White Horse",
+    "CHT": "白馬",
+    "JP": "白馬",
+    "KR": "백마",
+    "TH": "ม้าขาว",
+    "VN": "Ngựa trắng"
   },
   {
     "key": "千里马",
-    "zh_CN": "千里马",
-    "en_US": "Thousand-Mile Horse"
+    "CHS": "千里马",
+    "EN": "Thousand-Mile Horse",
+    "CHT": "千里馬",
+    "JP": "千里馬",
+    "KR": "천리마",
+    "TH": "ม้าพันลี้",
+    "VN": "Ngựa thiên lý"
   },
   {
     "key": "飞马",
-    "zh_CN": "飞马",
-    "en_US": "Flying Horse"
+    "CHS": "飞马",
+    "EN": "Flying Horse",
+    "CHT": "飛馬",
+    "JP": "飛馬",
+    "KR": "비마",
+    "TH": "ม้าบิน",
+    "VN": "Ngựa bay"
   },
   {
     "key": "鹿蜀",
-    "zh_CN": "鹿蜀",
-    "en_US": "Lushu"
+    "CHS": "鹿蜀",
+    "EN": "Lushu",
+    "CHT": "鹿蜀",
+    "JP": "鹿蜀",
+    "KR": "록숙",
+    "TH": "กวางม้า",
+    "VN": "Lộc thụ"
   },
   {
     "key": "龙马",
-    "zh_CN": "龙马",
-    "en_US": "Dragon Horse"
+    "CHS": "龙马",
+    "EN": "Dragon Horse",
+    "CHT": "龍馬",
+    "JP": "竜馬",
+    "KR": "용마",
+    "TH": "ม้ามังกร",
+    "VN": "Long mã"
   },
   {
     "key": "草泥马",
-    "zh_CN": "草泥马",
-    "en_US": "Alpaca"
+    "CHS": "草泥马",
+    "EN": "Alpaca",
+    "CHT": "草泥馬",
+    "JP": "草泥馬",
+    "KR": "초니마",
+    "TH": "ม้าดินหญ้า",
+    "VN": "Ngựa bùn cỏ"
   },
   {
     "key": "黄牛",
-    "zh_CN": "黄牛",
-    "en_US": "Yellow Ox"
+    "CHS": "黄牛",
+    "EN": "Yellow Ox",
+    "CHT": "黃牛",
+    "JP": "黄牛",
+    "KR": "황소",
+    "TH": "วัวเหลือง",
+    "VN": "Trâu vàng"
   },
   {
     "key": "蛮牛",
-    "zh_CN": "蛮牛",
-    "en_US": "Savage Ox"
+    "CHS": "蛮牛",
+    "EN": "Savage Ox",
+    "CHT": "蠻牛",
+    "JP": "蛮牛",
+    "KR": "만우",
+    "TH": "วัวป่า",
+    "VN": "Trâu hoang"
   },
   {
     "key": "撼地神牛",
-    "zh_CN": "撼地神牛",
-    "en_US": "Earth-Shaking Divine Ox"
+    "CHS": "撼地神牛",
+    "EN": "Earth-Shaking Divine Ox",
+    "CHT": "撼地神牛",
+    "JP": "撼地神牛",
+    "KR": "한지신우",
+    "TH": "วัวสั่นสะเทือน",
+    "VN": "Trâu rung đất"
   },
   {
     "key": "五色神牛",
-    "zh_CN": "五色神牛",
-    "en_US": "Five-Colored Divine Ox"
+    "CHS": "五色神牛",
+    "EN": "Five-Colored Divine Ox",
+    "CHT": "五色神牛",
+    "JP": "五色神牛",
+    "KR": "오색신우",
+    "TH": "วัวห้าสี",
+    "VN": "Trâu năm màu"
   },
   {
     "key": "夔牛",
-    "zh_CN": "夔牛",
-    "en_US": "Kui Ox"
+    "CHS": "夔牛",
+    "EN": "Kui Ox",
+    "CHT": "夔牛",
+    "JP": "夔牛",
+    "KR": "규우",
+    "TH": "วัวกุย",
+    "VN": "Quỳ ngưu"
   },
   {
     "key": "青牛",
-    "zh_CN": "青牛",
-    "en_US": "Azure Ox"
+    "CHS": "青牛",
+    "EN": "Azure Ox",
+    "CHT": "青牛",
+    "JP": "青牛",
+    "KR": "청우",
+    "TH": "วัวเขียว",
+    "VN": "Thanh ngưu"
   },
   {
     "key": "貔貅",
-    "zh_CN": "貔貅",
-    "en_US": "Pixiu"
+    "CHS": "貔貅",
+    "EN": "Pixiu",
+    "CHT": "貔貅",
+    "JP": "貔貅",
+    "KR": "비휴",
+    "TH": "ปี่เซี่ย",
+    "VN": "Tỳ hưu"
   },
   {
     "key": "混沌",
-    "zh_CN": "混沌",
-    "en_US": "Chaos"
+    "CHS": "混沌",
+    "EN": "Chaos",
+    "CHT": "混沌",
+    "JP": "混沌",
+    "KR": "혼돈",
+    "TH": "ความโกลาหล",
+    "VN": "Hỗn độn"
   },
   {
     "key": "梼杌",
-    "zh_CN": "梼杌",
-    "en_US": "Taowu"
+    "CHS": "梼杌",
+    "EN": "Taowu",
+    "CHT": "梼杌",
+    "JP": "梼杌",
+    "KR": "도옥",
+    "TH": "เทาโว่",
+    "VN": "Đào ngột"
   },
   {
     "key": "饕餮",
-    "zh_CN": "饕餮",
-    "en_US": "Taotie"
+    "CHS": "饕餮",
+    "EN": "Taotie",
+    "CHT": "饕餮",
+    "JP": "饕餮",
+    "KR": "도철",
+    "TH": "เทาเที่ย",
+    "VN": "Thao thiết"
   },
   {
     "key": "金丝猴",
-    "zh_CN": "金丝猴",
-    "en_US": "Golden Snub-Nosed Monkey"
+    "CHS": "金丝猴",
+    "EN": "Golden Snub-Nosed Monkey",
+    "CHT": "金絲猴",
+    "JP": "金絲猴",
+    "KR": "금사원",
+    "TH": "ลิงทอง",
+    "VN": "Khỉ vàng"
   },
   {
     "key": "猕猴",
-    "zh_CN": "猕猴",
-    "en_US": "Macaque"
+    "CHS": "猕猴",
+    "EN": "Macaque",
+    "CHT": "獼猴",
+    "JP": "猕猴",
+    "KR": "비후",
+    "TH": "ลิง",
+    "VN": "Khỉ"
   },
   {
     "key": "山魈",
-    "zh_CN": "山魈",
-    "en_US": "Mandrill"
+    "CHS": "山魈",
+    "EN": "Mandrill",
+    "CHT": "山魈",
+    "JP": "山魈",
+    "KR": "산효",
+    "TH": "ผีเสื้อลิง",
+    "VN": "Yêu tinh khỉ"
   },
   {
     "key": "通臂猿",
-    "zh_CN": "通臂猿",
-    "en_US": "Gibbon"
+    "CHS": "通臂猿",
+    "EN": "Gibbon",
+    "CHT": "通臂猿",
+    "JP": "通臂猿",
+    "KR": "통비원",
+    "TH": "ลิงแขนยาว",
+    "VN": "Vượn tay dài"
   },
   {
     "key": "狌狌",
-    "zh_CN": "狌狌",
-    "en_US": "Xingxing"
+    "CHS": "狌狌",
+    "EN": "Xingxing",
+    "CHT": "狌狌",
+    "JP": "狌狌",
+    "KR": "형형",
+    "TH": "ซิงซิง",
+    "VN": "Tinh tinh"
   },
   {
     "key": "朱厌",
-    "zh_CN": "朱厌",
-    "en_US": "Zhuyan"
+    "CHS": "朱厌",
+    "EN": "Zhuyan",
+    "CHT": "朱厭",
+    "JP": "朱厭",
+    "KR": "주염",
+    "TH": "จูเยียน",
+    "VN": "Chu yếm"
   },
   {
     "key": "通臂猿猴",
-    "zh_CN": "通臂猿猴",
-    "en_US": "Arm-Through Gibbon"
+    "CHS": "通臂猿猴",
+    "EN": "Arm-Through Gibbon",
+    "CHT": "通臂猿猴",
+    "JP": "通臂猿猴",
+    "KR": "통비원후",
+    "TH": "ลิงแขนยาวใหญ่",
+    "VN": "Vượn tay dài lớn"
   },
   {
     "key": "灵明石猴",
-    "zh_CN": "灵明石猴",
-    "en_US": "Stone Monkey of Numinous Intelligence"
+    "CHS": "灵明石猴",
+    "EN": "Stone Monkey of Numinous Intelligence",
+    "CHT": "靈明石猴",
+    "JP": "霊明石猴",
+    "KR": "영명석후",
+    "TH": "ลิงหินวิญญาณ",
+    "VN": "Linh minh thạch hầu"
   },
   {
     "key": "赤尻马猴",
-    "zh_CN": "赤尻马猴",
-    "en_US": "Red-Bottomed Horse Monkey"
+    "CHS": "赤尻马猴",
+    "EN": "Red-Bottomed Horse Monkey",
+    "CHT": "赤尻馬猴",
+    "JP": "赤尻馬猴",
+    "KR": "적기마후",
+    "TH": "ลิงม้าตูดแดง",
+    "VN": "Xích khỉ mã hầu"
   },
   {
     "key": "六耳猕猴",
-    "zh_CN": "六耳猕猴",
-    "en_US": "Six-Eared Macaque"
+    "CHS": "六耳猕猴",
+    "EN": "Six-Eared Macaque",
+    "CHT": "六耳獼猴",
+    "JP": "六耳猕猴",
+    "KR": "육이미후",
+    "TH": "ลิงหกหู",
+    "VN": "Lục nhĩ di hầu"
   },
   {
     "key": "狐狸",
-    "zh_CN": "狐狸",
-    "en_US": "Fox"
+    "CHS": "狐狸",
+    "EN": "Fox",
+    "CHT": "狐狸",
+    "JP": "狐",
+    "KR": "여우",
+    "TH": "สุนัขจิ้งจอก",
+    "VN": "Cáo"
   },
   {
     "key": "白狐",
-    "zh_CN": "白狐",
-    "en_US": "White Fox"
+    "CHS": "白狐",
+    "EN": "White Fox",
+    "CHT": "白狐",
+    "JP": "白狐",
+    "KR": "백호",
+    "TH": "จิ้งจอกขาว",
+    "VN": "Cáo trắng"
   },
   {
     "key": "妖狐",
-    "zh_CN": "妖狐",
-    "en_US": "Demon Fox"
+    "CHS": "妖狐",
+    "EN": "Demon Fox",
+    "CHT": "妖狐",
+    "JP": "妖狐",
+    "KR": "요호",
+    "TH": "จิ้งจอก妖",
+    "VN": "Yêu hồ"
   },
   {
     "key": "三尾妖狐",
-    "zh_CN": "三尾妖狐",
-    "en_US": "Three-Tailed Demon Fox"
+    "CHS": "三尾妖狐",
+    "EN": "Three-Tailed Demon Fox",
+    "CHT": "三尾妖狐",
+    "JP": "三尾妖狐",
+    "KR": "삼미요호",
+    "TH": "จิ้งจอกสามหาง",
+    "VN": "Tam vĩ yêu hồ"
   },
   {
     "key": "六尾妖狐",
-    "zh_CN": "六尾妖狐",
-    "en_US": "Six-Tailed Demon Fox"
+    "CHS": "六尾妖狐",
+    "EN": "Six-Tailed Demon Fox",
+    "CHT": "六尾妖狐",
+    "JP": "六尾妖狐",
+    "KR": "육미요호",
+    "TH": "จิ้งจอกหกหาง",
+    "VN": "Lục vĩ yêu hồ"
   },
   {
     "key": "九尾妖狐",
-    "zh_CN": "九尾妖狐",
-    "en_US": "Nine-Tailed Demon Fox"
+    "CHS": "九尾妖狐",
+    "EN": "Nine-Tailed Demon Fox",
+    "CHT": "九尾妖狐",
+    "JP": "九尾妖狐",
+    "KR": "구미요호",
+    "TH": "จิ้งจอกเก้าหาง",
+    "VN": "Cửu vĩ yêu hồ"
   },
   {
     "key": "鲸鱼",
-    "zh_CN": "鲸鱼",
-    "en_US": "Whale"
+    "CHS": "鲸鱼",
+    "EN": "Whale",
+    "CHT": "鯨魚",
+    "JP": "鯨",
+    "KR": "고래",
+    "TH": "วาฬ",
+    "VN": "Cá voi"
   },
   {
     "key": "瀚海巨鲸",
-    "zh_CN": "瀚海巨鲸",
-    "en_US": "Vast Sea Giant Whale"
+    "CHS": "瀚海巨鲸",
+    "EN": "Vast Sea Giant Whale",
+    "CHT": "瀚海巨鯨",
+    "JP": "瀚海巨鯨",
+    "KR": "한해거고래",
+    "TH": "วาฬยักษ์มหาสมุทร",
+    "VN": "Cá voi khổng lồ"
   },
   {
     "key": "兔",
-    "zh_CN": "兔",
-    "en_US": "Rabbit"
+    "CHS": "兔",
+    "EN": "Rabbit",
+    "CHT": "兔",
+    "JP": "兎",
+    "KR": "토끼",
+    "TH": "กระต่าย",
+    "VN": "Thỏ"
   },
   {
     "key": "讹兽",
-    "zh_CN": "讹兽",
-    "en_US": "E Beast"
+    "CHS": "讹兽",
+    "EN": "E Beast",
+    "CHT": "訛獸",
+    "JP": "訛獣",
+    "KR": "아수",
+    "TH": "สัตว์ร้ายหลอก",
+    "VN": "Quái thú lừa"
   },
   {
     "key": "犼",
-    "zh_CN": "犼",
-    "en_US": "Hou"
+    "CHS": "犼",
+    "EN": "Hou",
+    "CHT": "犼",
+    "JP": "犼",
+    "KR": "후",
+    "TH": "โหว",
+    "VN": "Hẩu"
   },
   {
     "key": "犰狳",
-    "zh_CN": "犰狳",
-    "en_US": "Armadillo"
+    "CHS": "犰狳",
+    "EN": "Armadillo",
+    "CHT": "犰狳",
+    "JP": "犰狳",
+    "KR": "천산갑",
+    "TH": "ตัวนิ่ม",
+    "VN": "Tê tê"
   },
   {
     "key": "金毛犼",
-    "zh_CN": "金毛犼",
-    "en_US": "Golden-Haired Hou"
+    "CHS": "金毛犼",
+    "EN": "Golden-Haired Hou",
+    "CHT": "金毛犼",
+    "JP": "金毛犼",
+    "KR": "금모후",
+    "TH": "โหวทอง",
+    "VN": "Kim mao hẩu"
   },
   {
     "key": "玉兔",
-    "zh_CN": "玉兔",
-    "en_US": "Jade Rabbit"
+    "CHS": "玉兔",
+    "EN": "Jade Rabbit",
+    "CHT": "玉兔",
+    "JP": "玉兎",
+    "KR": "옥토",
+    "TH": "กระต่ายหยก",
+    "VN": "Thỏ ngọc"
   },
   {
     "key": "野狗",
-    "zh_CN": "野狗",
-    "en_US": "Wild Dog"
+    "CHS": "野狗",
+    "EN": "Wild Dog",
+    "CHT": "野狗",
+    "JP": "野犬",
+    "KR": "야견",
+    "TH": "สุนัขป่า",
+    "VN": "Chó hoang"
   },
   {
     "key": "野狼",
-    "zh_CN": "野狼",
-    "en_US": "Wild Wolf"
+    "CHS": "野狼",
+    "EN": "Wild Wolf",
+    "CHT": "野狼",
+    "JP": "野狼",
+    "KR": "야랑",
+    "TH": "หมาป่า",
+    "VN": "Sói hoang"
   },
   {
     "key": "狼王",
-    "zh_CN": "狼王",
-    "en_US": "Wolf King"
+    "CHS": "狼王",
+    "EN": "Wolf King",
+    "CHT": "狼王",
+    "JP": "狼王",
+    "KR": "랑왕",
+    "TH": "ราชาหมาป่า",
+    "VN": "Vua sói"
   },
   {
     "key": "哮月狼",
-    "zh_CN": "哮月狼",
-    "en_US": "Moon-Howling Wolf"
+    "CHS": "哮月狼",
+    "EN": "Moon-Howling Wolf",
+    "CHT": "哮月狼",
+    "JP": "哮月狼",
+    "KR": "효월랑",
+    "TH": "หมาป่าหอนจันทร์",
+    "VN": "Sói tru trăng"
   },
   {
     "key": "银月狼王",
-    "zh_CN": "银月狼王",
-    "en_US": "Silver Moon Wolf King"
+    "CHS": "银月狼王",
+    "EN": "Silver Moon Wolf King",
+    "CHT": "銀月狼王",
+    "JP": "銀月狼王",
+    "KR": "은월랑왕",
+    "TH": "ราชาหมาป่าจันทร์เงิน",
+    "VN": "Vua sói trăng bạc"
   },
   {
     "key": "哮天犬",
-    "zh_CN": "哮天犬",
-    "en_US": "Howling Celestial Dog"
+    "CHS": "哮天犬",
+    "EN": "Howling Celestial Dog",
+    "CHT": "哮天犬",
+    "JP": "哮天犬",
+    "KR": "효천견",
+    "TH": "สุนัขคำรามฟ้า",
+    "VN": "Hiệu thiên khuyển"
   },
   {
     "key": "谛听",
-    "zh_CN": "谛听",
-    "en_US": "Di Ting"
+    "CHS": "谛听",
+    "EN": "Di Ting",
+    "CHT": "諦聽",
+    "JP": "諦聴",
+    "KR": "제청",
+    "TH": "สัตว์ฟังรู้",
+    "VN": "Đế thính"
   },
   {
     "key": "食日天狗",
-    "zh_CN": "食日天狗",
-    "en_US": "Sun-Eating Tengu"
+    "CHS": "食日天狗",
+    "EN": "Sun-Eating Tengu",
+    "CHT": "食日天狗",
+    "JP": "食日天狗",
+    "KR": "식일천구",
+    "TH": "สุนัขกินดวงอาทิตย์",
+    "VN": "Chó ăn mặt trời"
   },
   {
     "key": "家猪",
-    "zh_CN": "家猪",
-    "en_US": "Domestic Pig"
+    "CHS": "家猪",
+    "EN": "Domestic Pig",
+    "CHT": "家豬",
+    "JP": "家豚",
+    "KR": "가돈",
+    "TH": "หมูบ้าน",
+    "VN": "Lợn nhà"
   },
   {
     "key": "野猪",
-    "zh_CN": "野猪",
-    "en_US": "Wild Boar"
+    "CHS": "野猪",
+    "EN": "Wild Boar",
+    "CHT": "野豬",
+    "JP": "野豚",
+    "KR": "야돈",
+    "TH": "หมูป่า",
+    "VN": "Lợn rừng"
   },
   {
     "key": "狸力",
-    "zh_CN": "狸力",
-    "en_US": "Li Li"
+    "CHS": "狸力",
+    "EN": "Li Li",
+    "CHT": "狸力",
+    "JP": "狸力",
+    "KR": "여력",
+    "TH": "ลิหลี่",
+    "VN": "Ly lực"
   },
   {
     "key": "当康",
-    "zh_CN": "当康",
-    "en_US": "Dangkang"
+    "CHS": "当康",
+    "EN": "Dangkang",
+    "CHT": "當康",
+    "JP": "当康",
+    "KR": "당강",
+    "TH": "ตังกัง",
+    "VN": "Đương khang"
   },
   {
     "key": "凡人",
-    "zh_CN": "凡人",
-    "en_US": "Mortal"
+    "CHS": "凡人",
+    "EN": "Mortal",
+    "CHT": "凡人",
+    "JP": "凡人",
+    "KR": "범인",
+    "TH": "มนุษย์ธรรมดา",
+    "VN": "Người thường"
   },
   {
     "key": "武人",
-    "zh_CN": "武人",
-    "en_US": "Martial Artist"
+    "CHS": "武人",
+    "EN": "Martial Artist",
+    "CHT": "武人",
+    "JP": "武人",
+    "KR": "무인",
+    "TH": "นักรบ",
+    "VN": "Võ nhân"
   },
   {
     "key": "修士",
-    "zh_CN": "修士",
-    "en_US": "Cultivator"
+    "CHS": "修士",
+    "EN": "Cultivator",
+    "CHT": "修士",
+    "JP": "修士",
+    "KR": "수사",
+    "TH": "นักบวช",
+    "VN": "Tu sĩ"
   },
   {
     "key": "真人",
-    "zh_CN": "真人",
-    "en_US": "True Person"
+    "CHS": "真人",
+    "EN": "True Person",
+    "CHT": "真人",
+    "JP": "真人",
+    "KR": "진인",
+    "TH": "มนุษย์แท้",
+    "VN": "Chân nhân"
   },
   {
     "key": "地仙",
-    "zh_CN": "地仙",
-    "en_US": "Earth Immortal"
+    "CHS": "地仙",
+    "EN": "Earth Immortal",
+    "CHT": "地仙",
+    "JP": "地仙",
+    "KR": "지선",
+    "TH": "เซียนดิน",
+    "VN": "Địa tiên"
   },
   {
     "key": "真仙",
-    "zh_CN": "真仙",
-    "en_US": "True Immortal"
+    "CHS": "真仙",
+    "EN": "True Immortal",
+    "CHT": "真仙",
+    "JP": "真仙",
+    "KR": "진선",
+    "TH": "เซียนแท้",
+    "VN": "Chân tiên"
   },
   {
     "key": "金仙",
-    "zh_CN": "金仙",
-    "en_US": "Golden Immortal"
+    "CHS": "金仙",
+    "EN": "Golden Immortal",
+    "CHT": "金仙",
+    "JP": "金仙",
+    "KR": "금선",
+    "TH": "เซียนทอง",
+    "VN": "Kim tiên"
   },
   {
     "key": "大罗金仙",
-    "zh_CN": "大罗金仙",
-    "en_US": "Great Luo Golden Immortal"
+    "CHS": "大罗金仙",
+    "EN": "Great Luo Golden Immortal",
+    "CHT": "大羅金仙",
+    "JP": "大羅金仙",
+    "KR": "대라금선",
+    "TH": "เซียนใหญ่",
+    "VN": "Đại la kim tiên"
   },
   {
     "key": "狮子",
-    "zh_CN": "狮子",
-    "en_US": "Lion"
+    "CHS": "狮子",
+    "EN": "Lion",
+    "CHT": "獅子",
+    "JP": "獅子",
+    "KR": "사자",
+    "TH": "สิงโต",
+    "VN": "Sư tử"
   },
   {
     "key": "避水金睛兽",
-    "zh_CN": "避水金睛兽",
-    "en_US": "Water-Avoiding Golden-Eyed Beast"
+    "CHS": "避水金睛兽",
+    "EN": "Water-Avoiding Golden-Eyed Beast",
+    "CHT": "避水金睛獸",
+    "JP": "避水金睛獣",
+    "KR": "피수금정수",
+    "TH": "สัตว์ทองตาน้ำ",
+    "VN": "Thú kim tinh tránh nước"
   },
   {
     "key": "青狮",
-    "zh_CN": "青狮",
-    "en_US": "Azure Lion"
+    "CHS": "青狮",
+    "EN": "Azure Lion",
+    "CHT": "青獅",
+    "JP": "青獅",
+    "KR": "청사",
+    "TH": "สิงโตเขียว",
+    "VN": "Thanh sư"
   },
   {
     "key": "雪狮",
-    "zh_CN": "雪狮",
-    "en_US": "Snow Lion"
+    "CHS": "雪狮",
+    "EN": "Snow Lion",
+    "CHT": "雪獅",
+    "JP": "雪獅",
+    "KR": "설사",
+    "TH": "สิงโตหิมะ",
+    "VN": "Sư tử tuyết"
   },
   {
     "key": "九头狮子",
-    "zh_CN": "九头狮子",
-    "en_US": "Nine-Headed Lion"
+    "CHS": "九头狮子",
+    "EN": "Nine-Headed Lion",
+    "CHT": "九頭獅子",
+    "JP": "九頭獅子",
+    "KR": "구두사자",
+    "TH": "สิงโตเก้าหัว",
+    "VN": "Sư tử chín đầu"
   },
   {
     "key": "猫",
-    "zh_CN": "猫",
-    "en_US": "Cat"
+    "CHS": "猫",
+    "EN": "Cat",
+    "CHT": "貓",
+    "JP": "猫",
+    "KR": "고양이",
+    "TH": "แมว",
+    "VN": "Mèo"
   },
   {
     "key": "黑猫",
-    "zh_CN": "黑猫",
-    "en_US": "Black Cat"
+    "CHS": "黑猫",
+    "EN": "Black Cat",
+    "CHT": "黑貓",
+    "JP": "黒猫",
+    "KR": "흑묘",
+    "TH": "แมวดำ",
+    "VN": "Mèo đen"
   },
   {
     "key": "招财猫",
-    "zh_CN": "招财猫",
-    "en_US": "Fortune Cat"
+    "CHS": "招财猫",
+    "EN": "Fortune Cat",
+    "CHT": "招財貓",
+    "JP": "招財猫",
+    "KR": "초재묘",
+    "TH": "แมวเรียกทรัพย์",
+    "VN": "Mèo chiêu tài"
   },
   {
     "key": "九命猫",
-    "zh_CN": "九命猫",
-    "en_US": "Nine-Lived Cat"
+    "CHS": "九命猫",
+    "EN": "Nine-Lived Cat",
+    "CHT": "九命貓",
+    "JP": "九命猫",
+    "KR": "구명묘",
+    "TH": "แมวเก้าชีวิต",
+    "VN": "Mèo chín mạng"
   },
   {
     "key": "河蟹",
-    "zh_CN": "河蟹",
-    "en_US": "River Crab"
+    "CHS": "河蟹",
+    "EN": "River Crab",
+    "CHT": "河蟹",
+    "JP": "河蟹",
+    "KR": "하협",
+    "TH": "ปูแม่น้ำ",
+    "VN": "Cua sông"
   },
   {
     "key": "熊",
-    "zh_CN": "熊",
-    "en_US": "Bear"
+    "CHS": "熊",
+    "EN": "Bear",
+    "CHT": "熊",
+    "JP": "熊",
+    "KR": "웅",
+    "TH": "หมี",
+    "VN": "Gấu"
   },
   {
     "key": "黑熊",
-    "zh_CN": "黑熊",
-    "en_US": "Black Bear"
+    "CHS": "黑熊",
+    "EN": "Black Bear",
+    "CHT": "黑熊",
+    "JP": "黒熊",
+    "KR": "흑웅",
+    "TH": "หมีดำ",
+    "VN": "Gấu đen"
   },
   {
     "key": "熊猫",
-    "zh_CN": "熊猫",
-    "en_US": "Panda"
+    "CHS": "熊猫",
+    "EN": "Panda",
+    "CHT": "熊貓",
+    "JP": "熊猫",
+    "KR": "판다",
+    "TH": "แพนด้า",
+    "VN": "Gấu trúc"
   },
   {
     "key": "鲤鱼",
-    "zh_CN": "鲤鱼",
-    "en_US": "Carp"
+    "CHS": "鲤鱼",
+    "EN": "Carp",
+    "CHT": "鯉魚",
+    "JP": "鯉",
+    "KR": "잉어",
+    "TH": "ปลาคาร์ป",
+    "VN": "Cá chép"
   },
   {
     "key": "锦鲤",
-    "zh_CN": "锦鲤",
-    "en_US": "Koi"
+    "CHS": "锦鲤",
+    "EN": "Koi",
+    "CHT": "錦鯉",
+    "JP": "錦鯉",
+    "KR": "금리",
+    "TH": "ปลาคาร์ปทอง",
+    "VN": "Cá chép vàng"
   },
   {
     "key": "金龙鱼",
-    "zh_CN": "金龙鱼",
-    "en_US": "Golden Dragon Fish"
+    "CHS": "金龙鱼",
+    "EN": "Golden Dragon Fish",
+    "CHT": "金龍魚",
+    "JP": "金竜魚",
+    "KR": "금룡어",
+    "TH": "ปลามังกรทอง",
+    "VN": "Cá rồng vàng"
   },
   {
     "key": "鱼龙",
-    "zh_CN": "鱼龙",
-    "en_US": "Fish Dragon"
+    "CHS": "鱼龙",
+    "EN": "Fish Dragon",
+    "CHT": "魚龍",
+    "JP": "魚竜",
+    "KR": "어룡",
+    "TH": "ปลามังกร",
+    "VN": "Ngư long"
   },
   {
     "key": "鲲",
-    "zh_CN": "鲲",
-    "en_US": "Kun"
+    "CHS": "鲲",
+    "EN": "Kun",
+    "CHT": "鯤",
+    "JP": "鯤",
+    "KR": "곤",
+    "TH": "กุน",
+    "VN": "Côn"
   },
   {
     "key": "鲲鹏",
-    "zh_CN": "鲲鹏",
-    "en_US": "Kunpeng"
+    "CHS": "鲲鹏",
+    "EN": "Kunpeng",
+    "CHT": "鯤鵬",
+    "JP": "鯤鵬",
+    "KR": "곤붕",
+    "TH": "กุนเผิง",
+    "VN": "Côn bằng"
   },
   {
     "key": "鳄鱼",
-    "zh_CN": "鳄鱼",
-    "en_US": "Crocodile"
+    "CHS": "鳄鱼",
+    "EN": "Crocodile",
+    "CHT": "鱷魚",
+    "JP": "鱷",
+    "KR": "악어",
+    "TH": "จระเข้",
+    "VN": "Cá sấu"
   },
   {
     "key": "猪婆龙",
-    "zh_CN": "猪婆龙",
-    "en_US": "Pig Dragon"
+    "CHS": "猪婆龙",
+    "EN": "Pig Dragon",
+    "CHT": "豬婆龍",
+    "JP": "豚婆竜",
+    "KR": "저포룡",
+    "TH": "มังกรหมู",
+    "VN": "Trư bà long"
   },
   {
     "key": "老鼠",
-    "zh_CN": "老鼠",
-    "en_US": "Rat"
+    "CHS": "老鼠",
+    "EN": "Rat",
+    "CHT": "老鼠",
+    "JP": "鼠",
+    "KR": "쥐",
+    "TH": "หนู",
+    "VN": "Chuột"
   },
   {
     "key": "寻宝鼠",
-    "zh_CN": "寻宝鼠",
-    "en_US": "Treasure-Seeking Rat"
+    "CHS": "寻宝鼠",
+    "EN": "Treasure-Seeking Rat",
+    "CHT": "尋寶鼠",
+    "JP": "尋宝鼠",
+    "KR": "심보루",
+    "TH": "หนูค้นสมบัติ",
+    "VN": "Chuột tìm kho báu"
   },
   {
     "key": "锦毛鼠",
-    "zh_CN": "锦毛鼠",
-    "en_US": "Brocade Rat"
+    "CHS": "锦毛鼠",
+    "EN": "Brocade Rat",
+    "CHT": "錦毛鼠",
+    "JP": "錦毛鼠",
+    "KR": "금모루",
+    "TH": "หนูขนทอง",
+    "VN": "Chuột lông vàng"
   },
   {
     "key": "平头哥",
-    "zh_CN": "平头哥",
-    "en_US": "Honey Badger"
+    "CHS": "平头哥",
+    "EN": "Honey Badger",
+    "CHT": "平頭哥",
+    "JP": "平頭哥",
+    "KR": "평두형",
+    "TH": "พี่หัวแบน",
+    "VN": "Anh đầu phẳng"
   },
   {
     "key": "牛魔王",
-    "zh_CN": "牛魔王",
-    "en_US": "Bull Demon King"
+    "CHS": "牛魔王",
+    "EN": "Bull Demon King",
+    "CHT": "牛魔王",
+    "JP": "牛魔王",
+    "KR": "우마왕",
+    "TH": "ราชาวัว",
+    "VN": "Ngưu ma vương"
   },
   {
     "key": "妲己",
-    "zh_CN": "妲己",
-    "en_US": "Daji"
+    "CHS": "妲己",
+    "EN": "Daji",
+    "CHT": "妲己",
+    "JP": "妲己",
+    "KR": "달기",
+    "TH": "นางต๋าจี่",
+    "VN": "Đát Kỷ"
   },
   {
     "key": "哪吒",
-    "zh_CN": "哪吒",
-    "en_US": "Nezha"
+    "CHS": "哪吒",
+    "EN": "Nezha",
+    "CHT": "哪吒",
+    "JP": "哪吒",
+    "KR": "나타",
+    "TH": "นาจา",
+    "VN": "Na Tra"
   },
   {
     "key": "杨戬",
-    "zh_CN": "杨戬",
-    "en_US": "Yang Jian"
+    "CHS": "杨戬",
+    "EN": "Yang Jian",
+    "CHT": "楊戩",
+    "JP": "楊戩",
+    "KR": "양전",
+    "TH": "หยางเจียน",
+    "VN": "Dương Tiễn"
   },
   {
     "key": "孙悟空",
-    "zh_CN": "孙悟空",
-    "en_US": "Sun Wukong"
+    "CHS": "孙悟空",
+    "EN": "Sun Wukong",
+    "CHT": "孫悟空",
+    "JP": "孫悟空",
+    "KR": "손오공",
+    "TH": "ซุนหงอคง",
+    "VN": "Tôn Ngộ Không"
   },
   {
     "key": "通关第5层",
-    "zh_CN": "通关第5层",
-    "en_US": "Clear Level 5"
+    "CHS": "通关第5层",
+    "EN": "Clear Level 5",
+    "CHT": "通關第5層",
+    "JP": "5層クリア",
+    "KR": "5층 통과",
+    "TH": "ผ่านชั้นที่ 5",
+    "VN": "Thông qua tầng 5"
   },
   {
     "key": "通关第10层",
-    "zh_CN": "通关第10层",
-    "en_US": "Clear Level 10"
+    "CHS": "通关第10层",
+    "EN": "Clear Level 10",
+    "CHT": "通關第10層",
+    "JP": "10層クリア",
+    "KR": "10층 통과",
+    "TH": "ผ่านชั้นที่ 10",
+    "VN": "Thông qua tầng 10"
   },
   {
     "key": "通关第15层",
-    "zh_CN": "通关第15层",
-    "en_US": "Clear Level 15"
+    "CHS": "通关第15层",
+    "EN": "Clear Level 15",
+    "CHT": "通關第15層",
+    "JP": "15層クリア",
+    "KR": "15층 통과",
+    "TH": "ผ่านชั้นที่ 15",
+    "VN": "Thông qua tầng 15"
   },
   {
     "key": "通关第20层",
-    "zh_CN": "通关第20层",
-    "en_US": "Clear Level 20"
+    "CHS": "通关第20层",
+    "EN": "Clear Level 20",
+    "CHT": "通關第20層",
+    "JP": "20層クリア",
+    "KR": "20층 통과",
+    "TH": "ผ่านชั้นที่ 20",
+    "VN": "Thông qua tầng 20"
   },
   {
     "key": "通关第25层",
-    "zh_CN": "通关第25层",
-    "en_US": "Clear Level 25"
+    "CHS": "通关第25层",
+    "EN": "Clear Level 25",
+    "CHT": "通關第25層",
+    "JP": "25層クリア",
+    "KR": "25층 통과",
+    "TH": "ผ่านชั้นที่ 25",
+    "VN": "Thông qua tầng 25"
   },
   {
     "key": "通关第30层",
-    "zh_CN": "通关第30层",
-    "en_US": "Clear Level 30"
+    "CHS": "通关第30层",
+    "EN": "Clear Level 30",
+    "CHT": "通關第30層",
+    "JP": "30層クリア",
+    "KR": "30층 통과",
+    "TH": "ผ่านชั้นที่ 30",
+    "VN": "Thông qua tầng 30"
   },
   {
     "key": "通关第35层",
-    "zh_CN": "通关第35层",
-    "en_US": "Clear Level 35"
+    "CHS": "通关第35层",
+    "EN": "Clear Level 35",
+    "CHT": "通關第35層",
+    "JP": "35層クリア",
+    "KR": "35층 통과",
+    "TH": "ผ่านชั้นที่ 35",
+    "VN": "Thông qua tầng 35"
   },
   {
     "key": "通关第40层",
-    "zh_CN": "通关第40层",
-    "en_US": "Clear Level 40"
+    "CHS": "通关第40层",
+    "EN": "Clear Level 40",
+    "CHT": "通關第40層",
+    "JP": "40層クリア",
+    "KR": "40층 통과",
+    "TH": "ผ่านชั้นที่ 40",
+    "VN": "Thông qua tầng 40"
   },
   {
     "key": "通关第45层",
-    "zh_CN": "通关第45层",
-    "en_US": "Clear Level 45"
+    "CHS": "通关第45层",
+    "EN": "Clear Level 45",
+    "CHT": "通關第45層",
+    "JP": "45層クリア",
+    "KR": "45층 통과",
+    "TH": "ผ่านชั้นที่ 45",
+    "VN": "Thông qua tầng 45"
   },
   {
     "key": "通关第50层",
-    "zh_CN": "通关第50层",
-    "en_US": "Clear Level 50"
+    "CHS": "通关第50层",
+    "EN": "Clear Level 50",
+    "CHT": "通關第50層",
+    "JP": "50層クリア",
+    "KR": "50층 통과",
+    "TH": "ผ่านชั้นที่ 50",
+    "VN": "Thông qua tầng 50"
   },
   {
     "key": "通关第55层",
-    "zh_CN": "通关第55层",
-    "en_US": "Clear Level 55"
+    "CHS": "通关第55层",
+    "EN": "Clear Level 55",
+    "CHT": "通關第55層",
+    "JP": "55層クリア",
+    "KR": "55층 통과",
+    "TH": "ผ่านชั้นที่ 55",
+    "VN": "Thông qua tầng 55"
   },
   {
     "key": "通关第60层",
-    "zh_CN": "通关第60层",
-    "en_US": "Clear Level 60"
+    "CHS": "通关第60层",
+    "EN": "Clear Level 60",
+    "CHT": "通關第60層",
+    "JP": "60層クリア",
+    "KR": "60층 통과",
+    "TH": "ผ่านชั้นที่ 60",
+    "VN": "Thông qua tầng 60"
   },
   {
     "key": "通关第65层",
-    "zh_CN": "通关第65层",
-    "en_US": "Clear Level 65"
+    "CHS": "通关第65层",
+    "EN": "Clear Level 65",
+    "CHT": "通關第65層",
+    "JP": "65層クリア",
+    "KR": "65층 통과",
+    "TH": "ผ่านชั้นที่ 65",
+    "VN": "Thông qua tầng 65"
   },
   {
     "key": "通关第70层",
-    "zh_CN": "通关第70层",
-    "en_US": "Clear Level 70"
+    "CHS": "通关第70层",
+    "EN": "Clear Level 70",
+    "CHT": "通關第70層",
+    "JP": "70層クリア",
+    "KR": "70층 통과",
+    "TH": "ผ่านชั้นที่ 70",
+    "VN": "Thông qua tầng 70"
   },
   {
     "key": "通关第75层",
-    "zh_CN": "通关第75层",
-    "en_US": "Clear Level 75"
+    "CHS": "通关第75层",
+    "EN": "Clear Level 75",
+    "CHT": "通關第75層",
+    "JP": "75層クリア",
+    "KR": "75층 통과",
+    "TH": "ผ่านชั้นที่ 75",
+    "VN": "Thông qua tầng 75"
   },
   {
     "key": "通关第80层",
-    "zh_CN": "通关第80层",
-    "en_US": "Clear Level 80"
+    "CHS": "通关第80层",
+    "EN": "Clear Level 80",
+    "CHT": "通關第80層",
+    "JP": "80層クリア",
+    "KR": "80층 통과",
+    "TH": "ผ่านชั้นที่ 80",
+    "VN": "Thông qua tầng 80"
   },
   {
     "key": "通关第85层",
-    "zh_CN": "通关第85层",
-    "en_US": "Clear Level 85"
+    "CHS": "通关第85层",
+    "EN": "Clear Level 85",
+    "CHT": "通關第85層",
+    "JP": "85層クリア",
+    "KR": "85층 통과",
+    "TH": "ผ่านชั้นที่ 85",
+    "VN": "Thông qua tầng 85"
   },
   {
     "key": "通关第90层",
-    "zh_CN": "通关第90层",
-    "en_US": "Clear Level 90"
+    "CHS": "通关第90层",
+    "EN": "Clear Level 90",
+    "CHT": "通關第90層",
+    "JP": "90層クリア",
+    "KR": "90층 통과",
+    "TH": "ผ่านชั้นที่ 90",
+    "VN": "Thông qua tầng 90"
   },
   {
     "key": "通关第95层",
-    "zh_CN": "通关第95层",
-    "en_US": "Clear Level 95"
+    "CHS": "通关第95层",
+    "EN": "Clear Level 95",
+    "CHT": "通關第95層",
+    "JP": "95層クリア",
+    "KR": "95층 통과",
+    "TH": "ผ่านชั้นที่ 95",
+    "VN": "Thông qua tầng 95"
   },
   {
     "key": "通关第100层",
-    "zh_CN": "通关第100层",
-    "en_US": "Clear Level 100"
+    "CHS": "通关第100层",
+    "EN": "Clear Level 100",
+    "CHT": "通關第100層",
+    "JP": "100層クリア",
+    "KR": "100층 통과",
+    "TH": "ผ่านชั้นที่ 100",
+    "VN": "Thông qua tầng 100"
   },
   {
     "key": "击杀凡兽鲤鱼20次",
-    "zh_CN": "击杀凡兽鲤鱼20次",
-    "en_US": "Kill Mortal Beast Carp 20 Times"
+    "CHS": "击杀凡兽鲤鱼20次",
+    "EN": "Kill Mortal Beast Carp 20 Times",
+    "CHT": "擊殺凡獸鯉魚20次",
+    "JP": "凡獣鯉を20回撃破",
+    "KR": "범수 잉어 20회 격파",
+    "TH": "กำจัดสัตว์ธรรมดาปลาคาร์ป 20 ครั้ง",
+    "VN": "Tiêu diệt thú thường Cá chép 20 lần"
   },
   {
     "key": "击杀凡兽野猪20次",
-    "zh_CN": "击杀凡兽野猪20次",
-    "en_US": "Kill Mortal Beast Wild Boar 20 Times"
+    "CHS": "击杀凡兽野猪20次",
+    "EN": "Kill Mortal Beast Wild Boar 20 Times",
+    "CHT": "擊殺凡獸野豬20次",
+    "JP": "凡獣野豚を20回撃破",
+    "KR": "범수 야돈 20회 격파",
+    "TH": "กำจัดสัตว์ธรรมดาหมูป่า 20 ครั้ง",
+    "VN": "Tiêu diệt thú thường Lợn rừng 20 lần"
   },
   {
     "key": "击杀凡兽鲸鱼20次",
-    "zh_CN": "击杀凡兽鲸鱼20次",
-    "en_US": "Kill Mortal Beast Whale 20 Times"
+    "CHS": "击杀凡兽鲸鱼20次",
+    "EN": "Kill Mortal Beast Whale 20 Times",
+    "CHT": "擊殺凡獸鯨魚20次",
+    "JP": "凡獣鯨を20回撃破",
+    "KR": "범수 고래 20회 격파",
+    "TH": "กำจัดสัตว์ธรรมดาวาฬ 20 ครั้ง",
+    "VN": "Tiêu diệt thú thường Cá voi 20 lần"
   },
   {
     "key": "击杀灵兽白蛇10次",
-    "zh_CN": "击杀灵兽白蛇10次",
-    "en_US": "Kill Spirit Beast White Snake 10 Times"
+    "CHS": "击杀灵兽白蛇10次",
+    "EN": "Kill Spirit Beast White Snake 10 Times",
+    "CHT": "擊殺靈獸白蛇10次",
+    "JP": "霊獣白蛇を10回撃破",
+    "KR": "영수 백사 10회 격파",
+    "TH": "กำจัดสัตว์วิญญาณงูขาว 10 ครั้ง",
+    "VN": "Tiêu diệt thú linh Rắn trắng 10 lần"
   },
   {
     "key": "击杀灵兽吊睛白虎10次",
-    "zh_CN": "击杀灵兽吊睛白虎10次",
-    "en_US": "Kill Spirit Beast White-Eyed Tiger 10 Times"
+    "CHS": "击杀灵兽吊睛白虎10次",
+    "EN": "Kill Spirit Beast White-Eyed Tiger 10 Times",
+    "CHT": "擊殺靈獸弔睛白虎10次",
+    "JP": "霊獣吊睛白虎を10回撃破",
+    "KR": "영수 조경백호 10회 격파",
+    "TH": "กำจัดสัตว์วิญญาณเสือขาวตาแขวน 10 ครั้ง",
+    "VN": "Tiêu diệt thú linh Hổ trắng mắt treo 10 lần"
   },
   {
     "key": "击杀灵兽九尾妖狐10次",
-    "zh_CN": "击杀灵兽九尾妖狐10次",
-    "en_US": "Kill Spirit Beast Nine-Tailed Demon Fox 10 Times"
+    "CHS": "击杀灵兽九尾妖狐10次",
+    "EN": "Kill Spirit Beast Nine-Tailed Demon Fox 10 Times",
+    "CHT": "擊殺靈獸九尾妖狐10次",
+    "JP": "霊獣九尾妖狐を10回撃破",
+    "KR": "영수 구미요호 10회 격파",
+    "TH": "กำจัดสัตว์วิญญาณจิ้งจอกเก้าหาง 10 ครั้ง",
+    "VN": "Tiêu diệt thú linh Cửu vĩ yêu hồ 10 lần"
   },
   {
     "key": "击杀仙兽锦毛鼠5次",
-    "zh_CN": "击杀仙兽锦毛鼠5次",
-    "en_US": "Kill Immortal Beast Brocade Rat 5 Times"
+    "CHS": "击杀仙兽锦毛鼠5次",
+    "EN": "Kill Immortal Beast Brocade Rat 5 Times",
+    "CHT": "擊殺仙獸錦毛鼠5次",
+    "JP": "仙獣錦毛鼠を5回撃破",
+    "KR": "선수 금모루 5회 격파",
+    "TH": "กำจัดสัตว์เซียนหนูขนทอง 5 ครั้ง",
+    "VN": "Tiêu diệt thú tiên Chuột lông vàng 5 lần"
   },
   {
     "key": "击杀仙兽哮天犬5次",
-    "zh_CN": "击杀仙兽哮天犬5次",
-    "en_US": "Kill Immortal Beast Howling Celestial Dog 5 Times"
+    "CHS": "击杀仙兽哮天犬5次",
+    "EN": "Kill Immortal Beast Howling Celestial Dog 5 Times",
+    "CHT": "擊殺仙獸哮天犬5次",
+    "JP": "仙獣哮天犬を5回撃破",
+    "KR": "선수 효천견 5회 격파",
+    "TH": "กำจัดสัตว์เซียนสุนัขคำรามฟ้า 5 ครั้ง",
+    "VN": "Tiêu diệt thú tiên Hiệu thiên khuyển 5 lần"
   },
   {
     "key": "击杀仙兽灵明石猴5次",
-    "zh_CN": "击杀仙兽灵明石猴5次",
-    "en_US": "Kill Immortal Beast Stone Monkey of Numinous Intelligence 5 Times"
+    "CHS": "击杀仙兽灵明石猴5次",
+    "EN": "Kill Immortal Beast Stone Monkey of Numinous Intelligence 5 Times",
+    "CHT": "擊殺仙獸靈明石猴5次",
+    "JP": "仙獣霊明石猴を5回撃破",
+    "KR": "선수 영명석후 5회 격파",
+    "TH": "กำจัดสัตว์เซียนลิงหินวิญญาณ 5 ครั้ง",
+    "VN": "Tiêu diệt thú tiên Linh minh thạch hầu 5 lần"
   },
   {
     "key": "击杀神兽河蟹2次",
-    "zh_CN": "击杀神兽河蟹2次",
-    "en_US": "Kill Divine Beast River Crab 2 Times"
+    "CHS": "击杀神兽河蟹2次",
+    "EN": "Kill Divine Beast River Crab 2 Times",
+    "CHT": "擊殺神獸河蟹2次",
+    "JP": "神獣河蟹を2回撃破",
+    "KR": "신수 하협 2회 격파",
+    "TH": "กำจัดสัตว์เทวะปูแม่น้ำ 2 ครั้ง",
+    "VN": "Tiêu diệt thú thần Cua sông 2 lần"
   },
   {
     "key": "击杀神兽平头哥2次",
-    "zh_CN": "击杀神兽平头哥2次",
-    "en_US": "Kill Divine Beast Honey Badger 2 Times"
+    "CHS": "击杀神兽平头哥2次",
+    "EN": "Kill Divine Beast Honey Badger 2 Times",
+    "CHT": "擊殺神獸平頭哥2次",
+    "JP": "神獣平頭哥を2回撃破",
+    "KR": "신수 평두형 2회 격파",
+    "TH": "กำจัดสัตว์เทวะพี่หัวแบน 2 ครั้ง",
+    "VN": "Tiêu diệt thú thần Anh đầu phẳng 2 lần"
   },
   {
     "key": "击杀神兽五色鹿2次",
-    "zh_CN": "击杀神兽五色鹿2次",
-    "en_US": "Kill Divine Beast Five-Colored Deer 2 Times"
+    "CHS": "击杀神兽五色鹿2次",
+    "EN": "Kill Divine Beast Five-Colored Deer 2 Times",
+    "CHT": "擊殺神獸五色鹿2次",
+    "JP": "神獣五色鹿を2回撃破",
+    "KR": "신수 오색록 2회 격파",
+    "TH": "กำจัดสัตว์เทวะกวางห้าสี 2 ครั้ง",
+    "VN": "Tiêu diệt thú thần Hươu năm màu 2 lần"
   },
   {
     "key": "击杀神兽青龙1次",
-    "zh_CN": "击杀神兽青龙1次",
-    "en_US": "Kill Divine Beast Azure Dragon 1 Time"
+    "CHS": "击杀神兽青龙1次",
+    "EN": "Kill Divine Beast Azure Dragon 1 Time",
+    "CHT": "擊殺神獸青龍1次",
+    "JP": "神獣青竜を1回撃破",
+    "KR": "신수 청룡 1회 격파",
+    "TH": "กำจัดสัตว์เทวะมังกรเขียว 1 ครั้ง",
+    "VN": "Tiêu diệt thú thần Thanh long 1 lần"
   },
   {
     "key": "击杀神兽白虎1次",
-    "zh_CN": "击杀神兽白虎1次",
-    "en_US": "Kill Divine Beast White Tiger 1 Time"
+    "CHS": "击杀神兽白虎1次",
+    "EN": "Kill Divine Beast White Tiger 1 Time",
+    "CHT": "擊殺神獸白虎1次",
+    "JP": "神獣白虎を1回撃破",
+    "KR": "신수 백호 1회 격파",
+    "TH": "กำจัดสัตว์เทวะเสือขาว 1 ครั้ง",
+    "VN": "Tiêu diệt thú thần Bạch hổ 1 lần"
   },
   {
     "key": "击杀神兽朱雀1次",
-    "zh_CN": "击杀神兽朱雀1次",
-    "en_US": "Kill Divine Beast Vermilion Bird 1 Time"
+    "CHS": "击杀神兽朱雀1次",
+    "EN": "Kill Divine Beast Vermilion Bird 1 Time",
+    "CHT": "擊殺神獸朱雀1次",
+    "JP": "神獣朱雀を1回撃破",
+    "KR": "신수 주작 1회 격파",
+    "TH": "กำจัดสัตว์เทวะนกแดง 1 ครั้ง",
+    "VN": "Tiêu diệt thú thần Chu tước 1 lần"
   },
   {
     "key": "击杀神兽玄武1次",
-    "zh_CN": "击杀神兽玄武1次",
-    "en_US": "Kill Divine Beast Black Tortoise 1 Time"
+    "CHS": "击杀神兽玄武1次",
+    "EN": "Kill Divine Beast Black Tortoise 1 Time",
+    "CHT": "擊殺神獸玄武1次",
+    "JP": "神獣玄武を1回撃破",
+    "KR": "신수 현무 1회 격파",
+    "TH": "กำจัดสัตว์เทวะเต่าสวรรค์ 1 ครั้ง",
+    "VN": "Tiêu diệt thú thần Huyền vũ 1 lần"
   },
   {
     "key": "击杀神兽麒麟1次",
-    "zh_CN": "击杀神兽麒麟1次",
-    "en_US": "Kill Divine Beast Qilin 1 Time"
+    "CHS": "击杀神兽麒麟1次",
+    "EN": "Kill Divine Beast Qilin 1 Time",
+    "CHT": "擊殺神獸麒麟1次",
+    "JP": "神獣麒麟を1回撃破",
+    "KR": "신수 기린 1회 격파",
+    "TH": "กำจัดสัตว์เทวะกิเลน 1 ครั้ง",
+    "VN": "Tiêu diệt thú thần Kỳ lân 1 lần"
   },
   {
     "key": "转生5次",
-    "zh_CN": "转生5次",
-    "en_US": "Reincarnate 5 Times"
+    "CHS": "转生5次",
+    "EN": "Reincarnate 5 Times",
+    "CHT": "轉生5次",
+    "JP": "転生5回",
+    "KR": "전생 5회",
+    "TH": "เกิดใหม่ 5 ครั้ง",
+    "VN": "Tái sinh 5 lần"
   },
   {
     "key": "转生10次",
-    "zh_CN": "转生10次",
-    "en_US": "Reincarnate 10 Times"
+    "CHS": "转生10次",
+    "EN": "Reincarnate 10 Times",
+    "CHT": "轉生10次",
+    "JP": "転生10回",
+    "KR": "전생 10회",
+    "TH": "เกิดใหม่ 10 ครั้ง",
+    "VN": "Tái sinh 10 lần"
   },
   {
     "key": "转生20次",
-    "zh_CN": "转生20次",
-    "en_US": "Reincarnate 20 Times"
+    "CHS": "转生20次",
+    "EN": "Reincarnate 20 Times",
+    "CHT": "轉生20次",
+    "JP": "転生20回",
+    "KR": "전생 20회",
+    "TH": "เกิดใหม่ 20 ครั้ง",
+    "VN": "Tái sinh 20 lần"
   },
   {
     "key": "击杀牛魔王1次",
-    "zh_CN": "击杀牛魔王1次",
-    "en_US": "Kill Bull Demon King 1 Time"
+    "CHS": "击杀牛魔王1次",
+    "EN": "Kill Bull Demon King 1 Time",
+    "CHT": "擊殺牛魔王1次",
+    "JP": "牛魔王を1回撃破",
+    "KR": "우마왕 1회 격파",
+    "TH": "กำจัดราชาวัว 1 ครั้ง",
+    "VN": "Tiêu diệt Ngưu ma vương 1 lần"
   },
   {
     "key": "击杀妲己1次",
-    "zh_CN": "击杀妲己1次",
-    "en_US": "Kill Daji 1 Time"
+    "CHS": "击杀妲己1次",
+    "EN": "Kill Daji 1 Time",
+    "CHT": "擊殺妲己1次",
+    "JP": "妲己を1回撃破",
+    "KR": "달기 1회 격파",
+    "TH": "กำจัดนางต๋าจี่ 1 ครั้ง",
+    "VN": "Tiêu diệt Đát Kỷ 1 lần"
   },
   {
     "key": "击杀哪吒1次",
-    "zh_CN": "击杀哪吒1次",
-    "en_US": "Kill Nezha 1 Time"
+    "CHS": "击杀哪吒1次",
+    "EN": "Kill Nezha 1 Time",
+    "CHT": "擊殺哪吒1次",
+    "JP": "哪吒を1回撃破",
+    "KR": "나타 1회 격파",
+    "TH": "กำจัดนาจา 1 ครั้ง",
+    "VN": "Tiêu diệt Na Tra 1 lần"
   },
   {
     "key": "击杀杨戬1次",
-    "zh_CN": "击杀杨戬1次",
-    "en_US": "Kill Yang Jian 1 Time"
+    "CHS": "击杀杨戬1次",
+    "EN": "Kill Yang Jian 1 Time",
+    "CHT": "擊殺楊戩1次",
+    "JP": "楊戩を1回撃破",
+    "KR": "양전 1회 격파",
+    "TH": "กำจัดหยางเจียน 1 ครั้ง",
+    "VN": "Tiêu diệt Dương Tiễn 1 lần"
   },
   {
     "key": "击杀孙悟空1次",
-    "zh_CN": "击杀孙悟空1次",
-    "en_US": "Kill Sun Wukong 1 Time"
+    "CHS": "击杀孙悟空1次",
+    "EN": "Kill Sun Wukong 1 Time",
+    "CHT": "擊殺孫悟空1次",
+    "JP": "孫悟空を1回撃破",
+    "KR": "손오공 1회 격파",
+    "TH": "กำจัดซุนหงอคง 1 ครั้ง",
+    "VN": "Tiêu diệt Tôn Ngộ Không 1 lần"
   },
   {
     "key": "奖励:随机图鉴解锁",
-    "zh_CN": "奖励:随机图鉴解锁",
-    "en_US": "Reward: Random Bestiary Unlock"
+    "CHS": "奖励:随机图鉴解锁",
+    "EN": "Reward: Random Bestiary Unlock",
+    "CHT": "獎勵:隨機圖鑑解鎖",
+    "JP": "報酬:ランダム図鑑解放",
+    "KR": "보상: 랜덤 도감 해제",
+    "TH": "รางวัล: ปลดล็อกสมุดภาพสุ่ม",
+    "VN": "Phần thưởng: Mở khóa ngẫu nhiên danh mục"
   },
   {
     "key": "奖励:最大等级+10",
-    "zh_CN": "奖励:最大等级+10",
-    "en_US": "Reward: Max Level +10"
+    "CHS": "奖励:最大等级+10",
+    "EN": "Reward: Max Level +10",
+    "CHT": "獎勵:最大等級+10",
+    "JP": "報酬:最大レベル+10",
+    "KR": "보상: 최대 레벨 +10",
+    "TH": "รางวัล: ระดับสูงสุด +10",
+    "VN": "Phần thưởng: Cấp tối đa +10"
   },
   {
     "key": "奖励:可获得技能数+1",
-    "zh_CN": "奖励:可获得技能数+1",
-    "en_US": "Reward: Obtainable Skills +1"
+    "CHS": "奖励:可获得技能数+1",
+    "EN": "Reward: Obtainable Skills +1",
+    "CHT": "獎勵:可獲得技能數+1",
+    "JP": "報酬:取得可能スキル数+1",
+    "KR": "보상: 획득 가능 스킬 수 +1",
+    "TH": "รางวัล: จำนวนสกิลที่ได้ +1",
+    "VN": "Phần thưởng: Số kỹ năng có thể nhận +1"
   },
   {
     "key": "奖励:boss可以拟态",
-    "zh_CN": "奖励:boss可以拟态",
-    "en_US": "Reward: Boss Can Mimic"
+    "CHS": "奖励:boss可以拟态",
+    "EN": "Reward: Boss Can Mimic",
+    "CHT": "獎勵:boss可以擬態",
+    "JP": "報酬:ボスが擬態可能",
+    "KR": "보상: 보스가 모방 가능",
+    "TH": "รางวัล: บอสสามารถแปลงร่างได้",
+    "VN": "Phần thưởng: Boss có thể biến hình"
   },
   {
     "key": "吞噬",
-    "zh_CN": "吞噬",
-    "en_US": "Devour"
+    "CHS": "吞噬",
+    "EN": "Devour",
+    "CHT": "吞噬",
+    "JP": "吞噬",
+    "KR": "포식",
+    "TH": "กลืนกิน",
+    "VN": "Nuốt chửng"
   },
   {
     "key": "蛇噬",
-    "zh_CN": "蛇噬",
-    "en_US": "Snake Bite"
+    "CHS": "蛇噬",
+    "EN": "Snake Bite",
+    "CHT": "蛇噬",
+    "JP": "蛇噬",
+    "KR": "사식",
+    "TH": "งูกัด",
+    "VN": "Rắn cắn"
   },
   {
     "key": "缠绕",
-    "zh_CN": "缠绕",
-    "en_US": "Coil"
+    "CHS": "缠绕",
+    "EN": "Coil",
+    "CHT": "纏繞",
+    "JP": "缠繞",
+    "KR": "감기",
+    "TH": "พันรัด",
+    "VN": "Quấn chặt"
   },
   {
     "key": "龙脉",
-    "zh_CN": "龙脉",
-    "en_US": "Dragon Vein"
+    "CHS": "龙脉",
+    "EN": "Dragon Vein",
+    "CHT": "龍脈",
+    "JP": "竜脈",
+    "KR": "용맥",
+    "TH": "สายเลือดมังกร",
+    "VN": "Mạch rồng"
   },
   {
     "key": "龙息",
-    "zh_CN": "龙息",
-    "en_US": "Dragon Breath"
+    "CHS": "龙息",
+    "EN": "Dragon Breath",
+    "CHT": "龍息",
+    "JP": "竜息",
+    "KR": "용식",
+    "TH": "ลมหายใจมังกร",
+    "VN": "Hơi thở rồng"
   },
   {
     "key": "真龙血脉",
-    "zh_CN": "真龙血脉",
-    "en_US": "True Dragon Bloodline"
+    "CHS": "真龙血脉",
+    "EN": "True Dragon Bloodline",
+    "CHT": "真龍血脈",
+    "JP": "真竜血脈",
+    "KR": "진룡혈맥",
+    "TH": "สายเลือดมังกรแท้",
+    "VN": "Dòng máu chân long"
   },
   {
     "key": "龙威",
-    "zh_CN": "龙威",
-    "en_US": "Dragon Might"
+    "CHS": "龙威",
+    "EN": "Dragon Might",
+    "CHT": "龍威",
+    "JP": "竜威",
+    "KR": "용위",
+    "TH": "อำนาจมังกร",
+    "VN": "Uy rồng"
   },
   {
     "key": "阴阳",
-    "zh_CN": "阴阳",
-    "en_US": "Yin-Yang"
+    "CHS": "阴阳",
+    "EN": "Yin-Yang",
+    "CHT": "陰陽",
+    "JP": "陰陽",
+    "KR": "음양",
+    "TH": "หยินหยาง",
+    "VN": "Âm dương"
   },
   {
     "key": "飞行",
-    "zh_CN": "飞行",
-    "en_US": "Flight"
+    "CHS": "飞行",
+    "EN": "Flight",
+    "CHT": "飛行",
+    "JP": "飛行",
+    "KR": "비행",
+    "TH": "บิน",
+    "VN": "Bay"
   },
   {
     "key": "喙击",
-    "zh_CN": "喙击",
-    "en_US": "Beak Strike"
+    "CHS": "喙击",
+    "EN": "Beak Strike",
+    "CHT": "喙擊",
+    "JP": "喙撃",
+    "KR": "쪼기",
+    "TH": "จิก",
+    "VN": "Mổ"
   },
   {
     "key": "暴怒",
-    "zh_CN": "暴怒",
-    "en_US": "Fury"
+    "CHS": "暴怒",
+    "EN": "Fury",
+    "CHT": "暴怒",
+    "JP": "暴怒",
+    "KR": "폭노",
+    "TH": "โกรธเกรี้ยว",
+    "VN": "Giận dữ"
   },
   {
     "key": "锐利目光",
-    "zh_CN": "锐利目光",
-    "en_US": "Sharp Gaze"
+    "CHS": "锐利目光",
+    "EN": "Sharp Gaze",
+    "CHT": "銳利目光",
+    "JP": "鋭利目光",
+    "KR": "예리한 시선",
+    "TH": "สายตาเฉียบคม",
+    "VN": "Ánh mắt sắc bén"
   },
   {
     "key": "孔雀开屏",
-    "zh_CN": "孔雀开屏",
-    "en_US": "Peacock Display"
+    "CHS": "孔雀开屏",
+    "EN": "Peacock Display",
+    "CHT": "孔雀開屏",
+    "JP": "孔雀開屏",
+    "KR": "공작개병",
+    "TH": "นกยูงกางหาง",
+    "VN": "Công xòe đuôi"
   },
   {
     "key": "五色神光",
-    "zh_CN": "五色神光",
-    "en_US": "Five-Colored Divine Light"
+    "CHS": "五色神光",
+    "EN": "Five-Colored Divine Light",
+    "CHT": "五色神光",
+    "JP": "五色神光",
+    "KR": "오색신광",
+    "TH": "แสงห้าสี",
+    "VN": "Ánh sáng năm màu"
   },
   {
     "key": "扶摇直上",
-    "zh_CN": "扶摇直上",
-    "en_US": "Soar Upward"
+    "CHS": "扶摇直上",
+    "EN": "Soar Upward",
+    "CHT": "扶搖直上",
+    "JP": "扶搖直上",
+    "KR": "부요직상",
+    "TH": "พุ่งทะยาน",
+    "VN": "Bay vút lên"
   },
   {
     "key": "灾厄",
-    "zh_CN": "灾厄",
-    "en_US": "Calamity"
+    "CHS": "灾厄",
+    "EN": "Calamity",
+    "CHT": "災厄",
+    "JP": "災厄",
+    "KR": "재액",
+    "TH": "ภัยพิบัติ",
+    "VN": "Tai họa"
   },
   {
     "key": "高飞",
-    "zh_CN": "高飞",
-    "en_US": "High Flight"
+    "CHS": "高飞",
+    "EN": "High Flight",
+    "CHT": "高飛",
+    "JP": "高飛",
+    "KR": "고비",
+    "TH": "บินสูง",
+    "VN": "Bay cao"
   },
   {
     "key": "涅槃",
-    "zh_CN": "涅槃",
-    "en_US": "Nirvana"
+    "CHS": "涅槃",
+    "EN": "Nirvana",
+    "CHT": "涅槃",
+    "JP": "涅槃",
+    "KR": "열반",
+    "TH": "นิพพาน",
+    "VN": "Niết bàn"
   },
   {
     "key": "光芒",
-    "zh_CN": "光芒",
-    "en_US": "Radiance"
+    "CHS": "光芒",
+    "EN": "Radiance",
+    "CHT": "光芒",
+    "JP": "光芒",
+    "KR": "광망",
+    "TH": "แสงสว่าง",
+    "VN": "Ánh sáng"
   },
   {
     "key": "神火",
-    "zh_CN": "神火",
-    "en_US": "Divine Fire"
+    "CHS": "神火",
+    "EN": "Divine Fire",
+    "CHT": "神火",
+    "JP": "神火",
+    "KR": "신화",
+    "TH": "ไฟเทวะ",
+    "VN": "Lửa thần"
   },
   {
     "key": "撕咬",
-    "zh_CN": "撕咬",
-    "en_US": "Rend"
+    "CHS": "撕咬",
+    "EN": "Rend",
+    "CHT": "撕咬",
+    "JP": "撕咬",
+    "KR": "찢기",
+    "TH": "ฉีกขาด",
+    "VN": "Xé toạc"
   },
   {
     "key": "威严",
-    "zh_CN": "威严",
-    "en_US": "Majesty"
+    "CHS": "威严",
+    "EN": "Majesty",
+    "CHT": "威嚴",
+    "JP": "威厳",
+    "KR": "위엄",
+    "TH": "สง่างาม",
+    "VN": "Oai nghiêm"
   },
   {
     "key": "利爪",
-    "zh_CN": "利爪",
-    "en_US": "Sharp Claws"
+    "CHS": "利爪",
+    "EN": "Sharp Claws",
+    "CHT": "利爪",
+    "JP": "利爪",
+    "KR": "예리한 발톱",
+    "TH": "กรงเล็บคม",
+    "VN": "Móng vuốt sắc"
   },
   {
     "key": "金风",
-    "zh_CN": "金风",
-    "en_US": "Golden Wind"
+    "CHS": "金风",
+    "EN": "Golden Wind",
+    "CHT": "金風",
+    "JP": "金風",
+    "KR": "금풍",
+    "TH": "ลมทอง",
+    "VN": "Gió vàng"
   },
   {
     "key": "硬壳",
-    "zh_CN": "硬壳",
-    "en_US": "Hard Shell"
+    "CHS": "硬壳",
+    "EN": "Hard Shell",
+    "CHT": "硬殼",
+    "JP": "硬殻",
+    "KR": "경갑",
+    "TH": "เปลือกแข็ง",
+    "VN": "Vỏ cứng"
   },
   {
     "key": "坚甲",
-    "zh_CN": "坚甲",
-    "en_US": "Sturdy Armor"
+    "CHS": "坚甲",
+    "EN": "Sturdy Armor",
+    "CHT": "堅甲",
+    "JP": "堅甲",
+    "KR": "견갑",
+    "TH": "เกราะแข็ง",
+    "VN": "Giáp cứng"
   },
   {
     "key": "龟咬",
-    "zh_CN": "龟咬",
-    "en_US": "Turtle Bite"
+    "CHS": "龟咬",
+    "EN": "Turtle Bite",
+    "CHT": "龜咬",
+    "JP": "亀咬",
+    "KR": "귀교",
+    "TH": "เต่ากัด",
+    "VN": "Rùa cắn"
   },
   {
     "key": "龟蛇合击",
-    "zh_CN": "龟蛇合击",
-    "en_US": "Turtle-Snake Combined Strike"
+    "CHS": "龟蛇合击",
+    "EN": "Turtle-Snake Combined Strike",
+    "CHT": "龜蛇合擊",
+    "JP": "亀蛇合撃",
+    "KR": "귀사합격",
+    "TH": "เต่างูโจมตีร่วม",
+    "VN": "Rùa rắn hợp kích"
   },
   {
     "key": "尖甲",
-    "zh_CN": "尖甲",
-    "en_US": "Spiked Armor"
+    "CHS": "尖甲",
+    "EN": "Spiked Armor",
+    "CHT": "尖甲",
+    "JP": "尖甲",
+    "KR": "첨갑",
+    "TH": "เกราะแหลม",
+    "VN": "Giáp nhọn"
   },
   {
     "key": "龟寿",
-    "zh_CN": "龟寿",
-    "en_US": "Turtle Longevity"
+    "CHS": "龟寿",
+    "EN": "Turtle Longevity",
+    "CHT": "龜壽",
+    "JP": "亀寿",
+    "KR": "귀수",
+    "TH": "อายุยืนเต่า",
+    "VN": "Thọ rùa"
   },
   {
     "key": "撞击",
-    "zh_CN": "撞击",
-    "en_US": "Collision"
+    "CHS": "撞击",
+    "EN": "Collision",
+    "CHT": "撞擊",
+    "JP": "撞撃",
+    "KR": "충격",
+    "TH": "ชน",
+    "VN": "Va chạm"
   },
   {
     "key": "仙灵",
-    "zh_CN": "仙灵",
-    "en_US": "Immortal Spirit"
+    "CHS": "仙灵",
+    "EN": "Immortal Spirit",
+    "CHT": "仙靈",
+    "JP": "仙霊",
+    "KR": "선령",
+    "TH": "วิญญาณเซียน",
+    "VN": "Linh hồn tiên"
   },
   {
     "key": "祥瑞",
-    "zh_CN": "祥瑞",
-    "en_US": "Auspiciousness"
+    "CHS": "祥瑞",
+    "EN": "Auspiciousness",
+    "CHT": "祥瑞",
+    "JP": "祥瑞",
+    "KR": "상서",
+    "TH": "มงคล",
+    "VN": "Cát tường"
   },
   {
     "key": "通晓",
-    "zh_CN": "通晓",
-    "en_US": "Omniscience"
+    "CHS": "通晓",
+    "EN": "Omniscience",
+    "CHT": "通曉",
+    "JP": "通曉",
+    "KR": "통효",
+    "TH": "รู้แจ้ง",
+    "VN": "Thông hiểu"
   },
   {
     "key": "辨别",
-    "zh_CN": "辨别",
-    "en_US": "Discernment"
+    "CHS": "辨别",
+    "EN": "Discernment",
+    "CHT": "辨別",
+    "JP": "辨別",
+    "KR": "분별",
+    "TH": "แยกแยะ",
+    "VN": "Phân biệt"
   },
   {
     "key": "震慑",
-    "zh_CN": "震慑",
-    "en_US": "Intimidation"
+    "CHS": "震慑",
+    "EN": "Intimidation",
+    "CHT": "震懾",
+    "JP": "震懾",
+    "KR": "진섭",
+    "TH": "ข่มขวัญ",
+    "VN": "Chấn nhiếp"
   },
   {
     "key": "庇佑",
-    "zh_CN": "庇佑",
-    "en_US": "Blessing"
+    "CHS": "庇佑",
+    "EN": "Blessing",
+    "CHT": "庇佑",
+    "JP": "庇護",
+    "KR": "비호",
+    "TH": "ปกป้อง",
+    "VN": "Che chở"
   },
   {
     "key": "践踏",
-    "zh_CN": "践踏",
-    "en_US": "Trample"
+    "CHS": "践踏",
+    "EN": "Trample",
+    "CHT": "踐踏",
+    "JP": "践踏",
+    "KR": "짓밟기",
+    "TH": "เหยียบย่ำ",
+    "VN": "Giẫm đạp"
   },
   {
     "key": "后踹",
-    "zh_CN": "后踹",
-    "en_US": "Rear Kick"
+    "CHS": "后踹",
+    "EN": "Rear Kick",
+    "CHT": "後踹",
+    "JP": "後蹴",
+    "KR": "후축",
+    "TH": "เตะหลัง",
+    "VN": "Đá hậu"
   },
   {
     "key": "奔马",
-    "zh_CN": "奔马",
-    "en_US": "Galloping Horse"
+    "CHS": "奔马",
+    "EN": "Galloping Horse",
+    "CHT": "奔馬",
+    "JP": "奔馬",
+    "KR": "분마",
+    "TH": "ม้าวิ่ง",
+    "VN": "Ngựa phi"
   },
   {
     "key": "口水",
-    "zh_CN": "口水",
-    "en_US": "Drool"
+    "CHS": "口水",
+    "EN": "Drool",
+    "CHT": "口水",
+    "JP": "唾液",
+    "KR": "침",
+    "TH": "น้ำลาย",
+    "VN": "Nước bọt"
   },
   {
     "key": "蔑视",
-    "zh_CN": "蔑视",
-    "en_US": "Disdain"
+    "CHS": "蔑视",
+    "EN": "Disdain",
+    "CHT": "蔑視",
+    "JP": "軽蔑",
+    "KR": "멸시",
+    "TH": "ดูถูก",
+    "VN": "Khinh bỉ"
   },
   {
     "key": "冲撞",
-    "zh_CN": "冲撞",
-    "en_US": "Charge"
+    "CHS": "冲撞",
+    "EN": "Charge",
+    "CHT": "沖撞",
+    "JP": "衝撞",
+    "KR": "충돌",
+    "TH": "พุ่งชน",
+    "VN": "Đâm"
   },
   {
     "key": "硬皮",
-    "zh_CN": "硬皮",
-    "en_US": "Tough Hide"
+    "CHS": "硬皮",
+    "EN": "Tough Hide",
+    "CHT": "硬皮",
+    "JP": "硬皮",
+    "KR": "경피",
+    "TH": "ผิวแข็ง",
+    "VN": "Da cứng"
   },
   {
     "key": "震地",
-    "zh_CN": "震地",
-    "en_US": "Earth Shatter"
+    "CHS": "震地",
+    "EN": "Earth Shatter",
+    "CHT": "震地",
+    "JP": "震地",
+    "KR": "진지",
+    "TH": "สั่นสะเทือนพื้น",
+    "VN": "Chấn động đất"
   },
   {
     "key": "鸣叫",
-    "zh_CN": "鸣叫",
-    "en_US": "Roar"
+    "CHS": "鸣叫",
+    "EN": "Roar",
+    "CHT": "鳴叫",
+    "JP": "鳴叫",
+    "KR": "울음",
+    "TH": "ร้อง",
+    "VN": "Kêu"
   },
   {
     "key": "祥瑞化身",
-    "zh_CN": "祥瑞化身",
-    "en_US": "Auspicious Incarnation"
+    "CHS": "祥瑞化身",
+    "EN": "Auspicious Incarnation",
+    "CHT": "祥瑞化身",
+    "JP": "祥瑞化身",
+    "KR": "상서화신",
+    "TH": "ร่างมงคล",
+    "VN": "Hóa thân cát tường"
   },
   {
     "key": "凶兆",
-    "zh_CN": "凶兆",
-    "en_US": "Omen"
+    "CHS": "凶兆",
+    "EN": "Omen",
+    "CHT": "兇兆",
+    "JP": "兇兆",
+    "KR": "흉조",
+    "TH": "ลางร้าย",
+    "VN": "Điềm dữ"
   },
   {
     "key": "咆哮",
-    "zh_CN": "咆哮",
-    "en_US": "Bellow"
+    "CHS": "咆哮",
+    "EN": "Bellow",
+    "CHT": "咆哮",
+    "JP": "咆哮",
+    "KR": "포효",
+    "TH": "คำราม",
+    "VN": "Gầm rú"
   },
   {
     "key": "机敏",
-    "zh_CN": "机敏",
-    "en_US": "Agility"
+    "CHS": "机敏",
+    "EN": "Agility",
+    "CHT": "機敏",
+    "JP": "機敏",
+    "KR": "기민",
+    "TH": "ว่องไว",
+    "VN": "Nhanh nhẹn"
   },
   {
     "key": "拾取",
-    "zh_CN": "拾取",
-    "en_US": "Pick Up"
+    "CHS": "拾取",
+    "EN": "Pick Up",
+    "CHT": "拾取",
+    "JP": "拾取",
+    "KR": "줍기",
+    "TH": "เก็บของ",
+    "VN": "Nhặt vật"
   },
   {
     "key": "变化",
-    "zh_CN": "变化",
-    "en_US": "Transformation"
+    "CHS": "变化",
+    "EN": "Transformation",
+    "CHT": "變化",
+    "JP": "変化",
+    "KR": "변화",
+    "TH": "แปลงร่าง",
+    "VN": "Biến hóa"
   },
   {
     "key": "人言",
-    "zh_CN": "人言",
-    "en_US": "Human Speech"
+    "CHS": "人言",
+    "EN": "Human Speech",
+    "CHT": "人言",
+    "JP": "人言",
+    "KR": "인언",
+    "TH": "พูดได้",
+    "VN": "Nói tiếng người"
   },
   {
     "key": "大力",
-    "zh_CN": "大力",
-    "en_US": "Great Strength"
+    "CHS": "大力",
+    "EN": "Great Strength",
+    "CHT": "大力",
+    "JP": "大力",
+    "KR": "대력",
+    "TH": "พลังใหญ่",
+    "VN": "Sức mạnh lớn"
   },
   {
     "key": "巨力",
-    "zh_CN": "巨力",
-    "en_US": "Gigantic Strength"
+    "CHS": "巨力",
+    "EN": "Gigantic Strength",
+    "CHT": "巨力",
+    "JP": "巨力",
+    "KR": "거력",
+    "TH": "พลังยักษ์",
+    "VN": "Sức mạnh khổng lồ"
   },
   {
     "key": "神力",
-    "zh_CN": "神力",
-    "en_US": "Divine Strength"
+    "CHS": "神力",
+    "EN": "Divine Strength",
+    "CHT": "神力",
+    "JP": "神力",
+    "KR": "신력",
+    "TH": "พลังเทวะ",
+    "VN": "Sức mạnh thần thánh"
   },
   {
     "key": "迷惑",
-    "zh_CN": "迷惑",
-    "en_US": "Bewilder"
+    "CHS": "迷惑",
+    "EN": "Bewilder",
+    "CHT": "迷惑",
+    "JP": "迷惑",
+    "KR": "미혹",
+    "TH": "ล่อลวง",
+    "VN": "Mê hoặc"
   },
   {
     "key": "魅惑",
-    "zh_CN": "魅惑",
-    "en_US": "Charm"
+    "CHS": "魅惑",
+    "EN": "Charm",
+    "CHT": "魅惑",
+    "JP": "魅惑",
+    "KR": "매혹",
+    "TH": "เสน่ห์",
+    "VN": "Quyến rũ"
   },
   {
     "key": "生长",
-    "zh_CN": "生长",
-    "en_US": "Growth"
+    "CHS": "生长",
+    "EN": "Growth",
+    "CHT": "生長",
+    "JP": "成長",
+    "KR": "성장",
+    "TH": "เจริญเติบโต",
+    "VN": "Tăng trưởng"
   },
   {
     "key": "撼海",
-    "zh_CN": "撼海",
-    "en_US": "Sea Shaker"
+    "CHS": "撼海",
+    "EN": "Sea Shaker",
+    "CHT": "撼海",
+    "JP": "撼海",
+    "KR": "한해",
+    "TH": "สั่นสะเทือนทะเล",
+    "VN": "Chấn động biển"
   },
   {
     "key": "蹬鹰",
-    "zh_CN": "蹬鹰",
-    "en_US": "Eagle Kick"
+    "CHS": "蹬鹰",
+    "EN": "Eagle Kick",
+    "CHT": "蹬鷹",
+    "JP": "蹴鷹",
+    "KR": "등응",
+    "TH": "เตะนกอินทรี",
+    "VN": "Đá đại bàng"
   },
   {
     "key": "可爱",
-    "zh_CN": "可爱",
-    "en_US": "Cuteness"
+    "CHS": "可爱",
+    "EN": "Cuteness",
+    "CHT": "可愛",
+    "JP": "可愛",
+    "KR": "귀여움",
+    "TH": "น่ารัก",
+    "VN": "Dễ thương"
   },
   {
     "key": "装死",
-    "zh_CN": "装死",
-    "en_US": "Play Dead"
+    "CHS": "装死",
+    "EN": "Play Dead",
+    "CHT": "裝死",
+    "JP": "装死",
+    "KR": "사장",
+    "TH": "แกล้งตาย",
+    "VN": "Giả chết"
   },
   {
     "key": "搭肩",
-    "zh_CN": "搭肩",
-    "en_US": "Shoulder Tap"
+    "CHS": "搭肩",
+    "EN": "Shoulder Tap",
+    "CHT": "搭肩",
+    "JP": "搭肩",
+    "KR": "견탑",
+    "TH": "搭肩",
+    "VN": "Khoác vai"
   },
   {
     "key": "食日",
-    "zh_CN": "食日",
-    "en_US": "Sun Eater"
+    "CHS": "食日",
+    "EN": "Sun Eater",
+    "CHT": "食日",
+    "JP": "食日",
+    "KR": "식일",
+    "TH": "กินดวงอาทิตย์",
+    "VN": "Ăn mặt trời"
   },
   {
     "key": "学习",
-    "zh_CN": "学习",
-    "en_US": "Learn"
+    "CHS": "学习",
+    "EN": "Learn",
+    "CHT": "學習",
+    "JP": "学習",
+    "KR": "학습",
+    "TH": "เรียนรู้",
+    "VN": "Học hỏi"
   },
   {
     "key": "哮月",
-    "zh_CN": "哮月",
-    "en_US": "Moon Howl"
+    "CHS": "哮月",
+    "EN": "Moon Howl",
+    "CHT": "哮月",
+    "JP": "哮月",
+    "KR": "효월",
+    "TH": "หอนจันทร์",
+    "VN": "Trăng rền"
   },
   {
     "key": "哮天",
-    "zh_CN": "哮天",
-    "en_US": "Celestial Howl"
+    "CHS": "哮天",
+    "EN": "Celestial Howl",
+    "CHT": "哮天",
+    "JP": "哮天",
+    "KR": "효천",
+    "TH": "คำรามสวรรค์",
+    "VN": "Gầm trời"
   },
   {
     "key": "狮吼",
-    "zh_CN": "狮吼",
-    "en_US": "Lion Roar"
+    "CHS": "狮吼",
+    "EN": "Lion Roar",
+    "CHT": "獅吼",
+    "JP": "獅吼",
+    "KR": "사자후",
+    "TH": "สิงโตคำราม",
+    "VN": "Sư tử gầm"
   },
   {
     "key": "拍击",
-    "zh_CN": "拍击",
-    "en_US": "Slap"
+    "CHS": "拍击",
+    "EN": "Slap",
+    "CHT": "拍擊",
+    "JP": "拍撃",
+    "KR": "타격",
+    "TH": "ตบ",
+    "VN": "Đánh"
   },
   {
     "key": "不死",
-    "zh_CN": "不死",
-    "en_US": "Undying"
+    "CHS": "不死",
+    "EN": "Undying",
+    "CHT": "不死",
+    "JP": "不死",
+    "KR": "불사",
+    "TH": "อมตะ",
+    "VN": "Bất tử"
   },
   {
     "key": "九命",
-    "zh_CN": "九命",
-    "en_US": "Nine Lives"
+    "CHS": "九命",
+    "EN": "Nine Lives",
+    "CHT": "九命",
+    "JP": "九命",
+    "KR": "구명",
+    "TH": "เก้าชีวิต",
+    "VN": "Chín mạng"
   },
   {
     "key": "战意",
-    "zh_CN": "战意",
-    "en_US": "Battle Will"
+    "CHS": "战意",
+    "EN": "Battle Will",
+    "CHT": "戰意",
+    "JP": "戦意",
+    "KR": "전의",
+    "TH": "จิตต่อสู้",
+    "VN": "Ý chí chiến đấu"
   },
   {
     "key": "反击",
-    "zh_CN": "反击",
-    "en_US": "Counterattack"
+    "CHS": "反击",
+    "EN": "Counterattack",
+    "CHT": "反擊",
+    "JP": "反撃",
+    "KR": "반격",
+    "TH": "โต้กลับ",
+    "VN": "Phản công"
   },
   {
     "key": "泡泡",
-    "zh_CN": "泡泡",
-    "en_US": "Bubble"
+    "CHS": "泡泡",
+    "EN": "Bubble",
+    "CHT": "泡泡",
+    "JP": "泡泡",
+    "KR": "거품",
+    "TH": "ฟอง",
+    "VN": "Bong bóng"
   },
   {
     "key": "空",
-    "zh_CN": "空",
-    "en_US": "Void"
+    "CHS": "空",
+    "EN": "Void",
+    "CHT": "空",
+    "JP": "空",
+    "KR": "공",
+    "TH": "ว่าง",
+    "VN": "Trống"
   },
   {
     "key": "解析",
-    "zh_CN": "解析",
-    "en_US": "Analyze"
+    "CHS": "解析",
+    "EN": "Analyze",
+    "CHT": "解析",
+    "JP": "解析",
+    "KR": "해석",
+    "TH": "วิเคราะห์",
+    "VN": "Phân tích"
   },
   {
     "key": "法天象地",
-    "zh_CN": "法天象地",
-    "en_US": "Heaven and Earth"
+    "CHS": "法天象地",
+    "EN": "Heaven and Earth",
+    "CHT": "法天象地",
+    "JP": "法天象地",
+    "KR": "법천상지",
+    "TH": "กฎแห่งสวรรค์และโลก",
+    "VN": "Pháp thiên tượng địa"
   },
   {
     "key": "修炼",
-    "zh_CN": "修炼",
-    "en_US": "Cultivation"
+    "CHS": "修炼",
+    "EN": "Cultivation",
+    "CHT": "修煉",
+    "JP": "修練",
+    "KR": "수련",
+    "TH": "ฝึกฝน",
+    "VN": "Tu luyện"
   },
   {
     "key": "七十二变",
-    "zh_CN": "七十二变",
-    "en_US": "Seventy-Two Transformations"
+    "CHS": "七十二变",
+    "EN": "Seventy-Two Transformations",
+    "CHT": "七十二變",
+    "JP": "七十二変",
+    "KR": "칠십이변",
+    "TH": "เจ็ดสิบสองแปลง",
+    "VN": "Bảy mươi hai phép biến"
   },
   {
     "key": "混铁棍",
-    "zh_CN": "混铁棍",
-    "en_US": "Iron Staff"
+    "CHS": "混铁棍",
+    "EN": "Iron Staff",
+    "CHT": "混鐵棍",
+    "JP": "混鉄棍",
+    "KR": "혼철곤",
+    "TH": "กระบองเหล็ก",
+    "VN": "Côn sắt"
   },
   {
     "key": "倾城",
-    "zh_CN": "倾城",
-    "en_US": "City-Toppling Beauty"
+    "CHS": "倾城",
+    "EN": "City-Toppling Beauty",
+    "CHT": "傾城",
+    "JP": "傾城",
+    "KR": "경성",
+    "TH": "倾城",
+    "VN": "Khuynh thành"
   },
   {
     "key": "九尾",
-    "zh_CN": "九尾",
-    "en_US": "Nine Tails"
+    "CHS": "九尾",
+    "EN": "Nine Tails",
+    "CHT": "九尾",
+    "JP": "九尾",
+    "KR": "구미",
+    "TH": "เก้าหาง",
+    "VN": "Cửu vĩ"
   },
   {
     "key": "三头六臂",
-    "zh_CN": "三头六臂",
-    "en_US": "Three Heads Six Arms"
+    "CHS": "三头六臂",
+    "EN": "Three Heads Six Arms",
+    "CHT": "三頭六臂",
+    "JP": "三頭六臂",
+    "KR": "삼두육비",
+    "TH": "สามหัวหกแขน",
+    "VN": "Ba đầu sáu tay"
   },
   {
     "key": "莲花化身",
-    "zh_CN": "莲花化身",
-    "en_US": "Lotus Incarnation"
+    "CHS": "莲花化身",
+    "EN": "Lotus Incarnation",
+    "CHT": "蓮花化身",
+    "JP": "蓮花化身",
+    "KR": "연화화신",
+    "TH": "ร่างดอกบัว",
+    "VN": "Hóa thân hoa sen"
   },
   {
     "key": "混天绫",
-    "zh_CN": "混天绫",
-    "en_US": "Heaven-Mixing Silk"
+    "CHS": "混天绫",
+    "EN": "Heaven-Mixing Silk",
+    "CHT": "混天綾",
+    "JP": "混天綾",
+    "KR": "혼천릉",
+    "TH": "ผ้า混天",
+    "VN": "Lăng la hỗn thiên"
   },
   {
     "key": "乾坤圈",
-    "zh_CN": "乾坤圈",
-    "en_US": "Universe Ring"
+    "CHS": "乾坤圈",
+    "EN": "Universe Ring",
+    "CHT": "乾坤圈",
+    "JP": "乾坤圏",
+    "KR": "건곤권",
+    "TH": "วงแหวน乾坤",
+    "VN": "Vòng càn khôn"
   },
   {
     "key": "九龙神火罩",
-    "zh_CN": "九龙神火罩",
-    "en_US": "Nine Dragons Divine Fire Cover"
+    "CHS": "九龙神火罩",
+    "EN": "Nine Dragons Divine Fire Cover",
+    "CHT": "九龍神火罩",
+    "JP": "九竜神火罩",
+    "KR": "구룡신화포",
+    "TH": "เก้ามังกรไฟเทวะ",
+    "VN": "Chín rồng thần hỏa"
   },
   {
     "key": "风火轮",
-    "zh_CN": "风火轮",
-    "en_US": "Wind-Fire Wheels"
+    "CHS": "风火轮",
+    "EN": "Wind-Fire Wheels",
+    "CHT": "風火輪",
+    "JP": "風火輪",
+    "KR": "풍화륜",
+    "TH": "ล้อไฟลม",
+    "VN": "Bánh xe gió lửa"
   },
   {
     "key": "火尖枪",
-    "zh_CN": "火尖枪",
-    "en_US": "Fire-Tipped Spear"
+    "CHS": "火尖枪",
+    "EN": "Fire-Tipped Spear",
+    "CHT": "火尖槍",
+    "JP": "火尖槍",
+    "KR": "화첨창",
+    "TH": "หอกไฟ",
+    "VN": "Hỏa thương"
   },
   {
     "key": "八九玄功",
-    "zh_CN": "八九玄功",
-    "en_US": "Eighty-Nine Mysterious Arts"
+    "CHS": "八九玄功",
+    "EN": "Eighty-Nine Mysterious Arts",
+    "CHT": "八九玄功",
+    "JP": "八九玄功",
+    "KR": "팔구현공",
+    "TH": "วิชาแปดเก้า",
+    "VN": "Bát cửu huyền công"
   },
   {
     "key": "天眼",
-    "zh_CN": "天眼",
-    "en_US": "Celestial Eye"
+    "CHS": "天眼",
+    "EN": "Celestial Eye",
+    "CHT": "天眼",
+    "JP": "天眼",
+    "KR": "천안",
+    "TH": "ตาสวรรค์",
+    "VN": "Thiên nhãn"
   },
   {
     "key": "三尖两刃刀",
-    "zh_CN": "三尖两刃刀",
-    "en_US": "Three-Pointed Double-Edged Blade"
+    "CHS": "三尖两刃刀",
+    "EN": "Three-Pointed Double-Edged Blade",
+    "CHT": "三尖兩刃刀",
+    "JP": "三尖両刃刀",
+    "KR": "삼첨양인도",
+    "TH": "มีดสองคมสามแฉก",
+    "VN": "Đao hai lưỡi ba mũi"
   },
   {
     "key": "金箍棒",
-    "zh_CN": "金箍棒",
-    "en_US": "Golden Cudgel"
+    "CHS": "金箍棒",
+    "EN": "Golden Cudgel",
+    "CHT": "金箍棒",
+    "JP": "金箍棒",
+    "KR": "금고봉",
+    "TH": "กระบองทอง",
+    "VN": "Kim cô bổng"
   },
   {
     "key": "火眼金睛",
-    "zh_CN": "火眼金睛",
-    "en_US": "Fiery Eyes Golden Gaze"
+    "CHS": "火眼金睛",
+    "EN": "Fiery Eyes Golden Gaze",
+    "CHT": "火眼金睛",
+    "JP": "火眼金睛",
+    "KR": "화안금정",
+    "TH": "ตาไฟทอง",
+    "VN": "Hỏa nhãn kim tinh"
   },
   {
     "key": "分身",
-    "zh_CN": "分身",
-    "en_US": "Clone"
+    "CHS": "分身",
+    "EN": "Clone",
+    "CHT": "分身",
+    "JP": "分身",
+    "KR": "분신",
+    "TH": "แยกตัว",
+    "VN": "Phân thân"
   },
   {
     "key": "魑魅魍魉",
-    "zh_CN": "魑魅魍魉",
-    "en_US": "Chimei Wangliang"
+    "CHS": "魑魅魍魉",
+    "EN": "Chimei Wangliang",
+    "CHT": "魑魅魍魎",
+    "JP": "魑魅魍魎",
+    "KR": "치매망량",
+    "TH": "ภูตผีปีศาจ",
+    "VN": "Yêu ma quỷ quái"
   },
   {
     "key": "对手被魅惑了",
-    "zh_CN": "对手被魅惑了",
-    "en_US": "Opponent is Charmed"
+    "CHS": "对手被魅惑了",
+    "EN": "Opponent is Charmed",
+    "CHT": "對手被魅惑了",
+    "JP": "対戦相手が魅惑された",
+    "KR": "상대가 매혹되었다",
+    "TH": "ศัตรูถูกล่อลวง",
+    "VN": "Đối thủ bị mê hoặc"
   },
   {
     "key": "无视对手部分防御",
-    "zh_CN": "无视对手部分防御",
-    "en_US": "Ignore Part of Opponent's Defense"
+    "CHS": "无视对手部分防御",
+    "EN": "Ignore Part of Opponent's Defense",
+    "CHT": "無視對手部分防禦",
+    "JP": "対戦相手の一部防御を無視",
+    "KR": "상대의 일부 방어를 무시",
+    "TH": "ละเลยการป้องกันบางส่วนของศัตรู",
+    "VN": "Bỏ qua một phần phòng thủ đối thủ"
   },
   {
     "key": "对手无法动弹",
-    "zh_CN": "对手无法动弹",
-    "en_US": "Opponent Cannot Move"
+    "CHS": "对手无法动弹",
+    "EN": "Opponent Cannot Move",
+    "CHT": "對手無法動彈",
+    "JP": "対戦相手が動けない",
+    "KR": "상대가 움직일 수 없다",
+    "TH": "ศัตรูเคลื่อนไหวไม่ได้",
+    "VN": "Đối thủ không thể di chuyển"
   },
   {
     "key": "属性提升",
-    "zh_CN": "属性提升",
-    "en_US": "Attribute Boost"
+    "CHS": "属性提升",
+    "EN": "Attribute Boost",
+    "CHT": "屬性提升",
+    "JP": "属性が上昇",
+    "KR": "속성이 상승",
+    "TH": "คุณสมบัติเพิ่มขึ้น",
+    "VN": "Thuộc tính tăng"
   },
   {
     "key": "伤害大量强化",
-    "zh_CN": "伤害大量强化",
-    "en_US": "Greatly Enhanced Damage"
+    "CHS": "伤害大量强化",
+    "EN": "Greatly Enhanced Damage",
+    "CHT": "傷害大量強化",
+    "JP": "ダメージが大幅強化",
+    "KR": "데미지가 대량 강화",
+    "TH": "ความเสียหายเพิ่มมาก",
+    "VN": "Sát thương tăng mạnh"
   },
   {
     "key": "属性大幅提升",
-    "zh_CN": "属性大幅提升",
-    "en_US": "Significant Attribute Boost"
+    "CHS": "属性大幅提升",
+    "EN": "Significant Attribute Boost",
+    "CHT": "屬性大幅提升",
+    "JP": "属性が大幅上昇",
+    "KR": "속성이 대폭 상승",
+    "TH": "คุณสมบัติเพิ่มขึ้นมาก",
+    "VN": "Thuộc tính tăng lớn"
   },
   {
     "key": "对手属性下降",
-    "zh_CN": "对手属性下降",
-    "en_US": "Opponent's Attributes Decreased"
+    "CHS": "对手属性下降",
+    "EN": "Opponent's Attributes Decreased",
+    "CHT": "對手屬性下降",
+    "JP": "対戦相手の属性が下降",
+    "KR": "상대 속성이 하락",
+    "TH": "คุณสมบัติศัตรูลดลง",
+    "VN": "Thuộc tính đối thủ giảm"
   },
   {
     "key": "对手攻防属性转换",
-    "zh_CN": "对手攻防属性转换",
-    "en_US": "Opponent's Attack and Defense Swapped"
+    "CHS": "对手攻防属性转换",
+    "EN": "Opponent's Attack and Defense Swapped",
+    "CHT": "對手攻防屬性轉換",
+    "JP": "対戦相手の攻撃防御属性が変換",
+    "KR": "상대 공격 방어 속성이 변환",
+    "TH": "คุณสมบัติโจมตีป้องกันศัตรูสลับ",
+    "VN": "Thuộc tính công thủ đối thủ hoán đổi"
   },
   {
     "key": "闪避一次攻击",
-    "zh_CN": "闪避一次攻击",
-    "en_US": "Dodge One Attack"
+    "CHS": "闪避一次攻击",
+    "EN": "Dodge One Attack",
+    "CHT": "閃避一次攻擊",
+    "JP": "1回の攻撃を回避",
+    "KR": "1회 공격 회피",
+    "TH": "หลบการโจมตี 1 ครั้ง",
+    "VN": "Né một lần tấn công"
   },
   {
     "key": "伤害强化",
-    "zh_CN": "伤害强化",
-    "en_US": "Enhanced Damage"
+    "CHS": "伤害强化",
+    "EN": "Enhanced Damage",
+    "CHT": "傷害強化",
+    "JP": "ダメージが強化",
+    "KR": "데미지 강화",
+    "TH": "ความเสียหายเพิ่ม",
+    "VN": "Sát thương tăng"
   },
   {
     "key": "攻击力提升",
-    "zh_CN": "攻击力提升",
-    "en_US": "Attack Power Increased"
+    "CHS": "攻击力提升",
+    "EN": "Attack Power Increased",
+    "CHT": "攻擊力提升",
+    "JP": "攻撃力が上昇",
+    "KR": "공격력 상승",
+    "TH": "พลังโจมตีเพิ่ม",
+    "VN": "Sức tấn công tăng"
   },
   {
     "key": "无视对方闪避",
-    "zh_CN": "无视对方闪避",
-    "en_US": "Ignore Opponent's Dodge"
+    "CHS": "无视对方闪避",
+    "EN": "Ignore Opponent's Dodge",
+    "CHT": "無視對方閃避",
+    "JP": "対戦相手の回避を無視",
+    "KR": "상대 회피 무시",
+    "TH": "ละเลยการหลบของศัตรู",
+    "VN": "Bỏ qua né tránh đối thủ"
   },
   {
     "key": "震慑对手",
-    "zh_CN": "震慑对手",
-    "en_US": "Intimidate Opponent"
+    "CHS": "震慑对手",
+    "EN": "Intimidate Opponent",
+    "CHT": "震懾對手",
+    "JP": "対戦相手を震懾",
+    "KR": "상대를 진섭",
+    "TH": "ข่มขวัญศัตรู",
+    "VN": "Chấn nhiếp đối thủ"
   },
   {
     "key": "伤害巨幅提升",
-    "zh_CN": "伤害巨幅提升",
-    "en_US": "Massive Damage Boost"
+    "CHS": "伤害巨幅提升",
+    "EN": "Massive Damage Boost",
+    "CHT": "傷害巨幅提升",
+    "JP": "ダメージが巨幅上昇",
+    "KR": "데미지가 거폭 상승",
+    "TH": "ความเสียหายเพิ่มมหาศาล",
+    "VN": "Sát thương tăng mạnh mẽ"
   },
   {
     "key": "闪避两回合",
-    "zh_CN": "闪避两回合",
-    "en_US": "Dodge for Two Rounds"
+    "CHS": "闪避两回合",
+    "EN": "Dodge for Two Rounds",
+    "CHT": "閃避兩回合",
+    "JP": "2ターン回避",
+    "KR": "2턴 회피",
+    "TH": "หลบ 2 รอบ",
+    "VN": "Né hai lượt"
   },
   {
     "key": "对手攻击力下降",
-    "zh_CN": "对手攻击力下降",
-    "en_US": "Opponent's Attack Power Decreased"
+    "CHS": "对手攻击力下降",
+    "EN": "Opponent's Attack Power Decreased",
+    "CHT": "對手攻擊力下降",
+    "JP": "対戦相手の攻撃力が下降",
+    "KR": "상대 공격력 하락",
+    "TH": "พลังโจมตีศัตรูลด",
+    "VN": "Sức tấn công đối thủ giảm"
   },
   {
     "key": "受到的伤害降低",
-    "zh_CN": "受到的伤害降低",
-    "en_US": "Reduced Damage Taken"
+    "CHS": "受到的伤害降低",
+    "EN": "Reduced Damage Taken",
+    "CHT": "受到的傷害降低",
+    "JP": "受けるダメージが減少",
+    "KR": "받는 데미지 감소",
+    "TH": "ความเสียหายที่ได้รับลด",
+    "VN": "Sát thương nhận được giảm"
   },
   {
     "key": "复活了",
-    "zh_CN": "复活了",
-    "en_US": "Revived"
+    "CHS": "复活了",
+    "EN": "Revived",
+    "CHT": "復活了",
+    "JP": "復活した",
+    "KR": "부활했다",
+    "TH": "ฟื้นคืนชีพ",
+    "VN": "Hồi sinh"
   },
   {
     "key": "对手眩晕一回合",
-    "zh_CN": "对手眩晕一回合",
-    "en_US": "Opponent Stunned for One Round"
+    "CHS": "对手眩晕一回合",
+    "EN": "Opponent Stunned for One Round",
+    "CHT": "對手眩暈一回合",
+    "JP": "対戦相手が1ターン気絶",
+    "KR": "상대가 1턴 기절",
+    "TH": "ศัตรูมึนงง 1 รอบ",
+    "VN": "Đối thủ choáng một lượt"
   },
   {
     "key": "回复一定生命值",
-    "zh_CN": "回复一定生命值",
-    "en_US": "Recover Some Health"
+    "CHS": "回复一定生命值",
+    "EN": "Recover Some Health",
+    "CHT": "回復一定生命值",
+    "JP": "一定の生命値を回復",
+    "KR": "일정 생명력 회복",
+    "TH": "ฟื้นฟูพลังชีวิตบางส่วน",
+    "VN": "Hồi phục một lượng sinh lực"
   },
   {
     "key": "对手受到火焰灼烧",
-    "zh_CN": "对手受到火焰灼烧",
-    "en_US": "Opponent Burned by Flames"
+    "CHS": "对手受到火焰灼烧",
+    "EN": "Opponent Burned by Flames",
+    "CHT": "對手受到火焰灼燒",
+    "JP": "対戦相手が炎で焼かれる",
+    "KR": "상대가 화염으로 타격",
+    "TH": "ศัตรูถูกไฟเผา",
+    "VN": "Đối thủ bị thiêu cháy"
   },
   {
     "key": "对手对自己造成伤害",
-    "zh_CN": "对手对自己造成伤害",
-    "en_US": "Opponent Damages Themselves"
+    "CHS": "对手对自己造成伤害",
+    "EN": "Opponent Damages Themselves",
+    "CHT": "對手對自己造成傷害",
+    "JP": "対戦相手が自分にダメージを与える",
+    "KR": "상대가 자신에게 데미지",
+    "TH": "ศัตรูทำร้ายตัวเอง",
+    "VN": "Đối thủ tự gây sát thương"
   },
   {
     "key": "对手受到震慑",
-    "zh_CN": "对手受到震慑",
-    "en_US": "Opponent Intimidated"
+    "CHS": "对手受到震慑",
+    "EN": "Opponent Intimidated",
+    "CHT": "對手受到震懾",
+    "JP": "対戦相手が震懾を受ける",
+    "KR": "상대가 진섭을 받음",
+    "TH": "ศัตรูถูกข่มขวัญ",
+    "VN": "Đối thủ bị chấn nhiếp"
   },
   {
     "key": "无视对手防御",
-    "zh_CN": "无视对手防御",
-    "en_US": "Ignore Opponent's Defense"
+    "CHS": "无视对手防御",
+    "EN": "Ignore Opponent's Defense",
+    "CHT": "無視對手防禦",
+    "JP": "対戦相手の防御を無視",
+    "KR": "상대 방어를 무시",
+    "TH": "ละเลยการป้องกันศัตรู",
+    "VN": "Bỏ qua phòng thủ đối thủ"
   },
   {
     "key": "伤害巨量强化",
-    "zh_CN": "伤害巨量强化",
-    "en_US": "Massive Damage Enhancement"
+    "CHS": "伤害巨量强化",
+    "EN": "Massive Damage Enhancement",
+    "CHT": "傷害巨量強化",
+    "JP": "ダメージが極大強化",
+    "KR": "데미지가 극대 강화",
+    "TH": "ความเสียหายเพิ่มมหาศาล",
+    "VN": "Sát thương tăng cực lớn"
   },
   {
     "key": "生命值恢复了",
-    "zh_CN": "生命值恢复了",
-    "en_US": "Health Restored"
+    "CHS": "生命值恢复了",
+    "EN": "Health Restored",
+    "CHT": "生命值恢復了",
+    "JP": "生命値が回復した",
+    "KR": "생명력이 회복되었다",
+    "TH": "พลังชีวิตฟื้นฟู",
+    "VN": "Sinh lực hồi phục"
   },
   {
     "key": "对手被骗过了",
-    "zh_CN": "对手被骗过了",
-    "en_US": "Opponent Deceived"
+    "CHS": "对手被骗过了",
+    "EN": "Opponent Deceived",
+    "CHT": "對手被騙過了",
+    "JP": "対戦相手が騙された",
+    "KR": "상대가 속았다",
+    "TH": "หลอกศัตรูสำเร็จ",
+    "VN": "Lừa đối thủ thành công"
   },
   {
     "key": "使对手攻击力小幅下降",
-    "zh_CN": "使对手攻击力小幅下降",
-    "en_US": "Slightly Reduce Opponent's Attack Power"
+    "CHS": "使对手攻击力小幅下降",
+    "EN": "Slightly Reduce Opponent's Attack Power",
+    "CHT": "使對手攻擊力小幅下降",
+    "JP": "対戦相手の攻撃力をわずかに下げる",
+    "KR": "상대 공격력을 소폭 하락",
+    "TH": "ลดพลังโจมตีศัตรูเล็กน้อย",
+    "VN": "Giảm sức tấn công đối thủ một chút"
   },
   {
     "key": "从冥界归来",
-    "zh_CN": "从冥界归来",
-    "en_US": "Return from the Underworld"
+    "CHS": "从冥界归来",
+    "EN": "Return from the Underworld",
+    "CHT": "從冥界歸來",
+    "JP": "冥界から帰還",
+    "KR": "명계에서 귀환",
+    "TH": "กลับจากยมโลก",
+    "VN": "Trở về từ cõi chết"
   },
   {
     "key": "对手受到反伤",
-    "zh_CN": "对手受到反伤",
-    "en_US": "Opponent Takes Reflective Damage"
+    "CHS": "对手受到反伤",
+    "EN": "Opponent Takes Reflective Damage",
+    "CHT": "對手受到反傷",
+    "JP": "対戦相手が反傷を受ける",
+    "KR": "상대가 반상 데미지",
+    "TH": "ศัตรูได้รับความเสียหายสะท้อน",
+    "VN": "Đối thủ nhận sát thương phản"
   },
   {
     "key": "攻击力上升",
-    "zh_CN": "攻击力上升",
-    "en_US": "Attack Power Rises"
+    "CHS": "攻击力上升",
+    "EN": "Attack Power Rises",
+    "CHT": "攻擊力上升",
+    "JP": "攻撃力が上昇",
+    "KR": "공격력 상승",
+    "TH": "พลังโจมตีเพิ่ม",
+    "VN": "Sức tấn công tăng"
   },
   {
     "key": "什么也没发生",
-    "zh_CN": "什么也没发生",
-    "en_US": "Nothing Happened"
+    "CHS": "什么也没发生",
+    "EN": "Nothing Happened",
+    "CHT": "什麼也沒發生",
+    "JP": "何も起こらなかった",
+    "KR": "아무 일도 일어나지 않았다",
+    "TH": "ไม่มีอะไรเกิดขึ้น",
+    "VN": "Không có gì xảy ra"
   },
   {
     "key": "对手不忍袭击仙兽",
-    "zh_CN": "对手不忍袭击仙兽",
-    "en_US": "Opponent Reluctant to Attack Immortal Beast"
+    "CHS": "对手不忍袭击仙兽",
+    "EN": "Opponent Reluctant to Attack Immortal Beast",
+    "CHT": "對手不忍襲擊仙獸",
+    "JP": "対戦相手が仙獣を攻撃するのを我慢",
+    "KR": "상대가 선수를 공격하지 못함",
+    "TH": "ศัตรูไม่กล้าโจมตีสัตว์เซียน",
+    "VN": "Đối thủ không忍 tấn công thú tiên"
   },
   {
     "key": "对手为气息所感化",
-    "zh_CN": "对手为气息所感化",
-    "en_US": "Opponent Swayed by Aura"
+    "CHS": "对手为气息所感化",
+    "EN": "Opponent Swayed by Aura",
+    "CHT": "對手為氣息所感化",
+    "JP": "対戦相手が気息に感化される",
+    "KR": "상대가 기운에 감화됨",
+    "TH": "ศัตรูถูกกลิ่นอายทำให้ยอมจำนน",
+    "VN": "Đối thủ bị khí tức cảm hóa"
   },
   {
     "key": "识破对手数个技能",
-    "zh_CN": "识破对手数个技能",
-    "en_US": "See Through Several of Opponent's Skills"
+    "CHS": "识破对手数个技能",
+    "EN": "See Through Several of Opponent's Skills",
+    "CHT": "識破對手數個技能",
+    "JP": "対戦相手の複数のスキルを看破",
+    "KR": "상대의 여러 스킬을 간파",
+    "TH": "มองทะลุสกิลหลายอย่างของศัตรู",
+    "VN": "Nhìn thấu vài kỹ năng đối thủ"
   },
   {
     "key": "发现对手心中的邪恶",
-    "zh_CN": "发现对手心中的邪恶",
-    "en_US": "Detect Evil in Opponent's Heart"
+    "CHS": "发现对手心中的邪恶",
+    "EN": "Detect Evil in Opponent's Heart",
+    "CHT": "發現對手心中的邪惡",
+    "JP": "対戦相手の心の邪悪を発見",
+    "KR": "상 Christina가 상대의 마음 속 악을 발견",
+    "TH": "ค้นพบความชั่วในใจศัตรู",
+    "VN": "Phát hiện cái ác trong tâm đối thủ"
   },
   {
     "key": "对手被正气所震慑",
-    "zh_CN": "对手被正气所震慑",
-    "en_US": "Opponent Intimidated by Righteousness"
+    "CHS": "对手被正气所震慑",
+    "EN": "Opponent Intimidated by Righteousness",
+    "CHT": "對手被正氣所震懾",
+    "JP": "対戦相手が正気で震懾される",
+    "KR": "상대가 정기로 진섭됨",
+    "TH": "ศัตรูถูกความยุติธรรมข่มขวัญ",
+    "VN": "Đối thủ bị chính khí chấn nhiếp"
   },
   {
     "key": "对手被天命惩罚",
-    "zh_CN": "对手被天命惩罚",
-    "en_US": "Opponent Punished by Heaven's Will"
+    "CHS": "对手被天命惩罚",
+    "EN": "Opponent Punished by Heaven's Will",
+    "CHT": "對手被天命懲罰",
+    "JP": "対戦相手が天命で罰せられる",
+    "KR": "상대가 천명으로 벌받음",
+    "TH": "ศัตรูถูกลงโทษโดยโชคชะตา",
+    "VN": "Đối thủ bị thiên mệnh trừng phạt"
   },
   {
     "key": "学会了数个技能",
-    "zh_CN": "学会了数个技能",
-    "en_US": "Learned Several Skills"
+    "CHS": "学会了数个技能",
+    "EN": "Learned Several Skills",
+    "CHT": "學會了數個技能",
+    "JP": "複数のスキルを習得",
+    "KR": "여러 스킬을 익혔다",
+    "TH": "เรียนรู้สกิลหลายอย่าง",
+    "VN": "Học được nhiều kỹ năng"
   },
   {
     "key": "获得一个技能",
-    "zh_CN": "获得一个技能",
-    "en_US": "Gained One Skill"
+    "CHS": "获得一个技能",
+    "EN": "Gained One Skill",
+    "CHT": "獲得一個技能",
+    "JP": "1つのスキルを獲得",
+    "KR": "1개의 스킬을 획득",
+    "TH": "ได้รับสกิล 1 อย่าง",
+    "VN": "Nhận một kỹ năng"
   },
   {
     "key": "闪避攻击一回合",
-    "zh_CN": "闪避攻击一回合",
-    "en_US": "Dodge Attack for One Round"
+    "CHS": "闪避攻击一回合",
+    "EN": "Dodge Attack for One Round",
+    "CHT": "閃避攻擊一回合",
+    "JP": "1ターン攻撃を回避",
+    "KR": "1턴 공격 회피",
+    "TH": "หลบการโจมตี 1 รอบ",
+    "VN": "Né tấn công một lượt"
   },
   {
     "key": "完全无视对手防御",
-    "zh_CN": "完全无视对手防御",
-    "en_US": "Completely Ignore Opponent's Defense"
+    "CHS": "完全无视对手防御",
+    "EN": "Completely Ignore Opponent's Defense",
+    "CHT": "完全無視對手防禦",
+    "JP": "対戦相手の防御を完全に無視",
+    "KR": "상대 방어를 완전히 무시",
+    "TH": "ละเลยการป้องกันศัตรูทั้งหมด",
+    "VN": "Bỏ qua hoàn toàn phòng thủ đối thủ"
   },
   {
     "key": "防御力提高",
-    "zh_CN": "防御力提高",
-    "en_US": "Defense Increased"
+    "CHS": "防御力提高",
+    "EN": "Defense Increased",
+    "CHT": "防禦力提高",
+    "JP": "防御力が上昇",
+    "KR": "방어력 상승",
+    "TH": "พลังป้องกันเพิ่ม",
+    "VN": "Phòng thủ tăng"
   },
   {
     "key": "将对手眩晕两回合",
-    "zh_CN": "将对手眩晕两回合",
-    "en_US": "Stun Opponent for Two Rounds"
+    "CHS": "将对手眩晕两回合",
+    "EN": "Stun Opponent for Two Rounds",
+    "CHT": "將對手眩暈兩回合",
+    "JP": "対戦相手を2ターン気絶",
+    "KR": "상대를 2턴 기절",
+    "TH": "ทำให้ศัตรูมึนงง 2 รอบ",
+    "VN": "Làm đối thủ choáng hai lượt"
   },
   {
     "key": "受到的伤害少量降低",
-    "zh_CN": "受到的伤害少量降低",
-    "en_US": "Slightly Reduced Damage Taken"
+    "CHS": "受到的伤害少量降低",
+    "EN": "Slightly Reduced Damage Taken",
+    "CHT": "受到的傷害少量降低",
+    "JP": "受けるダメージがわずかに減少",
+    "KR": "받는 데미지가 소폭 감소",
+    "TH": "ความเสียหายที่ได้รับลดเล็กน้อย",
+    "VN": "Sát thương nhận được giảm một chút"
   },
   {
     "key": "将对手束缚三回合",
-    "zh_CN": "将对手束缚三回合",
-    "en_US": "Bind Opponent for Three Rounds"
+    "CHS": "将对手束缚三回合",
+    "EN": "Bind Opponent for Three Rounds",
+    "CHT": "將對手束縛三回合",
+    "JP": "対戦相手を3ターン束縛",
+    "KR": "상대를 3턴 속박",
+    "TH": "พันธนาการศัตรู 3 รอบ",
+    "VN": "Trói đối thủ ba lượt"
   },
   {
     "key": "造成大量伤害",
-    "zh_CN": "造成大量伤害",
-    "en_US": "Deal Massive Damage"
+    "CHS": "造成大量伤害",
+    "EN": "Deal Massive Damage",
+    "CHT": "造成大量傷害",
+    "JP": "大量のダメージを与える",
+    "KR": "대량 데미지 발생",
+    "TH": "สร้างความเสียหายมาก",
+    "VN": "Gây sát thương lớn"
   },
   {
     "key": "对手失去战意",
-    "zh_CN": "对手失去战意",
-    "en_US": "Opponent Loses Will to Fight"
+    "CHS": "对手失去战意",
+    "EN": "Opponent Loses Will to Fight",
+    "CHT": "對手失去戰意",
+    "JP": "対戦相手が戦意を失う",
+    "KR": "상대가 전의를 잃음",
+    "TH": "ศัตรูสูญเสียจิตต่อสู้",
+    "VN": "Đối thủ mất ý chí chiến đấu"
   },
   {
     "key": "识破一个技能",
-    "zh_CN": "识破一个技能",
-    "en_US": "See Through One Skill"
+    "CHS": "识破一个技能",
+    "EN": "See Through One Skill",
+    "CHT": "識破一個技能",
+    "JP": "1つのスキルを看破",
+    "KR": "1개의 스킬을 간파",
+    "TH": "มองทะลุสกิล 1 อย่าง",
+    "VN": "Nhìn thấu một kỹ năng"
   },
   {
     "key": "对手防御力略微下降",
-    "zh_CN": "对手防御力略微下降",
-    "en_US": "Opponent's Defense Slightly Decreased"
+    "CHS": "对手防御力略微下降",
+    "EN": "Opponent's Defense Slightly Decreased",
+    "CHT": "對手防禦力略微下降",
+    "JP": "対戦相手の防御力がわずかに下降",
+    "KR": "상대 방어력이 약간 하락",
+    "TH": "พลังป้องกันศัตรูลดเล็กน้อย",
+    "VN": "Phòng thủ đối thủ giảm nhẹ"
   },
   {
     "key": "对手防御力下降两回合",
-    "zh_CN": "对手防御力下降两回合",
-    "en_US": "Opponent's Defense Decreased for Two Rounds"
+    "CHS": "对手防御力下降两回合",
+    "EN": "Opponent's Defense Decreased for Two Rounds",
+    "CHT": "對手防禦力下降兩回合",
+    "JP": "対戦相手の防御力が2ターン下降",
+    "KR": "상대 방어력이 2턴 하락",
+    "TH": "พลังป้องกันศัตรูลด 2 รอบ",
+    "VN": "Phòng thủ đối thủ giảm hai lượt"
   },
   {
     "key": "拾取物体当做武器",
-    "zh_CN": "拾取物体当做武器",
-    "en_US": "Pick Up Object as Weapon"
+    "CHS": "拾取物体当做武器",
+    "EN": "Pick Up Object as Weapon",
+    "CHT": "拾取物體當做武器",
+    "JP": "物体を拾って武器にする",
+    "KR": "물체를 주워 무기로 사용",
+    "TH": "เก็บวัตถุเป็นอาวุธ",
+    "VN": "Nhặt vật làm vũ khí"
   },
   {
     "key": "迷惑对手使其暂停攻击",
-    "zh_CN": "迷惑对手使其暂停攻击",
-    "en_US": "Bewilder Opponent to Pause Attack"
+    "CHS": "迷惑对手使其暂停攻击",
+    "EN": "Bewilder Opponent to Pause Attack",
+    "CHT": "迷惑對手使其暫停攻擊",
+    "JP": "対戦相手を惑わして攻撃を一時停止",
+    "KR": "상대를 미혹하여 공격 일시 정지",
+    "TH": "ล่อลวงศัตรูให้หยุดโจมตี",
+    "VN": "Mê hoặc đối thủ khiến dừng tấn công"
   },
   {
     "key": "伤害少量强化",
-    "zh_CN": "伤害少量强化",
-    "en_US": "Slightly Enhanced Damage"
+    "CHS": "伤害少量强化",
+    "EN": "Slightly Enhanced Damage",
+    "CHT": "傷害少量強化",
+    "JP": "ダメージがわずかに強化",
+    "KR": "데미지가 소폭 강화",
+    "TH": "ความเสียหายเพิ่มเล็กน้อย",
+    "VN": "Sát thương tăng nhẹ"
   },
   {
     "key": "吞噬对手",
-    "zh_CN": "吞噬对手",
-    "en_US": "Devour Opponent"
+    "CHS": "吞噬对手",
+    "EN": "Devour Opponent",
+    "CHT": "吞噬對手",
+    "JP": "対戦相手を吞噬",
+    "KR": "상대를 포식",
+    "TH": "กลืนกินศัตรู",
+    "VN": "Nuốt chửng đối thủ"
   },
   {
     "key": "攻击力大幅上升",
-    "zh_CN": "攻击力大幅上升",
-    "en_US": "Attack Power Greatly Increased"
+    "CHS": "攻击力大幅上升",
+    "EN": "Attack Power Greatly Increased",
+    "CHT": "攻擊力大幅上升",
+    "JP": "攻撃力が大幅上昇",
+    "KR": "공격력이 대폭 상승",
+    "TH": "พลังโจมตีเพิ่มมาก",
+    "VN": "Sức tấn công tăng mạnh"
   },
   {
     "key": "对手的造成的伤害被河蟹了",
-    "zh_CN": "对手的造成的伤害被河蟹了",
-    "en_US": "Opponent's Damage Nullified by River Crab"
+    "CHS": "对手的造成的伤害被河蟹了",
+    "EN": "Opponent's Damage Nullified by River Crab",
+    "CHT": "對手的造成的傷害被河蟹了",
+    "JP": "対戦相手の与えたダメージが河蟹された",
+    "KR": "상대의 데미지가 하협되었다",
+    "TH": "ความเสียหายของศัตรูถูกปูแม่น้ำกลบ",
+    "VN": "Sát thương của đối thủ bị cua sông hóa giải"
   },
   {
     "key": "对手被河蟹了",
-    "zh_CN": "对手被河蟹了",
-    "en_US": "Opponent Nullified by River Crab"
+    "CHS": "对手被河蟹了",
+    "EN": "Opponent Nullified by River Crab",
+    "CHT": "對手被河蟹了",
+    "JP": "対戦相手が河蟹された",
+    "KR": "상대가 하협되었다",
+    "TH": "ศัตรูถูกปูแม่น้ำกลบ",
+    "VN": "Đối thủ bị cua sông hóa giải"
   },
   {
     "key": "属性巨幅提升",
-    "zh_CN": "属性巨幅提升",
-    "en_US": "Massive Attribute Boost"
+    "CHS": "属性巨幅提升",
+    "EN": "Massive Attribute Boost",
+    "CHT": "屬性巨幅提升",
+    "JP": "属性が巨幅上昇",
+    "KR": "속성이 거폭 상승",
+    "TH": "คุณสมบัติเพิ่มมหาศาล",
+    "VN": "Thuộc tính tăng mạnh mẽ"
   },
   {
     "key": "使对手攻击力下降",
-    "zh_CN": "使对手攻击力下降",
-    "en_US": "Reduce Opponent's Attack Power"
+    "CHS": "使对手攻击力下降",
+    "EN": "Reduce Opponent's Attack Power",
+    "CHT": "使對手攻擊力下降",
+    "JP": "対戦相手の攻撃力を下げる",
+    "KR": "상대 공격력을 하락",
+    "TH": "ลดพลังโจมตีศัตรู",
+    "VN": "Giảm sức tấn công đối thủ"
   },
   {
     "key": "舍弃一条尾巴复活了",
-    "zh_CN": "舍弃一条尾巴复活了",
-    "en_US": "Sacrificed One Tail to Revive"
+    "CHS": "舍弃一条尾巴复活了",
+    "EN": "Sacrificed One Tail to Revive",
+    "CHT": "捨棄一條尾巴復活了",
+    "JP": "1本の尾を犠牲にして復活",
+    "KR": "꼬리 하나를 버리고 부활",
+    "TH": "สละหางหนึ่งเพื่อฟื้นคืน",
+    "VN": "Hy sinh một đuôi để hồi sinh"
   },
   {
     "key": "攻击力巨幅上升",
-    "zh_CN": "攻击力巨幅上升",
-    "en_US": "Massive Attack Power Increase"
+    "CHS": "攻击力巨幅上升",
+    "EN": "Massive Attack Power Increase",
+    "CHT": "攻擊力巨幅上升",
+    "JP": "攻撃力が巨幅上昇",
+    "KR": "공격력이 거폭 상승",
+    "TH": "พลังโจมตีเพิ่มมหาศาล",
+    "VN": "Sức tấn công tăng mạnh mẽ"
   },
   {
     "key": "受到伤害降低",
-    "zh_CN": "受到伤害降低",
-    "en_US": "Reduced Damage Taken"
+    "CHS": "受到伤害降低",
+    "EN": "Reduced Damage Taken",
+    "CHT": "受到傷害降低",
+    "JP": "受けるダメージが減少",
+    "KR": "받는 데미지 감소",
+    "TH": "ความเสียหายที่ได้รับลด",
+    "VN": "Sát thương nhận được giảm"
   },
   {
     "key": "灵活走位",
-    "zh_CN": "灵活走位",
-    "en_US": "Agile Maneuver"
+    "CHS": "灵活走位",
+    "EN": "Agile Maneuver",
+    "CHT": "靈活走位",
+    "JP": "機敏な動き",
+    "KR": "유연한 움직임",
+    "TH": "เคลื่อนไหวอย่างคล่องแคล่ว",
+    "VN": "Di chuyển linh hoạt"
   },
   {
     "key": "藏匿于分身之中",
-    "zh_CN": "藏匿于分身之中",
-    "en_US": "Hide Among Clones"
+    "CHS": "藏匿于分身之中",
+    "EN": "Hide Among Clones",
+    "CHT": "藏匿於分身之中",
+    "JP": "分身に隠れる",
+    "KR": "분신 속에 숨음",
+    "TH": "ซ่อนในร่างแยก",
+    "VN": "Ẩn trong phân thân"
   },
   {
     "key": "学会了一些技能",
-    "zh_CN": "学会了一些技能",
-    "en_US": "Learned Some Skills"
+    "CHS": "学会了一些技能",
+    "EN": "Learned Some Skills",
+    "CHT": "學會了一些技能",
+    "JP": "いくつかのスキルを習得",
+    "KR": "몇 개의 스킬을 익혔다",
+    "TH": "เรียนรู้สกิลบางอย่าง",
+    "VN": "Học được một số kỹ năng"
   },
   {
     "key": "齿",
-    "zh_CN": "齿",
-    "en_US": "Teeth"
+    "CHS": "齿",
+    "EN": "Teeth",
+    "CHT": "齒",
+    "JP": "歯",
+    "KR": "이",
+    "TH": "ฟัน",
+    "VN": "Răng"
   },
   {
     "key": "喙",
-    "zh_CN": "喙",
-    "en_US": "Beak"
+    "CHS": "喙",
+    "EN": "Beak",
+    "CHT": "喙",
+    "JP": "喙",
+    "KR": "부리",
+    "TH": "จงอย",
+    "VN": "Mỏ"
   },
   {
     "key": "鳞",
-    "zh_CN": "鳞",
-    "en_US": "Scale"
+    "CHS": "鳞",
+    "EN": "Scale",
+    "CHT": "鱗",
+    "JP": "鱗",
+    "KR": "비늘",
+    "TH": "เกล็ด",
+    "VN": "Vảy"
   },
   {
     "key": "毛",
-    "zh_CN": "毛",
-    "en_US": "Fur"
+    "CHS": "毛",
+    "EN": "Fur",
+    "CHT": "毛",
+    "JP": "毛",
+    "KR": "털",
+    "TH": "ขน",
+    "VN": "Lông"
   },
   {
     "key": "甲",
-    "zh_CN": "甲",
-    "en_US": "Armor"
+    "CHS": "甲",
+    "EN": "Armor",
+    "CHT": "甲",
+    "JP": "甲",
+    "KR": "갑",
+    "TH": "เกราะ",
+    "VN": "Giáp"
   },
   {
     "key": "蠃",
-    "zh_CN": "蠃",
-    "en_US": "Skin"
+    "CHS": "蠃",
+    "EN": "Skin",
+    "CHT": "蠃",
+    "JP": "蠃",
+    "KR": "나",
+    "TH": "เปลือก",
+    "VN": "Vỏ"
   },
   {
     "key": "羽",
-    "zh_CN": "羽",
-    "en_US": "Feather"
+    "CHS": "羽",
+    "EN": "Feather",
+    "CHT": "羽",
+    "JP": "羽",
+    "KR": "깃",
+    "TH": "ขนนก",
+    "VN": "Lông vũ"
   },
   {
     "key": "爪",
-    "zh_CN": "爪",
-    "en_US": "Claw"
+    "CHS": "爪",
+    "EN": "Claw",
+    "CHT": "爪",
+    "JP": "爪",
+    "KR": "발톱",
+    "TH": "กรงเล็บ",
+    "VN": "Móng"
   },
   {
     "key": "蹄",
-    "zh_CN": "蹄",
-    "en_US": "Hoove"
+    "CHS": "蹄",
+    "EN": "Hoove",
+    "CHT": "蹄",
+    "JP": "蹄",
+    "KR": "발굽",
+    "TH": "กีบ",
+    "VN": "Móng guốc"
   },
   {
     "key": "角",
-    "zh_CN": "角",
-    "en_US": "Horn"
+    "CHS": "角",
+    "EN": "Horn",
+    "CHT": "角",
+    "JP": "角",
+    "KR": "뿔",
+    "TH": "เขา",
+    "VN": "Sừng"
   },
   {
     "key": "智",
-    "zh_CN": "智",
-    "en_US": "Wisdom"
+    "CHS": "智",
+    "EN": "Wisdom",
+    "CHT": "智",
+    "JP": "智",
+    "KR": "지",
+    "TH": "สติปัญญา",
+    "VN": "Trí tuệ"
   },
   {
     "key": "----------开始战斗----------",
-    "zh_CN": "----------开始战斗----------",
-    "en_US": "----------Battle Start----------"
+    "CHS": "----------开始战斗----------",
+    "EN": "----------Battle Start----------",
+    "CHT": "----------開始戰鬥----------",
+    "JP": "----------戦闘開始----------",
+    "KR": "----------전투 시작----------",
+    "TH": "----------เริ่มการต่อสู้----------",
+    "VN": "----------Bắt đầu chiến đấu----------"
   },
   {
     "key": "<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>",
-    "zh_CN": "<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>",
-    "en_US": "<font color='{p}'>You used skill·<font color='{s}'>*</font>,&</font>"
+    "CHS": "<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>",
+    "EN": "<font color='{p}'>You used skill·<font color='{s}'>*</font>,&</font>",
+    "CHT": "<font color='{p}'>你使用了技能·<font color='{s}'>*</font>,&</font>",
+    "JP": "<font color='{p}'>あなたはスキル・<font color='{s}'>*</font>を使用しました,&</font>",
+    "KR": "<font color='{p}'>당신은 스킬·<font color='{s}'>*</font>을(를) 사용했습니다,&</font>",
+    "TH": "<font color='{p}'>คุณใช้สกิล·<font color='{s}'>*</font>,&</font>",
+    "VN": "<font color='{p}'>Bạn sử dụng kỹ năng·<font color='{s}'>*</font>,&</font>"
   },
   {
     "key": "<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>",
-    "zh_CN": "<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>",
-    "en_US": "<font color='{e}'>^ used skill·<font color='{s}'>*</font>,&</font>"
+    "CHS": "<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>",
+    "EN": "<font color='{e}'>^ used skill·<font color='{s}'>*</font>,&</font>",
+    "CHT": "<font color='{e}'>^使用了技能·<font color='{s}'>*</font>,&</font>",
+    "JP": "<font color='{e}'>^はスキル・<font color='{s}'>*</font>を使用しました,&</font>",
+    "KR": "<font color='{e}'>^은(는) 스킬·<font color='{s}'>*</font>을(를) 사용했습니다,&</font>",
+    "TH": "<font color='{e}'>^ใช้สกิล·<font color='{s}'>*</font>,&</font>",
+    "VN": "<font color='{e}'>^ sử dụng kỹ năng·<font color='{s}'>*</font>,&</font>"
   },
   {
     "key": "<font color='{p}'>你闪避了!</font>",
-    "zh_CN": "<font color='{p}'>你闪避了!</font>",
-    "en_US": "<font color='{p}'>You dodged!</font>"
+    "CHS": "<font color='{p}'>你闪避了!</font>",
+    "EN": "<font color='{p}'>You dodged!</font>",
+    "CHT": "<font color='{p}'>你閃避了!</font>",
+    "JP": "<font color='{p}'>あなたは回避しました!</font>",
+    "KR": "<font color='{p}'>당신은 회피했습니다!</font>",
+    "TH": "<font color='{p}'>คุณหลบ!</font>",
+    "VN": "<font color='{p}'>Bạn né!</font>"
   },
   {
     "key": "<font color='{e}'>*闪避了!</font>",
-    "zh_CN": "<font color='{e}'>*闪避了!</font>",
-    "en_US": "<font color='{e}'>* dodged!</font>"
+    "CHS": "<font color='{e}'>*闪避了!</font>",
+    "EN": "<font color='{e}'>* dodged!</font>",
+    "CHT": "<font color='{e}'>*閃避了!</font>",
+    "JP": "<font color='{e}'>*は回避しました!</font>",
+    "KR": "<font color='{e}'>*이(가) 회피했습니다!</font>",
+    "TH": "<font color='{e}'>*หลบ!</font>",
+    "VN": "<font color='{e}'>* né!</font>"
   },
   {
     "key": "<font color='{p}'>你格挡了!</font>",
-    "zh_CN": "<font color='{p}'>你格挡了!</font>",
-    "en_US": "<font color='{p}'>You blocked!</font>"
+    "CHS": "<font color='{p}'>你格挡了!</font>",
+    "EN": "<font color='{p}'>You blocked!</font>",
+    "CHT": "<font color='{p}'>你格擋了!</font>",
+    "JP": "<font color='{p}'>あなたはガードしました!</font>",
+    "KR": "<font color='{p}'>당신은 방어했습니다!</font>",
+    "TH": "<font color='{p}'>คุณป้องกัน!</font>",
+    "VN": "<font color='{p}'>Bạn chặn!</font>"
   },
   {
     "key": "<font color='{e}'>*格挡了!</font>",
-    "zh_CN": "<font color='{e}'>*格挡了!</font>",
-    "en_US": "<font color='{e}'>* blocked!</font>"
+    "CHS": "<font color='{e}'>*格挡了!</font>",
+    "EN": "<font color='{e}'>* blocked!</font>",
+    "CHT": "<font color='{e}'>*格擋了!</font>",
+    "JP": "<font color='{e}'>*はガードしました!</font>",
+    "KR": "<font color='{e}'>*이(가) 방어했습니다!</font>",
+    "TH": "<font color='{e}'>*ป้องกัน!</font>",
+    "VN": "<font color='{e}'>* chặn!</font>"
   },
   {
     "key": "<font color='{p}'>你对*发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
-    "zh_CN": "<font color='{p}'>你对*发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
-    "en_US": "<font color='{p}'>You attacked *, dealing <font color='{s}'>&</font> damage.</font>"
+    "CHS": "<font color='{p}'>你对*发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
+    "EN": "<font color='{p}'>You attacked *, dealing <font color='{s}'>&</font> damage.</font>",
+    "CHT": "<font color='{p}'>你對*發動了攻擊,造成了<font color='{s}'>&</font>點傷害.</font>",
+    "JP": "<font color='{p}'>あなたは*に攻撃を仕掛け,<font color='{s}'>&</font>ポイントのダメージを与えました.</font>",
+    "KR": "<font color='{p}'>당신은 *에게 공격을 가해 <font color='{s}'>&</font>포인트의 데미지를 주었습니다.</font>",
+    "TH": "<font color='{p}'>คุณโจมตี* สร้างความเสียหาย <font color='{s}'>&</font> คะแนน.</font>",
+    "VN": "<font color='{p}'>Bạn tấn công *, gây <font color='{s}'>&</font> điểm sát thương.</font>"
   },
   {
     "key": "<font color='{e}'>*对你发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
-    "zh_CN": "<font color='{e}'>*对你发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
-    "en_US": "<font color='{e}'>* attacked you, dealing <font color='{s}'>&</font>damage.</font>"
+    "CHS": "<font color='{e}'>*对你发动了攻击,造成了<font color='{s}'>&</font>点伤害.</font>",
+    "EN": "<font color='{e}'>* attacked you, dealing <font color='{s}'>&</font>damage.</font>",
+    "CHT": "<font color='{e}'>*對你發動了攻擊,造成了<font color='{s}'>&</font>點傷害.</font>",
+    "JP": "<font color='{e}'>*はあなたに攻撃を仕掛け,<font color='{s}'>&</font>ポイントのダメージを与えました.</font>",
+    "KR": "<font color='{e}'>*이(가) 당신에게 공격을 가해 <font color='{s}'>&</font>포인트의 데미지를 주었습니다.</font>",
+    "TH": "<font color='{e}'>*โจมตีคุณ สร้างความเสียหาย <font color='{s}'>&</font> คะแนน.</font>",
+    "VN": "<font color='{e}'>* tấn công bạn, gây <font color='{s}'>&</font> điểm sát thương.</font>"
   },
   {
     "key": "<font color='{p}'>你恢复了<font color='{s}'>&</font>点生命.</font>",
-    "zh_CN": "<font color='{p}'>你恢复了<font color='{s}'>&</font>点生命.</font>",
-    "en_US": "<font color='{p}'>You recovered <font color='{s}'>&</font> health.</font>"
+    "CHS": "<font color='{p}'>你恢复了<font color='{s}'>&</font>点生命.</font>",
+    "EN": "<font color='{p}'>You recovered <font color='{s}'>&</font> health.</font>",
+    "CHT": "<font color='{p}'>你恢復了<font color='{s}'>&</font>點生命.</font>",
+    "JP": "<font color='{p}'>あなたは<font color='{s}'>&</font>ポイントの生命を回復しました.</font>",
+    "KR": "<font color='{p}'>당신은 <font color='{s}'>&</font>포인트의 생명력을 회복했습니다.</font>",
+    "TH": "<font color='{p}'>คุณฟื้นฟูพลังชีวิต <font color='{s}'>&</font> คะแนน.</font>",
+    "VN": "<font color='{p}'>Bạn hồi phục <font color='{s}'>&</font> điểm sinh lực.</font>"
   },
   {
     "key": "<font color='{e}'>*恢复了<font color='{s}'>&</font>点生命.</font>",
-    "zh_CN": "<font color='{e}'>*恢复了<font color='{s}'>&</font>点生命.</font>",
-    "en_US": "<font color='{e}'>* recovered <font color='{s}'>&</font> health.</font>"
+    "CHS": "<font color='{e}'>*恢复了<font color='{s}'>&</font>点生命.</font>",
+    "EN": "<font color='{e}'>* recovered <font color='{s}'>&</font> health.</font>",
+    "CHT": "<font color='{e}'>*恢復了<font color='{s}'>&</font>點生命.</font>",
+    "JP": "<font color='{e}'>*は<font color='{s}'>&</font>ポイントの生命を回復しました.</font>",
+    "KR": "<font color='{e}'>*이(가) <font color='{s}'>&</font>포인트의 생명력을 회복했습니다.</font>",
+    "TH": "<font color='{e}'>*ฟื้นฟูพลังชีวิต <font color='{s}'>&</font> คะแนน.</font>",
+    "VN": "<font color='{e}'>* hồi phục <font color='{s}'>&</font> điểm sinh lực.</font>"
   },
   {
     "key": "你吞噬了*.",
-    "zh_CN": "你吞噬了*.",
-    "en_US": "You devoured *."
+    "CHS": "你吞噬了*.",
+    "EN": "You devoured *.",
+    "CHT": "你吞噬了*.",
+    "JP": "あなたは*を吞噬しました.",
+    "KR": "당신은 *을(를) 포식했습니다.",
+    "TH": "คุณกลืนกิน*.",
+    "VN": "Bạn nuốt chửng *."
   },
   {
     "key": "*吞噬了你.",
-    "zh_CN": "*吞噬了你.",
-    "en_US": "* devoured you."
+    "CHS": "*吞噬了你.",
+    "EN": "* devoured you.",
+    "CHT": "*吞噬了你.",
+    "JP": "*はあなたを吞噬しました.",
+    "KR": "*이(가) 당신을 포식했습니다.",
+    "TH": "*กลืนกินคุณ.",
+    "VN": "* nuốt chửng bạn."
   },
   {
     "key": "----------战斗结束----------",
-    "zh_CN": "----------战斗结束----------",
-    "en_US": "----------Battle End----------"
+    "CHS": "----------战斗结束----------",
+    "EN": "----------Battle End----------",
+    "CHT": "----------戰鬥結束----------",
+    "JP": "----------戦闘終了----------",
+    "KR": "----------전투 종료----------",
+    "TH": "----------การต่อสู้สิ้นสุด----------",
+    "VN": "----------Kết thúc chiến đấu----------"
   },
   {
     "key": "你逃出生天!",
-    "zh_CN": "你逃出生天!",
-    "en_US": "You escaped to safety!"
+    "CHS": "你逃出生天!",
+    "EN": "You escaped to safety!",
+    "CHT": "你逃出生天!",
+    "JP": "あなたは逃げ切りました!",
+    "KR": "당신은 탈출했습니다!",
+    "TH": "คุณหนีรอด!",
+    "VN": "Bạn thoát thân!"
   },
   {
     "key": "<font color='^'>拟态成功</font>,拟态为*",
-    "zh_CN": "<font color='^'>拟态成功</font>,拟态为*",
-    "en_US": "<font color='^'>Mimicry successful</font>, mimicked as *"
+    "CHS": "<font color='^'>拟态成功</font>,拟态为*",
+    "EN": "<font color='^'>Mimicry successful</font>, mimicked as *",
+    "CHT": "<font color='^'>擬態成功</font>,擬態為*",
+    "JP": "<font color='^'>擬態成功</font>,*に擬態しました",
+    "KR": "<font color='^'>모방 성공</font>, *로 모방했습니다",
+    "TH": "<font color='^'>แปลงร่างสำเร็จ</font>, แปลงเป็น*",
+    "VN": "<font color='^'>Biến hình thành công</font>, biến thành *"
   },
   {
     "key": "<font color='^'>拟态失败</font>,肉身崩坏死亡！",
-    "zh_CN": "<font color='^'>拟态失败</font>,肉身崩坏死亡！",
-    "en_US": "<font color='^'>Mimicry failed</font>, body collapsed and died!"
+    "CHS": "<font color='^'>拟态失败</font>,肉身崩坏死亡！",
+    "EN": "<font color='^'>Mimicry failed</font>, body collapsed and died!",
+    "CHT": "<font color='^'>擬態失敗</font>,肉身崩壞死亡！",
+    "JP": "<font color='^'>擬態失敗</font>,肉体が崩壊して死亡！",
+    "KR": "<font color='^'>모방 실패</font>, 육신이 붕괴하여 사망!",
+    "TH": "<font color='^'>แปลงร่างล้มเหลว</font>, ร่างกายพังทลายตาย!",
+    "VN": "<font color='^'>Biến hình thất bại</font>, thân thể sụp đổ chết!"
   },
   {
     "key": "<font color='^'>拟态失败</font>,损失等级10级。",
-    "zh_CN": "<font color='^'>拟态失败</font>,损失等级10级。",
-    "en_US": "<font color='^'>Mimicry failed</font>, lost 10 levels."
+    "CHS": "<font color='^'>拟态失败</font>,损失等级10级。",
+    "EN": "<font color='^'>Mimicry failed</font>, lost 10 levels.",
+    "CHT": "<font color='^'>擬態失敗</font>,損失等級10級。",
+    "JP": "<font color='^'>擬態失敗</font>,レベルが10下がりました。",
+    "KR": "<font color='^'>모방 실패</font>, 레벨 10 하락.",
+    "TH": "<font color='^'>แปลงร่างล้มเหลว</font>, สูญเสียระดับ 10 ระดับ.",
+    "VN": "<font color='^'>Biến hình thất bại</font>, mất 10 cấp."
   },
   {
     "key": "你遇到了{0},{1},{2}!",
-    "zh_CN": "你遇到了{0},{1},{2}!",
-    "en_US": "You encountered {0}, {1}, {2}!"
+    "CHS": "你遇到了{0},{1},{2}!",
+    "EN": "You encountered {0}, {1}, {2}!",
+    "CHT": "你遇到了{0},{1},{2}!",
+    "JP": "あなたは{0},{1},{2}に遭遇しました!",
+    "KR": "당신은 {0},{1},{2}을(를) 만났습니다!",
+    "TH": "คุณพบ {0},{1},{2}!",
+    "VN": "Bạn gặp {0},{1},{2}!"
   },
   {
     "key": "当前战斗力为:<font color='#ff8c00'>*</font>",
-    "zh_CN": "当前战斗力为:<font color='#ff8c00'>*</font>",
-    "en_US": "Current combat power: <font color='#ff8c00'>*</font>"
+    "CHS": "当前战斗力为:<font color='#ff8c00'>*</font>",
+    "EN": "Current combat power: <font color='#ff8c00'>*</font>",
+    "CHT": "當前戰鬥力為:<font color='#ff8c00'>*</font>",
+    "JP": "現在の戦闘力:<font color='#ff8c00'>*</font>",
+    "KR": "현재 전투력: <font color='#ff8c00'>*</font>",
+    "TH": "พลังต่อสู้ปัจจุบัน: <font color='#ff8c00'>*</font>",
+    "VN": "Sức chiến đấu hiện tại: <font color='#ff8c00'>*</font>"
   },
   {
     "key": "你来到第*层.",
-    "zh_CN": "你来到第*层.",
-    "en_US": "You arrived at level *."
+    "CHS": "你来到第*层.",
+    "EN": "You arrived at level *.",
+    "CHT": "你來到第*層.",
+    "JP": "あなたは*層に到達しました.",
+    "KR": "당신은 *층에 도착했습니다.",
+    "TH": "คุณมาถึงชั้นที่*.",
+    "VN": "Bạn đến tầng *."
   },
   {
     "key": "你的等级为:*.",
-    "zh_CN": "你的等级为:*.",
-    "en_US": "Your level is: *."
+    "CHS": "你的等级为:*.",
+    "EN": "Your level is: *.",
+    "CHT": "你的等級為:*.",
+    "JP": "あなたのレベルは:*です.",
+    "KR": "당신의 레벨: *.",
+    "TH": "ระดับของคุณ: *.",
+    "VN": "Cấp của bạn: *."
   },
   {
     "key": "<font color='^'>转生成功</font>,属性成长提升",
-    "zh_CN": "<font color='^'>转生成功</font>,属性成长提升",
-    "en_US": "<font color='^'>Reincarnation successful</font>, attribute growth increased"
+    "CHS": "<font color='^'>转生成功</font>,属性成长提升",
+    "EN": "<font color='^'>Reincarnation successful</font>, attribute growth increased",
+    "CHT": "<font color='^'>轉生成功</font>,屬性成長提升",
+    "JP": "<font color='^'>転生成功</font>,属性成長が上昇",
+    "KR": "<font color='^'>전생 성공</font>, 속성 성장 상승",
+    "TH": "<font color='^'>เกิดใหม่สำเร็จ</font>, การเติบโตคุณสมบัติเพิ่ม",
+    "VN": "<font color='^'>Tái sinh thành công</font>, tăng trưởng thuộc tính tăng"
   },
   {
     "key": "<font color='^'>淬炼成功</font>,属性向拟态生物靠拢",
-    "zh_CN": "<font color='^'>淬炼成功</font>,属性向拟态生物靠拢",
-    "en_US": "<font color='^'>Refining successful</font>, attributes align with mimicked creature"
+    "CHS": "<font color='^'>淬炼成功</font>,属性向拟态生物靠拢",
+    "EN": "<font color='^'>Refining successful</font>, attributes align with mimicked creature",
+    "CHT": "<font color='^'>淬煉成功</font>,屬性向擬態生物靠攏",
+    "JP": "<font color='^'>淬煉成功</font>,属性が擬態生物に近づきます",
+    "KR": "<font color='^'>단련 성공</font>, 속성이 모방 생물에 가까워짐",
+    "TH": "<font color='^'>หลอมรวมสำเร็จ</font>, คุณสมบัติเข้าใกล้สิ่งมีชีวิตที่แปลงร่าง",
+    "VN": "<font color='^'>Luyện hóa thành công</font>, thuộc tính tiến gần sinh vật biến hình"
   },
   {
     "key": "你吞噬了*,解析成功获得技能·<font color='^'>&</font>",
-    "zh_CN": "你吞噬了*,解析成功获得技能·<font color='^'>&</font>",
-    "en_US": "You devoured *, analysis successful, gained skill·<font color='^'>&</font>"
+    "CHS": "你吞噬了*,解析成功获得技能·<font color='^'>&</font>",
+    "EN": "You devoured *, analysis successful, gained skill·<font color='^'>&</font>",
+    "CHT": "你吞噬了*,解析成功獲得技能·<font color='^'>&</font>",
+    "JP": "あなたは*を吞噬し,解析に成功してスキル・<font color='^'>&</font>を獲得しました",
+    "KR": "당신은 *을(를) 포식하여 해석 성공, 스킬·<font color='^'>&</font> 획득",
+    "TH": "คุณกลืนกิน*, วิเคราะห์สำเร็จ ได้รับสกิล·<font color='^'>&</font>",
+    "VN": "Bạn nuốt chửng *, phân tích thành công, nhận kỹ năng·<font color='^'>&</font>"
   },
   {
     "key": "<font color='#FF0000'>等级不足</font>",
-    "zh_CN": "<font color='#FF0000'>等级不足</font>",
-    "en_US": "<font color='#FF0000'>Insufficient level</font>"
+    "CHS": "<font color='#FF0000'>等级不足</font>",
+    "EN": "<font color='#FF0000'>Insufficient level</font>",
+    "CHT": "<font color='#FF0000'>等級不足</font>",
+    "JP": "<font color='#FF0000'>レベル不足</font>",
+    "KR": "<font color='#FF0000'>레벨 부족</font>",
+    "TH": "<font color='#FF0000'>ระดับไม่เพียงพอ</font>",
+    "VN": "<font color='#FF0000'>Cấp không đủ</font>"
   },
   {
     "key": "攻击后20%的概率使自身+[50%×伤害值]的生命值。",
-    "zh_CN": "攻击后20%的概率使自身+[50%×伤害值]的生命值。",
-    "en_US": "20% chance after attacking to gain [50% × damage dealt] health."
+    "CHS": "攻击后20%的概率使自身+[50%×伤害值]的生命值。",
+    "EN": "20% chance after attacking to gain [50% × damage dealt] health.",
+    "CHT": "攻擊後20%的概率使自身+[50%×傷害值]的生命值。",
+    "JP": "攻撃後20%の確率で自身に+[50%×ダメージ値]の生命値を付与。",
+    "KR": "공격 후 20% 확률로 자신에게 +[50%×데미지] 생명력 부여.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ตัวเองได้รับพลังชีวิต +[50%×ความเสียหาย].",
+    "VN": "Sau khi tấn công, có 20% xác suất tăng +[50%×sát thương] sinh lực cho bản thân."
   },
   {
     "key": "攻击时20%的概率使对手-50%防御力。",
-    "zh_CN": "攻击时20%的概率使对手-50%防御力。",
-    "en_US": "20% chance when attacking to reduce opponent's defense by 50%."
+    "CHS": "攻击时20%的概率使对手-50%防御力。",
+    "EN": "20% chance when attacking to reduce opponent's defense by 50%.",
+    "CHT": "攻擊時20%的概率使對手-50%防禦力。",
+    "JP": "攻撃時20%の確率で対戦相手の防御力を-50%。",
+    "KR": "공격 시 20% 확률로 상대 방어력 -50%.",
+    "TH": "เมื่อโจมตี มีโอกาส 20% ลดพลังป้องกันศัตรู -50%.",
+    "VN": "Khi tấn công, có 20% xác suất giảm -50% phòng thủ đối thủ."
   },
   {
     "key": "攻击后20%的概率使对手跳过回合，持续1回合。",
-    "zh_CN": "攻击后20%的概率使对手跳过回合，持续1回合。",
-    "en_US": "20% chance after attacking to make opponent skip turn for 1 rounds."
+    "CHS": "攻击后20%的概率使对手跳过回合，持续1回合。",
+    "EN": "20% chance after attacking to make opponent skip turn for 1 rounds.",
+    "CHT": "攻擊後20%的概率使對手跳過回合，持續1回合。",
+    "JP": "攻撃後20%の確率で対戦相手を1ターン行動スキップ、1ターン継続。",
+    "KR": "공격 후 20% 확률로 상대 1턴 행동 스킵, 1턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ศัตรูข้ามรอบ 1 รอบ, ต่อเนื่อง 1 รอบ.",
+    "VN": "Sau khi tấn công, có 20% xác suất khiến đối thủ bỏ qua lượt, kéo dài 1 lượt."
   },
   {
     "key": "回合开始时使自身+5%攻防，永久",
-    "zh_CN": "回合开始时使自身+5%攻防，永久",
-    "en_US": "At start of turn, permanently increase own attack and defense by 5%."
+    "CHS": "回合开始时使自身+5%攻防，永久",
+    "EN": "At start of turn, permanently increase own attack and defense by 5%.",
+    "CHT": "回合開始時使自身+5%攻防，永久",
+    "JP": "ターン開始時に自身に+5%攻撃防御、永続",
+    "KR": "턴 시작 시 자신에게 +5% 공격 방어, 영구",
+    "TH": "เมื่อเริ่มรอบ ทำให้ตัวเอง +5% โจมตีป้องกัน, ถาวร",
+    "VN": "Khi bắt đầu lượt, tăng +5% công thủ cho bản thân, vĩnh viễn"
   },
   {
     "key": "攻击时20%的概率使自身+100%造成的伤害。",
-    "zh_CN": "攻击时20%的概率使自身+100%造成的伤害。",
-    "en_US": "20% chance when attacking to increase own damage by 100%."
+    "CHS": "攻击时20%的概率使自身+100%造成的伤害。",
+    "EN": "20% chance when attacking to increase own damage by 100%.",
+    "CHT": "攻擊時20%的概率使自身+100%造成的傷害。",
+    "JP": "攻撃時20%の確率で自身に+100%与ダメージ。",
+    "KR": "공격 시 20% 확률로 자신에게 +100% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 20% ทำให้ตัวเอง +100% ความเสียหาย.",
+    "VN": "Khi tấn công, có 20% xác suất tăng +100% sát thương cho bản thân."
   },
   {
     "key": "回合开始时使自身+10%攻防，永久",
-    "zh_CN": "回合开始时使自身+10%攻防，永久",
-    "en_US": "At start of turn, permanently increase own attack and defense by 10%."
+    "CHS": "回合开始时使自身+10%攻防，永久",
+    "EN": "At start of turn, permanently increase own attack and defense by 10%.",
+    "CHT": "回合開始時使自身+10%攻防，永久",
+    "JP": "ターン開始時に自身に+10%攻撃防御、永続",
+    "KR": "턴 시작 시 자신에게 +10% 공격 방어, 영구",
+    "TH": "เมื่อเริ่มรอบ ทำให้ตัวเอง +10% โจมตีป้องกัน, ถาวร",
+    "VN": "Khi bắt đầu lượt, tăng +10% công thủ cho bản thân, vĩnh viễn"
   },
   {
     "key": "回合开始时使对手-5%攻防，永久",
-    "zh_CN": "回合开始时使对手-5%攻防，永久",
-    "en_US": "At start of turn, permanently reduce opponent's attack and defense by 5%."
+    "CHS": "回合开始时使对手-5%攻防，永久",
+    "EN": "At start of turn, permanently reduce opponent's attack and defense by 5%.",
+    "CHT": "回合開始時使對手-5%攻防，永久",
+    "JP": "ターン開始時に対戦相手に-5%攻撃防御、永続",
+    "KR": "턴 시작 시 상대에게 -5% 공격 방어, 영구",
+    "TH": "เมื่อเริ่มรอบ ทำให้ศัตรู -5% โจมตีป้องกัน, ถาวร",
+    "VN": "Khi bắt đầu lượt, giảm -5% công thủ đối thủ, vĩnh viễn"
   },
   {
     "key": "战斗开始时使对手攻防交换。",
-    "zh_CN": "战斗开始时使对手攻防交换。",
-    "en_US": "At start of battle, swap opponent's attack and defense."
+    "CHS": "战斗开始时使对手攻防交换。",
+    "EN": "At start of battle, swap opponent's attack and defense.",
+    "CHT": "戰鬥開始時使對手攻防交換。",
+    "JP": "戦闘開始時に対戦相手の攻撃防御を交換。",
+    "KR": "전투 시작 시 상대 공격 방어 교환.",
+    "TH": "เมื่อเริ่มการต่อสู้ ทำให้โจมตีป้องกันศัตรูสลับ.",
+    "VN": "Khi bắt đầu chiến đấu, hoán đổi công thủ đối thủ."
   },
   {
     "key": "受击时20%的概率使自身闪避。",
-    "zh_CN": "受击时20%的概率使自身闪避。",
-    "en_US": "20% chance when hit to dodge."
+    "CHS": "受击时20%的概率使自身闪避。",
+    "EN": "20% chance when hit to dodge.",
+    "CHT": "受擊時20%的概率使自身閃避。",
+    "JP": "被攻撃時20%の確率で自身が回避。",
+    "KR": "피격 시 20% 확률로 자신 회피.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 20% ทำให้ตัวเองหลบ.",
+    "VN": "Khi bị tấn công, có 20% xác suất khiến bản thân né."
   },
   {
     "key": "攻击时20%的概率使自身+50%造成的伤害。",
-    "zh_CN": "攻击时20%的概率使自身+50%造成的伤害。",
-    "en_US": "20% chance when attacking to increase own damage by 50%."
+    "CHS": "攻击时20%的概率使自身+50%造成的伤害。",
+    "EN": "20% chance when attacking to increase own damage by 50%.",
+    "CHT": "攻擊時20%的概率使自身+50%造成的傷害。",
+    "JP": "攻撃時20%の確率で自身に+50%与ダメージ。",
+    "KR": "공격 시 20% 확률로 자신에게 +50% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 20% ทำให้ตัวเอง +50% ความเสียหาย.",
+    "VN": "Khi tấn công, có 20% xác suất tăng +50% sát thương cho bản thân."
   },
   {
     "key": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久",
-    "zh_CN": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久",
-    "en_US": "Before attacking, if health <50%, permanently increase own attack by 30%."
+    "CHS": "攻击前如果生命值<50%，那么使自身+30%攻击力，永久",
+    "EN": "Before attacking, if health <50%, permanently increase own attack by 30%.",
+    "CHT": "攻擊前如果生命值<50%，那麼使自身+30%攻擊力，永久",
+    "JP": "攻撃前に生命値<50%の場合、自身に+30%攻撃力、永続",
+    "KR": "공격 전 생명력<50%일 경우, 자신에게 +30% 공격력, 영구",
+    "TH": "ก่อนโจมตี หากพลังชีวิต<50%, ทำให้ตัวเอง +30% พลังโจมตี, ถาวร",
+    "VN": "Trước khi tấn công, nếu sinh lực<50%, tăng +30% sức tấn công cho bản thân, vĩnh viễn"
   },
   {
     "key": "攻击时使自身无视闪避。",
-    "zh_CN": "攻击时使自身无视闪避。",
-    "en_US": "When attacking, ignore opponent's dodge."
+    "CHS": "攻击时使自身无视闪避。",
+    "EN": "When attacking, ignore opponent's dodge.",
+    "CHT": "攻擊時使自身無視閃避。",
+    "JP": "攻撃時に自身が回避無視。",
+    "KR": "공격 시 자신 회피 무시.",
+    "TH": "เมื่อโจมตี ทำให้ตัวเองละเลยการหลบศัตรู.",
+    "VN": "Khi tấn công, bỏ qua né tránh đối thủ."
   },
   {
     "key": "攻击后15%的概率使对手放弃攻击，持续2回合。",
-    "zh_CN": "攻击后15%的概率使对手放弃攻击，持续2回合。",
-    "en_US": "15% chance after attacking to make opponent skip attack for 2 rounds."
+    "CHS": "攻击后15%的概率使对手放弃攻击，持续2回合。",
+    "EN": "15% chance after attacking to make opponent skip attack for 2 rounds.",
+    "CHT": "攻擊後15%的概率使對手放棄攻擊，持續2回合。",
+    "JP": "攻撃後15%の確率で対戦相手に攻撃放棄を強制、2ターン継続。",
+    "KR": "공격 후 15% 확률로 상대 공격 포기, 2턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 15% ทำให้ศัตรูยอมแพ้การโจมตี, ต่อเนื่อง 2 รอบ.",
+    "VN": "Sau khi tấn công, có 15% xác suất khiến đối thủ từ bỏ tấn công, kéo dài 2 lượt."
   },
   {
     "key": "攻击时10%的概率使自身+400%造成的伤害。",
-    "zh_CN": "攻击时10%的概率使自身+400%造成的伤害。",
-    "en_US": "10% chance when attacking to increase own damage by 400%."
+    "CHS": "攻击时10%的概率使自身+400%造成的伤害。",
+    "EN": "10% chance when attacking to increase own damage by 400%.",
+    "CHT": "攻擊時10%的概率使自身+400%造成的傷害。",
+    "JP": "攻撃時10%の確率で自身に+400%与ダメージ。",
+    "KR": "공격 시 10% 확률로 자신에게 +400% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 10% ทำให้ตัวเอง +400% ความเสียหาย.",
+    "VN": "Khi tấn công, có 10% xác suất tăng +400% sát thương cho bản thân."
   },
   {
     "key": "攻击后30%的概率使自身闪避，持续2回合。",
-    "zh_CN": "攻击后30%的概率使自身闪避，持续2回合。",
-    "en_US": "30% chance after attacking to dodge for 2 rounds."
+    "CHS": "攻击后30%的概率使自身闪避，持续2回合。",
+    "EN": "30% chance after attacking to dodge for 2 rounds.",
+    "CHT": "攻擊後30%的概率使自身閃避，持續2回合。",
+    "JP": "攻撃後30%の確率で自身が回避、2ターン継続。",
+    "KR": "공격 후 30% 확률로 자신 회피, 2턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 30% ทำให้ตัวเองหลบ, ต่อเนื่อง 2 รอบ.",
+    "VN": "Sau khi tấn công, có 30% xác suất khiến bản thân né, kéo dài 2 lượt."
   },
   {
     "key": "攻击前20%的概率使对手-50%攻击力，持续2回合。",
-    "zh_CN": "攻击前20%的概率使对手-50%攻击力，持续2回合。",
-    "en_US": "20% chance before attacking to reduce opponent's attack by 50% for 2 rounds."
+    "CHS": "攻击前20%的概率使对手-50%攻击力，持续2回合。",
+    "EN": "20% chance before attacking to reduce opponent's attack by 50% for 2 rounds.",
+    "CHT": "攻擊前20%的概率使對手-50%攻擊力，持續2回合。",
+    "JP": "攻撃前20%の確率で対戦相手に-50%攻撃力、2ターン継続。",
+    "KR": "공격 전 20% 확률로 상대에게 -50% 공격력, 2턴 지속.",
+    "TH": "ก่อนโจมตี มีโอกาส 20% ทำให้ศัตรู -50% พลังโจมตี, ต่อเนื่อง 2 รอบ.",
+    "VN": "Trước khi tấn công, có 20% xác suất giảm -50% sức tấn công đối thủ, kéo dài 2 lượt."
   },
   {
     "key": "受击时40%的概率使自身闪避。",
-    "zh_CN": "受击时40%的概率使自身闪避。",
-    "en_US": "40% chance when hit to dodge."
+    "CHS": "受击时40%的概率使自身闪避。",
+    "EN": "40% chance when hit to dodge.",
+    "CHT": "受擊時40%的概率使自身閃避。",
+    "JP": "被攻撃時40%の確率で自身が回避。",
+    "KR": "피격 시 40% 확률로 자신 회피.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 40% ทำให้ตัวเองหลบ.",
+    "VN": "Khi bị tấn công, có 40% xác suất khiến bản thân né."
   },
   {
     "key": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
-    "zh_CN": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
-    "en_US": "After being hit and dying, restore 100% max health and clear buffs, 1 times."
+    "CHS": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
+    "EN": "After being hit and dying, restore 100% max health and clear buffs, 1 times.",
+    "CHT": "受擊後如果死亡，那麼使自身+100%最大生命並清除buff，1次。",
+    "JP": "被攻撃後死亡した場合、自身に+100%最大生命を付与しバフをクリア、1回。",
+    "KR": "피격 후 사망 시, 자신에게 +100% 최대 생명력 부여 및 버프 제거, 1회.",
+    "TH": "เมื่อถูกโจมตีและตาย ทำให้ตัวเอง +100% พลังชีวิตสูงสุดและล้างบัฟ, 1 ครั้ง.",
+    "VN": "Sau khi bị tấn công và chết, tăng +100% sinh lực tối đa cho bản thân và xóa buff, 1 lần."
   },
   {
     "key": "攻击前使对手-10%攻击力，永久",
-    "zh_CN": "攻击前使对手-10%攻击力，永久",
-    "en_US": "Before attacking, permanently reduce opponent's attack by 10%."
+    "CHS": "攻击前使对手-10%攻击力，永久",
+    "EN": "Before attacking, permanently reduce opponent's attack by 10%.",
+    "CHT": "攻擊前使對手-10%攻擊力，永久",
+    "JP": "攻撃前に対戦相手に-10%攻撃力、永続",
+    "KR": "공격 전 상대에게 -10% 공격력, 영구",
+    "TH": "ก่อนโจมตี ทำให้ศัตรู -10% พลังโจมตี, ถาวร",
+    "VN": "Trước khi tấn công, giảm -10% sức tấn công đối thủ, vĩnh viễn"
   },
   {
     "key": "受击时50%的概率使自身闪避。",
-    "zh_CN": "受击时50%的概率使自身闪避。",
-    "en_US": "50% chance when hit to dodge."
+    "CHS": "受击时50%的概率使自身闪避。",
+    "EN": "50% chance when hit to dodge.",
+    "CHT": "受擊時50%的概率使自身閃避。",
+    "JP": "被攻撃時50%の確率で自身が回避。",
+    "KR": "피격 시 50% 확률로 자신 회피.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 50% ทำให้ตัวเองหลบ.",
+    "VN": "Khi bị tấn công, có 50% xác suất khiến bản thân né."
   },
   {
     "key": "受击后使对手-[40%×伤害值]的生命值。",
-    "zh_CN": "受击后使对手-[40%×伤害值]的生命值。",
-    "en_US": "After being hit, reduce opponent's health by [40% × damage taken]."
+    "CHS": "受击后使对手-[40%×伤害值]的生命值。",
+    "EN": "After being hit, reduce opponent's health by [40% × damage taken].",
+    "CHT": "受擊後使對手-[40%×傷害值]的生命值。",
+    "JP": "被攻撃後に対戦相手に-[40%×ダメージ値]の生命値を付与。",
+    "KR": "피격 후 상대에게 -[40%×데미지] 생명력 부여.",
+    "TH": "หลังถูกโจมตี ทำให้ศัตรู -[40%×ความเสียหาย] พลังชีวิต.",
+    "VN": "Sau khi bị tấn công, giảm -[40%×sát thương] sinh lực đối thủ."
   },
   {
     "key": "攻击时40%的概率使自身+50%造成的伤害。",
-    "zh_CN": "攻击时40%的概率使自身+50%造成的伤害。",
-    "en_US": "40% chance when attacking to increase own damage by 50%."
+    "CHS": "攻击时40%的概率使自身+50%造成的伤害。",
+    "EN": "40% chance when attacking to increase own damage by 50%.",
+    "CHT": "攻擊時40%的概率使自身+50%造成的傷害。",
+    "JP": "攻撃時40%の確率で自身に+50%与ダメージ。",
+    "KR": "공격 시 40% 확률로 자신에게 +50% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 40% ทำให้ตัวเอง +50% ความเสียหาย.",
+    "VN": "Khi tấn công, có 40% xác suất tăng +50% sát thương cho bản thân."
   },
   {
     "key": "攻击时20%的概率使对手放弃攻击，持续1回合。",
-    "zh_CN": "攻击时20%的概率使对手放弃攻击，持续1回合。",
-    "en_US": "20% chance when attacking to make opponent skip attack for 1 rounds."
+    "CHS": "攻击时20%的概率使对手放弃攻击，持续1回合。",
+    "EN": "20% chance when attacking to make opponent skip attack for 1 rounds.",
+    "CHT": "攻擊時20%的概率使對手放棄攻擊，持續1回合。",
+    "JP": "攻撃時20%の確率で対戦相手に攻撃放棄を強制、1ターン継続。",
+    "KR": "공격 시 20% 확률로 상대 공격 포기, 1턴 지속.",
+    "TH": "เมื่อโจมตี มีโอกาส 20% ทำให้ศัตรูยอมแพ้การโจมตี, ต่อเนื่อง 1 รอบ.",
+    "VN": "Khi tấn công, có 20% xác suất khiến đối thủ từ bỏ tấn công, kéo dài 1 lượt."
   },
   {
     "key": "攻击后25%的概率使对手跳过回合，持续1回合。",
-    "zh_CN": "攻击后25%的概率使对手跳过回合，持续1回合。",
-    "en_US": "25% chance after attacking to make opponent skip turn for 1 rounds."
+    "CHS": "攻击后25%的概率使对手跳过回合，持续1回合。",
+    "EN": "25% chance after attacking to make opponent skip turn for 1 rounds.",
+    "CHT": "攻擊後25%的概率使對手跳過回合，持續1回合。",
+    "JP": "攻撃後25%の確率で対戦相手を1ターン行動スキップ、1ターン継続。",
+    "KR": "공격 후 25% 확률로 상대 1턴 행동 스킵, 1턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 25% ทำให้ศัตรูข้ามรอบ 1 รอบ, ต่อเนื่อง 1 รอบ.",
+    "VN": "Sau khi tấn công, có 25% xác suất khiến đối thủ bỏ qua lượt, kéo dài 1 lượt."
   },
   {
     "key": "攻击时30%的概率使自身+200%造成的伤害。",
-    "zh_CN": "攻击时30%的概率使自身+200%造成的伤害。",
-    "en_US": "30% chance when attacking to increase own damage by 200%."
+    "CHS": "攻击时30%的概率使自身+200%造成的伤害。",
+    "EN": "30% chance when attacking to increase own damage by 200%.",
+    "CHT": "攻擊時30%的概率使自身+200%造成的傷害。",
+    "JP": "攻撃時30%の確率で自身に+200%与ダメージ。",
+    "KR": "공격 시 30% 확률로 자신에게 +200% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 30% ทำให้ตัวเอง +200% ความเสียหาย.",
+    "VN": "Khi tấn công, có 30% xác suất tăng +200% sát thương cho bản thân."
   },
   {
     "key": "受击时90%的概率使自身-20%所受的伤害。",
-    "zh_CN": "受击时90%的概率使自身-20%所受的伤害。",
-    "en_US": "90% chance when hit to reduce damage taken by 20%."
+    "CHS": "受击时90%的概率使自身-20%所受的伤害。",
+    "EN": "90% chance when hit to reduce damage taken by 20%.",
+    "CHT": "受擊時90%的概率使自身-20%所受的傷害。",
+    "JP": "被攻撃時90%の確率で自身が受けるダメージを-20%。",
+    "KR": "피격 시 90% 확률로 자신 받는 데미지 -20%.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 90% ทำให้ตัวเองลดความเสียหาย -20%.",
+    "VN": "Khi bị tấn công, có 90% xác suất giảm -20% sát thương nhận được."
   },
   {
     "key": "受击时90%的概率使自身-30%所受的伤害。",
-    "zh_CN": "受击时90%的概率使自身-30%所受的伤害。",
-    "en_US": "90% chance when hit to reduce damage taken by 30%."
+    "CHS": "受击时90%的概率使自身-30%所受的伤害。",
+    "EN": "90% chance when hit to reduce damage taken by 30%.",
+    "CHT": "受擊時90%的概率使自身-30%所受的傷害。",
+    "JP": "被攻撃時90%の確率で自身が受けるダメージを-30%。",
+    "KR": "피격 시 90% 확률로 자신 받는 데미지 -30%.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 90% ทำให้ตัวเองลดความเสียหาย -30%.",
+    "VN": "Khi bị tấn công, có 90% xác suất giảm -30% sát thương nhận được."
   },
   {
     "key": "攻击时10%的概率使自身+150%造成的伤害。",
-    "zh_CN": "攻击时10%的概率使自身+150%造成的伤害。",
-    "en_US": "10% chance when attacking to increase own damage by 150%."
+    "CHS": "攻击时10%的概率使自身+150%造成的伤害。",
+    "EN": "10% chance when attacking to increase own damage by 150%.",
+    "CHT": "攻擊時10%的概率使自身+150%造成的傷害。",
+    "JP": "攻撃時10%の確率で自身に+150%与ダメージ。",
+    "KR": "공격 시 10% 확률로 자신에게 +150% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 10% ทำให้ตัวเอง +150% ความเสียหาย.",
+    "VN": "Khi tấn công, có 10% xác suất tăng +150% sát thương cho bản thân."
   },
   {
     "key": "攻击时25%的概率使自身+150%造成的伤害。",
-    "zh_CN": "攻击时25%的概率使自身+150%造成的伤害。",
-    "en_US": "25% chance when attacking to increase own damage by 150%."
+    "CHS": "攻击时25%的概率使自身+150%造成的伤害。",
+    "EN": "25% chance when attacking to increase own damage by 150%.",
+    "CHT": "攻擊時25%的概率使自身+150%造成的傷害。",
+    "JP": "攻撃時25%の確率で自身に+150%与ダメージ。",
+    "KR": "공격 시 25% 확률로 자신에게 +150% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 25% ทำให้ตัวเอง +150% ความเสียหาย.",
+    "VN": "Khi tấn công, có 25% xác suất tăng +150% sát thương cho bản thân."
   },
   {
     "key": "受击后使对手-[50%×伤害值]的生命值。",
-    "zh_CN": "受击后使对手-[50%×伤害值]的生命值。",
-    "en_US": "After being hit, reduce opponent's health by [50% × damage taken]."
+    "CHS": "受击后使对手-[50%×伤害值]的生命值。",
+    "EN": "After being hit, reduce opponent's health by [50% × damage taken].",
+    "CHT": "受擊後使對手-[50%×傷害值]的生命值。",
+    "JP": "被攻撃後に対戦相手に-[50%×ダメージ値]の生命値を付与。",
+    "KR": "피격 후 상대에게 -[50%×데미지] 생명력 부여.",
+    "TH": "หลังถูกโจมตี ทำให้ศัตรู -[50%×ความเสียหาย] พลังชีวิต.",
+    "VN": "Sau khi bị tấn công, giảm -[50%×sát thương] sinh lực đối thủ."
   },
   {
     "key": "回合开始时50%的概率使自身+[40%×攻击力]的生命值。",
-    "zh_CN": "回合开始时50%的概率使自身+[40%×攻击力]的生命值。",
-    "en_US": "50% chance at start of turn to gain [40% × attack power] health."
+    "CHS": "回合开始时50%的概率使自身+[40%×攻击力]的生命值。",
+    "EN": "50% chance at start of turn to gain [40% × attack power] health.",
+    "CHT": "回合開始時50%的概率使自身+[40%×攻擊力]的生命值。",
+    "JP": "ターン開始時に50%の確率で自身に+[40%×攻撃力]の生命値を付与。",
+    "KR": "턴 시작 시 50% 확률로 자신에게 +[40%×공격력] 생명력 부여.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 50% ทำให้ตัวเอง +[40%×พลังโจมตี] พลังชีวิต.",
+    "VN": "Khi bắt đầu lượt, có 50% xác suất tăng +[40%×sức tấn công] sinh lực cho bản thân."
   },
   {
     "key": "受击前30%的概率使对手放弃攻击。",
-    "zh_CN": "受击前30%的概率使对手放弃攻击。",
-    "en_US": "30% chance before being hit to make opponent skip attack."
+    "CHS": "受击前30%的概率使对手放弃攻击。",
+    "EN": "30% chance before being hit to make opponent skip attack.",
+    "CHT": "受擊前30%的概率使對手放棄攻擊。",
+    "JP": "被攻撃前30%の確率で対戦相手に攻撃放棄を強制。",
+    "KR": "피격 전 30% 확률로 상대 공격 포기.",
+    "TH": "ก่อนถูกโจมตี มีโอกาส 30% ทำให้ศัตรูยอมแพ้การโจมตี.",
+    "VN": "Trước khi bị tấn công, có 30% xác suất khiến đối thủ từ bỏ tấn công."
   },
   {
     "key": "受击前25%的概率使对手放弃攻击。",
-    "zh_CN": "受击前25%的概率使对手放弃攻击。",
-    "en_US": "25% chance before being hit to make opponent skip attack."
+    "CHS": "受击前25%的概率使对手放弃攻击。",
+    "EN": "25% chance before being hit to make opponent skip attack.",
+    "CHT": "受擊前25%的概率使對手放棄攻擊。",
+    "JP": "被攻撃前25%の確率で対戦相手に攻撃放棄を強制。",
+    "KR": "피격 전 25% 확률로 상대 공격 포기.",
+    "TH": "ก่อนถูกโจมตี มีโอกาส 25% ทำให้ศัตรูยอมแพ้การโจมตี.",
+    "VN": "Trước khi bị tấn công, có 25% xác suất khiến đối thủ từ bỏ tấn công."
   },
   {
     "key": "战斗开始时使对手-30%攻击力，永久",
-    "zh_CN": "战斗开始时使对手-30%攻击力，永久",
-    "en_US": "At start of battle, permanently reduce opponent's attack by 30%."
+    "CHS": "战斗开始时使对手-30%攻击力，永久",
+    "EN": "At start of battle, permanently reduce opponent's attack by 30%.",
+    "CHT": "戰鬥開始時使對手-30%攻擊力，永久",
+    "JP": "戦闘開始時に対戦相手に-30%攻撃力、永続",
+    "KR": "전투 시작 시 상대에게 -30% 공격력, 영구",
+    "TH": "เมื่อเริ่มการต่อสู้ ทำให้ศัตรู -30% พลังโจมตี, ถาวร",
+    "VN": "Khi bắt đầu chiến đấu, giảm -30% sức tấn công đối thủ, vĩnh viễn"
   },
   {
     "key": "战斗准备阶段使对手禁用3个技能。",
-    "zh_CN": "战斗准备阶段使对手禁用3个技能。",
-    "en_US": "During battle preparation, disable 3 of opponent's skills."
+    "CHS": "战斗准备阶段使对手禁用3个技能。",
+    "EN": "During battle preparation, disable 3 of opponent's skills.",
+    "CHT": "戰鬥準備階段使對手禁用3個技能。",
+    "JP": "戦闘準備段階で対戦相手に3つのスキルを無効化。",
+    "KR": "전투 준비 단계에서 상대에게 3개 스킬 무효화.",
+    "TH": "ในขั้นเตรียมการต่อสู้ ทำให้ศัตรูปิดใช้งานสกิล 3 อัน.",
+    "VN": "Trong giai đoạn chuẩn bị chiến đấu, vô hiệu hóa 3 kỹ năng đối thủ."
   },
   {
     "key": "战斗开始时50%的概率使自身+100%攻击力，永久",
-    "zh_CN": "战斗开始时50%的概率使自身+100%攻击力，永久",
-    "en_US": "50% chance at start of battle to permanently increase own attack by 100%."
+    "CHS": "战斗开始时50%的概率使自身+100%攻击力，永久",
+    "EN": "50% chance at start of battle to permanently increase own attack by 100%.",
+    "CHT": "戰鬥開始時50%的概率使自身+100%攻擊力，永久",
+    "JP": "戦闘開始時に50%の確率で自身に+100%攻撃力、永続",
+    "KR": "전투 시작 시 50% 확률로 자신에게 +100% 공격력, 영구",
+    "TH": "เมื่อเริ่มการต่อสู้ มีโอกาส 50% ทำให้ตัวเอง +100% พลังโจมตี, ถาวร",
+    "VN": "Khi bắt đầu chiến đấu, có 50% xác suất tăng +100% sức tấn công cho bản thân, vĩnh viễn"
   },
   {
     "key": "攻击后30%的概率使对手放弃攻击，持续1回合。",
-    "zh_CN": "攻击后30%的概率使对手放弃攻击，持续1回合。",
-    "en_US": "30% chance after attacking to make opponent skip attack for 1 rounds."
+    "CHS": "攻击后30%的概率使对手放弃攻击，持续1回合。",
+    "EN": "30% chance after attacking to make opponent skip attack for 1 rounds.",
+    "CHT": "攻擊後30%的概率使對手放棄攻擊，持續1回合。",
+    "JP": "攻撃後30%の確率で対戦相手に攻撃放棄を強制、1ターン継続。",
+    "KR": "공격 후 30% 확률로 상대 공격 포기, 1턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 30% ทำให้ศัตรูยอมแพ้การโจมตี, ต่อเนื่อง 1 รอบ.",
+    "VN": "Sau khi tấn công, có 30% xác suất khiến đối thủ từ bỏ tấn công, kéo dài 1 lượt."
   },
   {
     "key": "受击后30%的概率使对手-30%攻防，永久",
-    "zh_CN": "受击后30%的概率使对手-30%攻防，永久",
-    "en_US": "30% chance after being hit to permanently reduce opponent's attack and defense by 30%."
+    "CHS": "受击后30%的概率使对手-30%攻防，永久",
+    "EN": "30% chance after being hit to permanently reduce opponent's attack and defense by 30%.",
+    "CHT": "受擊後30%的概率使對手-30%攻防，永久",
+    "JP": "被攻撃後30%の確率で対戦相手に-30%攻撃防御、永続",
+    "KR": "피격 후 30% 확률로 상대에게 -30% 공격 방어, 영구",
+    "TH": "หลังถูกโจมตี มีโอกาส 30% ทำให้ศัตรู -30% โจมตีป้องกัน, ถาวร",
+    "VN": "Sau khi bị tấn công, có 30% xác suất giảm -30% công thủ đối thủ, vĩnh viễn"
   },
   {
     "key": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
-    "zh_CN": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
-    "en_US": "During battle preparation, creature randomly gains 5 skills. (Player) skill cap increased by 5."
+    "CHS": "战斗准备阶段使自身(生物)随机获得5个技能。(玩家)增加5个技能上限。",
+    "EN": "During battle preparation, creature randomly gains 5 skills. (Player) skill cap increased by 5.",
+    "CHT": "戰鬥準備階段使自身(生物)隨機獲得5個技能。(玩家)增加5個技能上限。",
+    "JP": "戦闘準備段階で自身(生物)にランダムで5つのスキルを付与。(プレイヤー)スキル上限を5増加。",
+    "KR": "전투 준비 단계에서 자신(생물)에게 랜덤으로 5개 스킬 부여. (플레이어) 스킬 상한 5 증가.",
+    "TH": "ในขั้นเตรียมการต่อสู้ ทำให้ตัวเอง (สิ่งมีชีวิต) ได้สกิลสุ่ม 5 อัน. (ผู้เล่น) เพิ่มขีดจำกัดสกิล 5.",
+    "VN": "Trong giai đoạn chuẩn bị chiến đấu, bản thân (sinh vật) nhận ngẫu nhiên 5 kỹ năng. (Người chơi) tăng giới hạn kỹ năng thêm 5."
   },
   {
     "key": "攻击后20%的概率使自身闪避，持续1回合。",
-    "zh_CN": "攻击后20%的概率使自身闪避，持续1回合。",
-    "en_US": "20% chance after attacking to dodge for 1 rounds."
+    "CHS": "攻击后20%的概率使自身闪避，持续1回合。",
+    "EN": "20% chance after attacking to dodge for 1 rounds.",
+    "CHT": "攻擊後20%的概率使自身閃避，持續1回合。",
+    "JP": "攻撃後20%の確率で自身が回避、1ターン継続。",
+    "KR": "공격 후 20% 확률로 자신 회피, 1턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ตัวเองหลบ, ต่อเนื่อง 1 รอบ.",
+    "VN": "Sau khi tấn công, có 20% xác suất khiến bản thân né, kéo dài 1 lượt."
   },
   {
     "key": "攻击时20%的概率使对手-100%防御力。",
-    "zh_CN": "攻击时20%的概率使对手-100%防御力。",
-    "en_US": "20% chance when attacking to reduce opponent's defense by 100%."
+    "CHS": "攻击时20%的概率使对手-100%防御力。",
+    "EN": "20% chance when attacking to reduce opponent's defense by 100%.",
+    "CHT": "攻擊時20%的概率使對手-100%防禦力。",
+    "JP": "攻撃時20%の確率で対戦相手に-100%防御力。",
+    "KR": "공격 시 20% 확률로 상대에게 -100% 방어력.",
+    "TH": "เมื่อโจมตี มีโอกาส 20% ทำให้ศัตรู -100% พลังป้องกัน.",
+    "VN": "Khi tấn công, có 20% xác suất giảm -100% phòng thủ đối thủ."
   },
   {
     "key": "回合开始时20%的概率使自身+50%防御力，持续1回合。",
-    "zh_CN": "回合开始时20%的概率使自身+50%防御力，持续1回合。",
-    "en_US": "20% chance at start of turn to increase own defense by 50% for 1 rounds."
+    "CHS": "回合开始时20%的概率使自身+50%防御力，持续1回合。",
+    "EN": "20% chance at start of turn to increase own defense by 50% for 1 rounds.",
+    "CHT": "回合開始時20%的概率使自身+50%防禦力，持續1回合。",
+    "JP": "ターン開始時に20%の確率で自身に+50%防御力、1ターン継続。",
+    "KR": "턴 시작 시 20% 확률로 자신에게 +50% 방어력, 1턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 20% ทำให้ตัวเอง +50% พลังป้องกัน, ต่อเนื่อง 1 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 20% xác suất tăng +50% phòng thủ cho bản thân, kéo dài 1 lượt."
   },
   {
     "key": "攻击时25%的概率使自身+100%造成的伤害。",
-    "zh_CN": "攻击时25%的概率使自身+100%造成的伤害。",
-    "en_US": "25% chance when attacking to increase own damage by 100%."
+    "CHS": "攻击时25%的概率使自身+100%造成的伤害。",
+    "EN": "25% chance when attacking to increase own damage by 100%.",
+    "CHT": "攻擊時25%的概率使自身+100%造成的傷害。",
+    "JP": "攻撃時25%の確率で自身に+100%与ダメージ。",
+    "KR": "공격 시 25% 확률로 자신에게 +100% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 25% ทำให้ตัวเอง +100% ความเสียหาย.",
+    "VN": "Khi tấn công, có 25% xác suất tăng +100% sát thương cho bản thân."
   },
   {
     "key": "受击时50%的概率使自身-30%所受的伤害。",
-    "zh_CN": "受击时50%的概率使自身-30%所受的伤害。",
-    "en_US": "50% chance when hit to reduce damage taken by 30%."
+    "CHS": "受击时50%的概率使自身-30%所受的伤害。",
+    "EN": "50% chance when hit to reduce damage taken by 30%.",
+    "CHT": "受擊時50%的概率使自身-30%所受的傷害。",
+    "JP": "被攻撃時50%の確率で自身が受けるダメージを-30%。",
+    "KR": "피격 시 50% 확률로 자신 받는 데미지 -30%.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 50% ทำให้ตัวเองลดความเสียหาย -30%.",
+    "VN": "Khi bị tấn công, có 50% xác suất giảm -30% sát thương nhận được."
   },
   {
     "key": "攻击后10%的概率使对手跳过回合，持续2回合。",
-    "zh_CN": "攻击后10%的概率使对手跳过回合，持续2回合。",
-    "en_US": "10% chance after attacking to make opponent skip turn for 2 rounds."
+    "CHS": "攻击后10%的概率使对手跳过回合，持续2回合。",
+    "EN": "10% chance after attacking to make opponent skip turn for 2 rounds.",
+    "CHT": "攻擊後10%的概率使對手跳過回合，持續2回合。",
+    "JP": "攻撃後10%の確率で対戦相手を2ターン行動スキップ、2ターン継続。",
+    "KR": "공격 후 10% 확률로 상대 2턴 행동 스킵, 2턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 10% ทำให้ศัตรูข้ามรอบ 2 รอบ, ต่อเนื่อง 2 รอบ.",
+    "VN": "Sau khi tấn công, có 10% xác suất khiến đối thủ bỏ qua lượt, kéo dài 2 lượt."
   },
   {
     "key": "攻击后30%的概率使对手-30%攻击力，持续2回合。",
-    "zh_CN": "攻击后30%的概率使对手-30%攻击力，持续2回合。",
-    "en_US": "30% chance after attacking to reduce opponent's attack by 30% for 2 rounds."
+    "CHS": "攻击后30%的概率使对手-30%攻击力，持续2回合。",
+    "EN": "30% chance after attacking to reduce opponent's attack by 30% for 2 rounds.",
+    "CHT": "攻擊後30%的概率使對手-30%攻擊力，持續2回合。",
+    "JP": "攻撃後30%の確率で対戦相手に-30%攻撃力、2ターン継続。",
+    "KR": "공격 후 30% 확률로 상대에게 -30% 공격력, 2턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 30% ทำให้ศัตรู -30% พลังโจมตี, ต่อเนื่อง 2 รอบ.",
+    "VN": "Sau khi tấn công, có 30% xác suất giảm -30% sức tấn công đối thủ, kéo dài 2 lượt."
   },
   {
     "key": "攻击后70%的概率使对手-5%攻击力，永久",
-    "zh_CN": "攻击后70%的概率使对手-5%攻击力，永久",
-    "en_US": "70% chance after attacking to permanently reduce opponent's attack by 5%."
+    "CHS": "攻击后70%的概率使对手-5%攻击力，永久",
+    "EN": "70% chance after attacking to permanently reduce opponent's attack by 5%.",
+    "CHT": "攻擊後70%的概率使對手-5%攻擊力，永久",
+    "JP": "攻撃後70%の確率で対戦相手に-5%攻撃力、永続",
+    "KR": "공격 후 70% 확률로 상대에게 -5% 공격력, 영구",
+    "TH": "หลังโจมตี มีโอกาส 70% ทำให้ศัตรู -5% พลังโจมตี, ถาวร",
+    "VN": "Sau khi tấn công, có 70% xác suất giảm -5% sức tấn công đối thủ, vĩnh viễn"
   },
   {
     "key": "攻击后20%的概率使自身+[100%×攻击力]的生命值。",
-    "zh_CN": "攻击后20%的概率使自身+[100%×攻击力]的生命值。",
-    "en_US": "20% chance after attacking to gain [100% × attack power] health."
+    "CHS": "攻击后20%的概率使自身+[100%×攻击力]的生命值。",
+    "EN": "20% chance after attacking to gain [100% × attack power] health.",
+    "CHT": "攻擊後20%的概率使自身+[100%×攻擊力]的生命值。",
+    "JP": "攻撃後20%の確率で自身に+[100%×攻撃力]の生命値を付与。",
+    "KR": "공격 후 20% 확률로 자신에게 +[100%×공격력] 생명력 부여.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ตัวเอง +[100%×พลังโจมตี] พลังชีวิต.",
+    "VN": "Sau khi tấn công, có 20% xác suất tăng +[100%×sức tấn công] sinh lực cho bản thân."
   },
   {
     "key": "攻击前50%的概率使对手-5%防御力，永久",
-    "zh_CN": "攻击前50%的概率使对手-5%防御力，永久",
-    "en_US": "50% chance before attacking to permanently reduce opponent's defense by 5%."
+    "CHS": "攻击前50%的概率使对手-5%防御力，永久",
+    "EN": "50% chance before attacking to permanently reduce opponent's defense by 5%.",
+    "CHT": "攻擊前50%的概率使對手-5%防禦力，永久",
+    "JP": "攻撃前50%の確率で対戦相手に-5%防御力、永続",
+    "KR": "공격 전 50% 확률로 상대에게 -5% 방어력, 영구",
+    "TH": "ก่อนโจมตี มีโอกาส 50% ทำให้ศัตรู -5% พลังป้องกัน, ถาวร",
+    "VN": "Trước khi tấn công, có 50% xác suất giảm -5% phòng thủ đối thủ, vĩnh viễn"
   },
   {
     "key": "回合开始时30%的概率使对手-50%防御力，持续2回合。",
-    "zh_CN": "回合开始时30%的概率使对手-50%防御力，持续2回合。",
-    "en_US": "30% chance at start of turn to reduce opponent's defense by 50% for 2 rounds."
+    "CHS": "回合开始时30%的概率使对手-50%防御力，持续2回合。",
+    "EN": "30% chance at start of turn to reduce opponent's defense by 50% for 2 rounds.",
+    "CHT": "回合開始時30%的概率使對手-50%防禦力，持續2回合。",
+    "JP": "ターン開始時に30%の確率で対戦相手に-50%防御力、2ターン継続。",
+    "KR": "턴 시작 시 30% 확률로 상대에게 -50% 방어력, 2턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 30% ทำให้ศัตรู -50% พลังป้องกัน, ต่อเนื่อง 2 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 30% xác suất giảm -50% phòng thủ đối thủ, kéo dài 2 lượt."
   },
   {
     "key": "战斗开始时50%的概率使自身+50%攻击力，永久",
-    "zh_CN": "战斗开始时50%的概率使自身+50%攻击力，永久",
-    "en_US": "50% chance at start of battle to permanently increase own attack by 50%."
+    "CHS": "战斗开始时50%的概率使自身+50%攻击力，永久",
+    "EN": "50% chance at start of battle to permanently increase own attack by 50%.",
+    "CHT": "戰鬥開始時50%的概率使自身+50%攻擊力，永久",
+    "JP": "戦闘開始時に50%の確率で自身に+50%攻撃力、永続",
+    "KR": "전투 시작 시 50% 확률로 자신에게 +50% 공격력, 영구",
+    "TH": "เมื่อเริ่มการต่อสู้ มีโอกาส 50% ทำให้ตัวเอง +50% พลังโจมตี, ถาวร",
+    "VN": "Khi bắt đầu chiến đấu, có 50% xác suất tăng +50% sức tấn công cho bản thân, vĩnh viễn"
   },
   {
     "key": "回合开始时使自身获得1个技能。",
-    "zh_CN": "回合开始时使自身获得1个技能。",
-    "en_US": "At start of turn, gain 1 skills."
+    "CHS": "回合开始时使自身获得1个技能。",
+    "EN": "At start of turn, gain 1 skills.",
+    "CHT": "回合開始時使自身獲得1個技能。",
+    "JP": "ターン開始時に自身に1つのスキルを付与。",
+    "KR": "턴 시작 시 자신에게 1개 스킬 부여.",
+    "TH": "เมื่อเริ่มรอบ ทำให้ตัวเองได้รับสกิล 1 อัน.",
+    "VN": "Khi bắt đầu lượt, nhận 1 kỹ năng cho bản thân."
   },
   {
     "key": "攻击时40%的概率使自身+20%造成的伤害。",
-    "zh_CN": "攻击时40%的概率使自身+20%造成的伤害。",
-    "en_US": "40% chance when attacking to increase own damage by 20%."
+    "CHS": "攻击时40%的概率使自身+20%造成的伤害。",
+    "EN": "40% chance when attacking to increase own damage by 20%.",
+    "CHT": "攻擊時40%的概率使自身+20%造成的傷害。",
+    "JP": "攻撃時40%の確率で自身に+20%与ダメージ。",
+    "KR": "공격 시 40% 확률로 자신에게 +20% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 40% ทำให้ตัวเอง +20% ความเสียหาย.",
+    "VN": "Khi tấn công, có 40% xác suất tăng +20% sát thương cho bản thân."
   },
   {
     "key": "攻击时40%的概率使自身+100%造成的伤害。",
-    "zh_CN": "攻击时40%的概率使自身+100%造成的伤害。",
-    "en_US": "40% chance when attacking to increase own damage by 100%."
+    "CHS": "攻击时40%的概率使自身+100%造成的伤害。",
+    "EN": "40% chance when attacking to increase own damage by 100%.",
+    "CHT": "攻擊時40%的概率使自身+100%造成的傷害。",
+    "JP": "攻撃時40%の確率で自身に+100%与ダメージ。",
+    "KR": "공격 시 40% 확률로 자신에게 +100% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 40% ทำให้ตัวเอง +100% ความเสียหาย.",
+    "VN": "Khi tấn công, có 40% xác suất tăng +100% sát thương cho bản thân."
   },
   {
     "key": "受击前15%的概率使对手变更目标。",
-    "zh_CN": "受击前15%的概率使对手变更目标。",
-    "en_US": "15% chance before being hit to make opponent change target."
+    "CHS": "受击前15%的概率使对手变更目标。",
+    "EN": "15% chance before being hit to make opponent change target.",
+    "CHT": "受擊前15%的概率使對手變更目標。",
+    "JP": "被攻撃前15%の確率で対戦相手にターゲット変更を強制。",
+    "KR": "피격 전 15% 확률로 상대 타겟 변경.",
+    "TH": "ก่อนถูกโจมตี มีโอกาส 15% ทำให้ศัตรูเปลี่ยนเป้าหมาย.",
+    "VN": "Trước khi bị tấn công, có 15% xác suất khiến đối thủ đổi mục tiêu."
   },
   {
     "key": "受击前20%的概率使对手变更目标。",
-    "zh_CN": "受击前20%的概率使对手变更目标。",
-    "en_US": "20% chance before being hit to make opponent change target."
+    "CHS": "受击前20%的概率使对手变更目标。",
+    "EN": "20% chance before being hit to make opponent change target.",
+    "CHT": "受擊前20%的概率使對手變更目標。",
+    "JP": "被攻撃前20%の確率で対戦相手にターゲット変更を強制。",
+    "KR": "피격 전 20% 확률로 상대 타겟 변경.",
+    "TH": "ก่อนถูกโจมตี มีโอกาส 20% ทำให้ศัตรูเปลี่ยนเป้าหมาย.",
+    "VN": "Trước khi bị tấn công, có 20% xác suất khiến đối thủ đổi mục tiêu."
   },
   {
     "key": "攻击后20%的概率使对手放弃攻击，持续1回合。",
-    "zh_CN": "攻击后20%的概率使对手放弃攻击，持续1回合。",
-    "en_US": "20% chance after attacking to make opponent skip attack for 1 round."
+    "CHS": "攻击后20%的概率使对手放弃攻击，持续1回合。",
+    "EN": "20% chance after attacking to make opponent skip attack for 1 round.",
+    "CHT": "攻擊後20%的概率使對手放棄攻擊，持續1回合。",
+    "JP": "攻撃後20%の確率で対戦相手に攻撃放棄を強制、1ターン継続。",
+    "KR": "공격 후 20% 확률로 상대 공격 포기, 1턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ศัตรูยอมแพ้การโจมตี, ต่อเนื่อง 1 รอบ.",
+    "VN": "Sau khi tấn công, có 20% xác suất khiến đối thủ từ bỏ tấn công, kéo dài 1 lượt."
   },
   {
     "key": "攻击后20%的概率使对手放弃攻击，持续2回合。",
-    "zh_CN": "攻击后20%的概率使对手放弃攻击，持续2回合。",
-    "en_US": "20% chance after attacking to make opponent skip attack for 2 rounds."
+    "CHS": "攻击后20%的概率使对手放弃攻击，持续2回合。",
+    "EN": "20% chance after attacking to make opponent skip attack for 2 rounds.",
+    "CHT": "攻擊後20%的概率使對手放棄攻擊，持續2回合。",
+    "JP": "攻撃後20%の確率で対戦相手に攻撃放棄を強制、2ターン継続。",
+    "KR": "공격 후 20% 확률로 상대 공격 포기, 2턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ศัตรูยอมแพ้การโจมตี, ต่อเนื่อง 2 รอบ.",
+    "VN": "Sau khi tấn công, có 20% xác suất khiến đối thủ từ bỏ tấn công, kéo dài 2 lượt."
   },
   {
     "key": "攻击后20%的概率使对手放弃攻击，持续3回合。",
-    "zh_CN": "攻击后20%的概率使对手放弃攻击，持续3回合。",
-    "en_US": "20% chance after attacking to make opponent skip attack for 3 rounds."
+    "CHS": "攻击后20%的概率使对手放弃攻击，持续3回合。",
+    "EN": "20% chance after attacking to make opponent skip attack for 3 rounds.",
+    "CHT": "攻擊後20%的概率使對手放棄攻擊，持續3回合。",
+    "JP": "攻撃後20%の確率で対戦相手に攻撃放棄を強制、3ターン継続。",
+    "KR": "공격 후 20% 확률로 상대 공격 포기, 3턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 20% ทำให้ศัตรูยอมแพ้การโจมตี, ต่อเนื่อง 3 รอบ.",
+    "VN": "Sau khi tấn công, có 20% xác suất khiến đối thủ từ bỏ tấn công, kéo dài 3 lượt."
   },
   {
     "key": "回合开始时使自身+[25%×攻击力]的生命值。",
-    "zh_CN": "回合开始时使自身+[25%×攻击力]的生命值。",
-    "en_US": "At start of turn, gain [25% × attack power] health."
+    "CHS": "回合开始时使自身+[25%×攻击力]的生命值。",
+    "EN": "At start of turn, gain [25% × attack power] health.",
+    "CHT": "回合開始時使自身+[25%×攻擊力]的生命值。",
+    "JP": "ターン開始時に自身に+[25%×攻撃力]の生命値を付与。",
+    "KR": "턴 시작 시 자신에게 +[25%×공격력] 생명력 부여.",
+    "TH": "เมื่อเริ่มรอบ ทำให้ตัวเอง +[25%×พลังโจมตี] พลังชีวิต.",
+    "VN": "Khi bắt đầu lượt, tăng +[25%×sức tấn công] sinh lực cho bản thân."
   },
   {
     "key": "攻击时15%的概率使自身+200%造成的伤害。",
-    "zh_CN": "攻击时15%的概率使自身+200%造成的伤害。",
-    "en_US": "15% chance when attacking to increase own damage by 200%."
+    "CHS": "攻击时15%的概率使自身+200%造成的伤害。",
+    "EN": "15% chance when attacking to increase own damage by 200%.",
+    "CHT": "攻擊時15%的概率使自身+200%造成的傷害。",
+    "JP": "攻撃時15%の確率で自身に+200%与ダメージ。",
+    "KR": "공격 시 15% 확률로 자신에게 +200% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 15% ทำให้ตัวเอง +200% ความเสียหาย.",
+    "VN": "Khi tấn công, có 15% xác suất tăng +200% sát thương cho bản thân."
   },
   {
     "key": "受击前70%的概率使对手-30%攻击力。",
-    "zh_CN": "受击前70%的概率使对手-30%攻击力。",
-    "en_US": "70% chance before being hit to reduce opponent's attack by 30%."
+    "CHS": "受击前70%的概率使对手-30%攻击力。",
+    "EN": "70% chance before being hit to reduce opponent's attack by 30%.",
+    "CHT": "受擊前70%的概率使對手-30%攻擊力。",
+    "JP": "被攻撃前70%の確率で対戦相手に-30%攻撃力。",
+    "KR": "피격 전 70% 확률로 상대에게 -30% 공격력.",
+    "TH": "ก่อนถูกโจมตี มีโอกาส 70% ทำให้ศัตรู -30% พลังโจมตี.",
+    "VN": "Trước khi bị tấn công, có 70% xác suất giảm -30% sức tấn công đối thủ."
   },
   {
     "key": "受击前15%的概率使对手放弃攻击。",
-    "zh_CN": "受击前15%的概率使对手放弃攻击。",
-    "en_US": "15% chance before being hit to make opponent skip attack."
+    "CHS": "受击前15%的概率使对手放弃攻击。",
+    "EN": "15% chance before being hit to make opponent skip attack.",
+    "CHT": "受擊前15%的概率使對手放棄攻擊。",
+    "JP": "被攻撃前15%の確率で対戦相手に攻撃放棄を強制。",
+    "KR": "피격 전 15% 확률로 상대 공격 포기.",
+    "TH": "ก่อนถูกโจมตี มีโอกาส 15% ทำให้ศัตรูยอมแพ้การโจมตี.",
+    "VN": "Trước khi bị tấn công, có 15% xác suất khiến đối thủ từ bỏ tấn công."
   },
   {
     "key": "战斗开始时30%的概率使对手-[200%×攻击力]的生命值。",
-    "zh_CN": "战斗开始时30%的概率使对手-[200%×攻击力]的生命值。",
-    "en_US": "30% chance at start of battle to reduce opponent's health by [200% × attack power]."
+    "CHS": "战斗开始时30%的概率使对手-[200%×攻击力]的生命值。",
+    "EN": "30% chance at start of battle to reduce opponent's health by [200% × attack power].",
+    "CHT": "戰鬥開始時30%的概率使對手-[200%×攻擊力]的生命值。",
+    "JP": "戦闘開始時に30%の確率で対戦相手に-[200%×攻撃力]の生命値を付与。",
+    "KR": "전투 시작 시 30% 확률로 상대에게 -[200%×공격력] 생명력 부여.",
+    "TH": "เมื่อเริ่มการต่อสู้ มีโอกาส 30% ทำให้ศัตรู -[200%×พลังโจมตี] พลังชีวิต.",
+    "VN": "Khi bắt đầu chiến đấu, có 30% xác suất giảm -[200%×sức tấn công] sinh lực đối thủ."
   },
   {
     "key": "攻击后30%的概率使自身+[100%×伤害值]的生命值。",
-    "zh_CN": "攻击后30%的概率使自身+[100%×伤害值]的生命值。",
-    "en_US": "30% chance after attacking to gain [100% × damage dealt] health."
+    "CHS": "攻击后30%的概率使自身+[100%×伤害值]的生命值。",
+    "EN": "30% chance after attacking to gain [100% × damage dealt] health.",
+    "CHT": "攻擊後30%的概率使自身+[100%×傷害值]的生命值。",
+    "JP": "攻撃後30%の確率で自身に+[100%×ダメージ値]の生命値を付与。",
+    "KR": "공격 후 30% 확률로 자신에게 +[100%×데미지] 생명력 부여.",
+    "TH": "หลังโจมตี มีโอกาส 30% ทำให้ตัวเอง +[100%×ความเสียหาย] พลังชีวิต.",
+    "VN": "Sau khi tấn công, có 30% xác suất tăng +[100%×sát thương] sinh lực cho bản thân."
   },
   {
     "key": "回合开始时30%的概率使自身+50%攻击力，持续2回合。",
-    "zh_CN": "回合开始时30%的概率使自身+50%攻击力，持续2回合。",
-    "en_US": "30% chance at start of turn to increase own attack by 50% for 2 rounds."
+    "CHS": "回合开始时30%的概率使自身+50%攻击力，持续2回合。",
+    "EN": "30% chance at start of turn to increase own attack by 50% for 2 rounds.",
+    "CHT": "回合開始時30%的概率使自身+50%攻擊力，持續2回合。",
+    "JP": "ターン開始時に30%の確率で自身に+50%攻撃力、2ターン継続。",
+    "KR": "턴 시작 시 30% 확률로 자신에게 +50% 공격력, 2턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 30% ทำให้ตัวเอง +50% พลังโจมตี, ต่อเนื่อง 2 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 30% xác suất tăng +50% sức tấn công cho bản thân, kéo dài 2 lượt."
   },
   {
     "key": "回合开始时30%的概率使自身+100%攻击力，持续2回合。",
-    "zh_CN": "回合开始时30%的概率使自身+100%攻击力，持续2回合。",
-    "en_US": "30% chance at start of turn to increase own attack by 100% for 2 rounds."
+    "CHS": "回合开始时30%的概率使自身+100%攻击力，持续2回合。",
+    "EN": "30% chance at start of turn to increase own attack by 100% for 2 rounds.",
+    "CHT": "回合開始時30%的概率使自身+100%攻擊力，持續2回合。",
+    "JP": "ターン開始時に30%の確率で自身に+100%攻撃力、2ターン継続。",
+    "KR": "턴 시작 시 30% 확률로 자신에게 +100% 공격력, 2턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 30% ทำให้ตัวเอง +100% พลังโจมตี, ต่อเนื่อง 2 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 30% xác suất tăng +100% sức tấn công cho bản thân, kéo dài 2 lượt."
   },
   {
     "key": "攻击后30%的概率使对手-30%攻击力，持续1回合。",
-    "zh_CN": "攻击后30%的概率使对手-30%攻击力，持续1回合。",
-    "en_US": "30% chance after attacking to reduce opponent's attack by 30% for 1 rounds."
+    "CHS": "攻击后30%的概率使对手-30%攻击力，持续1回合。",
+    "EN": "30% chance after attacking to reduce opponent's attack by 30% for 1 rounds.",
+    "CHT": "攻擊後30%的概率使對手-30%攻擊力，持續1回合。",
+    "JP": "攻撃後30%の確率で対戦相手に-30%攻撃力、1ターン継続。",
+    "KR": "공격 후 30% 확률로 상대에게 -30% 공격력, 1턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 30% ทำให้ศัตรู -30% พลังโจมตี, ต่อเนื่อง 1 รอบ.",
+    "VN": "Sau khi tấn công, có 30% xác suất giảm -30% sức tấn công đối thủ, kéo dài 1 lượt."
   },
   {
     "key": "攻击时30%的概率使自身+100%造成的伤害。",
-    "zh_CN": "攻击时30%的概率使自身+100%造成的伤害。",
-    "en_US": "30% chance when attacking to increase own damage by 100%."
+    "CHS": "攻击时30%的概率使自身+100%造成的伤害。",
+    "EN": "30% chance when attacking to increase own damage by 100%.",
+    "CHT": "攻擊時30%的概率使自身+100%造成的傷害。",
+    "JP": "攻撃時30%の確率で自身に+100%与ダメージ。",
+    "KR": "공격 시 30% 확률로 자신에게 +100% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 30% ทำให้ตัวเอง +100% ความเสียหาย.",
+    "VN": "Khi tấn công, có 30% xác suất tăng +100% sát thương cho bản thân."
   },
   {
     "key": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
-    "zh_CN": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
-    "en_US": "After being hit and dying, 50% chance to restore 100% max health and clear buffs, 9 times."
+    "CHS": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
+    "EN": "After being hit and dying, 50% chance to restore 100% max health and clear buffs, 9 times.",
+    "CHT": "受擊後如果死亡，那麼50%的概率使自身+100%最大生命並清除buff，9次。",
+    "JP": "被攻撃後死亡した場合、50%の確率で自身に+100%最大生命を付与しバフをクリア、9回。",
+    "KR": "피격 후 사망 시, 50% 확률로 자신에게 +100% 최대 생명력 부여 및 버프 제거, 9회.",
+    "TH": "เมื่อถูกโจมตีและตาย มีโอกาส 50% ทำให้ตัวเอง +100% พลังชีวิตสูงสุดและล้างบัฟ, 9 ครั้ง.",
+    "VN": "Sau khi bị tấn công và chết, có 50% xác suất tăng +100% sinh lực tối đa cho bản thân và xóa buff, 9 lần."
   },
   {
     "key": "受击时50%的概率使自身-80%所受的伤害。",
-    "zh_CN": "受击时50%的概率使自身-80%所受的伤害。",
-    "en_US": "50% chance when hit to reduce damage taken by 80%."
+    "CHS": "受击时50%的概率使自身-80%所受的伤害。",
+    "EN": "50% chance when hit to reduce damage taken by 80%.",
+    "CHT": "受擊時50%的概率使自身-80%所受的傷害。",
+    "JP": "被攻撃時50%の確率で自身が受けるダメージを-80%。",
+    "KR": "피격 시 50% 확률로 자신 받는 데미지 -80%.",
+    "TH": "เมื่อถูกโจมตี มีโอกาส 50% ทำให้ตัวเองลดความเสียหาย -80%.",
+    "VN": "Khi bị tấn công, có 50% xác suất giảm -80% sát thương nhận được."
   },
   {
     "key": "攻击时1%的概率使自身+9900%造成的伤害。",
-    "zh_CN": "攻击时1%的概率使自身+9900%造成的伤害。",
-    "en_US": "1% chance when attacking to increase own damage by 9900%."
+    "CHS": "攻击时1%的概率使自身+9900%造成的伤害。",
+    "EN": "1% chance when attacking to increase own damage by 9900%.",
+    "CHT": "攻擊時1%的概率使自身+9900%造成的傷害。",
+    "JP": "攻撃時1%の確率で自身に+9900%与ダメージ。",
+    "KR": "공격 시 1% 확률로 자신에게 +9900% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 1% ทำให้ตัวเอง +9900% ความเสียหาย.",
+    "VN": "Khi tấn công, có 1% xác suất tăng +9900% sát thương cho bản thân."
   },
   {
     "key": "回合开始时使自身+20%攻击力，永久",
-    "zh_CN": "回合开始时使自身+20%攻击力，永久",
-    "en_US": "At start of turn, permanently increase own attack by 20%."
+    "CHS": "回合开始时使自身+20%攻击力，永久",
+    "EN": "At start of turn, permanently increase own attack by 20%.",
+    "CHT": "回合開始時使自身+20%攻擊力，永久",
+    "JP": "ターン開始時に自身に+20%攻撃力、永続",
+    "KR": "턴 시작 시 자신에게 +20% 공격력, 영구",
+    "TH": "เมื่อเริ่มรอบ ทำให้ตัวเอง +20% พลังโจมตี, ถาวร",
+    "VN": "Khi bắt đầu lượt, tăng +20% sức tấn công cho bản thân, vĩnh viễn"
   },
   {
     "key": "受击后30%的概率使对手-[20%×伤害值]的生命值。",
-    "zh_CN": "受击后30%的概率使对手-[20%×伤害值]的生命值。",
-    "en_US": "30% chance after being hit to reduce opponent's health by [20% × damage taken]."
+    "CHS": "受击后30%的概率使对手-[20%×伤害值]的生命值。",
+    "EN": "30% chance after being hit to reduce opponent's health by [20% × damage taken].",
+    "CHT": "受擊後30%的概率使對手-[20%×傷害值]的生命值。",
+    "JP": "被攻撃後30%の確率で対戦相手に-[20%×ダメージ値]の生命値を付与。",
+    "KR": "피격 후 30% 확률로 상대에게 -[20%×데미지] 생명력 부여.",
+    "TH": "หลังถูกโจมตี มีโอกาส 30% ทำให้ศัตรู -[20%×ความเสียหาย] พลังชีวิต.",
+    "VN": "Sau khi bị tấn công, có 30% xác suất giảm -[20%×sát thương] sinh lực đối thủ."
   },
   {
     "key": "回合开始时30%的概率使自身释放技能，但是失败了！。",
-    "zh_CN": "回合开始时30%的概率使自身释放技能，但是失败了！。",
-    "en_US": "30% chance at start of turn to cast a skill, but it failed!"
+    "CHS": "回合开始时30%的概率使自身释放技能，但是失败了！。",
+    "EN": "30% chance at start of turn to cast a skill, but it failed!",
+    "CHT": "回合開始時30%的概率使自身釋放技能，但是失敗了！。",
+    "JP": "ターン開始時に30%の確率で自身がスキルを発動したが、失敗！",
+    "KR": "턴 시작 시 30% 확률로 자신 스킬 발동, 하지만 실패!",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 30% ทำให้ตัวเองปล่อยสกิล แต่ล้มเหลว!",
+    "VN": "Khi bắt đầu lượt, có 30% xác suất khiến bản thân sử dụng kỹ năng nhưng thất bại!"
   },
   {
     "key": "回合开始时0%的概率使自身释放技能，但是失败了！。",
-    "zh_CN": "回合开始时0%的概率使自身释放技能，但是失败了！。",
-    "en_US": "0% chance at start of turn to cast a skill, but it failed!"
+    "CHS": "回合开始时0%的概率使自身释放技能，但是失败了！。",
+    "EN": "0% chance at start of turn to cast a skill, but it failed!",
+    "CHT": "回合開始時0%的概率使自身釋放技能，但是失敗了！。",
+    "JP": "ターン開始時に0%の確率で自身がスキルを発動したが、失敗！",
+    "KR": "턴 시작 시 0% 확률로 자신 스킬 발동, 하지만 실패!",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 0% ทำให้ตัวเองปล่อยสกิล แต่ล้มเหลว!",
+    "VN": "Khi bắt đầu lượt, có 0% xác suất khiến bản thân sử dụng kỹ năng nhưng thất bại!"
   },
   {
     "key": "回合开始时20%的概率使自身+200%攻防，持续3回合。",
-    "zh_CN": "回合开始时20%的概率使自身+200%攻防，持续3回合。",
-    "en_US": "20% chance at start of turn to increase own attack and defense by 200% for 3 rounds."
+    "CHS": "回合开始时20%的概率使自身+200%攻防，持续3回合。",
+    "EN": "20% chance at start of turn to increase own attack and defense by 200% for 3 rounds.",
+    "CHT": "回合開始時20%的概率使自身+200%攻防，持續3回合。",
+    "JP": "ターン開始時に20%の確率で自身に+200%攻撃防御、3ターン継続。",
+    "KR": "턴 시작 시 20% 확률로 자신에게 +200% 공격 방어, 3턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 20% ทำให้ตัวเอง +200% โจมตีป้องกัน, ต่อเนื่อง 3 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 20% xác suất tăng +200% công thủ cho bản thân, kéo dài 3 lượt."
   },
   {
     "key": "回合开始时30%的概率使自身获得1个技能。",
-    "zh_CN": "回合开始时30%的概率使自身获得1个技能。",
-    "en_US": "30% chance at start of turn to gain 1 skills."
+    "CHS": "回合开始时30%的概率使自身获得1个技能。",
+    "EN": "30% chance at start of turn to gain 1 skills.",
+    "CHT": "回合開始時30%的概率使自身獲得1個技能。",
+    "JP": "ターン開始時に30%の確率で自身に1つのスキルを付与。",
+    "KR": "턴 시작 시 30% 확률로 자신에게 1개 스킬 부여.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 30% ทำให้ตัวเองได้รับสกิล 1 อัน.",
+    "VN": "Khi bắt đầu lượt, có 30% xác suất nhận 1 kỹ năng cho bản thân."
   },
   {
     "key": "攻击后25%的概率使对手跳过回合，持续2回合。",
-    "zh_CN": "攻击后25%的概率使对手跳过回合，持续2回合。",
-    "en_US": "25% chance after attacking to make opponent skip turn for 2 rounds."
+    "CHS": "攻击后25%的概率使对手跳过回合，持续2回合。",
+    "EN": "25% chance after attacking to make opponent skip turn for 2 rounds.",
+    "CHT": "攻擊後25%的概率使對手跳過回合，持續2回合。",
+    "JP": "攻撃後25%の確率で対戦相手を2ターン行動スキップ、2ターン継続。",
+    "KR": "공격 후 25% 확률로 상대 2턴 행동 스킵, 2턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 25% ทำให้ศัตรูข้ามรอบ 2 รอบ, ต่อเนื่อง 2 รอบ.",
+    "VN": "Sau khi tấn công, có 25% xác suất khiến đối thủ bỏ qua lượt, kéo dài 2 lượt."
   },
   {
     "key": "战斗开始时使对手-50%攻击力，永久",
-    "zh_CN": "战斗开始时使对手-50%攻击力，永久",
-    "en_US": "At start of battle, permanently reduce opponent's attack by 50%."
+    "CHS": "战斗开始时使对手-50%攻击力，永久",
+    "EN": "At start of battle, permanently reduce opponent's attack by 50%.",
+    "CHT": "戰鬥開始時使對手-50%攻擊力，永久",
+    "JP": "戦闘開始時に対戦相手に-50%攻撃力、永続",
+    "KR": "전투 시작 시 상대에게 -50% 공격력, 영구",
+    "TH": "เมื่อเริ่มการต่อสู้ ทำให้ศัตรู -50% พลังโจมตี, ถาวร",
+    "VN": "Khi bắt đầu chiến đấu, giảm -50% sức tấn công đối thủ, vĩnh viễn"
   },
   {
     "key": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
-    "zh_CN": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
-    "en_US": "After being hit and dying, restore 100% max health and clear buffs, 9 times."
+    "CHS": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
+    "EN": "After being hit and dying, restore 100% max health and clear buffs, 9 times.",
+    "CHT": "受擊後如果死亡，那麼使自身+100%最大生命並清除buff，9次。",
+    "JP": "被攻撃後死亡した場合、自身に+100%最大生命を付与しバフをクリア、9回。",
+    "KR": "피격 후 사망 시, 자신에게 +100% 최대 생명력 부여 및 버프 제거, 9회.",
+    "TH": "เมื่อถูกโจมตีและตาย ทำให้ตัวเอง +100% พลังชีวิตสูงสุดและล้างบัฟ, 9 ครั้ง.",
+    "VN": "Sau khi bị tấn công và chết, tăng +100% sinh lực tối đa cho bản thân và xóa buff, 9 lần."
   },
   {
     "key": "回合开始时30%的概率使自身+200%攻击力，持续3回合。",
-    "zh_CN": "回合开始时30%的概率使自身+200%攻击力，持续3回合。",
-    "en_US": "30% chance at start of turn to increase own attack by 200% for 3 rounds."
+    "CHS": "回合开始时30%的概率使自身+200%攻击力，持续3回合。",
+    "EN": "30% chance at start of turn to increase own attack by 200% for 3 rounds.",
+    "CHT": "回合開始時30%的概率使自身+200%攻擊力，持續3回合。",
+    "JP": "ターン開始時に30%の確率で自身に+200%攻撃力、3ターン継続。",
+    "KR": "턴 시작 시 30% 확률로 자신에게 +200% 공격력, 3턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 30% ทำให้ตัวเอง +200% พลังโจมตี, ต่อเนื่อง 3 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 30% xác suất tăng +200% sức tấn công cho bản thân, kéo dài 3 lượt."
   },
   {
     "key": "受击时使自身-50%所受的伤害。",
-    "zh_CN": "受击时使自身-50%所受的伤害。",
-    "en_US": "When hit, reduce damage taken by 50%."
+    "CHS": "受击时使自身-50%所受的伤害。",
+    "EN": "When hit, reduce damage taken by 50%.",
+    "CHT": "受擊時使自身-50%所受的傷害。",
+    "JP": "被攻撃時に自身が受けるダメージを-50%。",
+    "KR": "피격 시 자신 받는 데미지 -50%.",
+    "TH": "เมื่อถูกโจมตี ทำให้ตัวเองลดความเสียหาย -50%.",
+    "VN": "Khi bị tấn công, giảm -50% sát thương nhận được."
   },
   {
     "key": "攻击后15%的概率使对手跳过回合，持续3回合。",
-    "zh_CN": "攻击后15%的概率使对手跳过回合，持续3回合。",
-    "en_US": "15% chance after attacking to make opponent skip turn for 3 rounds."
+    "CHS": "攻击后15%的概率使对手跳过回合，持续3回合。",
+    "EN": "15% chance after attacking to make opponent skip turn for 3 rounds.",
+    "CHT": "攻擊後15%的概率使對手跳過回合，持續3回合。",
+    "JP": "攻撃後15%の確率で対戦相手を3ターン行動スキップ、3ターン継続。",
+    "KR": "공격 후 15% 확률로 상대 3턴 행동 스킵, 3턴 지속.",
+    "TH": "หลังโจมตี มีโอกาส 15% ทำให้ศัตรูข้ามรอบ 3 รอบ, ต่อเนื่อง 3 รอบ.",
+    "VN": "Sau khi tấn công, có 15% xác suất khiến đối thủ bỏ qua lượt, kéo dài 3 lượt."
   },
   {
     "key": "回合开始时10%的概率使对手-[100%×攻击力]的生命值。",
-    "zh_CN": "回合开始时10%的概率使对手-[100%×攻击力]的生命值。",
-    "en_US": "10% chance at start of turn to reduce opponent's health by [100% × attack power]."
+    "CHS": "回合开始时10%的概率使对手-[100%×攻击力]的生命值。",
+    "EN": "10% chance at start of turn to reduce opponent's health by [100% × attack power].",
+    "CHT": "回合開始時10%的概率使對手-[100%×攻擊力]的生命值。",
+    "JP": "ターン開始時に10%の確率で対戦相手に-[100%×攻撃力]の生命値を付与。",
+    "KR": "턴 시작 시 10% 확률로 상대에게 -[100%×공격력] 생명력 부여.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 10% ทำให้ศัตรู -[100%×พลังโจมตี] พลังชีวิต.",
+    "VN": "Khi bắt đầu lượt, có 10% xác suất giảm -[100%×sức tấn công] sinh lực đối thủ."
   },
   {
     "key": "回合开始时15%的概率使自身闪避，持续2回合。",
-    "zh_CN": "回合开始时15%的概率使自身闪避，持续2回合。",
-    "en_US": "15% chance at start of turn to dodge for 2 rounds."
+    "CHS": "回合开始时15%的概率使自身闪避，持续2回合。",
+    "EN": "15% chance at start of turn to dodge for 2 rounds.",
+    "CHT": "回合開始時15%的概率使自身閃避，持續2回合。",
+    "JP": "ターン開始時に15%の確率で自身が回避、2ターン継続。",
+    "KR": "턴 시작 시 15% 확률로 자신 회피, 2턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 15% ทำให้ตัวเองหลบ, ต่อเนื่อง 2 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 15% xác suất khiến bản thân né, kéo dài 2 lượt."
   },
   {
     "key": "攻击时80%的概率使自身+50%造成的伤害。",
-    "zh_CN": "攻击时80%的概率使自身+50%造成的伤害。",
-    "en_US": "80% chance when attacking to increase own damage by 50%."
+    "CHS": "攻击时80%的概率使自身+50%造成的伤害。",
+    "EN": "80% chance when attacking to increase own damage by 50%.",
+    "CHT": "攻擊時80%的概率使自身+50%造成的傷害。",
+    "JP": "攻撃時80%の確率で自身に+50%与ダメージ。",
+    "KR": "공격 시 80% 확률로 자신에게 +50% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 80% ทำให้ตัวเอง +50% ความเสียหาย.",
+    "VN": "Khi tấn công, có 80% xác suất tăng +50% sát thương cho bản thân."
   },
   {
     "key": "回合开始时50%的概率使自身获得1个技能。",
-    "zh_CN": "回合开始时50%的概率使自身获得1个技能。",
-    "en_US": "50% chance at start of turn to gain 1 skills."
+    "CHS": "回合开始时50%的概率使自身获得1个技能。",
+    "EN": "50% chance at start of turn to gain 1 skills.",
+    "CHT": "回合開始時50%的概率使自身獲得1個技能。",
+    "JP": "ターン開始時に50%の確率で自身に1つのスキルを付与。",
+    "KR": "턴 시작 시 50% 확률로 자신에게 1개 스킬 부여.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 50% ทำให้ตัวเองได้รับสกิล 1 อัน.",
+    "VN": "Khi bắt đầu lượt, có 50% xác suất nhận 1 kỹ năng cho bản thân."
   },
   {
     "key": "回合开始时60%的概率使对手禁用1个技能。",
-    "zh_CN": "回合开始时60%的概率使对手禁用1个技能。",
-    "en_US": "60% chance at start of turn to disable 1 of opponent's skills."
+    "CHS": "回合开始时60%的概率使对手禁用1个技能。",
+    "EN": "60% chance at start of turn to disable 1 of opponent's skills.",
+    "CHT": "回合開始時60%的概率使對手禁用1個技能。",
+    "JP": "ターン開始時に60%の確率で対戦相手に1つのスキルを無効化。",
+    "KR": "턴 시작 시 60% 확률로 상대에게 1개 스킬 무효화.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 60% ทำให้ศัตรูปิดใช้งานสกิล 1 อัน.",
+    "VN": "Khi bắt đầu lượt, có 60% xác suất vô hiệu hóa 1 kỹ năng đối thủ."
   },
   {
     "key": "攻击时70%的概率使自身+100%造成的伤害。",
-    "zh_CN": "攻击时70%的概率使自身+100%造成的伤害。",
-    "en_US": "70% chance when attacking to increase own damage by 100%."
+    "CHS": "攻击时70%的概率使自身+100%造成的伤害。",
+    "EN": "70% chance when attacking to increase own damage by 100%.",
+    "CHT": "攻擊時70%的概率使自身+100%造成的傷害。",
+    "JP": "攻撃時70%の確率で自身に+100%与ダメージ。",
+    "KR": "공격 시 70% 확률로 자신에게 +100% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 70% ทำให้ตัวเอง +100% ความเสียหาย.",
+    "VN": "Khi tấn công, có 70% xác suất tăng +100% sát thương cho bản thân."
   },
   {
     "key": "攻击时60%的概率使自身+200%造成的伤害。",
-    "zh_CN": "攻击时60%的概率使自身+200%造成的伤害。",
-    "en_US": "60% chance when attacking to increase own damage by 200%."
+    "CHS": "攻击时60%的概率使自身+200%造成的伤害。",
+    "EN": "60% chance when attacking to increase own damage by 200%.",
+    "CHT": "攻擊時60%的概率使自身+200%造成的傷害。",
+    "JP": "攻撃時60%の確率で自身に+200%与ダメージ。",
+    "KR": "공격 시 60% 확률로 자신에게 +200% 데미지.",
+    "TH": "เมื่อโจมตี มีโอกาส 60% ทำให้ตัวเอง +200% ความเสียหาย.",
+    "VN": "Khi tấn công, có 60% xác suất tăng +200% sát thương cho bản thân."
   },
   {
     "key": "回合开始时50%的概率使对手禁用1个技能。",
-    "zh_CN": "回合开始时50%的概率使对手禁用1个技能。",
-    "en_US": "50% chance at start of turn to disable 1 of opponent's skills."
+    "CHS": "回合开始时50%的概率使对手禁用1个技能。",
+    "EN": "50% chance at start of turn to disable 1 of opponent's skills.",
+    "CHT": "回合開始時50%的概率使對手禁用1個技能。",
+    "JP": "ターン開始時に50%の確率で対戦相手に1つのスキルを無効化。",
+    "KR": "턴 시작 시 50% 확률로 상대에게 1개 스킬 무효화.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 50% ทำให้ศัตรูปิดใช้งานสกิล 1 อัน.",
+    "VN": "Khi bắt đầu lượt, có 50% xác suất vô hiệu hóa 1 kỹ năng đối thủ."
   },
   {
     "key": "回合开始时15%的概率使自身闪避，持续3回合。",
-    "zh_CN": "回合开始时15%的概率使自身闪避，持续3回合。",
-    "en_US": "15% chance at start of turn to dodge for 3 rounds."
+    "CHS": "回合开始时15%的概率使自身闪避，持续3回合。",
+    "EN": "15% chance at start of turn to dodge for 3 rounds.",
+    "CHT": "回合開始時15%的概率使自身閃避，持續3回合。",
+    "JP": "ターン開始時に15%の確率で自身が回避、3ターン継続。",
+    "KR": "턴 시작 시 15% 확률로 자신 회피, 3턴 지속.",
+    "TH": "เมื่อเริ่มรอบ มีโอกาส 15% ทำให้ตัวเองหลบ, ต่อเนื่อง 3 รอบ.",
+    "VN": "Khi bắt đầu lượt, có 15% xác suất khiến bản thân né, kéo dài 3 lượt."
   },
   {
     "key": "战斗准备阶段使自身(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100。",
-    "zh_CN": "战斗准备阶段使自身(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100。",
-    "en_US": "During battle preparation, creature randomly gains X skills. (Player) skill cap increased by 5. This skill is auto-added to minions after level 100, X = current level - 100."
+    "CHS": "战斗准备阶段使自身(生物)随机获得X个技能。(玩家)增加5个技能上限。此技能自动添加给100层后的小怪，X为当前层数-100。",
+    "EN": "During battle preparation, creature randomly gains X skills. (Player) skill cap increased by 5. This skill is auto-added to minions after level 100, X = current level - 100.",
+    "CHT": "戰鬥準備階段使自身(生物)隨機獲得X個技能。(玩家)增加5個技能上限。此技能自動添加給100層後的小怪，X為當前層數-100。",
+    "JP": "戦闘準備段階で自身(生物)にランダムでXつのスキルを付与。(プレイヤー)スキル上限を5増加。このスキルは100層以降の雑魚に自動付与され、Xは現在の層数-100。",
+    "KR": "전투 준비 단계에서 자신(생물)에게 랜덤으로 X개 스킬 부여. (플레이어) 스킬 상한 5 증가. 이 스킬은 100층 이후 잡몹에 자동 부여, X는 현재 층수-100.",
+    "TH": "ในขั้นเตรียมการต่อสู้ ทำให้ตัวเอง (สิ่งมีชีวิต) ได้สกิลสุ่ม X อัน. (ผู้เล่น) เพิ่มขีดจำกัดสกิล 5. สกิลนี้ถูกเพิ่มอัตโนมัติให้มอนสเตอร์เล็กหลังชั้น 100, X คือชั้นปัจจุบัน-100.",
+    "VN": "Trong giai đoạn chuẩn bị chiến đấu, bản thân (sinh vật) nhận ngẫu nhiên X kỹ năng. (Người chơi) tăng giới hạn kỹ năng thêm 5. Kỹ năng này tự động thêm cho quái nhỏ sau tầng 100, X là tầng hiện tại-100."
   },
   {
     "key": "----------开局一只史莱姆----------",
-    "zh_CN": "----------开局一只史莱姆----------",
-    "en_US": "----------Start with a Slime----------"
+    "CHS": "----------开局一只史莱姆----------",
+    "EN": "----------Start with a Slime----------",
+    "CHT": "----------開局一隻史萊姆----------",
+    "JP": "----------ゲーム開始：スライム一匹----------",
+    "KR": "----------시작: 슬라임 한 마리----------",
+    "TH": "----------เริ่มเกม: สไลม์ตัวเดียว----------",
+    "VN": "----------Bắt đầu trò chơi: Một con Slime----------"
   },
   {
     "key": "完成",
-    "zh_CN": "完成",
-    "en_US": "Completed"
+    "CHS": "完成",
+    "EN": "Completed",
+    "CHT": "完成",
+    "JP": "完了",
+    "KR": "완료",
+    "TH": "สำเร็จ",
+    "VN": "Hoàn thành"
   },
   {
     "key": "领取奖励",
-    "zh_CN": "领取奖励",
-    "en_US": "Claim Reward"
+    "CHS": "领取奖励",
+    "EN": "Claim Reward",
+    "CHT": "領取獎勵",
+    "JP": "報酬受取",
+    "KR": "보상 수령",
+    "TH": "รับรางวัล",
+    "VN": "Nhận thưởng"
   },
   {
     "key": "已领取",
-    "zh_CN": "已领取",
-    "en_US": "Already Claimed"
+    "CHS": "已领取",
+    "EN": "Already Claimed",
+    "CHT": "已領取",
+    "JP": "受取済",
+    "KR": "수령 완료",
+    "TH": "รับแล้ว",
+    "VN": "Đã nhận"
   },
   {
     "key": "未完成",
-    "zh_CN": "未完成",
-    "en_US": "Not Completed"
+    "CHS": "未完成",
+    "EN": "Not Completed",
+    "CHT": "未完成",
+    "JP": "未完了",
+    "KR": "미완료",
+    "TH": "ยังไม่สำเร็จ",
+    "VN": "Chưa hoàn thành"
   },
   {
     "key": "所有图鉴已解锁",
-    "zh_CN": "所有图鉴已解锁",
-    "en_US": "All Bestiary Unlocked"
+    "CHS": "所有图鉴已解锁",
+    "EN": "All Bestiary Unlocked",
+    "CHT": "所有圖鑑已解鎖",
+    "JP": "すべての図鑑が解放済",
+    "KR": "모든 도감 해제 완료",
+    "TH": "ปลดล็อกสมุดภาพทั้งหมดแล้ว",
+    "VN": "Tất cả danh mục đã mở khóa"
   },
   {
     "key": "达成：",
-    "zh_CN": "达成：",
-    "en_US": "Achieved:"
+    "CHS": "达成：",
+    "EN": "Achieved:",
+    "CHT": "達成：",
+    "JP": "達成：",
+    "KR": "달성:",
+    "TH": "達成：",
+    "VN": "Đạt được："
   },
   {
     "key": "确认",
-    "zh_CN": "确认",
-    "en_US": "Confirm"
+    "CHS": "确认",
+    "EN": "Confirm",
+    "CHT": "確認",
+    "JP": "確認",
+    "KR": "확인",
+    "TH": "ยืนยัน",
+    "VN": "Xác nhận"
   },
   {
     "key": "战力：",
-    "zh_CN": "战力：",
-    "en_US": "Combat Power:"
+    "CHS": "战力：",
+    "EN": "Combat Power:",
+    "CHT": "戰力：",
+    "JP": "戦力：",
+    "KR": "전투력:",
+    "TH": "พลังต่อสู้：",
+    "VN": "Sức chiến đấu："
   },
   {
     "key": "是否进行转生，等级、种族重置为初始状态，全属性永久额外增加",
-    "zh_CN": "是否进行转生，等级、种族重置为初始状态，全属性永久额外增加",
-    "en_US": "Reincarnate? Level and race reset to initial state, all attributes permanently increased"
+    "CHS": "是否进行转生，等级、种族重置为初始状态，全属性永久额外增加",
+    "EN": "Reincarnate? Level and race reset to initial state, all attributes permanently increased",
+    "CHT": "是否進行轉生，等級、種族重置為初始狀態，全屬性永久額外增加",
+    "JP": "転生しますか？レベル、種族が初期状態にリセットされ、全属性が永続的に追加増加",
+    "KR": "전생하시겠습니까? 레벨, 종족이 초기 상태로 리셋되며, 전 속성이 영구 추가 증가",
+    "TH": "จะเกิดใหม่หรือไม่ ระดับและเผ่าพันธุ์รีเซ็ตเป็นสถานะเริ่มต้น คุณสมบัติทั้งหมดเพิ่มถาวร",
+    "VN": "Có tái sinh không, cấp và chủng tộc sẽ reset về trạng thái ban đầu, tất cả thuộc tính tăng thêm vĩnh viễn"
   },
   {
     "key": "解锁：自动战斗",
-    "zh_CN": "解锁：自动战斗",
-    "en_US": "Unlock: Auto-Battle"
+    "CHS": "解锁：自动战斗",
+    "EN": "Unlock: Auto-Battle",
+    "CHT": "解鎖：自動戰鬥",
+    "JP": "解放：自動戦闘",
+    "KR": "해제: 자동 전투",
+    "TH": "ปลดล็อก: การต่อสู้อัตโนมัติ",
+    "VN": "Mở khóa: Chiến đấu tự động"
   },
   {
     "key": "解锁：定向拟态",
-    "zh_CN": "解锁：定向拟态",
-    "en_US": "Unlock: Targeted Mimicry"
+    "CHS": "解锁：定向拟态",
+    "EN": "Unlock: Targeted Mimicry",
+    "CHT": "解鎖：定向擬態",
+    "JP": "解放：定向擬態",
+    "KR": "해제: 지정 모방",
+    "TH": "ปลดล็อก: การแปลงร่างแบบกำหนด",
+    "VN": "Mở khóa: Biến hình định hướng"
   },
   {
     "key": "习得：",
-    "zh_CN": "习得：",
-    "en_US": "Acquired:"
+    "CHS": "习得：",
+    "EN": "Acquired:",
+    "CHT": "習得：",
+    "JP": "習得：",
+    "KR": "습득:",
+    "TH": "เรียนรู้：",
+    "VN": "Học được："
   },
   {
     "key": "<font color='^'>你死了</font>等级将降为1级",
-    "zh_CN": "<font color='^'>你死了</font>\n等级将降为1级",
-    "en_US": "<font color='^'>You died</font>\nLevel will drop to 1"
+    "CHS": "<font color='^'>你死了</font>\n等级将降为1级",
+    "EN": "<font color='^'>You died</font>\nLevel will drop to 1",
+    "CHT": "<font color='^'>你死了</font>\r\n等級將降為1級",
+    "JP": "<font color='^'>あなたは死にました</font>\r\nレベルが1に下がります",
+    "KR": "<font color='^'>당신은 죽었습니다</font>\r\n레벨이 1로 하락합니다",
+    "TH": "<font color='^'>คุณตาย</font>\r\nระดับจะลดลงเป็น 1",
+    "VN": "<font color='^'>Bạn đã chết</font>\r\nCấp sẽ giảm xuống 1"
   },
   {
     "key": "<font color='^'>你复活了</font>",
-    "zh_CN": "<font color='^'>你复活了</font>",
-    "en_US": "<font color='^'>You revived</font>"
+    "CHS": "<font color='^'>你复活了</font>",
+    "EN": "<font color='^'>You revived</font>",
+    "CHT": "<font color='^'>你復活了</font>",
+    "JP": "<font color='^'>あなたは復活しました</font>",
+    "KR": "<font color='^'>당신은 부활했습니다</font>",
+    "TH": "<font color='^'>คุณฟื้นคืนชีพ</font>",
+    "VN": "<font color='^'>Bạn đã hồi sinh</font>"
   },
   {
     "key": "<font color='^'>你死了</font>,等级降为1级",
-    "zh_CN": "<font color='^'>你死了</font>,等级降为1级",
-    "en_US": "<font color='^'>You died</font>, level dropped to 1"
+    "CHS": "<font color='^'>你死了</font>,等级降为1级",
+    "EN": "<font color='^'>You died</font>, level dropped to 1",
+    "CHT": "<font color='^'>你死了</font>,等級降為1級",
+    "JP": "<font color='^'>あなたは死にました</font>,レベルが1に下がりました",
+    "KR": "<font color='^'>당신은 죽었습니다</font>, 레벨이 1로 하락했습니다",
+    "TH": "<font color='^'>คุณตาย</font>, ระดับลดลงเป็น 1",
+    "VN": "<font color='^'>Bạn đã chết</font>, cấp giảm xuống 1"
   },
   {
     "key": "复活",
-    "zh_CN": "复活",
-    "en_US": "Revive"
+    "CHS": "复活",
+    "EN": "Revive",
+    "CHT": "復活",
+    "JP": "復活",
+    "KR": "부활",
+    "TH": "ฟื้นคืนชีพ",
+    "VN": "Hồi sinh"
   },
   {
     "key": "剩余次数:",
-    "zh_CN": "剩余次数:",
-    "en_US": "Remaining Attempts:"
+    "CHS": "剩余次数:",
+    "EN": "Remaining Attempts:",
+    "CHT": "剩餘次數:",
+    "JP": "残り回数:",
+    "KR": "남은 횟수:",
+    "TH": "จำนวนครั้งที่เหลือ:",
+    "VN": "Số lần còn lại:"
   },
   {
     "key": "凡",
-    "zh_CN": "凡",
-    "en_US": "MOR"
+    "CHS": "凡",
+    "EN": "MOR",
+    "CHT": "凡",
+    "JP": "凡",
+    "KR": "범",
+    "TH": "ธรรมดา",
+    "VN": "Thường"
   },
   {
     "key": "灵",
-    "zh_CN": "灵",
-    "en_US": "SPR"
+    "CHS": "灵",
+    "EN": "SPR",
+    "CHT": "靈",
+    "JP": "霊",
+    "KR": "영",
+    "TH": "วิญญาณ",
+    "VN": "Linh"
   },
   {
     "key": "仙",
-    "zh_CN": "仙",
-    "en_US": "IMR"
+    "CHS": "仙",
+    "EN": "IMR",
+    "CHT": "仙",
+    "JP": "仙",
+    "KR": "선",
+    "TH": "เซียน",
+    "VN": "Tiên"
   },
   {
     "key": "神",
-    "zh_CN": "神",
-    "en_US": "DVN"
+    "CHS": "神",
+    "EN": "DVN",
+    "CHT": "神",
+    "JP": "神",
+    "KR": "신",
+    "TH": "เทวะ",
+    "VN": "Thần"
   },
   {
     "key": "闯关成功！",
-    "zh_CN": "闯关成功！",
-    "en_US": "Stage Cleared!"
+    "CHS": "闯关成功！",
+    "EN": "Stage Cleared!",
+    "CHT": "闖關成功！",
+    "JP": "クリア成功！",
+    "KR": "통과 성공!",
+    "TH": "ผ่านสำเร็จ！",
+    "VN": "Thông qua thành công！"
   },
   {
     "key": "遗忘技能",
-    "zh_CN": "遗忘技能",
-    "en_US": "Forget Skill"
+    "CHS": "遗忘技能",
+    "EN": "Forget Skill",
+    "CHT": "遺忘技能",
+    "JP": "スキル忘却",
+    "KR": "스킬 망각",
+    "TH": "ลืมสกิล",
+    "VN": "Quên kỹ năng"
   },
   {
     "key": "<font color='#FF0000'>已达到最大转生数</font>",
-    "zh_CN": "<font color='#FF0000'>已达到最大转生数</font>",
-    "en_US": "<font color='#FF0000'>Max reincarnations reached</font>"
+    "CHS": "<font color='#FF0000'>已达到最大转生数</font>",
+    "EN": "<font color='#FF0000'>Max reincarnations reached</font>",
+    "CHT": "<font color='#FF0000'>已達到最大轉生數</font>",
+    "JP": "<font color='#FF0000'>最大転生回数に達しました</font>",
+    "KR": "<font color='#FF0000'>최대 전생 횟수 도달</font>",
+    "TH": "<font color='#FF0000'>ถึงจำนวนเกิดใหม่สูงสุด</font>",
+    "VN": "<font color='#FF0000'>Đã đạt số lần tái sinh tối đa</font>"
   },
   {
     "key": "已达到最高等级！",
-    "zh_CN": "已达到最高等级！",
-    "en_US": "Max level reached!"
+    "CHS": "已达到最高等级！",
+    "EN": "Max level reached!",
+    "CHT": "已達到最高等級！",
+    "JP": "最高レベルに達しました！",
+    "KR": "최고 레벨 도달!",
+    "TH": "ถึงระดับสูงสุด!",
+    "VN": "Đã đạt cấp cao nhất！"
   },
   {
     "key": "等级+1",
-    "zh_CN": "等级+1",
-    "en_US": "Level +1"
+    "CHS": "等级+1",
+    "EN": "Level +1",
+    "CHT": "等級+1",
+    "JP": "レベル+1",
+    "KR": "레벨 +1",
+    "TH": "ระดับ +1",
+    "VN": "Cấp +1"
   },
   {
     "key": "解锁图鉴：",
-    "zh_CN": "解锁图鉴：",
-    "en_US": "Unlock Bestiary:"
+    "CHS": "解锁图鉴：",
+    "EN": "Unlock Bestiary:",
+    "CHT": "解鎖圖鑑：",
+    "JP": "図鑑解放：",
+    "KR": "도감 해제:",
+    "TH": "ปลดล็อกสมุดภาพ：",
+    "VN": "Mở khóa danh mục："
   },
   {
     "key": "技能已满！",
-    "zh_CN": "技能已满！",
-    "en_US": "Skills Full!"
+    "CHS": "技能已满！",
+    "EN": "Skills Full!",
+    "CHT": "技能已滿！",
+    "JP": "スキルが満杯！",
+    "KR": "스킬 만료!",
+    "TH": "สกิลเต็ม!",
+    "VN": "Kỹ năng đầy！"
   },
   {
     "key": "是否消耗*级进行淬炼，淬炼后生物属性向当前物种靠拢。",
-    "zh_CN": "是否消耗*级进行淬炼，淬炼后生物属性向当前物种靠拢。",
-    "en_US": "Spend * levels to temper? Refining aligns creature attributes with current species."
+    "CHS": "是否消耗*级进行淬炼，淬炼后生物属性向当前物种靠拢。",
+    "EN": "Spend * levels to temper? Refining aligns creature attributes with current species.",
+    "CHT": "是否消耗*級進行淬煉，淬煉後生物屬性向當前物種靠攏。",
+    "JP": "*レベルを消費して淬煉しますか？淬煉後、生物の属性が現在の種に近づきます。",
+    "KR": "*레벨을 소모하여 단련하시겠습니까? 단련 후 생물 속성이 현재 종에 가까워집니다.",
+    "TH": "จะใช้ระดับ * เพื่อหลอมรวมหรือไม่ หลังหลอมรวม คุณสมบัติสิ่งมีชีวิตเข้าใกล้เผ่าพันธุ์ปัจจุบัน.",
+    "VN": "Có tiêu tốn cấp * để luyện hóa không, sau luyện hóa thuộc tính sinh vật tiến gần loài hiện tại."
   },
   {
     "key": "闪避",
-    "zh_CN": "闪避",
-    "en_US": "Dodge"
+    "CHS": "闪避",
+    "EN": "Dodge",
+    "CHT": "閃避",
+    "JP": "回避",
+    "KR": "회피",
+    "TH": "หลบ",
+    "VN": "Né"
   },
   {
     "key": "格挡",
-    "zh_CN": "格挡",
-    "en_US": "Block"
+    "CHS": "格挡",
+    "EN": "Block",
+    "CHT": "格擋",
+    "JP": "ガード",
+    "KR": "방어",
+    "TH": "ป้องกัน",
+    "VN": "Chặn"
   },
   {
     "key": "成功率:",
-    "zh_CN": "成功率:",
-    "en_US": "SUC:"
+    "CHS": "成功率:",
+    "EN": "SUC:",
+    "CHT": "成功率:",
+    "JP": "成功率:",
+    "KR": "성공률:",
+    "TH": "อัตราสำเร็จ:",
+    "VN": "Tỷ lệ thành công:"
   },
   {
     "key": "自动战斗",
-    "zh_CN": "自动战斗",
-    "en_US": "Auto-Battle"
+    "CHS": "自动战斗",
+    "EN": "Auto-Battle",
+    "CHT": "自動戰鬥",
+    "JP": "自動戦闘",
+    "KR": "자동 전투",
+    "TH": "การต่อสู้อัตโนมัติ",
+    "VN": "Chiến đấu tự động"
   },
   {
     "key": "停止",
-    "zh_CN": "停止",
-    "en_US": "Stop"
+    "CHS": "停止",
+    "EN": "Stop",
+    "CHT": "停止",
+    "JP": "停止",
+    "KR": "중지",
+    "TH": "หยุด",
+    "VN": "Dừng"
   },
   {
     "key": "种族:",
-    "zh_CN": "种族:",
-    "en_US": "RC:"
+    "CHS": "种族:",
+    "EN": "RC:",
+    "CHT": "種族:",
+    "JP": "種族:",
+    "KR": "종족:",
+    "TH": "เผ่าพันธุ์:",
+    "VN": "Chủng tộc:"
   },
   {
     "key": "战力:",
-    "zh_CN": "战力:",
-    "en_US": "POW:"
+    "CHS": "战力:",
+    "EN": "POW:",
+    "CHT": "戰力:",
+    "JP": "戦力:",
+    "KR": "전투력:",
+    "TH": "พลังต่อสู้:",
+    "VN": "Sức chiến đấu:"
   },
   {
     "key": "等级:",
-    "zh_CN": "等级:",
-    "en_US": "LVL:"
+    "CHS": "等级:",
+    "EN": "LVL:",
+    "CHT": "等級:",
+    "JP": "レベル:",
+    "KR": "레벨:",
+    "TH": "ระดับ:",
+    "VN": "Cấp:"
   },
   {
     "key": "转生:",
-    "zh_CN": "转生:",
-    "en_US": "REI:"
+    "CHS": "转生:",
+    "EN": "REI:",
+    "CHT": "轉生:",
+    "JP": "転生:",
+    "KR": "전생:",
+    "TH": "เกิดใหม่:",
+    "VN": "Tái sinh:"
   },
   {
     "key": "灵气:",
-    "zh_CN": "灵气:",
-    "en_US": "SPR:"
+    "CHS": "灵气:",
+    "EN": "SPR:",
+    "CHT": "靈氣:",
+    "JP": "霊気:",
+    "KR": "영기:",
+    "TH": "พลังวิญญาณ:",
+    "VN": "Linh khí:"
   },
   {
     "key": "仙气:",
-    "zh_CN": "仙气:",
-    "en_US": "IMR:"
+    "CHS": "仙气:",
+    "EN": "IMR:",
+    "CHT": "仙氣:",
+    "JP": "仙気:",
+    "KR": "선기:",
+    "TH": "พลังเซียน:",
+    "VN": "Tiên khí:"
   },
   {
     "key": "神韵:",
-    "zh_CN": "神韵:",
-    "en_US": "DVN:"
+    "CHS": "神韵:",
+    "EN": "DVN:",
+    "CHT": "神韻:",
+    "JP": "神韻:",
+    "KR": "신운:",
+    "TH": "พลังเทวะ:",
+    "VN": "Thần vận:"
   },
   {
     "key": "攻击:",
-    "zh_CN": "攻击:",
-    "en_US": "ATK:"
+    "CHS": "攻击:",
+    "EN": "ATK:",
+    "CHT": "攻擊:",
+    "JP": "攻撃:",
+    "KR": "공격:",
+    "TH": "โจมตี:",
+    "VN": "Tấn công:"
   },
   {
     "key": "防御:",
-    "zh_CN": "防御:",
-    "en_US": "DEF:"
+    "CHS": "防御:",
+    "EN": "DEF:",
+    "CHT": "防禦:",
+    "JP": "防御:",
+    "KR": "방어:",
+    "TH": "ป้องกัน:",
+    "VN": "Phòng thủ:"
   },
   {
     "key": "血量:",
-    "zh_CN": "血量:",
-    "en_US": "HP:"
+    "CHS": "血量:",
+    "EN": "HP:",
+    "CHT": "血量:",
+    "JP": "生命:",
+    "KR": "생명:",
+    "TH": "พลังชีวิต:",
+    "VN": "Sinh lực:"
   },
   {
     "key": "需要等级>",
-    "zh_CN": "需要等级>",
-    "en_US": "Required Level >"
+    "CHS": "需要等级>",
+    "EN": "Required Level >",
+    "CHT": "需要等級>",
+    "JP": "必要レベル>",
+    "KR": "필요 레벨>",
+    "TH": "ต้องการระดับ>",
+    "VN": "Yêu cầu cấp>"
   },
   {
     "key": "第*层",
-    "zh_CN": "第*层",
-    "en_US": "Level *"
+    "CHS": "第*层",
+    "EN": "Level *",
+    "CHT": "第*層",
+    "JP": "*層",
+    "KR": "*층",
+    "TH": "ชั้นที่*",
+    "VN": "Tầng *"
   },
   {
     "key": "击败怪物:",
-    "zh_CN": "击败怪物:",
-    "en_US": "Defeated Monsters:"
+    "CHS": "击败怪物:",
+    "EN": "Defeated Monsters:",
+    "CHT": "擊敗怪物:",
+    "JP": "モンスター撃破:",
+    "KR": "몬스터 격파:",
+    "TH": "กำจัดมอนสเตอร์:",
+    "VN": "Tiêu diệt quái:"
   },
   {
     "key": "成就完成率:",
-    "zh_CN": "成就完成率:",
-    "en_US": "Achievement Completion Rate:"
+    "CHS": "成就完成率:",
+    "EN": "Achievement Completion Rate:",
+    "CHT": "成就完成率:",
+    "JP": "達成率:",
+    "KR": "달성률:",
+    "TH": "อัตราสำเร็จ:",
+    "VN": "Tỷ lệ hoàn thành:"
   },
   {
     "key": "图鉴完成率:",
-    "zh_CN": "图鉴完成率:",
-    "en_US": "Bestiary Completion Rate:"
+    "CHS": "图鉴完成率:",
+    "EN": "Bestiary Completion Rate:",
+    "CHT": "圖鑑完成率:",
+    "JP": "図鑑完成率:",
+    "KR": "도감 완성률:",
+    "TH": "อัตราสมุดภาพ:",
+    "VN": "Tỷ lệ danh mục:"
   },
   {
     "key": "击杀解锁",
-    "zh_CN": "击杀解锁",
-    "en_US": "Unlock by Killing"
+    "CHS": "击杀解锁",
+    "EN": "Unlock by Killing",
+    "CHT": "擊殺解鎖",
+    "JP": "撃破で解放",
+    "KR": "격파로 해제",
+    "TH": "ปลดล็อกด้วยการกำจัด",
+    "VN": "Mở khóa bằng tiêu diệt"
   },
   {
     "key": "无法拟态需成就解锁",
-    "zh_CN": "无法拟态\n需成就解锁",
-    "en_US": "Cannot Mimic\nRequires Achievement Unlock"
+    "CHS": "无法拟态\n需成就解锁",
+    "EN": "Cannot Mimic\nRequires Achievement Unlock",
+    "CHT": "無法擬態\r\n需成就解鎖",
+    "JP": "擬態不可\r\n達成で解放必要",
+    "KR": "모방 불가\r\n달성으로 해제 필요",
+    "TH": "ไม่สามารถแปลงร่าง\r\nต้องปลดล็อกด้วยความสำเร็จ",
+    "VN": "Không thể biến hình\r\nCần mở khóa bằng thành tựu"
   },
   {
     "key": "攻击成长:",
-    "zh_CN": "攻击成长:",
-    "en_US": "Attack Growth:"
+    "CHS": "攻击成长:",
+    "EN": "Attack Growth:",
+    "CHT": "攻擊成長:",
+    "JP": "攻撃成長:",
+    "KR": "공격 성장:",
+    "TH": "การเติบโตโจมตี:",
+    "VN": "Tăng trưởng tấn công:"
   },
   {
     "key": "防御成长:",
-    "zh_CN": "防御成长:",
-    "en_US": "Defense Growth:"
+    "CHS": "防御成长:",
+    "EN": "Defense Growth:",
+    "CHT": "防禦成長:",
+    "JP": "防御成長:",
+    "KR": "방어 성장:",
+    "TH": "การเติบโตป้องกัน:",
+    "VN": "Tăng trưởng phòng thủ:"
   },
   {
     "key": "血量成长:",
-    "zh_CN": "血量成长:",
-    "en_US": "Health Growth:"
+    "CHS": "血量成长:",
+    "EN": "Health Growth:",
+    "CHT": "血量成長:",
+    "JP": "生命成長:",
+    "KR": "생명 성장:",
+    "TH": "การเติบโตพลังชีวิต:",
+    "VN": "Tăng trưởng sinh lực:"
   },
   {
     "key": "存档保存成功!",
-    "zh_CN": "存档保存成功!",
-    "en_US": "Save successful!"
+    "CHS": "存档保存成功!",
+    "EN": "Save successful!",
+    "CHT": "存檔保存成功!",
+    "JP": "セーブ成功！",
+    "KR": "저장 성공!",
+    "TH": "บันทึกสำเร็จ!",
+    "VN": "Lưu trữ thành công!"
   },
   {
     "key": "存档加载成功!",
-    "zh_CN": "存档加载成功!",
-    "en_US": "Load successful!"
+    "CHS": "存档加载成功!",
+    "EN": "Load successful!",
+    "CHT": "存檔加載成功!",
+    "JP": "ロード成功！",
+    "KR": "로드 성공!",
+    "TH": "โหลดสำเร็จ!",
+    "VN": "Tải thành công!"
   },
   {
     "key": "确定",
-    "zh_CN": "确定",
-    "en_US": "Confirm"
+    "CHS": "确定",
+    "EN": "Confirm",
+    "CHT": "確定",
+    "JP": "確定",
+    "KR": "확정",
+    "TH": "ยืนยัน",
+    "VN": "Xác nhận"
   },
   {
     "key": "取消",
-    "zh_CN": "取消",
-    "en_US": "Cancel"
+    "CHS": "取消",
+    "EN": "Cancel",
+    "CHT": "取消",
+    "JP": "キャンセル",
+    "KR": "취소",
+    "TH": "ยกเลิก",
+    "VN": "Hủy"
   },
   {
     "key": "角色属性",
-    "zh_CN": "角色属性",
-    "en_US": "Character Attributes"
+    "CHS": "角色属性",
+    "EN": "Character Attributes",
+    "CHT": "角色屬性",
+    "JP": "キャラクター属性",
+    "KR": "캐릭터 속성",
+    "TH": "คุณสมบัติตัวละคร",
+    "VN": "Thuộc tính nhân vật"
   },
   {
     "key": "角色技能",
-    "zh_CN": "角色技能",
-    "en_US": "Character Skills"
+    "CHS": "角色技能",
+    "EN": "Character Skills",
+    "CHT": "角色技能",
+    "JP": "キャラクタースキル",
+    "KR": "캐릭터 스킬",
+    "TH": "สกิลตัวละคร",
+    "VN": "Kỹ năng nhân vật"
   },
   {
     "key": "拟态",
-    "zh_CN": "拟态",
-    "en_US": "Mimicry"
+    "CHS": "拟态",
+    "EN": "Mimicry",
+    "CHT": "擬態",
+    "JP": "擬態",
+    "KR": "모방",
+    "TH": "แปลงร่าง",
+    "VN": "Biến hình"
   },
   {
     "key": "遗忘",
-    "zh_CN": "遗忘",
-    "en_US": "Forget"
+    "CHS": "遗忘",
+    "EN": "Forget",
+    "CHT": "遺忘",
+    "JP": "忘却",
+    "KR": "망각",
+    "TH": "ลืม",
+    "VN": "Quên"
   },
   {
     "key": "返回",
-    "zh_CN": "返回",
-    "en_US": "Back"
+    "CHS": "返回",
+    "EN": "Back",
+    "CHT": "返回",
+    "JP": "戻る",
+    "KR": "복귀",
+    "TH": "กลับ",
+    "VN": "Quay lại"
   },
   {
     "key": "淬炼",
-    "zh_CN": "淬炼",
-    "en_US": "Refining"
+    "CHS": "淬炼",
+    "EN": "Refining",
+    "CHT": "淬煉",
+    "JP": "淬煉",
+    "KR": "단련",
+    "TH": "หลอมรวม",
+    "VN": "Luyện hóa"
   },
   {
     "key": "查看技能",
-    "zh_CN": "查看技能",
-    "en_US": "Check Skills"
+    "CHS": "查看技能",
+    "EN": "Check Skills",
+    "CHT": "查看技能",
+    "JP": "スキル確認",
+    "KR": "스킬 확인",
+    "TH": "ตรวจสอบสกิล",
+    "VN": "Xem kỹ năng"
   },
   {
     "key": "查看属性",
-    "zh_CN": "查看属性",
-    "en_US": "Check Attributes"
+    "CHS": "查看属性",
+    "EN": "Check Attributes",
+    "CHT": "查看屬性",
+    "JP": "属性確認",
+    "KR": "속성 확인",
+    "TH": "ตรวจสอบคุณสมบัติ",
+    "VN": "Xem thuộc tính"
   },
   {
     "key": "转生",
-    "zh_CN": "转生",
-    "en_US": "Reincarnation"
+    "CHS": "转生",
+    "EN": "Reincarnation",
+    "CHT": "轉生",
+    "JP": "転生",
+    "KR": "전생",
+    "TH": "เกิดใหม่",
+    "VN": "Tái sinh"
   },
   {
     "key": "图鉴",
-    "zh_CN": "图鉴",
-    "en_US": "Bestiary"
+    "CHS": "图鉴",
+    "EN": "Bestiary",
+    "CHT": "圖鑑",
+    "JP": "図鑑",
+    "KR": "도감",
+    "TH": "สมุดภาพ",
+    "VN": "Danh mục"
   },
   {
     "key": "搜索",
-    "zh_CN": "搜索",
-    "en_US": "Search"
+    "CHS": "搜索",
+    "EN": "Search",
+    "CHT": "搜索",
+    "JP": "検索",
+    "KR": "검색",
+    "TH": "ค้นหา",
+    "VN": "Tìm kiếm"
   },
   {
     "key": "深入",
-    "zh_CN": "深入",
-    "en_US": "Next"
+    "CHS": "深入",
+    "EN": "Next",
+    "CHT": "深入",
+    "JP": "深入",
+    "KR": "심화",
+    "TH": "ลงลึก",
+    "VN": "Sâu hơn"
   },
   {
     "key": "挑战首领",
-    "zh_CN": "挑战首领",
-    "en_US": "Boss"
+    "CHS": "挑战首领",
+    "EN": "Boss",
+    "CHT": "挑戰首領",
+    "JP": "ボス挑戦",
+    "KR": "보스 도전",
+    "TH": "ท้าทายบอส",
+    "VN": "Thách đấu boss"
   },
   {
     "key": "一转解锁",
-    "zh_CN": "一转解锁",
-    "en_US": "First Reincarnation Unlocked"
+    "CHS": "一转解锁",
+    "EN": "First Reincarnation Unlocked",
+    "CHT": "一轉解鎖",
+    "JP": "一転解放",
+    "KR": "1전 해제",
+    "TH": "ปลดล็อกการเกิดใหม่ครั้งแรก",
+    "VN": "Mở khóa tái sinh lần 1"
   },
   {
     "key": "逃跑",
-    "zh_CN": "逃跑",
-    "en_US": "Escape"
+    "CHS": "逃跑",
+    "EN": "Escape",
+    "CHT": "逃跑",
+    "JP": "逃走",
+    "KR": "도주",
+    "TH": "หนี",
+    "VN": "Trốn chạy"
   },
   {
     "key": "全部领取",
-    "zh_CN": "全部领取",
-    "en_US": "Claim All"
+    "CHS": "全部领取",
+    "EN": "Claim All",
+    "CHT": "全部領取",
+    "JP": "すべて受取",
+    "KR": "전부 수령",
+    "TH": "รับทั้งหมด",
+    "VN": "Nhận tất cả"
   },
   {
     "key": "定向拟态",
-    "zh_CN": "定向拟态",
-    "en_US": "Targeted Mimicry"
+    "CHS": "定向拟态",
+    "EN": "Targeted Mimicry",
+    "CHT": "定向擬態",
+    "JP": "定向擬態",
+    "KR": "지정 모방",
+    "TH": "การแปลงร่างแบบกำหนด",
+    "VN": "Biến hình định hướng"
   },
   {
     "key": "2转解锁",
-    "zh_CN": "二转解锁",
-    "en_US": "Second Reincarnation Unlocked"
+    "CHS": "二转解锁",
+    "EN": "Second Reincarnation Unlocked",
+    "CHT": "二轉解鎖",
+    "JP": "二転解放",
+    "KR": "2전 해제",
+    "TH": "ปลดล็อกการเกิดใหม่ครั้งที่สอง",
+    "VN": "Mở khóa tái sinh lần 2"
   },
   {
     "key": "激活血脉",
-    "zh_CN": "激活血脉",
-    "en_US": "Awaken Bloodline"
+    "CHS": "激活血脉",
+    "EN": "Awaken Bloodline",
+    "CHT": "激活血脈",
+    "JP": "血脈活性",
+    "KR": "혈맥 활성",
+    "TH": "กระตุ้นสายเลือด",
+    "VN": "Kích hoạt huyết mạch"
   },
   {
     "key": "提升拟态成功率5%",
-    "zh_CN": "提升拟态成功率5%",
-    "en_US": "+5% Mimicry Success Rate"
+    "CHS": "提升拟态成功率5%",
+    "EN": "+5% Mimicry Success Rate",
+    "CHT": "提升擬態成功率5%",
+    "JP": "擬態成功率5%アップ",
+    "KR": "모방 성공률 5% 상승",
+    "TH": "เพิ่มอัตราสำเร็จการแปลงร่าง 5%",
+    "VN": "Tăng tỷ lệ thành công biến hình 5%"
   },
   {
     "key": "开局一只史莱姆",
-    "zh_CN": "开局一只史莱姆",
-    "en_US": "Start with a slime  \n  end with a dragon"
+    "CHS": "开局一只史莱姆",
+    "EN": "Start with a slime  \n  end with a dragon",
+    "CHT": "開局一隻史萊姆",
+    "JP": "ゲーム開始：スライム一匹",
+    "KR": "시작: 슬라임 한 마리",
+    "TH": "เริ่มเกม: สไลม์ตัวเดียว",
+    "VN": "Bắt đầu trò chơi: Một con Slime"
   },
   {
     "key": "-测试版",
-    "zh_CN": "-测试版",
-    "en_US": "– that's the grind!"
+    "CHS": "-测试版",
+    "EN": "– that's the grind!",
+    "CHT": "-測試版",
+    "JP": "-テスト版",
+    "KR": "-테스트판",
+    "TH": "-รุ่นทดสอบ",
+    "VN": "-Phiên bản thử nghiệm"
   },
   {
     "key": "开始游戏",
-    "zh_CN": "开始游戏",
-    "en_US": "Start"
+    "CHS": "开始游戏",
+    "EN": "Start",
+    "CHT": "開始遊戲",
+    "JP": "ゲーム開始",
+    "KR": "게임 시작",
+    "TH": "เริ่มเกม",
+    "VN": "Bắt đầu trò chơi"
   },
   {
     "key": "抵制不良游戏 拒绝盗版游戏 注意自我保护\n谨防受骗上当 适度游戏益脑 沉迷游戏伤身\n合理安排时间 享受健康生活",
-    "zh_CN": "抵制不良游戏 拒绝盗版游戏 注意自我保护\n谨防受骗上当 适度游戏益脑 沉迷游戏伤身\n合理安排时间 享受健康生活",
-    "en_US": "Reject harmful games. Refuse pirated games. Protect yourself.\nBeware of scams. Game moderately to benefit your mind. Avoid addiction for health.\nManage time wisely. Enjoy a healthy lifestyle."
+    "CHS": "抵制不良游戏 拒绝盗版游戏 注意自我保护\n谨防受骗上当 适度游戏益脑 沉迷游戏伤身\n合理安排时间 享受健康生活",
+    "EN": "Reject harmful games. Refuse pirated games. Protect yourself.\nBeware of scams. Game moderately to benefit your mind. Avoid addiction for health.\nManage time wisely. Enjoy a healthy lifestyle.",
+    "CHT": "抵制不良遊戲 拒絕盜版遊戲 注意自我保護\r\n謹防受騙上當 適度遊戲益腦 沉迷遊戲傷身\r\n合理安排時間 享受健康生活",
+    "JP": "不健全なゲームを拒否 盗版ゲームを拒否 自己保護に注意\r\n詐欺に気をつけ 適度なゲームは脳に良い ゲーム依存は身体を害します\r\n時間を合理的に管理し 健康的な生活を楽しみましょう",
+    "KR": "불건전 게임 거부, 불법 복제 게임 거부, 자기 보호 주의\r\n사기 주의, 적당한 게임은 두뇌에 이로움, 게임 중독은 건강 해침\r\n시간을 합리적으로 관리하여 건강한 삶을 즐기세요",
+    "TH": "ต่อต้านเกมที่ไม่เหมาะสม ปฏิเสธเกมละเมิดลิขสิทธิ์ ระวังปกป้องตัวเอง\r\nระวังการถูกหลอก เกมในระดับที่เหมาะสมดีต่อสมอง ติดเกมทำร้ายร่างกาย\r\nจัดการเวลาอย่างเหมาะสม เพลิดเพลินกับชีวิตที่มีสุขภาพดี",
+    "VN": "Phản đối trò chơi không lành mạnh, từ chối trò chơi lậu, chú ý bảo vệ bản thân\r\nCẩn thận bị lừa, chơi game vừa phải tốt cho não, nghiện game hại cơ thể\r\nSắp xếp thời gian hợp lý, tận hưởng cuộc sống lành mạnh"
   },
   {
     "key": "无法拟态",
-    "zh_CN": "无法拟态",
-    "en_US": "Cannot Mimic"
+    "CHS": "无法拟态",
+    "EN": "Cannot Mimic",
+    "CHT": "無法擬態",
+    "JP": "擬態不可",
+    "KR": "모방 불가",
+    "TH": "ไม่สามารถแปลงร่าง",
+    "VN": "Không thể biến hình"
   },
   {
     "key": "拟态时，属性匹配度越高、属性值越高成功率越高!",
-    "zh_CN": "拟态时，属性匹配度越高、属性值越高成功率越高!",
-    "en_US": "Mimicry Success Rate: ↑ with better attribute match & higher stats!"
+    "CHS": "拟态时，属性匹配度越高、属性值越高成功率越高!",
+    "EN": "Mimicry Success Rate: ↑ with better attribute match & higher stats!",
+    "CHT": "擬態時，屬性匹配度越高、屬性值越高成功率越高!",
+    "JP": "擬態時、属性一致度が高いほど、属性値が高いほど成功率が上がります！",
+    "KR": "모방 시, 속성 일치도가 높을수록, 속성값이 높을수록 성공률 상승!",
+    "TH": "เมื่อแปลงร่าง คุณสมบัติยิ่งตรงและค่าคุณสมบัติยิ่งสูง อัตราสำเร็จยิ่งสูง!",
+    "VN": "Khi biến hình, thuộc tính càng khớp và giá trị thuộc tính càng cao, tỷ lệ thành công càng cao!"
   },
   {
     "key": "成长:",
-    "zh_CN": "成长:",
-    "en_US": "Growth:"
+    "CHS": "成长:",
+    "EN": "Growth:",
+    "CHT": "成長:",
+    "JP": "成長:",
+    "KR": "성장:",
+    "TH": "การเติบโต:",
+    "VN": "Tăng trưởng:"
   },
   {
     "key": "技能:",
-    "zh_CN": "技能:",
-    "en_US": "Skills:"
+    "CHS": "技能:",
+    "EN": "Skills:",
+    "CHT": "技能:",
+    "JP": "スキル:",
+    "KR": "스킬:",
+    "TH": "สกิล:",
+    "VN": "Kỹ năng:"
   },
   {
     "key": "图鉴加成:",
-    "zh_CN": "图鉴加成:",
-    "en_US": "Bonus:"
+    "CHS": "图鉴加成:",
+    "EN": "Bonus:",
+    "CHT": "圖鑑加成:",
+    "JP": "図鑑ボーナス:",
+    "KR": "도감 보너스:",
+    "TH": "โบนัสสมุดภาพ:",
+    "VN": "Thưởng danh mục:"
   },
   {
     "key": "组成:",
-    "zh_CN": "组成:",
-    "en_US": "Composition:"
+    "CHS": "组成:",
+    "EN": "Composition:",
+    "CHT": "組成:",
+    "JP": "構成:",
+    "KR": "구성:",
+    "TH": "ส่วนประกอบ:",
+    "VN": "Thành phần:"
   },
   {
     "key": "定向拟态成功率提升5%\n定向拟态只能拟态成已解锁图鉴的生物",
-    "zh_CN": "定向拟态成功率提升5%\n定向拟态只能拟态成已解锁图鉴的生物",
-    "en_US": "Targeted Mimicry success rate +5%\nTargeted Mimicry limited to unlocked Bestiary entries"
+    "CHS": "定向拟态成功率提升5%\n定向拟态只能拟态成已解锁图鉴的生物",
+    "EN": "Targeted Mimicry success rate +5%\nTargeted Mimicry limited to unlocked Bestiary entries",
+    "CHT": "定向擬態成功率提升5%\r\n定向擬態只能擬態成已解鎖圖鑑的生物",
+    "JP": "定向擬態成功率5%アップ\r\n定向擬態は解放済みの図鑑の生物にのみ擬態可能",
+    "KR": "지정 모방 성공률 5% 상승\r\n지정 모방은 해제된 도감의 생물로만 모방 가능",
+    "TH": "อัตราสำเร็จการแปลงร่างแบบกำหนดเพิ่ม 5%\r\nการแปลงร่างแบบกำหนดสามารถแปลงเป็นสิ่งมีชีวิตที่ปลดล็อกในสมุดภาพเท่านั้น",
+    "VN": "Tỷ lệ thành công biến hình định hướng tăng 5%\r\nBiến hình định hướng chỉ có thể biến thành sinh vật đã mở khóa trong danh mục"
   },
   {
     "key": "淬炼后属性",
-    "zh_CN": "淬炼后属性",
-    "en_US": "Refined Stats"
+    "CHS": "淬炼后属性",
+    "EN": "Refined Stats",
+    "CHT": "淬煉後屬性",
+    "JP": "淬煉後属性",
+    "KR": "단련 후 속성",
+    "TH": "คุณสมบัติหลังหลอมรวม",
+    "VN": "Thuộc tính sau luyện hóa"
+  },
+  {
+    "key": "拟态失败有可能死亡，拟态需谨慎",
+    "CHS": "拟态失败有可能死亡，拟态需谨慎",
+    "EN": "Failed mimicry may cause death - proceed with caution",
+    "CHT": "擬態失敗有可能死亡，擬態需謹慎",
+    "JP": "擬態失敗は死亡の可能性あり、擬態は慎重に",
+    "KR": "모방 실패 시 사망 가능성 있음, 모방은 신중히",
+    "TH": "การแปลงร่างล้มเหลวอาจตาย แปลงร่างต้องระวัง",
+    "VN": "Biến hình thất bại có thể chết, biến hình cần cẩn thận"
+  },
+  {
+    "key": "转生3次后，史莱姆会获得专属技能「解析」",
+    "CHS": "转生3次后，史莱姆会获得专属技能「解析」",
+    "EN": "After 3 reincarnations, slimes unlock exclusive skill: [Analyze]",
+    "CHT": "轉生3次後，史萊姆會獲得專屬技能「解析」",
+    "JP": "転生3回後、スライムは専用スキル「解析」を獲得",
+    "KR": "전생 3회 후, 슬라임은 전용 스킬 「해석」 획득",
+    "TH": "หลังเกิดใหม่ 3 ครั้ง สไลม์จะได้รับสกิลพิเศษ 「วิเคราะห์」",
+    "VN": "Sau khi tái sinh 3 lần, Slime sẽ nhận kỹ năng đặc biệt 「Phân tích」"
+  },
+  {
+    "key": "拟态时，属性匹配度越高、属性值越高成功率越高",
+    "CHS": "拟态时，属性匹配度越高、属性值越高成功率越高",
+    "EN": "Mimicry success scales with attribute compatibility AND magnitude",
+    "CHT": "擬態時，屬性匹配度越高、屬性值越高成功率越高",
+    "JP": "擬態時、属性一致度が高いほど、属性値が高いほど成功率が上がります",
+    "KR": "모방 시, 속성 일치도가 높을수록, 속성값이 높을수록 성공률 상승",
+    "TH": "เมื่อแปลงร่าง คุณสมบัติยิ่งตรงและค่าคุณสมบัติยิ่งสูง อัตราสำเร็จยิ่งสูง",
+    "VN": "Khi biến hình, thuộc tính càng khớp và giá trị thuộc tính càng cao, tỷ lệ thành công càng cao"
+  },
+  {
+    "key": "自动战斗可不一定是什么好事",
+    "CHS": "自动战斗可不一定是什么好事",
+    "EN": "Auto-battle isn't always advantageous",
+    "CHT": "自動戰鬥可不一定是什麼好事",
+    "JP": "自動戦闘は必ずしも良いとは限りません",
+    "KR": "자동 전투가 반드시 좋은 것은 아님",
+    "TH": "การต่อสู้อัตโนมัติอาจไม่ใช่สิ่งดีเสมอไป",
+    "VN": "Chiến đấu tự động không hẳn là tốt"
+  },
+  {
+    "key": "偷偷说一下，人族非常厉害",
+    "CHS": "偷偷说一下，人族非常厉害",
+    "EN": "Psst... Human race is OP",
+    "CHT": "偷偷說一下，人族非常厲害",
+    "JP": "こっそり教えます、人族は非常に強いです",
+    "KR": "몰래 말하자면, 인족은 매우 강함",
+    "TH": "แอบบอกนะ เผ่ามนุษย์แข็งแกร่งมาก",
+    "VN": "Nói nhỏ nhé, tộc người rất mạnh"
+  },
+  {
+    "key": "淬炼可以让属性变得更纯粹",
+    "CHS": "淬炼可以让属性变得更纯粹",
+    "EN": "Refinement purifies attributes",
+    "CHT": "淬煉可以讓屬性變得更純粹",
+    "JP": "淬煉は属性をより純粋にします",
+    "KR": "단련은 속성을 더 순수하게 만듦",
+    "TH": "การหลอมรวมทำให้คุณสมบัติบริสุทธิ์ขึ้น",
+    "VN": "Luyện hóa làm thuộc tính thuần khiết hơn"
+  },
+  {
+    "key": "拟态只能从玩家灵仙神属性的最高值对应的生物或无属性的生物中选择",
+    "CHS": "拟态只能从玩家灵仙神属性的最高值对应的生物或无属性的生物中选择",
+    "EN": "Mimic options: Your top SPR/IMR/DVN stat OR MOR",
+    "CHT": "擬態只能從玩家靈仙神屬性的最高值對應的生物或無屬性的生物中選擇",
+    "JP": "擬態はプレイヤーの霊仙神属性の最高値に対応する生物または無属性の生物から選択可能",
+    "KR": "모방은 플레이어의 영선신 속성 최대값에 대응하는 생물 또는 무속성 생물에서 선택 가능",
+    "TH": "การแปลงร่างสามารถเลือกได้จากสิ่งมีชีวิตที่ตรงกับค่าสูงสุดของพลังวิญญาณ เซียน หรือเทวะของผู้เล่น หรือสิ่งมีชีวิตไร้คุณสมบัติ",
+    "VN": "Biến hình chỉ có thể chọn từ sinh vật tương ứng với giá trị cao nhất của linh, tiên, thần của người chơi hoặc sinh vật không thuộc tính"
+  },
+  {
+    "key": "已解锁的图鉴会给史莱姆提供属性加成",
+    "CHS": "已解锁的图鉴会给史莱姆提供属性加成",
+    "EN": "Unlocked bestiary entries grant slime stat bonuses",
+    "CHT": "已解鎖的圖鑑會給史萊姆提供屬性加成",
+    "JP": "解放済みの図鑑はスライムに属性ボーナスを提供",
+    "KR": "해제된 도감은 슬라임에게 속성 보너스 제공",
+    "TH": "สมุดภาพที่ปลดล็อกแล้วจะให้โบนัสคุณสมบัติแก่สไลม์",
+    "VN": "Danh mục đã mở khóa sẽ cung cấp thưởng thuộc tính cho Slime"
+  },
+  {
+    "key": "等级超过99级后升级获得的属性会大幅下降",
+    "CHS": "等级超过99级后升级获得的属性会大幅下降",
+    "EN": "Post-Lv.99 stat gains drop sharply",
+    "CHT": "等級超過99級後升級獲得的屬性會大幅下降",
+    "JP": "レベルが99を超えると、レベルアップで得られる属性が大幅に低下",
+    "KR": "레벨이 99를 초과하면 레벨업으로 얻는 속성이 대폭 하락",
+    "TH": "เมื่อระดับเกิน 99 คุณสมบัติที่ได้จากการอัปเลเวลจะลดลงมาก",
+    "VN": "Khi cấp vượt 99, thuộc tính nhận được từ nâng cấp sẽ giảm mạnh"
+  },
+  {
+    "key": "所有生物20%概率吞噬敌人获得新的技能",
+    "CHS": "所有生物20%概率吞噬敌人获得新的技能",
+    "EN": "All creatures have 20% chance to Devour foes for new skills",
+    "CHT": "所有生物20%概率吞噬敵人獲得新的技能",
+    "JP": "すべての生物は20%の確率で敵を吞噬して新しいスキルを獲得",
+    "KR": "모든 생물은 20% 확률로 적을 포식하여 새 스킬 획득",
+    "TH": "สิ่งมีชีวิตทุกตัวมีโอกาส 20% กลืนกินศัตรูเพื่อรับสกิลใหม่",
+    "VN": "Mọi sinh vật có 20% xác suất nuốt chửng kẻ thù để nhận kỹ năng mới"
+  },
+  {
+    "key": "转生超过99次、199次后，继续转生获得的属性会大幅下降",
+    "CHS": "转生超过99次、199次后，继续转生获得的属性会大幅下降",
+    "EN": "Reincarnation stats diminish after 99/199 cycles",
+    "CHT": "轉生超過99次、199次後，繼續轉生獲得的屬性會大幅下降",
+    "JP": "転生が99回、199回を超えると、以降の転生で得られる属性が大幅に低下",
+    "KR": "전생이 99회, 199회를 초과하면, 이후 전생으로 얻는 속성이 대폭 하락",
+    "TH": "เมื่อเกิดใหม่เกิน 99 หรือ 199 ครั้ง คุณสมบัติที่ได้จากการเกิดใหม่ต่อไปจะลดลงมาก",
+    "VN": "Khi tái sinh vượt 99 hoặc 199 lần, thuộc tính nhận được từ tái sinh tiếp theo sẽ giảm mạnh"
   }
 ]

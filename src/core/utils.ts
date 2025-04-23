@@ -71,35 +71,31 @@ export function toPerStr(value: number): string {
 }
 
 export function getValueStr(num: number): string {
-    if (Language.key === "enUS") {
-        const units = [
+    let list: string[];
+    let units: { value: number, symbol: string }[];
+    if (Language.key === "CHS") list = ['万', '亿', '兆'];
+    if (Language.key === "CHT") list = ['萬', '億', '兆'];
+    if (Language.key === "JP") list = ['万', '億', '兆'];
+    if (Language.key === "KR") list = ['만', '억', '조'];
+    if (list) {
+        units = [
+            { value: 1e12, symbol: list[2] },
+            { value: 1e8, symbol: list[1] },
+            { value: 1e4, symbol: list[0] }
+        ];
+    } else {
+        units = [
             { value: 1e12, symbol: 'T' },
             { value: 1e9, symbol: 'B' },
             { value: 1e6, symbol: 'M' },
             { value: 1e3, symbol: 'K' }
         ];
-
-        for (const unit of units) {
-            if (num >= unit.value) {
-                const formatted = (num / unit.value).toFixed(2);
-                // 移除末尾无用的零和小数点（如1.00K→1K）
-                return formatted.replace(/\.?0+$/, '') + unit.symbol;
-            }
-        }
     }
-    else {
-        const units = [
-            { value: 1e12, symbol: '兆' },  // 万亿
-            { value: 1e8, symbol: '亿' },
-            { value: 1e4, symbol: '万' }
-        ];
-
-        for (const unit of units) {
-            if (num >= unit.value) {
-                const formatted = (num / unit.value).toFixed(2);
-                // 移除末尾无用的零和小数点（如1.00万→1万）
-                return formatted.replace(/\.?0+$/, '') + unit.symbol;
-            }
+    for (const unit of units) {
+        if (num >= unit.value) {
+            const formatted = (num / unit.value).toFixed(2);
+            // 移除末尾无用的零和小数点（如1.00万→1万）
+            return formatted.replace(/\.?0+$/, '') + unit.symbol;
         }
     }
     return num.toString();
@@ -107,8 +103,9 @@ export function getValueStr(num: number): string {
 
 // 新增数字转中文方法
 export function numberToChinese(num: number): string {
+    return num.toString();
     if (Language.key === "enUS") return num.toString();
-    const chineseNumbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    let chineseNumbers: string[] = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
     return num.toString().split('').map(n => chineseNumbers[parseInt(n)]).join('');
 }
 

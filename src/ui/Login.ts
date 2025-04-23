@@ -17,9 +17,12 @@ export class Login extends Laya.Script {
         this.Sound = this.owner.getChildByName('Sound') as MyButton;
         this.ComboBox = this.owner.getChildByName('ComboBox') as Laya.ComboBox;
 
-        this.ComboBox.selectedIndex = Language.key == 'zhCN' ? 0 : 1;
+        const list = ['CHS', 'EN', 'CHT', 'JP', 'KR', 'TH', 'VN'];
+        this.ComboBox.dataSource = ['简体中文', 'English', '繁體中文', '日本語', '한국어', 'ภาษาไทย', 'Tiếng Việt'];
+        this.ComboBox.selectedIndex = list.indexOf(Language.key);
+        this.ComboBox.visibleNum = list.length;
         this.ComboBox.selectHandler = Laya.Handler.create(this, (_: number) => {
-            let key = this.ComboBox.selectedIndex == 0 ? 'zhCN' : 'enUS';
+            let key = list[this.ComboBox.selectedIndex];
             Language.setLanguage(key);
             Laya.Scene.open("Scene.ls");
         }, null, false);

@@ -175,17 +175,37 @@ export class lang {
     constructor(_json_: any) {
         if (_json_.key === undefined) { throw new Error() }
         this.key = _json_.key
-        if (_json_.zh_CN === undefined) { throw new Error() }
-        this.zhCN = _json_.zh_CN
-        if (_json_.en_US === undefined) { throw new Error() }
-        this.enUS = _json_.en_US
+        if (_json_.CHS === undefined) { throw new Error() }
+        this.CHS = _json_.CHS
+        if (_json_.EN === undefined) { throw new Error() }
+        this.EN = _json_.EN
+        if (_json_.CHT === undefined) { throw new Error() }
+        this.CHT = _json_.CHT
+        if (_json_.JP === undefined) { throw new Error() }
+        this.JP = _json_.JP
+        if (_json_.KR === undefined) { throw new Error() }
+        this.KR = _json_.KR
+        if (_json_.TH === undefined) { throw new Error() }
+        this.TH = _json_.TH
+        if (_json_.VN === undefined) { throw new Error() }
+        this.VN = _json_.VN
     }
 
     readonly key: string
-    readonly zhCN: string
-    readonly enUS: string
+    readonly CHS: string
+    readonly EN: string
+    readonly CHT: string
+    readonly JP: string
+    readonly KR: string
+    readonly TH: string
+    readonly VN: string
 
     resolve(tables:Tables) {
+        
+        
+        
+        
+        
         
         
         

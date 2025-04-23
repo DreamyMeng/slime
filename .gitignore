@@ -4,3 +4,5 @@ library
 local
 node_modules
 bin/js/bundles
+release/android
+release/poki

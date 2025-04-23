@@ -125,9 +125,9 @@ export class BaseRole extends EventDispatcher {
             if (miss) {
                 DamagePool.showDodge(target.view);
                 let str;
-                if (target.camp === 'player') str = xinximoban.zhandou.shanbi1.toStr().replace('p', color_config.xinximoban.player);
+                if (target.camp === 'player') str = xinximoban.zhandou.shanbi1.toStr().replace('{p}', color_config.xinximoban.player);
                 else {
-                    str = xinximoban.zhandou.shanbi2.toStr().replace('e', color_config.xinximoban.enemy);
+                    str = xinximoban.zhandou.shanbi2.toStr().replace('{e}', color_config.xinximoban.enemy);
                     str = str.replace('*', Main.getRoleName(target.view.data));
                 }
                 GameLog.log(str, false); // 闪避
@@ -135,9 +135,9 @@ export class BaseRole extends EventDispatcher {
             else {
                 DamagePool.showBlock(target.view);
                 let str;
-                if (target.camp === 'player') str = xinximoban.zhandou.gedang1.toStr().replace('p', color_config.xinximoban.player);
+                if (target.camp === 'player') str = xinximoban.zhandou.gedang1.toStr().replace('{p}', color_config.xinximoban.player);
                 else {
-                    str = xinximoban.zhandou.gedang2.toStr().replace('e', color_config.xinximoban.enemy);
+                    str = xinximoban.zhandou.gedang2.toStr().replace('{e}', color_config.xinximoban.enemy);
                     str = str.replace('*', Main.getRoleName(target.view.data));
                 }
                 GameLog.log(str, false); // 闪避

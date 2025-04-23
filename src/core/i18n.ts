@@ -10,14 +10,14 @@ declare global {
     if (!this) return this;
     let data = Config.table.Tblang.get(this);
     if (data) return (data as any)[Language.key];
-    console.error(`未找到语言：${this}`);
+    console.log(`未找到语言：${this}`);
     return this;
 };
 
 export class Language {
     static key: string;
     static init(): void {
-        Language.key = Laya.LocalStorage.getItem('language') || 'CHS';
+        Language.key = Laya.LocalStorage.getItem('language') || 'EN';
     }
     static setLanguage(language: string): void {
         Language.key = language;

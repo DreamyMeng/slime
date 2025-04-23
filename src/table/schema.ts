@@ -185,8 +185,6 @@ export class lang {
         this.JP = _json_.JP
         if (_json_.KR === undefined) { throw new Error() }
         this.KR = _json_.KR
-        if (_json_.TH === undefined) { throw new Error() }
-        this.TH = _json_.TH
         if (_json_.VN === undefined) { throw new Error() }
         this.VN = _json_.VN
     }
@@ -197,11 +195,9 @@ export class lang {
     readonly CHT: string
     readonly JP: string
     readonly KR: string
-    readonly TH: string
     readonly VN: string
 
     resolve(tables:Tables) {
-        
         
         
         

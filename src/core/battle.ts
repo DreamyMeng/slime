@@ -119,6 +119,7 @@ export class Battle {
                     Main.instance.auto_fight();
                     return;
                 }
+                Laya.SoundManager.playSound(Config.sounds.get("win"));
                 Save.saveGame();
             } else {
                 console.log(`${this.enemy.camp} wins the battle!`);
@@ -127,7 +128,6 @@ export class Battle {
             }
         }
 
-        Laya.SoundManager.playSound(Config.sounds.get("win"));
         utils.GameLog.log(xinximoban.zhandou.jieshu);
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
         Main.instance.show_map();

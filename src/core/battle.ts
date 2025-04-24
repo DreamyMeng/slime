@@ -38,6 +38,7 @@ export class Battle {
         let health = Main.getHealth(roleData, levelData, rebirthData, addition);
 
         this.player.init(attack, defence, health, roleData.skills.concat(playerData.skills));
+        // this.player.init(999999999999999, 999999999999999, 999999999999999, roleData.skills.concat(playerData.skills));
 
         let sceneData: cfg.map_level = Config.table.Tbmap_level.get(playerData.curScene);
         roleData = Config.table.Tbrole.get(id);
@@ -59,7 +60,8 @@ export class Battle {
 
     async start(): Promise<void> {
         utils.GameLog.log(xinximoban.zhandou.kaishi);
-        Laya.SoundManager.playMusic(Config.sounds.get("battle_bgm"));
+        let music = Config.sounds.get("battle_bgm");
+        if (Laya.SoundManager._bgMusic !== music) Laya.SoundManager.playMusic(music);
 
         this.player.health.reset();
         this.enemy.health.reset();
@@ -77,7 +79,11 @@ export class Battle {
 
         await utils.delay(200);
 
-        while (!this.escape && (role.isAlive() && target.isAlive())) {
+        this.round(role);
+    }
+
+    async round(role: BaseRole): Promise<void> {
+        if (!this.escape && (role.isAlive() && role.target.isAlive())) {
             console.log(`${role.camp} Turn!`);
             // // 更新自身 Buff
             // role.buff.updateBuffs();
@@ -86,11 +92,11 @@ export class Battle {
             //     GameLog.log(`${role.camp} is stunned and skips the turn.`);
             // } else
             Battle.damage = 0;
-            await role.round(target);
-
+            await role.round();
             BuffMgr.clearTemp(); // 清除临时buff
             // switch role and target
-            [role, target] = [target, role];
+            // [role, target] = [target, role];
+            return;
         }
 
         SkillMgr.clear(); // 清除技能
@@ -121,13 +127,13 @@ export class Battle {
             }
         }
 
+        Laya.SoundManager.playSound(Config.sounds.get("win"));
         utils.GameLog.log(xinximoban.zhandou.jieshu);
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
         Main.instance.show_map();
     }
 
     victory(roleData: cfg.role, level: number, isBoss: boolean): void {
-        Laya.SoundManager.playSound(Config.sounds.get("win"));
         // MessageBox.tip(`战斗胜利！，吞噬：${Main.getRoleName(roleData)}`);
         Chengjiu.addCount('kill', roleData.id);
 

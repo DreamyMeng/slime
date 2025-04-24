@@ -5220,7 +5220,7 @@
     "VN": "Biến hình thất bại có thể chết, biến hình cần cẩn thận"
   },
   {
-    "key": "转生3次后，史莱姆会获得专属技能「解析」",
+    "key": "转生3次后，史莱姆会获得专属技能“解析”",
     "CHS": "转生3次后，史莱姆会获得专属技能「解析」",
     "EN": "After 3 reincarnations, slimes unlock exclusive skill: [Analyze]",
     "CHT": "轉生3次後，史萊姆會獲得專屬技能「解析」",
@@ -5265,7 +5265,7 @@
     "VN": "Luyện hóa làm thuộc tính thuần khiết hơn"
   },
   {
-    "key": "拟态只能从玩家灵仙神属性的最高值对应的生物或无属性的生物中选择",
+    "key": "拟态只会拟态成灵属性最高或无属性的生物",
     "CHS": "拟态只能从玩家灵仙神属性的最高值对应的生物或无属性的生物中选择",
     "EN": "Mimic options: Your top SPR/IMR/DVN stat OR MOR",
     "CHT": "擬態只能從玩家靈仙神屬性的最高值對應的生物或無屬性的生物中選擇",
@@ -5301,7 +5301,7 @@
     "VN": "Mọi sinh vật có 20% xác suất nuốt chửng kẻ thù để nhận kỹ năng mới"
   },
   {
-    "key": "转生超过99次、199次后，继续转生获得的属性会大幅下降",
+    "key": "转生超过99次、199次后转生获得的属性会大幅下降",
     "CHS": "转生超过99次、199次后，继续转生获得的属性会大幅下降",
     "EN": "Reincarnation stats diminish after 99/199 cycles",
     "CHT": "轉生超過99次、199次後，繼續轉生獲得的屬性會大幅下降",

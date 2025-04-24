@@ -13,7 +13,7 @@ export async function main() {
     Language.init();
 
     let label = Laya.stage.addChild(new Laya.Label());
-    label.dataSource = { width: Laya.stage.width - 60, height: Laya.stage.height - 60, wordWrap: true, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
+    label.dataSource = { x: 60, width: Laya.stage.width - 120, height: Laya.stage.height, wordWrap: true, align: "center", valign: "middle", fontSize: 30, color: "#ffffff" };
     label.text = tishi[Math.floor(Math.random() * tishi.length)].toStr();
 
     await Config.load_sound();

@@ -1,4 +1,5 @@
 import { Config } from "../core/config";
+import { BaseRole } from "../core/role";
 import * as utils from "../core/utils";
 import { map_level, role } from "../table/schema";
 import { HPBar } from "./HPBar";
@@ -68,15 +69,16 @@ export class RoleView extends Laya.Script {
     }
 
     animator: Laya.Animator2D;
-    // role_action: (target: BaseRole) => boolean;
-
-    // event_damage(): void {
-    //     // console.log(":event_damage");
-    //     if (this.role_action) this.role_action();
-    //     Laya.SoundManager.playSound(Config.sounds.get("att"));
-    // }
-
+    role: BaseRole;
+    event_damage(): void {
+        Laya.SoundManager.playSound(Config.sounds.get("att"));
+        this.role.attackAction();
+    }
+    event_end(): void {
+        Main.instance.battle.round(this.role.target);
+    }
     play_anim(name: string): void {
+        this.owner.parent.setChildIndex(this.owner, this.owner.parent.numChildren - 1);
         this.animator.play(name, 0, 0);
     }
 }

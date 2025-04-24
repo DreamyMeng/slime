@@ -55,6 +55,7 @@ export class Main extends MainBase {
         }
 
         this.btn_shenru.onClick = () => {
+            if (Save.data.player.curScene > Save.data.player.maxScene) return;
             Save.data.player.curScene++;
             utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
             Main.instance.update_map();
@@ -62,7 +63,7 @@ export class Main extends MainBase {
         }
         utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
         this.btn_fanhui.onClick = () => {
-            Save.data.player.curScene--;
+            Save.data.player.curScene = Math.max(Save.data.player.curScene - 1, 1);
             utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
             Main.instance.update_map();
             Save.saveGame();
@@ -240,21 +241,27 @@ export class Main extends MainBase {
 
     update_map(): void {
         let mapLevel = Save.data.player.curScene;
+        let max = Config.table.Tbmap_level.getDataList().length;
+        if (mapLevel > max) return;
+
         this.label_titile.text = "第*层".toStr().replace('*', utils.numberToChinese(mapLevel));
         let sceneData: cfg.map_level = Config.table.Tbmap_level.get(mapLevel);
 
+        let flag = true;
         let curSceneData = Save.data.player.scenes[mapLevel];
         if (curSceneData.count >= 3) {
             this.btn_sousuo.tip.text = '';
             this.btn_shenru.active = true;
 
             this.btn_boss.visible = !curSceneData.pass;
-            this.btn_shenru.visible = curSceneData.pass > 0;
-        } else {
+            flag = curSceneData.pass > 0;
+        }
+        else {
             this.btn_sousuo.tip.text = "击败怪物:".toStr() + `${curSceneData.count}/3`;
             this.btn_shenru.active = false;
             this.btn_boss.visible = false;
         }
+        this.btn_shenru.visible = flag;
 
         if (mapLevel == 1) {
             this.btn_fanhui.active = false;

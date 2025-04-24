@@ -47,12 +47,17 @@ export class Config {
         this.sounds.set("bgm", "resources/sound/bgm.mp3");
         this.sounds.set("ui_anniu", "resources/sound/ui_anniu.mp3");
         this.sounds.set("ui_anniu2", "resources/sound/ui_anniu2.mp3");
-        this.sounds.set("att", "resources/sound/att.mp3");
-        this.sounds.set("def", "resources/sound/def.mp3");
         this.sounds.set("die", "resources/sound/die.mp3");
         this.sounds.set("upgrade", "resources/sound/upgrade.mp3");
         this.sounds.set("win", "resources/sound/win.mp3");
         this.sounds.set("battle_bgm", "resources/sound/battle_bgm.mp3");
+
+        this.sounds.set("att0", "resources/sound/att0.mp3");
+        this.sounds.set("def0", "resources/sound/def0.mp3");
+        this.sounds.set("att1", "resources/sound/att1.mp3");
+        this.sounds.set("def1", "resources/sound/def1.mp3");
+        this.sounds.set("att2", "resources/sound/att2.mp3");
+        this.sounds.set("def2", "resources/sound/def2.mp3");
 
         await Laya.loader.load(Array.from(this.sounds.values()));
     }

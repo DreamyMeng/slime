@@ -22,6 +22,7 @@ export class BaseRole extends EventDispatcher {
     constructor(camp: string, public view: RoleView) {
         super();
         this.camp = camp;
+        this.view.role = this;
         this.health = new Health((cur, per) => {
             console.log(this.camp, ' health remain:', cur, per);
             view.hpBar?.setValue(per);
@@ -57,23 +58,24 @@ export class BaseRole extends EventDispatcher {
         }
     }
 
-    async round(target: BaseRole): Promise<void> {
+    async round(): Promise<void> {
         if (BuffMgr.is(this, SkillType.skip)) {
-            console.log(`${this.camp} skip!`);
+            Main.instance.battle.round(this.target);
             return;
         }
 
         this.hurt = 0;
-        target.bear = 0;
+        this.target.bear = 0;
         await this.dispatchAsync(SkillTrigger.round.toString());
 
         await this.dispatchAsync(SkillTrigger.attack.toString());
-        await target.dispatchAsync(SkillTrigger.hit.toString());
+        await this.target.dispatchAsync(SkillTrigger.hit.toString());
 
         await this.dispatchAsync(SkillTrigger.attacking.toString());
-        await target.dispatchAsync(SkillTrigger.hitting.toString());
+        await this.target.dispatchAsync(SkillTrigger.hitting.toString());
 
-        await this.attackAction(target);
+        if (BuffMgr.is(this, SkillType.abandon)) Main.instance.battle.round(this.target);
+        else this.view.play_anim(this.camp);
     }
 
     // async attackAnimation(func: Function): Promise<void> {
@@ -94,16 +96,11 @@ export class BaseRole extends EventDispatcher {
     //     );
     // }
 
-    async attackAction(target: BaseRole): Promise<void> {
-        if (BuffMgr.is(this, SkillType.abandon)) { console.log(`${this.camp} abandon!`); return; }
+    attackAction(): void {
 
-        let owner = this.view.owner;
-        owner.parent.setChildIndex(owner, owner.parent.numChildren - 1);
-        this.view.play_anim(this.camp);
-        await delay(100);
+        Laya.SoundManager.playSound(Config.sounds.get("att" + toInt(Math.random() * 3)));
 
-        Laya.SoundManager.playSound(Config.sounds.get("att"));
-
+        let target = this.target;
         let miss = false;
         if (BuffMgr.is(target, SkillType.miss)) {
             console.log(`${target.camp} miss!`);
@@ -121,7 +118,7 @@ export class BaseRole extends EventDispatcher {
         Battle.damage = toInt(target.getDamage(this.attack.value) * (1 + this.hurt) * (1 + target.bear));
         Battle.damage = Math.max(0, Battle.damage);
         if (miss || Battle.damage === 0) {
-            Laya.SoundManager.playSound(Config.sounds.get("def"));
+            Laya.SoundManager.playSound(Config.sounds.get("def" + toInt(Math.random() * 3)));
             if (miss) {
                 DamagePool.showDodge(target.view);
                 let str;
@@ -148,9 +145,8 @@ export class BaseRole extends EventDispatcher {
         }
         // });
 
-        await delay(100);
-        await this.dispatchAsync(SkillTrigger.attacked.toString());
-        if (!miss) await target.dispatchAsync(SkillTrigger.hitted.toString());
+        this.dispatchAsync(SkillTrigger.attacked.toString());
+        if (!miss) target.dispatchAsync(SkillTrigger.hitted.toString());
     }
 
     // damage_action() {

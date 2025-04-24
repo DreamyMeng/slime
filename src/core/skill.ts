@@ -5,6 +5,7 @@ import { Battle } from './battle';
 import { BuffMgr } from './buff';
 import { color_config, Config, xinximoban } from './config';
 import { BaseRole } from './role';
+import { Save } from './save';
 import { GameLog, toInt } from './utils';
 
 export interface TriggerCondition {
@@ -352,7 +353,7 @@ export class learn extends BaseSkill {
         }
 
         if (this.data.values.has("2")) {
-            let level = 101;// 模拟当前层数
+            let level = Save.data.player.curScene;
             console.log(`当前层数: ${level}`);
             value = level - 100;
             let allSkills = Config.table.Tbskill.getDataList();

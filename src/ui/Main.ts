@@ -373,6 +373,7 @@ export class Main extends MainBase {
             MessageBox.tip("已达到最高等级！");
             return;
         }
+        Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         playerData.level++;
         MessageBox.tip("等级+1");
         utils.GameLog.log(xinximoban.shengji.toStr().replace('*', playerData.level.toString()), false);

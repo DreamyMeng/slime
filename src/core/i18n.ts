@@ -17,7 +17,7 @@ declare global {
 export class Language {
     static key: string;
     static init(): void {
-        Language.key = Laya.LocalStorage.getItem('language') || 'EN';
+        Language.key = Laya.LocalStorage.getItem('language') || 'CHS';
     }
     static setLanguage(language: string): void {
         Language.key = language;

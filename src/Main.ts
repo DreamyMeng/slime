@@ -2,6 +2,7 @@ import { Config, tishi } from "./core/config";
 import { Language } from "./core/i18n";
 import { Save, SaveData } from "./core/save";
 import { delay, GameLog } from "./core/utils";
+import { loaded } from "./platform";
 
 export async function main() {
     // Laya.LocalStorage.removeItem('language');
@@ -15,6 +16,7 @@ export async function main() {
     await Config.load_sound();
     await Config.load_prefab();
 
+    loaded();
     GameLog.log("----------开局一只史莱姆----------");
     Save.init();
 
@@ -24,7 +26,7 @@ export async function main() {
 
 }
 
-export function start(data:SaveData) {
+export function start(data: SaveData) {
     Save.data = data;
     Laya.Scene.open("Scene.ls");
 }

@@ -5,6 +5,12 @@ declare global {
     }
 }
 
+export function loaded() {
+    if (isAndroid()) {
+        window.Android.loaded();
+    }
+}
+
 export function isAndroid() {
     return typeof window.Android !== 'undefined';
 }

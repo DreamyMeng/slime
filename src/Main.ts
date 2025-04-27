@@ -2,7 +2,7 @@ import { Config, tishi } from "./core/config";
 import { Language } from "./core/i18n";
 import { Save, SaveData } from "./core/save";
 import { GameLog } from "./core/utils";
-import { loaded } from "./platform";
+import { isAndroid, loaded } from "./platform";
 
 export async function main() {
     // Laya.LocalStorage.removeItem('language');
@@ -22,6 +22,6 @@ export function start(data: SaveData) {
     Laya.stage.destroyChildren();
     Save.data = data;
     Laya.Scene.open("Scene.ls", false, null, Laya.Handler.create(null, () => {
-        loaded();
+        if (isAndroid()) loaded();
     }));
 }

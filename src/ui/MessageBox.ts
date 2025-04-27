@@ -60,7 +60,7 @@ export class MessageBox {
         MessageBox.tipsQueue.push(message);
     }
 
-    static show(msg: string, ok_callback?: () => void, no_callback?: () => void, isOk: boolean = true): PopUp {
+    static show(msg: string, ok_callback?: () => void, no_callback?: () => void, isOk: boolean = true, isClose: boolean = true): PopUp {
         let message: PopUp = Laya.loader.getRes(Config.prefabs.get("PopUp")).create();
         Laya.stage.addChild(message);
         message.Label.text = msg;
@@ -77,11 +77,11 @@ export class MessageBox {
         }
 
         message.ok.onClick = () => {
-            message.close(() => { message.destroy() });
+            if (isClose) message.close(() => { message.destroy() });
             if (ok_callback) ok_callback();
         }
         message.no.onClick = () => {
-            message.close(() => { message.destroy() });
+            if (isClose) message.close(() => { message.destroy() });
             if (no_callback) no_callback();
         }
 

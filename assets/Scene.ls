@@ -1676,7 +1676,25 @@
           "height": 80,
           "fontSize": 28,
           "visible": false,
+          "overflow": "shrink"
+        },
+        {
+          "_$id": "n20the2g",
+          "_$index": 3,
+          "_$type": "Label",
+          "name": "Label2",
+          "x": 50,
+          "y": 150,
+          "width": 620,
+          "height": 30,
+          "visible": false,
+          "text": "转生、拟态成功可重置功能：[<font color=#fcdcaa>复活</font>]、[<font color=#fcdcaa>遗忘</font>]、[<font color=#fcdcaa>激活血脉</font>]",
+          "fontSize": 28,
+          "color": "rgba(255, 255, 255, 1)",
+          "html": true,
+          "valign": "top",
           "overflow": "shrink",
+          "padding": "0,0,0,0",
           "_$comp": [
             {
               "_$type": "9728d806-4c52-4dad-855d-6bfab562cd29",
@@ -1708,7 +1726,7 @@
           "_$id": "05oiydh1",
           "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
           "_$var": true,
-          "_$index": 4,
+          "_$index": 5,
           "name": "ad",
           "active": true,
           "x": 285,
@@ -1737,7 +1755,7 @@
         },
         {
           "_$id": "0hf4g1ly",
-          "_$index": 5,
+          "_$index": 6,
           "_$type": "List",
           "name": "list_role",
           "x": 51,

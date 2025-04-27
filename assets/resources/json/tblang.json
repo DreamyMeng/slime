@@ -4509,33 +4509,6 @@
     "VN": "Học được："
   },
   {
-    "key": "<font color='^'>你死了</font>等级将降为1级",
-    "CHS": "<font color='^'>你死了</font>\n等级将降为1级",
-    "EN": "<font color='^'>You died</font>\nLevel will drop to 1",
-    "CHT": "<font color='^'>你死了</font>\r\n等級將降為1級",
-    "JP": "<font color='^'>あなたは死にました</font>\r\nレベルが1に下がります",
-    "KR": "<font color='^'>당신은 죽었습니다</font>\r\n레벨이 1로 하락합니다",
-    "VN": "<font color='^'>Bạn đã chết</font>\r\nCấp sẽ giảm xuống 1"
-  },
-  {
-    "key": "<font color='^'>你复活了</font>",
-    "CHS": "<font color='^'>你复活了</font>",
-    "EN": "<font color='^'>You revived</font>",
-    "CHT": "<font color='^'>你復活了</font>",
-    "JP": "<font color='^'>あなたは復活しました</font>",
-    "KR": "<font color='^'>당신은 부활했습니다</font>",
-    "VN": "<font color='^'>Bạn đã hồi sinh</font>"
-  },
-  {
-    "key": "<font color='^'>你死了</font>,等级降为1级",
-    "CHS": "<font color='^'>你死了</font>,等级降为1级",
-    "EN": "<font color='^'>You died</font>, level dropped to 1",
-    "CHT": "<font color='^'>你死了</font>,等級降為1級",
-    "JP": "<font color='^'>あなたは死にました</font>,レベルが1に下がりました",
-    "KR": "<font color='^'>당신은 죽었습니다</font>, 레벨이 1로 하락했습니다",
-    "VN": "<font color='^'>Bạn đã chết</font>, cấp giảm xuống 1"
-  },
-  {
     "key": "复活",
     "CHS": "复活",
     "EN": "Revive",
@@ -5094,15 +5067,6 @@
     "VN": "Kích hoạt huyết mạch"
   },
   {
-    "key": "提升拟态成功率5%",
-    "CHS": "提升拟态成功率5%",
-    "EN": "+5% Mimicry Success Rate",
-    "CHT": "提升擬態成功率5%",
-    "JP": "擬態成功率5%アップ",
-    "KR": "모방 성공률 5% 상승",
-    "VN": "Tăng tỷ lệ thành công biến hình 5%"
-  },
-  {
     "key": "开局一只史莱姆",
     "CHS": "开局一只史莱姆",
     "EN": "Slime Beginnings",
@@ -5308,5 +5272,59 @@
     "JP": "転生が99回、199回を超えると、以降の転生で得られる属性が大幅に低下",
     "KR": "전생이 99회, 199회를 초과하면, 이후 전생으로 얻는 속성이 대폭 하락",
     "VN": "Khi tái sinh vượt 99 hoặc 199 lần, thuộc tính nhận được từ tái sinh tiếp theo sẽ giảm mạnh"
+  },
+  {
+    "key": "<font color='^'>你死了</font>等级将降为1级",
+    "CHS": "<font color='^'>你死了</font>\n角色将要恢复初始状态",
+    "EN": "<font color='^'>You died</font>\nYour character will be reset to its initial state",
+    "CHT": "<font color='^'>你死了</font>\n角色將要恢復初始狀態",
+    "JP": "<font color='^'>あなたは死にました</font>\nキャラクターが初期状態にリセットされます",
+    "KR": "<font color='^'>당신은 죽었습니다</font>\n캐릭터가 초기 상태로 리셋됩니다",
+    "VN": "<font color='^'>Bạn đã chết</font>\nNhân vật sẽ được đặt lại về trạng thái ban đầu"
+  },
+  {
+    "key": "<font color='^'>你复活了</font>",
+    "CHS": "<font color='^'>你复活了</font>",
+    "EN": "<font color='^'>You have been revived</font>",
+    "CHT": "<font color='^'>你復活了</font>",
+    "JP": "<font color='^'>あなたは復活しました</font>",
+    "KR": "<font color='^'>당신은 부활했습니다</font>",
+    "VN": "<font color='^'>Bạn đã hồi sinh</font>"
+  },
+  {
+    "key": "<font color='^'>你死了</font>,等级降为1级",
+    "CHS": "<font color='^'>你死了</font>,角色恢复初始状态",
+    "EN": "<font color='^'>You died</font>, your character has been reset to its initial state",
+    "CHT": "<font color='^'>你死了</font>,角色恢復初始狀態",
+    "JP": "<font color='^'>あなたは死にました</font>,キャラクターが初期状態にリセットされました",
+    "KR": "<font color='^'>당신은 죽었습니다</font>, 캐릭터가 초기 상태로 리셋되었습니다",
+    "VN": "<font color='^'>Bạn đã chết</font>, nhân vật đã được đặt lại về trạng thái ban đầu"
+  },
+  {
+    "key": "看广告",
+    "CHS": "看广告",
+    "EN": "Watch ads",
+    "CHT": "看廣告",
+    "JP": "広告を見る",
+    "KR": "광고 보기",
+    "VN": "Xem quảng cáo"
+  },
+  {
+    "key": "看广告 +5%",
+    "CHS": "看广告 +5%",
+    "EN": "Watch ads +5%",
+    "CHT": "看廣告 +5%",
+    "JP": "広告を見る +5%",
+    "KR": "광고 보기 +5%",
+    "VN": "Xem quảng cáo +5%"
+  },
+  {
+    "key": "+5% 次数:",
+    "CHS": "+5% 次数:",
+    "EN": "+5% times:",
+    "CHT": "+5% 次數:",
+    "JP": "+5% 回数:",
+    "KR": "+5% 횟수:",
+    "VN": "+5% số lần:"
   }
 ]

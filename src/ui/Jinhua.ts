@@ -1,11 +1,12 @@
 import * as cfg from "../table/schema";
 import { color_config, Config, xinximoban } from "../core/config";
 import { Save } from "../core/save";
-import { GameLog, getMaxKey, getValueStr, toPerStr } from "../core/utils";
+import { getMaxKey, getValueStr, toPerStr } from "../core/utils";
 import { Main } from "./Main";
 import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
 import { PopUp } from "./PopUp";
+import { isAndroid, playAd } from "../platform";
 
 const { regClass } = Laya;
 
@@ -25,25 +26,49 @@ export class Jinhua extends Laya.Script {
 
         this.owner.no.onClick = () => {
             this.owner.close();
+            this.isAd = false;
         }
         this.owner.ok.onClick = () => {
             this.dingxiang.visible = true;
         }
 
         this.ad = this.owner.getChildByName('ad') as MyButton;
+        if (isAndroid()) this.ad.tip.text = `看广告 +5%`.toStr();
         this.ad.onClick = () => {
             console.log('广告时刻');
-            this.show(true);
+            if (isAndroid()) {
+                this.ad.active = false;
+                playAd(2);
+            }
+            else {
+                this.isAd = true;
+                this.show(false);
+            }
         }
     }
 
-    show(isAd: boolean = false): void {
-        if (!isAd) this.owner.open();
+    static ad_load(): void {
+        this.instance.ad.active = true;
+    }
 
-        this.ad.active = !isAd;
+    static ad_success(): void {
+        this.instance.isAd = true;
+        this.instance.show(false);
+    }
+
+    isAd: boolean = false;
+
+    show(isOpen: boolean = true): void {
+        if (isOpen) this.owner.open();
+
+        if (!isAndroid()) {
+            this.ad.active = !this.isAd && Save.data.player.mimicry > 0;
+            this.ad.tip.text = `+5% 次数:`.toStr() + (!this.isAd ? `${Save.data.player.mimicry}` : 0);
+        }
+        else this.ad.active = !this.isAd;
         this.owner.ok.active = Save.data.game.rebirth > 1;
 
-        let roles = this.list_jinhua(isAd);
+        let roles = this.list_jinhua();
 
         let list_role = this.owner.getChildByName('list_role') as Laya.List;
         list_role.renderHandler?.clear();
@@ -74,11 +99,13 @@ export class Jinhua extends Laya.Script {
 
     onClick(id: string, rate: number): void {
         let playerData = Save.data.player;
-        playerData.mimicry--;
+        if (!isAndroid() && this.isAd) {
+            this.isAd = false;
+            playerData.mimicry = 0;
+        } else this.isAd = false;
 
         if (Math.random() < rate) {
             this.owner.close();
-
             let old = Jinhua.getPower();
             Jinhua.mimicry(id);
             let power = Jinhua.getPower() - old;
@@ -96,7 +123,10 @@ export class Jinhua extends Laya.Script {
             } else {
                 playerData.level = Math.max(1, playerData.level - 10);
                 MessageBox.tip(xinximoban.jinhua.shibai2.toStr().replace('^', color_config.xinximoban.shanghai), false);
-                if (playerData.level <= 10) this.owner.close();
+                this.show(false);
+                if (playerData.level <= 10) {
+                    this.owner.close();
+                }
             }
         }
 
@@ -131,6 +161,7 @@ export class Jinhua extends Laya.Script {
         });
         playerData.id = id;
         playerData.forget = 0;
+        playerData.revive = 3;
         playerData.mimicry = 1;
 
         if (!Save.data.game.roles[id]) {
@@ -140,7 +171,7 @@ export class Jinhua extends Laya.Script {
         MessageBox.tip(xinximoban.jinhua.chenggong.toStr().replace('*', Main.getRoleName(roleData)).replace('^', color_config.xinximoban.huixue), false);
     }
 
-    list_jinhua(isAd: boolean): Array<[string, number][]> {
+    list_jinhua(): Array<[string, number][]> {
         let playerData = Save.data.player;
         var rare = Config.table.Tbrole.get(playerData.id).rare;
         var quality_type = getMaxKey(playerData.quality);
@@ -176,7 +207,7 @@ export class Jinhua extends Laya.Script {
                 }
             });
 
-            if (isAd) num += Jinhua.ad_rate;
+            if (this.isAd) num += Jinhua.ad_rate;
             if (roleData.qualityType === 'none' || roleData.qualityType === quality_type) map.set(roleData.id, Math.min(num, 1));
             if (Save.data.game.roles[roleData.id]) map2.set(roleData.id, Math.min(num + 0.05, 1));
         });

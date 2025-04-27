@@ -3,12 +3,14 @@ import { Battle } from "../core/battle";
 import { color_config, Config, jinhua_need, shift_config, shuxing_config, skill_rate, xinximoban } from "../core/config";
 import { Save } from "../core/save";
 import * as utils from "../core/utils";
+import { isAndroid, playAd } from "../platform";
 import * as cfg from "../table/schema";
 import { Chengjiu } from "./Chengjiu";
 import { Cuilian } from "./Cuilian";
 import { Jinhua } from "./Jinhua";
 import { MainBase } from "./Main.generated";
 import { MessageBox } from "./MessageBox";
+import { PopUp } from "./PopUp";
 import { RoleView } from "./RoleView";
 import { SkillView } from "./SkillView";
 import { Tujian } from "./Tujian";
@@ -126,6 +128,9 @@ export class Main extends MainBase {
                     MessageBox.show("习得：".toStr() + `${skill.name.toStr()}`, null, null, false);
                 }
                 Save.data.player = Save.reset();
+                Save.data.player.forget = 0;
+                Save.data.player.revive = 3;
+                Save.data.player.mimicry = 1;
                 MessageBox.tip(xinximoban.zhuansheng.toStr().replace('^', color_config.xinximoban.huixue), false);
                 Chengjiu.addCount('rebirth');
                 Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
@@ -289,23 +294,60 @@ export class Main extends MainBase {
         this.instance.update_auto();
 
         let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
-            Save.data.player.revive--;
-            MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
-            Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
-            Save.saveGame();
+            this.fuhuo_tip.ok.active = false;
+            if (isAndroid()) playAd(1);
+            else {
+                Save.data.player.revive--;
+                this.fuhuo_success();
+            }
         }, () => {
-            MessageBox.tip(`<font color='^'>你死了</font>,等级降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), false);
-            Save.data.player.level = 1;
-            Save.data.player.exp = 0;
-            Main.instance.update_player();
-            Save.saveGame();
-        });
-        if (Save.data.player.revive <= 0) {
-            tip.ok.active = false;
+            this.fuhuo_fail();
+        }, true, false);
+        this.fuhuo_tip = tip;
+        tip.ok.title.text = '复活'.toStr();
+
+        if (isAndroid()) {
+            tip.ok.tip.text = "看广告".toStr();
         } else {
-            tip.ok.active = true;
-            tip.ok.title.text = '复活'.toStr();
-            tip.ok.tip.text = "剩余次数:".toStr() + `${Save.data.player.revive}`;
+            if (Save.data.player.revive <= 0) {
+                tip.ok.active = false;
+            } else {
+                tip.ok.active = true;
+                tip.ok.tip.text = "剩余次数:".toStr() + `${Save.data.player.revive}`;
+            }
+        }
+    }
+    static fuhuo_tip: PopUp;
+    static fuhuo_success(): void {
+        MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
+        Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
+        Save.saveGame();
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.close(() => {
+                this.fuhuo_tip.destroy();
+                this.fuhuo_tip = null;
+            });
+        }
+    }
+
+    static fuhuo_load(): void {
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.ok.active = true;
+        }
+    }
+
+    static fuhuo_fail(): void {
+        MessageBox.tip(`<font color='^'>你死了</font>,等级降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), false);
+        Save.data.player = Save.reset();
+        Main.instance.show_map();
+        Main.instance.update_player();
+        Main.instance.update_skill();
+        Save.saveGame();
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.close(() => {
+                this.fuhuo_tip.destroy();
+                this.fuhuo_tip = null;
+            });
         }
     }
 

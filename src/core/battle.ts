@@ -106,34 +106,14 @@ export class Battle {
 
         // await utils.delay(200);
 
-        if (this.escape) {
-            console.log('player escapes the battle!');
-            utils.GameLog.log(xinximoban.zhandou.taopao);
-        } else {
-            // 处理胜利失败逻辑
-            if (this.player.isAlive()) {
-                console.log(`${this.player.camp} wins the battle!`);
-                utils.GameLog.log(xinximoban.zhandou.siwang1.toStr().replace('*', Main.getRoleName(this.enemy.view.data)), false);
-                this.victory(this.enemy.view.data, this.enemy.view.level, this.enemy.isBoss);
-                if (Save.data.setting.auto) {
-                    Main.instance.auto_fight();
-                    return;
-                }
-                Laya.SoundManager.playSound(Config.sounds.get("win"));
-                Save.saveGame();
-            } else {
-                console.log(`${this.enemy.camp} wins the battle!`);
-                utils.GameLog.log(xinximoban.zhandou.siwang2.toStr().replace('*', Main.getRoleName(this.enemy.view.data)), false);
-                Main.player_dead();
-            }
-        }
-
-        utils.GameLog.log(xinximoban.zhandou.jieshu);
-        Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
-        Main.instance.show_map();
+        Main.instance.deal_battle_result();
     }
 
-    victory(roleData: cfg.role, level: number, isBoss: boolean): void {
+    victory(): void {
+        let roleData = this.enemy.view.data;
+        let level = this.enemy.view.level;
+        let isBoss = this.enemy.isBoss;
+
         // MessageBox.tip(`战斗胜利！，吞噬：${Main.getRoleName(roleData)}`);
         Chengjiu.addCount('kill', roleData.id);
 

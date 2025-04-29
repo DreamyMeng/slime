@@ -2,7 +2,9 @@ const { regClass } = Laya;
 import { Config } from "../core/config";
 import { Language } from "../core/i18n";
 import { Save } from "../core/save";
-import { Main } from "./Main";
+import { EndlessScene } from "../mod/endless/EndlessScene";
+import { loadGame, newData } from "../mod/endless/save";
+import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
 
 @regClass()
@@ -24,12 +26,11 @@ export class Login extends Laya.Script {
         this.ComboBox.selectHandler = Laya.Handler.create(this, (_: number) => {
             let key = list[this.ComboBox.selectedIndex];
             Language.setLanguage(key);
-            Laya.Scene.open("Scene.ls");
+            Laya.Scene.open("Login.ls");
         }, null, false);
 
         this.Button.onClick = () => {
-            Main.instance.show();
-            this.owner.destroy();
+            Laya.Scene.open("Scene.ls");
         }
 
         this.update_sound();
@@ -37,6 +38,27 @@ export class Login extends Laya.Script {
             Save.data.setting.mute = !Save.data.setting.mute;
             this.update_sound();
         }
+
+        let func = (d: any) => {
+            EndlessScene.data = d;
+            Laya.Scene.open("Scene2.ls");
+        }
+
+        (this.owner.getChildByName('Button2') as MyButton).onClick = () => {
+            let data = loadGame('endless');
+            if (data) {
+                let box = MessageBox.show("发现存档，是否继续游戏进度？", () => {
+                    func(newData());
+                }, () => {
+                    func(data);
+                });
+                box.ok.title.text = "重新开始".toStr();
+                box.no.title.text = "继续".toStr();
+            } else {
+                func(newData());
+            }
+        }
+
     }
 
     update_sound(): void {

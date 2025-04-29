@@ -18,10 +18,10 @@ export async function main() {
     Save.init();
 }
 
-export function start(data: SaveData) {
+export function start(data?: SaveData) {
     Laya.stage.destroyChildren();
-    Save.data = data;
-    Laya.Scene.open("Scene.ls", false, null, Laya.Handler.create(null, () => {
+    if (data) Save.data = data;
+    Laya.Scene.open("Login.ls", false, null, Laya.Handler.create(null, () => {
         if (isAndroid()) loaded();
     }));
 }

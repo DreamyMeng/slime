@@ -996,6 +996,8 @@ export class skill {
         this.effectStr = _json_.effect_str
         if (_json_.description === undefined) { throw new Error() }
         this.description = _json_.description
+        if (_json_.rarity === undefined) { throw new Error() }
+        this.rarity = _json_.rarity
         if (_json_.type === undefined) { throw new Error() }
         this.type = _json_.type
         if (_json_.target === undefined) { throw new Error() }
@@ -1028,6 +1030,10 @@ export class skill {
      */
     readonly description: string
     /**
+     * 1
+     */
+    readonly rarity: number
+    /**
      * 技能类型
      */
     readonly type: SkillType
@@ -1057,6 +1063,7 @@ export class skill {
     readonly values: Map<string, number>
 
     resolve(tables:Tables) {
+        
         
         
         

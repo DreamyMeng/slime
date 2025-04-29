@@ -287,6 +287,34 @@ export class Main extends MainBase {
         utils.GameLog.log(str, false);
     }
 
+    deal_battle_result(): void {
+        if (this.battle.escape) {
+            console.log('player escapes the battle!');
+            utils.GameLog.log(xinximoban.zhandou.taopao);
+        } else {
+            // 处理胜利失败逻辑
+            if (this.battle.player.isAlive()) {
+                // console.log(`${this.player.camp} wins the battle!`);
+                utils.GameLog.log(xinximoban.zhandou.siwang1.toStr().replace('*', Main.getRoleName(this.battle.enemy.view.data)), false);
+                this.battle.victory();
+                if (Save.data.setting.auto) {
+                    Main.instance.auto_fight();
+                    return;
+                }
+                Laya.SoundManager.playSound(Config.sounds.get("win"));
+                Save.saveGame();
+            } else {
+                // console.log(`${this.enemy.camp} wins the battle!`);
+                utils.GameLog.log(xinximoban.zhandou.siwang2.toStr().replace('*', Main.getRoleName(this.battle.enemy.view.data)), false);
+                Main.player_dead();
+            }
+        }
+
+        utils.GameLog.log(xinximoban.zhandou.jieshu);
+        Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
+        Main.instance.show_map();
+    }
+
     static player_dead(): void {
         console.log('广告时刻');
         Laya.SoundManager.playSound(Config.sounds.get("die"));
@@ -482,12 +510,12 @@ export class Main extends MainBase {
         }
     }
 
-    static getAddition(): { [key: string]: number } {
+    static getAddition(locks: { [key: string]: number } = Save.data.game.roles): { [key: string]: number } {
         let addition: { [key: string]: number } = { attack: 0, defence: 0, health: 0 };
 
         let roles = Config.table.Tbrole.getDataList();
         roles.forEach((role) => {
-            if (!Save.data.game.roles[role.id]) return;
+            if (!locks[role.id]) return;
             addition.attack += role.attackAdd;
             addition.defence += role.defenceAdd;
             addition.health += role.healthAdd;
@@ -559,7 +587,7 @@ export class Main extends MainBase {
         return null;
     }
 
-    private static getMonsterListByScene(sceneData: cfg.map_level): string[] {
+    static getMonsterListByScene(sceneData: cfg.map_level): string[] {
         const maxCount = 3;
         const maxAttempts = 1000; // 最大循环次数，防止死循环
 

@@ -1,7 +1,7 @@
 {
   "_$ver": 1,
   "_$id": "lx8mwule",
-  "_$runtime": "res://80533c20-63b5-4f86-8a4b-fbbc3cc7a0f6",
+  "_$runtime": "res://596bf364-184e-4bd8-a3c7-506d495d7c50",
   "_$type": "Scene",
   "left": 0,
   "right": 0,
@@ -114,8 +114,8 @@
           "height": 300,
           "left": 25,
           "top": 30,
-          "text": "种族:凡·史莱姆\n战力：123456\n等级：2（12%）\n转生：1\n灵气：5\n仙气：4\n神韵：0",
-          "fontSize": 30,
+          "text": "种族:<font color=#bfbfbf>凡</font><font color=#bfbfbf>·</font><font color=#bfbfbf>史莱姆</font>\n战力:5.42万\n等级:1\n攻击:<font color='#DCDCDC'>2604</font>\n防御:<font color='#DCDCDC'>1386</font>\n血量:<font color='#DCDCDC'>1.43万</font>",
+          "fontSize": 32,
           "color": "rgba(194, 182, 167, 1)",
           "html": true,
           "valign": "top",
@@ -131,7 +131,8 @@
           "x": 285,
           "y": 20,
           "width": 400,
-          "height": 410,
+          "height": 340,
+          "visible": false,
           "_mouseState": 2,
           "skin": "res://f70ad7f2-7a6b-48e1-9c8a-2ede6c3f385b",
           "color": "#503737",
@@ -197,7 +198,7 @@
               "x": 223,
               "y": 310,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -282,7 +283,6 @@
           "y": 20,
           "width": 400,
           "height": 410,
-          "visible": false,
           "_mouseState": 2,
           "skin": "res://f70ad7f2-7a6b-48e1-9c8a-2ede6c3f385b",
           "color": "#503737",
@@ -395,7 +395,7 @@
               "y": 15,
               "width": 150,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "3mo5miu3",
@@ -430,7 +430,7 @@
           "_$child": [
             {
               "_$override": "au8mtcie",
-              "text": "转生"
+              "text": "返回"
             }
           ]
         }
@@ -476,7 +476,6 @@
           "name": "Map",
           "width": 700,
           "height": 500,
-          "visible": false,
           "_$child": [
             {
               "_$id": "5ahs3y7w",
@@ -487,7 +486,7 @@
               "x": 30,
               "y": 30,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -508,7 +507,7 @@
               "x": 30,
               "y": 100,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -525,7 +524,7 @@
               "x": 75,
               "y": 425,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -546,7 +545,7 @@
               "x": 275,
               "y": 425,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -568,7 +567,7 @@
               "x": 475,
               "y": 425,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -589,7 +588,7 @@
               "x": 475,
               "y": 425,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -610,7 +609,7 @@
               "x": 75,
               "y": 335,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -628,8 +627,8 @@
               "_$var": true,
               "name": "monster0",
               "active": true,
-              "x": 450,
-              "y": 20,
+              "x": 390,
+              "y": 90,
               "visible": true
             },
             {
@@ -638,8 +637,8 @@
               "_$var": true,
               "name": "monster1",
               "active": true,
-              "x": 450,
-              "y": 150,
+              "x": 390,
+              "y": 220,
               "visible": true
             },
             {
@@ -648,8 +647,8 @@
               "_$var": true,
               "name": "monster2",
               "active": true,
-              "x": 450,
-              "y": 280,
+              "x": 390,
+              "y": 350,
               "visible": true
             },
             {
@@ -658,8 +657,8 @@
               "_$var": true,
               "name": "player0",
               "active": true,
-              "x": 100,
-              "y": 200,
+              "x": 90,
+              "y": 220,
               "visible": true,
               "_mouseState": 1
             }
@@ -851,7 +850,7 @@
               "x": 275,
               "y": 390,
               "height": 60,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
@@ -1974,6 +1973,187 @@
                   ]
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "r2cjbnjg",
+      "_$prefab": "7ccb3cb4-0500-463b-9867-ef45865cfdeb",
+      "_$var": true,
+      "name": "Reward",
+      "active": true,
+      "x": 360,
+      "y": 640,
+      "visible": false,
+      "centerX": 0,
+      "centerY": 0,
+      "_$child": [
+        {
+          "_$override": "63szkx1s",
+          "visible": false
+        },
+        {
+          "_$override": "ecyn9419",
+          "skin": "res://10b83ef7-2d89-4e63-9679-ed75a12c0ca0",
+          "color": "#63714f"
+        },
+        {
+          "_$override": "jvphpq4p",
+          "x": 285,
+          "y": 740
+        },
+        {
+          "_$override": [
+            "jvphpq4p",
+            "au8mtcie"
+          ],
+          "text": "刷新"
+        },
+        {
+          "_$override": "y6ek77jm",
+          "visible": false
+        },
+        {
+          "_$override": [
+            "y6ek77jm",
+            "au8mtcie"
+          ],
+          "text": "取消"
+        },
+        {
+          "_$id": "eo9zq4gh",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "_$index": 5,
+          "name": "0",
+          "active": true,
+          "x": 100,
+          "y": 490,
+          "height": 200,
+          "visible": true,
+          "hitTestPrior": false,
+          "hitArea": {
+            "_$type": "HitArea",
+            "_hitCmds": [
+              {
+                "_$type": "DrawRectCmd",
+                "x": 0,
+                "y": 0,
+                "width": 1,
+                "height": 1,
+                "percent": true,
+                "lineWidth": 1,
+                "lineColor": "#000000",
+                "fillColor": "#ffffff"
+              }
+            ]
+          },
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "skin": "res://759045a5-f943-44fb-befb-12186fee97a5",
+              "color": "#ffffff",
+              "height": 200,
+              "y": 100
+            },
+            {
+              "_$override": "au8mtcie",
+              "text": "",
+              "html": true
+            },
+            {
+              "_$override": "qnb9iybi",
+              "visible": false
+            }
+          ]
+        },
+        {
+          "_$id": "1mduwm0c",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "_$index": 6,
+          "name": "1",
+          "active": true,
+          "x": 285,
+          "y": 490,
+          "height": 200,
+          "visible": true,
+          "hitArea": {
+            "_$type": "HitArea",
+            "_hitCmds": [
+              {
+                "_$type": "DrawRectCmd",
+                "x": 0,
+                "y": 0,
+                "width": 1,
+                "height": 1,
+                "percent": true,
+                "lineWidth": 1,
+                "lineColor": "#000000",
+                "fillColor": "#ffffff"
+              }
+            ]
+          },
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "skin": "res://759045a5-f943-44fb-befb-12186fee97a5",
+              "color": "#ffffff",
+              "height": 200,
+              "y": 100
+            },
+            {
+              "_$override": "au8mtcie",
+              "text": "",
+              "html": true
+            },
+            {
+              "_$override": "qnb9iybi",
+              "visible": false
+            }
+          ]
+        },
+        {
+          "_$id": "noh9oez3",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "name": "2",
+          "active": true,
+          "x": 470,
+          "y": 490,
+          "height": 200,
+          "visible": true,
+          "hitArea": {
+            "_$type": "HitArea",
+            "_hitCmds": [
+              {
+                "_$type": "DrawRectCmd",
+                "x": 0,
+                "y": 0,
+                "width": 1,
+                "height": 1,
+                "percent": true,
+                "lineWidth": 1,
+                "lineColor": "#000000",
+                "fillColor": "#ffffff"
+              }
+            ]
+          },
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "skin": "res://759045a5-f943-44fb-befb-12186fee97a5",
+              "color": "#ffffff",
+              "height": 200,
+              "y": 100
+            },
+            {
+              "_$override": "au8mtcie",
+              "text": "",
+              "html": true
+            },
+            {
+              "_$override": "qnb9iybi",
+              "visible": false
             }
           ]
         }

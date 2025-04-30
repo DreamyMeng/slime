@@ -12,6 +12,7 @@ declare global {
         onAdRewarded: (state: number) => void;
         onAdNotReady: (state: number) => void;
         onAdLoaded: (state: number) => void;
+        onTapTapLogin: (flag: boolean) => void;
     }
 }
 
@@ -32,6 +33,10 @@ export function isAndroid() {
 export function playAd(state: number) {
     window.Android.playAd(state);
     // window.onAdRewarded(state) // test
+}
+
+window["onTapTapLogin"] = function (flag: boolean) {
+    MessageBox.show("广告未准备好!");
 }
 
 window["onAdLoaded"] = function (state: number) {

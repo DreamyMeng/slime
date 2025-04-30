@@ -6,6 +6,7 @@ export interface SaveData_Endless {
     skills: string[];
     curScene: number;
     refresh: number,
+    revive: number,
     roles: { [key: string]: number };
     isNew: boolean;
 }
@@ -17,6 +18,7 @@ export function newData(): SaveData_Endless {
         skills: [],
         curScene: 0,
         refresh: 3,
+        revive: 3,
         roles: {},
         isNew: true,
     };

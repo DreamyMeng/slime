@@ -17,6 +17,7 @@ export class Battle {
     enemy: BaseRole;
     bossHp: HPBar;
     escape: boolean; // 是否逃跑
+    draw: boolean; // 是否平局
     static damage: number;// 每轮攻击造成的伤害
 
     constructor() {
@@ -38,6 +39,7 @@ export class Battle {
         let health = Main.getHealth(roleData, levelData, rebirthData, addition);
 
         this.player.init(attack, defence, health, roleData.skills.concat(playerData.skills));
+        // this.player.init(attack, defence, health, ["koushui"]);
         // this.player.init(999999999999999, 999999999999999, 999999999999999, roleData.skills.concat(playerData.skills));
 
         let sceneData: cfg.map_level = Config.table.Tbmap_level.get(playerData.curScene);
@@ -67,6 +69,8 @@ export class Battle {
         this.enemy.health.reset();
 
         this.escape = false; // 重置逃跑标志
+        this.draw = false; // 重置逃跑标志
+        this.round_count = 0;
         let role = this.player;
         let target = this.enemy;
 
@@ -82,9 +86,20 @@ export class Battle {
         this.round(role);
     }
 
+    round_count: number = 0;
+
     async round(role: BaseRole): Promise<void> {
-        if (!this.escape && (role.isAlive() && role.target.isAlive())) {
-            console.log(`${role.camp} Turn!`);
+        if (role.camp === 'player') {
+            this.round_count++;
+            if (this.round_count > 100) {
+                this.round_count = 0;
+                this.draw = true;
+            }
+        }
+
+        if (!this.escape && !this.draw && (role.isAlive() && role.target.isAlive())) {
+            // console.log(`${role.camp} Turn!`);
+
             // // 更新自身 Buff
             // role.buff.updateBuffs();
             // // 如果被控制（如眩晕），跳过行动
@@ -93,7 +108,7 @@ export class Battle {
             // } else
             Battle.damage = 0;
             await role.round();
-            BuffMgr.clearTemp(); // 清除临时buff
+
             // switch role and target
             // [role, target] = [target, role];
             return;

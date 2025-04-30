@@ -231,6 +231,29 @@
               "visible": false
             }
           ]
+        },
+        {
+          "_$id": "4jdme93h",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "name": "Login",
+          "active": true,
+          "x": 225,
+          "y": 885,
+          "width": 270,
+          "height": 50,
+          "visible": false,
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "width": 270,
+              "height": 50,
+              "y": 25,
+              "skin": "res://382f7527-79e8-4e82-8710-2bb08f2e01a2",
+              "sizeGrid": null,
+              "color": "#ffffff",
+              "x": 135
+            }
+          ]
         }
       ]
     }

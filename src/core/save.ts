@@ -11,23 +11,25 @@ export interface SaveData_Scene {
     level: number;
 }
 
+export interface SaveData_Player {
+    id: string;
+    quality: { [key: string]: number };
+    relation: { [key: string]: number };
+    exp: number;
+    level: number;
+    forget: number;
+    revive: number;
+    mimicry: number;
+    skills: string[];
+    curScene: number;
+    maxScene: number;
+    scenes: { [key: string]: SaveData_Scene };
+}
+
 // SaveData.ts
 export interface SaveData {
     // 每轮游戏产生的数据
-    player: {
-        id: string;
-        quality: { [key: string]: number };
-        relation: { [key: string]: number };
-        exp: number;
-        level: number;
-        forget: number;
-        revive: number;
-        mimicry: number;
-        skills: string[];
-        curScene: number;
-        maxScene: number;
-        scenes: { [key: string]: SaveData_Scene };
-    };
+    player: SaveData_Player;
     // 永久数据
     game: {
         isNew: boolean;
@@ -51,7 +53,7 @@ export class Save {
     public static data: SaveData;
     public static readonly SAVE_KEY = "game_save";
 
-    static reset(id: string = 'h1'): SaveData["player"] {
+    static reset(id: string = 'h1'): SaveData_Player {
         let data = {
             id: id,
             quality: {

@@ -37,6 +37,7 @@ export class Login extends Laya.Script {
         this.Sound.onClick = () => {
             Save.data.setting.mute = !Save.data.setting.mute;
             this.update_sound();
+            Save.saveGame();
         }
 
         let func = (d: any) => {

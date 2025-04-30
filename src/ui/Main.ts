@@ -1,7 +1,7 @@
 const { regClass } = Laya;
 import { Battle } from "../core/battle";
 import { color_config, Config, jinhua_need, shift_config, shuxing_config, skill_rate, xinximoban } from "../core/config";
-import { Save } from "../core/save";
+import { Save, SaveData_Player } from "../core/save";
 import * as utils from "../core/utils";
 import { isAndroid, playAd } from "../platform";
 import * as cfg from "../table/schema";
@@ -35,6 +35,10 @@ export class Main extends MainBase {
         this.show_map();
         this.update_player();
         this.update_skill();
+
+        this.btn_login.onClick = () => {
+            Laya.Scene.open("Login.ls");
+        }
 
         this.btn_jineng.onClick = () => {
             this.img_jineng.visible = true;
@@ -291,7 +295,12 @@ export class Main extends MainBase {
         if (this.battle.escape) {
             console.log('player escapes the battle!');
             utils.GameLog.log(xinximoban.zhandou.taopao);
-        } else {
+        } else if (this.battle.draw) {
+            // 处理平局逻辑
+            console.log('the battle is a draw!');
+            MessageBox.tip("大战100回合，精疲力尽了！");
+        }
+        else {
             // 处理胜利失败逻辑
             if (this.battle.player.isAlive()) {
                 // console.log(`${this.player.camp} wins the battle!`);
@@ -315,14 +324,18 @@ export class Main extends MainBase {
         Main.instance.show_map();
     }
 
+    curPlayerData: SaveData_Player;
+
     static player_dead(): void {
         console.log('广告时刻');
+        Main.instance.curPlayerData = Save.data.player;
+        Save.data.player = Save.reset();
         Laya.SoundManager.playSound(Config.sounds.get("die"));
         Save.data.setting.auto = false;
         this.instance.update_auto();
-
+        Save.saveGame();
         let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
-            this.fuhuo_tip.ok.active = false;
+            Main.instance.fuhuo_tip.ok.active = false;
             if (isAndroid()) playAd(1);
             else {
                 Save.data.player.revive--;
@@ -331,7 +344,7 @@ export class Main extends MainBase {
         }, () => {
             this.fuhuo_fail();
         }, true, false);
-        this.fuhuo_tip = tip;
+        Main.instance.fuhuo_tip = tip;
         tip.ok.title.text = '复活'.toStr();
 
         if (isAndroid()) {
@@ -345,36 +358,37 @@ export class Main extends MainBase {
             }
         }
     }
-    static fuhuo_tip: PopUp;
+    fuhuo_tip: PopUp;
     static fuhuo_success(): void {
+        Save.data.player = Main.instance.curPlayerData;
         MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
         Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         Save.saveGame();
-        if (this.fuhuo_tip) {
-            this.fuhuo_tip.close(() => {
-                this.fuhuo_tip.destroy();
-                this.fuhuo_tip = null;
+        if (Main.instance.fuhuo_tip) {
+            Main.instance.fuhuo_tip.close(() => {
+                Main.instance.fuhuo_tip.destroy();
+                Main.instance.fuhuo_tip = null;
             });
         }
     }
 
     static fuhuo_load(): void {
-        if (this.fuhuo_tip) {
-            this.fuhuo_tip.ok.active = true;
+        if (Main.instance.fuhuo_tip) {
+            Main.instance.fuhuo_tip.ok.active = true;
         }
     }
 
     static fuhuo_fail(): void {
         MessageBox.tip(`<font color='^'>你死了</font>,等级降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), false);
-        Save.data.player = Save.reset();
+        // Save.data.player = Save.reset();
         Main.instance.show_map();
         Main.instance.update_player();
         Main.instance.update_skill();
         Save.saveGame();
-        if (this.fuhuo_tip) {
-            this.fuhuo_tip.close(() => {
-                this.fuhuo_tip.destroy();
-                this.fuhuo_tip = null;
+        if (Main.instance.fuhuo_tip) {
+            Main.instance.fuhuo_tip.close(() => {
+                Main.instance.fuhuo_tip.destroy();
+                Main.instance.fuhuo_tip = null;
             });
         }
     }

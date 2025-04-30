@@ -2,7 +2,7 @@ const { regClass } = Laya;
 import { Main } from "../../ui/Main";
 import * as utils from "../../core/utils";
 import * as cfg from "../../table/schema";
-import { Config, xinximoban } from "../../core/config";
+import { color_config, Config, xinximoban } from "../../core/config";
 import { RoleView } from "../../ui/RoleView";
 import { SkillView } from "../../ui/SkillView";
 import { deleteSave, SaveData_Endless, saveGame } from "./save";
@@ -72,7 +72,6 @@ export class EndlessScene extends Main {
                 this.update_skill();
                 this.battle_end();
             }
-
 
         });
     }
@@ -237,20 +236,72 @@ export class EndlessScene extends Main {
         this.battle.enemy.init(attack, defence, health, roleData.skills, isBoss);
     }
 
+    curEndlessData: SaveData_Endless;
+
     override deal_battle_result(): void {
         // 处理胜利失败逻辑
-        if (this.battle.player.isAlive()) {
-            Laya.SoundManager.playSound(Config.sounds.get("win"));
-            this.show_rewards();
+        if (this.battle.draw) {
+            // 处理平局逻辑
+            console.log('the battle is a draw!');
+            MessageBox.tip("大战100回合，精疲力尽了！");
+            EndlessScene.data.curScene--;
+            this.battle_end();
         } else {
-            Laya.SoundManager.playSound(Config.sounds.get("die"));
-            MessageBox.show("你失败了！".toStr(), null, () => {
+            if (this.battle.player.isAlive()) {
+                if (EndlessScene.data.refresh < 5) EndlessScene.data.refresh++;
+                Laya.SoundManager.playSound(Config.sounds.get("win"));
+                this.show_rewards();
+            } else {
+                this.curEndlessData = EndlessScene.data;
+                let tip = MessageBox.show(`你失败了！`.toStr(), () => {
+                    this.fuhuo_tip.ok.active = false;
+                    // if (isAndroid()) playAd(1);
+                    // else {
+                    EndlessScene.data.revive--;
+                    this.fuhuo_endless_success();
+                    // }
+                }, () => {
+                    this.fuhuo_endless_fail();
+                }, true, false);
+                this.fuhuo_tip = tip;
+                tip.ok.title.text = '复活'.toStr();
+                if (EndlessScene.data.revive <= 0) {
+                    tip.ok.active = false;
+                } else {
+                    tip.ok.active = true;
+                    tip.ok.tip.text = "剩余次数:".toStr() + `${EndlessScene.data.revive}`;
+                }
+
                 deleteSave('endless');
-                Laya.Scene.open("Login.ls");
-            }, false);
+                Laya.SoundManager.playSound(Config.sounds.get("die"));
+            }
         }
 
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
+    }
+
+    fuhuo_endless_success(): void {
+        EndlessScene.data = this.curEndlessData;
+        MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
+        Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
+        EndlessScene.data.curScene--;
+        this.battle_end();
+        if (Main.instance.fuhuo_tip) {
+            Main.instance.fuhuo_tip.close(() => {
+                Main.instance.fuhuo_tip.destroy();
+                Main.instance.fuhuo_tip = null;
+            });
+        }
+    }
+
+    fuhuo_endless_fail(): void {
+        if (Main.instance.fuhuo_tip) {
+            Main.instance.fuhuo_tip.close(() => {
+                Main.instance.fuhuo_tip.destroy();
+                Main.instance.fuhuo_tip = null;
+            });
+        }
+        Laya.Scene.open("Login.ls");
     }
 
     battle_end(): void {

@@ -4,7 +4,7 @@ import { PopUp } from "./PopUp";
 import { MyButton } from "./MyButton";
 
 /**
- * Scene2.ls
+ * Scene.ls
  */
 export class MainBase extends Laya.Scene {
     public SkillTip!: PopUp;
@@ -14,11 +14,12 @@ export class MainBase extends Laya.Scene {
     public btn_cuilian!: MyButton;
     public btn_jineng!: MyButton;
     public list_shuxing!: Laya.List;
+    public btn_zhuansheng!: MyButton;
     public img_jineng!: Laya.Image;
     public list_guyou!: Laya.List;
     public list_xuexi!: Laya.List;
     public btn_shuxing!: MyButton;
-    public btn_zhuansheng!: MyButton;
+    public btn_login!: MyButton;
     public label_titile!: Laya.Label;
     public Map!: Laya.Sprite;
     public btn_tujian!: MyButton;

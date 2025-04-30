@@ -141,7 +141,7 @@ export class BaseRole extends EventDispatcher {
             }
         } else {
             console.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
-            target.takeDamage(this, -Battle.damage);
+            target.takeDamage(this, target, -Battle.damage);
         }
         // });
 
@@ -159,7 +159,7 @@ export class BaseRole extends EventDispatcher {
         return Math.max(0, damage - this.defence.value);
     }
 
-    takeDamage(owner: BaseRole, damage: number): void {
+    takeDamage(owner: BaseRole, target: BaseRole, damage: number): void {
         if (damage === 0) return;
         this.health.add(damage);
         if (damage > 0) {
@@ -168,7 +168,7 @@ export class BaseRole extends EventDispatcher {
             if (owner.camp === 'player') str = xinximoban.zhandou.huifu1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.huixue);
             else {
                 str = xinximoban.zhandou.huifu2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.huixue);
-                str = str.replace('*', Main.getRoleName(this.view.data));
+                str = str.replace('*', Main.getRoleName(owner.view.data));
             }
             str = str.replace('&', "+" + getValueStr(damage));
             GameLog.log(str, false);
@@ -176,9 +176,14 @@ export class BaseRole extends EventDispatcher {
         if (damage < 0) {
             DamagePool.showDamage(damage, this.view);
             let str;
-            if (owner.camp === 'player') str = xinximoban.zhandou.huihe1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.shanghai);
-            else str = xinximoban.zhandou.huihe2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.shanghai);
-            str = str.replace('*', Main.getRoleName(this.view.data));
+            if (owner.camp === 'player') {
+                str = xinximoban.zhandou.huihe1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.shanghai);
+                str = str.replace('*', Main.getRoleName(target.view.data));
+            }
+            else {
+                str = xinximoban.zhandou.huihe2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.shanghai);
+                str = str.replace('*', Main.getRoleName(owner.view.data));
+            }
             str = str.replace('&', "-" + getValueStr(Math.abs(damage)));
             GameLog.log(str, false);
         }

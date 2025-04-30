@@ -270,6 +270,23 @@
                   "padding": "0,0,0,0"
                 }
               ]
+            },
+            {
+              "_$id": "nd4uo85z",
+              "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+              "_$var": true,
+              "name": "btn_zhuansheng",
+              "active": true,
+              "x": 30,
+              "y": 310,
+              "height": 60,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "au8mtcie",
+                  "text": "转生"
+                }
+              ]
             }
           ]
         },
@@ -418,19 +435,19 @@
           ]
         },
         {
-          "_$id": "nd4uo85z",
+          "_$id": "p4rq2pp2",
           "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
           "_$var": true,
-          "name": "btn_zhuansheng",
+          "name": "btn_login",
           "active": true,
-          "x": 75,
-          "y": 340,
+          "x": 70,
+          "y": 345,
           "height": 60,
           "visible": true,
           "_$child": [
             {
               "_$override": "au8mtcie",
-              "text": "转生"
+              "text": "返回"
             }
           ]
         }

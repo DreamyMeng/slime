@@ -2,14 +2,14 @@ const { regClass } = Laya;
 import { Main } from "../../ui/Main";
 import * as utils from "../../core/utils";
 import * as cfg from "../../table/schema";
-import { bossData, Config, xinximoban } from "../../core/config";
+import { Config, xinximoban } from "../../core/config";
 import { RoleView } from "../../ui/RoleView";
 import { SkillView } from "../../ui/SkillView";
 import { deleteSave, SaveData_Endless, saveGame } from "./save";
 import { Battle } from "../../core/battle";
 import { Tujian } from "../../ui/Tujian";
 import { PopUp } from "../../ui/PopUp";
-import { drawGacha } from "./gacha";
+import { drawGacha, spawnMonsters } from "./gacha";
 import { MyButton } from "../../ui/MyButton";
 import { MessageBox } from "../../ui/MessageBox";
 
@@ -33,7 +33,7 @@ export class EndlessScene extends Main {
         }
 
         this.btn_zhuansheng.onClick = () => {
-            this.show_rewards();
+            Laya.Scene.open("Login.ls");
         }
 
         this.List.array = utils.GameLog.get();
@@ -52,13 +52,39 @@ export class EndlessScene extends Main {
 
     }
 
+    show_first(): void {
+        this.Reward.open();
+        this.Reward.ok.visible = false;
+
+        var list = spawnMonsters(1);
+        list.forEach((data, key) => {
+            let btn = this.Reward.getChildByName(`${key}`) as MyButton;
+
+            let roleData = Config.table.Tbrole.get(data);
+            let roleName = Main.getRoleName(roleData);
+            btn.title.text = roleName.replace('·', '\n·\n');
+            btn.onClick = () => {
+                this.Reward.close();
+                EndlessScene.data.id = roleData.id;
+                EndlessScene.data.roles[roleData.id] = 1;
+                MessageBox.tip("获得".toStr() + `:${roleName}`, false);
+                this.update_player();
+                this.update_skill();
+                this.battle_end();
+            }
+
+
+        });
+    }
+
     Reward: PopUp;
     show_rewards(): void {
         this.Reward.open();
+        this.Reward.ok.visible = true;
         this.Reward.ok.tip.text = EndlessScene.data.refresh > 0 ? "剩余次数:".toStr() + `${EndlessScene.data.refresh}` : "";
         this.Reward.ok.active = EndlessScene.data.refresh > 0;
 
-        drawGacha().forEach((data, key) => {
+        drawGacha(EndlessScene.data).forEach((data, key) => {
             let btn = this.Reward.getChildByName(`${key}`) as MyButton;
             if (data.type === 'skill') {
                 btn.title.text = "技能".toStr() + "\n\n" + data.value.name;
@@ -108,7 +134,7 @@ export class EndlessScene extends Main {
     override update_player(): void {
         let playerData = EndlessScene.data;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(playerData.level);
+        let levelData: cfg.role_level = Config.table.Tbrole_level.get(Math.min(playerData.level, 199));
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(0);
         let addition = Main.getAddition(playerData.roles);
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
@@ -149,19 +175,23 @@ export class EndlessScene extends Main {
         }, null, false);
     }
 
+    getLevelScale(level: number): number {
+        // 更慢的阶梯强化：前期极慢，后期逐步加快
+        // 例如：scale = 1 + Math.pow(level - 1, 1.2) * 0.015
+        return 1 + Math.pow(Math.max(0, level - 1), 1.2) * 0.03;
+    }
+
     override  update_map(): void {
         let mapLevel = ++EndlessScene.data.curScene;
-        let max = Config.table.Tbmap_level.getDataList().length;
-
+        const scale = this.getLevelScale(mapLevel);
         this.label_titile.text = "第*层".toStr().replace('*', utils.numberToChinese(mapLevel));
-        let sceneData: cfg.map_level = Config.table.Tbmap_level.get(Math.min(mapLevel, max));
 
         utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(mapLevel)), false);
 
-        var list = Main.getMonsterListByScene(sceneData);
-        this.monster0.getComponent(RoleView).init(sceneData, list[0], Main.getLevel(sceneData));
-        this.monster1.getComponent(RoleView).init(sceneData, list[1], Main.getLevel(sceneData));
-        this.monster2.getComponent(RoleView).init(sceneData, list[2], Main.getLevel(sceneData));
+        var list = spawnMonsters(mapLevel);
+        this.monster0.getComponent(RoleView).init(scale, list[0], Math.min(mapLevel, 199));
+        this.monster1.getComponent(RoleView).init(scale, list[1], Math.min(mapLevel, 199));
+        this.monster2.getComponent(RoleView).init(scale, list[2], Math.min(mapLevel, 199));
 
         let str = xinximoban.qianjin.toStr();
         list.forEach((id, index) => {
@@ -172,7 +202,7 @@ export class EndlessScene extends Main {
         if (EndlessScene.data.isNew) {
             EndlessScene.data.isNew = false;
             EndlessScene.data.curScene = 0;
-            this.show_rewards();
+            this.show_first();
         }
     }
 
@@ -186,7 +216,7 @@ export class EndlessScene extends Main {
     private init_battle(id: string, level: number, isBoss: boolean): void {
         let playerData = EndlessScene.data;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(playerData.level);
+        let levelData: cfg.role_level = Config.table.Tbrole_level.get(Math.min(playerData.level, 199));
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(0);
         let addition = Main.getAddition(playerData.roles);
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
@@ -195,18 +225,12 @@ export class EndlessScene extends Main {
 
         this.battle.player.init(attack, defence, health, roleData.skills.concat(playerData.skills));
 
-        let sceneData: cfg.map_level = Config.table.Tbmap_level.get(playerData.curScene);
+        const scale = this.getLevelScale(playerData.curScene);
         roleData = Config.table.Tbrole.get(id);
         levelData = Config.table.Tbrole_level.get(level);
-        attack = utils.toInt(levelData.attack * roleData.attackRate * sceneData.attackRate);
-        defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
-        health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
-
-        if (isBoss) { // 是boss
-            attack = utils.toInt(attack * bossData.attackRate);
-            defence = utils.toInt(defence * bossData.defenceRate);
-            health = utils.toInt(health * bossData.healthRate);
-        }
+        attack = utils.toInt(levelData.attack * roleData.attackRate * scale);
+        defence = utils.toInt(levelData.defence * roleData.defenceRate * scale);
+        health = utils.toInt(levelData.health * roleData.healthRate * scale);
 
         this.Enemy.getComponent(RoleView).show_skin(isBoss);
         this.battle.bossHp.bg.visible = isBoss;

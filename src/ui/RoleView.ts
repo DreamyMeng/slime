@@ -34,16 +34,16 @@ export class RoleView extends Laya.Script {
         }; // 绑定点击事件 
     }
 
-    init(sceneData: map_level, id: string, level: number): void {
+    init(rate: number, id: string, level: number): void {
         let roleData = Config.table.Tbrole.get(id);
         this.data = roleData;
         this.level = level;
         this.owner.title.text = Main.getRoleName(roleData);
         (this.owner.image.getChildByName('Level') as Laya.Label).text = `Lv.${level}`;
         let levelData = Config.table.Tbrole_level.get(level);
-        let attack = utils.toInt(levelData.attack * roleData.attackRate * sceneData.attackRate);
-        let defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
-        let health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
+        let attack = utils.toInt(levelData.attack * roleData.attackRate * rate);
+        let defence = utils.toInt(levelData.defence * roleData.defenceRate * rate);
+        let health = utils.toInt(levelData.health * roleData.healthRate * rate);
         let power = Main.getPower(attack, defence, health);
         (this.owner.image.getChildByName('Tip') as Laya.Label).text = "战力:".toStr() + `${utils.getValueStr(power)}`;
     }

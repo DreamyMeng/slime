@@ -276,9 +276,9 @@ export class Main extends MainBase {
         }
 
         var list = Main.getMonsterListByScene(sceneData);
-        this.monster0.getComponent(RoleView).init(sceneData, list[0], Main.getLevel(sceneData));
-        this.monster1.getComponent(RoleView).init(sceneData, list[1], Main.getLevel(sceneData));
-        this.monster2.getComponent(RoleView).init(sceneData, list[2], Main.getLevel(sceneData));
+        this.monster0.getComponent(RoleView).init(sceneData.attackRate, list[0], Main.getLevel(sceneData));
+        this.monster1.getComponent(RoleView).init(sceneData.attackRate, list[1], Main.getLevel(sceneData));
+        this.monster2.getComponent(RoleView).init(sceneData.attackRate, list[2], Main.getLevel(sceneData));
 
         let str = xinximoban.qianjin.toStr();
         list.forEach((id, index) => {

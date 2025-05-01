@@ -109,21 +109,21 @@ export class EndlessScene extends Main {
                 }
             }
             else if (data.type === 'level') {
-                btn.title.text = "等级".toStr() + `+${data.value}`;
+                btn.title.text = "等级".toStr() + ` +${data.value}`;
                 btn.onClick = () => {
                     this.Reward.close();
                     EndlessScene.data.level += data.value;
-                    MessageBox.tip("等级+1");
+                    MessageBox.tip(btn.title.text, false);
                     this.update_player();
                     this.battle_end();
                 }
             }
             else if (data.type === 'refresh') {
-                btn.title.text = "刷新".toStr() + `+${data.value}`;
+                btn.title.text = "刷新".toStr() + ` +${data.value}`;
                 btn.onClick = () => {
                     this.Reward.close();
                     EndlessScene.data.refresh += data.value;
-                    MessageBox.tip("获得".toStr() + "刷新".toStr() + `:${data.value}`, false);
+                    MessageBox.tip(btn.title.text, false);
                     this.battle_end();
                 }
             }
@@ -248,7 +248,7 @@ export class EndlessScene extends Main {
             this.battle_end();
         } else {
             if (this.battle.player.isAlive()) {
-                if (EndlessScene.data.refresh < 5) EndlessScene.data.refresh++;
+                // if (EndlessScene.data.refresh < 5) EndlessScene.data.refresh++;
                 Laya.SoundManager.playSound(Config.sounds.get("win"));
                 this.show_rewards();
             } else {

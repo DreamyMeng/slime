@@ -2,12 +2,11 @@ import { SkillTrigger, SkillType } from "../table/schema";
 import { DamagePool } from "../ui/DamagePool";
 import { Main } from "../ui/Main";
 import { RoleView } from "../ui/RoleView";
-import { Battle } from "./battle";
 import { BuffMgr } from "./buff";
 import { color_config, Config, xinximoban } from "./config";
 import { EventDispatcher } from "./event";
 import { SkillMgr } from "./skill";
-import { delay, GameLog, getValueStr, toInt } from "./utils";
+import { GameLog, getValueStr, toInt } from "./utils";
 
 export class BaseRole extends EventDispatcher {
     camp: string;
@@ -18,6 +17,7 @@ export class BaseRole extends EventDispatcher {
     hurt: number = 0; // 造成伤害的倍率
     bear: number = 0; // 承受伤害的倍率
     isBoss: boolean = false; // 是否是boss
+    damage: number = 0;
 
     constructor(camp: string, public view: RoleView) {
         super();
@@ -27,12 +27,15 @@ export class BaseRole extends EventDispatcher {
             console.log(this.camp, ' health remain:', cur, per);
             view.hpBar?.setValue(per);
             if (this.isBoss) Main.instance.battle.bossHp?.setValue(per);
+            GameLog.log(`${Main.getRoleName(this.view.data)} 当前生命值:${getValueStr(cur)}`);
         });
         this.attack = new Attribute((cur, max) => {
-            console.log(this.camp, ' attack change:', cur - max, ' remian:', cur);
+            // console.log(this.camp, ' attack change:', cur - max, ' remian:', cur);
+            GameLog.log(`${Main.getRoleName(this.view.data)} 当前攻击力:${getValueStr(cur)}`);
         });
         this.defence = new Attribute((cur, max) => {
-            console.log(this.camp, ' defence change:', cur - max, ' remian:', cur);
+            // console.log(this.camp, ' defence change:', cur - max, ' remian:', cur);
+            GameLog.log(`${Main.getRoleName(this.view.data)} 当前防御力:${getValueStr(cur)}`);
         });
     }
 
@@ -65,6 +68,7 @@ export class BaseRole extends EventDispatcher {
         }
 
         this.hurt = 0;
+        this.damage = 0; // 重置伤害数
         this.target.bear = 0;
         await this.dispatchAsync(SkillTrigger.round.toString());
 
@@ -115,9 +119,9 @@ export class BaseRole extends EventDispatcher {
 
         // damage action
         // await this.attackAnimation(() => {
-        Battle.damage = toInt(target.getDamage(this.attack.value) * (1 + this.hurt) * (1 + target.bear));
-        Battle.damage = Math.max(0, Battle.damage);
-        if (miss || Battle.damage === 0) {
+        this.damage = toInt(target.getDamage(this.attack.value) * (1 + this.hurt) * (1 + target.bear));
+        this.damage = Math.max(0, this.damage);
+        if (miss || this.damage === 0) {
             Laya.SoundManager.playSound(Config.sounds.get("def" + toInt(Math.random() * 3)));
             if (miss) {
                 DamagePool.showDodge(target.view);
@@ -140,8 +144,8 @@ export class BaseRole extends EventDispatcher {
                 GameLog.log(str, false); // 闪避
             }
         } else {
-            console.log(`${this.camp} attacks ${target.camp}! damage: ${Battle.damage}`);
-            target.takeDamage(this, target, -Battle.damage);
+            console.log(`${this.camp} attacks ${target.camp}! damage: ${this.damage}`);
+            target.takeDamage(this, target, -this.damage);
         }
         // });
 
@@ -161,7 +165,7 @@ export class BaseRole extends EventDispatcher {
 
     takeDamage(owner: BaseRole, target: BaseRole, damage: number): void {
         if (damage === 0) return;
-        this.health.add(damage);
+       
         if (damage > 0) {
             DamagePool.showHeal(damage, this.view);
             let str;
@@ -170,7 +174,7 @@ export class BaseRole extends EventDispatcher {
                 str = xinximoban.zhandou.huifu2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.huixue);
                 str = str.replace('*', Main.getRoleName(owner.view.data));
             }
-            str = str.replace('&', "+" + getValueStr(damage));
+            str = str.replace('&', getValueStr(damage));
             GameLog.log(str, false);
         }
         if (damage < 0) {
@@ -184,9 +188,11 @@ export class BaseRole extends EventDispatcher {
                 str = xinximoban.zhandou.huihe2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.shanghai);
                 str = str.replace('*', Main.getRoleName(owner.view.data));
             }
-            str = str.replace('&', "-" + getValueStr(Math.abs(damage)));
+            str = str.replace('&', getValueStr(Math.abs(damage)));
             GameLog.log(str, false);
         }
+
+        this.health.add(damage);
     }
 
     isAlive(): boolean {
@@ -214,11 +220,12 @@ class Attribute {
 
     set value(v: number) {
         this.cur = v;
-        if (this.cur < 0) this.cur = 0;
+        // if (this.cur < 0) this.cur = 0;
         if (this.callback) this.callback(this.cur, this.max);
     }
 
     get value(): number {
+        // return Math.max(0, this.cur);
         return this.cur;
     }
 

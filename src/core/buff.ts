@@ -142,13 +142,13 @@ export class BuffMgr {
     static updateBuffs(key: string) {
         if (this.buffs.has(key)) {
             const currentBuff = this.buffs.get(key)!;
-
-            // 直接检查单个buff是否需要更新
-            if (currentBuff.updateBuffs()) {
-                // 需要移除时直接删除整个键值
-                this.buffs.delete(key);
-                currentBuff.remove();
-            }
+            currentBuff.updateBuffs();
+            // // 直接检查单个buff是否需要更新
+            // if (currentBuff.updateBuffs()) {
+            //     // 需要移除时直接删除整个键值
+            //     // this.buffs.delete(key);
+            //     // currentBuff.remove();
+            // }
         }
     }
     //   static updateBuffs(key: string) {
@@ -191,6 +191,11 @@ export class BaseBuff {
     remove(): void {
         console.log(`${this.name} removed from ${this.owner.camp} `);
         BuffMgr.removeBuffByOwner(this.owner, this);
+        // 同时移除BuffMgr.buffs中的引用
+        const key = this.owner.camp + this.name;
+        if (BuffMgr.buffs.has(key) && BuffMgr.buffs.get(key) === this) {
+            BuffMgr.buffs.delete(key);
+        }
     };
 
     reapply(): boolean {
@@ -202,14 +207,10 @@ export class BaseBuff {
      * 更新buff状态
      * @returns 是否需要移除（true表示已过期）
      */
-    updateBuffs(): boolean {
+    updateBuffs(): void {
         this.duration--;
         console.log(`${this.name} remaining duration: ${this.duration} `);
-        if (this.duration <= 0) {
-            this.remove();
-            return true;
-        }
-        return false;
+        if (this.duration <= 0) this.remove();
     };
 }
 

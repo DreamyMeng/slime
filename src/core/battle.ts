@@ -18,7 +18,6 @@ export class Battle {
     bossHp: HPBar;
     escape: boolean; // 是否逃跑
     draw: boolean; // 是否平局
-    static damage: number;// 每轮攻击造成的伤害
 
     constructor() {
         this.bossHp = Main.instance.Battle.getComponent(HPBar);
@@ -106,7 +105,6 @@ export class Battle {
             // if (role.buff.stats.get('skip')) {
             //     GameLog.log(`${role.camp} is stunned and skips the turn.`);
             // } else
-            Battle.damage = 0;
             await role.round();
 
             // switch role and target

@@ -1,6 +1,5 @@
 // GameLog.ts
 
-import { Config } from "./config";
 import { Language } from "./i18n";
 
 /**
@@ -13,7 +12,7 @@ export class GameLog {
     private logs: string[];
     public callback: () => void;
 
-    constructor(private maxLength: number = 200) {
+    constructor(private maxLength: number = 1000) {
         this.logs = [];
         this.maxLength = maxLength;
     }

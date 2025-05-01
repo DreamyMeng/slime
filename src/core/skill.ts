@@ -1,7 +1,6 @@
 // Skill.ts
 import { skill, SkillType, Target } from '../table/schema';
 import { Main } from '../ui/Main';
-import { Battle } from './battle';
 import { BuffMgr } from './buff';
 import { color_config, Config, xinximoban } from './config';
 import { BaseRole } from './role';
@@ -26,7 +25,7 @@ export class ProbabilityCondition implements TriggerCondition {
 
     check(_role: BaseRole): boolean {
         let random = Math.random();
-        console.log("random: ", random, "probability: ", this.data.rate);
+        // console.log("random: ", random, "probability: ", this.data.rate);
         return random <= this.data.rate;
     }
 }
@@ -174,7 +173,7 @@ export class BaseSkill {
 
     // 移除技能触发器，状态提示
     ban() {
-        console.log(`${this.owner.camp} ban ${this.name}!`);
+        GameLog.log(`${Main.getRoleName(this.owner.view.data)} 禁用技能: ${this.name}`);
         this.owner.off(this.data.trigger.toString(), this, this.onTrigger);
     }
 }
@@ -191,7 +190,7 @@ export class health extends BaseSkill {
         }
         if (this.data.values.has("2")) {
             let per = Number(this.data.values.get("2"));
-            value = toInt(per * Battle.damage);
+            value = toInt(per * this.owner.damage);
             console.log(`${target.camp} health + ${value}`);
             target.takeDamage(this.owner, target, value);
         }
@@ -208,7 +207,7 @@ export class revive extends BaseSkill {
     }
     trigger(): void {
         if (this.count < 1) {
-            console.log(`复活次数已用尽！`);
+            GameLog.log(`可惜，复活次数已用尽！`);
             return;
         }
 
@@ -305,7 +304,7 @@ export class GetSkill extends BaseSkill {
             // 创建并添加新技能
             newSkills.forEach(skillData => {
                 SkillMgr.createSkill(target, skillData);
-                console.log(`${target.camp} 获得新技能: ${skillData.name}`);
+                GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
             });
         }
     }
@@ -348,7 +347,7 @@ export class learn extends BaseSkill {
             // 创建并添加新技能
             newSkills.forEach(skillData => {
                 SkillMgr.createSkill(target, skillData);
-                console.log(`${target.camp} 获得新技能: ${skillData.name}`);
+                GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
             });
         }
 
@@ -356,6 +355,8 @@ export class learn extends BaseSkill {
             let level = Save.data.player.curScene;
             console.log(`当前层数: ${level}`);
             value = level - 100;
+            value = Math.max(1, value);
+
             let allSkills = Config.table.Tbskill.getDataList();
             let ownedSkills = SkillMgr.getList(target.camp);
 
@@ -365,7 +366,7 @@ export class learn extends BaseSkill {
             // 创建并添加新技能
             newSkills.forEach(skillData => {
                 SkillMgr.createSkill(target, skillData);
-                console.log(`${target.camp} 获得新技能: ${skillData.name}`);
+                GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
             });
         }
     }

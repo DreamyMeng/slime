@@ -2,6 +2,7 @@ import { Config } from "./core/config";
 import { Save } from "./core/save";
 import { start } from "./Main";
 import { Jinhua } from "./ui/Jinhua";
+import { Login } from "./ui/Login";
 import { Main } from "./ui/Main";
 import { MessageBox } from "./ui/MessageBox";
 
@@ -35,8 +36,16 @@ export function playAd(state: number) {
     // window.onAdRewarded(state) // test
 }
 
+export function login() {
+    window.Android.login();
+}
+
 window["onTapTapLogin"] = function (flag: boolean) {
-    MessageBox.show("广告未准备好!");
+    console.log('onTapTapLogin', flag);
+    Login.isLogin = flag;
+    if (Login.instance) {
+        Login.instance.showLogin(flag);
+    }
 }
 
 window["onAdLoaded"] = function (state: number) {

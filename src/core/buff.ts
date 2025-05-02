@@ -65,7 +65,7 @@ export class BuffMgr {
      * @param owner buff持有者
      * @param data buff配置数据
      */
-    static addBuff(role: BaseRole, owner: BaseRole, data: skill) {
+    static addBuff(owner: BaseRole, data: skill) {
         if (data.buffRound === undefined) return;
         let buff = this.getBuff(owner, data);
         if (buff) {
@@ -84,7 +84,7 @@ export class BuffMgr {
             return;
         }
 
-        let key = role.camp + data.name;
+        let key = owner.camp + data.name;
         if (!this.buffs.has(key)) {
             this.buffs.set(key, buff);
         }

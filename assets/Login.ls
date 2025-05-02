@@ -81,45 +81,6 @@
           ]
         },
         {
-          "_$id": "5p1484pn",
-          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
-          "_$var": true,
-          "name": "Button",
-          "active": true,
-          "x": 210,
-          "y": 640,
-          "width": 300,
-          "height": 80,
-          "visible": true,
-          "_$child": [
-            {
-              "_$override": "3mo5miu3",
-              "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
-              "width": 255.6336832434451,
-              "height": 64,
-              "x": 150,
-              "y": 40,
-              "sizeGrid": null,
-              "color": "#b61111"
-            },
-            {
-              "_$override": "au8mtcie",
-              "left": 0,
-              "right": 0,
-              "bottom": -3,
-              "top": 3,
-              "fontSize": 44,
-              "color": "rgba(0, 0, 0, 1)",
-              "text": "开始游戏",
-              "y": 3
-            },
-            {
-              "_$override": "qnb9iybi",
-              "visible": false
-            }
-          ]
-        },
-        {
           "_$id": "txjkvcet",
           "_$type": "Label",
           "name": "Label(2)",
@@ -194,54 +155,15 @@
           "defaultLabel": ""
         },
         {
-          "_$id": "z85ktl70",
-          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
-          "_$var": true,
-          "name": "Button2",
-          "active": true,
-          "x": 210,
-          "y": 740,
-          "width": 300,
-          "height": 80,
-          "visible": true,
-          "_$child": [
-            {
-              "_$override": "3mo5miu3",
-              "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
-              "width": 255.6336832434451,
-              "height": 64,
-              "x": 150,
-              "y": 40,
-              "sizeGrid": null,
-              "color": "#11b3b6"
-            },
-            {
-              "_$override": "au8mtcie",
-              "left": 0,
-              "right": 0,
-              "bottom": -3,
-              "top": 3,
-              "fontSize": 44,
-              "color": "rgba(0, 0, 0, 1)",
-              "text": "无尽挑战",
-              "y": 3
-            },
-            {
-              "_$override": "qnb9iybi",
-              "visible": false
-            }
-          ]
-        },
-        {
           "_$id": "4jdme93h",
           "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
-          "name": "Login",
+          "name": "TapTap",
           "active": true,
           "x": 225,
           "y": 885,
           "width": 270,
           "height": 50,
-          "visible": false,
+          "visible": true,
           "_$child": [
             {
               "_$override": "3mo5miu3",
@@ -252,6 +174,103 @@
               "sizeGrid": null,
               "color": "#ffffff",
               "x": 135
+            }
+          ]
+        },
+        {
+          "_$id": "rzvuye0d",
+          "_$type": "VBox",
+          "name": "Login",
+          "x": 360,
+          "y": 800,
+          "width": 720,
+          "height": 100,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "centerY": 160,
+          "space": 10,
+          "align": "center",
+          "_$child": [
+            {
+              "_$id": "5p1484pn",
+              "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+              "_$var": true,
+              "name": "Button",
+              "active": true,
+              "x": 210,
+              "y": 0,
+              "width": 300,
+              "height": 80,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3mo5miu3",
+                  "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
+                  "width": 255.6336832434451,
+                  "height": 64,
+                  "x": 150,
+                  "y": 40,
+                  "sizeGrid": null,
+                  "color": "#b61111"
+                },
+                {
+                  "_$override": "au8mtcie",
+                  "left": 0,
+                  "right": 0,
+                  "bottom": -3,
+                  "top": 3,
+                  "fontSize": 44,
+                  "color": "rgba(0, 0, 0, 1)",
+                  "text": "开始游戏",
+                  "y": 3
+                },
+                {
+                  "_$override": "qnb9iybi",
+                  "visible": false
+                }
+              ]
+            },
+            {
+              "_$id": "z85ktl70",
+              "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+              "_$var": true,
+              "name": "Button2",
+              "active": true,
+              "x": 210,
+              "y": 90,
+              "width": 300,
+              "height": 80,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3mo5miu3",
+                  "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
+                  "width": 255.6336832434451,
+                  "height": 64,
+                  "x": 150,
+                  "y": 40,
+                  "sizeGrid": null,
+                  "color": "#11b3b6"
+                },
+                {
+                  "_$override": "au8mtcie",
+                  "left": 0,
+                  "right": 0,
+                  "bottom": -3,
+                  "top": 3,
+                  "fontSize": 44,
+                  "color": "rgba(0, 0, 0, 1)",
+                  "text": "无尽挑战",
+                  "y": 3
+                },
+                {
+                  "_$override": "qnb9iybi",
+                  "visible": false
+                }
+              ]
             }
           ]
         }

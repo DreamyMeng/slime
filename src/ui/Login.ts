@@ -4,6 +4,7 @@ import { Language } from "../core/i18n";
 import { Save } from "../core/save";
 import { EndlessScene } from "../mod/endless/EndlessScene";
 import { loadGame, newData } from "../mod/endless/save";
+import { isAndroid, login } from "../platform";
 import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
 
@@ -13,9 +14,37 @@ export class Login extends Laya.Script {
     Button: MyButton;
     Sound: MyButton;
     ComboBox: Laya.ComboBox;
+    static instance: Login;
+    Login: Laya.VBox;
+    TapTap: MyButton;
+    static isLogin: boolean;
+
+    onDestroy(): void {
+        Login.instance = null;
+    }
+
+    showLogin(flag: boolean): void {
+        if (flag) {
+            this.Login.visible = true;
+            this.TapTap.visible = false;
+        } else {
+            this.Login.visible = false;
+            this.TapTap.visible = true;
+        }
+    }
 
     onAwake(): void {
-        this.Button = this.owner.getChildByName('Button') as MyButton;
+        Login.instance = this;
+        this.Login = this.owner.getChildByName('Login') as Laya.VBox;
+        this.TapTap = this.owner.getChildByName('TapTap') as MyButton;
+        this.TapTap.onClick = () => {
+            login();
+        }
+
+        if (!isAndroid()) this.showLogin(true);
+        else this.showLogin(Login.isLogin);
+
+        this.Button = this.Login.getChildByName('Button') as MyButton;
         this.Sound = this.owner.getChildByName('Sound') as MyButton;
         this.ComboBox = this.owner.getChildByName('ComboBox') as Laya.ComboBox;
 
@@ -45,7 +74,7 @@ export class Login extends Laya.Script {
             Laya.Scene.open("Scene2.ls");
         }
 
-        (this.owner.getChildByName('Button2') as MyButton).onClick = () => {
+        (this.Login.getChildByName('Button2') as MyButton).onClick = () => {
             let data = loadGame('endless');
             if (data) {
                 let box = MessageBox.show("发现存档，是否继续游戏进度？", () => {

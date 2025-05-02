@@ -131,7 +131,7 @@ export class BaseSkill {
     }
 
     onTrigger() {
-        BuffMgr.updateBuffs(this.owner.camp + this.data.name);
+        BuffMgr.updateBuffs(this.getTarget().camp + this.data.name);
         if (this.checkCondition()) this.trigger();
     }
 
@@ -141,7 +141,7 @@ export class BaseSkill {
      */
     protected trigger(): void {
         if (this.data.buffRound === undefined) return;
-        BuffMgr.addBuff(this.owner, this.getTarget(), this.data);
+        BuffMgr.addBuff(this.getTarget(), this.data);
     }
 
     private checkCondition(): boolean {

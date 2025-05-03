@@ -1,4 +1,4 @@
-const { regClass } = Laya;
+const { regClass, property } = Laya;
 import { Config } from "../core/config";
 import { Language } from "../core/i18n";
 import { Save } from "../core/save";
@@ -7,13 +7,20 @@ import { loadGame, newData } from "../mod/endless/save";
 import { isAndroid, login } from "../platform";
 import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
+import { PopUp } from "./PopUp";
 
 @regClass()
 export class Login extends Laya.Script {
     declare owner: Laya.Sprite;
-    Button: MyButton;
-    Sound: MyButton;
+    @property({ type: Laya.Sprite })
+    Scene1: MyButton;
+    @property({ type: Laya.Sprite })
+    Scene2: MyButton;
+    @property({ type: Laya.Sprite })
+    settings: MyButton;
+    @property({ type: Laya.ComboBox })
     ComboBox: Laya.ComboBox;
+
     static instance: Login;
     Login: Laya.VBox;
     TapTap: MyButton;
@@ -44,37 +51,79 @@ export class Login extends Laya.Script {
         if (!isAndroid()) this.showLogin(true);
         else this.showLogin(Login.isLogin);
 
-        this.Button = this.Login.getChildByName('Button') as MyButton;
-        this.Sound = this.owner.getChildByName('Sound') as MyButton;
-        this.ComboBox = this.owner.getChildByName('ComboBox') as Laya.ComboBox;
-
         const list = ['CHS', 'EN', 'CHT', 'JP', 'KR', 'VN'];
         this.ComboBox.dataSource = ['简体中文', 'English', '繁體中文', '日本語', '한국어', 'Tiếng Việt'];
         this.ComboBox.selectedIndex = list.indexOf(Language.key);
         this.ComboBox.visibleNum = list.length;
-        this.ComboBox.selectHandler = Laya.Handler.create(this, (_: number) => {
-            let key = list[this.ComboBox.selectedIndex];
-            Language.setLanguage(key);
-            Laya.Scene.open("Login.ls");
-        }, null, false);
+        // this.ComboBox.selectHandler = Laya.Handler.create(this, (_: number) => {
+        // }, null, false);
 
-        this.Button.onClick = () => {
+        this.Scene1.onClick = () => {
             Laya.Scene.open("Scene.ls");
         }
 
-        this.update_sound();
-        this.Sound.onClick = () => {
-            Save.data.setting.mute = !Save.data.setting.mute;
-            this.update_sound();
-            Save.saveGame();
+        this.settings.onClick = () => {
+            this.settingsPanel.open();
         }
+
+        this.no.onClick = () => {
+            this.settingsPanel.close();
+        }
+
+        this.ok.onClick = () => {
+            let key = list[this.ComboBox.selectedIndex];
+            Language.setLanguage(key);
+
+            Save.data.setting.music = this.musicBar.value / 100;
+            Save.data.setting.sound = this.soundBar.value / 100;
+            Laya.SoundManager.setMusicVolume(Save.data.setting.music);
+            Laya.SoundManager.setSoundVolume(Save.data.setting.sound);
+
+            let font_style = this.sys_tog.selected ? 'system' : 'default';
+            Laya.Config.defaultFont = font_style === 'system' ? null : 'AlimamaDaoLiTi';
+            Laya.LocalStorage.setItem('font', font_style);
+
+            Save.saveGame();
+            Laya.Scene.open("Login.ls");
+        }
+
+        this.sys_tog.clickHandler = Laya.Handler.create(this, () => {
+            this.sys_tog.selected = true;
+            this.sel_tog.selected = false;
+        }, null, false);
+
+        this.sel_tog.clickHandler = Laya.Handler.create(this, () => {
+            this.sys_tog.selected = false;
+            this.sel_tog.selected = true;
+        }, null, false);
+
+        if (Laya.Config.defaultFont === null) this.sel_tog.selected = true;
+        else this.sys_tog.selected = true;
+
+        Laya.SoundManager.muted = false;
+        Laya.SoundManager.setMusicVolume(Save.data.setting.music);
+        Laya.SoundManager.setSoundVolume(Save.data.setting.sound);
+        Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
+
+        this.musicBar.value = Save.data.setting.music * 100;
+        this.soundBar.value = Save.data.setting.sound * 100;
+        let font = Laya.LocalStorage.getItem('font');
+        if (font) this.sys_tog.selected = font === 'system';
+        else this.sys_tog.selected = false;
+        this.sel_tog.selected = !this.sys_tog.selected;
+        // this.update_sound();
+        // this.Sound.onClick = () => {
+        //     Save.data.setting.mute = !Save.data.setting.mute;
+        //     this.update_sound();
+        //     Save.saveGame();
+        // }
 
         let func = (d: any) => {
             EndlessScene.data = d;
             Laya.Scene.open("Scene2.ls");
         }
 
-        (this.Login.getChildByName('Button2') as MyButton).onClick = () => {
+        this.Scene2.onClick = () => {
             let data = loadGame('endless');
             if (data) {
                 let box = MessageBox.show("发现存档，是否继续游戏进度？", () => {
@@ -91,14 +140,30 @@ export class Login extends Laya.Script {
 
     }
 
-    update_sound(): void {
-        Laya.SoundManager.muted = Save.data.setting.mute;
-        if (Save.data.setting.mute) {
-            this.Sound.image.skin = "resources/image/off.png";
-            Laya.SoundManager.stopMusic();
-        } else {
-            this.Sound.image.skin = "resources/image/on.png";
-            Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
-        }
-    }
+    // update_sound(): void {
+    //     Laya.SoundManager.muted = Save.data.setting.mute;
+    //     if (Save.data.setting.mute) {
+    //         this.Sound.image.skin = "resources/image/off.png";
+    //         Laya.SoundManager.stopMusic();
+    //     } else {
+    //         this.Sound.image.skin = "resources/image/on.png";
+    //         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
+    //     }
+    // }
+
+    @property({ type: Laya.Sprite })
+    settingsPanel: PopUp;
+    @property({ type: Laya.Sprite })
+    ok: MyButton;
+    @property({ type: Laya.Sprite })
+    no: MyButton;
+    @property({ type: Laya.HSlider })
+    musicBar: Laya.HSlider;
+    @property({ type: Laya.HSlider })
+    soundBar: Laya.HSlider;
+    @property({ type: Laya.Radio })
+    sys_tog: Laya.Radio;
+    @property({ type: Laya.Radio })
+    sel_tog: Laya.Radio;
+
 }

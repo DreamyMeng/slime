@@ -68,7 +68,10 @@ window["onAdRewarded"] = function (state: number) {
 }
 
 window["onAdNotReady"] = function (state: number) {
-    MessageBox.show("广告未准备好!");
+    let ui = MessageBox.show("广告未准备好!".toStr(), () => {
+        playAd(state);
+    });
+    ui.ok.title.text = "再次发送".toStr();
 }
 
 window["changeData"] = function (old: any) {
@@ -125,8 +128,16 @@ window["changeData"] = function (old: any) {
             if (Config.table.Tbskill.get(skill)) player.skills.push(skill);
         });
 
-        data.setting.mute = old.jingyin === 1;
+        // data.setting.mute = old.jingyin === 1;
     }
 
     start(data);
 }
+
+// window.addEventListener('unhandledrejection', function (event) {
+//     console.error('Unhandled Promise rejection:', event.reason);
+// });
+
+window.onerror = function (message, source, lineno, colno, error) {
+    console.error('JS Error:', message, 'at', source, lineno + ':' + colno);
+};

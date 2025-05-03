@@ -59,7 +59,7 @@ export function drawGacha(data: SaveData_Endless): any[] {
     } else if (rewardType === "refresh") {
       results.push({ type: "refresh", value: drawRefreshCount() });
     } else {
-      results.push({ type: "level", value: drawRefreshCount() }); // 这里可自定义level奖励
+      results.push({ type: "level", value: drawLevelCount() });
     }
   }
   return results;
@@ -67,15 +67,36 @@ export function drawGacha(data: SaveData_Endless): any[] {
 
 // 奖励类型概率配置
 const refreshCountRates = [
-  { type: 1, rate: 0.8 },
-  { type: 2, rate: 0.15 },
-  { type: 3, rate: 0.05 },
+  { type: 1, rate: 0.5 },
+  { type: 2, rate: 0.2 },
+  { type: 3, rate: 0.15 },
+  { type: 4, rate: 0.07 },
+  { type: 5, rate: 0.05 },
+  { type: 6, rate: 0.02 },
+  { type: 7, rate: 0.01 },
 ];
 
 function drawRefreshCount(): number {
   const rand = Math.random();
   let acc = 0;
   for (const item of refreshCountRates) {
+    acc += item.rate;
+    if (rand < acc) return item.type;
+  }
+  return 1;
+}
+
+// 奖励类型概率配置
+const levelCountRates = [
+  { type: 1, rate: 0.8 },
+  { type: 2, rate: 0.15 },
+  { type: 3, rate: 0.05 },
+];
+
+function drawLevelCount(): number {
+  const rand = Math.random();
+  let acc = 0;
+  for (const item of levelCountRates) {
     acc += item.rate;
     if (rand < acc) return item.type;
   }

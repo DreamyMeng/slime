@@ -12,6 +12,8 @@ import { PopUp } from "../../ui/PopUp";
 import { drawGacha, spawnMonsters } from "./gacha";
 import { MyButton } from "../../ui/MyButton";
 import { MessageBox } from "../../ui/MessageBox";
+import { getRoleLevelAttributes, RoleLevel } from "../../core/level";
+import { isAndroid, playAd } from "../../platform";
 
 @regClass()
 export class EndlessScene extends Main {
@@ -50,11 +52,25 @@ export class EndlessScene extends Main {
             this.show_rewards();
         }
 
+        this.Reward.no.onClick = () => {
+            this.Des.visible = !this.Des.visible;
+            this.Reward.no.title.text = this.Des.visible ? '关闭'.toStr() : '详情'.toStr();
+        }
+        this.Des = this.Reward.getChildByName('Des') as Laya.Sprite;
+
+        let vbox = this.Des.getChildByName('VBox') as Laya.VBox;
+        for (let i = 1; i < 4; i++) {
+            let label = vbox.getChildByName(`Label${i}`) as Laya.Label;
+            this.labels.push(label);
+        }
     }
+
+    labels: Laya.Label[] = [];
 
     show_first(): void {
         this.Reward.open();
         this.Reward.ok.visible = false;
+        this.Reward.no.visible = false;
 
         var list = spawnMonsters(1);
         list.forEach((data, key) => {
@@ -77,23 +93,29 @@ export class EndlessScene extends Main {
     }
 
     Reward: PopUp;
+    Des: Laya.Sprite;
     show_rewards(): void {
         this.Reward.open();
         this.Reward.ok.visible = true;
+        this.Reward.no.visible = true;
         this.Reward.ok.tip.text = EndlessScene.data.refresh > 0 ? "剩余次数:".toStr() + `${EndlessScene.data.refresh}` : "";
         this.Reward.ok.active = EndlessScene.data.refresh > 0;
+        this.Reward.no.title.text = this.Des.visible ? '关闭'.toStr() : '详情'.toStr();
 
         drawGacha(EndlessScene.data).forEach((data, key) => {
             let btn = this.Reward.getChildByName(`${key}`) as MyButton;
+            this.labels[key].text = "";
             if (data.type === 'skill') {
-                btn.title.text = "技能".toStr() + "\n\n" + data.value.name;
+                let skillData = data.value;
+                btn.title.text = "技能".toStr() + "\n\n" + skillData.name;
                 btn.onClick = () => {
                     this.Reward.close();
-                    EndlessScene.data.skills.push(data.value.id);
-                    MessageBox.tip("习得：".toStr() + `${data.value.name.toStr()}`, false);
+                    EndlessScene.data.skills.push(skillData.id);
+                    MessageBox.tip("习得：".toStr() + `${skillData.name.toStr()}`, false);
                     this.update_skill();
                     this.battle_end();
                 }
+                this.labels[key].text = `<font color='#ffe900' size=40>${skillData.name.toStr()}</font>：${skillData.description.toStr()}`
             }
             else if (data.type === 'role') {
                 let roleName = Main.getRoleName(data.value);
@@ -133,7 +155,7 @@ export class EndlessScene extends Main {
     override update_player(): void {
         let playerData = EndlessScene.data;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(Math.min(playerData.level, 199));
+        let levelData: RoleLevel = getRoleLevelAttributes(playerData.level);
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(0);
         let addition = Main.getAddition(playerData.roles);
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
@@ -215,7 +237,7 @@ export class EndlessScene extends Main {
     private init_battle(id: string, level: number, isBoss: boolean): void {
         let playerData = EndlessScene.data;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(Math.min(playerData.level, 199));
+        let levelData: RoleLevel = getRoleLevelAttributes(playerData.level);
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(0);
         let addition = Main.getAddition(playerData.roles);
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
@@ -226,7 +248,7 @@ export class EndlessScene extends Main {
 
         const scale = this.getLevelScale(playerData.curScene);
         roleData = Config.table.Tbrole.get(id);
-        levelData = Config.table.Tbrole_level.get(level);
+        levelData = getRoleLevelAttributes(level);
         attack = utils.toInt(levelData.attack * roleData.attackRate * scale);
         defence = utils.toInt(levelData.defence * roleData.defenceRate * scale);
         health = utils.toInt(levelData.health * roleData.healthRate * scale);
@@ -248,28 +270,32 @@ export class EndlessScene extends Main {
             this.battle_end();
         } else {
             if (this.battle.player.isAlive()) {
-                // if (EndlessScene.data.refresh < 5) EndlessScene.data.refresh++;
+                // if (EndlessScene.data.refresh < 3) EndlessScene.data.refresh++;
                 Laya.SoundManager.playSound(Config.sounds.get("win"));
                 this.show_rewards();
             } else {
-                this.curEndlessData = EndlessScene.data;
+                this.curEndlessData = JSON.parse(JSON.stringify(EndlessScene.data));
                 let tip = MessageBox.show(`你失败了！`.toStr(), () => {
                     this.fuhuo_tip.ok.active = false;
-                    // if (isAndroid()) playAd(1);
+                    if (this.curEndlessData.revive <= 0) {
+                        if (isAndroid()) playAd(1);
+                        return;
+                    }
                     // else {
-                    EndlessScene.data.revive--;
-                    this.fuhuo_endless_success();
+                    this.curEndlessData.revive--;
+                    this.fuhuo_success();
                     // }
                 }, () => {
-                    this.fuhuo_endless_fail();
+                    this.fuhuo_fail();
                 }, true, false);
                 this.fuhuo_tip = tip;
                 tip.ok.title.text = '复活'.toStr();
-                if (EndlessScene.data.revive <= 0) {
-                    tip.ok.active = false;
+                if (this.curEndlessData.revive <= 0) {
+                    if (isAndroid()) tip.ok.title.text = '观看广告'.toStr();
+                    else tip.ok.active = false;
                 } else {
                     tip.ok.active = true;
-                    tip.ok.tip.text = "剩余次数:".toStr() + `${EndlessScene.data.revive}`;
+                    tip.ok.tip.text = "剩余次数:".toStr() + `${this.curEndlessData.revive}`;
                 }
 
                 deleteSave('endless');
@@ -280,25 +306,25 @@ export class EndlessScene extends Main {
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
     }
 
-    fuhuo_endless_success(): void {
+    override fuhuo_success(): void {
         EndlessScene.data = this.curEndlessData;
         MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
         Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         EndlessScene.data.curScene--;
         this.battle_end();
-        if (Main.instance.fuhuo_tip) {
-            Main.instance.fuhuo_tip.close(() => {
-                Main.instance.fuhuo_tip.destroy();
-                Main.instance.fuhuo_tip = null;
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.close(() => {
+                this.fuhuo_tip.destroy();
+                this.fuhuo_tip = null;
             });
         }
     }
 
-    fuhuo_endless_fail(): void {
-        if (Main.instance.fuhuo_tip) {
-            Main.instance.fuhuo_tip.close(() => {
-                Main.instance.fuhuo_tip.destroy();
-                Main.instance.fuhuo_tip = null;
+    override fuhuo_fail(): void {
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.close(() => {
+                this.fuhuo_tip.destroy();
+                this.fuhuo_tip = null;
             });
         }
         Laya.Scene.open("Login.ls");

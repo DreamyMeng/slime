@@ -1,5 +1,6 @@
 import { BuffMgr } from "../core/buff";
 import { Config } from "../core/config";
+import { getRoleLevelAttributes } from "../core/level";
 import { BaseRole } from "../core/role";
 import * as utils from "../core/utils";
 import { map_level, role } from "../table/schema";
@@ -41,7 +42,7 @@ export class RoleView extends Laya.Script {
         this.level = level;
         this.owner.title.text = Main.getRoleName(roleData);
         (this.owner.image.getChildByName('Level') as Laya.Label).text = `Lv.${level}`;
-        let levelData = Config.table.Tbrole_level.get(level);
+        let levelData = getRoleLevelAttributes(level);
         let attack = utils.toInt(levelData.attack * roleData.attackRate * rate);
         let defence = utils.toInt(levelData.defence * roleData.defenceRate * rate);
         let health = utils.toInt(levelData.health * roleData.healthRate * rate);

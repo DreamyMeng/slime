@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 
- 
+
 export enum RoleQuality {
     /**
      * 无
@@ -28,8 +28,8 @@ export enum RoleQuality {
     shen = 3,
 }
 
- 
- 
+
+
 export enum SkillTrigger {
     none = 0,
     /**
@@ -70,8 +70,8 @@ export enum SkillTrigger {
     hitted = 9,
 }
 
- 
- 
+
+
 export enum SkillType {
     none = 0,
     health = 1,
@@ -89,8 +89,8 @@ export enum SkillType {
     learn = 13,
 }
 
- 
- 
+
+
 export enum Target {
     /**
      * 自身
@@ -102,7 +102,7 @@ export enum Target {
     enemy = 1,
 }
 
- 
+
 
 
 
@@ -115,7 +115,7 @@ export class achieve {
         this.id = _json_.id
         if (_json_.type === undefined) { throw new Error() }
         this.type = _json_.type
-        if(_json_.target != undefined) { this.target = _json_.target } else { this.target = undefined }
+        if (_json_.target != undefined) { this.target = _json_.target } else { this.target = undefined }
         if (_json_.count === undefined) { throw new Error() }
         this.count = _json_.count
         if (_json_.description === undefined) { throw new Error() }
@@ -137,7 +137,7 @@ export class achieve {
     /**
      * 目标
      */
-    readonly target: string|undefined
+    readonly target: string | undefined
     /**
      * 达成数
      */
@@ -155,14 +155,14 @@ export class achieve {
      */
     readonly rewardStr: string
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
+
     }
 }
 
@@ -197,14 +197,14 @@ export class lang {
     readonly KR: string
     readonly VN: string
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
+
     }
 }
 
@@ -257,13 +257,13 @@ export class map_level {
     readonly attackRate: number
     readonly monsters: MonsterProbability
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
         this.monsters?.resolve(tables);
     }
 }
@@ -275,430 +275,430 @@ export class map_level {
 export class MonsterProbability {
 
     constructor(_json_: any) {
-        if(_json_.h1 != undefined) { this.h1 = _json_.h1 } else { this.h1 = undefined }
-        if(_json_.h2 != undefined) { this.h2 = _json_.h2 } else { this.h2 = undefined }
-        if(_json_.h13 != undefined) { this.h13 = _json_.h13 } else { this.h13 = undefined }
-        if(_json_.h14 != undefined) { this.h14 = _json_.h14 } else { this.h14 = undefined }
-        if(_json_.h36 != undefined) { this.h36 = _json_.h36 } else { this.h36 = undefined }
-        if(_json_.h137 != undefined) { this.h137 = _json_.h137 } else { this.h137 = undefined }
-        if(_json_.h3 != undefined) { this.h3 = _json_.h3 } else { this.h3 = undefined }
-        if(_json_.h15 != undefined) { this.h15 = _json_.h15 } else { this.h15 = undefined }
-        if(_json_.h28 != undefined) { this.h28 = _json_.h28 } else { this.h28 = undefined }
-        if(_json_.h37 != undefined) { this.h37 = _json_.h37 } else { this.h37 = undefined }
-        if(_json_.h45 != undefined) { this.h45 = _json_.h45 } else { this.h45 = undefined }
-        if(_json_.h55 != undefined) { this.h55 = _json_.h55 } else { this.h55 = undefined }
-        if(_json_.h72 != undefined) { this.h72 = _json_.h72 } else { this.h72 = undefined }
-        if(_json_.h82 != undefined) { this.h82 = _json_.h82 } else { this.h82 = undefined }
-        if(_json_.h90 != undefined) { this.h90 = _json_.h90 } else { this.h90 = undefined }
-        if(_json_.h96 != undefined) { this.h96 = _json_.h96 } else { this.h96 = undefined }
-        if(_json_.h104 != undefined) { this.h104 = _json_.h104 } else { this.h104 = undefined }
-        if(_json_.h108 != undefined) { this.h108 = _json_.h108 } else { this.h108 = undefined }
-        if(_json_.h121 != undefined) { this.h121 = _json_.h121 } else { this.h121 = undefined }
-        if(_json_.h129 != undefined) { this.h129 = _json_.h129 } else { this.h129 = undefined }
-        if(_json_.h138 != undefined) { this.h138 = _json_.h138 } else { this.h138 = undefined }
-        if(_json_.h4 != undefined) { this.h4 = _json_.h4 } else { this.h4 = undefined }
-        if(_json_.h16 != undefined) { this.h16 = _json_.h16 } else { this.h16 = undefined }
-        if(_json_.h17 != undefined) { this.h17 = _json_.h17 } else { this.h17 = undefined }
-        if(_json_.h29 != undefined) { this.h29 = _json_.h29 } else { this.h29 = undefined }
-        if(_json_.h38 != undefined) { this.h38 = _json_.h38 } else { this.h38 = undefined }
-        if(_json_.h46 != undefined) { this.h46 = _json_.h46 } else { this.h46 = undefined }
-        if(_json_.h53 != undefined) { this.h53 = _json_.h53 } else { this.h53 = undefined }
-        if(_json_.h56 != undefined) { this.h56 = _json_.h56 } else { this.h56 = undefined }
-        if(_json_.h62 != undefined) { this.h62 = _json_.h62 } else { this.h62 = undefined }
-        if(_json_.h73 != undefined) { this.h73 = _json_.h73 } else { this.h73 = undefined }
-        if(_json_.h83 != undefined) { this.h83 = _json_.h83 } else { this.h83 = undefined }
-        if(_json_.h91 != undefined) { this.h91 = _json_.h91 } else { this.h91 = undefined }
-        if(_json_.h97 != undefined) { this.h97 = _json_.h97 } else { this.h97 = undefined }
-        if(_json_.h105 != undefined) { this.h105 = _json_.h105 } else { this.h105 = undefined }
-        if(_json_.h109 != undefined) { this.h109 = _json_.h109 } else { this.h109 = undefined }
-        if(_json_.h116 != undefined) { this.h116 = _json_.h116 } else { this.h116 = undefined }
-        if(_json_.h122 != undefined) { this.h122 = _json_.h122 } else { this.h122 = undefined }
-        if(_json_.h126 != undefined) { this.h126 = _json_.h126 } else { this.h126 = undefined }
-        if(_json_.h130 != undefined) { this.h130 = _json_.h130 } else { this.h130 = undefined }
-        if(_json_.h135 != undefined) { this.h135 = _json_.h135 } else { this.h135 = undefined }
-        if(_json_.h139 != undefined) { this.h139 = _json_.h139 } else { this.h139 = undefined }
-        if(_json_.h5 != undefined) { this.h5 = _json_.h5 } else { this.h5 = undefined }
-        if(_json_.h18 != undefined) { this.h18 = _json_.h18 } else { this.h18 = undefined }
-        if(_json_.h30 != undefined) { this.h30 = _json_.h30 } else { this.h30 = undefined }
-        if(_json_.h39 != undefined) { this.h39 = _json_.h39 } else { this.h39 = undefined }
-        if(_json_.h47 != undefined) { this.h47 = _json_.h47 } else { this.h47 = undefined }
-        if(_json_.h57 != undefined) { this.h57 = _json_.h57 } else { this.h57 = undefined }
-        if(_json_.h63 != undefined) { this.h63 = _json_.h63 } else { this.h63 = undefined }
-        if(_json_.h74 != undefined) { this.h74 = _json_.h74 } else { this.h74 = undefined }
-        if(_json_.h84 != undefined) { this.h84 = _json_.h84 } else { this.h84 = undefined }
-        if(_json_.h88 != undefined) { this.h88 = _json_.h88 } else { this.h88 = undefined }
-        if(_json_.h92 != undefined) { this.h92 = _json_.h92 } else { this.h92 = undefined }
-        if(_json_.h98 != undefined) { this.h98 = _json_.h98 } else { this.h98 = undefined }
-        if(_json_.h106 != undefined) { this.h106 = _json_.h106 } else { this.h106 = undefined }
-        if(_json_.h110 != undefined) { this.h110 = _json_.h110 } else { this.h110 = undefined }
-        if(_json_.h117 != undefined) { this.h117 = _json_.h117 } else { this.h117 = undefined }
-        if(_json_.h123 != undefined) { this.h123 = _json_.h123 } else { this.h123 = undefined }
-        if(_json_.h127 != undefined) { this.h127 = _json_.h127 } else { this.h127 = undefined }
-        if(_json_.h131 != undefined) { this.h131 = _json_.h131 } else { this.h131 = undefined }
-        if(_json_.h140 != undefined) { this.h140 = _json_.h140 } else { this.h140 = undefined }
-        if(_json_.h6 != undefined) { this.h6 = _json_.h6 } else { this.h6 = undefined }
-        if(_json_.h19 != undefined) { this.h19 = _json_.h19 } else { this.h19 = undefined }
-        if(_json_.h20 != undefined) { this.h20 = _json_.h20 } else { this.h20 = undefined }
-        if(_json_.h31 != undefined) { this.h31 = _json_.h31 } else { this.h31 = undefined }
-        if(_json_.h40 != undefined) { this.h40 = _json_.h40 } else { this.h40 = undefined }
-        if(_json_.h48 != undefined) { this.h48 = _json_.h48 } else { this.h48 = undefined }
-        if(_json_.h54 != undefined) { this.h54 = _json_.h54 } else { this.h54 = undefined }
-        if(_json_.h58 != undefined) { this.h58 = _json_.h58 } else { this.h58 = undefined }
-        if(_json_.h64 != undefined) { this.h64 = _json_.h64 } else { this.h64 = undefined }
-        if(_json_.h75 != undefined) { this.h75 = _json_.h75 } else { this.h75 = undefined }
-        if(_json_.h85 != undefined) { this.h85 = _json_.h85 } else { this.h85 = undefined }
-        if(_json_.h93 != undefined) { this.h93 = _json_.h93 } else { this.h93 = undefined }
-        if(_json_.h99 != undefined) { this.h99 = _json_.h99 } else { this.h99 = undefined }
-        if(_json_.h107 != undefined) { this.h107 = _json_.h107 } else { this.h107 = undefined }
-        if(_json_.h111 != undefined) { this.h111 = _json_.h111 } else { this.h111 = undefined }
-        if(_json_.h118 != undefined) { this.h118 = _json_.h118 } else { this.h118 = undefined }
-        if(_json_.h124 != undefined) { this.h124 = _json_.h124 } else { this.h124 = undefined }
-        if(_json_.h128 != undefined) { this.h128 = _json_.h128 } else { this.h128 = undefined }
-        if(_json_.h132 != undefined) { this.h132 = _json_.h132 } else { this.h132 = undefined }
-        if(_json_.h7 != undefined) { this.h7 = _json_.h7 } else { this.h7 = undefined }
-        if(_json_.h21 != undefined) { this.h21 = _json_.h21 } else { this.h21 = undefined }
-        if(_json_.h22 != undefined) { this.h22 = _json_.h22 } else { this.h22 = undefined }
-        if(_json_.h23 != undefined) { this.h23 = _json_.h23 } else { this.h23 = undefined }
-        if(_json_.h32 != undefined) { this.h32 = _json_.h32 } else { this.h32 = undefined }
-        if(_json_.h41 != undefined) { this.h41 = _json_.h41 } else { this.h41 = undefined }
-        if(_json_.h49 != undefined) { this.h49 = _json_.h49 } else { this.h49 = undefined }
-        if(_json_.h59 != undefined) { this.h59 = _json_.h59 } else { this.h59 = undefined }
-        if(_json_.h65 != undefined) { this.h65 = _json_.h65 } else { this.h65 = undefined }
-        if(_json_.h76 != undefined) { this.h76 = _json_.h76 } else { this.h76 = undefined }
-        if(_json_.h86 != undefined) { this.h86 = _json_.h86 } else { this.h86 = undefined }
-        if(_json_.h89 != undefined) { this.h89 = _json_.h89 } else { this.h89 = undefined }
-        if(_json_.h94 != undefined) { this.h94 = _json_.h94 } else { this.h94 = undefined }
-        if(_json_.h100 != undefined) { this.h100 = _json_.h100 } else { this.h100 = undefined }
-        if(_json_.h112 != undefined) { this.h112 = _json_.h112 } else { this.h112 = undefined }
-        if(_json_.h119 != undefined) { this.h119 = _json_.h119 } else { this.h119 = undefined }
-        if(_json_.h125 != undefined) { this.h125 = _json_.h125 } else { this.h125 = undefined }
-        if(_json_.h133 != undefined) { this.h133 = _json_.h133 } else { this.h133 = undefined }
-        if(_json_.h136 != undefined) { this.h136 = _json_.h136 } else { this.h136 = undefined }
-        if(_json_.h8 != undefined) { this.h8 = _json_.h8 } else { this.h8 = undefined }
-        if(_json_.h9 != undefined) { this.h9 = _json_.h9 } else { this.h9 = undefined }
-        if(_json_.h24 != undefined) { this.h24 = _json_.h24 } else { this.h24 = undefined }
-        if(_json_.h25 != undefined) { this.h25 = _json_.h25 } else { this.h25 = undefined }
-        if(_json_.h33 != undefined) { this.h33 = _json_.h33 } else { this.h33 = undefined }
-        if(_json_.h42 != undefined) { this.h42 = _json_.h42 } else { this.h42 = undefined }
-        if(_json_.h50 != undefined) { this.h50 = _json_.h50 } else { this.h50 = undefined }
-        if(_json_.h60 != undefined) { this.h60 = _json_.h60 } else { this.h60 = undefined }
-        if(_json_.h66 != undefined) { this.h66 = _json_.h66 } else { this.h66 = undefined }
-        if(_json_.h68 != undefined) { this.h68 = _json_.h68 } else { this.h68 = undefined }
-        if(_json_.h77 != undefined) { this.h77 = _json_.h77 } else { this.h77 = undefined }
-        if(_json_.h87 != undefined) { this.h87 = _json_.h87 } else { this.h87 = undefined }
-        if(_json_.h95 != undefined) { this.h95 = _json_.h95 } else { this.h95 = undefined }
-        if(_json_.h101 != undefined) { this.h101 = _json_.h101 } else { this.h101 = undefined }
-        if(_json_.h102 != undefined) { this.h102 = _json_.h102 } else { this.h102 = undefined }
-        if(_json_.h113 != undefined) { this.h113 = _json_.h113 } else { this.h113 = undefined }
-        if(_json_.h120 != undefined) { this.h120 = _json_.h120 } else { this.h120 = undefined }
-        if(_json_.h134 != undefined) { this.h134 = _json_.h134 } else { this.h134 = undefined }
-        if(_json_.h10 != undefined) { this.h10 = _json_.h10 } else { this.h10 = undefined }
-        if(_json_.h26 != undefined) { this.h26 = _json_.h26 } else { this.h26 = undefined }
-        if(_json_.h34 != undefined) { this.h34 = _json_.h34 } else { this.h34 = undefined }
-        if(_json_.h43 != undefined) { this.h43 = _json_.h43 } else { this.h43 = undefined }
-        if(_json_.h51 != undefined) { this.h51 = _json_.h51 } else { this.h51 = undefined }
-        if(_json_.h61 != undefined) { this.h61 = _json_.h61 } else { this.h61 = undefined }
-        if(_json_.h67 != undefined) { this.h67 = _json_.h67 } else { this.h67 = undefined }
-        if(_json_.h69 != undefined) { this.h69 = _json_.h69 } else { this.h69 = undefined }
-        if(_json_.h70 != undefined) { this.h70 = _json_.h70 } else { this.h70 = undefined }
-        if(_json_.h71 != undefined) { this.h71 = _json_.h71 } else { this.h71 = undefined }
-        if(_json_.h78 != undefined) { this.h78 = _json_.h78 } else { this.h78 = undefined }
-        if(_json_.h79 != undefined) { this.h79 = _json_.h79 } else { this.h79 = undefined }
-        if(_json_.h80 != undefined) { this.h80 = _json_.h80 } else { this.h80 = undefined }
-        if(_json_.h81 != undefined) { this.h81 = _json_.h81 } else { this.h81 = undefined }
-        if(_json_.h103 != undefined) { this.h103 = _json_.h103 } else { this.h103 = undefined }
-        if(_json_.h114 != undefined) { this.h114 = _json_.h114 } else { this.h114 = undefined }
-        if(_json_.h11 != undefined) { this.h11 = _json_.h11 } else { this.h11 = undefined }
-        if(_json_.h12 != undefined) { this.h12 = _json_.h12 } else { this.h12 = undefined }
-        if(_json_.h27 != undefined) { this.h27 = _json_.h27 } else { this.h27 = undefined }
-        if(_json_.h35 != undefined) { this.h35 = _json_.h35 } else { this.h35 = undefined }
-        if(_json_.h44 != undefined) { this.h44 = _json_.h44 } else { this.h44 = undefined }
-        if(_json_.h52 != undefined) { this.h52 = _json_.h52 } else { this.h52 = undefined }
-        if(_json_.h115 != undefined) { this.h115 = _json_.h115 } else { this.h115 = undefined }
+        if (_json_.h1 != undefined) { this.h1 = _json_.h1 } else { this.h1 = undefined }
+        if (_json_.h2 != undefined) { this.h2 = _json_.h2 } else { this.h2 = undefined }
+        if (_json_.h13 != undefined) { this.h13 = _json_.h13 } else { this.h13 = undefined }
+        if (_json_.h14 != undefined) { this.h14 = _json_.h14 } else { this.h14 = undefined }
+        if (_json_.h36 != undefined) { this.h36 = _json_.h36 } else { this.h36 = undefined }
+        if (_json_.h137 != undefined) { this.h137 = _json_.h137 } else { this.h137 = undefined }
+        if (_json_.h3 != undefined) { this.h3 = _json_.h3 } else { this.h3 = undefined }
+        if (_json_.h15 != undefined) { this.h15 = _json_.h15 } else { this.h15 = undefined }
+        if (_json_.h28 != undefined) { this.h28 = _json_.h28 } else { this.h28 = undefined }
+        if (_json_.h37 != undefined) { this.h37 = _json_.h37 } else { this.h37 = undefined }
+        if (_json_.h45 != undefined) { this.h45 = _json_.h45 } else { this.h45 = undefined }
+        if (_json_.h55 != undefined) { this.h55 = _json_.h55 } else { this.h55 = undefined }
+        if (_json_.h72 != undefined) { this.h72 = _json_.h72 } else { this.h72 = undefined }
+        if (_json_.h82 != undefined) { this.h82 = _json_.h82 } else { this.h82 = undefined }
+        if (_json_.h90 != undefined) { this.h90 = _json_.h90 } else { this.h90 = undefined }
+        if (_json_.h96 != undefined) { this.h96 = _json_.h96 } else { this.h96 = undefined }
+        if (_json_.h104 != undefined) { this.h104 = _json_.h104 } else { this.h104 = undefined }
+        if (_json_.h108 != undefined) { this.h108 = _json_.h108 } else { this.h108 = undefined }
+        if (_json_.h121 != undefined) { this.h121 = _json_.h121 } else { this.h121 = undefined }
+        if (_json_.h129 != undefined) { this.h129 = _json_.h129 } else { this.h129 = undefined }
+        if (_json_.h138 != undefined) { this.h138 = _json_.h138 } else { this.h138 = undefined }
+        if (_json_.h4 != undefined) { this.h4 = _json_.h4 } else { this.h4 = undefined }
+        if (_json_.h16 != undefined) { this.h16 = _json_.h16 } else { this.h16 = undefined }
+        if (_json_.h17 != undefined) { this.h17 = _json_.h17 } else { this.h17 = undefined }
+        if (_json_.h29 != undefined) { this.h29 = _json_.h29 } else { this.h29 = undefined }
+        if (_json_.h38 != undefined) { this.h38 = _json_.h38 } else { this.h38 = undefined }
+        if (_json_.h46 != undefined) { this.h46 = _json_.h46 } else { this.h46 = undefined }
+        if (_json_.h53 != undefined) { this.h53 = _json_.h53 } else { this.h53 = undefined }
+        if (_json_.h56 != undefined) { this.h56 = _json_.h56 } else { this.h56 = undefined }
+        if (_json_.h62 != undefined) { this.h62 = _json_.h62 } else { this.h62 = undefined }
+        if (_json_.h73 != undefined) { this.h73 = _json_.h73 } else { this.h73 = undefined }
+        if (_json_.h83 != undefined) { this.h83 = _json_.h83 } else { this.h83 = undefined }
+        if (_json_.h91 != undefined) { this.h91 = _json_.h91 } else { this.h91 = undefined }
+        if (_json_.h97 != undefined) { this.h97 = _json_.h97 } else { this.h97 = undefined }
+        if (_json_.h105 != undefined) { this.h105 = _json_.h105 } else { this.h105 = undefined }
+        if (_json_.h109 != undefined) { this.h109 = _json_.h109 } else { this.h109 = undefined }
+        if (_json_.h116 != undefined) { this.h116 = _json_.h116 } else { this.h116 = undefined }
+        if (_json_.h122 != undefined) { this.h122 = _json_.h122 } else { this.h122 = undefined }
+        if (_json_.h126 != undefined) { this.h126 = _json_.h126 } else { this.h126 = undefined }
+        if (_json_.h130 != undefined) { this.h130 = _json_.h130 } else { this.h130 = undefined }
+        if (_json_.h135 != undefined) { this.h135 = _json_.h135 } else { this.h135 = undefined }
+        if (_json_.h139 != undefined) { this.h139 = _json_.h139 } else { this.h139 = undefined }
+        if (_json_.h5 != undefined) { this.h5 = _json_.h5 } else { this.h5 = undefined }
+        if (_json_.h18 != undefined) { this.h18 = _json_.h18 } else { this.h18 = undefined }
+        if (_json_.h30 != undefined) { this.h30 = _json_.h30 } else { this.h30 = undefined }
+        if (_json_.h39 != undefined) { this.h39 = _json_.h39 } else { this.h39 = undefined }
+        if (_json_.h47 != undefined) { this.h47 = _json_.h47 } else { this.h47 = undefined }
+        if (_json_.h57 != undefined) { this.h57 = _json_.h57 } else { this.h57 = undefined }
+        if (_json_.h63 != undefined) { this.h63 = _json_.h63 } else { this.h63 = undefined }
+        if (_json_.h74 != undefined) { this.h74 = _json_.h74 } else { this.h74 = undefined }
+        if (_json_.h84 != undefined) { this.h84 = _json_.h84 } else { this.h84 = undefined }
+        if (_json_.h88 != undefined) { this.h88 = _json_.h88 } else { this.h88 = undefined }
+        if (_json_.h92 != undefined) { this.h92 = _json_.h92 } else { this.h92 = undefined }
+        if (_json_.h98 != undefined) { this.h98 = _json_.h98 } else { this.h98 = undefined }
+        if (_json_.h106 != undefined) { this.h106 = _json_.h106 } else { this.h106 = undefined }
+        if (_json_.h110 != undefined) { this.h110 = _json_.h110 } else { this.h110 = undefined }
+        if (_json_.h117 != undefined) { this.h117 = _json_.h117 } else { this.h117 = undefined }
+        if (_json_.h123 != undefined) { this.h123 = _json_.h123 } else { this.h123 = undefined }
+        if (_json_.h127 != undefined) { this.h127 = _json_.h127 } else { this.h127 = undefined }
+        if (_json_.h131 != undefined) { this.h131 = _json_.h131 } else { this.h131 = undefined }
+        if (_json_.h140 != undefined) { this.h140 = _json_.h140 } else { this.h140 = undefined }
+        if (_json_.h6 != undefined) { this.h6 = _json_.h6 } else { this.h6 = undefined }
+        if (_json_.h19 != undefined) { this.h19 = _json_.h19 } else { this.h19 = undefined }
+        if (_json_.h20 != undefined) { this.h20 = _json_.h20 } else { this.h20 = undefined }
+        if (_json_.h31 != undefined) { this.h31 = _json_.h31 } else { this.h31 = undefined }
+        if (_json_.h40 != undefined) { this.h40 = _json_.h40 } else { this.h40 = undefined }
+        if (_json_.h48 != undefined) { this.h48 = _json_.h48 } else { this.h48 = undefined }
+        if (_json_.h54 != undefined) { this.h54 = _json_.h54 } else { this.h54 = undefined }
+        if (_json_.h58 != undefined) { this.h58 = _json_.h58 } else { this.h58 = undefined }
+        if (_json_.h64 != undefined) { this.h64 = _json_.h64 } else { this.h64 = undefined }
+        if (_json_.h75 != undefined) { this.h75 = _json_.h75 } else { this.h75 = undefined }
+        if (_json_.h85 != undefined) { this.h85 = _json_.h85 } else { this.h85 = undefined }
+        if (_json_.h93 != undefined) { this.h93 = _json_.h93 } else { this.h93 = undefined }
+        if (_json_.h99 != undefined) { this.h99 = _json_.h99 } else { this.h99 = undefined }
+        if (_json_.h107 != undefined) { this.h107 = _json_.h107 } else { this.h107 = undefined }
+        if (_json_.h111 != undefined) { this.h111 = _json_.h111 } else { this.h111 = undefined }
+        if (_json_.h118 != undefined) { this.h118 = _json_.h118 } else { this.h118 = undefined }
+        if (_json_.h124 != undefined) { this.h124 = _json_.h124 } else { this.h124 = undefined }
+        if (_json_.h128 != undefined) { this.h128 = _json_.h128 } else { this.h128 = undefined }
+        if (_json_.h132 != undefined) { this.h132 = _json_.h132 } else { this.h132 = undefined }
+        if (_json_.h7 != undefined) { this.h7 = _json_.h7 } else { this.h7 = undefined }
+        if (_json_.h21 != undefined) { this.h21 = _json_.h21 } else { this.h21 = undefined }
+        if (_json_.h22 != undefined) { this.h22 = _json_.h22 } else { this.h22 = undefined }
+        if (_json_.h23 != undefined) { this.h23 = _json_.h23 } else { this.h23 = undefined }
+        if (_json_.h32 != undefined) { this.h32 = _json_.h32 } else { this.h32 = undefined }
+        if (_json_.h41 != undefined) { this.h41 = _json_.h41 } else { this.h41 = undefined }
+        if (_json_.h49 != undefined) { this.h49 = _json_.h49 } else { this.h49 = undefined }
+        if (_json_.h59 != undefined) { this.h59 = _json_.h59 } else { this.h59 = undefined }
+        if (_json_.h65 != undefined) { this.h65 = _json_.h65 } else { this.h65 = undefined }
+        if (_json_.h76 != undefined) { this.h76 = _json_.h76 } else { this.h76 = undefined }
+        if (_json_.h86 != undefined) { this.h86 = _json_.h86 } else { this.h86 = undefined }
+        if (_json_.h89 != undefined) { this.h89 = _json_.h89 } else { this.h89 = undefined }
+        if (_json_.h94 != undefined) { this.h94 = _json_.h94 } else { this.h94 = undefined }
+        if (_json_.h100 != undefined) { this.h100 = _json_.h100 } else { this.h100 = undefined }
+        if (_json_.h112 != undefined) { this.h112 = _json_.h112 } else { this.h112 = undefined }
+        if (_json_.h119 != undefined) { this.h119 = _json_.h119 } else { this.h119 = undefined }
+        if (_json_.h125 != undefined) { this.h125 = _json_.h125 } else { this.h125 = undefined }
+        if (_json_.h133 != undefined) { this.h133 = _json_.h133 } else { this.h133 = undefined }
+        if (_json_.h136 != undefined) { this.h136 = _json_.h136 } else { this.h136 = undefined }
+        if (_json_.h8 != undefined) { this.h8 = _json_.h8 } else { this.h8 = undefined }
+        if (_json_.h9 != undefined) { this.h9 = _json_.h9 } else { this.h9 = undefined }
+        if (_json_.h24 != undefined) { this.h24 = _json_.h24 } else { this.h24 = undefined }
+        if (_json_.h25 != undefined) { this.h25 = _json_.h25 } else { this.h25 = undefined }
+        if (_json_.h33 != undefined) { this.h33 = _json_.h33 } else { this.h33 = undefined }
+        if (_json_.h42 != undefined) { this.h42 = _json_.h42 } else { this.h42 = undefined }
+        if (_json_.h50 != undefined) { this.h50 = _json_.h50 } else { this.h50 = undefined }
+        if (_json_.h60 != undefined) { this.h60 = _json_.h60 } else { this.h60 = undefined }
+        if (_json_.h66 != undefined) { this.h66 = _json_.h66 } else { this.h66 = undefined }
+        if (_json_.h68 != undefined) { this.h68 = _json_.h68 } else { this.h68 = undefined }
+        if (_json_.h77 != undefined) { this.h77 = _json_.h77 } else { this.h77 = undefined }
+        if (_json_.h87 != undefined) { this.h87 = _json_.h87 } else { this.h87 = undefined }
+        if (_json_.h95 != undefined) { this.h95 = _json_.h95 } else { this.h95 = undefined }
+        if (_json_.h101 != undefined) { this.h101 = _json_.h101 } else { this.h101 = undefined }
+        if (_json_.h102 != undefined) { this.h102 = _json_.h102 } else { this.h102 = undefined }
+        if (_json_.h113 != undefined) { this.h113 = _json_.h113 } else { this.h113 = undefined }
+        if (_json_.h120 != undefined) { this.h120 = _json_.h120 } else { this.h120 = undefined }
+        if (_json_.h134 != undefined) { this.h134 = _json_.h134 } else { this.h134 = undefined }
+        if (_json_.h10 != undefined) { this.h10 = _json_.h10 } else { this.h10 = undefined }
+        if (_json_.h26 != undefined) { this.h26 = _json_.h26 } else { this.h26 = undefined }
+        if (_json_.h34 != undefined) { this.h34 = _json_.h34 } else { this.h34 = undefined }
+        if (_json_.h43 != undefined) { this.h43 = _json_.h43 } else { this.h43 = undefined }
+        if (_json_.h51 != undefined) { this.h51 = _json_.h51 } else { this.h51 = undefined }
+        if (_json_.h61 != undefined) { this.h61 = _json_.h61 } else { this.h61 = undefined }
+        if (_json_.h67 != undefined) { this.h67 = _json_.h67 } else { this.h67 = undefined }
+        if (_json_.h69 != undefined) { this.h69 = _json_.h69 } else { this.h69 = undefined }
+        if (_json_.h70 != undefined) { this.h70 = _json_.h70 } else { this.h70 = undefined }
+        if (_json_.h71 != undefined) { this.h71 = _json_.h71 } else { this.h71 = undefined }
+        if (_json_.h78 != undefined) { this.h78 = _json_.h78 } else { this.h78 = undefined }
+        if (_json_.h79 != undefined) { this.h79 = _json_.h79 } else { this.h79 = undefined }
+        if (_json_.h80 != undefined) { this.h80 = _json_.h80 } else { this.h80 = undefined }
+        if (_json_.h81 != undefined) { this.h81 = _json_.h81 } else { this.h81 = undefined }
+        if (_json_.h103 != undefined) { this.h103 = _json_.h103 } else { this.h103 = undefined }
+        if (_json_.h114 != undefined) { this.h114 = _json_.h114 } else { this.h114 = undefined }
+        if (_json_.h11 != undefined) { this.h11 = _json_.h11 } else { this.h11 = undefined }
+        if (_json_.h12 != undefined) { this.h12 = _json_.h12 } else { this.h12 = undefined }
+        if (_json_.h27 != undefined) { this.h27 = _json_.h27 } else { this.h27 = undefined }
+        if (_json_.h35 != undefined) { this.h35 = _json_.h35 } else { this.h35 = undefined }
+        if (_json_.h44 != undefined) { this.h44 = _json_.h44 } else { this.h44 = undefined }
+        if (_json_.h52 != undefined) { this.h52 = _json_.h52 } else { this.h52 = undefined }
+        if (_json_.h115 != undefined) { this.h115 = _json_.h115 } else { this.h115 = undefined }
     }
 
-    readonly h1: number|undefined
-    readonly h2: number|undefined
-    readonly h13: number|undefined
-    readonly h14: number|undefined
-    readonly h36: number|undefined
-    readonly h137: number|undefined
-    readonly h3: number|undefined
-    readonly h15: number|undefined
-    readonly h28: number|undefined
-    readonly h37: number|undefined
-    readonly h45: number|undefined
-    readonly h55: number|undefined
-    readonly h72: number|undefined
-    readonly h82: number|undefined
-    readonly h90: number|undefined
-    readonly h96: number|undefined
-    readonly h104: number|undefined
-    readonly h108: number|undefined
-    readonly h121: number|undefined
-    readonly h129: number|undefined
-    readonly h138: number|undefined
-    readonly h4: number|undefined
-    readonly h16: number|undefined
-    readonly h17: number|undefined
-    readonly h29: number|undefined
-    readonly h38: number|undefined
-    readonly h46: number|undefined
-    readonly h53: number|undefined
-    readonly h56: number|undefined
-    readonly h62: number|undefined
-    readonly h73: number|undefined
-    readonly h83: number|undefined
-    readonly h91: number|undefined
-    readonly h97: number|undefined
-    readonly h105: number|undefined
-    readonly h109: number|undefined
-    readonly h116: number|undefined
-    readonly h122: number|undefined
-    readonly h126: number|undefined
-    readonly h130: number|undefined
-    readonly h135: number|undefined
-    readonly h139: number|undefined
-    readonly h5: number|undefined
-    readonly h18: number|undefined
-    readonly h30: number|undefined
-    readonly h39: number|undefined
-    readonly h47: number|undefined
-    readonly h57: number|undefined
-    readonly h63: number|undefined
-    readonly h74: number|undefined
-    readonly h84: number|undefined
-    readonly h88: number|undefined
-    readonly h92: number|undefined
-    readonly h98: number|undefined
-    readonly h106: number|undefined
-    readonly h110: number|undefined
-    readonly h117: number|undefined
-    readonly h123: number|undefined
-    readonly h127: number|undefined
-    readonly h131: number|undefined
-    readonly h140: number|undefined
-    readonly h6: number|undefined
-    readonly h19: number|undefined
-    readonly h20: number|undefined
-    readonly h31: number|undefined
-    readonly h40: number|undefined
-    readonly h48: number|undefined
-    readonly h54: number|undefined
-    readonly h58: number|undefined
-    readonly h64: number|undefined
-    readonly h75: number|undefined
-    readonly h85: number|undefined
-    readonly h93: number|undefined
-    readonly h99: number|undefined
-    readonly h107: number|undefined
-    readonly h111: number|undefined
-    readonly h118: number|undefined
-    readonly h124: number|undefined
-    readonly h128: number|undefined
-    readonly h132: number|undefined
-    readonly h7: number|undefined
-    readonly h21: number|undefined
-    readonly h22: number|undefined
-    readonly h23: number|undefined
-    readonly h32: number|undefined
-    readonly h41: number|undefined
-    readonly h49: number|undefined
-    readonly h59: number|undefined
-    readonly h65: number|undefined
-    readonly h76: number|undefined
-    readonly h86: number|undefined
-    readonly h89: number|undefined
-    readonly h94: number|undefined
-    readonly h100: number|undefined
-    readonly h112: number|undefined
-    readonly h119: number|undefined
-    readonly h125: number|undefined
-    readonly h133: number|undefined
-    readonly h136: number|undefined
-    readonly h8: number|undefined
-    readonly h9: number|undefined
-    readonly h24: number|undefined
-    readonly h25: number|undefined
-    readonly h33: number|undefined
-    readonly h42: number|undefined
-    readonly h50: number|undefined
-    readonly h60: number|undefined
-    readonly h66: number|undefined
-    readonly h68: number|undefined
-    readonly h77: number|undefined
-    readonly h87: number|undefined
-    readonly h95: number|undefined
-    readonly h101: number|undefined
-    readonly h102: number|undefined
-    readonly h113: number|undefined
-    readonly h120: number|undefined
-    readonly h134: number|undefined
-    readonly h10: number|undefined
-    readonly h26: number|undefined
-    readonly h34: number|undefined
-    readonly h43: number|undefined
-    readonly h51: number|undefined
-    readonly h61: number|undefined
-    readonly h67: number|undefined
-    readonly h69: number|undefined
-    readonly h70: number|undefined
-    readonly h71: number|undefined
-    readonly h78: number|undefined
-    readonly h79: number|undefined
-    readonly h80: number|undefined
-    readonly h81: number|undefined
-    readonly h103: number|undefined
-    readonly h114: number|undefined
-    readonly h11: number|undefined
-    readonly h12: number|undefined
-    readonly h27: number|undefined
-    readonly h35: number|undefined
-    readonly h44: number|undefined
-    readonly h52: number|undefined
-    readonly h115: number|undefined
+    readonly h1: number | undefined
+    readonly h2: number | undefined
+    readonly h13: number | undefined
+    readonly h14: number | undefined
+    readonly h36: number | undefined
+    readonly h137: number | undefined
+    readonly h3: number | undefined
+    readonly h15: number | undefined
+    readonly h28: number | undefined
+    readonly h37: number | undefined
+    readonly h45: number | undefined
+    readonly h55: number | undefined
+    readonly h72: number | undefined
+    readonly h82: number | undefined
+    readonly h90: number | undefined
+    readonly h96: number | undefined
+    readonly h104: number | undefined
+    readonly h108: number | undefined
+    readonly h121: number | undefined
+    readonly h129: number | undefined
+    readonly h138: number | undefined
+    readonly h4: number | undefined
+    readonly h16: number | undefined
+    readonly h17: number | undefined
+    readonly h29: number | undefined
+    readonly h38: number | undefined
+    readonly h46: number | undefined
+    readonly h53: number | undefined
+    readonly h56: number | undefined
+    readonly h62: number | undefined
+    readonly h73: number | undefined
+    readonly h83: number | undefined
+    readonly h91: number | undefined
+    readonly h97: number | undefined
+    readonly h105: number | undefined
+    readonly h109: number | undefined
+    readonly h116: number | undefined
+    readonly h122: number | undefined
+    readonly h126: number | undefined
+    readonly h130: number | undefined
+    readonly h135: number | undefined
+    readonly h139: number | undefined
+    readonly h5: number | undefined
+    readonly h18: number | undefined
+    readonly h30: number | undefined
+    readonly h39: number | undefined
+    readonly h47: number | undefined
+    readonly h57: number | undefined
+    readonly h63: number | undefined
+    readonly h74: number | undefined
+    readonly h84: number | undefined
+    readonly h88: number | undefined
+    readonly h92: number | undefined
+    readonly h98: number | undefined
+    readonly h106: number | undefined
+    readonly h110: number | undefined
+    readonly h117: number | undefined
+    readonly h123: number | undefined
+    readonly h127: number | undefined
+    readonly h131: number | undefined
+    readonly h140: number | undefined
+    readonly h6: number | undefined
+    readonly h19: number | undefined
+    readonly h20: number | undefined
+    readonly h31: number | undefined
+    readonly h40: number | undefined
+    readonly h48: number | undefined
+    readonly h54: number | undefined
+    readonly h58: number | undefined
+    readonly h64: number | undefined
+    readonly h75: number | undefined
+    readonly h85: number | undefined
+    readonly h93: number | undefined
+    readonly h99: number | undefined
+    readonly h107: number | undefined
+    readonly h111: number | undefined
+    readonly h118: number | undefined
+    readonly h124: number | undefined
+    readonly h128: number | undefined
+    readonly h132: number | undefined
+    readonly h7: number | undefined
+    readonly h21: number | undefined
+    readonly h22: number | undefined
+    readonly h23: number | undefined
+    readonly h32: number | undefined
+    readonly h41: number | undefined
+    readonly h49: number | undefined
+    readonly h59: number | undefined
+    readonly h65: number | undefined
+    readonly h76: number | undefined
+    readonly h86: number | undefined
+    readonly h89: number | undefined
+    readonly h94: number | undefined
+    readonly h100: number | undefined
+    readonly h112: number | undefined
+    readonly h119: number | undefined
+    readonly h125: number | undefined
+    readonly h133: number | undefined
+    readonly h136: number | undefined
+    readonly h8: number | undefined
+    readonly h9: number | undefined
+    readonly h24: number | undefined
+    readonly h25: number | undefined
+    readonly h33: number | undefined
+    readonly h42: number | undefined
+    readonly h50: number | undefined
+    readonly h60: number | undefined
+    readonly h66: number | undefined
+    readonly h68: number | undefined
+    readonly h77: number | undefined
+    readonly h87: number | undefined
+    readonly h95: number | undefined
+    readonly h101: number | undefined
+    readonly h102: number | undefined
+    readonly h113: number | undefined
+    readonly h120: number | undefined
+    readonly h134: number | undefined
+    readonly h10: number | undefined
+    readonly h26: number | undefined
+    readonly h34: number | undefined
+    readonly h43: number | undefined
+    readonly h51: number | undefined
+    readonly h61: number | undefined
+    readonly h67: number | undefined
+    readonly h69: number | undefined
+    readonly h70: number | undefined
+    readonly h71: number | undefined
+    readonly h78: number | undefined
+    readonly h79: number | undefined
+    readonly h80: number | undefined
+    readonly h81: number | undefined
+    readonly h103: number | undefined
+    readonly h114: number | undefined
+    readonly h11: number | undefined
+    readonly h12: number | undefined
+    readonly h27: number | undefined
+    readonly h35: number | undefined
+    readonly h44: number | undefined
+    readonly h52: number | undefined
+    readonly h115: number | undefined
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
@@ -742,12 +742,12 @@ export class rebirth {
      */
     readonly defence: number
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
     }
 }
 
@@ -791,7 +791,7 @@ export class role {
         if (_json_.relations === undefined) { throw new Error() }
         this.relations = new RoleRelation(_json_.relations)
         if (_json_.skills === undefined) { throw new Error() }
-        { this.skills = []; for(let _ele0 of _json_.skills) { let _e0; _e0 = _ele0; this.skills.push(_e0);}}
+        { this.skills = []; for (let _ele0 of _json_.skills) { let _e0; _e0 = _ele0; this.skills.push(_e0); } }
     }
 
     /**
@@ -857,24 +857,24 @@ export class role {
     readonly relations: RoleRelation
     readonly skills: string[]
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         this.relations?.resolve(tables);
-        
+
     }
 }
 
@@ -924,13 +924,13 @@ export class role_level {
      */
     readonly health: number
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
     }
 }
 
@@ -941,43 +941,43 @@ export class role_level {
 export class RoleRelation {
 
     constructor(_json_: any) {
-        if(_json_.chi != undefined) { this.chi = _json_.chi } else { this.chi = undefined }
-        if(_json_.hui != undefined) { this.hui = _json_.hui } else { this.hui = undefined }
-        if(_json_.lin != undefined) { this.lin = _json_.lin } else { this.lin = undefined }
-        if(_json_.mao != undefined) { this.mao = _json_.mao } else { this.mao = undefined }
-        if(_json_.jia != undefined) { this.jia = _json_.jia } else { this.jia = undefined }
-        if(_json_.luo != undefined) { this.luo = _json_.luo } else { this.luo = undefined }
-        if(_json_.yu != undefined) { this.yu = _json_.yu } else { this.yu = undefined }
-        if(_json_.zhao != undefined) { this.zhao = _json_.zhao } else { this.zhao = undefined }
-        if(_json_.ti != undefined) { this.ti = _json_.ti } else { this.ti = undefined }
-        if(_json_.jiao != undefined) { this.jiao = _json_.jiao } else { this.jiao = undefined }
-        if(_json_.zhi != undefined) { this.zhi = _json_.zhi } else { this.zhi = undefined }
+        if (_json_.chi != undefined) { this.chi = _json_.chi } else { this.chi = undefined }
+        if (_json_.hui != undefined) { this.hui = _json_.hui } else { this.hui = undefined }
+        if (_json_.lin != undefined) { this.lin = _json_.lin } else { this.lin = undefined }
+        if (_json_.mao != undefined) { this.mao = _json_.mao } else { this.mao = undefined }
+        if (_json_.jia != undefined) { this.jia = _json_.jia } else { this.jia = undefined }
+        if (_json_.luo != undefined) { this.luo = _json_.luo } else { this.luo = undefined }
+        if (_json_.yu != undefined) { this.yu = _json_.yu } else { this.yu = undefined }
+        if (_json_.zhao != undefined) { this.zhao = _json_.zhao } else { this.zhao = undefined }
+        if (_json_.ti != undefined) { this.ti = _json_.ti } else { this.ti = undefined }
+        if (_json_.jiao != undefined) { this.jiao = _json_.jiao } else { this.jiao = undefined }
+        if (_json_.zhi != undefined) { this.zhi = _json_.zhi } else { this.zhi = undefined }
     }
 
-    readonly chi: number|undefined
-    readonly hui: number|undefined
-    readonly lin: number|undefined
-    readonly mao: number|undefined
-    readonly jia: number|undefined
-    readonly luo: number|undefined
-    readonly yu: number|undefined
-    readonly zhao: number|undefined
-    readonly ti: number|undefined
-    readonly jiao: number|undefined
-    readonly zhi: number|undefined
+    readonly chi: number | undefined
+    readonly hui: number | undefined
+    readonly lin: number | undefined
+    readonly mao: number | undefined
+    readonly jia: number | undefined
+    readonly luo: number | undefined
+    readonly yu: number | undefined
+    readonly zhao: number | undefined
+    readonly ti: number | undefined
+    readonly jiao: number | undefined
+    readonly zhi: number | undefined
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
@@ -1005,12 +1005,12 @@ export class skill {
         if (_json_.trigger === undefined) { throw new Error() }
         this.trigger = _json_.trigger
         if (_json_.condition === undefined) { throw new Error() }
-        this.condition = new Map<string, number>(); for(var _entry0_ of _json_.condition) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.condition.set(_k0, _v0);  }
-        if(_json_.buff_round != undefined) { this.buffRound = _json_.buff_round } else { this.buffRound = undefined }
+        this.condition = new Map<string, number>(); for (var _entry0_ of _json_.condition) { let _k0; _k0 = _entry0_[0]; let _v0; _v0 = _entry0_[1]; this.condition.set(_k0, _v0); }
+        if (_json_.buff_round != undefined) { this.buffRound = _json_.buff_round } else { this.buffRound = undefined }
         if (_json_.rate === undefined) { throw new Error() }
         this.rate = _json_.rate
         if (_json_.values === undefined) { throw new Error() }
-        this.values = new Map<string, number>(); for(var _entry0_ of _json_.values) { let _k0; _k0 = _entry0_[0];  let _v0;  _v0 = _entry0_[1]; this.values.set(_k0, _v0);  }
+        this.values = new Map<string, number>(); for (var _entry0_ of _json_.values) { let _k0; _k0 = _entry0_[0]; let _v0; _v0 = _entry0_[1]; this.values.set(_k0, _v0); }
     }
 
     /**
@@ -1052,7 +1052,7 @@ export class skill {
     /**
      * 持续回合<br/>没有值则不属于buff类，-1永久，0本轮攻击生效，&gt;0buff时间。Buff属性状态、攻防
      */
-    readonly buffRound: number|undefined
+    readonly buffRound: number | undefined
     /**
      * 概率
      */
@@ -1062,19 +1062,19 @@ export class skill {
      */
     readonly values: Map<string, number>
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
@@ -1094,9 +1094,9 @@ export class vector2 {
     readonly x: number
     readonly y: number
 
-    resolve(tables:Tables) {
-        
-        
+    resolve(tables: Tables) {
+
+
     }
 }
 
@@ -1119,10 +1119,10 @@ export class vector3 {
     readonly y: number
     readonly z: number
 
-    resolve(tables:Tables) {
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
     }
 }
 
@@ -1148,11 +1148,11 @@ export class vector4 {
     readonly z: number
     readonly w: number
 
-    resolve(tables:Tables) {
-        
-        
-        
-        
+    resolve(tables: Tables) {
+
+
+
+
     }
 }
 
@@ -1167,7 +1167,7 @@ export class Tbachieve {
     constructor(_json_: any) {
         this._dataMap = new Map<number, achieve>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: achieve
             _v = new achieve(_json2_)
             this._dataList.push(_v)
@@ -1180,9 +1180,8 @@ export class Tbachieve {
 
     get(key: number): achieve | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1198,7 +1197,7 @@ export class Tblang {
     constructor(_json_: any) {
         this._dataMap = new Map<string, lang>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: lang
             _v = new lang(_json2_)
             this._dataList.push(_v)
@@ -1211,9 +1210,8 @@ export class Tblang {
 
     get(key: string): lang | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1229,7 +1227,7 @@ export class Tbmap_level {
     constructor(_json_: any) {
         this._dataMap = new Map<number, map_level>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: map_level
             _v = new map_level(_json2_)
             this._dataList.push(_v)
@@ -1242,9 +1240,8 @@ export class Tbmap_level {
 
     get(key: number): map_level | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1260,7 +1257,7 @@ export class Tbrebirth {
     constructor(_json_: any) {
         this._dataMap = new Map<number, rebirth>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: rebirth
             _v = new rebirth(_json2_)
             this._dataList.push(_v)
@@ -1273,9 +1270,8 @@ export class Tbrebirth {
 
     get(key: number): rebirth | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1291,7 +1287,7 @@ export class Tbrole {
     constructor(_json_: any) {
         this._dataMap = new Map<string, role>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: role
             _v = new role(_json2_)
             this._dataList.push(_v)
@@ -1304,9 +1300,8 @@ export class Tbrole {
 
     get(key: string): role | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1322,7 +1317,7 @@ export class Tbrole_level {
     constructor(_json_: any) {
         this._dataMap = new Map<number, role_level>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: role_level
             _v = new role_level(_json2_)
             this._dataList.push(_v)
@@ -1335,9 +1330,8 @@ export class Tbrole_level {
 
     get(key: number): role_level | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1353,7 +1347,7 @@ export class Tbskill {
     constructor(_json_: any) {
         this._dataMap = new Map<string, skill>()
         this._dataList = []
-        for(var _json2_ of _json_) {
+        for (var _json2_ of _json_) {
             let _v: skill
             _v = new skill(_json2_)
             this._dataList.push(_v)
@@ -1366,9 +1360,8 @@ export class Tbskill {
 
     get(key: string): skill | undefined { return this._dataMap.get(key); }
 
-    resolve(tables:Tables) {
-        for(let  data of this._dataList)
-        {
+    resolve(tables: Tables) {
+        for (let data of this._dataList) {
             data.resolve(tables)
         }
     }
@@ -1382,19 +1375,19 @@ type JsonLoader = (file: string) => any
 
 export class Tables {
     private _Tbachieve: Tbachieve
-    get Tbachieve(): Tbachieve  { return this._Tbachieve;}
+    get Tbachieve(): Tbachieve { return this._Tbachieve; }
     private _Tblang: Tblang
-    get Tblang(): Tblang  { return this._Tblang;}
+    get Tblang(): Tblang { return this._Tblang; }
     private _Tbmap_level: Tbmap_level
-    get Tbmap_level(): Tbmap_level  { return this._Tbmap_level;}
+    get Tbmap_level(): Tbmap_level { return this._Tbmap_level; }
     private _Tbrebirth: Tbrebirth
-    get Tbrebirth(): Tbrebirth  { return this._Tbrebirth;}
+    get Tbrebirth(): Tbrebirth { return this._Tbrebirth; }
     private _Tbrole: Tbrole
-    get Tbrole(): Tbrole  { return this._Tbrole;}
+    get Tbrole(): Tbrole { return this._Tbrole; }
     private _Tbrole_level: Tbrole_level
-    get Tbrole_level(): Tbrole_level  { return this._Tbrole_level;}
+    get Tbrole_level(): Tbrole_level { return this._Tbrole_level; }
     private _Tbskill: Tbskill
-    get Tbskill(): Tbskill  { return this._Tbskill;}
+    get Tbskill(): Tbskill { return this._Tbskill; }
 
     constructor(loader: JsonLoader) {
         this._Tbachieve = new Tbachieve(loader('tbachieve'))

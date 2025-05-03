@@ -7,6 +7,7 @@ import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
 import { PopUp } from "./PopUp";
 import { isAndroid, playAd } from "../platform";
+import { getRoleLevelAttributes, RoleLevel } from "../core/level";
 
 const { regClass } = Laya;
 
@@ -117,7 +118,7 @@ export class Jinhua extends Laya.Script {
         } else {
             const siwang = 0.15;
             if (Math.random() < siwang) {
-                Main.player_dead();
+                Main.instance.player_dead();
                 MessageBox.tip(xinximoban.jinhua.shibai1.toStr().replace('^', color_config.xinximoban.shanghai), false);
                 this.owner.close();
             } else {
@@ -138,7 +139,7 @@ export class Jinhua extends Laya.Script {
     static getPower(): number {
         let playerData = Save.data.player;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(playerData.level);
+        let levelData: RoleLevel = getRoleLevelAttributes(playerData.level);
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(Save.data.game.rebirth);
         let addition = Main.getAddition();
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);

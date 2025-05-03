@@ -50,7 +50,7 @@ window["onTapTapLogin"] = function (flag: boolean) {
 
 window["onAdLoaded"] = function (state: number) {
     if (state == 1) {
-        Main.fuhuo_load();
+        Main.instance.fuhuo_load();
     }
     else if (state == 2) {
         Jinhua.ad_load();
@@ -60,7 +60,7 @@ window["onAdLoaded"] = function (state: number) {
 window["onAdRewarded"] = function (state: number) {
     // MessageBox.show("恭喜获得奖励!");
     if (state == 1) {
-        Main.fuhuo_success();
+        Main.instance.fuhuo_success();
     }
     else if (state == 2) {
         Jinhua.ad_success();

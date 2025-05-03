@@ -2013,14 +2013,24 @@
         },
         {
           "_$override": "y6ek77jm",
-          "visible": false
+          "visible": true,
+          "y": 740,
+          "x": 100
+        },
+        {
+          "_$override": [
+            "y6ek77jm",
+            "3mo5miu3"
+          ],
+          "color": "#458d47"
         },
         {
           "_$override": [
             "y6ek77jm",
             "au8mtcie"
           ],
-          "text": "取消"
+          "text": "详情",
+          "color": "rgba(252, 220, 170, 1)"
         },
         {
           "_$id": "eo9zq4gh",
@@ -2116,6 +2126,7 @@
         {
           "_$id": "noh9oez3",
           "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "_$index": 7,
           "name": "2",
           "active": true,
           "x": 470,
@@ -2154,6 +2165,89 @@
             {
               "_$override": "qnb9iybi",
               "visible": false
+            }
+          ]
+        },
+        {
+          "_$id": "ptry2h0x",
+          "_$type": "Image",
+          "name": "Des",
+          "x": 360,
+          "y": 220,
+          "width": 600,
+          "height": 400,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "visible": false,
+          "skin": "res://10b83ef7-2d89-4e63-9679-ed75a12c0ca0",
+          "sizeGrid": "25,20,20,23,0",
+          "color": "#538f8a",
+          "_$child": [
+            {
+              "_$id": "0ti2xen5",
+              "_$type": "VBox",
+              "name": "VBox",
+              "x": 20,
+              "y": 20,
+              "width": 560,
+              "height": 360,
+              "left": 20,
+              "right": 20,
+              "top": 20,
+              "bottom": 20,
+              "space": 0,
+              "_$child": [
+                {
+                  "_$id": "mkqf5sin",
+                  "_$type": "Label",
+                  "name": "Label1",
+                  "width": 560,
+                  "height": 120,
+                  "left": 0,
+                  "right": 0,
+                  "text": "",
+                  "fontSize": 30,
+                  "color": "#FFFFFF",
+                  "html": true,
+                  "valign": "middle",
+                  "wordWrap": true,
+                  "padding": "0,0,0,0"
+                },
+                {
+                  "_$id": "fgpomr26",
+                  "_$type": "Label",
+                  "name": "Label2",
+                  "y": 120,
+                  "width": 560,
+                  "height": 120,
+                  "left": 0,
+                  "right": 0,
+                  "text": "",
+                  "fontSize": 30,
+                  "color": "#FFFFFF",
+                  "html": true,
+                  "valign": "middle",
+                  "wordWrap": true,
+                  "padding": "0,0,0,0"
+                },
+                {
+                  "_$id": "fh1pa8d1",
+                  "_$type": "Label",
+                  "name": "Label3",
+                  "y": 240,
+                  "width": 560,
+                  "height": 120,
+                  "left": 0,
+                  "right": 0,
+                  "text": "",
+                  "fontSize": 30,
+                  "color": "#FFFFFF",
+                  "html": true,
+                  "valign": "middle",
+                  "wordWrap": true,
+                  "padding": "0,0,0,0"
+                }
+              ]
             }
           ]
         }

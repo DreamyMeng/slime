@@ -17,6 +17,8 @@ export class Login extends Laya.Script {
     @property({ type: Laya.Sprite })
     Scene2: MyButton;
     @property({ type: Laya.Sprite })
+    Delete: MyButton;
+    @property({ type: Laya.Sprite })
     settings: MyButton;
     @property({ type: Laya.ComboBox })
     ComboBox: Laya.ComboBox;
@@ -58,6 +60,13 @@ export class Login extends Laya.Script {
         // this.ComboBox.selectHandler = Laya.Handler.create(this, (_: number) => {
         // }, null, false);
 
+        this.Delete.onClick = () => {
+            MessageBox.show("是否删除存档？", () => {
+                Save.data = Save.newGame();
+                Save.saveGame();
+            });
+        }
+
         this.Scene1.onClick = () => {
             Laya.Scene.open("Scene.ls");
         }
@@ -78,6 +87,8 @@ export class Login extends Laya.Script {
             Save.data.setting.sound = this.soundBar.value / 100;
             Laya.SoundManager.setMusicVolume(Save.data.setting.music);
             Laya.SoundManager.setSoundVolume(Save.data.setting.sound);
+            Laya.SoundManager.soundMuted = Save.data.setting.sound === 0;
+            Laya.SoundManager.musicMuted = Save.data.setting.music === 0;
 
             let font_style = this.sys_tog.selected ? 'system' : 'default';
             Laya.Config.defaultFont = font_style === 'system' ? null : 'AlimamaDaoLiTi';
@@ -100,10 +111,11 @@ export class Login extends Laya.Script {
         if (Laya.Config.defaultFont === null) this.sel_tog.selected = true;
         else this.sys_tog.selected = true;
 
-        Laya.SoundManager.muted = false;
         Laya.SoundManager.setMusicVolume(Save.data.setting.music);
         Laya.SoundManager.setSoundVolume(Save.data.setting.sound);
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
+        Laya.SoundManager.soundMuted = Save.data.setting.sound === 0;
+        Laya.SoundManager.musicMuted = Save.data.setting.music === 0;
 
         this.musicBar.value = Save.data.setting.music * 100;
         this.soundBar.value = Save.data.setting.sound * 100;

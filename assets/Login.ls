@@ -36,6 +36,9 @@
           "Scene2": {
             "_$ref": "z85ktl70"
           },
+          "Delete": {
+            "_$ref": "i5r139y1"
+          },
           "settings": {
             "_$ref": "oei8erhu"
           },
@@ -187,13 +190,13 @@
           "_$child": [
             {
               "_$override": "3mo5miu3",
-              "width": 270,
-              "height": 50,
-              "y": 25,
+              "width": 320,
+              "height": 70,
+              "y": 30,
               "skin": "res://382f7527-79e8-4e82-8710-2bb08f2e01a2",
               "sizeGrid": null,
               "color": "#ffffff",
-              "x": 135
+              "x": 150
             }
           ]
         },
@@ -202,7 +205,7 @@
           "_$type": "VBox",
           "name": "Login",
           "x": 360,
-          "y": 800,
+          "y": 780,
           "width": 720,
           "height": 100,
           "anchorX": 0.5,
@@ -210,8 +213,8 @@
           "visible": false,
           "left": 0,
           "right": 0,
-          "centerY": 160,
-          "space": 10,
+          "centerY": 140,
+          "space": 20,
           "align": "center",
           "_$child": [
             {
@@ -260,7 +263,7 @@
               "name": "Button2",
               "active": true,
               "x": 210,
-              "y": 90,
+              "y": 100,
               "width": 300,
               "height": 80,
               "visible": true,
@@ -289,6 +292,49 @@
                 {
                   "_$override": "qnb9iybi",
                   "visible": false
+                }
+              ]
+            },
+            {
+              "_$id": "i5r139y1",
+              "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+              "_$var": true,
+              "name": "Delete",
+              "active": true,
+              "x": 210,
+              "y": 200,
+              "width": 300,
+              "height": 80,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3mo5miu3",
+                  "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
+                  "width": 255.6336832434451,
+                  "height": 64,
+                  "x": 150,
+                  "y": 40,
+                  "sizeGrid": null,
+                  "color": "#ffffff"
+                },
+                {
+                  "_$override": "au8mtcie",
+                  "left": 0,
+                  "right": 0,
+                  "bottom": -3,
+                  "top": 3,
+                  "fontSize": 44,
+                  "color": "rgba(0, 0, 0, 1)",
+                  "text": "删除存档",
+                  "y": 3
+                },
+                {
+                  "_$override": "qnb9iybi",
+                  "visible": true,
+                  "width": 300,
+                  "text": "处理存档不兼容问题，慎用",
+                  "color": "rgba(255, 255, 255, 1)",
+                  "y": 74
                 }
               ]
             }
@@ -479,7 +525,7 @@
           "height": 64,
           "_mouseState": 2,
           "skin": "res://41488331-0ed3-4c38-959b-6ecc4fdac7e6",
-          "label": "系统",
+          "label": "手机",
           "labelSize": 40,
           "labelColors": "#ffffff,#f5131b,#32cc6b",
           "labelAlign": "center",
@@ -495,7 +541,7 @@
           "height": 64,
           "_mouseState": 2,
           "skin": "res://41488331-0ed3-4c38-959b-6ecc4fdac7e6",
-          "label": "自带",
+          "label": "游戏",
           "labelSize": 40,
           "labelColors": "#ffffff,#f5131b,#32cc6b",
           "labelAlign": "center",

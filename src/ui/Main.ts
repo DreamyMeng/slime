@@ -1,6 +1,7 @@
 const { regClass } = Laya;
 import { Battle } from "../core/battle";
 import { color_config, Config, jinhua_need, shift_config, shuxing_config, skill_rate, xinximoban } from "../core/config";
+import { getRoleLevelAttributes, RoleLevel } from "../core/level";
 import { Save, SaveData_Player } from "../core/save";
 import * as utils from "../core/utils";
 import { isAndroid, playAd } from "../platform";
@@ -56,22 +57,22 @@ export class Main extends MainBase {
 
         this.btn_boss.onClick = () => {
             let scene = Save.data.player.scenes[Save.data.player.curScene]
-            Main.instance.Enemy.getComponent(RoleView).show(scene.boss, scene.level);
-            Main.instance.show_battle(scene.boss, scene.level, true);
+            this.Enemy.getComponent(RoleView).show(scene.boss, scene.level);
+            this.show_battle(scene.boss, scene.level, true);
         }
 
         this.btn_shenru.onClick = () => {
             if (Save.data.player.curScene > Save.data.player.maxScene) return;
             Save.data.player.curScene++;
             utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
-            Main.instance.update_map();
+            this.update_map();
             Save.saveGame();
         }
         utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
         this.btn_fanhui.onClick = () => {
             Save.data.player.curScene = Math.max(Save.data.player.curScene - 1, 1);
             utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
-            Main.instance.update_map();
+            this.update_map();
             Save.saveGame();
         }
 
@@ -192,7 +193,7 @@ export class Main extends MainBase {
     update_player(): void {
         let playerData = Save.data.player;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(playerData.level);
+        let levelData: RoleLevel = getRoleLevelAttributes(playerData.level);
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(Save.data.game.rebirth);
         let addition = Main.getAddition();
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
@@ -241,7 +242,7 @@ export class Main extends MainBase {
             item.getComponent(SkillView).show(roleData.skills[index]);
         }, null, false);
 
-        let list = playerData.skills.concat(new Array<string>(Main.getSkillMax() - playerData.skills.length).fill(''));
+        let list = playerData.skills.concat(new Array<string>(this.getSkillMax() - playerData.skills.length).fill(''));
         this.list_xuexi.array = list;
         this.list_xuexi.renderHandler = Laya.Handler.create(this, (item: Laya.Sprite, index: number) => {
             item.getComponent(SkillView).show(list[index], true);
@@ -307,7 +308,7 @@ export class Main extends MainBase {
                 utils.GameLog.log(xinximoban.zhandou.siwang1.toStr().replace('*', Main.getRoleName(this.battle.enemy.view.data)), false);
                 this.battle.victory();
                 if (Save.data.setting.auto) {
-                    Main.instance.auto_fight();
+                    this.auto_fight();
                     return;
                 }
                 Laya.SoundManager.playSound(Config.sounds.get("win"));
@@ -315,80 +316,82 @@ export class Main extends MainBase {
             } else {
                 // console.log(`${this.enemy.camp} wins the battle!`);
                 utils.GameLog.log(xinximoban.zhandou.siwang2.toStr().replace('*', Main.getRoleName(this.battle.enemy.view.data)), false);
-                Main.player_dead();
+                this.player_dead();
             }
         }
 
         utils.GameLog.log(xinximoban.zhandou.jieshu);
         Laya.SoundManager.playMusic(Config.sounds.get("bgm"));
-        Main.instance.show_map();
+        this.show_map();
     }
 
     curPlayerData: SaveData_Player;
 
-    static player_dead(): void {
+    player_dead(): void {
         console.log('广告时刻');
-        Main.instance.curPlayerData = Save.data.player;
+        // 使用深拷贝而不是引用赋值
+        this.curPlayerData = JSON.parse(JSON.stringify(Save.data.player));
         Save.data.player = Save.reset();
         Laya.SoundManager.playSound(Config.sounds.get("die"));
         Save.data.setting.auto = false;
-        this.instance.update_auto();
+        this.update_auto();
         Save.saveGame();
         let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
-            Main.instance.fuhuo_tip.ok.active = false;
+            this.fuhuo_tip.ok.active = false;
             if (isAndroid()) playAd(1);
             else {
-                Save.data.player.revive--;
+                this.curPlayerData.revive--;
                 this.fuhuo_success();
             }
         }, () => {
             this.fuhuo_fail();
         }, true, false);
-        Main.instance.fuhuo_tip = tip;
+        this.fuhuo_tip = tip;
         tip.ok.title.text = '复活'.toStr();
 
         if (isAndroid()) {
             tip.ok.tip.text = "看广告".toStr();
         } else {
-            if (Save.data.player.revive <= 0) {
+            if (this.curPlayerData.revive <= 0) {
                 tip.ok.active = false;
             } else {
                 tip.ok.active = true;
-                tip.ok.tip.text = "剩余次数:".toStr() + `${Save.data.player.revive}`;
+                tip.ok.tip.text = "剩余次数:".toStr() + `${this.curPlayerData.revive}`;
             }
         }
     }
     fuhuo_tip: PopUp;
-    static fuhuo_success(): void {
-        Save.data.player = Main.instance.curPlayerData;
+    fuhuo_success(): void {
+        Save.data.player = this.curPlayerData;
+        this.update_map();
         MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
         Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         Save.saveGame();
-        if (Main.instance.fuhuo_tip) {
-            Main.instance.fuhuo_tip.close(() => {
-                Main.instance.fuhuo_tip.destroy();
-                Main.instance.fuhuo_tip = null;
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.close(() => {
+                this.fuhuo_tip.destroy();
+                this.fuhuo_tip = null;
             });
         }
     }
 
-    static fuhuo_load(): void {
-        if (Main.instance.fuhuo_tip) {
-            Main.instance.fuhuo_tip.ok.active = true;
+    fuhuo_load(): void {
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.ok.active = true;
         }
     }
 
-    static fuhuo_fail(): void {
+    fuhuo_fail(): void {
         MessageBox.tip(`<font color='^'>你死了</font>,等级降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), false);
         // Save.data.player = Save.reset();
-        Main.instance.show_map();
-        Main.instance.update_player();
-        Main.instance.update_skill();
+        this.show_map();
+        this.update_player();
+        this.update_skill();
         Save.saveGame();
-        if (Main.instance.fuhuo_tip) {
-            Main.instance.fuhuo_tip.close(() => {
-                Main.instance.fuhuo_tip.destroy();
-                Main.instance.fuhuo_tip = null;
+        if (this.fuhuo_tip) {
+            this.fuhuo_tip.close(() => {
+                this.fuhuo_tip.destroy();
+                this.fuhuo_tip = null;
             });
         }
     }
@@ -406,7 +409,7 @@ export class Main extends MainBase {
         return '凡';
     }
 
-    static getSkillMax(): number {
+    getSkillMax(): number {
         let playerData = Save.data.player;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
 
@@ -432,7 +435,7 @@ export class Main extends MainBase {
         // 获取当前经验和等级
         let playerData = Save.data.player;
         let curExp = utils.toInt(playerData.exp + num);
-        let levelData = Config.table.Tbrole_level.get(playerData.level);
+        let levelData = getRoleLevelAttributes(playerData.level);
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
 
         while (true) {
@@ -495,7 +498,7 @@ export class Main extends MainBase {
         Save.data.game.roles[id] = 1;
     }
 
-    static learn(targetData: cfg.role) {
+    learn(targetData: cfg.role) {
         if (Math.random() > skill_rate) return;
         let max = this.getSkillMax();
         let playerData = Save.data.player;
@@ -519,7 +522,7 @@ export class Main extends MainBase {
             if (skillData) {
                 playerData.skills.push(skillId);
                 MessageBox.tip(xinximoban.tunshi.toStr().replace('*', Main.getRoleName(targetData)).replace('&', skillData.name.toStr()).replace('^', color_config.xinximoban.skill), false);
-                Main.instance.update_skill();
+                this.update_skill();
             }
         }
     }
@@ -541,7 +544,7 @@ export class Main extends MainBase {
     /**
      * 实际攻击力=（当前角色当前等级攻击力*（1+转生附加））+图鉴附加
      */
-    static getAttack(roleData: cfg.role, levelData: cfg.role_level, rebirthData: cfg.rebirth, addition: { [key: string]: number }): number {
+    static getAttack(roleData: cfg.role, levelData: RoleLevel, rebirthData: cfg.rebirth, addition: { [key: string]: number }): number {
         let value: number;
         value = (levelData.attack * roleData.attackRate * (1 + rebirthData.attack));
         value += (addition.attack);
@@ -551,7 +554,7 @@ export class Main extends MainBase {
     /**
      * 实际防御力=（当前角色当前等级防御力*（1+转生附加））+图鉴附加
      */
-    static getDefence(roleData: cfg.role, levelData: cfg.role_level, rebirthData: cfg.rebirth, addition: { [key: string]: number }): number {
+    static getDefence(roleData: cfg.role, levelData: RoleLevel, rebirthData: cfg.rebirth, addition: { [key: string]: number }): number {
         let value: number;
         value = (levelData.defence * roleData.defenceRate * (1 + rebirthData.defence));
         value += (addition.defence);
@@ -561,7 +564,7 @@ export class Main extends MainBase {
     /**
      * 实际血量=（当前角色当前等级血量*（1+转生附加））+图鉴附加
      */
-    static getHealth(roleData: cfg.role, levelData: cfg.role_level, rebirthData: cfg.rebirth, addition: { [key: string]: number }): number {
+    static getHealth(roleData: cfg.role, levelData: RoleLevel, rebirthData: cfg.rebirth, addition: { [key: string]: number }): number {
         let value: number;
         value = (levelData.health * roleData.healthRate * (1 + rebirthData.health));
         value += (addition.health);

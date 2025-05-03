@@ -8,6 +8,7 @@ import { MessageBox } from '../ui/MessageBox';
 import { RoleView } from '../ui/RoleView';
 import { BuffMgr } from './buff';
 import { bossData, Config, xinximoban } from './config';
+import { getRoleLevelAttributes, RoleLevel } from "./level";
 import { BaseRole } from './role';
 import { Save } from './save';
 import { SkillMgr } from './skill';
@@ -30,7 +31,7 @@ export class Battle {
     init(id: string, level: number, isBoss: boolean): void {
         let playerData = Save.data.player;
         let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
-        let levelData: cfg.role_level = Config.table.Tbrole_level.get(playerData.level);
+        let levelData: RoleLevel = getRoleLevelAttributes(playerData.level);
         let rebirthData: cfg.rebirth = Config.table.Tbrebirth.get(Save.data.game.rebirth);
         let addition = Main.getAddition();
         let attack = Main.getAttack(roleData, levelData, rebirthData, addition);
@@ -43,7 +44,7 @@ export class Battle {
 
         let sceneData: cfg.map_level = Config.table.Tbmap_level.get(playerData.curScene);
         roleData = Config.table.Tbrole.get(id);
-        levelData = Config.table.Tbrole_level.get(level);
+        levelData = getRoleLevelAttributes(level);
         attack = utils.toInt(levelData.attack * roleData.attackRate * sceneData.attackRate);
         defence = utils.toInt(levelData.defence * roleData.defenceRate * sceneData.defenceRate);
         health = utils.toInt(levelData.health * roleData.healthRate * sceneData.healthRate);
@@ -132,12 +133,12 @@ export class Battle {
 
         let playerData = Save.data.player;
         playerData.scenes[playerData.curScene].count++;
-        let levelData = Config.table.Tbrole_level.get(level);
+        let levelData = getRoleLevelAttributes(level);
 
         Main.addExp(levelData.exp * roleData.expDead);
         Main.addValue(roleData);
 
-        Main.learn(roleData);// 获得技能
+        Main.instance.learn(roleData);// 获得技能
 
         if (isBoss) {
             MessageBox.tip("闯关成功！");

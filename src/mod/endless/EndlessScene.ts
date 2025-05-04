@@ -63,6 +63,11 @@ export class EndlessScene extends Main {
             let label = vbox.getChildByName(`Label${i}`) as Laya.Label;
             this.labels.push(label);
         }
+
+        (this.Reward.getChildByName('back') as MyButton).onClick = () => {
+            this.Reward.close();
+            this.battle_end();
+        }
     }
 
     labels: Laya.Label[] = [];
@@ -202,7 +207,7 @@ export class EndlessScene extends Main {
         return 1 + Math.pow(Math.max(0, level - 1), 1.2) * 0.03;
     }
 
-    override  update_map(): void {
+    override update_map(): void {
         let mapLevel = ++EndlessScene.data.curScene;
         const scale = this.getLevelScale(mapLevel);
         this.label_titile.text = "第*层".toStr().replace('*', utils.numberToChinese(mapLevel));
@@ -210,9 +215,9 @@ export class EndlessScene extends Main {
         utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(mapLevel)), false);
 
         var list = spawnMonsters(mapLevel);
-        this.monster0.getComponent(RoleView).init(scale, list[0], Math.min(mapLevel, 199));
-        this.monster1.getComponent(RoleView).init(scale, list[1], Math.min(mapLevel, 199));
-        this.monster2.getComponent(RoleView).init(scale, list[2], Math.min(mapLevel, 199));
+        this.monster0.getComponent(RoleView).init(scale, list[0], mapLevel);
+        this.monster1.getComponent(RoleView).init(scale, list[1], mapLevel);
+        this.monster2.getComponent(RoleView).init(scale, list[2], mapLevel);
 
         let str = xinximoban.qianjin.toStr();
         list.forEach((id, index) => {

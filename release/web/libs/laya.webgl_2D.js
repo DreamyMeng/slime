@@ -1,1 +1,5438 @@
-!function(e,t){"use strict";class r{constructor(){this._mask=[],this._length=0}_intersectionDefineDatas(e){for(var t=e._mask,r=this._mask,a=this._length-1;a>=0;a--){var i=r[a]&t[a];0==i&&a==this._length-1?this._length--:r[a]=i}}add(e){var t=e._index,r=t+1,a=this._mask,i=this._length;if(i<r){for(a.length<r&&(a.length=r);i<t;i++)a[i]=0;a[t]=e._value,this._length=r}else a[t]|=e._value}remove(e){var t=e._index,r=this._mask,a=this._length-1;if(!(t>a)){var i=r[t]&~e._value;t==a&&0===i?this._length--:r[t]=i}}addDefineDatas(e){var t=e._mask,r=e._length,a=this._mask,i=this._length;if(i<r){a.length=r;for(var n=0;n<i;n++)a[n]|=t[n];for(;n<r;n++)a[n]=t[n];this._length=r}else for(n=0;n<r;n++)a[n]|=t[n]}removeDefineDatas(e){for(var t=e._mask,r=this._mask,a=this._length-1,i=Math.min(e._length,a);i>=0;i--){var n=r[i]&~t[i];i==a&&0===n?(a--,this._length--):r[i]=n}}has(e){var t=e._index;return!(t>=this._length)&&!!(this._mask[t]&e._value)}clear(){this._length=0}cloneTo(e){var t=e._mask,r=this._mask,a=this._length;t.length=a;for(var i=0;i<a;i++)t[i]=r[i];e._length=a}clone(){var e=new r;return this.cloneTo(e),e}destroy(){delete this._mask}}var a,i;e.WebGLExtension=void 0,(a=e.WebGLExtension||(e.WebGLExtension={}))[a.OES_vertex_array_object=0]="OES_vertex_array_object",a[a.ANGLE_instanced_arrays=1]="ANGLE_instanced_arrays",a[a.OES_texture_half_float=2]="OES_texture_half_float",a[a.OES_texture_half_float_linear=3]="OES_texture_half_float_linear",a[a.OES_texture_float=4]="OES_texture_float",a[a.OES_element_index_uint=5]="OES_element_index_uint",a[a.OES_texture_float_linear=6]="OES_texture_float_linear",a[a.EXT_color_buffer_half_float=7]="EXT_color_buffer_half_float",a[a.EXT_shader_texture_lod=8]="EXT_shader_texture_lod",a[a.WEBGL_depth_texture=9]="WEBGL_depth_texture",a[a.EXT_sRGB=10]="EXT_sRGB",a[a.EXT_color_buffer_float=11]="EXT_color_buffer_float",a[a.EXT_texture_filter_anisotropic=12]="EXT_texture_filter_anisotropic",a[a.WEBGL_compressed_texture_s3tc=13]="WEBGL_compressed_texture_s3tc",a[a.WEBGL_compressed_texture_s3tc_srgb=14]="WEBGL_compressed_texture_s3tc_srgb",a[a.WEBGL_compressed_texture_pvrtc=15]="WEBGL_compressed_texture_pvrtc",a[a.WEBGL_compressed_texture_etc1=16]="WEBGL_compressed_texture_etc1",a[a.WEBGL_compressed_texture_etc=17]="WEBGL_compressed_texture_etc",a[a.WEBGL_compressed_texture_astc=18]="WEBGL_compressed_texture_astc",a[a.OES_standard_derivatives=19]="OES_standard_derivatives";class n{constructor(e){this._destroyed=!1,this._engine=e,this._gl=this._engine.gl,this._id=this._engine._IDCounter++}get destroyed(){return this._destroyed}destroy(){this._destroyed||(this._destroyed=!0)}}class s extends n{get gpuMemory(){return this._gpuMemory}set gpuMemory(e){this._changeTexMemory(e),this._gpuMemory=e}_changeTexMemory(e){this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_GPUMemory,-this._gpuMemory+e),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_ALLRenderTexture,-this._gpuMemory+e)}constructor(e,r,a,i,n,s){super(e),this._gpuMemory=0,this.colorFormat=r,this.depthStencilFormat=a,this._isCube=i,this._generateMipmap=n,this._samples=s,this._textures=[],this._depthTexture=null,this._framebuffer=this._gl.createFramebuffer(),s>1&&(this._msaaFramebuffer=this._gl.createFramebuffer()),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_ALLRenderTexture,1)}dispose(){this._textures.forEach((e=>{e&&e.dispose()})),this._textures=null,this._depthTexture&&this._depthTexture.dispose(),this._depthTexture=null,this._framebuffer&&this._gl.deleteFramebuffer(this._framebuffer),this._framebuffer=null,this._depthbuffer&&this._gl.deleteRenderbuffer(this._depthbuffer),this._depthbuffer=null,this._msaaFramebuffer&&this._gl.deleteFramebuffer(this._msaaFramebuffer),this._msaaFramebuffer=null,this._msaaRenderbuffer&&this._gl.deleteRenderbuffer(this._msaaRenderbuffer),this._msaaRenderbuffer=null,this._changeTexMemory(0),this._gpuMemory=0,this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_ALLRenderTexture,-1)}}class _ extends n{get mipmap(){return this._mipmap}get mipmapCount(){return this._mipmapCount}_getSource(){return this.resource}get gpuMemory(){return this._gpuMemory}set gpuMemory(e){this._changeTexMemory(e),this._gpuMemory=e}constructor(e,r,a,i,n,s,_,o,l){super(e),this._gpuMemory=0,this._baseMipmapLevel=0,this._maxMipmapLevel=0,this.resource=this._gl.createTexture(),this.width=a,this.height=i,this.depth=n;const h=e=>!(e&e-1);switch(this.isPotSize=h(a)&&h(i),s==t.TextureDimension.Tex3D&&(this.isPotSize=this.isPotSize&&h(this.depth)),s){case t.TextureDimension.Tex2D:this._statistics_M_Texture=t.GPUEngineStatisticsInfo.M_Texture2D,this._statistics_RC_Texture=t.GPUEngineStatisticsInfo.RC_Texture2D;break;case t.TextureDimension.Tex3D:this._statistics_M_Texture=t.GPUEngineStatisticsInfo.M_Texture3D,this._statistics_RC_Texture=t.GPUEngineStatisticsInfo.RC_Texture3D;break;case t.TextureDimension.Cube:this._statistics_M_Texture=t.GPUEngineStatisticsInfo.M_TextureCube,this._statistics_RC_Texture=t.GPUEngineStatisticsInfo.RC_TextureCube;break;case t.TextureDimension.Texture2DArray:this._statistics_M_Texture=t.GPUEngineStatisticsInfo.M_Texture2DArray,this._statistics_RC_Texture=t.GPUEngineStatisticsInfo.RC_Texture2DArray}this._mipmap=_&&this.isPotSize,this._mipmapCount=this._mipmap?Math.max(Math.ceil(Math.log2(a))+1,Math.ceil(Math.log2(i))+1):1,this._maxMipmapLevel=this._mipmapCount-1,this._baseMipmapLevel=0,this.useSRGBLoad=o,this.gammaCorrection=l,this.target=r,this.filterMode=t.FilterMode.Bilinear,this.wrapU=t.WrapMode.Repeat,this.wrapV=t.WrapMode.Repeat,this.wrapW=t.WrapMode.Repeat,this.anisoLevel=4,this.compareMode=t.TextureCompareMode.None,f.instance._addStatisticsInfo(this._statistics_RC_Texture,1),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_ALLTexture,1)}get filterMode(){return this._filterMode}set filterMode(e){if(this._filterMode!=e&&this.resource){let t=this._gl,r=this.mipmap,a=this.getFilteMinrParam(e,r);this._setTexParameteri(t.TEXTURE_MIN_FILTER,a);let i=this.getFilterMagParam(e);this._setTexParameteri(t.TEXTURE_MAG_FILTER,i),this._filterMode=e}}get wrapU(){return this._warpU}set wrapU(e){if(this._warpU!=e&&this.resource){let t=this._gl,r=this.getWrapParam(e);this._setWrapMode(t.TEXTURE_WRAP_S,r),this._warpU=e}}get wrapV(){return this._warpV}set wrapV(e){if(this._warpV!=e&&this.resource){let t=this._gl,r=this.getWrapParam(e);this._setWrapMode(t.TEXTURE_WRAP_T,r),this._warpV=e}}get wrapW(){return this._warpW}set wrapW(e){if(this._warpW!=e&&this.resource){if(this._engine.getCapable(t.RenderCapable.Texture3D)){let t=this._gl,r=this.getWrapParam(e);this._setWrapMode(t.TEXTURE_WRAP_R,r)}this._warpW=e}}get anisoLevel(){return this._anisoLevel}set anisoLevel(r){let a=this._engine._supportCapatable.getExtension(e.WebGLExtension.EXT_texture_filter_anisotropic);if(a){this._gl;let e=this._engine.getParams(t.RenderParams.Max_AnisoLevel_Count),i=Math.max(1,Math.min(e,r));this._setTexParametexf(a.TEXTURE_MAX_ANISOTROPY_EXT,i),this._anisoLevel=i}else this._anisoLevel=1}set baseMipmapLevel(e){this._engine.isWebGL2&&this._setTexParameteri(this._gl.TEXTURE_BASE_LEVEL,e),this._baseMipmapLevel=e}get baseMipmapLevel(){return this._baseMipmapLevel}set maxMipmapLevel(e){this._engine.isWebGL2&&this._setTexParameteri(this._gl.TEXTURE_MAX_LEVEL,e),this._maxMipmapLevel=e}get maxMipmapLevel(){return this._maxMipmapLevel}get compareMode(){return this._compareMode}set compareMode(e){this._compareMode=e}_setTexParameteri(e,t){let r=this._gl,a=this.target;this._engine._bindTexture(a,this.resource),r.texParameteri(a,e,t),this._engine._bindTexture(a,null)}_setTexParametexf(e,t){let r=this._gl,a=this.target;this._engine._bindTexture(a,this.resource),r.texParameterf(a,e,t),this._engine._bindTexture(a,null)}getFilteMinrParam(e,r){let a=this._gl;switch(e){case t.FilterMode.Point:return r?a.NEAREST_MIPMAP_NEAREST:a.NEAREST;case t.FilterMode.Bilinear:return r?a.LINEAR_MIPMAP_NEAREST:a.LINEAR;case t.FilterMode.Trilinear:return r?a.LINEAR_MIPMAP_LINEAR:a.LINEAR;default:return r?a.LINEAR_MIPMAP_NEAREST:a.LINEAR}}getFilterMagParam(e){let r=this._gl;switch(e){case t.FilterMode.Point:return r.NEAREST;case t.FilterMode.Bilinear:case t.FilterMode.Trilinear:default:return r.LINEAR}}getWrapParam(e){let r=this._gl;switch(e){case t.WrapMode.Repeat:return r.REPEAT;case t.WrapMode.Clamp:return r.CLAMP_TO_EDGE;case t.WrapMode.Mirrored:return r.MIRRORED_REPEAT;default:return r.REPEAT}}_setWrapMode(e,t){let r=this._gl;this.isPotSize||(t=r.CLAMP_TO_EDGE),this._setTexParameteri(e,t)}_changeTexMemory(e){this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_GPUMemory,-this._gpuMemory+e),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_ALLTexture,-this._gpuMemory+e),this._engine._addStatisticsInfo(this._statistics_M_Texture,-this._gpuMemory+e)}dispose(){this._gl.deleteTexture(this.resource),this._changeTexMemory(0),this._gpuMemory=0,f.instance._addStatisticsInfo(this._statistics_RC_Texture,-1),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_ALLTexture,-1)}}class o extends n{constructor(t){super(t),this._glParam={internalFormat:0,format:0,type:0},this.needBitmap=!1,this._sRGB=this._engine._supportCapatable.getExtension(e.WebGLExtension.EXT_sRGB),this._oesTextureHalfFloat=this._engine._supportCapatable.getExtension(e.WebGLExtension.OES_texture_half_float),this._compressdTextureS3tc_srgb=this._engine._supportCapatable.getExtension(e.WebGLExtension.WEBGL_compressed_texture_s3tc_srgb),this._compressedTextureEtc1=this._engine._supportCapatable.getExtension(e.WebGLExtension.WEBGL_compressed_texture_etc1),this._compressedTextureS3tc=this._engine._supportCapatable.getExtension(e.WebGLExtension.WEBGL_compressed_texture_s3tc),this._compressedTextureETC=this._engine._supportCapatable.getExtension(e.WebGLExtension.WEBGL_compressed_texture_etc),this._compressedTextureASTC=this._engine._supportCapatable.getExtension(e.WebGLExtension.WEBGL_compressed_texture_astc),this._webgl_depth_texture=this._engine._supportCapatable.getExtension(e.WebGLExtension.WEBGL_depth_texture)}createTexture3DInternal(e,t,r,a,i,n,s,_){return null}setTexture3DImageData(e,t,r,a,i){return null}setTexture3DPixelsData(e,t,r,a,i){return null}setTexture3DSubPixelsData(e,t,r,a,i,n,s,_,o,l,h,u){return null}glTextureParam(e,r){let a=this._gl;switch(this._glParam.internalFormat=null,this._glParam.format=null,this._glParam.type=null,e){case t.TextureFormat.R8G8B8:this._glParam.internalFormat=r?this._sRGB.SRGB_EXT:a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.R8G8B8A8:this._glParam.internalFormat=r?this._sRGB.SRGB_ALPHA_EXT:a.RGBA,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.R5G6B5:this._glParam.internalFormat=a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_SHORT_5_6_5;break;case t.TextureFormat.R32G32B32A32:this._glParam.internalFormat=a.RGBA,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.FLOAT;break;case t.TextureFormat.R32G32B32:this._glParam.internalFormat=a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.FLOAT;break;case t.TextureFormat.R16G16B16A16:this._glParam.internalFormat=a.RGBA,this._glParam.format=this._glParam.internalFormat,this._glParam.type=this._oesTextureHalfFloat.HALF_FLOAT_OES;break;case t.TextureFormat.R16G16B16:this._glParam.internalFormat=a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=this._oesTextureHalfFloat.HALF_FLOAT_OES;break;case t.TextureFormat.DXT1:this._glParam.internalFormat=r?this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT:this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT1_EXT,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.DXT3:this._glParam.internalFormat=r?this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT:this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT3_EXT,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.DXT5:this._glParam.internalFormat=r?this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT:this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT5_EXT,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC1RGB:this._glParam.internalFormat=this._compressedTextureEtc1.COMPRESSED_RGB_ETC1_WEBGL,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC2RGBA:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC2RGB:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_RGB8_ETC2,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC2SRGB:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_SRGB8_ETC2,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC2SRGB_Alpha8:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC2RGB_Alpha1:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ETC2SRGB_Alpha1:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC4x4:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC6x6:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC8x8:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC10x10:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC12x12:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC4x4SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC6x6SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC8x8SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC10x10SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.ASTC12x12SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;default:throw"Unknown Texture Format."}return this._glParam}glRenderTextureParam(e,r){let a=this._gl;switch(this._glParam.internalFormat=null,this._glParam.format=null,this._glParam.type=null,e){case t.RenderTargetFormat.R8G8B8:this._glParam.internalFormat=r?this._sRGB.SRGB_EXT:a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.RenderTargetFormat.R8G8B8A8:this._glParam.internalFormat=r?this._sRGB.SRGB_EXT:a.RGBA,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_BYTE;break;case t.RenderTargetFormat.R16G16B16:this._glParam.internalFormat=a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=this._oesTextureHalfFloat.HALF_FLOAT_OES;break;case t.RenderTargetFormat.R16G16B16A16:this._glParam.internalFormat=a.RGBA,this._glParam.format=this._glParam.internalFormat,this._glParam.type=this._oesTextureHalfFloat.HALF_FLOAT_OES;break;case t.RenderTargetFormat.R32G32B32:this._glParam.internalFormat=a.RGB,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.FLOAT;break;case t.RenderTargetFormat.R32G32B32A32:this._glParam.internalFormat=a.RGBA,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.FLOAT;break;case t.RenderTargetFormat.DEPTH_16:this._glParam.internalFormat=a.DEPTH_COMPONENT,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_SHORT;break;case t.RenderTargetFormat.DEPTHSTENCIL_24_8:this._glParam.internalFormat=a.DEPTH_STENCIL,this._glParam.format=this._glParam.internalFormat,this._glParam.type=this._webgl_depth_texture.UNSIGNED_INT_24_8_WEBGL;break;case t.RenderTargetFormat.DEPTH_32:this._glParam.internalFormat=a.DEPTH_COMPONENT,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_INT;break;case t.RenderTargetFormat.STENCIL_8:default:throw"render texture format wrong."}return this._glParam}glRenderBufferParam(e,r){let a=this._gl;switch(e){case t.RenderTargetFormat.DEPTH_16:return{internalFormat:a.DEPTH_COMPONENT16,attachment:a.DEPTH_ATTACHMENT};case t.RenderTargetFormat.DEPTHSTENCIL_24_8:case t.RenderTargetFormat.DEPTH_32:return{internalFormat:a.DEPTH_STENCIL,attachment:a.DEPTH_STENCIL_ATTACHMENT};case t.RenderTargetFormat.STENCIL_8:return{internalFormat:a.STENCIL_INDEX8,attachment:a.STENCIL_ATTACHMENT};default:return null}}glRenderTargetAttachment(e){let r=this._gl;switch(e){case t.RenderTargetFormat.DEPTH_16:return r.DEPTH_ATTACHMENT;case t.RenderTargetFormat.DEPTHSTENCIL_24_8:return r.DEPTH_STENCIL_ATTACHMENT;case t.RenderTargetFormat.DEPTH_32:return r.DEPTH_ATTACHMENT;case t.RenderTargetFormat.STENCIL_8:return r.STENCIL_ATTACHMENT;case t.RenderTargetFormat.R8G8B8:case t.RenderTargetFormat.R8G8B8A8:case t.RenderTargetFormat.R16G16B16:case t.RenderTargetFormat.R16G16B16A16:case t.RenderTargetFormat.R32G32B32:case t.RenderTargetFormat.R32G32B32A32:return r.COLOR_ATTACHMENT0;default:throw"render format."}}getTarget(e){let r=this._gl;switch(e){case t.TextureDimension.Tex2D:return r.TEXTURE_2D;case t.TextureDimension.Cube:return r.TEXTURE_CUBE_MAP;default:throw"texture dimension wrong in WebGL1."}}getFormatPixelsParams(e){let r={channels:0,bytesPerPixel:0,dataTypedCons:Uint8Array,typedSize:1};switch(e){case t.TextureFormat.R8G8B8A8:return r.channels=4,r.bytesPerPixel=4,r.dataTypedCons=Uint8Array,r.typedSize=1,r;case t.TextureFormat.R8G8B8:return r.channels=3,r.bytesPerPixel=3,r.dataTypedCons=Uint8Array,r.typedSize=1,r;case t.TextureFormat.R5G6B5:return r.channels=3,r.bytesPerPixel=2,r.dataTypedCons=Uint16Array,r.typedSize=2,r;case t.TextureFormat.R16G16B16:return r.channels=3,r.bytesPerPixel=6,r.dataTypedCons=Uint16Array,r.typedSize=2,r;case t.TextureFormat.R16G16B16A16:return r.channels=4,r.bytesPerPixel=8,r.dataTypedCons=Uint16Array,r.typedSize=2,r;case t.TextureFormat.R32G32B32:return r.channels=3,r.bytesPerPixel=12,r.dataTypedCons=Float32Array,r.typedSize=4,r;case t.TextureFormat.R32G32B32A32:return r.channels=4,r.bytesPerPixel=16,r.dataTypedCons=Float32Array,r.typedSize=4,r;default:return r}}getGLtexMemory(e,t=1){let r=this._gl,a=0,i=0,n=0,s=this._sRGB?this._sRGB.SRGB_EXT:r.RGB,_=this._sRGB?this._sRGB.SRGB_ALPHA_EXT:r.RGBA;switch(e.internalFormat){case s:case r.RGB:a=3;break;case _:case r.RGBA:a=4;break;default:a=0}switch(e.type){case r.UNSIGNED_BYTE:i=1;break;case r.UNSIGNED_SHORT_5_6_5:i=2/3;break;case r.FLOAT:i=4;break;case this._oesTextureHalfFloat.HALF_FLOAT_OES:i=2;break;default:i=0}return n=a*i*e.width*e.height,e.mipmap&&(n*=1.333),e.target==r.TEXTURE_CUBE_MAP?n*=6:e.target==r.TEXTURE_2D&&(n*=1),n}getGLRTTexMemory(e,r,a,i,n,s,_){let o=e=>{let r=0;switch(e){case t.RenderTargetFormat.R8G8B8:r=3;break;case t.RenderTargetFormat.R8G8B8A8:r=4;break;case t.RenderTargetFormat.R16G16B16A16:r=8;break;case t.RenderTargetFormat.R32G32B32:r=12;break;case t.RenderTargetFormat.R32G32B32A32:r=16;break;case t.RenderTargetFormat.R16G16B16:r=6;break;case t.RenderTargetFormat.DEPTH_16:r=2;break;case t.RenderTargetFormat.STENCIL_8:r=1;break;case t.RenderTargetFormat.DEPTHSTENCIL_24_8:case t.RenderTargetFormat.DEPTH_32:r=4}return r},l=o(a);return s>1&&(l*=2),_&&(l*=6),n&&(l*=1.333),l*e*r+o(i)*e*r}supportSRGB(e,r){switch(e){case t.TextureFormat.R8G8B8:case t.TextureFormat.R8G8B8A8:return this._engine.getCapable(t.RenderCapable.Texture_SRGB)&&!r;case t.TextureFormat.DXT1:case t.TextureFormat.DXT3:case t.TextureFormat.DXT5:return this._engine.getCapable(t.RenderCapable.COMPRESS_TEXTURE_S3TC_SRGB)&&!r;default:return!1}}supportGenerateMipmap(e){switch(e){case t.RenderTargetFormat.DEPTH_16:case t.RenderTargetFormat.DEPTHSTENCIL_24_8:case t.RenderTargetFormat.DEPTH_32:case t.RenderTargetFormat.STENCIL_8:return!1;default:return!0}}isSRGBFormat(e){switch(e){case t.TextureFormat.ETC2SRGB:case t.TextureFormat.ETC2SRGB_Alpha8:case t.TextureFormat.ETC2SRGB_Alpha1:case t.TextureFormat.ASTC4x4SRGB:case t.TextureFormat.ASTC6x6SRGB:case t.TextureFormat.ASTC8x8SRGB:case t.TextureFormat.ASTC10x10SRGB:case t.TextureFormat.ASTC12x12SRGB:return!0;default:return!1}}createTextureInternal(e,t,r,a,i,n,s){let o=this.isSRGBFormat(a)||n&&this.supportSRGB(a,i);s&&(o=!1);let l=1;!o&&n&&(l=2.2);let h=this.getTarget(e),u=new _(this._engine,h,t,r,1,e,i,o,l),m=this.glTextureParam(a,o);return u.internalFormat=m.internalFormat,u.format=m.format,u.type=m.type,u}setTextureImageData(e,t,r,a){e.width==t.width&&e.height==t.height||console.warn("setTextureImageData: size not match");let i=e.target,n=e.internalFormat,s=e.format,_=e.type;e.width,e.height;let o=e._gl;r&&o.pixelStorei(o.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&o.pixelStorei(o.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource),o.texImage2D(i,0,n,s,_,t),e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&o.generateMipmap(e.target),this._engine._bindTexture(e.target,null),r&&o.pixelStorei(o.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&o.pixelStorei(o.UNPACK_FLIP_Y_WEBGL,!1)}setTextureSubImageData(e,t,r,a,i,n){let s=e.target;e.internalFormat;let _=e.format,o=e.type;t.width,t.height;let l=e._gl;i&&l.pixelStorei(l.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),n&&l.pixelStorei(l.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource),l.texSubImage2D(s,0,r,a,_,o,t),e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&l.generateMipmap(e.target),this._engine._bindTexture(e.target,null),i&&l.pixelStorei(l.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),n&&l.pixelStorei(l.UNPACK_FLIP_Y_WEBGL,!1)}initVideoTextureData(e){let t=e.target;e.internalFormat;let r=e.format,a=e.type,i=e.width,n=e.height,s=e._gl;this._engine._bindTexture(e.target,e.resource),s.texImage2D(t,0,e.internalFormat,i,n,0,r,a,null),e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&s.generateMipmap(e.target),this._engine._bindTexture(e.target,null)}setTexturePixelsData(e,t,r,a){let i=e.target,n=e.internalFormat,s=e.format,_=e.type,o=e.width,l=e.height,h=o%4==0&&l%4==0,u=e._gl;r&&u.pixelStorei(u.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&u.pixelStorei(u.UNPACK_FLIP_Y_WEBGL,!0),h||u.pixelStorei(u.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),u.texImage2D(i,0,n,o,l,0,s,_,t),e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&u.generateMipmap(e.target),this._engine._bindTexture(e.target,null),r&&u.pixelStorei(u.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&u.pixelStorei(u.UNPACK_FLIP_Y_WEBGL,!1),h||u.pixelStorei(u.UNPACK_ALIGNMENT,4)}setTextureSubPixelsData(e,t,r,a,i,n,s,_,o,l){a=a&&0==r;let h=e.target;e.internalFormat;let u=e.format,m=e.type,d=s%4==0&&_%4==0,E=e._gl;o&&E.pixelStorei(E.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),l&&E.pixelStorei(E.UNPACK_FLIP_Y_WEBGL,!0),d||E.pixelStorei(E.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),E.texSubImage2D(h,r,i,n,s,_,u,m,t),e.mipmap&&a&&E.generateMipmap(e.target),this._engine._bindTexture(e.target,null),o&&E.pixelStorei(E.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),l&&E.pixelStorei(E.UNPACK_FLIP_Y_WEBGL,!1),d||E.pixelStorei(E.UNPACK_ALIGNMENT,4)}setTextureDDSData(e,t){let r=e.target,a=e.internalFormat,i=e.format,n=e.type,s=e.width,_=e.height,o=t.source,l=t.dataOffset,h=t.bpp,u=t.blockBytes,m=t.mipmapCount,d=t.compressed;e.maxMipmapLevel=m-1;let E=s%4==0&&_%4==0,c=e._gl;E||c.pixelStorei(c.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource);let T=this.getFormatPixelsParams(t.format),f=T.bytesPerPixel/T.channels,g=T.dataTypedCons,p=s,x=_,R=0;for(let e=0;e<m;e++){if(d){let t=Math.max(4,p)/4*Math.max(4,x)/4*u,i=new Uint8Array(o,l,t);c.compressedTexImage2D(r,e,a,p,x,0,i),R+=i.length,l+=h?p*x*(h/8):t}else{let t=p*x*T.channels,s=new g(o,l,t);R+=s.length,c.texImage2D(r,e,a,p,x,0,i,n,s),l+=t*f}p*=.5,x*=.5,p=Math.max(1,p),x=Math.max(1,x)}e.gpuMemory=R,this._engine._bindTexture(e.target,null),E||c.pixelStorei(c.UNPACK_ALIGNMENT,4)}setTextureKTXData(e,t){let r=t.source,a=t.compress,i=e.target,n=e.internalFormat,s=e.format,_=e.type,o=e.mipmapCount,l=e.width,h=e.height;e.maxMipmapLevel=o-1;let u=l%4==0&&h%4==0,m=e._gl;u||m.pixelStorei(m.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource);let d=l,E=h,c=t.headerOffset+t.bytesOfKeyValueData,T=0;for(let e=0;e<t.mipmapCount;e++){let o=new Int32Array(r,c,1)[0];if(c+=4,a){let t=new Uint8Array(r,c,o);m.compressedTexImage2D(i,e,n,d,E,0,t),T+=t.length}else{let a=this.getFormatPixelsParams(t.format),l=o/a.typedSize,h=new a.dataTypedCons(r,c,l);m.texImage2D(i,e,n,d,E,0,s,_,h),T+=h.byteLength}c+=o,c+=3-(o+3)%4,d=Math.max(1,.5*d),E=Math.max(1,.5*E)}for(let r=t.mipmapCount;r<e.mipmapCount;r++)a||m.texImage2D(i,r,n,d,E,0,s,_,null),d=Math.max(1,.5*d),E=Math.max(1,.5*E);e.gpuMemory=T,this._engine._bindTexture(e.target,null),u||m.pixelStorei(m.UNPACK_ALIGNMENT,4)}setTextureHDRData(e,t){let r=t.readScanLine();this.setTexturePixelsData(e,r,!1,!1)}setCubeImageData(e,t,r,a){let i=e._gl;const n=[i.TEXTURE_CUBE_MAP_POSITIVE_Z,i.TEXTURE_CUBE_MAP_NEGATIVE_Z,i.TEXTURE_CUBE_MAP_POSITIVE_X,i.TEXTURE_CUBE_MAP_NEGATIVE_X,i.TEXTURE_CUBE_MAP_POSITIVE_Y,i.TEXTURE_CUBE_MAP_NEGATIVE_Y];let s=e.internalFormat,_=e.format,o=e.type;e.width,e.height,r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource);for(let e=0;e<n.length;e++){let r=n[e];i.texImage2D(r,0,s,_,o,t[e])}e.mipmap&&i.generateMipmap(e.target),this._engine._bindTexture(e.target,null),e.gpuMemory=this.getGLtexMemory(e),r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!1)}setCubePixelsData(e,t,r,a){let i=e._gl;const n=[i.TEXTURE_CUBE_MAP_POSITIVE_Z,i.TEXTURE_CUBE_MAP_NEGATIVE_Z,i.TEXTURE_CUBE_MAP_POSITIVE_X,i.TEXTURE_CUBE_MAP_NEGATIVE_X,i.TEXTURE_CUBE_MAP_POSITIVE_Y,i.TEXTURE_CUBE_MAP_NEGATIVE_Y];e.target;let s=e.internalFormat,_=e.format,o=e.type,l=e.width,h=e.height,u=l%4==0;if(r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!0),u||i.pixelStorei(i.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),t){for(let e=0;e<n.length;e++){let r=n[e];i.texImage2D(r,0,s,l,h,0,_,o,t[e])}e.mipmap&&i.generateMipmap(e.target)}else{for(let e=0;e<n.length;e++){let t=n[e];i.texImage2D(t,0,s,l,h,0,_,o,null)}e.mipmap&&i.generateMipmap(e.target)}this._engine._bindTexture(e.target,null),e.gpuMemory=this.getGLtexMemory(e),r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!1),u||i.pixelStorei(i.UNPACK_ALIGNMENT,4)}setCubeSubPixelData(e,t,r,a,i,n,s,_,o,l){a=a&&0==r;let h=e._gl;const u=[h.TEXTURE_CUBE_MAP_POSITIVE_Z,h.TEXTURE_CUBE_MAP_NEGATIVE_Z,h.TEXTURE_CUBE_MAP_POSITIVE_X,h.TEXTURE_CUBE_MAP_NEGATIVE_X,h.TEXTURE_CUBE_MAP_POSITIVE_Y,h.TEXTURE_CUBE_MAP_NEGATIVE_Y];e.target,e.internalFormat;let m=e.format,d=e.type,E=s%4==0;o&&h.pixelStorei(h.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),l&&h.pixelStorei(h.UNPACK_FLIP_Y_WEBGL,!0),E||h.pixelStorei(h.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource);for(let e=0;e<u.length;e++){let a=u[e];h.texSubImage2D(a,r,i,n,s,_,m,d,t[e])}e.mipmap&&a&&h.generateMipmap(e.target),this._engine._bindTexture(e.target,null),o&&h.pixelStorei(h.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),l&&h.pixelStorei(h.UNPACK_FLIP_Y_WEBGL,!1),E||h.pixelStorei(h.UNPACK_ALIGNMENT,4)}setCubeDDSData(e,t){let r=e.internalFormat,a=e.format,i=e.type,n=e.width,s=e.height,_=t.source,o=t.dataOffset,l=t.bpp,h=t.blockBytes,u=t.mipmapCount;e.maxMipmapLevel=u-1;let m=n%4==0&&s%4==0;m=!0;let d=e._gl;this._engine._bindTexture(e.target,e.resource);const E=[d.TEXTURE_CUBE_MAP_POSITIVE_X,d.TEXTURE_CUBE_MAP_NEGATIVE_X,d.TEXTURE_CUBE_MAP_POSITIVE_Y,d.TEXTURE_CUBE_MAP_NEGATIVE_Y,d.TEXTURE_CUBE_MAP_POSITIVE_Z,d.TEXTURE_CUBE_MAP_NEGATIVE_Z];let c=this.getFormatPixelsParams(t.format),T=c.bytesPerPixel/c.channels,f=c.dataTypedCons,g=0;if(t.compressed)for(let t=0;t<6;t++){let a=E[t],i=n,m=s;for(let t=0;t<u;t++){let n=Math.max(4,i)/4*Math.max(4,m)/4*h,s=new Uint8Array(_,o,n);(e.mipmap||0==t)&&d.compressedTexImage2D(a,t,r,i,m,0,s),g+=s.byteLength,o+=l?i*m*(l/8):n,i*=.5,m*=.5,i=Math.max(1,i),m=Math.max(1,m)}}else for(let e=0;e<6;e++){let t=E[e],l=n,h=s;for(let e=0;e<u;e++){let n=l*h*c.channels,s=new f(_,o,n);d.texImage2D(t,e,r,l,h,0,a,i,s),g+=s.byteLength,o+=n*T,l*=.5,h*=.5,l=Math.max(1,l),h=Math.max(1,h)}}e.gpuMemory=g,this._engine._bindTexture(e.target,null)}setCubeKTXData(e,t){let r=t.source,a=t.compress,i=e.internalFormat,n=e.format,s=e.type,_=t.mipmapCount,o=e.width,l=e.height;e.maxMipmapLevel=_-1;let h=o%4==0&&l%4==0,u=e._gl;const m=[u.TEXTURE_CUBE_MAP_POSITIVE_X,u.TEXTURE_CUBE_MAP_NEGATIVE_X,u.TEXTURE_CUBE_MAP_POSITIVE_Y,u.TEXTURE_CUBE_MAP_NEGATIVE_Y,u.TEXTURE_CUBE_MAP_POSITIVE_Z,u.TEXTURE_CUBE_MAP_NEGATIVE_Z];h||u.pixelStorei(u.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource);let d=o,E=l,c=t.headerOffset+t.bytesOfKeyValueData,T=0;for(let e=0;e<t.mipmapCount;e++){let _=new Int32Array(r,c,1)[0];c+=4;for(let o=0;o<6;o++){let l=m[o];if(a){let t=new Uint8Array(r,c,_);u.compressedTexImage2D(l,e,i,d,E,0,t),T+=t.byteLength}else{let a=this.getFormatPixelsParams(t.format),o=_/a.typedSize,h=new a.dataTypedCons(r,c,o);u.texImage2D(l,e,i,d,E,0,n,s,h),T+=h.byteLength}c+=_,c+=3-(_+3)%4}d=Math.max(1,.5*d),E=Math.max(1,.5*E)}for(let r=t.mipmapCount;r<e.mipmapCount;r++){for(let e=0;e<6;e++){let t=m[e];a||u.texImage2D(t,r,i,d,E,0,n,s,null)}d=Math.max(1,.5*d),E=Math.max(1,.5*E)}this._engine._bindTexture(e.target,null),e.gpuMemory=T,h||u.pixelStorei(u.UNPACK_ALIGNMENT,4)}setTextureCompareMode(e,r){return t.TextureCompareMode.None}bindRenderTarget(e,t=0){this.currentActiveRT&&this.unbindRenderTarget(this.currentActiveRT);let r=this._gl,a=e._framebuffer;if(r.bindFramebuffer(r.FRAMEBUFFER,a),e._isCube){let a=e._textures[0];r.framebufferTexture2D(r.FRAMEBUFFER,r.COLOR_ATTACHMENT0,r.TEXTURE_CUBE_MAP_POSITIVE_X+t,a.resource,0)}this.currentActiveRT=e}bindoutScreenTarget(){this.currentActiveRT!=f._lastFrameBuffer&&this.unbindRenderTarget(this.currentActiveRT)}unbindRenderTarget(e){let t=e._gl;e&&e._generateMipmap&&e._textures.forEach((e=>{let r=e.target;this._engine._bindTexture(r,e.resource),t.generateMipmap(r),this._engine._bindTexture(r,null)})),t.bindFramebuffer(t.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ),this.currentActiveRT=f._lastFrameBuffer}createRenderTextureCubeInternal(e,r,a,i,n){let s=!1;i=i&&this.supportGenerateMipmap(a);let o=this.getTarget(e),l=new _(this._engine,o,r,r,1,e,i,s,1),h=this.glRenderTextureParam(a,s);l.internalFormat=h.internalFormat,l.format=h.format,l.type=h.type;let u=l.internalFormat,m=l.format,d=l.type,E=l._gl;const c=[E.TEXTURE_CUBE_MAP_POSITIVE_Z,E.TEXTURE_CUBE_MAP_NEGATIVE_Z,E.TEXTURE_CUBE_MAP_POSITIVE_X,E.TEXTURE_CUBE_MAP_NEGATIVE_X,E.TEXTURE_CUBE_MAP_POSITIVE_Y,E.TEXTURE_CUBE_MAP_NEGATIVE_Y];this._engine._bindTexture(l.target,l.resource);for(let e=0;e<c.length;e++){let t=c[e];E.texImage2D(t,0,u,r,r,0,m,d,null)}return this._engine._bindTexture(l.target,null),a!=t.RenderTargetFormat.DEPTH_16&&a!=t.RenderTargetFormat.DEPTH_32&&a!=t.RenderTargetFormat.DEPTHSTENCIL_24_8||(l.filterMode=t.FilterMode.Point),l}createRenderTargetInternal(e,r,a,i,n,_,o){let l=this.createRenderTextureInternal(t.TextureDimension.Tex2D,e,r,a,n,_),h=new s(this._engine,a,i,!1,l.mipmap,1);h.gpuMemory=this.getGLRTTexMemory(e,r,a,i,n,1,!1),h.colorFormat=a,h.depthStencilFormat=i,h._textures.push(l);let u=h._framebuffer,m=h._gl;m.bindFramebuffer(m.FRAMEBUFFER,u);let d=this.glRenderTargetAttachment(a);m.framebufferTexture2D(m.FRAMEBUFFER,d,m.TEXTURE_2D,l.resource,0);let E=this.glRenderBufferParam(i,!1);if(E){let t=this.createRenderbuffer(e,r,E.internalFormat,h._samples);h._depthbuffer=t,m.framebufferRenderbuffer(m.FRAMEBUFFER,E.attachment,m.RENDERBUFFER,t)}return m.bindFramebuffer(m.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ),h}createRenderTargetCubeInternal(e,r,a,i,n,_){let o=this.createRenderTextureCubeInternal(t.TextureDimension.Cube,e,r,i,n),l=new s(this._engine,r,a,!0,o.mipmap,1);l.gpuMemory=this.getGLRTTexMemory(e,e,r,a,i,1,!0),l._textures.push(o);let h=l._framebuffer,u=l._gl;u.bindFramebuffer(u.FRAMEBUFFER,h);let m=this.glRenderBufferParam(a,!1);if(m){let t=this.createRenderbuffer(e,e,m.internalFormat,l._samples);l._depthbuffer=t,u.framebufferRenderbuffer(u.FRAMEBUFFER,m.attachment,u.RENDERBUFFER,t)}return u.bindFramebuffer(u.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ),l}createRenderbuffer(e,t,r,a){let i=this._gl,n=i.createRenderbuffer();return i.bindRenderbuffer(i.RENDERBUFFER,n),i.renderbufferStorage(i.RENDERBUFFER,r,e,t),i.bindRenderbuffer(i.RENDERBUFFER,null),n}createRenderTextureInternal(e,r,a,i,n,s){let o=!1;n=n&&this.supportGenerateMipmap(i);let l=this.getTarget(e),h=new _(this._engine,l,r,a,1,e,n,o,1),u=this.glRenderTextureParam(i,o);h.internalFormat=u.internalFormat,h.format=u.format,h.type=u.type;let m=h.internalFormat,d=h.format,E=h.type,c=h._gl;return this._engine._bindTexture(h.target,h.resource),c.texImage2D(l,0,m,r,a,0,d,E,null),this._engine._bindTexture(h.target,null),i!=t.RenderTargetFormat.DEPTH_16&&i!=t.RenderTargetFormat.DEPTH_32&&i!=t.RenderTargetFormat.DEPTHSTENCIL_24_8||(h.filterMode=t.FilterMode.Point),h}createRenderTargetDepthTexture(e,r,a,i){let n=e._gl;if(e.depthStencilFormat==t.RenderTargetFormat.None)return null;let s=e._depthbuffer;s&&n.deleteRenderbuffer(s),e._depthbuffer=null;let _=e.depthStencilFormat,o=e._generateMipmap,l=e.isSRGB;e._depthTexture&&n.deleteTexture(e._depthTexture);let h=this.createRenderTextureInternal(r,a,i,_,o,l);e._depthTexture=h;let u=this.glRenderTargetAttachment(e.depthStencilFormat),m=e._framebuffer;return n.bindFramebuffer(n.FRAMEBUFFER,m),n.framebufferTexture2D(n.FRAMEBUFFER,u,n.TEXTURE_2D,h.resource,0),n.bindFramebuffer(n.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ),h}readRenderTargetPixelData(e,r,a,i,n,s){let _=e._gl;if(this.bindRenderTarget(e),!(_.checkFramebufferStatus(_.FRAMEBUFFER)==_.FRAMEBUFFER_COMPLETE))return this.unbindRenderTarget(e),null;switch(e.colorFormat){case t.RenderTargetFormat.R8G8B8:_.readPixels(r,a,i,n,_.RGB,_.UNSIGNED_BYTE,s);break;case t.RenderTargetFormat.R8G8B8A8:_.readPixels(r,a,i,n,_.RGBA,_.UNSIGNED_BYTE,s);break;case t.RenderTargetFormat.R16G16B16:_.readPixels(r,a,i,n,_.RGB,_.FLOAT,s);break;case t.RenderTargetFormat.R16G16B16A16:_.readPixels(r,a,i,n,_.RGBA,_.FLOAT,s);break;case t.RenderTargetFormat.R32G32B32:_.readPixels(r,a,i,n,_.RGB,_.FLOAT,s);break;case t.RenderTargetFormat.R32G32B32A32:_.readPixels(r,a,i,n,_.RGBA,_.FLOAT,s)}return this.unbindRenderTarget(e),s}readRenderTargetPixelDataAsync(e,t,r,a,i,n){return Promise.resolve(this.readRenderTargetPixelData(e,t,r,a,i,n))}updateVideoTexture(e,t,r,a){let i=e._gl,n=e.target,s=e.internalFormat,_=e.format,o=e.type;e.width,e.height,r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!0),i.pixelStorei(i.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),i.texImage2D(n,0,s,_,o,t),this._engine._bindTexture(e.target,null),r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!1),i.pixelStorei(i.UNPACK_ALIGNMENT,4)}}class l extends o{constructor(e){super(e)}getTarget(e){let r=-1;switch(e){case t.TextureDimension.Cube:r=this._gl.TEXTURE_CUBE_MAP;break;case t.TextureDimension.Tex2D:r=this._gl.TEXTURE_2D;break;case t.TextureDimension.Texture2DArray:r=this._gl.TEXTURE_2D_ARRAY;break;case t.TextureDimension.Tex3D:r=this._gl.TEXTURE_3D;break;default:throw"Unknow Texture Target"}return r}glTextureParam(e,r){let a=this._gl;switch(this._glParam.internalFormat=null,this._glParam.format=null,this._glParam.type=null,e){case t.TextureFormat.R8G8B8:this._glParam.internalFormat=r?a.SRGB8:a.RGB8,this._glParam.format=a.RGB,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.R8G8B8A8:this._glParam.internalFormat=r?a.SRGB8_ALPHA8:a.RGBA8,this._glParam.format=a.RGBA,this._glParam.type=a.UNSIGNED_BYTE;break;case t.TextureFormat.R5G6B5:this._glParam.internalFormat=a.RGB565,this._glParam.format=a.RGB,this._glParam.type=a.UNSIGNED_SHORT_5_6_5;break;case t.TextureFormat.R32G32B32A32:this._glParam.internalFormat=a.RGBA32F,this._glParam.format=a.RGBA,this._glParam.type=a.FLOAT;break;case t.TextureFormat.R32G32B32:this._glParam.internalFormat=a.RGB32F,this._glParam.format=a.RGB,this._glParam.type=a.FLOAT;break;case t.TextureFormat.R16G16B16:this._glParam.internalFormat=a.RGB16F,this._glParam.format=a.RGB,this._glParam.type=a.HALF_FLOAT;break;case t.TextureFormat.R16G16B16A16:this._glParam.internalFormat=a.RGBA16F,this._glParam.format=a.RGBA,this._glParam.type=a.HALF_FLOAT;break;case t.TextureFormat.DXT1:this._glParam.internalFormat=r?this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT:this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT1_EXT;break;case t.TextureFormat.DXT3:this._glParam.internalFormat=r?this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT:this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT3_EXT;break;case t.TextureFormat.DXT5:this._glParam.internalFormat=r?this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT:this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT5_EXT;break;case t.TextureFormat.ETC1RGB:this._glParam.internalFormat=this._compressedTextureEtc1.COMPRESSED_RGB_ETC1_WEBGL;break;case t.TextureFormat.ETC2RGBA:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC;break;case t.TextureFormat.ETC2RGB:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_RGB8_ETC2;break;case t.TextureFormat.ETC2SRGB:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_SRGB8_ETC2;break;case t.TextureFormat.ETC2SRGB_Alpha8:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC;break;case t.TextureFormat.ETC2RGB_Alpha1:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2;break;case t.TextureFormat.ETC2SRGB_Alpha1:this._glParam.internalFormat=this._compressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2;break;case t.TextureFormat.ASTC4x4:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR;break;case t.TextureFormat.ASTC6x6:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR;break;case t.TextureFormat.ASTC8x8:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR;break;case t.TextureFormat.ASTC10x10:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR;break;case t.TextureFormat.ASTC12x12:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR;break;case t.TextureFormat.ASTC4x4SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR;break;case t.TextureFormat.ASTC6x6SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR;break;case t.TextureFormat.ASTC8x8SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR;break;case t.TextureFormat.ASTC10x10SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR;break;case t.TextureFormat.ASTC12x12SRGB:this._glParam.internalFormat=this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR;break;default:throw"Unknown Texture Format."}return this._glParam}glRenderBufferParam(e,r){let a=this._gl;switch(e){case t.RenderTargetFormat.DEPTH_16:return{internalFormat:a.DEPTH_COMPONENT16,attachment:a.DEPTH_ATTACHMENT};case t.RenderTargetFormat.DEPTHSTENCIL_24_8:return{internalFormat:a.DEPTH24_STENCIL8,attachment:a.DEPTH_STENCIL_ATTACHMENT};case t.RenderTargetFormat.DEPTH_32:return{internalFormat:a.DEPTH_COMPONENT32F,attachment:a.DEPTH_ATTACHMENT};case t.RenderTargetFormat.STENCIL_8:return{internalFormat:a.STENCIL_INDEX8,attachment:a.STENCIL_ATTACHMENT};case t.RenderTargetFormat.R8G8B8:return{internalFormat:r?a.SRGB8:a.RGB8,attachment:a.COLOR_ATTACHMENT0};case t.RenderTargetFormat.R8G8B8A8:return{internalFormat:r?a.SRGB8_ALPHA8:a.RGBA8,attachment:a.COLOR_ATTACHMENT0};case t.RenderTargetFormat.R16G16B16:return{internalFormat:a.RGB16F,attachment:a.COLOR_ATTACHMENT0};case t.RenderTargetFormat.R16G16B16A16:return{internalFormat:a.RGBA16F,attachment:a.COLOR_ATTACHMENT0};case t.RenderTargetFormat.R32G32B32:return{internalFormat:a.RGB32F,attachment:a.COLOR_ATTACHMENT0};case t.RenderTargetFormat.R32G32B32A32:return{internalFormat:a.RGBA32F,attachment:a.COLOR_ATTACHMENT0};default:return null}}glRenderTextureParam(e,r){let a=this._gl;switch(this._glParam.internalFormat=null,this._glParam.format=null,this._glParam.type=null,e){case t.RenderTargetFormat.R8G8B8:this._glParam.internalFormat=r?a.SRGB8:a.RGB8,this._glParam.format=a.RGB,this._glParam.type=a.UNSIGNED_BYTE;break;case t.RenderTargetFormat.R8G8B8A8:this._glParam.internalFormat=r?a.SRGB8_ALPHA8:a.RGBA8,this._glParam.format=a.RGBA,this._glParam.type=a.UNSIGNED_BYTE;break;case t.RenderTargetFormat.R16G16B16:this._glParam.internalFormat=a.RGB16F,this._glParam.format=a.RGB,this._glParam.type=a.HALF_FLOAT;break;case t.RenderTargetFormat.R16G16B16A16:this._glParam.internalFormat=a.RGBA16F,this._glParam.format=a.RGBA,this._glParam.type=a.HALF_FLOAT;break;case t.RenderTargetFormat.R32G32B32:this._glParam.internalFormat=a.RGB32F,this._glParam.format=a.RGB,this._glParam.type=a.FLOAT;break;case t.RenderTargetFormat.R32G32B32A32:this._glParam.internalFormat=a.RGBA32F,this._glParam.format=a.RGBA,this._glParam.type=a.FLOAT;break;case t.RenderTargetFormat.DEPTH_16:this._glParam.internalFormat=a.DEPTH_COMPONENT16,this._glParam.format=a.DEPTH_COMPONENT,this._glParam.type=a.UNSIGNED_INT;break;case t.RenderTargetFormat.DEPTHSTENCIL_24_8:this._glParam.internalFormat=a.DEPTH24_STENCIL8,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_INT_24_8;break;case t.RenderTargetFormat.DEPTH_32:this._glParam.internalFormat=a.DEPTH_COMPONENT32F,this._glParam.format=this._glParam.internalFormat,this._glParam.type=a.UNSIGNED_INT;break;case t.RenderTargetFormat.STENCIL_8:break;default:throw"depth texture format wrong."}return this._glParam}getGLtexMemory(e,t=1){let r=this._gl,a=0,i=0,n=0;switch(e.internalFormat){case r.SRGB8:case r.RGB8:case r.RGB565:case r.RGB32F:case r.RGB16F:a=3;break;case r.SRGB8_ALPHA8:case r.RGBA8:case r.RGBA32F:case r.RGBA16F:a=4;break;default:a=0}switch(e.type){case r.UNSIGNED_BYTE:i=1;break;case r.UNSIGNED_SHORT_5_6_5:i=2/3;break;case r.FLOAT:i=4;break;case r.HALF_FLOAT:i=2;break;default:i=0}return n=a*i*e.width*e.height,e.mipmap&&(n*=1.333),e.target==r.TEXTURE_CUBE_MAP?n*=6:e.target==r.TEXTURE_2D?n*=1:e.target==r.TEXTURE_2D_ARRAY&&(n*=t),n}supportSRGB(e,r){switch(e){case t.TextureFormat.R8G8B8:return this._engine.getCapable(t.RenderCapable.Texture_SRGB)&&!r;case t.TextureFormat.R8G8B8A8:return this._engine.getCapable(t.RenderCapable.Texture_SRGB);case t.TextureFormat.DXT1:case t.TextureFormat.DXT3:case t.TextureFormat.DXT5:return this._engine.getCapable(t.RenderCapable.COMPRESS_TEXTURE_S3TC_SRGB)&&!r;default:return!1}}setTextureImageData(e,t,r,a){e.width==t.width&&e.height==t.height||console.warn("setTextureImageData: size not match");let i=e.target,n=e.internalFormat,s=e.format,_=e.type,o=e.width,l=e.height,h=e.mipmapCount,u=this._gl;r&&u.pixelStorei(u.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&u.pixelStorei(u.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource),u.texStorage2D(i,h,n,o,l),u.texSubImage2D(i,0,0,0,o,l,s,_,t),e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&u.generateMipmap(e.target),this._engine._bindTexture(e.target,null),r&&u.pixelStorei(u.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&u.pixelStorei(u.UNPACK_FLIP_Y_WEBGL,!1)}setTextureSubImageData(e,t,r,a,i,n){let s=e.target;e.internalFormat;let _=e.format,o=e.type;e.width,e.height,e.mipmapCount;let l=this._gl;i&&l.pixelStorei(l.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),n&&l.pixelStorei(l.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource),l.texSubImage2D(s,0,r,a,t.width,t.height,_,o,t),e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&l.generateMipmap(e.target),this._engine._bindTexture(e.target,null),i&&l.pixelStorei(l.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),n&&l.pixelStorei(l.UNPACK_FLIP_Y_WEBGL,!1)}setTexturePixelsData(e,t,r,a){let i=e.target,n=e.internalFormat,s=e.format,_=e.type,o=e.width,l=e.height,h=e.mipmapCount,u=o%4==0&&l%4==0,m=this._gl;r&&m.pixelStorei(m.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&m.pixelStorei(m.UNPACK_FLIP_Y_WEBGL,!0),u||m.pixelStorei(m.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),m.texStorage2D(i,h,n,o,l),e.gpuMemory=this.getGLtexMemory(e),t&&(m.texSubImage2D(i,0,0,0,o,l,s,_,t),e.mipmap&&m.generateMipmap(e.target)),this._engine._bindTexture(e.target,null),r&&m.pixelStorei(m.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&m.pixelStorei(m.UNPACK_FLIP_Y_WEBGL,!1),u||m.pixelStorei(m.UNPACK_ALIGNMENT,4)}createTexture3DInternal(e,t,r,a,i,n,s,o){let l=this.isSRGBFormat(i)||s&&this.supportSRGB(i,n);o&&(l=!1);let h=1;!l&&s&&(h=2.2);let u=this.getTarget(e),m=new _(this._engine,u,t,r,a,e,n,l,h),d=this.glTextureParam(i,l);return m.internalFormat=d.internalFormat,m.format=d.format,m.type=d.type,m}setTexture3DImageData(e,t,r,a,i){let n=e.target,s=e.internalFormat,_=e.format,o=e.type,l=e.width,h=e.height,u=e.mipmapCount,m=this._gl;a&&m.pixelStorei(m.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),i&&m.pixelStorei(m.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource),m.texStorage3D(n,u,s,l,h,r),e.gpuMemory=this.getGLtexMemory(e,r);for(let e=0;e<r;e++)m.texSubImage3D(n,0,0,0,e,l,h,1,_,o,t[e]);e.gpuMemory=this.getGLtexMemory(e),e.mipmap&&m.generateMipmap(e.target),this._engine._bindTexture(e.target,null),a&&m.pixelStorei(m.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),i&&m.pixelStorei(m.UNPACK_FLIP_Y_WEBGL,!1)}setTexture3DPixelsData(e,t,r,a,i){let n=e.target,s=e.internalFormat,_=e.format,o=e.type,l=e.width,h=e.height,u=e.mipmapCount,m=l%4==0&&h%4==0,d=this._gl;a&&d.pixelStorei(d.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),i&&d.pixelStorei(d.UNPACK_FLIP_Y_WEBGL,!0),m||d.pixelStorei(d.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),d.texStorage3D(n,u,s,l,h,r),e.gpuMemory=this.getGLtexMemory(e,r),t&&(d.texSubImage3D(n,0,0,0,0,l,h,r,_,o,t),e.mipmap&&d.generateMipmap(e.target)),this._engine._bindTexture(e.target,null),a&&d.pixelStorei(d.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),i&&d.pixelStorei(d.UNPACK_FLIP_Y_WEBGL,!1),m||d.pixelStorei(d.UNPACK_ALIGNMENT,4)}setTexture3DSubPixelsData(e,t,r,a,i,n,s,_,o,l,h,u){a=a&&0==r;let m=e.target;e.internalFormat;let d=e.format,E=e.type,c=_%4==0&&o%4==0,T=this._gl;h&&T.pixelStorei(T.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),u&&T.pixelStorei(T.UNPACK_FLIP_Y_WEBGL,!0),c||T.pixelStorei(T.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),T.texSubImage3D(m,r,i,n,s,_,o,l,d,E,t),e.mipmap&&a&&T.generateMipmap(e.target),this._engine._bindTexture(e.target,null),h&&T.pixelStorei(T.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),u&&T.pixelStorei(T.UNPACK_FLIP_Y_WEBGL,!1),c||T.pixelStorei(T.UNPACK_ALIGNMENT,4)}setTextureHDRData(e,t){let r=t.readScanLine();this.setTexturePixelsData(e,r,!1,!1)}setTextureKTXData(e,t){let r=e.target,a=e.internalFormat,i=e.format,n=e.type,s=e.mipmapCount,_=e.width,o=e.height;e.maxMipmapLevel=s-1;let l=t.source,h=t.compress,u=_%4==0&&o%4==0,m=this._gl;u||m.pixelStorei(m.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),h||m.texStorage2D(r,t.mipmapCount,a,_,o);let d=_,E=o,c=t.headerOffset+t.bytesOfKeyValueData,T=0;for(let e=0;e<t.mipmapCount;e++){let s=new Int32Array(l,c,1)[0];if(c+=4,h){let t=new Uint8Array(l,c,s);m.compressedTexImage2D(r,e,a,d,E,0,t),T+=t.length}else{let a=this.getFormatPixelsParams(t.format),_=s/a.typedSize,o=new a.dataTypedCons(l,c,_);m.texSubImage2D(r,e,0,0,d,E,i,n,o),T+=o.length}c+=s,c+=3-(s+3)%4,d=Math.max(1,.5*d),E=Math.max(1,.5*E)}this._engine._bindTexture(e.target,null),e.gpuMemory=T,u||m.pixelStorei(m.UNPACK_ALIGNMENT,4)}setCubeImageData(e,t,r,a){let i=this._gl;const n=[i.TEXTURE_CUBE_MAP_POSITIVE_Z,i.TEXTURE_CUBE_MAP_NEGATIVE_Z,i.TEXTURE_CUBE_MAP_POSITIVE_X,i.TEXTURE_CUBE_MAP_NEGATIVE_X,i.TEXTURE_CUBE_MAP_POSITIVE_Y,i.TEXTURE_CUBE_MAP_NEGATIVE_Y];let s=e.target,_=e.internalFormat,o=e.format,l=e.type,h=e.width,u=e.height,m=e.mipmapCount;r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!0),this._engine._bindTexture(e.target,e.resource),i.texStorage2D(s,m,_,h,u),e.gpuMemory=this.getGLtexMemory(e);for(let e=0;e<n.length;e++){let r=n[e];i.texSubImage2D(r,0,0,0,o,l,t[e])}e.mipmap&&i.generateMipmap(e.target),this._engine._bindTexture(e.target,null),r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!1)}setCubePixelsData(e,t,r,a){let i=this._gl;const n=[i.TEXTURE_CUBE_MAP_POSITIVE_Z,i.TEXTURE_CUBE_MAP_NEGATIVE_Z,i.TEXTURE_CUBE_MAP_POSITIVE_X,i.TEXTURE_CUBE_MAP_NEGATIVE_X,i.TEXTURE_CUBE_MAP_POSITIVE_Y,i.TEXTURE_CUBE_MAP_NEGATIVE_Y];let s=e.target,_=e.internalFormat,o=e.format,l=e.type,h=e.width,u=e.height,m=e.mipmapCount,d=h%4==0;if(r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!0),d||i.pixelStorei(i.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),i.texStorage2D(s,m,_,h,u),t){for(let e=0;e<n.length;e++){let r=n[e];i.texSubImage2D(r,0,0,0,h,u,o,l,t[e])}e.mipmap&&i.generateMipmap(e.target)}this._engine._bindTexture(e.target,null),e.gpuMemory=this.getGLtexMemory(e),r&&i.pixelStorei(i.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1),a&&i.pixelStorei(i.UNPACK_FLIP_Y_WEBGL,!1),d||i.pixelStorei(i.UNPACK_ALIGNMENT,4)}setCubeKTXData(e,t){let r=this._gl;const a=[r.TEXTURE_CUBE_MAP_POSITIVE_X,r.TEXTURE_CUBE_MAP_NEGATIVE_X,r.TEXTURE_CUBE_MAP_POSITIVE_Y,r.TEXTURE_CUBE_MAP_NEGATIVE_Y,r.TEXTURE_CUBE_MAP_POSITIVE_Z,r.TEXTURE_CUBE_MAP_NEGATIVE_Z];let i=e.target,n=e.internalFormat,s=e.format,_=e.type;e.mipmapCount;let o=e.width,l=e.height;e.maxMipmapLevel=t.mipmapCount-1;let h=t.source,u=t.compress,m=o,d=l,E=t.headerOffset+t.bytesOfKeyValueData,c=o%4==0&&l%4==0;c||r.pixelStorei(r.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),u||r.texStorage2D(i,t.mipmapCount,n,o,l);let T=0;for(let e=0;e<t.mipmapCount;e++){let i=new Int32Array(h,E,1)[0];E+=4;for(let o=0;o<6;o++){let l=a[o];if(u){let t=new Uint8Array(h,E,i);r.compressedTexImage2D(l,e,n,m,d,0,t),T+=t.byteLength}else{let a=this.getFormatPixelsParams(t.format),n=i/a.typedSize,o=new a.dataTypedCons(h,E,n);r.texSubImage2D(l,e,0,0,m,d,s,_,o),T+=o.byteLength}E+=i,E+=3-(i+3)%4}m=Math.max(1,.5*m),d=Math.max(1,.5*d)}e.gpuMemory=T,this._engine._bindTexture(e.target,null),c||r.pixelStorei(r.UNPACK_ALIGNMENT,4)}getCubeKTXRGBMData(e,t){let r=this._gl;const a=[r.TEXTURE_CUBE_MAP_POSITIVE_X,r.TEXTURE_CUBE_MAP_NEGATIVE_X,r.TEXTURE_CUBE_MAP_POSITIVE_Y,r.TEXTURE_CUBE_MAP_NEGATIVE_Y,r.TEXTURE_CUBE_MAP_POSITIVE_Z,r.TEXTURE_CUBE_MAP_NEGATIVE_Z];let i=e.target,n=e.internalFormat,s=e.format,_=e.type,o=e.mipmapCount,l=e.width,h=e.height;e.maxMipmapLevel=o-1;let u=t.source,m=t.compress,d=l,E=h,c=t.headerOffset+t.bytesOfKeyValueData,T=l%4==0&&h%4==0;T||r.pixelStorei(r.UNPACK_ALIGNMENT,1),this._engine._bindTexture(e.target,e.resource),m||r.texStorage2D(i,t.mipmapCount,n,l,h);let f=0;for(let e=0;e<t.mipmapCount;e++){let i=new Int32Array(u,c,1)[0];c+=4;for(let n=0;n<6;n++){let o=a[n],l=this.getFormatPixelsParams(t.format),h=i/l.typedSize,m=new l.dataTypedCons(u,c,h);r.texSubImage2D(o,e,0,0,d,E,s,_,m),f+=m.byteLength}c+=i,c+=3-(i+3)%4}d=Math.max(1,.5*d),E=Math.max(1,.5*E),e.gpuMemory=f,this._engine._bindTexture(e.target,null),T||r.pixelStorei(r.UNPACK_ALIGNMENT,4)}setTextureCompareMode(e,r){let a=this._gl;switch(r){case t.TextureCompareMode.LEQUAL:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.LEQUAL),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.GEQUAL:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.GEQUAL),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.LESS:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.LESS),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.GREATER:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.GREATER),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.EQUAL:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.EQUAL),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.NOTEQUAL:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.NOTEQUAL),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.ALWAYS:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.ALWAYS),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.NEVER:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.NEVER),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.COMPARE_REF_TO_TEXTURE);break;case t.TextureCompareMode.None:default:e._setTexParameteri(a.TEXTURE_COMPARE_FUNC,a.LEQUAL),e._setTexParameteri(a.TEXTURE_COMPARE_MODE,a.NONE)}return r}createRenderbuffer(e,t,r,a){let i=this._gl,n=i.createRenderbuffer();return i.bindRenderbuffer(i.RENDERBUFFER,n),a>1?i.renderbufferStorageMultisample(i.RENDERBUFFER,a,r,e,t):i.renderbufferStorage(i.RENDERBUFFER,r,e,t),i.bindRenderbuffer(i.RENDERBUFFER,null),n}createRenderTextureInternal(e,r,a,i,n,s){n=n&&this.supportGenerateMipmap(i);let o=this.isSRGBFormat(i)||s&&this.supportSRGB(i,n),l=this.getTarget(e),h=new _(this._engine,l,r,a,1,e,n,o,1),u=this.glRenderTextureParam(i,o);h.internalFormat=u.internalFormat,h.format=u.format,h.type=u.type;let m=h.internalFormat;h.format,h.type;let d=this._gl;return this._engine._bindTexture(h.target,h.resource),d.texStorage2D(l,h.mipmapCount,m,r,a),this._engine._bindTexture(h.target,null),i!=t.RenderTargetFormat.DEPTH_16&&i!=t.RenderTargetFormat.DEPTH_32&&i!=t.RenderTargetFormat.DEPTHSTENCIL_24_8||(h.filterMode=t.FilterMode.Point),h}createRenderTargetInternal(e,r,a,i,n,_,o){let l=this.createRenderTextureInternal(t.TextureDimension.Tex2D,e,r,a,n,_),h=new s(this._engine,a,i,!1,l.mipmap,o);h.gpuMemory=this.getGLRTTexMemory(e,r,a,i,n,o,!1),h._textures.push(l);let u=h._gl;if(h._samples>1){let t=h._msaaFramebuffer,n=this.glRenderBufferParam(a,_),s=h._msaaRenderbuffer=this.createRenderbuffer(e,r,n.internalFormat,h._samples);u.bindFramebuffer(u.FRAMEBUFFER,t),u.framebufferRenderbuffer(u.FRAMEBUFFER,n.attachment,u.RENDERBUFFER,s);let o=this.glRenderBufferParam(i,!1);if(o){let t=this.createRenderbuffer(e,r,o.internalFormat,h._samples);h._depthbuffer=t,u.framebufferRenderbuffer(u.FRAMEBUFFER,o.attachment,u.RENDERBUFFER,t)}u.bindFramebuffer(u.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ);let m=h._framebuffer;u.bindFramebuffer(u.FRAMEBUFFER,m);let d=this.glRenderTargetAttachment(a);u.framebufferTexture2D(u.FRAMEBUFFER,d,u.TEXTURE_2D,l.resource,0),u.bindFramebuffer(u.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ)}else{let t=h._framebuffer;u.bindFramebuffer(u.FRAMEBUFFER,t);let n=this.glRenderTargetAttachment(a);u.framebufferTexture2D(u.FRAMEBUFFER,n,u.TEXTURE_2D,l.resource,0);let s=this.glRenderBufferParam(i,!1);if(s){let t=this.createRenderbuffer(e,r,s.internalFormat,h._samples);h._depthbuffer=t,u.framebufferRenderbuffer(u.FRAMEBUFFER,s.attachment,u.RENDERBUFFER,t)}u.bindFramebuffer(u.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ)}return h}createRenderTargetCubeInternal(e,r,a,i,n,_){let o=this.createRenderTextureCubeInternal(t.TextureDimension.Cube,e,r,i,n),l=new s(this._engine,r,a,!0,o.mipmap,_);l.gpuMemory=this.getGLRTTexMemory(e,e,r,a,i,_,!0),l.colorFormat=r,l.depthStencilFormat=a,l._textures.push(o),l.isSRGB=n;let h=l._gl;if(l._samples>1){let t=l._msaaFramebuffer,i=this.glRenderBufferParam(r,!1),n=l._msaaRenderbuffer=this.createRenderbuffer(e,e,i.internalFormat,l._samples);h.bindFramebuffer(h.FRAMEBUFFER,t),h.framebufferRenderbuffer(h.FRAMEBUFFER,i.attachment,h.RENDERBUFFER,n);let s=this.glRenderBufferParam(a,!1);if(s){let t=this.createRenderbuffer(e,e,s.internalFormat,l._samples);l._depthbuffer=t,h.framebufferRenderbuffer(h.FRAMEBUFFER,s.attachment,h.RENDERBUFFER,t)}h.bindFramebuffer(h.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ)}else{let t=l._framebuffer;h.bindFramebuffer(h.FRAMEBUFFER,t);let r=this.glRenderBufferParam(a,!1);if(r){let t=this.createRenderbuffer(e,e,r.internalFormat,l._samples);l._depthbuffer=t,h.framebufferRenderbuffer(h.FRAMEBUFFER,r.attachment,h.RENDERBUFFER,t)}h.bindFramebuffer(h.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ)}return l}createRenderTextureCubeInternal(e,t,r,a,i){a=a&&this.supportGenerateMipmap(r);let n=this.isSRGBFormat(r)||i&&this.supportSRGB(r,a),s=this.getTarget(e),o=new _(this._engine,s,t,t,1,e,a,n,1),l=this.glRenderTextureParam(r,n);o.internalFormat=l.internalFormat,o.format=l.format,o.type=l.type;let h=o.internalFormat;o.format,o.type;let u=this._gl;return this._engine._bindTexture(o.target,o.resource),u.texStorage2D(s,o.mipmapCount,h,t,t),this._engine._bindTexture(o.target,null),o}bindRenderTarget(e,t=0){this.currentActiveRT&&this.unbindRenderTarget(this.currentActiveRT);let r=this._gl;if(e._isCube){let a=e._framebuffer;r.bindFramebuffer(r.FRAMEBUFFER,a);let i=e._textures[0];r.framebufferTexture2D(r.FRAMEBUFFER,r.COLOR_ATTACHMENT0,r.TEXTURE_CUBE_MAP_POSITIVE_X+t,i.resource,0)}if(e._samples>1)r.bindFramebuffer(r.FRAMEBUFFER,e._msaaFramebuffer);else{let t=e._framebuffer;r.bindFramebuffer(r.FRAMEBUFFER,t)}this.currentActiveRT=e}unbindRenderTarget(e){let t=this._gl;if(e&&e._samples>1){t.bindFramebuffer(t.READ_FRAMEBUFFER,e._msaaFramebuffer),t.bindFramebuffer(t.DRAW_FRAMEBUFFER,e._framebuffer);let r=e._textures[0],a=t.COLOR_BUFFER_BIT;e._depthTexture&&(a|=t.DEPTH_BUFFER_BIT),t.blitFramebuffer(0,0,r.width,r.height,0,0,r.width,r.height,a,t.NEAREST)}e&&e._generateMipmap&&e._textures.forEach((e=>{let r=e.target;this._engine._bindTexture(r,e.resource),t.generateMipmap(r),this._engine._bindTexture(r,null)})),t.bindFramebuffer(t.FRAMEBUFFER,f._lastFrameBuffer_WebGLOBJ),this.currentActiveRT=f._lastFrameBuffer}}class h extends n{constructor(e,r,a){super(e),this._byteLength=0,this._glTargetType=r,this._glBufferUsageType=a,this._getGLTarget(this._glTargetType),this._getGLUsage(this._glBufferUsageType),this._glBuffer=this._gl.createBuffer(),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_GPUBuffer,1)}_getGLUsage(e){switch(e){case t.BufferUsage.Static:this._glUsage=this._gl.STATIC_DRAW;break;case t.BufferUsage.Dynamic:this._glUsage=this._gl.DYNAMIC_DRAW;break;case t.BufferUsage.Stream:this._glUsage=this._gl.STREAM_DRAW;break;default:console.error("usage is not standard")}}_getGLTarget(e){switch(e){case t.BufferTargetType.ARRAY_BUFFER:this._glTarget=this._gl.ARRAY_BUFFER;break;case t.BufferTargetType.UNIFORM_BUFFER:this._glTarget=this._gl.UNIFORM_BUFFER;break;case t.BufferTargetType.ELEMENT_ARRAY_BUFFER:this._glTarget=this._gl.ELEMENT_ARRAY_BUFFER}}_memorychange(e){this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_GPUBuffer,-this._byteLength+e),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_GPUMemory,-this._byteLength+e)}bindBuffer(){return this._engine._getbindBuffer(this._glTargetType)!=this&&(this._gl.bindBuffer(this._glTarget,this._glBuffer),this._engine._setbindBuffer(this._glTargetType,this),!0)}unbindBuffer(){this._engine._getbindBuffer(this._glTargetType)==this&&(this._gl.bindBuffer(this._glTarget,null),this._engine._setbindBuffer(this._glTargetType,null))}orphanStorage(){this.bindBuffer(),this.setDataLength(this._byteLength)}setDataLength(e){let t=this._gl;this.bindBuffer(),this._memorychange(e),this._byteLength=e,t.bufferData(this._glTarget,this._byteLength,this._glUsage),this.unbindBuffer()}setData(e,r){let a=this._gl;this.bindBuffer(),a.bufferSubData(this._glTarget,r,e),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_GeometryBufferUploadCount,1),this.unbindBuffer()}setDataEx(e,r,a){let i=this._gl;this.bindBuffer(),i.bufferSubData(this._glTarget,r,e,0,a),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_GeometryBufferUploadCount,1),this.unbindBuffer()}bindBufferBase(e){if(this._engine._getBindUBOBuffer(e)!=this){this._gl.bindBufferBase(this._glTarget,e,this._glBuffer),this._engine._setBindUBOBuffer(e,this)}}bindBufferRange(e,t,r){this._gl.bindBufferRange(this._glTarget,e,this._glBuffer,t,r)}resizeBuffer(e){this.bindBuffer();const t=this._gl;this._byteLength=e,t.bufferData(this._glTarget,this._byteLength,this._glUsage)}destroy(){super.destroy();const e=this._gl;f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_GPUBuffer,-1),e.deleteBuffer(this._glBuffer),this._memorychange(0),this._byteLength=0,this._engine=null,this._glBuffer=null,this._glTarget=null,this._glUsage=null,this._gl=null}}e.WebGLMode=void 0,(i=e.WebGLMode||(e.WebGLMode={}))[i.Auto=0]="Auto",i[i.WebGL2=1]="WebGL2",i[i.WebGL1=2]="WebGL1";class u{constructor(e){this._engine=e,this._gl=this._engine.gl,this._initParams()}_initParams(){const r=this._gl;this._glParamsData=new Map,this._glParamsData.set(t.RenderParams.Max_Active_Texture_Count,r.getParameter(r.MAX_VERTEX_TEXTURE_IMAGE_UNITS));const a=r.getParameter(r.MAX_VERTEX_UNIFORM_VECTORS),i=r.getParameter(r.MAX_FRAGMENT_UNIFORM_VECTORS);if(this._glParamsData.set(t.RenderParams.Max_Uniform_Count,Math.min(a,i)),this._glParamsData.set(t.RenderParams.MAX_Texture_Size,r.getParameter(r.MAX_TEXTURE_SIZE)),this._glParamsData.set(t.RenderParams.MAX_Texture_Image_Uint,r.getParameter(r.MAX_TEXTURE_IMAGE_UNITS)),this._engine.getCapable(t.RenderCapable.Texture_anisotropic)){const a=this._engine._supportCapatable.getExtension(e.WebGLExtension.EXT_texture_filter_anisotropic);this._glParamsData.set(t.RenderParams.Max_AnisoLevel_Count,r.getParameter(a.MAX_TEXTURE_MAX_ANISOTROPY_EXT))}this._engine.isWebGL2?this._glParamsData.set(t.RenderParams.SHADER_CAPAILITY_LEVEL,35):this._glParamsData.set(t.RenderParams.SHADER_CAPAILITY_LEVEL,30),this._glParamsData.set(t.RenderParams.FLOAT,r.FLOAT),this._glParamsData.set(t.RenderParams.UNSIGNED_BYTE,r.UNSIGNED_BYTE),this._glParamsData.set(t.RenderParams.UNSIGNED_SHORT,r.UNSIGNED_SHORT),this._glParamsData.set(t.RenderParams.BYTE,r.BYTE)}getParams(e){return this._glParamsData.get(e)}}class m extends n{constructor(t){super(t),this._engine.isWebGL2||(this._angleInstancedArrays=this._engine._supportCapatable.getExtension(e.WebGLExtension.ANGLE_instanced_arrays))}getMeshTopology(e){switch(e){case t.MeshTopology.Points:return this._gl.POINTS;case t.MeshTopology.Lines:return this._gl.LINES;case t.MeshTopology.LineLoop:return this._gl.LINE_LOOP;case t.MeshTopology.LineStrip:return this._gl.LINE_STRIP;case t.MeshTopology.Triangles:return this._gl.TRIANGLES;case t.MeshTopology.TriangleStrip:return this._gl.TRIANGLE_STRIP;case t.MeshTopology.TriangleFan:return this._gl.TRIANGLE_FAN}}getIndexType(e){switch(e){case t.IndexFormat.UInt8:return this._gl.UNSIGNED_BYTE;case t.IndexFormat.UInt16:return this._gl.UNSIGNED_SHORT;case t.IndexFormat.UInt32:return this._gl.UNSIGNED_INT}}drawElementsInstanced(e,r,a,i,n){this._engine.isWebGL2?this._gl.drawElementsInstanced(e,r,a,i,n):this._angleInstancedArrays.drawElementsInstancedANGLE(e,r,a,i,n),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_Instancing_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_TriangleCount,r/3*n)}drawArraysInstanced(e,r,a,i){this._engine.isWebGL2?this._gl.drawArraysInstanced(e,r,a,i):this._angleInstancedArrays.drawArraysInstancedANGLE(e,r,a,i),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_Instancing_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_TriangleCount,(a-2)*i)}drawArrays(e,r,a){this._gl.drawArrays(e,r,a),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_TriangleCount,a-2)}drawElements(e,r,a,i){this._gl.drawElements(e,r,a,i),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_TriangleCount,r/3)}drawElements2DTemp(e,r,a,i){e=this.getMeshTopology(e),a=this.getIndexType(a),this._gl.drawElements(e,r,a,i),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_DrawCallCount,1),this._engine._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_TriangleCount,r/3)}drawGeometryElement(e){e.bufferState.bind();let r=e.drawParams.elements,a=e.drawParams.length;switch(e.drawType){case t.DrawType.DrawArray:for(let t=0;t<a;t+=2)this.drawArrays(e._glmode,r[t],r[t+1]);break;case t.DrawType.DrawElement:for(let t=0;t<a;t+=2)this.drawElements(e._glmode,r[t+1],e._glindexFormat,r[t]);break;case t.DrawType.DrawArrayInstance:for(let t=0;t<a;t+=2)this.drawArraysInstanced(e._glmode,r[t],r[t+1],e.instanceCount);break;case t.DrawType.DrawElementInstance:for(let t=0;t<a;t+=2)this.drawElementsInstanced(e._glmode,r[t+1],e._glindexFormat,r[t],e.instanceCount)}}}class d{constructor(e){this._engine=e,this._gl=this._engine.gl}_initState(){this.setDepthFunc(t.CompareFunction.Less),this.setBlendEquationSeparate(t.BlendEquationSeparate.ADD,t.BlendEquationSeparate.ADD),this._blendEquation=t.BlendEquationSeparate.ADD,this._sFactor=t.BlendFactor.One,this._dFactor=t.BlendFactor.Zero,this._sFactorAlpha=t.BlendFactor.One,this._dFactorAlpha=t.BlendFactor.One}_getBlendFactor(e){const r=this._gl;switch(e){case t.BlendFactor.Zero:return r.ZERO;case t.BlendFactor.One:return r.ONE;case t.BlendFactor.SourceColor:return r.SRC_COLOR;case t.BlendFactor.OneMinusSourceColor:return r.ONE_MINUS_SRC_COLOR;case t.BlendFactor.DestinationColor:return r.DST_COLOR;case t.BlendFactor.OneMinusDestinationColor:return r.ONE_MINUS_DST_COLOR;case t.BlendFactor.SourceAlpha:return r.SRC_ALPHA;case t.BlendFactor.OneMinusSourceAlpha:return r.ONE_MINUS_SRC_ALPHA;case t.BlendFactor.DestinationAlpha:return r.DST_ALPHA;case t.BlendFactor.OneMinusDestinationAlpha:return r.ONE_MINUS_DST_ALPHA;case t.BlendFactor.SourceAlphaSaturate:return r.SRC_ALPHA_SATURATE;case t.BlendFactor.BlendColor:return r.CONSTANT_COLOR;case t.BlendFactor.OneMinusBlendColor:return r.ONE_MINUS_CONSTANT_COLOR}}_getBlendOperation(e){const r=this._gl;switch(e){case t.BlendEquationSeparate.ADD:return r.FUNC_ADD;case t.BlendEquationSeparate.SUBTRACT:return r.FUNC_SUBTRACT;case t.BlendEquationSeparate.REVERSE_SUBTRACT:return r.FUNC_REVERSE_SUBTRACT;default:throw"Unknow type"}}_getGLCompareFunction(e){const r=this._gl;switch(e){case t.CompareFunction.Never:return r.NEVER;case t.CompareFunction.Less:return r.LESS;case t.CompareFunction.Equal:return r.EQUAL;case t.CompareFunction.LessEqual:return r.LEQUAL;case t.CompareFunction.Greater:return r.GREATER;case t.CompareFunction.NotEqual:return r.NOTEQUAL;case t.CompareFunction.GreaterEqual:return r.GEQUAL;case t.CompareFunction.Always:return r.ALWAYS;default:return r.LEQUAL}}_getGLStencilOperation(e){const r=this._gl;switch(e){case t.StencilOperation.Keep:return r.KEEP;case t.StencilOperation.Zero:return r.ZERO;case t.StencilOperation.Replace:return r.REPLACE;case t.StencilOperation.IncrementSaturate:return r.INCR;case t.StencilOperation.DecrementSaturate:return r.DECR;case t.StencilOperation.Invert:return r.INVERT;case t.StencilOperation.IncrementWrap:return r.INCR_WRAP;case t.StencilOperation.DecrementWrap:return r.DECR_WRAP}}_getGLFrontfaceFactor(e){return e==t.CullMode.Front?this._gl.CCW:this._gl.CW}setDepthTest(e){e!==this._depthTest&&(this._depthTest=e,e?this._gl.enable(this._gl.DEPTH_TEST):this._gl.disable(this._gl.DEPTH_TEST))}setDepthMask(e){e!==this._depthMask&&(this._depthMask=e,this._gl.depthMask(e))}setDepthFunc(e){e!==this._depthFunc&&(this._depthFunc=e,this._gl.depthFunc(this._getGLCompareFunction(e)))}setStencilTest(e){e!==this._stencilTest&&(this._stencilTest=e,e?this._gl.enable(this._gl.STENCIL_TEST):this._gl.disable(this._gl.STENCIL_TEST))}setStencilMask(e){e!==this._stencilMask&&(this._stencilMask=e,e?this._gl.stencilMask(255):this._gl.stencilMask(0))}setStencilFunc(e,t){e==this._stencilFunc&&t==this._stencilRef||(this._stencilFunc=e,this._stencilRef=t,this._gl.stencilFunc(this._getGLCompareFunction(e),t,255))}setstencilOp(e,t,r){this._stencilOp_fail==e&&this._stencilOp_zfail==t&&this._stencilOp_zpass==r||(this._stencilOp_fail=e,this._stencilOp_zfail=t,this._stencilOp_zpass=r,this._gl.stencilOp(this._getGLStencilOperation(e),this._getGLStencilOperation(t),this._getGLStencilOperation(r)))}setBlend(e){e!==this._blend&&(this._blend=e,e?this._gl.enable(this._gl.BLEND):this._gl.disable(this._gl.BLEND))}setBlendEquation(e){e!==this._blendEquation&&(this._blendEquation=e,this._blendEquationRGB=this._blendEquationAlpha=null,this._gl.blendEquation(this._getBlendOperation(e)))}setBlendEquationSeparate(e,t){e===this._blendEquationRGB&&t===this._blendEquationAlpha||(this._blendEquationRGB=e,this._blendEquationAlpha=t,this._blendEquation=null,this._gl.blendEquationSeparate(this._getBlendOperation(e),this._getBlendOperation(t)))}setBlendFunc(e,t,r=!1){(r||e!==this._sFactor||t!==this._dFactor)&&(this._sFactor=e,this._dFactor=t,this._sFactorRGB=null,this._dFactorRGB=null,this._sFactorAlpha=null,this._dFactorAlpha=null,this._gl.blendFunc(this._getBlendFactor(e),this._getBlendFactor(t)))}setBlendFuncSeperate(e,t,r,a){e===this._sFactorRGB&&t===this._dFactorRGB&&r===this._sFactorAlpha&&a===this._dFactorAlpha||(this._sFactorRGB=e,this._dFactorRGB=t,this._sFactorAlpha=r,this._dFactorAlpha=a,this._sFactor=null,this._dFactor=null,this._gl.blendFuncSeparate(this._getBlendFactor(e),this._getBlendFactor(t),this._getBlendFactor(r),this._getBlendFactor(a)))}setCullFace(e){e!==this._cullFace&&(this._cullFace=e,e?this._gl.enable(this._gl.CULL_FACE):this._gl.disable(this._gl.CULL_FACE))}setFrontFace(e){e!==this._frontFace&&(this._frontFace=e,this._gl.frontFace(this._getGLFrontfaceFactor(e)))}}class E extends n{constructor(e,t,r,a){super(e),this._complete=!0,this._vs=t,this._ps=r,this._attributeMap=a,this._uniformMap=[],this._create()}_create(){f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_ShaderCompile,1);let e=performance.now();const r=this._gl;if(f.instance.lost)return void console.log("lost webgl context");for(var a in this._program=r.createProgram(),this._vshader=this._createShader(r,this._vs,r.VERTEX_SHADER),this._pshader=this._createShader(r,this._ps,r.FRAGMENT_SHADER),r.attachShader(this._program,this._vshader),r.attachShader(this._program,this._pshader),this._attributeMap)r.bindAttribLocation(this._program,this._attributeMap[a][0],a);r.linkProgram(this._program);if(!r.getProgramParameter(this._program,r.LINK_STATUS)){var i=r.getProgramInfoLog(this._program);return console.error(new Error("Could not compile WebGL program. \n\n"+i)),void(this._complete=!1)}const n=r.getProgramParameter(this._program,r.ACTIVE_UNIFORMS);let s,_;for(this.useProgram(),this._curActTexIndex=0,_=0;_<n;_++){var o=r.getActiveUniform(this._program,_),l=o.name;let e=r.getUniformLocation(this._program,l);(e||0==e)&&(s=new t.ShaderVariable,s.location=e,l.indexOf("[0]")>0?(s.name=l=l.substr(0,l.length-3),s.isArray=!0):(s.name=l,s.isArray=!1),s.type=o.type,this._addShaderUnifiormFun(s),this._uniformMap.push(s),s.dataOffset=this._engine.propertyNameToID(l))}if(this._engine.isWebGL2){this._uniformObjectMap={};var h=r.getProgramParameter(this._program,r.ACTIVE_UNIFORM_BLOCKS);for(_=0;_<h;_++){let e=r;var u=e.getActiveUniformBlockName(this._program,_);s=new t.ShaderVariable,s.name=u,s.isArray=!1,s.type=r.UNIFORM_BUFFER,s.dataOffset=this._engine.propertyNameToID(u);let a=s.location=e.getUniformBlockIndex(this._program,u);e.uniformBlockBinding(this._program,a,this._engine.getUBOPointer(u)),this._uniformObjectMap[s.name]=s,this._uniformMap.push(s),this._addShaderUnifiormFun(s)}}f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.T_ShaderCompile,performance.now()-e|0)}_legalUBObyteLength(e){return 16*Math.ceil(e/16)}_createShader(e,r,a){var i=e.createShader(a);return e.shaderSource(i,r),e.compileShader(i),this._engine._isShaderDebugMode&&!e.getShaderParameter(i,e.COMPILE_STATUS)&&(t.LayaEnv.isPlaying?console.error(e.getShaderInfoLog(i)):console.warn(e.getShaderInfoLog(i))),i}_addShaderUnifiormFun(e){var t=this._gl;e.caller=this;var r=e.isArray;switch(e.type){case t.BOOL:e.fun=this._uniform1i,e.uploadedValue=new Array(1);break;case t.INT:e.fun=r?this._uniform1iv:this._uniform1i,e.uploadedValue=new Array(1);break;case t.FLOAT:e.fun=r?this._uniform1fv:this._uniform1f,e.uploadedValue=new Array(1);break;case t.FLOAT_VEC2:e.fun=r?this._uniform_vec2v:this._uniform_vec2,e.uploadedValue=new Array(2);break;case t.FLOAT_VEC3:e.fun=r?this._uniform_vec3v:this._uniform_vec3,e.uploadedValue=new Array(3);break;case t.FLOAT_VEC4:e.fun=r?this._uniform_vec4v:this._uniform_vec4,e.uploadedValue=new Array(4);break;case t.FLOAT_MAT2:e.fun=this._uniformMatrix2fv;break;case t.FLOAT_MAT3:e.fun=this._uniformMatrix3fv;break;case t.FLOAT_MAT4:e.fun=r?this._uniformMatrix4fv:this._uniformMatrix4f;break;case t.SAMPLER_2D:case t.SAMPLER_2D_SHADOW:t.uniform1i(e.location,this._curActTexIndex),e.textureID=this._engine._glTextureIDParams[this._curActTexIndex++],e.fun=this._uniform_sampler2D;break;case t.SAMPLER_2D_ARRAY:t.uniform1i(e.location,this._curActTexIndex),e.textureID=this._engine._glTextureIDParams[this._curActTexIndex++],e.fun=this._uniform_sampler2DArray;break;case 35679:t.uniform1i(e.location,this._curActTexIndex),e.textureID=this._engine._glTextureIDParams[this._curActTexIndex++],e.fun=this._uniform_sampler3D;break;case t.SAMPLER_CUBE:t.uniform1i(e.location,this._curActTexIndex),e.textureID=this._engine._glTextureIDParams[this._curActTexIndex++],e.fun=this._uniform_samplerCube;break;case t.UNIFORM_BUFFER:e.fun=this._uniform_UniformBuffer;break;default:throw new Error("compile shader err!")}}getUniformMap(){return this._uniformMap}bind(){return this.useProgram()}useProgram(){return this._engine._glUseProgram!==this&&(this._gl.useProgram(this._program),this._engine._glUseProgram=this,f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_SetRenderPassCount,1),!0)}_uniform1f(e,t){var r=e.uploadedValue;return r[0]!==t?(this._gl.uniform1f(e.location,r[0]=t),1):0}_uniform1fv(e,t){if(t.length<4){var r=e.uploadedValue;return r[0]!==t[0]||r[1]!==t[1]||r[2]!==t[2]||r[3]!==t[3]?(this._gl.uniform1fv(e.location,t),r[0]=t[0],r[1]=t[1],r[2]=t[2],r[3]=t[3],1):0}return this._gl.uniform1fv(e.location,t),1}_uniform_vec2(e,t){var r=e.uploadedValue;return r[0]!==t.x||r[1]!==t.y?(this._gl.uniform2f(e.location,r[0]=t.x,r[1]=t.y),1):0}_uniform_vec2v(e,t){if(t.length<2){var r=e.uploadedValue;return r[0]!==t[0]||r[1]!==t[1]||r[2]!==t[2]||r[3]!==t[3]?(this._gl.uniform2fv(e.location,t),r[0]=t[0],r[1]=t[1],r[2]=t[2],r[3]=t[3],1):0}return this._gl.uniform2fv(e.location,t),1}_uniform_vec3(e,t){var r=e.uploadedValue;return r[0]!==t.x||r[1]!==t.y||r[2]!==t.z?(this._gl.uniform3f(e.location,r[0]=t.x,r[1]=t.y,r[2]=t.z),1):0}_uniform_vec3v(e,t){return this._gl.uniform3fv(e.location,t),1}_uniform_vec4(e,t){var r=e.uploadedValue;return r[0]!==t.x||r[1]!==t.y||r[2]!==t.z||r[3]!==t.w?(this._gl.uniform4f(e.location,r[0]=t.x,r[1]=t.y,r[2]=t.z,r[3]=t.w),1):0}_uniform_vec4v(e,t){return this._gl.uniform4fv(e.location,t),1}_uniformMatrix2fv(e,t){return this._gl.uniformMatrix2fv(e.location,!1,t),1}_uniformMatrix3fv(e,t){let r=t.elements;return this._gl.uniformMatrix3fv(e.location,!1,r),1}_uniformMatrix4f(e,t){var r=t.elements;return this._gl.uniformMatrix4fv(e.location,!1,r),1}_uniformMatrix4fv(e,t){return this._gl.uniformMatrix4fv(e.location,!1,t),1}_uniform1i(e,t){var r=e.uploadedValue;return r[0]!==t?(this._gl.uniform1i(e.location,r[0]=t),1):0}_uniform1iv(e,t){return this._gl.uniform1iv(e.location,t),1}_uniform_ivec2(e,t){var r=e.uploadedValue;return r[0]!==t[0]||r[1]!==t[1]?(this._gl.uniform2i(e.location,r[0]=t[0],r[1]=t[1]),1):0}_uniform_ivec2v(e,t){return this._gl.uniform2iv(e.location,t),1}_uniform_vec3i(e,t){var r=e.uploadedValue;return r[0]!==t[0]||r[1]!==t[1]||r[2]!==t[2]?(this._gl.uniform3i(e.location,r[0]=t[0],r[1]=t[1],r[2]=t[2]),1):0}_uniform_vec3vi(e,t){return this._gl.uniform3iv(e.location,t),1}_uniform_vec4i(e,t){var r=e.uploadedValue;return r[0]!==t[0]||r[1]!==t[1]||r[2]!==t[2]||r[3]!==t[3]?(this._gl.uniform4i(e.location,r[0]=t[0],r[1]=t[1],r[2]=t[2],r[3]=t[3]),1):0}_uniform_vec4vi(e,t){return this._gl.uniform4iv(e.location,t),1}_uniform_sampler2D(e,r){var a=r?r._getSource():t.Texture2D.errorTexture._getSource(),i=this._gl;return this._bindTexture(e.textureID,i.TEXTURE_2D,a),0}_uniform_sampler2DArray(e,r){var a=r?r._getSource():t.Texture2D.errorTexture._getSource(),i=this._gl;return this._bindTexture(e.textureID,i.TEXTURE_2D_ARRAY,a),0}_uniform_sampler3D(e,r){var a=r?r._getSource():t.Texture2D.errorTexture._getSource(),i=this._gl;return this._bindTexture(e.textureID,i.TEXTURE_3D,a),0}_uniform_samplerCube(e,r){var a=r?r._getSource():t.TextureCube.errorTexture._getSource(),i=this._gl;return this._bindTexture(e.textureID,i.TEXTURE_CUBE_MAP,a),0}_uniform_UniformBuffer(e,t){return t._bindUniformBufferBase(),1}_bindTexture(e,t,r){const a=this._gl;this._engine._activedTextureID!==e&&(a.activeTexture(e),this._engine._activedTextureID=e);const i=this._engine._activedTextureID-this._gl.TEXTURE0;this._engine._activeTextures[i]!==r&&(a.bindTexture(t,r),this._engine._activeTextures[i]=r)}destroy(){super.destroy();const e=this._gl;e.deleteShader(this._vshader),e.deleteShader(this._pshader),e.deleteProgram(this._program),this._vshader=null,this._pshader=null,this._program=null,this._attributeMap=null,this._uniformMap=null,this._uniformObjectMap=null,this._gl=null,this._engine=null}}class c extends n{constructor(t){super(t),this._vertexDeclaration=[],t.isWebGL2||(this._vaoExt=t._supportCapatable.getExtension(e.WebGLExtension.OES_vertex_array_object)),this._vao=this.createVertexArray(),this._angleInstancedArrays=this._engine._supportCapatable.getExtension(e.WebGLExtension.ANGLE_instanced_arrays)}createVertexArray(){return this._engine.isWebGL2?this._gl.createVertexArray():this._vaoExt.createVertexArrayOES()}deleteVertexArray(){this._engine.isWebGL2?this._gl.deleteVertexArray(this._vao):this._vaoExt.deleteVertexArrayOES(this._vao)}bindVertexArray(){this._engine._GLBindVertexArray!=this&&(this._engine.isWebGL2?this._gl.bindVertexArray(this._vao):this._vaoExt.bindVertexArrayOES(this._vao),this._engine._GLBindVertexArray=this)}unbindVertexArray(){this._engine.isWebGL2?this._gl.bindVertexArray(null):this._vaoExt.bindVertexArrayOES(null),this._engine._GLBindVertexArray=null}isVertexArray(){this._engine.isWebGL2?this._gl.isVertexArray(this._vao):this._vaoExt.isVertexArrayOES(this._vao)}applyVertexBuffer(e){if(this.clearVAO(),this._vertexBuffers=e,this._engine._GLBindVertexArray!=this)throw"BufferState: must call bind() function first.";this._vertexDeclaration.length=e.length;var t=0;e.forEach((e=>{var r=e._shaderValues;for(var a in this._vertexDeclaration[t++]=e._shaderValues,e.bind(),r){var i=parseInt(a),n=r[a];this._gl.enableVertexAttribArray(i),this._gl.vertexAttribPointer(i,n.elementCount,n.elementType,!!n.normalized,n.vertexStride,n.elementOffset),e.instanceBuffer&&this.vertexAttribDivisor(i,1)}}))}clearVAO(){for(let a=0,i=this._vertexDeclaration.length;a<i;a++){var e=this._vertexDeclaration[a];for(var t in e){var r=parseInt(t);this._gl.disableVertexAttribArray(r)}}}applyIndexBuffer(e){if(null!=e){if(this._engine._GLBindVertexArray!=this)throw"BufferState: must call bind() function first.";this._bindedIndexBuffer!==e&&(e._glBuffer.bindBuffer(),this._bindedIndexBuffer=e)}}vertexAttribDivisor(e,t){this._engine.isWebGL2?this._gl.vertexAttribDivisor(e,t):this._angleInstancedArrays.vertexAttribDivisorANGLE(e,t)}destroy(){super.destroy(),this._gl,this.deleteVertexArray(),this._gl=null,this._engine=null}}!function(){var e={};function t(t,r){var a;e[t]=!0,void 0!==r&&(a=r,window.console&&window.console.error&&window.console.error(a))}var r=function e(t){var r=t.gl;this.ext=t,this.isAlive=!0,this.hasBeenBound=!1,this.elementArrayBuffer=null,this.attribs=new Array(t.maxVertexAttribs);for(var a=0;a<this.attribs.length;a++){var i=new e.VertexAttrib(r);this.attribs[a]=i}this.maxAttrib=0};(r.VertexAttrib=function(e){this.enabled=!1,this.buffer=null,this.size=4,this.type=e.FLOAT,this.normalized=!1,this.stride=16,this.offset=0,this.cached="",this.recache()}).prototype.recache=function(){this.cached=[this.size,this.type,this.normalized,this.stride,this.offset].join(":")};var a=function(t){var r=this;this.gl=t,function(t){var r=t.getError;t.getError=function(){var a;do{(a=r.apply(t))!=t.NO_ERROR&&(e[a]=!0)}while(a!=t.NO_ERROR);for(var i in e)if(e[i])return delete e[i],parseInt(i);return t.NO_ERROR}}(t);var a=this.original={getParameter:t.getParameter,enableVertexAttribArray:t.enableVertexAttribArray,disableVertexAttribArray:t.disableVertexAttribArray,bindBuffer:t.bindBuffer,getVertexAttrib:t.getVertexAttrib,vertexAttribPointer:t.vertexAttribPointer};t.getParameter=function(e){return e==r.VERTEX_ARRAY_BINDING_OES?r.currentVertexArrayObject==r.defaultVertexArrayObject?null:r.currentVertexArrayObject:a.getParameter.apply(this,arguments)},t.enableVertexAttribArray=function(e){var t=r.currentVertexArrayObject;return t.maxAttrib=Math.max(t.maxAttrib,e),t.attribs[e].enabled=!0,a.enableVertexAttribArray.apply(this,arguments)},t.disableVertexAttribArray=function(e){var t=r.currentVertexArrayObject;return t.maxAttrib=Math.max(t.maxAttrib,e),t.attribs[e].enabled=!1,a.disableVertexAttribArray.apply(this,arguments)},t.bindBuffer=function(e,i){switch(e){case t.ARRAY_BUFFER:r.currentArrayBuffer=i;break;case t.ELEMENT_ARRAY_BUFFER:r.currentVertexArrayObject.elementArrayBuffer=i}return a.bindBuffer.apply(this,arguments)},t.getVertexAttrib=function(e,i){var n=r.currentVertexArrayObject.attribs[e];switch(i){case t.VERTEX_ATTRIB_ARRAY_BUFFER_BINDING:return n.buffer;case t.VERTEX_ATTRIB_ARRAY_ENABLED:return n.enabled;case t.VERTEX_ATTRIB_ARRAY_SIZE:return n.size;case t.VERTEX_ATTRIB_ARRAY_STRIDE:return n.stride;case t.VERTEX_ATTRIB_ARRAY_TYPE:return n.type;case t.VERTEX_ATTRIB_ARRAY_NORMALIZED:return n.normalized;default:return a.getVertexAttrib.apply(this,arguments)}},t.vertexAttribPointer=function(e,t,i,n,s,_){var o=r.currentVertexArrayObject;o.maxAttrib=Math.max(o.maxAttrib,e);var l=o.attribs[e];return l.buffer=r.currentArrayBuffer,l.size=t,l.type=i,l.normalized=n,l.stride=s,l.offset=_,l.recache(),a.vertexAttribPointer.apply(this,arguments)},t.instrumentExtension&&t.instrumentExtension(this,"OES_vertex_array_object"),t.canvas.addEventListener("webglcontextrestored",(function(){var e;e="OESVertexArrayObject emulation library context restored",window.console&&window.console.log&&window.console.log(e),r.reset_()}),!0),this.reset_()};a.prototype.VERTEX_ARRAY_BINDING_OES=34229,a.prototype.reset_=function(){if(void 0!==this.vertexArrayObjects)for(var e=0;e<this.vertexArrayObjects.length;++e)this.vertexArrayObjects.isAlive=!1;var t=this.gl;this.maxVertexAttribs=t.getParameter(t.MAX_VERTEX_ATTRIBS),this.defaultVertexArrayObject=new r(this),this.currentVertexArrayObject=null,this.currentArrayBuffer=null,this.vertexArrayObjects=[this.defaultVertexArrayObject],this.bindVertexArrayOES(null)},a.prototype.createVertexArrayOES=function(){var e=new r(this);return this.vertexArrayObjects.push(e),e},a.prototype.deleteVertexArrayOES=function(e){e.isAlive=!1,this.vertexArrayObjects.splice(this.vertexArrayObjects.indexOf(e),1),this.currentVertexArrayObject==e&&this.bindVertexArrayOES(null)},a.prototype.isVertexArrayOES=function(e){return!!(e&&e instanceof r&&e.hasBeenBound&&e.ext==this)},a.prototype.bindVertexArrayOES=function(e){var r=this.gl;if(!e||e.isAlive){var a=this.original,i=this.currentVertexArrayObject;this.currentVertexArrayObject=e||this.defaultVertexArrayObject,this.currentVertexArrayObject.hasBeenBound=!0;var n=this.currentVertexArrayObject;if(i!=n){i&&n.elementArrayBuffer==i.elementArrayBuffer||a.bindBuffer.call(r,r.ELEMENT_ARRAY_BUFFER,n.elementArrayBuffer);for(var s=this.currentArrayBuffer,_=Math.max(i?i.maxAttrib:0,n.maxAttrib),o=0;o<=_;o++){var l=n.attribs[o],h=i?i.attribs[o]:null;if(i&&l.enabled==h.enabled||(l.enabled?a.enableVertexAttribArray.call(r,o):a.disableVertexAttribArray.call(r,o)),l.enabled){var u=!1;i&&l.buffer==h.buffer||(s!=l.buffer&&(a.bindBuffer.call(r,r.ARRAY_BUFFER,l.buffer),s=l.buffer),u=!0),(u||l.cached!=h.cached)&&a.vertexAttribPointer.call(r,o,l.size,l.type,l.normalized,l.stride,l.offset)}}this.currentArrayBuffer!=s&&a.bindBuffer.call(r,r.ARRAY_BUFFER,this.currentArrayBuffer)}}else t(r.INVALID_OPERATION,"bindVertexArrayOES: attempt to bind deleted arrayObject")},window._setupVertexArrayObject=function(e){var t=e.getSupportedExtensions;e.getSupportedExtensions=function(){var e=t.call(this)||[];return e.indexOf("OES_vertex_array_object")<0&&e.push("OES_vertex_array_object"),e};var r=e.getExtension;e.getExtension=function(e){var t=r.call(this,e);return t||("OES_vertex_array_object"!==e?null:(this.__OESVertexArrayObject||(console.log("Setup OES_vertex_array_object polyfill"),this.__OESVertexArrayObject=new a(this)),this.__OESVertexArrayObject))}}}();class T{constructor(e){this._extentionVendorPrefixes=["","WEBKIT_","MOZ_"],this._gl=e.gl,this.initExtension(e.isWebGL2),this.initCapable(e.isWebGL2)}initCapable(r){this._capabilityMap=new Map;let a=r||!!this.getExtension(e.WebGLExtension.OES_element_index_uint);this._capabilityMap.set(t.RenderCapable.Element_Index_Uint32,a),a=r||!!this.getExtension(e.WebGLExtension.OES_texture_float),this._capabilityMap.set(t.RenderCapable.TextureFormat_R32G32B32A32,a),a=r||!!this.getExtension(e.WebGLExtension.OES_texture_half_float),this._capabilityMap.set(t.RenderCapable.TextureFormat_R16G16B16A16,a),a=!!this.getExtension(e.WebGLExtension.EXT_texture_filter_anisotropic),this._capabilityMap.set(t.RenderCapable.Texture_anisotropic,a),a=r?!!this.getExtension(e.WebGLExtension.EXT_color_buffer_float)||!!this.getExtension(e.WebGLExtension.EXT_color_buffer_half_float):!(!this.getExtension(e.WebGLExtension.OES_texture_half_float)&&!this.getExtension(e.WebGLExtension.EXT_color_buffer_half_float)||!this.getExtension(e.WebGLExtension.OES_texture_half_float_linear)),this._capabilityMap.set(t.RenderCapable.RenderTextureFormat_R16G16B16A16,a),a=r?!!this.getExtension(e.WebGLExtension.EXT_color_buffer_float)&&!!this.getExtension(e.WebGLExtension.OES_texture_float_linear):!!this.getExtension(e.WebGLExtension.OES_texture_float)&&!!this.getExtension(e.WebGLExtension.OES_texture_float_linear),this._capabilityMap.set(t.RenderCapable.RenderTextureFormat_R32G32B32A32,a),a=r||!!this.getExtension(e.WebGLExtension.WEBGL_depth_texture),this._capabilityMap.set(t.RenderCapable.RenderTextureFormat_Depth,a),a=r,this._capabilityMap.set(t.RenderCapable.RenderTextureFormat_ShadowMap,a),a=r||!!this.getExtension(e.WebGLExtension.OES_vertex_array_object),this._capabilityMap.set(t.RenderCapable.Vertex_VAO,a),a=r||!!this.getExtension(e.WebGLExtension.ANGLE_instanced_arrays),this._capabilityMap.set(t.RenderCapable.DrawElement_Instance,a),a=r||!!this.getExtension(e.WebGLExtension.EXT_shader_texture_lod),this._capabilityMap.set(t.RenderCapable.Shader_TextureLod,a),a=!!this.getExtension(e.WebGLExtension.WEBGL_compressed_texture_s3tc),this._capabilityMap.set(t.RenderCapable.COMPRESS_TEXTURE_S3TC,a),a=!!this.getExtension(e.WebGLExtension.WEBGL_compressed_texture_s3tc_srgb),this._capabilityMap.set(t.RenderCapable.COMPRESS_TEXTURE_S3TC_SRGB,a),a=!!this.getExtension(e.WebGLExtension.WEBGL_compressed_texture_pvrtc),this._capabilityMap.set(t.RenderCapable.COMPRESS_TEXTURE_PVRTC,a),a=!!this.getExtension(e.WebGLExtension.WEBGL_compressed_texture_etc1),this._capabilityMap.set(t.RenderCapable.COMPRESS_TEXTURE_ETC1,a),a=!!this.getExtension(e.WebGLExtension.WEBGL_compressed_texture_etc),this._capabilityMap.set(t.RenderCapable.COMPRESS_TEXTURE_ETC,a),a=!!this.getExtension(e.WebGLExtension.WEBGL_compressed_texture_astc),this._capabilityMap.set(t.RenderCapable.COMPRESS_TEXTURE_ASTC,a),a=r||!!this.getExtension(e.WebGLExtension.EXT_sRGB),this._capabilityMap.set(t.RenderCapable.Texture_SRGB,a),a=!!this.getExtension(e.WebGLExtension.OES_texture_float_linear),this._capabilityMap.set(t.RenderCapable.Texture_FloatLinearFiltering,a),a=r||!!this.getExtension(e.WebGLExtension.OES_texture_half_float_linear),this._capabilityMap.set(t.RenderCapable.Texture_HalfFloatLinearFiltering,a),a=r,this._capabilityMap.set(t.RenderCapable.MSAA,a),this._capabilityMap.set(t.RenderCapable.UnifromBufferObject,a),this._capabilityMap.set(t.RenderCapable.Texture3D,a)}initExtension(t){this._extensionMap=new Map;const r=(e,t,r)=>{t&&r.set(e,t)},a=this._getExtension("EXT_texture_filter_anisotropic");r(e.WebGLExtension.EXT_texture_filter_anisotropic,a,this._extensionMap);const i=this._getExtension("WEBGL_compressed_texture_s3tc");r(e.WebGLExtension.WEBGL_compressed_texture_s3tc,i,this._extensionMap);const n=this._getExtension("WEBGL_compressed_texture_s3tc_srgb");r(e.WebGLExtension.WEBGL_compressed_texture_s3tc_srgb,n,this._extensionMap);const s=this._getExtension("WEBGL_compressed_texture_pvrtc");r(e.WebGLExtension.WEBGL_compressed_texture_pvrtc,s,this._extensionMap);const _=this._getExtension("WEBGL_compressed_texture_etc1");r(e.WebGLExtension.WEBGL_compressed_texture_etc1,_,this._extensionMap);const o=this._getExtension("WEBGL_compressed_texture_etc");r(e.WebGLExtension.WEBGL_compressed_texture_etc,o,this._extensionMap);const l=this._getExtension("WEBGL_compressed_texture_astc");r(e.WebGLExtension.WEBGL_compressed_texture_astc,l,this._extensionMap);const h=this._getExtension("OES_texture_float_linear");r(e.WebGLExtension.OES_texture_float_linear,h,this._extensionMap);const u=this._getExtension("EXT_color_buffer_half_float");if(r(e.WebGLExtension.EXT_color_buffer_half_float,u,this._extensionMap),t){const t=this._getExtension("EXT_color_buffer_float");r(e.WebGLExtension.EXT_color_buffer_float,t,this._extensionMap)}else{window._setupVertexArrayObject&&window._setupVertexArrayObject(this._gl);const t=this._getExtension("OES_vertex_array_object");r(e.WebGLExtension.OES_vertex_array_object,t,this._extensionMap);const a=this._getExtension("ANGLE_instanced_arrays");r(e.WebGLExtension.ANGLE_instanced_arrays,a,this._extensionMap);const i=this._getExtension("OES_texture_half_float");r(e.WebGLExtension.OES_texture_half_float,i,this._extensionMap);const n=this._getExtension("OES_texture_half_float_linear");r(e.WebGLExtension.OES_texture_half_float_linear,n,this._extensionMap);const s=this._getExtension("OES_texture_float");r(e.WebGLExtension.OES_texture_float,s,this._extensionMap);const _=this._getExtension("OES_element_index_uint");r(e.WebGLExtension.OES_element_index_uint,_,this._extensionMap);const o=this._getExtension("EXT_shader_texture_lod");r(e.WebGLExtension.EXT_shader_texture_lod,o,this._extensionMap);const l=this._getExtension("WEBGL_depth_texture");r(e.WebGLExtension.WEBGL_depth_texture,l,this._extensionMap);const h=this._getExtension("EXT_sRGB");r(e.WebGLExtension.EXT_sRGB,h,this._extensionMap);const u=this._getExtension("OES_standard_derivatives");r(e.WebGLExtension.OES_standard_derivatives,u,this._extensionMap)}}getCapable(e){return this._capabilityMap.get(e)}getExtension(e){return this._extensionMap.has(e)?this._extensionMap.get(e):null}_getExtension(e){const t=this._extentionVendorPrefixes;for(const a in t){var r=this._gl.getExtension(t[a]+e);if(r)return r}return null}}class f extends t.EventDispatcher{get lost(){return this._lost}constructor(r,a=e.WebGLMode.Auto){super(),this._lost=!1,this._propertyNameMap={},this._propertyNameCounter=0,this._IDCounter=0,this._isShaderDebugMode=!0,this._enableStatistics=!1,this._curUBOPointer=0,this._GLUBOPointerMap=new Map,this._GLBindPointerUBOMap=new Map,this._lastClearColor=new t.Color,this._lastClearDepth=-1,this._remapZ=!0,this._screenInvertY=!1,this._lodTextureSample=!0,this._breakTextureSample=!0,this._GLStatisticsInfo=new Map,this._config=r,this._isWebGL2=!1,this._lastViewport=new t.Vector4(0,0,0,0),this._lastClearColor=new t.Color(0,0,0,0),this._lastScissor=new t.Vector4(0,0,0,0),this._webglMode=a,this._initStatisticsInfo(),f.instance=this}endFrame(){this.event("endFrame",null)}getInnerWidth(){return t.LayaEnv.isConch?window.getInnerWidth():this._globalWidth}getInnerHeight(){return t.LayaEnv.isConch?window.getInnerHeight():this._globalHeight}resizeOffScreen(e,r){this._globalWidth=e,this._globalHeight=r,t.LayaEnv.isConch&&(f._lastFrameBuffer&&(f._lastFrameBuffer.dispose(),f._lastFrameBuffer_WebGLOBJ=null),f._lastFrameBuffer=this.getTextureContext().createRenderTargetInternal(e,r,t.RenderTargetFormat.R8G8B8A8,t.RenderTargetFormat.None,!1,!1,1),f._lastFrameBuffer_WebGLOBJ=f._lastFrameBuffer._framebuffer)}addTexGammaDefine(e,t){f._texGammaDefine[e]=t}get gl(){return this._context}get isWebGL2(){return this._isWebGL2}get webglConfig(){return this._config}_initStatisticsInfo(){for(var e=0;e<t.GPUEngineStatisticsInfo.Count;e++)this._GLStatisticsInfo.set(e,0)}_addStatisticsInfo(e,t){this._enableStatistics&&this._GLStatisticsInfo.set(e,this._GLStatisticsInfo.get(e)+t)}clearStatisticsInfo(){if(this._enableStatistics)for(var e=0;e<t.GPUEngineStatisticsInfo.FrameClearCount;e++)this._GLStatisticsInfo.set(e,0)}getStatisticsInfo(e){return this._GLStatisticsInfo.get(e)}_getBindUBOBuffer(e){return this._GLBindPointerUBOMap.get(e)}_setBindUBOBuffer(e,t){this._GLBindPointerUBOMap.set(e,t)}initRenderEngine(t){let r,a;switch(this._webglMode){case e.WebGLMode.Auto:r=["webgl2","experimental-webgl2","webgl","experimental-webgl"];break;case e.WebGLMode.WebGL1:r=["webgl","experimental-webgl"];break;case e.WebGLMode.WebGL2:r=["webgl2","experimental-webgl2"]}for(var i=0;i<r.length;i++){try{a=t.getContext(r[i],this._config)}catch(e){}if(a){"webgl2"!==r[i]&&"experimental-webgl2"!==r[i]||(this._isWebGL2=!0);break}}this._context=a,this.scissorTest(!0),this._initBindBufferMap(),this._supportCapatable=new T(this),this._GLParams=new u(this),this._GLRenderState=new d(this),this._glTextureIDParams=[a.TEXTURE0,a.TEXTURE1,a.TEXTURE2,a.TEXTURE3,a.TEXTURE4,a.TEXTURE5,a.TEXTURE6,a.TEXTURE7,a.TEXTURE8,a.TEXTURE9,a.TEXTURE10,a.TEXTURE11,a.TEXTURE12,a.TEXTURE13,a.TEXTURE14,a.TEXTURE15,a.TEXTURE16,a.TEXTURE17,a.TEXTURE18,a.TEXTURE19,a.TEXTURE20,a.TEXTURE21,a.TEXTURE22,a.TEXTURE23,a.TEXTURE24,a.TEXTURE25,a.TEXTURE26,a.TEXTURE27,a.TEXTURE28,a.TEXTURE29,a.TEXTURE30,a.TEXTURE31],this._activedTextureID=a.TEXTURE0,this._activeTextures=[],this._GLTextureContext=this.isWebGL2?new l(this):new o(this),this._GLRenderDrawContext=new m(this),t.addEventListener("webglcontextlost",this.webglContextLost)}webglContextLost(e){console.log("lost webgl context"),t.Laya.stage.event("GraphicContextLost",e),this._lost=!0}_initBindBufferMap(){this._GLBufferBindMap={},this._GLBufferBindMap[t.BufferTargetType.ARRAY_BUFFER]=null,this._GLBufferBindMap[t.BufferTargetType.ELEMENT_ARRAY_BUFFER]=null,this._GLBufferBindMap[t.BufferTargetType.UNIFORM_BUFFER]=null}_getbindBuffer(e){return this._GLBufferBindMap[e]}_setbindBuffer(e,t){this._GLBufferBindMap[e]=t}_bindTexture(e,t){const r=this._activedTextureID-this._context.TEXTURE0;this._activeTextures[r]!==t&&(this._context.bindTexture(e,t),this._activeTextures[r]=t)}getCapable(e){return this._supportCapatable.getCapable(e)}viewport(e,r,a,i){const n=this._context,s=this._lastViewport;t.LayaEnv.isConch?n.viewport(e,r,a,i):e===s.x&&r===s.y&&a===s.z&&i===s.w||(n.viewport(e,r,a,i),s.setValue(e,r,a,i))}scissor(e,r,a,i){const n=this._context,s=this._lastScissor;t.LayaEnv.isConch?n.scissor(e,r,a,i):e===s.x&&r===s.y&&a===s.z&&i===s.w||(n.scissor(e,r,a,i),s.setValue(e,r,a,i))}scissorTest(e){this._scissorState!=e&&(this._scissorState=e,e?this._context.enable(this._context.SCISSOR_TEST):this._context.disable(this._context.SCISSOR_TEST))}clearRenderTexture(e,r=null,a=1,i=0){var n;e&t.RenderClearFlag.Color&&(r&&!this._lastClearColor.equal(r)&&(this._context.clearColor(r.r,r.g,r.b,r.a),r.cloneTo(this._lastClearColor)),n|=this.gl.COLOR_BUFFER_BIT),e&t.RenderClearFlag.Depth&&(this._lastClearDepth!=a&&(this._context.clearDepth(a),this._lastClearDepth=a),this._GLRenderState.setDepthMask(!0),n|=this._context.DEPTH_BUFFER_BIT),e&t.RenderClearFlag.Stencil&&(this._context.clearStencil(i),this._GLRenderState.setStencilMask(!0),n|=this._context.STENCIL_BUFFER_BIT),n&&this._context.clear(n)}copySubFrameBuffertoTex(e,t,r,a,i,n,s,_){this._bindTexture(e.target,e.resource),this._context.copyTexSubImage2D(e.target,t,r,a,i,n,s,_)}colorMask(e,t,r,a){this._context.colorMask(e,t,r,a)}getParams(e){return this._GLParams.getParams(e)}createBuffer(e,t){return new h(this,e,t)}createShaderInstance(e,t,r){return new E(this,e,t,r)}createVertexState(){return new c(this)}getUBOPointer(e){return this._GLUBOPointerMap.has(e)||this._GLUBOPointerMap.set(e,this._curUBOPointer++),this._GLUBOPointerMap.get(e)}getTextureContext(){return this._GLTextureContext}getDrawContext(){return this._GLRenderDrawContext}getCreateRenderOBJContext(){return this._renderOBJCreateContext}propertyNameToID(e){if(null!=this._propertyNameMap[e])return this._propertyNameMap[e];var t=this._propertyNameCounter++;return this._propertyNameMap[e]=t,this._propertyNameMap[t]=e,t}propertyIDToName(e){return this._propertyNameMap[e]}getNamesByDefineData(e,t){var r=f._maskMap,a=e._mask;t.length=0;for(var i=0,n=e._length;i<n;i++)for(var s=r[i],_=a[i],o=0;o<32;o++){var l=1<<o;if(_>0&&l>_)break;_&l&&t.push(s[l])}}getDefineByName(e){var r=f._defineMap[e];if(!r){var a=f._maskMap,i=f._defineCounter,n=Math.floor(i/32),s=1<<i%32;r=new t.ShaderDefine(n,s),f._defineMap[e]=r,n==a.length&&(a.length++,a[n]={}),a[n][s]=e,f._defineCounter++}return r}uploadUniforms(e,t,r,a){r.applyUBO&&r.applyUBOData();for(var i=r._data,n=t.getArrayData(),s=0,_=0,o=n.length;_<o;_++){var l=n[_];if(a||-1!==l.textureID){var h=i[l.dataOffset];null!=h&&(s+=l.fun.call(l.caller,l,h))}}return s}uploadCustomUniforms(e,t,r,a){e.bind();var i=0,n=t[r];return n&&null!=a&&(i+=n.fun.call(n.caller,n,a)),i}unbindVertexState(){this.isWebGL2?this._context.bindVertexArray(null):this._supportCapatable.getExtension(e.WebGLExtension.OES_vertex_array_object).bindVertexArrayOES(null),this._GLBindVertexArray=null}}f._texGammaDefine={},f._lastFrameBuffer=null,f._lastFrameBuffer_WebGLOBJ=null,f._defineMap={},f._defineCounter=0,f._maskMap=[];class g extends t.ShaderData{get uniformBufferDatas(){return this._uniformBufferDatas}get uniformBuffersMap(){return this._uniformBuffersMap}_releaseUBOData(){if(this._uniformBufferDatas){for(let e of this._uniformBufferDatas.values())e.ubo._updateDataInfo.destroy(),e.ubo.destroy(),e.ubo._updateDataInfo=null;this._uniformBufferDatas.clear(),this._uniformBuffersMap.clear()}}constructor(e=null){super(e),this.applyUBO=!1,this._data=null,this._defineDatas=new r,this._initData(),this._uniformBufferDatas=new Map,this._uniformBuffersMap=new Map}_addCheckUBO(e,t,r){this._uniformBufferDatas.set(e,{ubo:t,uboBuffer:r}),r._uniformParamsState.forEach(((e,r)=>{this.uniformBuffersMap.set(r,t)})),t.setDataByUniformBufferData(r)}_initData(){this._data={},this._gammaColorMap=new Map}getData(){return this._data}applyUBOData(){this._uniformBufferDatas.forEach(((e,t)=>{e.ubo.setDataByUniformBufferData(e.uboBuffer)})),this.applyUBO=!1}addDefine(e){this._defineDatas.add(e)}addDefines(e){this._defineDatas.addDefineDatas(e)}removeDefine(e){this._defineDatas.remove(e)}hasDefine(e){return this._defineDatas.has(e)}clearDefine(){this._defineDatas.clear()}getBool(e){return this._data[e]}setBool(e,t){this._data[e]=t}getInt(e){return this._data[e]}setInt(e,t){this._data[e]=t;let r=this._uniformBuffersMap.get(e);r&&this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getInt(e))}getNumber(e){return this._data[e]}setNumber(e,t){this._data[e]=t;let r=this._uniformBuffersMap.get(e);r&&(this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getNumber(e)),this.applyUBO=!0)}getVector2(e){return this._data[e]}setVector2(e,t){this._data[e]?t.cloneTo(this._data[e]):this._data[e]=t.clone();let r=this._uniformBuffersMap.get(e);r&&(this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getVector2(e)),this.applyUBO=!0)}getVector3(e){return this._data[e]}setVector3(e,t){this._data[e]?t.cloneTo(this._data[e]):this._data[e]=t.clone();let r=this._uniformBuffersMap.get(e);r&&(this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getVector3(e)),this.applyUBO=!0)}getVector(e){return this._data[e]}setVector(e,t){this._data[e]?t.cloneTo(this._data[e]):this._data[e]=t.clone();let r=this._uniformBuffersMap.get(e);r&&(this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getVector(e)),this.applyUBO=!0)}getColor(e){return this._gammaColorMap.get(e)}setColor(e,r){if(!r)return;if(this._data[e]){let a=this._gammaColorMap.get(e);r.cloneTo(a);let i=this._data[e];i.x=t.Color.gammaToLinearSpace(r.r),i.y=t.Color.gammaToLinearSpace(r.g),i.z=t.Color.gammaToLinearSpace(r.b),i.w=r.a}else{let a=new t.Vector4;a.x=t.Color.gammaToLinearSpace(r.r),a.y=t.Color.gammaToLinearSpace(r.g),a.z=t.Color.gammaToLinearSpace(r.b),a.w=r.a,this._data[e]=a,this._gammaColorMap.set(e,r.clone())}let a=this._uniformBuffersMap.get(e);a&&(this._uniformBufferDatas.get(a._name).uboBuffer._setData(e,this.getLinearColor(e)),this.applyUBO=!0)}getLinearColor(e){return this._data[e]}getMatrix4x4(e){return this._data[e]}setMatrix4x4(e,t){this._data[e]?t.cloneTo(this._data[e]):this._data[e]=t.clone();let r=this._uniformBuffersMap.get(e);r&&(this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getMatrix4x4(e)),this.applyUBO=!0)}getMatrix3x3(e){return this._data[e]}setMatrix3x3(e,t){this._data[e]?t.cloneTo(this._data[e]):this._data[e]=t.clone();let r=this._uniformBuffersMap.get(e);r&&this._uniformBufferDatas.get(r._name).uboBuffer._setData(e,this.getMatrix3x3(e))}getBuffer(e){return this._data[e]}setBuffer(e,t){this._data[e]=t}setTexture(e,t){var r=this._data[e];if(t){let r=f._texGammaDefine[e];r&&t&&t.gammaCorrection>1?this.addDefine(r):r&&this.removeDefine(r)}this._data[e]=t,r&&r._removeReference(),t&&t._addReference()}_setInternalTexture(e,t){if(this._data[e],t){let r=f._texGammaDefine[e];r&&t&&t.gammaCorrection>1?this.addDefine(r):r&&this.removeDefine(r)}this._data[e]=t}getTexture(e){return this._data[e]}getSourceIndex(e){for(var t in this._data)if(this._data[t]==e)return Number(t);return-1}setUniformBuffer(e,t){this._data[e]=t}getUniformBuffer(e){return this._data[e]}cloneTo(e){let r=e._data;for(let a in this._data){let i=this._data[a];if(null!=i)if("number"==typeof i)r[a]=i;else if("boolean"==typeof i)r[a]=i;else if(i instanceof t.Vector2){let e=r[a]||(r[a]=new t.Vector2);i.cloneTo(e)}else if(i instanceof t.Vector3){let e=r[a]||(r[a]=new t.Vector3);i.cloneTo(e)}else if(i instanceof t.Vector4){let n=this.getColor(parseInt(a));if(n){let t=n.clone();e.setColor(parseInt(a),t)}else{let e=r[a]||(r[a]=new t.Vector4);i.cloneTo(e)}}else if(i instanceof t.Matrix3x3){let e=r[a]||(r[a]=new t.Matrix3x3);i.cloneTo(e)}else if(i instanceof t.Matrix4x4){let e=r[a]||(r[a]=new t.Matrix4x4);i.cloneTo(e)}else i instanceof t.Resource&&(r[a]=i,i._addReference())}this._defineDatas.cloneTo(e._defineDatas),this._gammaColorMap.forEach(((t,r)=>{e._gammaColorMap.set(r,t.clone())})),this._cloneUBO(e._uniformBufferDatas),e.applyUBO=!0}getDefineData(){return this._defineDatas}_cloneUBO(e){this._uniformBufferDatas.forEach(((t,r)=>{e.has(r)&&t.uboBuffer.cloneTo(e.get(r).uboBuffer)}))}clone(){var e=new g;return this.cloneTo(e),e}reset(){for(var e in this._data){var r=this._data[e];r instanceof t.Resource&&r._removeReference()}this._data={},this._gammaColorMap.clear(),this._uniformBufferDatas.clear(),this.applyUBO=!1,this._uniformBuffersMap.clear(),this._defineDatas.clear()}destroy(){for(var e in this._defineDatas.destroy(),this._defineDatas=null,this._data){var r=this._data[e];r instanceof t.Resource&&r._removeReference()}this._data=null,this._gammaColorMap.clear(),this._gammaColorMap=null,delete this._uniformBufferDatas,delete this._uniformBuffersMap,this._uniformBufferDatas=null,this._uniformBuffersMap=null}}class p{get renderState(){return this._renderState}set renderState(e){this._renderState=e}get validDefine(){return this._validDefine}set validDefine(e){this._validDefine=e}constructor(e){this._cacheShaderHierarchy=1,this._cacheSharders={},this._renderState=new t.RenderState,this._renderState.setNull()}_resizeCacheShaderMap(e,t,r){var a=this._cacheShaderHierarchy-1;if(t==a)for(var i in e)for(var n=e[i],s=0,_=r-a;s<_;s++)s==_-1?e[0]=n:e=e[0==s?i:0]={};else for(var i in++t,e)this._resizeCacheShaderMap(e[i],t,r)}setCacheShader(e,t){for(var r=this._cacheSharders,a=e._mask,i=e._length-1,n=this._cacheShaderHierarchy-1,s=0;s<n;s++){var _=i<s?0:a[s],o=r[_];o||(r[_]=o={}),r=o}r[i<n?0:a[n]]=t}getCacheShader(e){e._intersectionDefineDatas(this._validDefine);var t=this._cacheSharders,r=e._length;r>this._cacheShaderHierarchy&&(this._resizeCacheShaderMap(t,0,r),this._cacheShaderHierarchy=r);for(var a=e._mask,i=e._length-1,n=this._cacheShaderHierarchy-1,s=0;s<n;s++){var _=i<s?0:a[s],o=t[_];o||(t[_]=o={}),t=o}return t[i<n?0:a[n]]}destroy(){}}class x{destroy(){throw new t.NotImplementedError}addShaderPass(e){}}class R{createSubShader(){return new x}createShaderPass(e){return new p(e)}createRenderState(){return new t.RenderState}createDefineDatas(){return new r}}t.Laya.addBeforeInitCallback((()=>{t.LayaGL.unitRenderModuleDataFactory||(t.LayaGL.unitRenderModuleDataFactory=new R)}));class S{get vertexDeclaration(){return this._vertexDeclaration}set vertexDeclaration(e){this._vertexDeclaration=e,this._shaderValues=this._vertexDeclaration._shaderValues}constructor(e,r){this._glBuffer=f.instance.createBuffer(e,r),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_VertexBuffer,1)}_changeMemory(e){f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_VertexBuffer,-this._glBuffer._byteLength+e)}setDataLength(e){this._changeMemory(e),this._glBuffer.setDataLength(e)}setData(e,t,r,a){if(this.bind(),0!==r||a!==Number.MAX_SAFE_INTEGER){var i=new Uint8Array(e,r,a);this._glBuffer.setData(i,t)}else this._glBuffer.setData(e,t)}bind(){return this._glBuffer.bindBuffer()}unbind(){return this._glBuffer.unbindBuffer()}orphanStorage(){this.bind(),this._glBuffer.setDataLength(this._glBuffer._byteLength)}destroy(){this._glBuffer.destroy(),this._vertexDeclaration=null,this._changeMemory(0),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_VertexBuffer,-1)}}class A{constructor(){if(this._clearColor=new t.Color(0,0,0,0),this.invertY=!1,this.pipelineMode="Forward",this._globalConfigShaderData=t.Shader3D._configDefineValues,t.LayaEnv.isConch&&!A.isCreateBlitScreenELement){!A.isCreateBlitScreenELement&&this.setBlitScreenElement(),A.blitContext=new A;let e=t.LayaGL.renderEngine;e.on("endFrame",(()=>{let r=f._lastFrameBuffer_WebGLOBJ,a=f._lastFrameBuffer;f._lastFrameBuffer_WebGLOBJ=null,f._lastFrameBuffer=null,A.blitContext.setOffscreenView(e.getInnerWidth(),e.getInnerHeight()),A.blitContext.setRenderTarget(null,!0,t.Color.BLACK),A.blitScreenElement.materialShaderData._setInternalTexture(t.Shader3D.propertyNameToID("u_MainTex"),a._textures[0]),A.blitContext.drawRenderElementOne(A.blitScreenElement),f._lastFrameBuffer_WebGLOBJ=r,f._lastFrameBuffer=a,f.instance.getTextureContext().bindRenderTarget(a)}))}}setBlitScreenElement(){let e=t.LayaGL.render2DRenderPassFactory.createRenderElement2D(),r=t.LayaGL.renderDeviceFactory.createShaderData(),a=new Float32Array([1,1,1,1,1,-1,1,0,-1,1,0,1,-1,-1,0,0]),i=new S(t.BufferTargetType.ARRAY_BUFFER,t.BufferUsage.Dynamic);i.setDataLength(64),i.setData(a.buffer,0,0,a.buffer.byteLength);let n=new t.VertexDeclaration(16,[new t.VertexElement(0,t.VertexElementFormat.Vector4,0)]);i.vertexDeclaration=n;let s=t.LayaGL.renderDeviceFactory.createRenderGeometryElement(t.MeshTopology.TriangleStrip,t.DrawType.DrawArray);s.setDrawArrayParams(0,4);let _=t.LayaGL.renderDeviceFactory.createBufferState();_.applyState([i],null),s.bufferState=_;let o={a_PositionTexcoord:[0,t.ShaderDataType.Vector4]},l={u_MainTex:t.ShaderDataType.Texture2D},h=t.Shader3D.add("GLESblitScreen",!1,!1);h.shaderType=t.ShaderFeatureType.D2;let u=new t.SubShader(o,l,{});h.addSubShader(u);let m=u.addShaderPass("\n            #define SHADER_NAME GLESblitScreenVS\n\n            varying vec2 v_Texcoord0;\n\n            void main()\n            {\n                gl_Position = vec4(- 1.0 + (a_PositionTexcoord.x + 1.0), (1.0 - ((- 1.0 + (-a_PositionTexcoord.y + 1.0)) + 1.0) / 2.0) * 2.0 - 1.0, 0.0, 1.0);\n\n                v_Texcoord0 = a_PositionTexcoord.zw;\n            }\n        ",'\n            #define SHADER_NAME GLESblitScreenFS\n\n            #include "Color.glsl";\n\n            varying vec2 v_Texcoord0;\n\n            void main()\n            {\n                vec4 mainColor = texture2D(u_MainTex, v_Texcoord0);\n               \n                gl_FragColor = mainColor;\n            }\n        ');m.statefirst=!0;let d=m.renderState;d.depthTest=t.RenderState.DEPTHTEST_ALWAYS,d.depthWrite=!1,d.cull=t.RenderState.CULL_NONE,d.blend=t.RenderState.BLEND_DISABLE,d.stencilRef=1,d.stencilTest=t.RenderState.STENCILTEST_OFF,d.stencilWrite=!1,d.stencilOp=new t.Vector3(t.RenderState.STENCILOP_KEEP,t.RenderState.STENCILOP_KEEP,t.RenderState.STENCILOP_REPLACE),e.geometry=s,e.materialShaderData=r,e.subShader=u,e.renderStateIsBySprite=!1,A.isCreateBlitScreenELement=!0,A.blitScreenElement=e}drawRenderElementList(e){for(var t=0,r=e.length;t<r;t++){e.elements[t]._prepare(this)}for(t=0,r=e.length;t<r;t++){e.elements[t]._render(this)}return 0}setOffscreenView(e,t){this._offscreenWidth=e,this._offscreenHeight=t}setRenderTarget(e,r,a){this._destRT=e,a.cloneTo(this._clearColor),this._destRT?(f.instance.getTextureContext().bindRenderTarget(this._destRT),f.instance.viewport(0,0,this._destRT._textures[0].width,this._destRT._textures[0].height)):(f.instance.getTextureContext().bindoutScreenTarget(),f.instance.viewport(0,0,this._offscreenWidth,this._offscreenHeight)),f.instance.scissorTest(!1),f.instance.clearRenderTexture(r?t.RenderClearFlag.Color:t.RenderClearFlag.Nothing,this._clearColor)}drawRenderElementOne(e){e._prepare(this),e._render(this)}}A.isCreateBlitScreenELement=!1;class P{constructor(){this.renderStateIsBySprite=!0,this._shaderInstances=new t.FastSinglelist}_compileShader(e){var r=this.subShader._passes;this._shaderInstances.clear();for(var a=0,i=r.length;a<i;a++){var n=r[a];if(n.pipelineMode!==e.pipelineMode)continue;var s=P._compileDefine;e.sceneData?e.sceneData._defineDatas.cloneTo(s):e._globalConfigShaderData.cloneTo(s),!e._destRT||1!=e._destRT._textures[0].gammaCorrection?s.add(t.ShaderDefines2D.GAMMASPACE):s.remove(t.ShaderDefines2D.GAMMASPACE),e.invertY?s.add(t.ShaderDefines2D.INVERTY):s.remove(t.ShaderDefines2D.INVERTY),this.value2DShaderData&&s.addDefineDatas(this.value2DShaderData.getDefineData()),this.materialShaderData&&s.addDefineDatas(this.materialShaderData._defineDatas);var _=n.withCompile(s,!0);this._shaderInstances.add(_)}}_prepare(e){this._compileShader(e)}_render(e){if(1==this._shaderInstances.length)this.renderByShaderInstance(this._shaderInstances.elements[0],e);else for(var t=this._shaderInstances.elements,r=0,a=this._shaderInstances.length;r<a;r++)this.renderByShaderInstance(t[r],e)}renderByShaderInstance(e,t){e.complete&&(e.bind(),this.value2DShaderData&&e.uploadUniforms(e._sprite2DUniformParamsMap,this.value2DShaderData,!0),t.sceneData&&e.uploadUniforms(e._sceneUniformParamsMap,t.sceneData,!0),this.materialShaderData&&e.uploadUniforms(e._materialUniformParamsMap,this.materialShaderData,!0),this.renderStateIsBySprite||!this.materialShaderData?(e.uploadRenderStateBlendDepth(this.value2DShaderData),e.uploadRenderStateFrontFace(this.value2DShaderData,!1,t.invertY)):(e.uploadRenderStateBlendDepth(this.materialShaderData),e.uploadRenderStateFrontFace(this.materialShaderData,!1,t.invertY)),f.instance.getDrawContext().drawGeometryElement(this.geometry))}destroy(){}}P._compileDefine=new r;class B{createRenderElement2D(){return new P}createRenderContext2D(){return new A}}t.Laya.addBeforeInitCallback((()=>{t.LayaGL.render2DRenderPassFactory||(t.LayaGL.render2DRenderPassFactory=new B)}));class b{constructor(){this._glVertexState=f.instance.createVertexState()}applyVertexBuffers(){this._glVertexState.applyVertexBuffer(this._vertexBuffers)}applyIndexBuffers(){this._glVertexState.applyIndexBuffer(this._bindedIndexBuffer)}applyState(e,t){this._vertexBuffers=e.slice(),this._bindedIndexBuffer=t,t&&t._glBuffer.unbindBuffer(),this.bind(),this.applyVertexBuffers(),this.applyIndexBuffers(),this.unBind(),t&&t._glBuffer.unbindBuffer()}bind(){this._glVertexState.bindVertexArray(),b._curBindedBufferState=this}unBind(){if(b._curBindedBufferState!=this)throw"BufferState: must call bind() function first.";this._glVertexState.unbindVertexArray(),b._curBindedBufferState=null}isBind(){return b._curBindedBufferState==this}destroy(){b._curBindedBufferState==this&&(this._glVertexState.unbindVertexArray(),b._curBindedBufferState=null),this._glVertexState.destroy(),this._vertexBuffers=null,this._bindedIndexBuffer=null}}class C extends t.CommandUniformMap{constructor(e){super(e),this._idata={},this._stateName=e}hasPtrID(e){return!(null==this._idata[e])}addShaderUniform(e,t,r,a=""){this._idata[e]={uniformtype:r,propertyName:t,arrayLength:0,block:a,blockProperty:null}}addShaderUniformArray(e,r,a,i,n=""){if(a!==t.ShaderDataType.Matrix4x4&&a!==t.ShaderDataType.Vector4)throw"because of align rule, the engine does not support other types as arrays.";this._idata[e]={uniformtype:a,propertyName:r,arrayLength:i,block:n,blockProperty:null}}addShaderBlockUniform(e,r,a){this._idata[e]={propertyName:r,arrayLength:0,blockProperty:a,uniformtype:t.ShaderDataType.None,block:""},a.forEach((e=>{this.addShaderUniform(e.id,e.propertyName,e.uniformtype,r)}))}}class F{constructor(e,r){this._glBuffer=this._glBuffer=f.instance.createBuffer(e,r),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_IndexBuffer,1)}_changeMemory(e){f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.M_IndexBuffer,-this._glBuffer._byteLength+e)}_setIndexDataLength(e){this._changeMemory(e);var t=b._curBindedBufferState;t?(t.unBind(),this._glBuffer.bindBuffer(),this._glBuffer.setDataLength(e),t.bind()):(this._glBuffer.bindBuffer(),this._glBuffer.setDataLength(e))}_setIndexData(e,t){var r=b._curBindedBufferState;r?(r.unBind(),this._glBuffer.bindBuffer(),this._glBuffer.setData(e,t),r.bind()):(this._glBuffer.bindBuffer(),this._glBuffer.setData(e,t))}destroy(){this._glBuffer.destroy(),this._changeMemory(0),f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.RC_IndexBuffer,-1)}}class L{get indexFormat(){return this._indexFormat}set indexFormat(e){this._indexFormat=e,this._glindexFormat=f.instance.getDrawContext().getIndexType(this._indexFormat)}get mode(){return this._mode}set mode(e){this._mode=e,this._glmode=f.instance.getDrawContext().getMeshTopology(this._mode)}constructor(e,r){this._id=++L._idCounter,this.mode=e,this.drawParams=new t.FastSinglelist,this.drawType=r}setDrawArrayParams(e,t){this.drawParams.add(e),this.drawParams.add(t)}setDrawElemenParams(e,t){this.drawParams.add(t),this.drawParams.add(e)}destroy(){delete this.drawParams}clearRenderParams(){this.drawParams.length=0}cloneTo(e){e.mode=this.mode,e.drawType=this.drawType,e.indexFormat=this.indexFormat,e.instanceCount=this.instanceCount,e.drawParams.elements=this.drawParams.elements.slice(),e.drawParams.length=this.drawParams.length}}L._idCounter=0;class D{constructor(){this._customUniformParamsMap=[],this._uploadMark=-1,this._uploadRenderType=-1}get complete(){return this._renderShaderInstance._complete}_create(e,r){let a=t.GLSLCodeGenerator.GLShaderLanguageProcess3D(e.defineString,e.attributeMap,e.uniformMap,e.vs,e.ps);this._renderShaderInstance=f.instance.createShaderInstance(a.vs,a.fs,e.attributeMap),this._renderShaderInstance._complete&&(this._shaderPass=r,e.is2D?this._create2D():this._create3D())}_create3D(){this._sceneUniformParamsMap=new t.CommandEncoder,this._cameraUniformParamsMap=new t.CommandEncoder,this._spriteUniformParamsMap=new t.CommandEncoder,this._materialUniformParamsMap=new t.CommandEncoder;const e=t.LayaGL.renderDeviceFactory.createGlobalUniformMap("Scene3D"),r=t.LayaGL.renderDeviceFactory.createGlobalUniformMap("BaseCamera"),a=t.LayaGL.renderDeviceFactory.createGlobalUniformMap("Custom");let i,n,s=this._renderShaderInstance.getUniformMap();for(i=0,n=s.length;i<n;i++){let t=s[i];e.hasPtrID(t.dataOffset)?this._sceneUniformParamsMap.addShaderUniform(t):r.hasPtrID(t.dataOffset)?this._cameraUniformParamsMap.addShaderUniform(t):this.hasSpritePtrID(t.dataOffset)?this._spriteUniformParamsMap.addShaderUniform(t):a.hasPtrID(t.dataOffset)?(this._customUniformParamsMap||(this._customUniformParamsMap=[]),this._customUniformParamsMap[t.dataOffset]=t):this._materialUniformParamsMap.addShaderUniform(t)}}_create2D(){this._sprite2DUniformParamsMap=new t.CommandEncoder,this._materialUniformParamsMap=new t.CommandEncoder,this._sceneUniformParamsMap=new t.CommandEncoder;const e=t.LayaGL.renderDeviceFactory.createGlobalUniformMap("Sprite2D"),r=t.LayaGL.renderDeviceFactory.createGlobalUniformMap("Sprite2DGlobal");let a,i,n=this._renderShaderInstance.getUniformMap();for(a=0,i=n.length;a<i;a++){let t=n[a];e.hasPtrID(t.dataOffset)?this._sprite2DUniformParamsMap.addShaderUniform(t):r.hasPtrID(t.dataOffset)?this._sceneUniformParamsMap.addShaderUniform(t):this._materialUniformParamsMap.addShaderUniform(t)}}hasSpritePtrID(e){let r=this._shaderPass.nodeCommonMap;if(r){for(let a=0,i=r.length;a<i;a++)if(t.LayaGL.renderDeviceFactory.createGlobalUniformMap(r[a]).hasPtrID(e))return!0;return!1}return!1}_disposeResource(){this._renderShaderInstance.destroy(),this._sceneUniformParamsMap=null,this._cameraUniformParamsMap=null,this._spriteUniformParamsMap=null,this._materialUniformParamsMap=null,this._customUniformParamsMap=null,this._uploadMaterial=null,this._uploadRender=null,this._uploadCameraShaderValue=null,this._uploadScene=null}bind(){return this._renderShaderInstance.bind()}uploadUniforms(e,r,a){f.instance._addStatisticsInfo(t.GPUEngineStatisticsInfo.C_UniformBufferUploadCount,f.instance.uploadUniforms(this._renderShaderInstance,e,r,a))}uploadRenderStateBlendDepth(e){this._shaderPass.statefirst?this.uploadRenderStateBlendDepthByShader(e):this.uploadRenderStateBlendDepthByMaterial(e)}uploadRenderStateBlendDepthByShader(e){var r,a,i,n,s,_,o,l,h,u,m,d,E,c,T,f,g,p,x,R,S,A,P,B,b,C,F,L,D,G,M,U,y=e._data,I=this._shaderPass.renderState,N=null!==(a=null!==(r=I.depthWrite)&&void 0!==r?r:y[t.Shader3D.DEPTH_WRITE])&&void 0!==a?a:t.RenderState.Default.depthWrite;t.RenderStateContext.setDepthMask(N);var O=null!==(n=null!==(i=I.depthTest)&&void 0!==i?i:y[t.Shader3D.DEPTH_TEST])&&void 0!==n?n:t.RenderState.Default.depthTest;O==t.RenderState.DEPTHTEST_OFF?t.RenderStateContext.setDepthTest(!1):(t.RenderStateContext.setDepthTest(!0),t.RenderStateContext.setDepthFunc(O));var v=null!==(_=null!==(s=I.stencilWrite)&&void 0!==s?s:y[t.Shader3D.STENCIL_WRITE])&&void 0!==_?_:t.RenderState.Default.stencilWrite,w=null!==(l=null!==(o=I.stencilTest)&&void 0!==o?o:y[t.Shader3D.STENCIL_TEST])&&void 0!==l?l:t.RenderState.Default.stencilTest;if(t.RenderStateContext.setStencilMask(v),v){var W=null!==(u=null!==(h=I.stencilOp)&&void 0!==h?h:y[t.Shader3D.STENCIL_Op])&&void 0!==u?u:t.RenderState.Default.stencilOp;t.RenderStateContext.setstencilOp(W.x,W.y,W.z)}if(w==t.RenderState.STENCILTEST_OFF)t.RenderStateContext.setStencilTest(!1);else{var X=null!==(d=null!==(m=I.stencilRef)&&void 0!==m?m:y[t.Shader3D.STENCIL_Ref])&&void 0!==d?d:t.RenderState.Default.stencilRef;t.RenderStateContext.setStencilTest(!0),t.RenderStateContext.setStencilFunc(w,X)}switch(null!==(c=null!==(E=I.blend)&&void 0!==E?E:y[t.Shader3D.BLEND])&&void 0!==c?c:t.RenderState.Default.blend){case t.RenderState.BLEND_DISABLE:t.RenderStateContext.setBlend(!1);break;case t.RenderState.BLEND_ENABLE_ALL:var V=null!==(f=null!==(T=I.blendEquation)&&void 0!==T?T:y[t.Shader3D.BLEND_EQUATION])&&void 0!==f?f:t.RenderState.Default.blendEquation,H=null!==(p=null!==(g=I.srcBlend)&&void 0!==g?g:y[t.Shader3D.BLEND_SRC])&&void 0!==p?p:t.RenderState.Default.srcBlend,k=null!==(R=null!==(x=I.dstBlend)&&void 0!==x?x:y[t.Shader3D.BLEND_DST])&&void 0!==R?R:t.RenderState.Default.dstBlend;t.RenderStateContext.setBlend(!0),t.RenderStateContext.setBlendEquation(V),t.RenderStateContext.setBlendFunc(H,k);break;case t.RenderState.BLEND_ENABLE_SEPERATE:var Y=null!==(A=null!==(S=I.blendEquationRGB)&&void 0!==S?S:y[t.Shader3D.BLEND_EQUATION_RGB])&&void 0!==A?A:t.RenderState.Default.blendEquationRGB,K=null!==(B=null!==(P=I.blendEquationAlpha)&&void 0!==P?P:y[t.Shader3D.BLEND_EQUATION_ALPHA])&&void 0!==B?B:t.RenderState.Default.blendEquationAlpha,j=null!==(C=null!==(b=I.srcBlendRGB)&&void 0!==b?b:y[t.Shader3D.BLEND_SRC_RGB])&&void 0!==C?C:t.RenderState.Default.srcBlendRGB,z=null!==(L=null!==(F=I.dstBlendRGB)&&void 0!==F?F:y[t.Shader3D.BLEND_DST_RGB])&&void 0!==L?L:t.RenderState.Default.dstBlendRGB,q=null!==(G=null!==(D=I.srcBlendAlpha)&&void 0!==D?D:y[t.Shader3D.BLEND_SRC_ALPHA])&&void 0!==G?G:t.RenderState.Default.srcBlendAlpha,Z=null!==(U=null!==(M=I.dstBlendAlpha)&&void 0!==M?M:y[t.Shader3D.BLEND_DST_ALPHA])&&void 0!==U?U:t.RenderState.Default.dstBlendAlpha;t.RenderStateContext.setBlend(!0),t.RenderStateContext.setBlendEquationSeparate(Y,K),t.RenderStateContext.setBlendFuncSeperate(j,z,q,Z)}}uploadRenderStateBlendDepthByMaterial(e){var r=e.getData(),a=r[t.Shader3D.DEPTH_WRITE];a=null!=a?a:t.RenderState.Default.depthWrite,t.RenderStateContext.setDepthMask(a);var i=r[t.Shader3D.DEPTH_TEST];(i=null!=i?i:t.RenderState.Default.depthTest)===t.RenderState.DEPTHTEST_OFF?t.RenderStateContext.setDepthTest(!1):(t.RenderStateContext.setDepthTest(!0),t.RenderStateContext.setDepthFunc(i));var n=r[t.Shader3D.STENCIL_WRITE];if(n=null!=n?n:t.RenderState.Default.stencilWrite,t.RenderStateContext.setStencilMask(n),n){var s=r[t.Shader3D.STENCIL_Op];s=null!=s?s:t.RenderState.Default.stencilOp,t.RenderStateContext.setstencilOp(s.x,s.y,s.z)}var _=r[t.Shader3D.STENCIL_TEST];if((_=null!=_?_:t.RenderState.Default.stencilTest)==t.RenderState.STENCILTEST_OFF)t.RenderStateContext.setStencilTest(!1);else{var o=r[t.Shader3D.STENCIL_Ref];o=null!=o?o:t.RenderState.Default.stencilRef,t.RenderStateContext.setStencilTest(!0),t.RenderStateContext.setStencilFunc(_,o)}var l=r[t.Shader3D.BLEND];switch(l=null!=l?l:t.RenderState.Default.blend){case t.RenderState.BLEND_ENABLE_ALL:var h=r[t.Shader3D.BLEND_EQUATION];h=null!=h?h:t.RenderState.Default.blendEquation;var u=r[t.Shader3D.BLEND_SRC];u=null!=u?u:t.RenderState.Default.srcBlend;var m=r[t.Shader3D.BLEND_DST];m=null!=m?m:t.RenderState.Default.dstBlend,t.RenderStateContext.setBlend(!0),t.RenderStateContext.setBlendEquation(h),t.RenderStateContext.setBlendFunc(u,m);break;case t.RenderState.BLEND_ENABLE_SEPERATE:var d=r[t.Shader3D.BLEND_EQUATION_RGB];d=null!=d?d:t.RenderState.Default.blendEquationRGB;var E=r[t.Shader3D.BLEND_EQUATION_ALPHA];E=null!=E?E:t.RenderState.Default.blendEquationAlpha;var c=r[t.Shader3D.BLEND_SRC_RGB];c=null!=c?c:t.RenderState.Default.srcBlendRGB;var T=r[t.Shader3D.BLEND_DST_RGB];T=null!=T?T:t.RenderState.Default.dstBlendRGB;var f=r[t.Shader3D.BLEND_SRC_ALPHA];f=null!=f?f:t.RenderState.Default.srcBlendAlpha;var g=r[t.Shader3D.BLEND_DST_ALPHA];g=null!=g?g:t.RenderState.Default.dstBlendAlpha,t.RenderStateContext.setBlend(!0),t.RenderStateContext.setBlendEquationSeparate(d,E),t.RenderStateContext.setBlendFuncSeperate(c,T,f,g);break;case t.RenderState.BLEND_DISABLE:default:t.RenderStateContext.setBlend(!1)}}uploadRenderStateFrontFace(e,r,a){var i,n,s=this._shaderPass.renderState,_=e.getData()[t.Shader3D.CULL];switch(this._shaderPass.statefirst&&(_=null!==(i=s.cull)&&void 0!==i?i:_),_=null!=_?_:t.RenderState.Default.cull){case t.RenderState.CULL_NONE:t.RenderStateContext.setCullFace(!1),n=r!=a?t.CullMode.Front:t.CullMode.Back,t.RenderStateContext.setFrontFace(n);break;case t.RenderState.CULL_FRONT:t.RenderStateContext.setCullFace(!0),n=r==a?t.CullMode.Front:t.CullMode.Back,t.RenderStateContext.setFrontFace(n);break;case t.RenderState.CULL_BACK:default:t.RenderStateContext.setCullFace(!0),n=r!=a?t.CullMode.Front:t.CullMode.Back,t.RenderStateContext.setFrontFace(n)}}uploadCustomUniform(e,t){f.instance.uploadCustomUniforms(this._renderShaderInstance,this._customUniformParamsMap,e,t)}}class G{constructor(){this.globalBlockMap={}}createShaderData(e){return new g(e)}createShaderInstance(e,t){let r=new D;return r._create(e,t),r}createIndexBuffer(e){return new F(t.BufferTargetType.ELEMENT_ARRAY_BUFFER,e)}createVertexBuffer(e){return new S(t.BufferTargetType.ARRAY_BUFFER,e)}createBufferState(){return new b}createRenderGeometryElement(e,t){return new L(e,t)}createGlobalUniformMap(e){let t=this.globalBlockMap[e];return t||(t=this.globalBlockMap[e]=new C(e)),t}createEngine(r,a){let i,n={stencil:t.Config.isStencil,alpha:t.Config.isAlpha,antialias:t.Config.isAntialias,premultipliedAlpha:t.Config.premultipliedAlpha,preserveDrawingBuffer:t.Config.preserveDrawingBuffer,depth:t.Config.isDepth,failIfMajorPerformanceCaveat:t.Config.isfailIfMajorPerformanceCaveat,powerPreference:t.Config.powerPreference};const s=t.Config.useWebGL2?e.WebGLMode.Auto:e.WebGLMode.WebGL1;i=new f(n,s),i.initRenderEngine(a._source);var _=i._context;return t.Config.printWebglOrder&&this._replaceWebglcall(_),_&&new t.LayaGL,t.LayaGL.renderEngine=i,t.LayaGL.textureContext=i.getTextureContext(),Promise.resolve()}_replaceWebglcall(e){var t={};for(const r in e)"function"==typeof e[r]&&"getError"!=r&&"__SPECTOR_Origin_getError"!=r&&"__proto__"!=r&&(t[r]=e[r],e[r]=function(){let a=[];for(let e=0;e<arguments.length;e++)a.push(arguments[e]);let i=t[r].apply(e,a);e.getError();return i})}}t.Laya.addBeforeInitCallback((()=>{t.LayaGL.renderDeviceFactory||(t.LayaGL.renderDeviceFactory=new G)}));class M{constructor(){this.globalBlockMap={}}createUniformBufferObject(e,r,a,i,n){return new t.UniformBufferObject(e,r,a,i,n)}createEngine(r,a){let i,n={stencil:t.Config.isStencil,alpha:t.Config.isAlpha,antialias:t.Config.isAntialias,premultipliedAlpha:t.Config.premultipliedAlpha,preserveDrawingBuffer:t.Config.preserveDrawingBuffer,depth:t.Config.isDepth,failIfMajorPerformanceCaveat:t.Config.isfailIfMajorPerformanceCaveat,powerPreference:t.Config.powerPreference};const s=t.Config.useWebGL2?e.WebGLMode.Auto:e.WebGLMode.WebGL1;i=new f(n,s),i.initRenderEngine(a._source);var _=i._context;return t.Config.printWebglOrder&&this._replaceWebglcall(_),_&&new t.LayaGL,t.LayaGL.renderEngine=i,t.LayaGL.textureContext=i.getTextureContext(),Promise.resolve()}_replaceWebglcall(e){var t={};for(const r in e)"function"==typeof e[r]&&"getError"!=r&&"__SPECTOR_Origin_getError"!=r&&"__proto__"!=r&&(t[r]=e[r],e[r]=function(){let a=[];for(let e=0;e<arguments.length;e++)a.push(arguments[e]);let i=t[r].apply(e,a);e.getError();return i})}}t.Laya.addBeforeInitCallback((()=>{t.LayaGL.renderOBJCreate||(t.LayaGL.renderOBJCreate=new M)}));e.GL2TextureContext=l,e.GLBuffer=h,e.GLObject=n,e.GLParams=u,e.GLRenderDrawContext=m,e.GLRenderState=d,e.GLShaderInstance=E,e.GLTextureContext=o,e.GLVertexState=c,e.GlCapable=T,e.VertexArrayObject=class{constructor(){}},e.WebDefineDatas=r,e.WebGLBufferState=b,e.WebGLCommandUniformMap=C,e.WebGLConfig=class{},e.WebGLEngine=f,e.WebGLIndexBuffer=F,e.WebGLInternalRT=s,e.WebGLInternalTex=_,e.WebGLRender2DProcess=B,e.WebGLRenderDeviceFactory=G,e.WebGLRenderEngineFactory=M,e.WebGLRenderGeometryElement=L,e.WebGLRenderelement2D=P,e.WebGLShaderData=g,e.WebGLShaderInstance=D,e.WebGLVertexBuffer=S,e.WebShaderPass=p,e.WebSubShader=x,e.WebUnitRenderModuleDataFactory=R,e.WebglRenderContext2D=A}(window.Laya=window.Laya||{},Laya);
+(function (exports, Laya) {
+    'use strict';
+
+    class WebDefineDatas {
+        constructor() {
+            this._mask = [];
+            this._length = 0;
+        }
+        _intersectionDefineDatas(define) {
+            var unionMask = define._mask;
+            var mask = this._mask;
+            for (var i = this._length - 1; i >= 0; i--) {
+                var value = mask[i] & unionMask[i];
+                if (value == 0 && i == this._length - 1)
+                    this._length--;
+                else
+                    mask[i] = value;
+            }
+        }
+        add(define) {
+            var index = define._index;
+            var size = index + 1;
+            var mask = this._mask;
+            var maskStart = this._length;
+            if (maskStart < size) {
+                (mask.length < size) && (mask.length = size);
+                for (; maskStart < index; maskStart++)
+                    mask[maskStart] = 0;
+                mask[index] = define._value;
+                this._length = size;
+            }
+            else {
+                mask[index] |= define._value;
+            }
+        }
+        remove(define) {
+            var index = define._index;
+            var mask = this._mask;
+            var endIndex = this._length - 1;
+            if (index > endIndex)
+                return;
+            var newValue = mask[index] & ~define._value;
+            if (index == endIndex && newValue === 0)
+                this._length--;
+            else
+                mask[index] = newValue;
+        }
+        addDefineDatas(define) {
+            var addMask = define._mask;
+            var size = define._length;
+            var mask = this._mask;
+            var maskStart = this._length;
+            if (maskStart < size) {
+                mask.length = size;
+                for (var i = 0; i < maskStart; i++)
+                    mask[i] |= addMask[i];
+                for (; i < size; i++)
+                    mask[i] = addMask[i];
+                this._length = size;
+            }
+            else {
+                for (var i = 0; i < size; i++) {
+                    mask[i] |= addMask[i];
+                }
+            }
+        }
+        removeDefineDatas(define) {
+            var removeMask = define._mask;
+            var mask = this._mask;
+            var endIndex = this._length - 1;
+            var i = Math.min(define._length, endIndex);
+            for (; i >= 0; i--) {
+                var newValue = mask[i] & ~removeMask[i];
+                if (i == endIndex && newValue === 0) {
+                    endIndex--;
+                    this._length--;
+                }
+                else {
+                    mask[i] = newValue;
+                }
+            }
+        }
+        has(define) {
+            var index = define._index;
+            if (index >= this._length)
+                return false;
+            return (this._mask[index] & define._value) !== 0;
+        }
+        clear() {
+            this._length = 0;
+        }
+        cloneTo(destObject) {
+            var destMask = destObject._mask;
+            var mask = this._mask;
+            var count = this._length;
+            destMask.length = count;
+            for (var i = 0; i < count; i++)
+                destMask[i] = mask[i];
+            destObject._length = count;
+        }
+        clone() {
+            var dest = new WebDefineDatas();
+            this.cloneTo(dest);
+            return dest;
+        }
+        destroy() {
+            delete this._mask;
+        }
+    }
+
+    exports.WebGLExtension = void 0;
+    (function (WebGLExtension) {
+        WebGLExtension[WebGLExtension["OES_vertex_array_object"] = 0] = "OES_vertex_array_object";
+        WebGLExtension[WebGLExtension["ANGLE_instanced_arrays"] = 1] = "ANGLE_instanced_arrays";
+        WebGLExtension[WebGLExtension["OES_texture_half_float"] = 2] = "OES_texture_half_float";
+        WebGLExtension[WebGLExtension["OES_texture_half_float_linear"] = 3] = "OES_texture_half_float_linear";
+        WebGLExtension[WebGLExtension["OES_texture_float"] = 4] = "OES_texture_float";
+        WebGLExtension[WebGLExtension["OES_element_index_uint"] = 5] = "OES_element_index_uint";
+        WebGLExtension[WebGLExtension["OES_texture_float_linear"] = 6] = "OES_texture_float_linear";
+        WebGLExtension[WebGLExtension["EXT_color_buffer_half_float"] = 7] = "EXT_color_buffer_half_float";
+        WebGLExtension[WebGLExtension["EXT_shader_texture_lod"] = 8] = "EXT_shader_texture_lod";
+        WebGLExtension[WebGLExtension["WEBGL_depth_texture"] = 9] = "WEBGL_depth_texture";
+        WebGLExtension[WebGLExtension["EXT_sRGB"] = 10] = "EXT_sRGB";
+        WebGLExtension[WebGLExtension["EXT_color_buffer_float"] = 11] = "EXT_color_buffer_float";
+        WebGLExtension[WebGLExtension["EXT_texture_filter_anisotropic"] = 12] = "EXT_texture_filter_anisotropic";
+        WebGLExtension[WebGLExtension["WEBGL_compressed_texture_s3tc"] = 13] = "WEBGL_compressed_texture_s3tc";
+        WebGLExtension[WebGLExtension["WEBGL_compressed_texture_s3tc_srgb"] = 14] = "WEBGL_compressed_texture_s3tc_srgb";
+        WebGLExtension[WebGLExtension["WEBGL_compressed_texture_pvrtc"] = 15] = "WEBGL_compressed_texture_pvrtc";
+        WebGLExtension[WebGLExtension["WEBGL_compressed_texture_etc1"] = 16] = "WEBGL_compressed_texture_etc1";
+        WebGLExtension[WebGLExtension["WEBGL_compressed_texture_etc"] = 17] = "WEBGL_compressed_texture_etc";
+        WebGLExtension[WebGLExtension["WEBGL_compressed_texture_astc"] = 18] = "WEBGL_compressed_texture_astc";
+        WebGLExtension[WebGLExtension["OES_standard_derivatives"] = 19] = "OES_standard_derivatives";
+    })(exports.WebGLExtension || (exports.WebGLExtension = {}));
+
+    class GLObject {
+        constructor(engine) {
+            this._destroyed = false;
+            this._engine = engine;
+            this._gl = this._engine.gl;
+            this._id = this._engine._IDCounter++;
+        }
+        get destroyed() {
+            return this._destroyed;
+        }
+        destroy() {
+            if (this._destroyed)
+                return;
+            this._destroyed = true;
+        }
+    }
+
+    class WebGLInternalRT extends GLObject {
+        get gpuMemory() {
+            return this._gpuMemory;
+        }
+        set gpuMemory(value) {
+            this._changeTexMemory(value);
+            this._gpuMemory = value;
+        }
+        _changeTexMemory(value) {
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_GPUMemory, -this._gpuMemory + value);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_ALLRenderTexture, -this._gpuMemory + value);
+        }
+        constructor(engine, colorFormat, depthStencilFormat, isCube, generateMipmap, samples) {
+            super(engine);
+            this._gpuMemory = 0;
+            this.colorFormat = colorFormat;
+            this.depthStencilFormat = depthStencilFormat;
+            this._isCube = isCube;
+            this._generateMipmap = generateMipmap;
+            this._samples = samples;
+            this._textures = [];
+            this._depthTexture = null;
+            this._framebuffer = this._gl.createFramebuffer();
+            if (samples > 1) {
+                this._msaaFramebuffer = this._gl.createFramebuffer();
+            }
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_ALLRenderTexture, 1);
+        }
+        dispose() {
+            this._textures.forEach(tex => {
+                tex && tex.dispose();
+            });
+            this._textures = null;
+            this._depthTexture && this._depthTexture.dispose();
+            this._depthTexture = null;
+            this._framebuffer && this._gl.deleteFramebuffer(this._framebuffer);
+            this._framebuffer = null;
+            this._depthbuffer && this._gl.deleteRenderbuffer(this._depthbuffer);
+            this._depthbuffer = null;
+            this._msaaFramebuffer && this._gl.deleteFramebuffer(this._msaaFramebuffer);
+            this._msaaFramebuffer = null;
+            this._msaaRenderbuffer && this._gl.deleteRenderbuffer(this._msaaRenderbuffer);
+            this._msaaRenderbuffer = null;
+            this._changeTexMemory(0);
+            this._gpuMemory = 0;
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_ALLRenderTexture, -1);
+        }
+    }
+
+    class WebGLInternalTex extends GLObject {
+        get mipmap() {
+            return this._mipmap;
+        }
+        get mipmapCount() {
+            return this._mipmapCount;
+        }
+        _getSource() {
+            return this.resource;
+        }
+        get gpuMemory() {
+            return this._gpuMemory;
+        }
+        set gpuMemory(value) {
+            this._changeTexMemory(value);
+            this._gpuMemory = value;
+        }
+        constructor(engine, target, width, height, depth, dimension, mipmap, useSRGBLoader, gammaCorrection) {
+            super(engine);
+            this._gpuMemory = 0;
+            this._baseMipmapLevel = 0;
+            this._maxMipmapLevel = 0;
+            this.resource = this._gl.createTexture();
+            this.width = width;
+            this.height = height;
+            this.depth = depth;
+            const isPot = (value) => {
+                return (value & (value - 1)) === 0;
+            };
+            this.isPotSize = isPot(width) && isPot(height);
+            if (dimension == Laya.TextureDimension.Tex3D) {
+                this.isPotSize = this.isPotSize && isPot(this.depth);
+            }
+            switch (dimension) {
+                case Laya.TextureDimension.Tex2D:
+                    this._statistics_M_Texture = Laya.GPUEngineStatisticsInfo.M_Texture2D;
+                    this._statistics_RC_Texture = Laya.GPUEngineStatisticsInfo.RC_Texture2D;
+                    break;
+                case Laya.TextureDimension.Tex3D:
+                    this._statistics_M_Texture = Laya.GPUEngineStatisticsInfo.M_Texture3D;
+                    this._statistics_RC_Texture = Laya.GPUEngineStatisticsInfo.RC_Texture3D;
+                    break;
+                case Laya.TextureDimension.Cube:
+                    this._statistics_M_Texture = Laya.GPUEngineStatisticsInfo.M_TextureCube;
+                    this._statistics_RC_Texture = Laya.GPUEngineStatisticsInfo.RC_TextureCube;
+                    break;
+                case Laya.TextureDimension.Texture2DArray:
+                    this._statistics_M_Texture = Laya.GPUEngineStatisticsInfo.M_Texture2DArray;
+                    this._statistics_RC_Texture = Laya.GPUEngineStatisticsInfo.RC_Texture2DArray;
+                    break;
+            }
+            this._mipmap = mipmap && this.isPotSize;
+            this._mipmapCount = this._mipmap ? Math.max(Math.ceil(Math.log2(width)) + 1, Math.ceil(Math.log2(height)) + 1) : 1;
+            this._maxMipmapLevel = this._mipmapCount - 1;
+            this._baseMipmapLevel = 0;
+            this.useSRGBLoad = useSRGBLoader;
+            this.gammaCorrection = gammaCorrection;
+            this.target = target;
+            this.filterMode = Laya.FilterMode.Bilinear;
+            this.wrapU = Laya.WrapMode.Repeat;
+            this.wrapV = Laya.WrapMode.Repeat;
+            this.wrapW = Laya.WrapMode.Repeat;
+            this.anisoLevel = 4;
+            this.compareMode = Laya.TextureCompareMode.None;
+            WebGLEngine.instance._addStatisticsInfo(this._statistics_RC_Texture, 1);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_ALLTexture, 1);
+        }
+        get filterMode() {
+            return this._filterMode;
+        }
+        set filterMode(value) {
+            if (this._filterMode != value && this.resource) {
+                let gl = this._gl;
+                let mipmap = this.mipmap;
+                let min = this.getFilteMinrParam(value, mipmap);
+                this._setTexParameteri(gl.TEXTURE_MIN_FILTER, min);
+                let mag = this.getFilterMagParam(value);
+                this._setTexParameteri(gl.TEXTURE_MAG_FILTER, mag);
+                this._filterMode = value;
+            }
+        }
+        get wrapU() {
+            return this._warpU;
+        }
+        set wrapU(value) {
+            if (this._warpU != value && this.resource) {
+                let gl = this._gl;
+                let warpParam = this.getWrapParam(value);
+                this._setWrapMode(gl.TEXTURE_WRAP_S, warpParam);
+                this._warpU = value;
+            }
+        }
+        get wrapV() {
+            return this._warpV;
+        }
+        set wrapV(value) {
+            if (this._warpV != value && this.resource) {
+                let gl = this._gl;
+                let warpParam = this.getWrapParam(value);
+                this._setWrapMode(gl.TEXTURE_WRAP_T, warpParam);
+                this._warpV = value;
+            }
+        }
+        get wrapW() {
+            return this._warpW;
+        }
+        set wrapW(value) {
+            if (this._warpW != value && this.resource) {
+                if (this._engine.getCapable(Laya.RenderCapable.Texture3D)) {
+                    let gl = this._gl;
+                    let warpParam = this.getWrapParam(value);
+                    this._setWrapMode(gl.TEXTURE_WRAP_R, warpParam);
+                }
+                this._warpW = value;
+            }
+        }
+        get anisoLevel() {
+            return this._anisoLevel;
+        }
+        set anisoLevel(value) {
+            let anisoExt = this._engine._supportCapatable.getExtension(exports.WebGLExtension.EXT_texture_filter_anisotropic);
+            if (anisoExt) {
+                this._gl;
+                let maxAnisoLevel = this._engine.getParams(Laya.RenderParams.Max_AnisoLevel_Count);
+                let level = Math.max(1, Math.min(maxAnisoLevel, value));
+                this._setTexParametexf(anisoExt.TEXTURE_MAX_ANISOTROPY_EXT, level);
+                this._anisoLevel = level;
+            }
+            else {
+                this._anisoLevel = 1;
+            }
+        }
+        set baseMipmapLevel(value) {
+            if (this._engine.isWebGL2) {
+                this._setTexParameteri(this._gl.TEXTURE_BASE_LEVEL, value);
+            }
+            this._baseMipmapLevel = value;
+        }
+        get baseMipmapLevel() {
+            return this._baseMipmapLevel;
+        }
+        set maxMipmapLevel(value) {
+            if (this._engine.isWebGL2) {
+                this._setTexParameteri(this._gl.TEXTURE_MAX_LEVEL, value);
+            }
+            this._maxMipmapLevel = value;
+        }
+        get maxMipmapLevel() {
+            return this._maxMipmapLevel;
+        }
+        get compareMode() {
+            return this._compareMode;
+        }
+        set compareMode(value) {
+            this._compareMode = value;
+        }
+        _setTexParameteri(pname, param) {
+            let gl = this._gl;
+            let target = this.target;
+            this._engine._bindTexture(target, this.resource);
+            gl.texParameteri(target, pname, param);
+            this._engine._bindTexture(target, null);
+        }
+        _setTexParametexf(pname, param) {
+            let gl = this._gl;
+            let target = this.target;
+            this._engine._bindTexture(target, this.resource);
+            gl.texParameterf(target, pname, param);
+            this._engine._bindTexture(target, null);
+        }
+        getFilteMinrParam(filterMode, mipmap) {
+            let gl = this._gl;
+            switch (filterMode) {
+                case Laya.FilterMode.Point:
+                    return mipmap ? gl.NEAREST_MIPMAP_NEAREST : gl.NEAREST;
+                case Laya.FilterMode.Bilinear:
+                    return mipmap ? gl.LINEAR_MIPMAP_NEAREST : gl.LINEAR;
+                case Laya.FilterMode.Trilinear:
+                    return mipmap ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR;
+                default:
+                    return mipmap ? gl.LINEAR_MIPMAP_NEAREST : gl.LINEAR;
+            }
+        }
+        getFilterMagParam(filterMode) {
+            let gl = this._gl;
+            switch (filterMode) {
+                case Laya.FilterMode.Point:
+                    return gl.NEAREST;
+                case Laya.FilterMode.Bilinear:
+                    return gl.LINEAR;
+                case Laya.FilterMode.Trilinear:
+                    return gl.LINEAR;
+                default:
+                    return gl.LINEAR;
+            }
+        }
+        getWrapParam(wrapMode) {
+            let gl = this._gl;
+            switch (wrapMode) {
+                case Laya.WrapMode.Repeat:
+                    return gl.REPEAT;
+                case Laya.WrapMode.Clamp:
+                    return gl.CLAMP_TO_EDGE;
+                case Laya.WrapMode.Mirrored:
+                    return gl.MIRRORED_REPEAT;
+                default:
+                    return gl.REPEAT;
+            }
+        }
+        _setWrapMode(pname, param) {
+            let gl = this._gl;
+            if (!this.isPotSize) {
+                param = gl.CLAMP_TO_EDGE;
+            }
+            this._setTexParameteri(pname, param);
+        }
+        _changeTexMemory(memory) {
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_GPUMemory, -this._gpuMemory + memory);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_ALLTexture, -this._gpuMemory + memory);
+            this._engine._addStatisticsInfo(this._statistics_M_Texture, -this._gpuMemory + memory);
+        }
+        dispose() {
+            let gl = this._gl;
+            gl.deleteTexture(this.resource);
+            this._changeTexMemory(0);
+            this._gpuMemory = 0;
+            WebGLEngine.instance._addStatisticsInfo(this._statistics_RC_Texture, -1);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_ALLTexture, -1);
+        }
+    }
+
+    class GLTextureContext extends GLObject {
+        constructor(engine) {
+            super(engine);
+            this._glParam = {
+                internalFormat: 0,
+                format: 0,
+                type: 0,
+            };
+            this.needBitmap = false;
+            this._sRGB = this._engine._supportCapatable.getExtension(exports.WebGLExtension.EXT_sRGB);
+            this._oesTextureHalfFloat = this._engine._supportCapatable.getExtension(exports.WebGLExtension.OES_texture_half_float);
+            this._compressdTextureS3tc_srgb = this._engine._supportCapatable.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_s3tc_srgb);
+            this._compressedTextureEtc1 = this._engine._supportCapatable.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_etc1);
+            this._compressedTextureS3tc = this._engine._supportCapatable.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_s3tc);
+            this._compressedTextureETC = this._engine._supportCapatable.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_etc);
+            this._compressedTextureASTC = this._engine._supportCapatable.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_astc);
+            this._webgl_depth_texture = this._engine._supportCapatable.getExtension(exports.WebGLExtension.WEBGL_depth_texture);
+        }
+        createTexture3DInternal(dimension, width, height, depth, format, generateMipmap, sRGB, premultipliedAlpha) {
+            return null;
+        }
+        setTexture3DImageData(texture, source, depth, premultiplyAlpha, invertY) {
+            return null;
+        }
+        setTexture3DPixelsData(texture, source, depth, premultiplyAlpha, invertY) {
+            return null;
+        }
+        setTexture3DSubPixelsData(texture, source, mipmapLevel, generateMipmap, xOffset, yOffset, zOffset, width, height, depth, premultiplyAlpha, invertY) {
+            return null;
+        }
+        glTextureParam(format, useSRGB) {
+            let gl = this._gl;
+            this._glParam.internalFormat = null;
+            this._glParam.format = null;
+            this._glParam.type = null;
+            switch (format) {
+                case Laya.TextureFormat.R8G8B8:
+                    this._glParam.internalFormat = useSRGB ? this._sRGB.SRGB_EXT : gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.R8G8B8A8:
+                    this._glParam.internalFormat = useSRGB ? this._sRGB.SRGB_ALPHA_EXT : gl.RGBA;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.R5G6B5:
+                    this._glParam.internalFormat = gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_SHORT_5_6_5;
+                    break;
+                case Laya.TextureFormat.R32G32B32A32:
+                    this._glParam.internalFormat = gl.RGBA;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.TextureFormat.R32G32B32:
+                    this._glParam.internalFormat = gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.TextureFormat.R16G16B16A16:
+                    this._glParam.internalFormat = gl.RGBA;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = this._oesTextureHalfFloat.HALF_FLOAT_OES;
+                    break;
+                case Laya.TextureFormat.R16G16B16:
+                    this._glParam.internalFormat = gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = this._oesTextureHalfFloat.HALF_FLOAT_OES;
+                    break;
+                case Laya.TextureFormat.DXT1:
+                    this._glParam.internalFormat = useSRGB ? this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT : this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT1_EXT;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.DXT3:
+                    this._glParam.internalFormat = useSRGB ? this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT : this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT3_EXT;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.DXT5:
+                    this._glParam.internalFormat = useSRGB ? this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT : this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT5_EXT;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC1RGB:
+                    this._glParam.internalFormat = this._compressedTextureEtc1.COMPRESSED_RGB_ETC1_WEBGL;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC2RGBA:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC2RGB:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_RGB8_ETC2;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC2SRGB:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_SRGB8_ETC2;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC2SRGB_Alpha8:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC2RGB_Alpha1:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ETC2SRGB_Alpha1:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC4x4:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC6x6:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC8x8:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC10x10:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC12x12:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC4x4SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC6x6SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC8x8SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC10x10SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.ASTC12x12SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                default:
+                    throw "Unknown Texture Format.";
+            }
+            return this._glParam;
+        }
+        glRenderTextureParam(format, useSRGB) {
+            let gl = this._gl;
+            this._glParam.internalFormat = null;
+            this._glParam.format = null;
+            this._glParam.type = null;
+            switch (format) {
+                case Laya.RenderTargetFormat.R8G8B8:
+                    this._glParam.internalFormat = useSRGB ? this._sRGB.SRGB_EXT : gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.RenderTargetFormat.R8G8B8A8:
+                    this._glParam.internalFormat = useSRGB ? this._sRGB.SRGB_EXT : gl.RGBA;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.RenderTargetFormat.R16G16B16:
+                    this._glParam.internalFormat = gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = this._oesTextureHalfFloat.HALF_FLOAT_OES;
+                    break;
+                case Laya.RenderTargetFormat.R16G16B16A16:
+                    this._glParam.internalFormat = gl.RGBA;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = this._oesTextureHalfFloat.HALF_FLOAT_OES;
+                    break;
+                case Laya.RenderTargetFormat.R32G32B32:
+                    this._glParam.internalFormat = gl.RGB;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.RenderTargetFormat.R32G32B32A32:
+                    this._glParam.internalFormat = gl.RGBA;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.RenderTargetFormat.DEPTH_16:
+                    this._glParam.internalFormat = gl.DEPTH_COMPONENT;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_SHORT;
+                    break;
+                case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                    this._glParam.internalFormat = gl.DEPTH_STENCIL;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = this._webgl_depth_texture.UNSIGNED_INT_24_8_WEBGL;
+                    break;
+                case Laya.RenderTargetFormat.DEPTH_32:
+                    this._glParam.internalFormat = gl.DEPTH_COMPONENT;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_INT;
+                    break;
+                case Laya.RenderTargetFormat.STENCIL_8:
+                default:
+                    throw "render texture format wrong.";
+            }
+            return this._glParam;
+        }
+        glRenderBufferParam(format, useSRGB) {
+            let gl = this._gl;
+            switch (format) {
+                case Laya.RenderTargetFormat.DEPTH_16:
+                    return { internalFormat: gl.DEPTH_COMPONENT16, attachment: gl.DEPTH_ATTACHMENT };
+                case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                    return { internalFormat: gl.DEPTH_STENCIL, attachment: gl.DEPTH_STENCIL_ATTACHMENT };
+                case Laya.RenderTargetFormat.DEPTH_32:
+                    return { internalFormat: gl.DEPTH_STENCIL, attachment: gl.DEPTH_STENCIL_ATTACHMENT };
+                case Laya.RenderTargetFormat.STENCIL_8:
+                    return { internalFormat: gl.STENCIL_INDEX8, attachment: gl.STENCIL_ATTACHMENT };
+                default:
+                    return null;
+            }
+        }
+        glRenderTargetAttachment(format) {
+            let gl = this._gl;
+            switch (format) {
+                case Laya.RenderTargetFormat.DEPTH_16:
+                    return gl.DEPTH_ATTACHMENT;
+                case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                    return gl.DEPTH_STENCIL_ATTACHMENT;
+                case Laya.RenderTargetFormat.DEPTH_32:
+                    return gl.DEPTH_ATTACHMENT;
+                case Laya.RenderTargetFormat.STENCIL_8:
+                    return gl.STENCIL_ATTACHMENT;
+                case Laya.RenderTargetFormat.R8G8B8:
+                case Laya.RenderTargetFormat.R8G8B8A8:
+                case Laya.RenderTargetFormat.R16G16B16:
+                case Laya.RenderTargetFormat.R16G16B16A16:
+                case Laya.RenderTargetFormat.R32G32B32:
+                case Laya.RenderTargetFormat.R32G32B32A32:
+                    return gl.COLOR_ATTACHMENT0;
+                default:
+                    throw "render format.";
+            }
+        }
+        getTarget(dimension) {
+            let gl = this._gl;
+            switch (dimension) {
+                case Laya.TextureDimension.Tex2D:
+                    return gl.TEXTURE_2D;
+                case Laya.TextureDimension.Cube:
+                    return gl.TEXTURE_CUBE_MAP;
+                default:
+                    throw "texture dimension wrong in WebGL1.";
+            }
+        }
+        getFormatPixelsParams(format) {
+            let formatParams = {
+                channels: 0,
+                bytesPerPixel: 0,
+                dataTypedCons: Uint8Array,
+                typedSize: 1
+            };
+            switch (format) {
+                case Laya.TextureFormat.R8G8B8A8:
+                    formatParams.channels = 4;
+                    formatParams.bytesPerPixel = 4;
+                    formatParams.dataTypedCons = Uint8Array;
+                    formatParams.typedSize = 1;
+                    return formatParams;
+                case Laya.TextureFormat.R8G8B8:
+                    formatParams.channels = 3;
+                    formatParams.bytesPerPixel = 3;
+                    formatParams.dataTypedCons = Uint8Array;
+                    formatParams.typedSize = 1;
+                    return formatParams;
+                case Laya.TextureFormat.R5G6B5:
+                    formatParams.channels = 3;
+                    formatParams.bytesPerPixel = 2;
+                    formatParams.dataTypedCons = Uint16Array;
+                    formatParams.typedSize = 2;
+                    return formatParams;
+                case Laya.TextureFormat.R16G16B16:
+                    formatParams.channels = 3;
+                    formatParams.bytesPerPixel = 6;
+                    formatParams.dataTypedCons = Uint16Array;
+                    formatParams.typedSize = 2;
+                    return formatParams;
+                case Laya.TextureFormat.R16G16B16A16:
+                    formatParams.channels = 4;
+                    formatParams.bytesPerPixel = 8;
+                    formatParams.dataTypedCons = Uint16Array;
+                    formatParams.typedSize = 2;
+                    return formatParams;
+                case Laya.TextureFormat.R32G32B32:
+                    formatParams.channels = 3;
+                    formatParams.bytesPerPixel = 12;
+                    formatParams.dataTypedCons = Float32Array;
+                    formatParams.typedSize = 4;
+                    return formatParams;
+                case Laya.TextureFormat.R32G32B32A32:
+                    formatParams.channels = 4;
+                    formatParams.bytesPerPixel = 16;
+                    formatParams.dataTypedCons = Float32Array;
+                    formatParams.typedSize = 4;
+                    return formatParams;
+                default:
+                    return formatParams;
+            }
+        }
+        getGLtexMemory(tex, depth = 1) {
+            let gl = this._gl;
+            let channels = 0;
+            let singlebyte = 0;
+            let bytelength = 0;
+            let srgb = this._sRGB ? this._sRGB.SRGB_EXT : gl.RGB;
+            let srgb_alpha = this._sRGB ? this._sRGB.SRGB_ALPHA_EXT : gl.RGBA;
+            switch (tex.internalFormat) {
+                case srgb:
+                case gl.RGB:
+                    channels = 3;
+                    break;
+                case srgb_alpha:
+                case gl.RGBA:
+                    channels = 4;
+                    break;
+                default:
+                    channels = 0;
+                    break;
+            }
+            switch (tex.type) {
+                case gl.UNSIGNED_BYTE:
+                    singlebyte = 1;
+                    break;
+                case gl.UNSIGNED_SHORT_5_6_5:
+                    singlebyte = 2 / 3;
+                    break;
+                case gl.FLOAT:
+                    singlebyte = 4;
+                    break;
+                case this._oesTextureHalfFloat.HALF_FLOAT_OES:
+                    singlebyte = 2;
+                    break;
+                default:
+                    singlebyte = 0;
+                    break;
+            }
+            bytelength = channels * singlebyte * tex.width * tex.height;
+            if (tex.mipmap) {
+                bytelength *= 1.333;
+            }
+            if (tex.target == gl.TEXTURE_CUBE_MAP)
+                bytelength *= 6;
+            else if (tex.target == gl.TEXTURE_2D)
+                bytelength *= 1;
+            return bytelength;
+        }
+        getGLRTTexMemory(width, height, colorFormat, depthStencilFormat, generateMipmap, multiSamples, cube) {
+            let getpixelbyte = (rtFormat) => {
+                let pixelByte = 0;
+                switch (rtFormat) {
+                    case Laya.RenderTargetFormat.R8G8B8:
+                        pixelByte = 3;
+                        break;
+                    case Laya.RenderTargetFormat.R8G8B8A8:
+                        pixelByte = 4;
+                        break;
+                    case Laya.RenderTargetFormat.R16G16B16A16:
+                        pixelByte = 8;
+                        break;
+                    case Laya.RenderTargetFormat.R32G32B32:
+                        pixelByte = 12;
+                        break;
+                    case Laya.RenderTargetFormat.R32G32B32A32:
+                        pixelByte = 16;
+                        break;
+                    case Laya.RenderTargetFormat.R16G16B16:
+                        pixelByte = 6;
+                        break;
+                    case Laya.RenderTargetFormat.DEPTH_16:
+                        pixelByte = 2;
+                        break;
+                    case Laya.RenderTargetFormat.STENCIL_8:
+                        pixelByte = 1;
+                        break;
+                    case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                        pixelByte = 4;
+                        break;
+                    case Laya.RenderTargetFormat.DEPTH_32:
+                        pixelByte = 4;
+                        break;
+                }
+                return pixelByte;
+            };
+            let colorPixelbyte = getpixelbyte(colorFormat);
+            let depthPixelbyte = getpixelbyte(depthStencilFormat);
+            if (multiSamples > 1)
+                colorPixelbyte *= 2;
+            if (cube)
+                colorPixelbyte *= 6;
+            if (generateMipmap)
+                colorPixelbyte *= 1.333;
+            let colorMemory = colorPixelbyte * width * height;
+            let depthMemory = depthPixelbyte * width * height;
+            return colorMemory + depthMemory;
+        }
+        supportSRGB(format, mipmap) {
+            switch (format) {
+                case Laya.TextureFormat.R8G8B8:
+                case Laya.TextureFormat.R8G8B8A8:
+                    return this._engine.getCapable(Laya.RenderCapable.Texture_SRGB) && !mipmap;
+                case Laya.TextureFormat.DXT1:
+                case Laya.TextureFormat.DXT3:
+                case Laya.TextureFormat.DXT5:
+                    return this._engine.getCapable(Laya.RenderCapable.COMPRESS_TEXTURE_S3TC_SRGB) && !mipmap;
+                default:
+                    return false;
+            }
+        }
+        supportGenerateMipmap(format) {
+            switch (format) {
+                case Laya.RenderTargetFormat.DEPTH_16:
+                case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                case Laya.RenderTargetFormat.DEPTH_32:
+                case Laya.RenderTargetFormat.STENCIL_8:
+                    return false;
+                default:
+                    return true;
+            }
+        }
+        isSRGBFormat(format) {
+            switch (format) {
+                case Laya.TextureFormat.ETC2SRGB:
+                case Laya.TextureFormat.ETC2SRGB_Alpha8:
+                case Laya.TextureFormat.ETC2SRGB_Alpha1:
+                case Laya.TextureFormat.ASTC4x4SRGB:
+                case Laya.TextureFormat.ASTC6x6SRGB:
+                case Laya.TextureFormat.ASTC8x8SRGB:
+                case Laya.TextureFormat.ASTC10x10SRGB:
+                case Laya.TextureFormat.ASTC12x12SRGB:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        createTextureInternal(dimension, width, height, format, generateMipmap, sRGB, premultipliedAlpha) {
+            let useSRGBExt = this.isSRGBFormat(format) || (sRGB && this.supportSRGB(format, generateMipmap));
+            if (premultipliedAlpha) {
+                useSRGBExt = false;
+            }
+            let gammaCorrection = 1.0;
+            if (!useSRGBExt && sRGB) {
+                gammaCorrection = 2.2;
+            }
+            let target = this.getTarget(dimension);
+            let internalTex = new WebGLInternalTex(this._engine, target, width, height, 1, dimension, generateMipmap, useSRGBExt, gammaCorrection);
+            let glParam = this.glTextureParam(format, useSRGBExt);
+            internalTex.internalFormat = glParam.internalFormat;
+            internalTex.format = glParam.format;
+            internalTex.type = glParam.type;
+            return internalTex;
+        }
+        setTextureImageData(texture, source, premultiplyAlpha, invertY) {
+            if (texture.width != source.width || texture.height != source.height) {
+                console.warn("setTextureImageData: size not match");
+            }
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            texture.width;
+            texture.height;
+            let gl = texture._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texImage2D(target, 0, internalFormat, format, type, source);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        setTextureSubImageData(texture, source, x, y, premultiplyAlpha, invertY) {
+            let target = texture.target;
+            texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            source.width;
+            source.height;
+            let gl = texture._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texSubImage2D(target, 0, x, y, format, type, source);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        initVideoTextureData(texture) {
+            let target = texture.target;
+            texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let gl = texture._gl;
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texImage2D(target, 0, texture.internalFormat, width, height, 0, format, type, null);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+        }
+        setTexturePixelsData(texture, source, premultiplyAlpha, invertY) {
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = texture._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texImage2D(target, 0, internalFormat, width, height, 0, format, type, source);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureSubPixelsData(texture, source, mipmapLevel, generateMipmap, xOffset, yOffset, width, height, premultiplyAlpha, invertY) {
+            generateMipmap = generateMipmap && mipmapLevel == 0;
+            let target = texture.target;
+            texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = texture._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texSubImage2D(target, mipmapLevel, xOffset, yOffset, width, height, format, type, source);
+            if (texture.mipmap && generateMipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureDDSData(texture, ddsInfo) {
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let source = ddsInfo.source;
+            let dataOffset = ddsInfo.dataOffset;
+            let bpp = ddsInfo.bpp;
+            let blockBytes = ddsInfo.blockBytes;
+            let mipmapCount = ddsInfo.mipmapCount;
+            let compressed = ddsInfo.compressed;
+            texture.maxMipmapLevel = mipmapCount - 1;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = texture._gl;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            let formatParams = this.getFormatPixelsParams(ddsInfo.format);
+            let channelsByte = formatParams.bytesPerPixel / formatParams.channels;
+            let dataTypeConstur = formatParams.dataTypedCons;
+            let mipmapWidth = width;
+            let mipmapHeight = height;
+            let memory = 0;
+            for (let index = 0; index < mipmapCount; index++) {
+                if (compressed) {
+                    let dataLength = (((Math.max(4, mipmapWidth) / 4) * Math.max(4, mipmapHeight)) / 4) * blockBytes;
+                    let sourceData = new Uint8Array(source, dataOffset, dataLength);
+                    gl.compressedTexImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, sourceData);
+                    memory += sourceData.length;
+                    dataOffset += bpp ? (mipmapWidth * mipmapHeight * (bpp / 8)) : dataLength;
+                }
+                else {
+                    let dataLength = mipmapWidth * mipmapHeight * formatParams.channels;
+                    let sourceData = new dataTypeConstur(source, dataOffset, dataLength);
+                    memory += sourceData.length;
+                    gl.texImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, format, type, sourceData);
+                    dataOffset += dataLength * channelsByte;
+                }
+                mipmapWidth *= 0.5;
+                mipmapHeight *= 0.5;
+                mipmapWidth = Math.max(1.0, mipmapWidth);
+                mipmapHeight = Math.max(1.0, mipmapHeight);
+            }
+            texture.gpuMemory = memory;
+            this._engine._bindTexture(texture.target, null);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureKTXData(texture, ktxInfo) {
+            let source = ktxInfo.source;
+            let compressed = ktxInfo.compress;
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let mipmapCount = texture.mipmapCount;
+            let width = texture.width;
+            let height = texture.height;
+            texture.maxMipmapLevel = mipmapCount - 1;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = texture._gl;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            let mipmapWidth = width;
+            let mipmapHeight = height;
+            let dataOffset = ktxInfo.headerOffset + ktxInfo.bytesOfKeyValueData;
+            let memory = 0;
+            for (let index = 0; index < ktxInfo.mipmapCount; index++) {
+                let imageSize = new Int32Array(source, dataOffset, 1)[0];
+                dataOffset += 4;
+                if (compressed) {
+                    let sourceData = new Uint8Array(source, dataOffset, imageSize);
+                    gl.compressedTexImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, sourceData);
+                    memory += sourceData.length;
+                }
+                else {
+                    let pixelParams = this.getFormatPixelsParams(ktxInfo.format);
+                    let typedSize = imageSize / pixelParams.typedSize;
+                    let sourceData = new pixelParams.dataTypedCons(source, dataOffset, typedSize);
+                    gl.texImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, format, type, sourceData);
+                    memory += sourceData.byteLength;
+                }
+                dataOffset += imageSize;
+                dataOffset += 3 - ((imageSize + 3) % 4);
+                mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+                mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            }
+            for (let index = ktxInfo.mipmapCount; index < texture.mipmapCount; index++) {
+                if (compressed) ;
+                else {
+                    gl.texImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, format, type, null);
+                }
+                mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+                mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            }
+            texture.gpuMemory = memory;
+            this._engine._bindTexture(texture.target, null);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureHDRData(texture, hdrInfo) {
+            let hdrPixelData = hdrInfo.readScanLine();
+            this.setTexturePixelsData(texture, hdrPixelData, false, false);
+        }
+        setCubeImageData(texture, sources, premultiplyAlpha, invertY) {
+            let gl = texture._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            ];
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            texture.width;
+            texture.height;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            for (let index = 0; index < cubeFace.length; index++) {
+                let target = cubeFace[index];
+                gl.texImage2D(target, 0, internalFormat, format, type, sources[index]);
+            }
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        setCubePixelsData(texture, source, premultiplyAlpha, invertY) {
+            let gl = texture._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            ];
+            texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let fourSize = width % 4 == 0;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            if (source) {
+                for (let index = 0; index < cubeFace.length; index++) {
+                    let t = cubeFace[index];
+                    gl.texImage2D(t, 0, internalFormat, width, height, 0, format, type, source[index]);
+                }
+                if (texture.mipmap) {
+                    gl.generateMipmap(texture.target);
+                }
+            }
+            else {
+                for (let index = 0; index < cubeFace.length; index++) {
+                    let t = cubeFace[index];
+                    gl.texImage2D(t, 0, internalFormat, width, height, 0, format, type, null);
+                }
+                if (texture.mipmap) {
+                    gl.generateMipmap(texture.target);
+                }
+            }
+            this._engine._bindTexture(texture.target, null);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setCubeSubPixelData(texture, source, mipmapLevel, generateMipmap, xOffset, yOffset, width, height, premultiplyAlpha, invertY) {
+            generateMipmap = generateMipmap && mipmapLevel == 0;
+            let gl = texture._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            ];
+            texture.target;
+            texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let fourSize = width % 4 == 0;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            for (let index = 0; index < cubeFace.length; index++) {
+                let target = cubeFace[index];
+                gl.texSubImage2D(target, mipmapLevel, xOffset, yOffset, width, height, format, type, source[index]);
+            }
+            if (texture.mipmap && generateMipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setCubeDDSData(texture, ddsInfo) {
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let source = ddsInfo.source;
+            let dataOffset = ddsInfo.dataOffset;
+            let bpp = ddsInfo.bpp;
+            let blockBytes = ddsInfo.blockBytes;
+            let mipmapCount = ddsInfo.mipmapCount;
+            texture.maxMipmapLevel = mipmapCount - 1;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            fourSize = true;
+            let gl = texture._gl;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+            ];
+            let formatParams = this.getFormatPixelsParams(ddsInfo.format);
+            let channelsByte = formatParams.bytesPerPixel / formatParams.channels;
+            let dataTypeConstur = formatParams.dataTypedCons;
+            let memory = 0;
+            if (!ddsInfo.compressed) {
+                for (let face = 0; face < 6; face++) {
+                    let target = cubeFace[face];
+                    let mipmapWidth = width;
+                    let mipmapHeight = height;
+                    for (let index = 0; index < mipmapCount; index++) {
+                        let dataLength = mipmapWidth * mipmapHeight * formatParams.channels;
+                        let sourceData = new dataTypeConstur(source, dataOffset, dataLength);
+                        gl.texImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, format, type, sourceData);
+                        memory += sourceData.byteLength;
+                        dataOffset += dataLength * channelsByte;
+                        mipmapWidth *= 0.5;
+                        mipmapHeight *= 0.5;
+                        mipmapWidth = Math.max(1.0, mipmapWidth);
+                        mipmapHeight = Math.max(1.0, mipmapHeight);
+                    }
+                }
+            }
+            else {
+                for (let face = 0; face < 6; face++) {
+                    let target = cubeFace[face];
+                    let mipmapWidth = width;
+                    let mipmapHeight = height;
+                    for (let index = 0; index < mipmapCount; index++) {
+                        let dataLength = Math.max(4, mipmapWidth) / 4 * Math.max(4, mipmapHeight) / 4 * blockBytes;
+                        let sourceData = new Uint8Array(source, dataOffset, dataLength);
+                        (texture.mipmap || index == 0) && gl.compressedTexImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, sourceData);
+                        memory += sourceData.byteLength;
+                        dataOffset += bpp ? (mipmapWidth * mipmapHeight * (bpp / 8)) : dataLength;
+                        mipmapWidth *= 0.5;
+                        mipmapHeight *= 0.5;
+                        mipmapWidth = Math.max(1.0, mipmapWidth);
+                        mipmapHeight = Math.max(1.0, mipmapHeight);
+                    }
+                }
+            }
+            texture.gpuMemory = memory;
+            this._engine._bindTexture(texture.target, null);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setCubeKTXData(texture, ktxInfo) {
+            let source = ktxInfo.source;
+            let compressed = ktxInfo.compress;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let mipmapCount = ktxInfo.mipmapCount;
+            let width = texture.width;
+            let height = texture.height;
+            texture.maxMipmapLevel = mipmapCount - 1;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = texture._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+            ];
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            let mipmapWidth = width;
+            let mipmapHeight = height;
+            let dataOffset = ktxInfo.headerOffset + ktxInfo.bytesOfKeyValueData;
+            let memory = 0;
+            for (let index = 0; index < ktxInfo.mipmapCount; index++) {
+                let imageSize = new Int32Array(source, dataOffset, 1)[0];
+                dataOffset += 4;
+                for (let face = 0; face < 6; face++) {
+                    let target = cubeFace[face];
+                    if (compressed) {
+                        let sourceData = new Uint8Array(source, dataOffset, imageSize);
+                        gl.compressedTexImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, sourceData);
+                        memory += sourceData.byteLength;
+                    }
+                    else {
+                        let pixelParams = this.getFormatPixelsParams(ktxInfo.format);
+                        let typedSize = imageSize / pixelParams.typedSize;
+                        let sourceData = new pixelParams.dataTypedCons(source, dataOffset, typedSize);
+                        gl.texImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, format, type, sourceData);
+                        memory += sourceData.byteLength;
+                    }
+                    dataOffset += imageSize;
+                    dataOffset += 3 - ((imageSize + 3) % 4);
+                }
+                mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+                mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            }
+            for (let index = ktxInfo.mipmapCount; index < texture.mipmapCount; index++) {
+                for (let face = 0; face < 6; face++) {
+                    let target = cubeFace[face];
+                    if (compressed) ;
+                    else {
+                        gl.texImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, format, type, null);
+                    }
+                }
+                mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+                mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            }
+            this._engine._bindTexture(texture.target, null);
+            texture.gpuMemory = memory;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureCompareMode(texture, compareMode) {
+            return Laya.TextureCompareMode.None;
+        }
+        bindRenderTarget(renderTarget, faceIndex = 0) {
+            this.currentActiveRT && this.unbindRenderTarget(this.currentActiveRT);
+            let gl = this._gl;
+            let framebuffer = renderTarget._framebuffer;
+            gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+            if (renderTarget._isCube) {
+                let texture = renderTarget._textures[0];
+                gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_CUBE_MAP_POSITIVE_X + faceIndex, texture.resource, 0);
+            }
+            this.currentActiveRT = renderTarget;
+        }
+        bindoutScreenTarget() {
+            if (this.currentActiveRT != WebGLEngine._lastFrameBuffer) {
+                this.unbindRenderTarget(this.currentActiveRT);
+            }
+        }
+        unbindRenderTarget(renderTarget) {
+            let gl = renderTarget._gl;
+            if (renderTarget && renderTarget._generateMipmap) {
+                renderTarget._textures.forEach(tex => {
+                    let target = tex.target;
+                    this._engine._bindTexture(target, tex.resource);
+                    gl.generateMipmap(target);
+                    this._engine._bindTexture(target, null);
+                });
+            }
+            gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            this.currentActiveRT = WebGLEngine._lastFrameBuffer;
+        }
+        createRenderTextureCubeInternal(dimension, size, format, generateMipmap, sRGB) {
+            let useSRGBExt = false;
+            generateMipmap = generateMipmap && this.supportGenerateMipmap(format);
+            let gammaCorrection = 1.0;
+            let target = this.getTarget(dimension);
+            let internalTex = new WebGLInternalTex(this._engine, target, size, size, 1, dimension, generateMipmap, useSRGBExt, gammaCorrection);
+            let glParam = this.glRenderTextureParam(format, useSRGBExt);
+            internalTex.internalFormat = glParam.internalFormat;
+            internalTex.format = glParam.format;
+            internalTex.type = glParam.type;
+            let internalFormat = internalTex.internalFormat;
+            let glFormat = internalTex.format;
+            let type = internalTex.type;
+            let gl = internalTex._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            ];
+            this._engine._bindTexture(internalTex.target, internalTex.resource);
+            for (let index = 0; index < cubeFace.length; index++) {
+                let target = cubeFace[index];
+                gl.texImage2D(target, 0, internalFormat, size, size, 0, glFormat, type, null);
+            }
+            this._engine._bindTexture(internalTex.target, null);
+            if (format == Laya.RenderTargetFormat.DEPTH_16 || format == Laya.RenderTargetFormat.DEPTH_32 || format == Laya.RenderTargetFormat.DEPTHSTENCIL_24_8) {
+                internalTex.filterMode = Laya.FilterMode.Point;
+            }
+            return internalTex;
+        }
+        createRenderTargetInternal(width, height, colorFormat, depthStencilFormat, generateMipmap, sRGB, multiSamples) {
+            multiSamples = 1;
+            let texture = this.createRenderTextureInternal(Laya.TextureDimension.Tex2D, width, height, colorFormat, generateMipmap, sRGB);
+            let renderTarget = new WebGLInternalRT(this._engine, colorFormat, depthStencilFormat, false, texture.mipmap, multiSamples);
+            renderTarget.gpuMemory = this.getGLRTTexMemory(width, height, colorFormat, depthStencilFormat, generateMipmap, multiSamples, false);
+            renderTarget.colorFormat = colorFormat;
+            renderTarget.depthStencilFormat = depthStencilFormat;
+            renderTarget._textures.push(texture);
+            let framebuffer = renderTarget._framebuffer;
+            let gl = renderTarget._gl;
+            gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+            let colorAttachment = this.glRenderTargetAttachment(colorFormat);
+            gl.framebufferTexture2D(gl.FRAMEBUFFER, colorAttachment, gl.TEXTURE_2D, texture.resource, 0);
+            let depthBufferParam = this.glRenderBufferParam(depthStencilFormat, false);
+            if (depthBufferParam) {
+                let depthbuffer = this.createRenderbuffer(width, height, depthBufferParam.internalFormat, renderTarget._samples);
+                renderTarget._depthbuffer = depthbuffer;
+                gl.framebufferRenderbuffer(gl.FRAMEBUFFER, depthBufferParam.attachment, gl.RENDERBUFFER, depthbuffer);
+            }
+            gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            return renderTarget;
+        }
+        createRenderTargetCubeInternal(size, colorFormat, depthStencilFormat, generateMipmap, sRGB, multiSamples) {
+            multiSamples = 1;
+            let texture = this.createRenderTextureCubeInternal(Laya.TextureDimension.Cube, size, colorFormat, generateMipmap, sRGB);
+            let renderTarget = new WebGLInternalRT(this._engine, colorFormat, depthStencilFormat, true, texture.mipmap, multiSamples);
+            renderTarget.gpuMemory = this.getGLRTTexMemory(size, size, colorFormat, depthStencilFormat, generateMipmap, multiSamples, true);
+            renderTarget._textures.push(texture);
+            let framebuffer = renderTarget._framebuffer;
+            let gl = renderTarget._gl;
+            gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+            let depthBufferParam = this.glRenderBufferParam(depthStencilFormat, false);
+            if (depthBufferParam) {
+                let depthbuffer = this.createRenderbuffer(size, size, depthBufferParam.internalFormat, renderTarget._samples);
+                renderTarget._depthbuffer = depthbuffer;
+                gl.framebufferRenderbuffer(gl.FRAMEBUFFER, depthBufferParam.attachment, gl.RENDERBUFFER, depthbuffer);
+            }
+            gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            return renderTarget;
+        }
+        createRenderbuffer(width, height, internalFormat, samples) {
+            let gl = this._gl;
+            let renderbuffer = gl.createRenderbuffer();
+            gl.bindRenderbuffer(gl.RENDERBUFFER, renderbuffer);
+            gl.renderbufferStorage(gl.RENDERBUFFER, internalFormat, width, height);
+            gl.bindRenderbuffer(gl.RENDERBUFFER, null);
+            return renderbuffer;
+        }
+        createRenderTextureInternal(dimension, width, height, format, generateMipmap, sRGB) {
+            let useSRGBExt = false;
+            generateMipmap = generateMipmap && this.supportGenerateMipmap(format);
+            let gammaCorrection = 1.0;
+            let target = this.getTarget(dimension);
+            let internalTex = new WebGLInternalTex(this._engine, target, width, height, 1, dimension, generateMipmap, useSRGBExt, gammaCorrection);
+            let glParam = this.glRenderTextureParam(format, useSRGBExt);
+            internalTex.internalFormat = glParam.internalFormat;
+            internalTex.format = glParam.format;
+            internalTex.type = glParam.type;
+            let internalFormat = internalTex.internalFormat;
+            let glFormat = internalTex.format;
+            let type = internalTex.type;
+            let gl = internalTex._gl;
+            this._engine._bindTexture(internalTex.target, internalTex.resource);
+            gl.texImage2D(target, 0, internalFormat, width, height, 0, glFormat, type, null);
+            this._engine._bindTexture(internalTex.target, null);
+            if (format == Laya.RenderTargetFormat.DEPTH_16 || format == Laya.RenderTargetFormat.DEPTH_32 || format == Laya.RenderTargetFormat.DEPTHSTENCIL_24_8) {
+                internalTex.filterMode = Laya.FilterMode.Point;
+            }
+            return internalTex;
+        }
+        createRenderTargetDepthTexture(renderTarget, dimension, width, height) {
+            let gl = renderTarget._gl;
+            if (renderTarget.depthStencilFormat == Laya.RenderTargetFormat.None) {
+                return null;
+            }
+            let depthbuffer = renderTarget._depthbuffer;
+            depthbuffer && gl.deleteRenderbuffer(depthbuffer);
+            renderTarget._depthbuffer = null;
+            let format = renderTarget.depthStencilFormat;
+            let mipmap = renderTarget._generateMipmap;
+            let sRGB = renderTarget.isSRGB;
+            if (renderTarget._depthTexture) {
+                gl.deleteTexture(renderTarget._depthTexture);
+            }
+            let texture = this.createRenderTextureInternal(dimension, width, height, format, mipmap, sRGB);
+            renderTarget._depthTexture = texture;
+            let attachment = this.glRenderTargetAttachment(renderTarget.depthStencilFormat);
+            let framebuffer = renderTarget._framebuffer;
+            gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+            gl.framebufferTexture2D(gl.FRAMEBUFFER, attachment, gl.TEXTURE_2D, texture.resource, 0);
+            gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            return texture;
+        }
+        readRenderTargetPixelData(renderTarget, xOffset, yOffset, width, height, out) {
+            let gl = renderTarget._gl;
+            this.bindRenderTarget(renderTarget);
+            let frameState = gl.checkFramebufferStatus(gl.FRAMEBUFFER) == gl.FRAMEBUFFER_COMPLETE;
+            if (!frameState) {
+                this.unbindRenderTarget(renderTarget);
+                return null;
+            }
+            switch (renderTarget.colorFormat) {
+                case Laya.RenderTargetFormat.R8G8B8:
+                    gl.readPixels(xOffset, yOffset, width, height, gl.RGB, gl.UNSIGNED_BYTE, out);
+                    break;
+                case Laya.RenderTargetFormat.R8G8B8A8:
+                    gl.readPixels(xOffset, yOffset, width, height, gl.RGBA, gl.UNSIGNED_BYTE, out);
+                    break;
+                case Laya.RenderTargetFormat.R16G16B16:
+                    gl.readPixels(xOffset, yOffset, width, height, gl.RGB, gl.FLOAT, out);
+                    break;
+                case Laya.RenderTargetFormat.R16G16B16A16:
+                    gl.readPixels(xOffset, yOffset, width, height, gl.RGBA, gl.FLOAT, out);
+                    break;
+                case Laya.RenderTargetFormat.R32G32B32:
+                    gl.readPixels(xOffset, yOffset, width, height, gl.RGB, gl.FLOAT, out);
+                    break;
+                case Laya.RenderTargetFormat.R32G32B32A32:
+                    gl.readPixels(xOffset, yOffset, width, height, gl.RGBA, gl.FLOAT, out);
+                    break;
+            }
+            this.unbindRenderTarget(renderTarget);
+            return out;
+        }
+        readRenderTargetPixelDataAsync(renderTarget, xOffset, yOffset, width, height, out) {
+            return Promise.resolve(this.readRenderTargetPixelData(renderTarget, xOffset, yOffset, width, height, out));
+        }
+        updateVideoTexture(texture, video, premultiplyAlpha, invertY) {
+            let gl = texture._gl;
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            texture.width;
+            texture.height;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texImage2D(target, 0, internalFormat, format, type, video);
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+    }
+
+    class GL2TextureContext extends GLTextureContext {
+        constructor(engine) {
+            super(engine);
+        }
+        getTarget(dimension) {
+            let target = -1;
+            switch (dimension) {
+                case Laya.TextureDimension.Cube:
+                    target = this._gl.TEXTURE_CUBE_MAP;
+                    break;
+                case Laya.TextureDimension.Tex2D:
+                    target = this._gl.TEXTURE_2D;
+                    break;
+                case Laya.TextureDimension.Texture2DArray:
+                    target = this._gl.TEXTURE_2D_ARRAY;
+                    break;
+                case Laya.TextureDimension.Tex3D:
+                    target = this._gl.TEXTURE_3D;
+                    break;
+                default:
+                    throw "Unknow Texture Target";
+            }
+            return target;
+        }
+        glTextureParam(format, useSRGB) {
+            let gl = this._gl;
+            this._glParam.internalFormat = null;
+            this._glParam.format = null;
+            this._glParam.type = null;
+            switch (format) {
+                case Laya.TextureFormat.R8G8B8:
+                    this._glParam.internalFormat = useSRGB ? gl.SRGB8 : gl.RGB8;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.R8G8B8A8:
+                    this._glParam.internalFormat = useSRGB ? gl.SRGB8_ALPHA8 : gl.RGBA8;
+                    this._glParam.format = gl.RGBA;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.TextureFormat.R5G6B5:
+                    this._glParam.internalFormat = gl.RGB565;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.UNSIGNED_SHORT_5_6_5;
+                    break;
+                case Laya.TextureFormat.R32G32B32A32:
+                    this._glParam.internalFormat = gl.RGBA32F;
+                    this._glParam.format = gl.RGBA;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.TextureFormat.R32G32B32:
+                    this._glParam.internalFormat = gl.RGB32F;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.TextureFormat.R16G16B16:
+                    this._glParam.internalFormat = gl.RGB16F;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.HALF_FLOAT;
+                    break;
+                case Laya.TextureFormat.R16G16B16A16:
+                    this._glParam.internalFormat = gl.RGBA16F;
+                    this._glParam.format = gl.RGBA;
+                    this._glParam.type = gl.HALF_FLOAT;
+                    break;
+                case Laya.TextureFormat.DXT1:
+                    this._glParam.internalFormat = useSRGB ? this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT : this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT1_EXT;
+                    break;
+                case Laya.TextureFormat.DXT3:
+                    this._glParam.internalFormat = useSRGB ? this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT : this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT3_EXT;
+                    break;
+                case Laya.TextureFormat.DXT5:
+                    this._glParam.internalFormat = useSRGB ? this._compressdTextureS3tc_srgb.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT : this._compressedTextureS3tc.COMPRESSED_RGBA_S3TC_DXT5_EXT;
+                    break;
+                case Laya.TextureFormat.ETC1RGB:
+                    this._glParam.internalFormat = this._compressedTextureEtc1.COMPRESSED_RGB_ETC1_WEBGL;
+                    break;
+                case Laya.TextureFormat.ETC2RGBA:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_RGBA8_ETC2_EAC;
+                    break;
+                case Laya.TextureFormat.ETC2RGB:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_RGB8_ETC2;
+                    break;
+                case Laya.TextureFormat.ETC2SRGB:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_SRGB8_ETC2;
+                    break;
+                case Laya.TextureFormat.ETC2SRGB_Alpha8:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC;
+                    break;
+                case Laya.TextureFormat.ETC2RGB_Alpha1:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2;
+                    break;
+                case Laya.TextureFormat.ETC2SRGB_Alpha1:
+                    this._glParam.internalFormat = this._compressedTextureETC.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2;
+                    break;
+                case Laya.TextureFormat.ASTC4x4:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_4x4_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC6x6:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_6x6_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC8x8:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_8x8_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC10x10:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_10x10_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC12x12:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_RGBA_ASTC_12x12_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC4x4SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC6x6SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC8x8SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC10x10SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR;
+                    break;
+                case Laya.TextureFormat.ASTC12x12SRGB:
+                    this._glParam.internalFormat = this._compressedTextureASTC.COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR;
+                    break;
+                default:
+                    throw "Unknown Texture Format.";
+            }
+            return this._glParam;
+        }
+        glRenderBufferParam(format, useSRGB) {
+            let gl = this._gl;
+            switch (format) {
+                case Laya.RenderTargetFormat.DEPTH_16:
+                    return { internalFormat: gl.DEPTH_COMPONENT16, attachment: gl.DEPTH_ATTACHMENT };
+                case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                    return { internalFormat: gl.DEPTH24_STENCIL8, attachment: gl.DEPTH_STENCIL_ATTACHMENT };
+                case Laya.RenderTargetFormat.DEPTH_32:
+                    return { internalFormat: gl.DEPTH_COMPONENT32F, attachment: gl.DEPTH_ATTACHMENT };
+                case Laya.RenderTargetFormat.STENCIL_8:
+                    return { internalFormat: gl.STENCIL_INDEX8, attachment: gl.STENCIL_ATTACHMENT };
+                case Laya.RenderTargetFormat.R8G8B8:
+                    return { internalFormat: useSRGB ? gl.SRGB8 : gl.RGB8, attachment: gl.COLOR_ATTACHMENT0 };
+                case Laya.RenderTargetFormat.R8G8B8A8:
+                    return { internalFormat: useSRGB ? gl.SRGB8_ALPHA8 : gl.RGBA8, attachment: gl.COLOR_ATTACHMENT0 };
+                case Laya.RenderTargetFormat.R16G16B16:
+                    return { internalFormat: gl.RGB16F, attachment: gl.COLOR_ATTACHMENT0 };
+                case Laya.RenderTargetFormat.R16G16B16A16:
+                    return { internalFormat: gl.RGBA16F, attachment: gl.COLOR_ATTACHMENT0 };
+                case Laya.RenderTargetFormat.R32G32B32:
+                    return { internalFormat: gl.RGB32F, attachment: gl.COLOR_ATTACHMENT0 };
+                case Laya.RenderTargetFormat.R32G32B32A32:
+                    return { internalFormat: gl.RGBA32F, attachment: gl.COLOR_ATTACHMENT0 };
+                default:
+                    return null;
+            }
+        }
+        glRenderTextureParam(format, useSRGB) {
+            let gl = this._gl;
+            this._glParam.internalFormat = null;
+            this._glParam.format = null;
+            this._glParam.type = null;
+            switch (format) {
+                case Laya.RenderTargetFormat.R8G8B8:
+                    this._glParam.internalFormat = useSRGB ? gl.SRGB8 : gl.RGB8;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.RenderTargetFormat.R8G8B8A8:
+                    this._glParam.internalFormat = useSRGB ? gl.SRGB8_ALPHA8 : gl.RGBA8;
+                    this._glParam.format = gl.RGBA;
+                    this._glParam.type = gl.UNSIGNED_BYTE;
+                    break;
+                case Laya.RenderTargetFormat.R16G16B16:
+                    this._glParam.internalFormat = gl.RGB16F;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.HALF_FLOAT;
+                    break;
+                case Laya.RenderTargetFormat.R16G16B16A16:
+                    this._glParam.internalFormat = gl.RGBA16F;
+                    this._glParam.format = gl.RGBA;
+                    this._glParam.type = gl.HALF_FLOAT;
+                    break;
+                case Laya.RenderTargetFormat.R32G32B32:
+                    this._glParam.internalFormat = gl.RGB32F;
+                    this._glParam.format = gl.RGB;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.RenderTargetFormat.R32G32B32A32:
+                    this._glParam.internalFormat = gl.RGBA32F;
+                    this._glParam.format = gl.RGBA;
+                    this._glParam.type = gl.FLOAT;
+                    break;
+                case Laya.RenderTargetFormat.DEPTH_16:
+                    this._glParam.internalFormat = gl.DEPTH_COMPONENT16;
+                    this._glParam.format = gl.DEPTH_COMPONENT;
+                    this._glParam.type = gl.UNSIGNED_INT;
+                    break;
+                case Laya.RenderTargetFormat.DEPTHSTENCIL_24_8:
+                    this._glParam.internalFormat = gl.DEPTH24_STENCIL8;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_INT_24_8;
+                    break;
+                case Laya.RenderTargetFormat.DEPTH_32:
+                    this._glParam.internalFormat = gl.DEPTH_COMPONENT32F;
+                    this._glParam.format = this._glParam.internalFormat;
+                    this._glParam.type = gl.UNSIGNED_INT;
+                    break;
+                case Laya.RenderTargetFormat.STENCIL_8:
+                    break;
+                default:
+                    throw "depth texture format wrong.";
+            }
+            return this._glParam;
+        }
+        getGLtexMemory(tex, depth = 1) {
+            let gl = this._gl;
+            let channels = 0;
+            let singlebyte = 0;
+            let bytelength = 0;
+            switch (tex.internalFormat) {
+                case gl.SRGB8:
+                case gl.RGB8:
+                case gl.RGB565:
+                case gl.RGB32F:
+                case gl.RGB16F:
+                    channels = 3;
+                    break;
+                case gl.SRGB8_ALPHA8:
+                case gl.RGBA8:
+                case gl.RGBA32F:
+                case gl.RGBA16F:
+                    channels = 4;
+                    break;
+                default:
+                    channels = 0;
+                    break;
+            }
+            switch (tex.type) {
+                case gl.UNSIGNED_BYTE:
+                    singlebyte = 1;
+                    break;
+                case gl.UNSIGNED_SHORT_5_6_5:
+                    singlebyte = 2 / 3;
+                    break;
+                case gl.FLOAT:
+                    singlebyte = 4;
+                    break;
+                case gl.HALF_FLOAT:
+                    singlebyte = 2;
+                    break;
+                default:
+                    singlebyte = 0;
+                    break;
+            }
+            bytelength = channels * singlebyte * tex.width * tex.height;
+            if (tex.mipmap) {
+                bytelength *= 1.333;
+            }
+            if (tex.target == gl.TEXTURE_CUBE_MAP)
+                bytelength *= 6;
+            else if (tex.target == gl.TEXTURE_2D)
+                bytelength *= 1;
+            else if (tex.target == gl.TEXTURE_2D_ARRAY)
+                bytelength *= depth;
+            return bytelength;
+        }
+        supportSRGB(format, mipmap) {
+            switch (format) {
+                case Laya.TextureFormat.R8G8B8:
+                    return this._engine.getCapable(Laya.RenderCapable.Texture_SRGB) && !mipmap;
+                case Laya.TextureFormat.R8G8B8A8:
+                    return this._engine.getCapable(Laya.RenderCapable.Texture_SRGB);
+                case Laya.TextureFormat.DXT1:
+                case Laya.TextureFormat.DXT3:
+                case Laya.TextureFormat.DXT5:
+                    return this._engine.getCapable(Laya.RenderCapable.COMPRESS_TEXTURE_S3TC_SRGB) && !mipmap;
+                default:
+                    return false;
+            }
+        }
+        setTextureImageData(texture, source, premultiplyAlpha, invertY) {
+            if (texture.width != source.width || texture.height != source.height) {
+                console.warn("setTextureImageData: size not match");
+            }
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let mipmapCount = texture.mipmapCount;
+            let gl = this._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texStorage2D(target, mipmapCount, internalFormat, width, height);
+            gl.texSubImage2D(target, 0, 0, 0, width, height, format, type, source);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        setTextureSubImageData(texture, source, x, y, premultiplyAlpha, invertY) {
+            let target = texture.target;
+            texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            texture.width;
+            texture.height;
+            texture.mipmapCount;
+            let gl = this._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texSubImage2D(target, 0, x, y, source.width, source.height, format, type, source);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        setTexturePixelsData(texture, source, premultiplyAlpha, invertY) {
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let mipmapCount = texture.mipmapCount;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = this._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texStorage2D(target, mipmapCount, internalFormat, width, height);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (source) {
+                gl.texSubImage2D(target, 0, 0, 0, width, height, format, type, source);
+                if (texture.mipmap) {
+                    gl.generateMipmap(texture.target);
+                }
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        createTexture3DInternal(dimension, width, height, depth, format, generateMipmap, sRGB, premultipliedAlpha) {
+            let useSRGBExt = this.isSRGBFormat(format) || (sRGB && this.supportSRGB(format, generateMipmap));
+            if (premultipliedAlpha) {
+                useSRGBExt = false;
+            }
+            let gammaCorrection = 1.0;
+            if (!useSRGBExt && sRGB) {
+                gammaCorrection = 2.2;
+            }
+            let target = this.getTarget(dimension);
+            let internalTex = new WebGLInternalTex(this._engine, target, width, height, depth, dimension, generateMipmap, useSRGBExt, gammaCorrection);
+            let glParam = this.glTextureParam(format, useSRGBExt);
+            internalTex.internalFormat = glParam.internalFormat;
+            internalTex.format = glParam.format;
+            internalTex.type = glParam.type;
+            return internalTex;
+        }
+        setTexture3DImageData(texture, sources, depth, premultiplyAlpha, invertY) {
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let mipmapCount = texture.mipmapCount;
+            let gl = this._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texStorage3D(target, mipmapCount, internalFormat, width, height, depth);
+            texture.gpuMemory = this.getGLtexMemory(texture, depth);
+            for (let index = 0; index < depth; index++) {
+                gl.texSubImage3D(target, 0, 0, 0, index, width, height, 1, format, type, sources[index]);
+            }
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        setTexture3DPixelsData(texture, source, depth, premultiplyAlpha, invertY) {
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let mipmapCount = texture.mipmapCount;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = this._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texStorage3D(target, mipmapCount, internalFormat, width, height, depth);
+            texture.gpuMemory = this.getGLtexMemory(texture, depth);
+            if (source) {
+                gl.texSubImage3D(target, 0, 0, 0, 0, width, height, depth, format, type, source);
+                if (texture.mipmap) {
+                    gl.generateMipmap(texture.target);
+                }
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTexture3DSubPixelsData(texture, source, mipmapLevel, generateMipmap, xOffset, yOffset, zOffset, width, height, depth, premultiplyAlpha, invertY) {
+            generateMipmap = generateMipmap && mipmapLevel == 0;
+            let target = texture.target;
+            texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = this._gl;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texSubImage3D(target, mipmapLevel, xOffset, yOffset, zOffset, width, height, depth, format, type, source);
+            if (texture.mipmap && generateMipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureHDRData(texture, hdrInfo) {
+            let sourceData = hdrInfo.readScanLine();
+            this.setTexturePixelsData(texture, sourceData, false, false);
+        }
+        setTextureKTXData(texture, ktxInfo) {
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let mipmapCount = texture.mipmapCount;
+            let width = texture.width;
+            let height = texture.height;
+            texture.maxMipmapLevel = mipmapCount - 1;
+            let source = ktxInfo.source;
+            let compressed = ktxInfo.compress;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            let gl = this._gl;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            if (!compressed) {
+                gl.texStorage2D(target, ktxInfo.mipmapCount, internalFormat, width, height);
+            }
+            let mipmapWidth = width;
+            let mipmapHeight = height;
+            let dataOffset = ktxInfo.headerOffset + ktxInfo.bytesOfKeyValueData;
+            let memory = 0;
+            for (let index = 0; index < ktxInfo.mipmapCount; index++) {
+                let imageSize = new Int32Array(source, dataOffset, 1)[0];
+                dataOffset += 4;
+                if (compressed) {
+                    let sourceData = new Uint8Array(source, dataOffset, imageSize);
+                    gl.compressedTexImage2D(target, index, internalFormat, mipmapWidth, mipmapHeight, 0, sourceData);
+                    memory += sourceData.length;
+                }
+                else {
+                    let pixelParams = this.getFormatPixelsParams(ktxInfo.format);
+                    let typedSize = imageSize / pixelParams.typedSize;
+                    let sourceData = new pixelParams.dataTypedCons(source, dataOffset, typedSize);
+                    gl.texSubImage2D(target, index, 0, 0, mipmapWidth, mipmapHeight, format, type, sourceData);
+                    memory += sourceData.length;
+                }
+                dataOffset += imageSize;
+                dataOffset += 3 - ((imageSize + 3) % 4);
+                mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+                mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            }
+            this._engine._bindTexture(texture.target, null);
+            texture.gpuMemory = memory;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setCubeImageData(texture, sources, premultiplyAlpha, invertY) {
+            let gl = this._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            ];
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let mipmapCount = texture.mipmapCount;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texStorage2D(target, mipmapCount, internalFormat, width, height);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            for (let index = 0; index < cubeFace.length; index++) {
+                let t = cubeFace[index];
+                gl.texSubImage2D(t, 0, 0, 0, format, type, sources[index]);
+            }
+            if (texture.mipmap) {
+                gl.generateMipmap(texture.target);
+            }
+            this._engine._bindTexture(texture.target, null);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+        }
+        setCubePixelsData(texture, source, premultiplyAlpha, invertY) {
+            let gl = this._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            ];
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let width = texture.width;
+            let height = texture.height;
+            let mipmapCount = texture.mipmapCount;
+            let fourSize = width % 4 == 0;
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            gl.texStorage2D(target, mipmapCount, internalFormat, width, height);
+            if (source) {
+                for (let index = 0; index < cubeFace.length; index++) {
+                    let t = cubeFace[index];
+                    gl.texSubImage2D(t, 0, 0, 0, width, height, format, type, source[index]);
+                }
+                if (texture.mipmap) {
+                    gl.generateMipmap(texture.target);
+                }
+            }
+            this._engine._bindTexture(texture.target, null);
+            texture.gpuMemory = this.getGLtexMemory(texture);
+            premultiplyAlpha && gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+            invertY && gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setCubeKTXData(texture, ktxInfo) {
+            let gl = this._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+            ];
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            texture.mipmapCount;
+            let width = texture.width;
+            let height = texture.height;
+            texture.maxMipmapLevel = ktxInfo.mipmapCount - 1;
+            let source = ktxInfo.source;
+            let compressed = ktxInfo.compress;
+            let mipmapWidth = width;
+            let mipmapHeight = height;
+            let dataOffset = ktxInfo.headerOffset + ktxInfo.bytesOfKeyValueData;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            if (!compressed) {
+                gl.texStorage2D(target, ktxInfo.mipmapCount, internalFormat, width, height);
+            }
+            let memory = 0;
+            for (let index = 0; index < ktxInfo.mipmapCount; index++) {
+                let imageSize = new Int32Array(source, dataOffset, 1)[0];
+                dataOffset += 4;
+                for (let face = 0; face < 6; face++) {
+                    let t = cubeFace[face];
+                    if (compressed) {
+                        let sourceData = new Uint8Array(source, dataOffset, imageSize);
+                        gl.compressedTexImage2D(t, index, internalFormat, mipmapWidth, mipmapHeight, 0, sourceData);
+                        memory += sourceData.byteLength;
+                    }
+                    else {
+                        let pixelParams = this.getFormatPixelsParams(ktxInfo.format);
+                        let typedSize = imageSize / pixelParams.typedSize;
+                        let sourceData = new pixelParams.dataTypedCons(source, dataOffset, typedSize);
+                        gl.texSubImage2D(t, index, 0, 0, mipmapWidth, mipmapHeight, format, type, sourceData);
+                        memory += sourceData.byteLength;
+                    }
+                    dataOffset += imageSize;
+                    dataOffset += 3 - ((imageSize + 3) % 4);
+                }
+                mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+                mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            }
+            texture.gpuMemory = memory;
+            this._engine._bindTexture(texture.target, null);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        getCubeKTXRGBMData(texture, ktxInfo) {
+            let gl = this._gl;
+            const cubeFace = [
+                gl.TEXTURE_CUBE_MAP_POSITIVE_X,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_X,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Y,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+                gl.TEXTURE_CUBE_MAP_POSITIVE_Z,
+                gl.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+            ];
+            let target = texture.target;
+            let internalFormat = texture.internalFormat;
+            let format = texture.format;
+            let type = texture.type;
+            let mipmapCount = texture.mipmapCount;
+            let width = texture.width;
+            let height = texture.height;
+            texture.maxMipmapLevel = mipmapCount - 1;
+            let source = ktxInfo.source;
+            let compressed = ktxInfo.compress;
+            let mipmapWidth = width;
+            let mipmapHeight = height;
+            let dataOffset = ktxInfo.headerOffset + ktxInfo.bytesOfKeyValueData;
+            let fourSize = width % 4 == 0 && height % 4 == 0;
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+            this._engine._bindTexture(texture.target, texture.resource);
+            if (!compressed) {
+                gl.texStorage2D(target, ktxInfo.mipmapCount, internalFormat, width, height);
+            }
+            let memory = 0;
+            for (let index = 0; index < ktxInfo.mipmapCount; index++) {
+                let imageSize = new Int32Array(source, dataOffset, 1)[0];
+                dataOffset += 4;
+                for (let face = 0; face < 6; face++) {
+                    let t = cubeFace[face];
+                    let pixelParams = this.getFormatPixelsParams(ktxInfo.format);
+                    let typedSize = imageSize / pixelParams.typedSize;
+                    let sourceData = new pixelParams.dataTypedCons(source, dataOffset, typedSize);
+                    gl.texSubImage2D(t, index, 0, 0, mipmapWidth, mipmapHeight, format, type, sourceData);
+                    memory += sourceData.byteLength;
+                }
+                dataOffset += imageSize;
+                dataOffset += 3 - ((imageSize + 3) % 4);
+            }
+            mipmapWidth = Math.max(1, mipmapWidth * 0.5);
+            mipmapHeight = Math.max(1, mipmapHeight * 0.5);
+            texture.gpuMemory = memory;
+            this._engine._bindTexture(texture.target, null);
+            fourSize || gl.pixelStorei(gl.UNPACK_ALIGNMENT, 4);
+        }
+        setTextureCompareMode(texture, compareMode) {
+            let gl = this._gl;
+            switch (compareMode) {
+                case Laya.TextureCompareMode.LEQUAL:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.LEQUAL);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.GEQUAL:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.GEQUAL);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.LESS:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.LESS);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.GREATER:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.GREATER);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.EQUAL:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.EQUAL);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.NOTEQUAL:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.NOTEQUAL);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.ALWAYS:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.ALWAYS);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.NEVER:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.NEVER);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.COMPARE_REF_TO_TEXTURE);
+                    break;
+                case Laya.TextureCompareMode.None:
+                default:
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_FUNC, gl.LEQUAL);
+                    texture._setTexParameteri(gl.TEXTURE_COMPARE_MODE, gl.NONE);
+                    break;
+            }
+            return compareMode;
+        }
+        createRenderbuffer(width, height, internalFormat, samples) {
+            let gl = this._gl;
+            let renderbuffer = gl.createRenderbuffer();
+            gl.bindRenderbuffer(gl.RENDERBUFFER, renderbuffer);
+            if (samples > 1) {
+                gl.renderbufferStorageMultisample(gl.RENDERBUFFER, samples, internalFormat, width, height);
+            }
+            else {
+                gl.renderbufferStorage(gl.RENDERBUFFER, internalFormat, width, height);
+            }
+            gl.bindRenderbuffer(gl.RENDERBUFFER, null);
+            return renderbuffer;
+        }
+        createRenderTextureInternal(dimension, width, height, format, generateMipmap, sRGB) {
+            generateMipmap = generateMipmap && this.supportGenerateMipmap(format);
+            let useSRGBExt = this.isSRGBFormat(format) || (sRGB && this.supportSRGB(format, generateMipmap));
+            let gammaCorrection = 1.0;
+            let target = this.getTarget(dimension);
+            let internalTex = new WebGLInternalTex(this._engine, target, width, height, 1, dimension, generateMipmap, useSRGBExt, gammaCorrection);
+            let glParam = this.glRenderTextureParam(format, useSRGBExt);
+            internalTex.internalFormat = glParam.internalFormat;
+            internalTex.format = glParam.format;
+            internalTex.type = glParam.type;
+            let internalFormat = internalTex.internalFormat;
+            internalTex.format;
+            internalTex.type;
+            let gl = this._gl;
+            this._engine._bindTexture(internalTex.target, internalTex.resource);
+            gl.texStorage2D(target, internalTex.mipmapCount, internalFormat, width, height);
+            this._engine._bindTexture(internalTex.target, null);
+            if (format == Laya.RenderTargetFormat.DEPTH_16 || format == Laya.RenderTargetFormat.DEPTH_32 || format == Laya.RenderTargetFormat.DEPTHSTENCIL_24_8) {
+                internalTex.filterMode = Laya.FilterMode.Point;
+            }
+            return internalTex;
+        }
+        createRenderTargetInternal(width, height, colorFormat, depthStencilFormat, generateMipmap, sRGB, multiSamples) {
+            let texture = this.createRenderTextureInternal(Laya.TextureDimension.Tex2D, width, height, colorFormat, generateMipmap, sRGB);
+            let renderTarget = new WebGLInternalRT(this._engine, colorFormat, depthStencilFormat, false, texture.mipmap, multiSamples);
+            renderTarget.gpuMemory = this.getGLRTTexMemory(width, height, colorFormat, depthStencilFormat, generateMipmap, multiSamples, false);
+            renderTarget._textures.push(texture);
+            let gl = renderTarget._gl;
+            if (renderTarget._samples > 1) {
+                let msaaFramebuffer = renderTarget._msaaFramebuffer;
+                let renderbufferParam = this.glRenderBufferParam(colorFormat, sRGB);
+                let msaaRenderbuffer = renderTarget._msaaRenderbuffer = this.createRenderbuffer(width, height, renderbufferParam.internalFormat, renderTarget._samples);
+                gl.bindFramebuffer(gl.FRAMEBUFFER, msaaFramebuffer);
+                gl.framebufferRenderbuffer(gl.FRAMEBUFFER, renderbufferParam.attachment, gl.RENDERBUFFER, msaaRenderbuffer);
+                let depthBufferParam = this.glRenderBufferParam(depthStencilFormat, false);
+                if (depthBufferParam) {
+                    let depthbuffer = this.createRenderbuffer(width, height, depthBufferParam.internalFormat, renderTarget._samples);
+                    renderTarget._depthbuffer = depthbuffer;
+                    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, depthBufferParam.attachment, gl.RENDERBUFFER, depthbuffer);
+                }
+                gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+                let framebuffer = renderTarget._framebuffer;
+                gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+                let colorAttachment = this.glRenderTargetAttachment(colorFormat);
+                gl.framebufferTexture2D(gl.FRAMEBUFFER, colorAttachment, gl.TEXTURE_2D, texture.resource, 0);
+                gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            }
+            else {
+                let framebuffer = renderTarget._framebuffer;
+                gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+                let colorAttachment = this.glRenderTargetAttachment(colorFormat);
+                gl.framebufferTexture2D(gl.FRAMEBUFFER, colorAttachment, gl.TEXTURE_2D, texture.resource, 0);
+                let depthBufferParam = this.glRenderBufferParam(depthStencilFormat, false);
+                if (depthBufferParam) {
+                    let depthbuffer = this.createRenderbuffer(width, height, depthBufferParam.internalFormat, renderTarget._samples);
+                    renderTarget._depthbuffer = depthbuffer;
+                    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, depthBufferParam.attachment, gl.RENDERBUFFER, depthbuffer);
+                }
+                gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            }
+            return renderTarget;
+        }
+        createRenderTargetCubeInternal(size, colorFormat, depthStencilFormat, generateMipmap, sRGB, multiSamples) {
+            let texture = this.createRenderTextureCubeInternal(Laya.TextureDimension.Cube, size, colorFormat, generateMipmap, sRGB);
+            let renderTarget = new WebGLInternalRT(this._engine, colorFormat, depthStencilFormat, true, texture.mipmap, multiSamples);
+            renderTarget.gpuMemory = this.getGLRTTexMemory(size, size, colorFormat, depthStencilFormat, generateMipmap, multiSamples, true);
+            renderTarget.colorFormat = colorFormat;
+            renderTarget.depthStencilFormat = depthStencilFormat;
+            renderTarget._textures.push(texture);
+            renderTarget.isSRGB = sRGB;
+            let gl = renderTarget._gl;
+            if (renderTarget._samples > 1) {
+                let msaaFramebuffer = renderTarget._msaaFramebuffer;
+                let renderbufferParam = this.glRenderBufferParam(colorFormat, false);
+                let msaaRenderbuffer = renderTarget._msaaRenderbuffer = this.createRenderbuffer(size, size, renderbufferParam.internalFormat, renderTarget._samples);
+                gl.bindFramebuffer(gl.FRAMEBUFFER, msaaFramebuffer);
+                gl.framebufferRenderbuffer(gl.FRAMEBUFFER, renderbufferParam.attachment, gl.RENDERBUFFER, msaaRenderbuffer);
+                let depthBufferParam = this.glRenderBufferParam(depthStencilFormat, false);
+                if (depthBufferParam) {
+                    let depthbuffer = this.createRenderbuffer(size, size, depthBufferParam.internalFormat, renderTarget._samples);
+                    renderTarget._depthbuffer = depthbuffer;
+                    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, depthBufferParam.attachment, gl.RENDERBUFFER, depthbuffer);
+                }
+                gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            }
+            else {
+                let framebuffer = renderTarget._framebuffer;
+                gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+                let depthBufferParam = this.glRenderBufferParam(depthStencilFormat, false);
+                if (depthBufferParam) {
+                    let depthbuffer = this.createRenderbuffer(size, size, depthBufferParam.internalFormat, renderTarget._samples);
+                    renderTarget._depthbuffer = depthbuffer;
+                    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, depthBufferParam.attachment, gl.RENDERBUFFER, depthbuffer);
+                }
+                gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            }
+            return renderTarget;
+        }
+        createRenderTextureCubeInternal(dimension, size, format, generateMipmap, sRGB) {
+            generateMipmap = generateMipmap && this.supportGenerateMipmap(format);
+            let useSRGBExt = this.isSRGBFormat(format) || (sRGB && this.supportSRGB(format, generateMipmap));
+            let gammaCorrection = 1.0;
+            let target = this.getTarget(dimension);
+            let internalTex = new WebGLInternalTex(this._engine, target, size, size, 1, dimension, generateMipmap, useSRGBExt, gammaCorrection);
+            let glParam = this.glRenderTextureParam(format, useSRGBExt);
+            internalTex.internalFormat = glParam.internalFormat;
+            internalTex.format = glParam.format;
+            internalTex.type = glParam.type;
+            let internalFormat = internalTex.internalFormat;
+            internalTex.format;
+            internalTex.type;
+            let gl = this._gl;
+            this._engine._bindTexture(internalTex.target, internalTex.resource);
+            gl.texStorage2D(target, internalTex.mipmapCount, internalFormat, size, size);
+            this._engine._bindTexture(internalTex.target, null);
+            return internalTex;
+        }
+        bindRenderTarget(renderTarget, faceIndex = 0) {
+            this.currentActiveRT && this.unbindRenderTarget(this.currentActiveRT);
+            let gl = this._gl;
+            if (renderTarget._isCube) {
+                let framebuffer = renderTarget._framebuffer;
+                gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+                let texture = renderTarget._textures[0];
+                gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_CUBE_MAP_POSITIVE_X + faceIndex, texture.resource, 0);
+            }
+            if (renderTarget._samples > 1) {
+                gl.bindFramebuffer(gl.FRAMEBUFFER, renderTarget._msaaFramebuffer);
+            }
+            else {
+                let framebuffer = renderTarget._framebuffer;
+                gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+            }
+            this.currentActiveRT = renderTarget;
+        }
+        unbindRenderTarget(renderTarget) {
+            let gl = this._gl;
+            if (renderTarget && renderTarget._samples > 1) {
+                gl.bindFramebuffer(gl.READ_FRAMEBUFFER, renderTarget._msaaFramebuffer);
+                gl.bindFramebuffer(gl.DRAW_FRAMEBUFFER, renderTarget._framebuffer);
+                let texture = renderTarget._textures[0];
+                let biltMask = gl.COLOR_BUFFER_BIT;
+                if (renderTarget._depthTexture) {
+                    biltMask |= gl.DEPTH_BUFFER_BIT;
+                }
+                gl.blitFramebuffer(0, 0, texture.width, texture.height, 0, 0, texture.width, texture.height, biltMask, gl.NEAREST);
+            }
+            if (renderTarget && renderTarget._generateMipmap) {
+                renderTarget._textures.forEach(tex => {
+                    let target = tex.target;
+                    this._engine._bindTexture(target, tex.resource);
+                    gl.generateMipmap(target);
+                    this._engine._bindTexture(target, null);
+                });
+            }
+            gl.bindFramebuffer(gl.FRAMEBUFFER, WebGLEngine._lastFrameBuffer_WebGLOBJ);
+            this.currentActiveRT = WebGLEngine._lastFrameBuffer;
+        }
+    }
+
+    class GLBuffer extends GLObject {
+        constructor(engine, targetType, bufferUsageType) {
+            super(engine);
+            this._byteLength = 0;
+            this._glTargetType = targetType;
+            this._glBufferUsageType = bufferUsageType;
+            this._getGLTarget(this._glTargetType);
+            this._getGLUsage(this._glBufferUsageType);
+            this._glBuffer = this._gl.createBuffer();
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_GPUBuffer, 1);
+        }
+        _getGLUsage(usage) {
+            switch (usage) {
+                case Laya.BufferUsage.Static:
+                    this._glUsage = this._gl.STATIC_DRAW;
+                    break;
+                case Laya.BufferUsage.Dynamic:
+                    this._glUsage = this._gl.DYNAMIC_DRAW;
+                    break;
+                case Laya.BufferUsage.Stream:
+                    this._glUsage = this._gl.STREAM_DRAW;
+                    break;
+                default:
+                    console.error("usage is not standard");
+                    break;
+            }
+        }
+        _getGLTarget(target) {
+            switch (target) {
+                case Laya.BufferTargetType.ARRAY_BUFFER:
+                    this._glTarget = this._gl.ARRAY_BUFFER;
+                    break;
+                case Laya.BufferTargetType.UNIFORM_BUFFER:
+                    this._glTarget = this._gl.UNIFORM_BUFFER;
+                    break;
+                case Laya.BufferTargetType.ELEMENT_ARRAY_BUFFER:
+                    this._glTarget = this._gl.ELEMENT_ARRAY_BUFFER;
+                    break;
+            }
+        }
+        _memorychange(bytelength) {
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_GPUBuffer, -this._byteLength + bytelength);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_GPUMemory, -this._byteLength + bytelength);
+        }
+        bindBuffer() {
+            if (this._engine._getbindBuffer(this._glTargetType) != this) {
+                this._gl.bindBuffer(this._glTarget, this._glBuffer);
+                this._engine._setbindBuffer(this._glTargetType, this);
+                return true;
+            }
+            return false;
+        }
+        unbindBuffer() {
+            if (this._engine._getbindBuffer(this._glTargetType) == this) {
+                this._gl.bindBuffer(this._glTarget, null);
+                this._engine._setbindBuffer(this._glTargetType, null);
+            }
+        }
+        orphanStorage() {
+            this.bindBuffer();
+            this.setDataLength(this._byteLength);
+        }
+        setDataLength(srcData) {
+            let gl = this._gl;
+            this.bindBuffer();
+            this._memorychange(srcData);
+            this._byteLength = srcData;
+            gl.bufferData(this._glTarget, this._byteLength, this._glUsage);
+            this.unbindBuffer();
+        }
+        setData(srcData, offset) {
+            let gl = this._gl;
+            this.bindBuffer();
+            gl.bufferSubData(this._glTarget, offset, srcData);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_GeometryBufferUploadCount, 1);
+            this.unbindBuffer();
+        }
+        setDataEx(srcData, offset, length) {
+            let gl = this._gl;
+            this.bindBuffer();
+            gl.bufferSubData(this._glTarget, offset, srcData, 0, length);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_GeometryBufferUploadCount, 1);
+            this.unbindBuffer();
+        }
+        bindBufferBase(glPointer) {
+            if (this._engine._getBindUBOBuffer(glPointer) != this) {
+                const gl = this._gl;
+                gl.bindBufferBase(this._glTarget, glPointer, this._glBuffer);
+                this._engine._setBindUBOBuffer(glPointer, this);
+            }
+        }
+        bindBufferRange(glPointer, offset, byteCount) {
+            const gl = this._gl;
+            gl.bindBufferRange(this._glTarget, glPointer, this._glBuffer, offset, byteCount);
+        }
+        resizeBuffer(dataLength) {
+            this.bindBuffer();
+            const gl = this._gl;
+            this._byteLength = dataLength;
+            gl.bufferData(this._glTarget, this._byteLength, this._glUsage);
+        }
+        destroy() {
+            super.destroy();
+            const gl = this._gl;
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_GPUBuffer, -1);
+            gl.deleteBuffer(this._glBuffer);
+            this._memorychange(0);
+            this._byteLength = 0;
+            this._engine = null;
+            this._glBuffer = null;
+            this._glTarget = null;
+            this._glUsage = null;
+            this._gl = null;
+        }
+    }
+
+    exports.WebGLMode = void 0;
+    (function (WebGLMode) {
+        WebGLMode[WebGLMode["Auto"] = 0] = "Auto";
+        WebGLMode[WebGLMode["WebGL2"] = 1] = "WebGL2";
+        WebGLMode[WebGLMode["WebGL1"] = 2] = "WebGL1";
+    })(exports.WebGLMode || (exports.WebGLMode = {}));
+
+    class GLParams {
+        constructor(engine) {
+            this._engine = engine;
+            this._gl = this._engine.gl;
+            this._initParams();
+        }
+        _initParams() {
+            const gl = this._gl;
+            this._glParamsData = new Map();
+            this._glParamsData.set(Laya.RenderParams.Max_Active_Texture_Count, gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS));
+            const maxVertexUniform = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS);
+            const maxFragUniform = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS);
+            this._glParamsData.set(Laya.RenderParams.Max_Uniform_Count, Math.min(maxVertexUniform, maxFragUniform));
+            this._glParamsData.set(Laya.RenderParams.MAX_Texture_Size, gl.getParameter(gl.MAX_TEXTURE_SIZE));
+            this._glParamsData.set(Laya.RenderParams.MAX_Texture_Image_Uint, gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS));
+            if (this._engine.getCapable(Laya.RenderCapable.Texture_anisotropic)) {
+                const anisoExt = this._engine._supportCapatable.getExtension(exports.WebGLExtension.EXT_texture_filter_anisotropic);
+                this._glParamsData.set(Laya.RenderParams.Max_AnisoLevel_Count, gl.getParameter(anisoExt.MAX_TEXTURE_MAX_ANISOTROPY_EXT));
+            }
+            if (this._engine.isWebGL2)
+                this._glParamsData.set(Laya.RenderParams.SHADER_CAPAILITY_LEVEL, 35);
+            else
+                this._glParamsData.set(Laya.RenderParams.SHADER_CAPAILITY_LEVEL, 30);
+            this._glParamsData.set(Laya.RenderParams.FLOAT, gl.FLOAT);
+            this._glParamsData.set(Laya.RenderParams.UNSIGNED_BYTE, gl.UNSIGNED_BYTE);
+            this._glParamsData.set(Laya.RenderParams.UNSIGNED_SHORT, gl.UNSIGNED_SHORT);
+            this._glParamsData.set(Laya.RenderParams.BYTE, gl.BYTE);
+        }
+        getParams(params) {
+            return this._glParamsData.get(params);
+        }
+    }
+
+    class GLRenderDrawContext extends GLObject {
+        constructor(engine) {
+            super(engine);
+            if (!this._engine.isWebGL2) {
+                this._angleInstancedArrays = this._engine._supportCapatable.getExtension(exports.WebGLExtension.ANGLE_instanced_arrays);
+            }
+        }
+        getMeshTopology(mode) {
+            switch (mode) {
+                case Laya.MeshTopology.Points:
+                    return this._gl.POINTS;
+                case Laya.MeshTopology.Lines:
+                    return this._gl.LINES;
+                case Laya.MeshTopology.LineLoop:
+                    return this._gl.LINE_LOOP;
+                case Laya.MeshTopology.LineStrip:
+                    return this._gl.LINE_STRIP;
+                case Laya.MeshTopology.Triangles:
+                    return this._gl.TRIANGLES;
+                case Laya.MeshTopology.TriangleStrip:
+                    return this._gl.TRIANGLE_STRIP;
+                case Laya.MeshTopology.TriangleFan:
+                    return this._gl.TRIANGLE_FAN;
+            }
+        }
+        getIndexType(type) {
+            switch (type) {
+                case Laya.IndexFormat.UInt8:
+                    return this._gl.UNSIGNED_BYTE;
+                case Laya.IndexFormat.UInt16:
+                    return this._gl.UNSIGNED_SHORT;
+                case Laya.IndexFormat.UInt32:
+                    return this._gl.UNSIGNED_INT;
+            }
+        }
+        drawElementsInstanced(mode, count, type, offset, instanceCount) {
+            if (this._engine.isWebGL2)
+                this._gl.drawElementsInstanced(mode, count, type, offset, instanceCount);
+            else
+                this._angleInstancedArrays.drawElementsInstancedANGLE(mode, count, type, offset, instanceCount);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_Instancing_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_TriangleCount, count / 3 * instanceCount);
+        }
+        drawArraysInstanced(mode, first, count, instanceCount) {
+            if (this._engine.isWebGL2)
+                this._gl.drawArraysInstanced(mode, first, count, instanceCount);
+            else
+                this._angleInstancedArrays.drawArraysInstancedANGLE(mode, first, count, instanceCount);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_Instancing_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_TriangleCount, (count - 2) * instanceCount);
+        }
+        drawArrays(mode, first, count) {
+            this._gl.drawArrays(mode, first, count);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_TriangleCount, (count - 2));
+        }
+        drawElements(mode, count, type, offset) {
+            this._gl.drawElements(mode, count, type, offset);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_TriangleCount, count / 3);
+        }
+        drawElements2DTemp(mode, count, type, offset) {
+            mode = this.getMeshTopology(mode);
+            type = this.getIndexType(type);
+            this._gl.drawElements(mode, count, type, offset);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_DrawCallCount, 1);
+            this._engine._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_TriangleCount, count / 3);
+        }
+        drawGeometryElement(geometryElement) {
+            geometryElement.bufferState.bind();
+            let element = geometryElement.drawParams.elements;
+            let length = geometryElement.drawParams.length;
+            switch (geometryElement.drawType) {
+                case Laya.DrawType.DrawArray:
+                    for (let i = 0; i < length; i += 2) {
+                        this.drawArrays(geometryElement._glmode, element[i], element[i + 1]);
+                    }
+                    break;
+                case Laya.DrawType.DrawElement:
+                    for (let i = 0; i < length; i += 2) {
+                        this.drawElements(geometryElement._glmode, element[i + 1], geometryElement._glindexFormat, element[i]);
+                    }
+                    break;
+                case Laya.DrawType.DrawArrayInstance:
+                    for (let i = 0; i < length; i += 2) {
+                        this.drawArraysInstanced(geometryElement._glmode, element[i], element[i + 1], geometryElement.instanceCount);
+                    }
+                    break;
+                case Laya.DrawType.DrawElementInstance:
+                    for (let i = 0; i < length; i += 2) {
+                        this.drawElementsInstanced(geometryElement._glmode, element[i + 1], geometryElement._glindexFormat, element[i], geometryElement.instanceCount);
+                    }
+                    break;
+            }
+        }
+    }
+
+    class GLRenderState {
+        constructor(engine) {
+            this._engine = engine;
+            this._gl = this._engine.gl;
+        }
+        _initState() {
+            this.setDepthFunc(Laya.CompareFunction.Less);
+            this.setBlendEquationSeparate(Laya.BlendEquationSeparate.ADD, Laya.BlendEquationSeparate.ADD);
+            this._blendEquation = Laya.BlendEquationSeparate.ADD;
+            this._sFactor = Laya.BlendFactor.One;
+            this._dFactor = Laya.BlendFactor.Zero;
+            this._sFactorAlpha = Laya.BlendFactor.One;
+            this._dFactorAlpha = Laya.BlendFactor.One;
+        }
+        _getBlendFactor(factor) {
+            const gl = this._gl;
+            switch (factor) {
+                case Laya.BlendFactor.Zero:
+                    return gl.ZERO;
+                case Laya.BlendFactor.One:
+                    return gl.ONE;
+                case Laya.BlendFactor.SourceColor:
+                    return gl.SRC_COLOR;
+                case Laya.BlendFactor.OneMinusSourceColor:
+                    return gl.ONE_MINUS_SRC_COLOR;
+                case Laya.BlendFactor.DestinationColor:
+                    return gl.DST_COLOR;
+                case Laya.BlendFactor.OneMinusDestinationColor:
+                    return gl.ONE_MINUS_DST_COLOR;
+                case Laya.BlendFactor.SourceAlpha:
+                    return gl.SRC_ALPHA;
+                case Laya.BlendFactor.OneMinusSourceAlpha:
+                    return gl.ONE_MINUS_SRC_ALPHA;
+                case Laya.BlendFactor.DestinationAlpha:
+                    return gl.DST_ALPHA;
+                case Laya.BlendFactor.OneMinusDestinationAlpha:
+                    return gl.ONE_MINUS_DST_ALPHA;
+                case Laya.BlendFactor.SourceAlphaSaturate:
+                    return gl.SRC_ALPHA_SATURATE;
+                case Laya.BlendFactor.BlendColor:
+                    return gl.CONSTANT_COLOR;
+                case Laya.BlendFactor.OneMinusBlendColor:
+                    return gl.ONE_MINUS_CONSTANT_COLOR;
+            }
+        }
+        _getBlendOperation(factor) {
+            const gl = this._gl;
+            switch (factor) {
+                case Laya.BlendEquationSeparate.ADD:
+                    return gl.FUNC_ADD;
+                case Laya.BlendEquationSeparate.SUBTRACT:
+                    return gl.FUNC_SUBTRACT;
+                case Laya.BlendEquationSeparate.REVERSE_SUBTRACT:
+                    return gl.FUNC_REVERSE_SUBTRACT;
+                default:
+                    throw "Unknow type";
+            }
+        }
+        _getGLCompareFunction(compareFunction) {
+            const gl = this._gl;
+            switch (compareFunction) {
+                case Laya.CompareFunction.Never:
+                    return gl.NEVER;
+                case Laya.CompareFunction.Less:
+                    return gl.LESS;
+                case Laya.CompareFunction.Equal:
+                    return gl.EQUAL;
+                case Laya.CompareFunction.LessEqual:
+                    return gl.LEQUAL;
+                case Laya.CompareFunction.Greater:
+                    return gl.GREATER;
+                case Laya.CompareFunction.NotEqual:
+                    return gl.NOTEQUAL;
+                case Laya.CompareFunction.GreaterEqual:
+                    return gl.GEQUAL;
+                case Laya.CompareFunction.Always:
+                    return gl.ALWAYS;
+                default:
+                    return gl.LEQUAL;
+            }
+        }
+        _getGLStencilOperation(compareFunction) {
+            const gl = this._gl;
+            switch (compareFunction) {
+                case Laya.StencilOperation.Keep:
+                    return gl.KEEP;
+                case Laya.StencilOperation.Zero:
+                    return gl.ZERO;
+                case Laya.StencilOperation.Replace:
+                    return gl.REPLACE;
+                case Laya.StencilOperation.IncrementSaturate:
+                    return gl.INCR;
+                case Laya.StencilOperation.DecrementSaturate:
+                    return gl.DECR;
+                case Laya.StencilOperation.Invert:
+                    return gl.INVERT;
+                case Laya.StencilOperation.IncrementWrap:
+                    return gl.INCR_WRAP;
+                case Laya.StencilOperation.DecrementWrap:
+                    return gl.DECR_WRAP;
+            }
+        }
+        _getGLFrontfaceFactor(cullmode) {
+            if (cullmode == Laya.CullMode.Front)
+                return this._gl.CCW;
+            else
+                return this._gl.CW;
+        }
+        setDepthTest(value) {
+            value !== this._depthTest && (this._depthTest = value, value ? this._gl.enable(this._gl.DEPTH_TEST) : this._gl.disable(this._gl.DEPTH_TEST));
+        }
+        setDepthMask(value) {
+            value !== this._depthMask && (this._depthMask = value, this._gl.depthMask(value));
+        }
+        setDepthFunc(value) {
+            value !== this._depthFunc && (this._depthFunc = value, this._gl.depthFunc(this._getGLCompareFunction(value)));
+        }
+        setStencilTest(value) {
+            value !== this._stencilTest && (this._stencilTest = value, value ? this._gl.enable(this._gl.STENCIL_TEST) : this._gl.disable(this._gl.STENCIL_TEST));
+        }
+        setStencilMask(value) {
+            value !== this._stencilMask && (this._stencilMask = value, value ? this._gl.stencilMask(0xff) : this._gl.stencilMask(0x00));
+        }
+        setStencilFunc(fun, ref) {
+            if (fun != this._stencilFunc || ref != this._stencilRef) {
+                this._stencilFunc = fun;
+                this._stencilRef = ref;
+                this._gl.stencilFunc(this._getGLCompareFunction(fun), ref, 0xff);
+            }
+        }
+        setstencilOp(fail, zfail, zpass) {
+            if (this._stencilOp_fail != fail || this._stencilOp_zfail != zfail || this._stencilOp_zpass != zpass) {
+                this._stencilOp_fail = fail;
+                this._stencilOp_zfail = zfail;
+                this._stencilOp_zpass = zpass;
+                this._gl.stencilOp(this._getGLStencilOperation(fail), this._getGLStencilOperation(zfail), this._getGLStencilOperation(zpass));
+            }
+        }
+        setBlend(value) {
+            value !== this._blend && (this._blend = value, value ? this._gl.enable(this._gl.BLEND) : this._gl.disable(this._gl.BLEND));
+        }
+        setBlendEquation(blendEquation) {
+            if (blendEquation !== this._blendEquation) {
+                this._blendEquation = blendEquation;
+                this._blendEquationRGB = this._blendEquationAlpha = null;
+                this._gl.blendEquation(this._getBlendOperation(blendEquation));
+            }
+        }
+        setBlendEquationSeparate(blendEquationRGB, blendEquationAlpha) {
+            if (blendEquationRGB !== this._blendEquationRGB || blendEquationAlpha !== this._blendEquationAlpha) {
+                this._blendEquationRGB = blendEquationRGB;
+                this._blendEquationAlpha = blendEquationAlpha;
+                this._blendEquation = null;
+                this._gl.blendEquationSeparate(this._getBlendOperation(blendEquationRGB), this._getBlendOperation(blendEquationAlpha));
+            }
+        }
+        setBlendFunc(sFactor, dFactor, force = false) {
+            if (force || sFactor !== this._sFactor || dFactor !== this._dFactor) {
+                this._sFactor = sFactor;
+                this._dFactor = dFactor;
+                this._sFactorRGB = null;
+                this._dFactorRGB = null;
+                this._sFactorAlpha = null;
+                this._dFactorAlpha = null;
+                this._gl.blendFunc(this._getBlendFactor(sFactor), this._getBlendFactor(dFactor));
+            }
+        }
+        setBlendFuncSeperate(srcRGB, dstRGB, srcAlpha, dstAlpha) {
+            if (srcRGB !== this._sFactorRGB || dstRGB !== this._dFactorRGB || srcAlpha !== this._sFactorAlpha || dstAlpha !== this._dFactorAlpha) {
+                this._sFactorRGB = srcRGB;
+                this._dFactorRGB = dstRGB;
+                this._sFactorAlpha = srcAlpha;
+                this._dFactorAlpha = dstAlpha;
+                this._sFactor = null;
+                this._dFactor = null;
+                this._gl.blendFuncSeparate(this._getBlendFactor(srcRGB), this._getBlendFactor(dstRGB), this._getBlendFactor(srcAlpha), this._getBlendFactor(dstAlpha));
+            }
+        }
+        setCullFace(value) {
+            value !== this._cullFace && (this._cullFace = value, value ? this._gl.enable(this._gl.CULL_FACE) : this._gl.disable(this._gl.CULL_FACE));
+        }
+        setFrontFace(value) {
+            value !== this._frontFace && (this._frontFace = value, this._gl.frontFace(this._getGLFrontfaceFactor(value)));
+        }
+    }
+
+    class GLShaderInstance extends GLObject {
+        constructor(engine, vs, ps, attributeMap) {
+            super(engine);
+            this._complete = true;
+            this._vs = vs;
+            this._ps = ps;
+            this._attributeMap = attributeMap;
+            this._uniformMap = [];
+            this._create();
+        }
+        _create() {
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_ShaderCompile, 1);
+            let preTime = performance.now();
+            const gl = this._gl;
+            if (WebGLEngine.instance.lost) {
+                console.log("lost webgl context");
+                return;
+            }
+            this._program = gl.createProgram();
+            this._vshader = this._createShader(gl, this._vs, gl.VERTEX_SHADER);
+            this._pshader = this._createShader(gl, this._ps, gl.FRAGMENT_SHADER);
+            gl.attachShader(this._program, this._vshader);
+            gl.attachShader(this._program, this._pshader);
+            for (var k in this._attributeMap)
+                gl.bindAttribLocation(this._program, this._attributeMap[k][0], k);
+            gl.linkProgram(this._program);
+            const bo = gl.getProgramParameter(this._program, gl.LINK_STATUS);
+            if (!bo) {
+                var info = gl.getProgramInfoLog(this._program);
+                console.error(new Error('Could not compile WebGL program. \n\n' + info));
+                this._complete = false;
+                return;
+            }
+            const nUniformNum = gl.getProgramParameter(this._program, gl.ACTIVE_UNIFORMS);
+            this.useProgram();
+            this._curActTexIndex = 0;
+            let one, i;
+            for (i = 0; i < nUniformNum; i++) {
+                var uniformData = gl.getActiveUniform(this._program, i);
+                var uniName = uniformData.name;
+                let location = gl.getUniformLocation(this._program, uniName);
+                if (!location && location != 0)
+                    continue;
+                one = new Laya.ShaderVariable();
+                one.location = location;
+                if (uniName.indexOf('[0]') > 0) {
+                    one.name = uniName = uniName.substr(0, uniName.length - 3);
+                    one.isArray = true;
+                }
+                else {
+                    one.name = uniName;
+                    one.isArray = false;
+                }
+                one.type = uniformData.type;
+                this._addShaderUnifiormFun(one);
+                this._uniformMap.push(one);
+                one.dataOffset = this._engine.propertyNameToID(uniName);
+            }
+            if (this._engine.isWebGL2) {
+                this._uniformObjectMap = {};
+                var nUniformBlock = gl.getProgramParameter(this._program, gl.ACTIVE_UNIFORM_BLOCKS);
+                for (i = 0; i < nUniformBlock; i++) {
+                    let gl2 = gl;
+                    var uniformBlockName = gl2.getActiveUniformBlockName(this._program, i);
+                    one = new Laya.ShaderVariable();
+                    one.name = uniformBlockName;
+                    one.isArray = false;
+                    one.type = gl.UNIFORM_BUFFER;
+                    one.dataOffset = this._engine.propertyNameToID(uniformBlockName);
+                    let location = one.location = gl2.getUniformBlockIndex(this._program, uniformBlockName);
+                    gl2.uniformBlockBinding(this._program, location, this._engine.getUBOPointer(uniformBlockName));
+                    this._uniformObjectMap[one.name] = one;
+                    this._uniformMap.push(one);
+                    this._addShaderUnifiormFun(one);
+                }
+            }
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.T_ShaderCompile, (performance.now() - preTime) | 0);
+        }
+        _legalUBObyteLength(bytelength) {
+            return Math.ceil(bytelength / 16) * 16;
+        }
+        _createShader(gl, str, type) {
+            var shader = gl.createShader(type);
+            gl.shaderSource(shader, str);
+            gl.compileShader(shader);
+            if (this._engine._isShaderDebugMode && !gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                if (!Laya.LayaEnv.isPlaying) {
+                    console.warn(gl.getShaderInfoLog(shader));
+                }
+                else {
+                    console.error(gl.getShaderInfoLog(shader));
+                }
+            }
+            return shader;
+        }
+        _addShaderUnifiormFun(one) {
+            var gl = this._gl;
+            one.caller = this;
+            var isArray = one.isArray;
+            switch (one.type) {
+                case gl.BOOL:
+                    one.fun = this._uniform1i;
+                    one.uploadedValue = new Array(1);
+                    break;
+                case gl.INT:
+                    one.fun = isArray ? this._uniform1iv : this._uniform1i;
+                    one.uploadedValue = new Array(1);
+                    break;
+                case gl.FLOAT:
+                    one.fun = isArray ? this._uniform1fv : this._uniform1f;
+                    one.uploadedValue = new Array(1);
+                    break;
+                case gl.FLOAT_VEC2:
+                    one.fun = isArray ? this._uniform_vec2v : this._uniform_vec2;
+                    one.uploadedValue = new Array(2);
+                    break;
+                case gl.FLOAT_VEC3:
+                    one.fun = isArray ? this._uniform_vec3v : this._uniform_vec3;
+                    one.uploadedValue = new Array(3);
+                    break;
+                case gl.FLOAT_VEC4:
+                    one.fun = isArray ? this._uniform_vec4v : this._uniform_vec4;
+                    one.uploadedValue = new Array(4);
+                    break;
+                case gl.FLOAT_MAT2:
+                    one.fun = this._uniformMatrix2fv;
+                    break;
+                case gl.FLOAT_MAT3:
+                    one.fun = this._uniformMatrix3fv;
+                    break;
+                case gl.FLOAT_MAT4:
+                    one.fun = isArray ? this._uniformMatrix4fv : this._uniformMatrix4f;
+                    break;
+                case gl.SAMPLER_2D:
+                case gl.SAMPLER_2D_SHADOW:
+                    gl.uniform1i(one.location, this._curActTexIndex);
+                    one.textureID = this._engine._glTextureIDParams[this._curActTexIndex++];
+                    one.fun = this._uniform_sampler2D;
+                    break;
+                case gl.SAMPLER_2D_ARRAY:
+                    gl.uniform1i(one.location, this._curActTexIndex);
+                    one.textureID = this._engine._glTextureIDParams[this._curActTexIndex++];
+                    one.fun = this._uniform_sampler2DArray;
+                    break;
+                case 0x8b5f:
+                    gl.uniform1i(one.location, this._curActTexIndex);
+                    one.textureID = this._engine._glTextureIDParams[this._curActTexIndex++];
+                    one.fun = this._uniform_sampler3D;
+                    break;
+                case gl.SAMPLER_CUBE:
+                    gl.uniform1i(one.location, this._curActTexIndex);
+                    one.textureID = this._engine._glTextureIDParams[this._curActTexIndex++];
+                    one.fun = this._uniform_samplerCube;
+                    break;
+                case gl.UNIFORM_BUFFER:
+                    one.fun = this._uniform_UniformBuffer;
+                    break;
+                default:
+                    throw new Error("compile shader err!");
+            }
+        }
+        getUniformMap() {
+            return this._uniformMap;
+        }
+        bind() {
+            return this.useProgram();
+        }
+        useProgram() {
+            if (this._engine._glUseProgram === this)
+                return false;
+            this._gl.useProgram(this._program);
+            this._engine._glUseProgram = this;
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_SetRenderPassCount, 1);
+            return true;
+        }
+        _uniform1f(one, value) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== value) {
+                this._gl.uniform1f(one.location, uploadedValue[0] = value);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform1fv(one, value) {
+            if (value.length < 4) {
+                var uploadedValue = one.uploadedValue;
+                if (uploadedValue[0] !== value[0] || uploadedValue[1] !== value[1] || uploadedValue[2] !== value[2] || uploadedValue[3] !== value[3]) {
+                    this._gl.uniform1fv(one.location, value);
+                    uploadedValue[0] = value[0];
+                    uploadedValue[1] = value[1];
+                    uploadedValue[2] = value[2];
+                    uploadedValue[3] = value[3];
+                    return 1;
+                }
+                return 0;
+            }
+            else {
+                this._gl.uniform1fv(one.location, value);
+                return 1;
+            }
+        }
+        _uniform_vec2(one, v) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== v.x || uploadedValue[1] !== v.y) {
+                this._gl.uniform2f(one.location, uploadedValue[0] = v.x, uploadedValue[1] = v.y);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform_vec2v(one, value) {
+            if (value.length < 2) {
+                var uploadedValue = one.uploadedValue;
+                if (uploadedValue[0] !== value[0] || uploadedValue[1] !== value[1] || uploadedValue[2] !== value[2] || uploadedValue[3] !== value[3]) {
+                    this._gl.uniform2fv(one.location, value);
+                    uploadedValue[0] = value[0];
+                    uploadedValue[1] = value[1];
+                    uploadedValue[2] = value[2];
+                    uploadedValue[3] = value[3];
+                    return 1;
+                }
+                return 0;
+            }
+            else {
+                this._gl.uniform2fv(one.location, value);
+                return 1;
+            }
+        }
+        _uniform_vec3(one, v) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== v.x || uploadedValue[1] !== v.y || uploadedValue[2] !== v.z) {
+                this._gl.uniform3f(one.location, uploadedValue[0] = v.x, uploadedValue[1] = v.y, uploadedValue[2] = v.z);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform_vec3v(one, v) {
+            this._gl.uniform3fv(one.location, v);
+            return 1;
+        }
+        _uniform_vec4(one, v) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== v.x || uploadedValue[1] !== v.y || uploadedValue[2] !== v.z || uploadedValue[3] !== v.w) {
+                this._gl.uniform4f(one.location, uploadedValue[0] = v.x, uploadedValue[1] = v.y, uploadedValue[2] = v.z, uploadedValue[3] = v.w);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform_vec4v(one, v) {
+            this._gl.uniform4fv(one.location, v);
+            return 1;
+        }
+        _uniformMatrix2fv(one, value) {
+            this._gl.uniformMatrix2fv(one.location, false, value);
+            return 1;
+        }
+        _uniformMatrix3fv(one, m) {
+            let value = m.elements;
+            this._gl.uniformMatrix3fv(one.location, false, value);
+            return 1;
+        }
+        _uniformMatrix4f(one, m) {
+            var value = m.elements;
+            this._gl.uniformMatrix4fv(one.location, false, value);
+            return 1;
+        }
+        _uniformMatrix4fv(one, m) {
+            this._gl.uniformMatrix4fv(one.location, false, m);
+            return 1;
+        }
+        _uniform1i(one, value) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== value) {
+                this._gl.uniform1i(one.location, uploadedValue[0] = value);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform1iv(one, value) {
+            this._gl.uniform1iv(one.location, value);
+            return 1;
+        }
+        _uniform_ivec2(one, value) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== value[0] || uploadedValue[1] !== value[1]) {
+                this._gl.uniform2i(one.location, uploadedValue[0] = value[0], uploadedValue[1] = value[1]);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform_ivec2v(one, value) {
+            this._gl.uniform2iv(one.location, value);
+            return 1;
+        }
+        _uniform_vec3i(one, value) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== value[0] || uploadedValue[1] !== value[1] || uploadedValue[2] !== value[2]) {
+                this._gl.uniform3i(one.location, uploadedValue[0] = value[0], uploadedValue[1] = value[1], uploadedValue[2] = value[2]);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform_vec3vi(one, value) {
+            this._gl.uniform3iv(one.location, value);
+            return 1;
+        }
+        _uniform_vec4i(one, value) {
+            var uploadedValue = one.uploadedValue;
+            if (uploadedValue[0] !== value[0] || uploadedValue[1] !== value[1] || uploadedValue[2] !== value[2] || uploadedValue[3] !== value[3]) {
+                this._gl.uniform4i(one.location, uploadedValue[0] = value[0], uploadedValue[1] = value[1], uploadedValue[2] = value[2], uploadedValue[3] = value[3]);
+                return 1;
+            }
+            return 0;
+        }
+        _uniform_vec4vi(one, value) {
+            this._gl.uniform4iv(one.location, value);
+            return 1;
+        }
+        _uniform_sampler2D(one, texture) {
+            var value = texture ? texture._getSource() : Laya.Texture2D.errorTexture._getSource();
+            var gl = this._gl;
+            this._bindTexture(one.textureID, gl.TEXTURE_2D, value);
+            return 0;
+        }
+        _uniform_sampler2DArray(one, texture) {
+            var value = texture ? texture._getSource() : Laya.Texture2D.errorTexture._getSource();
+            var gl = this._gl;
+            this._bindTexture(one.textureID, gl.TEXTURE_2D_ARRAY, value);
+            return 0;
+        }
+        _uniform_sampler3D(one, texture) {
+            var value = texture ? texture._getSource() : Laya.Texture2D.errorTexture._getSource();
+            var gl = this._gl;
+            this._bindTexture(one.textureID, gl.TEXTURE_3D, value);
+            return 0;
+        }
+        _uniform_samplerCube(one, texture) {
+            var value = texture ? texture._getSource() : Laya.TextureCube.errorTexture._getSource();
+            var gl = this._gl;
+            this._bindTexture(one.textureID, gl.TEXTURE_CUBE_MAP, value);
+            return 0;
+        }
+        _uniform_UniformBuffer(one, value) {
+            value._bindUniformBufferBase();
+            return 1;
+        }
+        _bindTexture(textureID, target, texture) {
+            const gl = this._gl;
+            if (this._engine._activedTextureID !== textureID) {
+                gl.activeTexture(textureID);
+                this._engine._activedTextureID = textureID;
+            }
+            const texID = this._engine._activedTextureID - this._gl.TEXTURE0;
+            if (this._engine._activeTextures[texID] !== texture) {
+                gl.bindTexture(target, texture);
+                this._engine._activeTextures[texID] = texture;
+            }
+        }
+        destroy() {
+            super.destroy();
+            const gl = this._gl;
+            gl.deleteShader(this._vshader);
+            gl.deleteShader(this._pshader);
+            gl.deleteProgram(this._program);
+            this._vshader = null;
+            this._pshader = null;
+            this._program = null;
+            this._attributeMap = null;
+            this._uniformMap = null;
+            this._uniformObjectMap = null;
+            this._gl = null;
+            this._engine = null;
+        }
+    }
+
+    class GLVertexState extends GLObject {
+        constructor(engine) {
+            super(engine);
+            this._vertexDeclaration = [];
+            if (!engine.isWebGL2)
+                this._vaoExt = engine._supportCapatable.getExtension(exports.WebGLExtension.OES_vertex_array_object);
+            this._vao = this.createVertexArray();
+            this._angleInstancedArrays = this._engine._supportCapatable.getExtension(exports.WebGLExtension.ANGLE_instanced_arrays);
+        }
+        createVertexArray() {
+            if (this._engine.isWebGL2)
+                return this._gl.createVertexArray();
+            else
+                return this._vaoExt.createVertexArrayOES();
+        }
+        deleteVertexArray() {
+            if (this._engine.isWebGL2)
+                this._gl.deleteVertexArray(this._vao);
+            else
+                this._vaoExt.deleteVertexArrayOES(this._vao);
+        }
+        bindVertexArray() {
+            if (this._engine._GLBindVertexArray == this)
+                return;
+            if (this._engine.isWebGL2)
+                this._gl.bindVertexArray(this._vao);
+            else
+                this._vaoExt.bindVertexArrayOES(this._vao);
+            this._engine._GLBindVertexArray = this;
+        }
+        unbindVertexArray() {
+            if (this._engine.isWebGL2)
+                this._gl.bindVertexArray(null);
+            else
+                this._vaoExt.bindVertexArrayOES(null);
+            this._engine._GLBindVertexArray = null;
+        }
+        isVertexArray() {
+            if (this._engine.isWebGL2)
+                this._gl.isVertexArray(this._vao);
+            else
+                this._vaoExt.isVertexArrayOES(this._vao);
+        }
+        applyVertexBuffer(vertexBuffer) {
+            this.clearVAO();
+            this._vertexBuffers = vertexBuffer;
+            if (this._engine._GLBindVertexArray == this) {
+                this._vertexDeclaration.length = vertexBuffer.length;
+                var i = 0;
+                vertexBuffer.forEach(element => {
+                    var verDec = element._shaderValues;
+                    this._vertexDeclaration[i++] = element._shaderValues;
+                    element.bind();
+                    for (var k in verDec) {
+                        var loc = parseInt(k);
+                        var attribute = verDec[k];
+                        this._gl.enableVertexAttribArray(loc);
+                        this._gl.vertexAttribPointer(loc, attribute.elementCount, attribute.elementType, !!attribute.normalized, attribute.vertexStride, attribute.elementOffset);
+                        if (element.instanceBuffer)
+                            this.vertexAttribDivisor(loc, 1);
+                    }
+                });
+            }
+            else {
+                throw "BufferState: must call bind() function first.";
+            }
+        }
+        clearVAO() {
+            for (let i = 0, n = this._vertexDeclaration.length; i < n; i++) {
+                var verDec = this._vertexDeclaration[i];
+                for (var k in verDec) {
+                    var loc = parseInt(k);
+                    this._gl.disableVertexAttribArray(loc);
+                }
+            }
+        }
+        applyIndexBuffer(indexBuffer) {
+            if (indexBuffer == null) {
+                return;
+            }
+            if (this._engine._GLBindVertexArray == this) {
+                if (this._bindedIndexBuffer !== indexBuffer) {
+                    indexBuffer._glBuffer.bindBuffer();
+                    this._bindedIndexBuffer = indexBuffer;
+                }
+            }
+            else {
+                throw "BufferState: must call bind() function first.";
+            }
+        }
+        vertexAttribDivisor(index, divisor) {
+            if (this._engine.isWebGL2)
+                this._gl.vertexAttribDivisor(index, divisor);
+            else
+                this._angleInstancedArrays.vertexAttribDivisorANGLE(index, divisor);
+        }
+        destroy() {
+            super.destroy();
+            this._gl;
+            this.deleteVertexArray();
+            this._gl = null;
+            this._engine = null;
+        }
+    }
+
+    class VertexArrayObject {
+        constructor() {
+        }
+    }
+    (function () {
+        var glErrorShadow = {};
+        function error(msg) {
+            if (window.console && window.console.error) {
+                window.console.error(msg);
+            }
+        }
+        function log(msg) {
+            if (window.console && window.console.log) {
+                window.console.log(msg);
+            }
+        }
+        function synthesizeGLError(err, opt_msg) {
+            glErrorShadow[err] = true;
+            if (opt_msg !== undefined) {
+                error(opt_msg);
+            }
+        }
+        function wrapGLError(gl) {
+            var f = gl.getError;
+            gl.getError = function () {
+                var err;
+                do {
+                    err = f.apply(gl);
+                    if (err != gl.NO_ERROR) {
+                        glErrorShadow[err] = true;
+                    }
+                } while (err != gl.NO_ERROR);
+                for (var err1 in glErrorShadow) {
+                    if (glErrorShadow[err1]) {
+                        delete glErrorShadow[err1];
+                        return parseInt(err1);
+                    }
+                }
+                return gl.NO_ERROR;
+            };
+        }
+        var WebGLVertexArrayObjectOES = function WebGLVertexArrayObjectOES(ext) {
+            var gl = ext.gl;
+            this.ext = ext;
+            this.isAlive = true;
+            this.hasBeenBound = false;
+            this.elementArrayBuffer = null;
+            this.attribs = new Array(ext.maxVertexAttribs);
+            for (var n = 0; n < this.attribs.length; n++) {
+                var attrib = new WebGLVertexArrayObjectOES.VertexAttrib(gl);
+                this.attribs[n] = attrib;
+            }
+            this.maxAttrib = 0;
+        };
+        WebGLVertexArrayObjectOES.VertexAttrib = function VertexAttrib(gl) {
+            this.enabled = false;
+            this.buffer = null;
+            this.size = 4;
+            this.type = gl.FLOAT;
+            this.normalized = false;
+            this.stride = 16;
+            this.offset = 0;
+            this.cached = "";
+            this.recache();
+        };
+        WebGLVertexArrayObjectOES.VertexAttrib.prototype.recache = function recache() {
+            this.cached = [this.size, this.type, this.normalized, this.stride, this.offset].join(":");
+        };
+        var OESVertexArrayObject = function OESVertexArrayObject(gl) {
+            var self = this;
+            this.gl = gl;
+            wrapGLError(gl);
+            var original = this.original = {
+                getParameter: gl.getParameter,
+                enableVertexAttribArray: gl.enableVertexAttribArray,
+                disableVertexAttribArray: gl.disableVertexAttribArray,
+                bindBuffer: gl.bindBuffer,
+                getVertexAttrib: gl.getVertexAttrib,
+                vertexAttribPointer: gl.vertexAttribPointer
+            };
+            gl.getParameter = function getParameter(pname) {
+                if (pname == self.VERTEX_ARRAY_BINDING_OES) {
+                    if (self.currentVertexArrayObject == self.defaultVertexArrayObject) {
+                        return null;
+                    }
+                    else {
+                        return self.currentVertexArrayObject;
+                    }
+                }
+                return original.getParameter.apply(this, arguments);
+            };
+            gl.enableVertexAttribArray = function enableVertexAttribArray(index) {
+                var vao = self.currentVertexArrayObject;
+                vao.maxAttrib = Math.max(vao.maxAttrib, index);
+                var attrib = vao.attribs[index];
+                attrib.enabled = true;
+                return original.enableVertexAttribArray.apply(this, arguments);
+            };
+            gl.disableVertexAttribArray = function disableVertexAttribArray(index) {
+                var vao = self.currentVertexArrayObject;
+                vao.maxAttrib = Math.max(vao.maxAttrib, index);
+                var attrib = vao.attribs[index];
+                attrib.enabled = false;
+                return original.disableVertexAttribArray.apply(this, arguments);
+            };
+            gl.bindBuffer = function bindBuffer(target, buffer) {
+                switch (target) {
+                    case gl.ARRAY_BUFFER:
+                        self.currentArrayBuffer = buffer;
+                        break;
+                    case gl.ELEMENT_ARRAY_BUFFER:
+                        self.currentVertexArrayObject.elementArrayBuffer = buffer;
+                        break;
+                }
+                return original.bindBuffer.apply(this, arguments);
+            };
+            gl.getVertexAttrib = function getVertexAttrib(index, pname) {
+                var vao = self.currentVertexArrayObject;
+                var attrib = vao.attribs[index];
+                switch (pname) {
+                    case gl.VERTEX_ATTRIB_ARRAY_BUFFER_BINDING:
+                        return attrib.buffer;
+                    case gl.VERTEX_ATTRIB_ARRAY_ENABLED:
+                        return attrib.enabled;
+                    case gl.VERTEX_ATTRIB_ARRAY_SIZE:
+                        return attrib.size;
+                    case gl.VERTEX_ATTRIB_ARRAY_STRIDE:
+                        return attrib.stride;
+                    case gl.VERTEX_ATTRIB_ARRAY_TYPE:
+                        return attrib.type;
+                    case gl.VERTEX_ATTRIB_ARRAY_NORMALIZED:
+                        return attrib.normalized;
+                    default:
+                        return original.getVertexAttrib.apply(this, arguments);
+                }
+            };
+            gl.vertexAttribPointer = function vertexAttribPointer(indx, size, type, normalized, stride, offset) {
+                var vao = self.currentVertexArrayObject;
+                vao.maxAttrib = Math.max(vao.maxAttrib, indx);
+                var attrib = vao.attribs[indx];
+                attrib.buffer = self.currentArrayBuffer;
+                attrib.size = size;
+                attrib.type = type;
+                attrib.normalized = normalized;
+                attrib.stride = stride;
+                attrib.offset = offset;
+                attrib.recache();
+                return original.vertexAttribPointer.apply(this, arguments);
+            };
+            if (gl.instrumentExtension) {
+                gl.instrumentExtension(this, "OES_vertex_array_object");
+            }
+            gl.canvas.addEventListener('webglcontextrestored', function () {
+                log("OESVertexArrayObject emulation library context restored");
+                self.reset_();
+            }, true);
+            this.reset_();
+        };
+        OESVertexArrayObject.prototype.VERTEX_ARRAY_BINDING_OES = 0x85B5;
+        OESVertexArrayObject.prototype.reset_ = function reset_() {
+            var contextWasLost = this.vertexArrayObjects !== undefined;
+            if (contextWasLost) {
+                for (var ii = 0; ii < this.vertexArrayObjects.length; ++ii) {
+                    this.vertexArrayObjects.isAlive = false;
+                }
+            }
+            var gl = this.gl;
+            this.maxVertexAttribs = gl.getParameter(gl.MAX_VERTEX_ATTRIBS);
+            this.defaultVertexArrayObject = new WebGLVertexArrayObjectOES(this);
+            this.currentVertexArrayObject = null;
+            this.currentArrayBuffer = null;
+            this.vertexArrayObjects = [this.defaultVertexArrayObject];
+            this.bindVertexArrayOES(null);
+        };
+        OESVertexArrayObject.prototype.createVertexArrayOES = function createVertexArrayOES() {
+            var arrayObject = new WebGLVertexArrayObjectOES(this);
+            this.vertexArrayObjects.push(arrayObject);
+            return arrayObject;
+        };
+        OESVertexArrayObject.prototype.deleteVertexArrayOES = function deleteVertexArrayOES(arrayObject) {
+            arrayObject.isAlive = false;
+            this.vertexArrayObjects.splice(this.vertexArrayObjects.indexOf(arrayObject), 1);
+            if (this.currentVertexArrayObject == arrayObject) {
+                this.bindVertexArrayOES(null);
+            }
+        };
+        OESVertexArrayObject.prototype.isVertexArrayOES = function isVertexArrayOES(arrayObject) {
+            if (arrayObject && arrayObject instanceof WebGLVertexArrayObjectOES) {
+                if (arrayObject.hasBeenBound && arrayObject.ext == this) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        OESVertexArrayObject.prototype.bindVertexArrayOES = function bindVertexArrayOES(arrayObject) {
+            var gl = this.gl;
+            if (arrayObject && !arrayObject.isAlive) {
+                synthesizeGLError(gl.INVALID_OPERATION, "bindVertexArrayOES: attempt to bind deleted arrayObject");
+                return;
+            }
+            var original = this.original;
+            var oldVAO = this.currentVertexArrayObject;
+            this.currentVertexArrayObject = arrayObject || this.defaultVertexArrayObject;
+            this.currentVertexArrayObject.hasBeenBound = true;
+            var newVAO = this.currentVertexArrayObject;
+            if (oldVAO == newVAO) {
+                return;
+            }
+            if (!oldVAO || newVAO.elementArrayBuffer != oldVAO.elementArrayBuffer) {
+                original.bindBuffer.call(gl, gl.ELEMENT_ARRAY_BUFFER, newVAO.elementArrayBuffer);
+            }
+            var currentBinding = this.currentArrayBuffer;
+            var maxAttrib = Math.max(oldVAO ? oldVAO.maxAttrib : 0, newVAO.maxAttrib);
+            for (var n = 0; n <= maxAttrib; n++) {
+                var attrib = newVAO.attribs[n];
+                var oldAttrib = oldVAO ? oldVAO.attribs[n] : null;
+                if (!oldVAO || attrib.enabled != oldAttrib.enabled) {
+                    if (attrib.enabled) {
+                        original.enableVertexAttribArray.call(gl, n);
+                    }
+                    else {
+                        original.disableVertexAttribArray.call(gl, n);
+                    }
+                }
+                if (attrib.enabled) {
+                    var bufferChanged = false;
+                    if (!oldVAO || attrib.buffer != oldAttrib.buffer) {
+                        if (currentBinding != attrib.buffer) {
+                            original.bindBuffer.call(gl, gl.ARRAY_BUFFER, attrib.buffer);
+                            currentBinding = attrib.buffer;
+                        }
+                        bufferChanged = true;
+                    }
+                    if (bufferChanged || attrib.cached != oldAttrib.cached) {
+                        original.vertexAttribPointer.call(gl, n, attrib.size, attrib.type, attrib.normalized, attrib.stride, attrib.offset);
+                    }
+                }
+            }
+            if (this.currentArrayBuffer != currentBinding) {
+                original.bindBuffer.call(gl, gl.ARRAY_BUFFER, this.currentArrayBuffer);
+            }
+        };
+        window._setupVertexArrayObject = function (gl) {
+            var original_getSupportedExtensions = gl.getSupportedExtensions;
+            gl.getSupportedExtensions = function getSupportedExtensions() {
+                var list = original_getSupportedExtensions.call(this) || [];
+                if (list.indexOf("OES_vertex_array_object") < 0) {
+                    list.push("OES_vertex_array_object");
+                }
+                return list;
+            };
+            var original_getExtension = gl.getExtension;
+            gl.getExtension = function getExtension(name) {
+                var ext = original_getExtension.call(this, name);
+                if (ext) {
+                    return ext;
+                }
+                if (name !== "OES_vertex_array_object") {
+                    return null;
+                }
+                if (!this.__OESVertexArrayObject) {
+                    console.log("Setup OES_vertex_array_object polyfill");
+                    this.__OESVertexArrayObject = new OESVertexArrayObject(this);
+                }
+                return this.__OESVertexArrayObject;
+            };
+        };
+    }());
+
+    class GlCapable {
+        constructor(glEngine) {
+            this._extentionVendorPrefixes = ["", "WEBKIT_", "MOZ_"];
+            this._gl = glEngine.gl;
+            this.initExtension(glEngine.isWebGL2);
+            this.initCapable(glEngine.isWebGL2);
+        }
+        initCapable(isWebgl2) {
+            this._capabilityMap = new Map();
+            let value = isWebgl2 || !!(this.getExtension(exports.WebGLExtension.OES_element_index_uint));
+            this._capabilityMap.set(Laya.RenderCapable.Element_Index_Uint32, value);
+            value = isWebgl2 || !!(this.getExtension(exports.WebGLExtension.OES_texture_float));
+            this._capabilityMap.set(Laya.RenderCapable.TextureFormat_R32G32B32A32, value);
+            value = isWebgl2 || !!(this.getExtension(exports.WebGLExtension.OES_texture_half_float));
+            this._capabilityMap.set(Laya.RenderCapable.TextureFormat_R16G16B16A16, value);
+            value = !!(this.getExtension(exports.WebGLExtension.EXT_texture_filter_anisotropic));
+            this._capabilityMap.set(Laya.RenderCapable.Texture_anisotropic, value);
+            if (isWebgl2) {
+                value = !!this.getExtension(exports.WebGLExtension.EXT_color_buffer_float) || !!this.getExtension(exports.WebGLExtension.EXT_color_buffer_half_float);
+            }
+            else {
+                value = ((!!this.getExtension(exports.WebGLExtension.OES_texture_half_float)) || (!!this.getExtension(exports.WebGLExtension.EXT_color_buffer_half_float))) && (!!this.getExtension(exports.WebGLExtension.OES_texture_half_float_linear));
+            }
+            this._capabilityMap.set(Laya.RenderCapable.RenderTextureFormat_R16G16B16A16, value);
+            if (isWebgl2) {
+                value = !!this.getExtension(exports.WebGLExtension.EXT_color_buffer_float) && !!this.getExtension(exports.WebGLExtension.OES_texture_float_linear);
+            }
+            else {
+                value = (!!this.getExtension(exports.WebGLExtension.OES_texture_float)) && (!!this.getExtension(exports.WebGLExtension.OES_texture_float_linear));
+            }
+            this._capabilityMap.set(Laya.RenderCapable.RenderTextureFormat_R32G32B32A32, value);
+            value = isWebgl2 || (!!this.getExtension(exports.WebGLExtension.WEBGL_depth_texture));
+            this._capabilityMap.set(Laya.RenderCapable.RenderTextureFormat_Depth, value);
+            value = isWebgl2;
+            this._capabilityMap.set(Laya.RenderCapable.RenderTextureFormat_ShadowMap, value);
+            value = isWebgl2 || (!!this.getExtension(exports.WebGLExtension.OES_vertex_array_object));
+            this._capabilityMap.set(Laya.RenderCapable.Vertex_VAO, value);
+            value = (isWebgl2 || (!!this.getExtension(exports.WebGLExtension.ANGLE_instanced_arrays)));
+            this._capabilityMap.set(Laya.RenderCapable.DrawElement_Instance, value);
+            value = (isWebgl2) || (!!this.getExtension(exports.WebGLExtension.EXT_shader_texture_lod));
+            this._capabilityMap.set(Laya.RenderCapable.Shader_TextureLod, value);
+            value = (!!this.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_s3tc));
+            this._capabilityMap.set(Laya.RenderCapable.COMPRESS_TEXTURE_S3TC, value);
+            value = (!!this.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_s3tc_srgb));
+            this._capabilityMap.set(Laya.RenderCapable.COMPRESS_TEXTURE_S3TC_SRGB, value);
+            value = (!!this.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_pvrtc));
+            this._capabilityMap.set(Laya.RenderCapable.COMPRESS_TEXTURE_PVRTC, value);
+            value = (!!this.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_etc1));
+            this._capabilityMap.set(Laya.RenderCapable.COMPRESS_TEXTURE_ETC1, value);
+            value = (!!this.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_etc));
+            this._capabilityMap.set(Laya.RenderCapable.COMPRESS_TEXTURE_ETC, value);
+            value = (!!this.getExtension(exports.WebGLExtension.WEBGL_compressed_texture_astc));
+            this._capabilityMap.set(Laya.RenderCapable.COMPRESS_TEXTURE_ASTC, value);
+            value = (isWebgl2) || (!!this.getExtension(exports.WebGLExtension.EXT_sRGB));
+            this._capabilityMap.set(Laya.RenderCapable.Texture_SRGB, value);
+            value = (!!this.getExtension(exports.WebGLExtension.OES_texture_float_linear));
+            this._capabilityMap.set(Laya.RenderCapable.Texture_FloatLinearFiltering, value);
+            value = isWebgl2 || (!!this.getExtension(exports.WebGLExtension.OES_texture_half_float_linear));
+            this._capabilityMap.set(Laya.RenderCapable.Texture_HalfFloatLinearFiltering, value);
+            value = isWebgl2;
+            this._capabilityMap.set(Laya.RenderCapable.MSAA, value);
+            this._capabilityMap.set(Laya.RenderCapable.UnifromBufferObject, value);
+            this._capabilityMap.set(Laya.RenderCapable.Texture3D, value);
+        }
+        initExtension(isWebgl2) {
+            this._extensionMap = new Map();
+            const setExtensionMap = (extension, value, map) => {
+                value && map.set(extension, value);
+            };
+            const _extTextureFilterAnisotropic = this._getExtension("EXT_texture_filter_anisotropic");
+            setExtensionMap(exports.WebGLExtension.EXT_texture_filter_anisotropic, _extTextureFilterAnisotropic, this._extensionMap);
+            const _compressedTextureS3tc = this._getExtension("WEBGL_compressed_texture_s3tc");
+            setExtensionMap(exports.WebGLExtension.WEBGL_compressed_texture_s3tc, _compressedTextureS3tc, this._extensionMap);
+            const _compressdTextureS3tc_srgb = this._getExtension("WEBGL_compressed_texture_s3tc_srgb");
+            setExtensionMap(exports.WebGLExtension.WEBGL_compressed_texture_s3tc_srgb, _compressdTextureS3tc_srgb, this._extensionMap);
+            const _compressedTexturePvrtc = this._getExtension("WEBGL_compressed_texture_pvrtc");
+            setExtensionMap(exports.WebGLExtension.WEBGL_compressed_texture_pvrtc, _compressedTexturePvrtc, this._extensionMap);
+            const _compressedTextureEtc1 = this._getExtension("WEBGL_compressed_texture_etc1");
+            setExtensionMap(exports.WebGLExtension.WEBGL_compressed_texture_etc1, _compressedTextureEtc1, this._extensionMap);
+            const _compressedTextureETC = this._getExtension("WEBGL_compressed_texture_etc");
+            setExtensionMap(exports.WebGLExtension.WEBGL_compressed_texture_etc, _compressedTextureETC, this._extensionMap);
+            const _compressedTextureASTC = this._getExtension("WEBGL_compressed_texture_astc");
+            setExtensionMap(exports.WebGLExtension.WEBGL_compressed_texture_astc, _compressedTextureASTC, this._extensionMap);
+            const _oesTextureFloatLinear = this._getExtension("OES_texture_float_linear");
+            setExtensionMap(exports.WebGLExtension.OES_texture_float_linear, _oesTextureFloatLinear, this._extensionMap);
+            const _extColorBufferHalfFloat = this._getExtension("EXT_color_buffer_half_float");
+            setExtensionMap(exports.WebGLExtension.EXT_color_buffer_half_float, _extColorBufferHalfFloat, this._extensionMap);
+            if (isWebgl2) {
+                const _extColorBufferFloat = this._getExtension("EXT_color_buffer_float");
+                setExtensionMap(exports.WebGLExtension.EXT_color_buffer_float, _extColorBufferFloat, this._extensionMap);
+            }
+            else {
+                if (window._setupVertexArrayObject)
+                    window._setupVertexArrayObject(this._gl);
+                const _vaoExt = this._getExtension("OES_vertex_array_object");
+                setExtensionMap(exports.WebGLExtension.OES_vertex_array_object, _vaoExt, this._extensionMap);
+                const _angleInstancedArrays = this._getExtension("ANGLE_instanced_arrays");
+                setExtensionMap(exports.WebGLExtension.ANGLE_instanced_arrays, _angleInstancedArrays, this._extensionMap);
+                const _oesTextureHalfFloat = this._getExtension("OES_texture_half_float");
+                setExtensionMap(exports.WebGLExtension.OES_texture_half_float, _oesTextureHalfFloat, this._extensionMap);
+                const _oesTextureHalfFloatLinear = this._getExtension("OES_texture_half_float_linear");
+                setExtensionMap(exports.WebGLExtension.OES_texture_half_float_linear, _oesTextureHalfFloatLinear, this._extensionMap);
+                const _oesTextureFloat = this._getExtension("OES_texture_float");
+                setExtensionMap(exports.WebGLExtension.OES_texture_float, _oesTextureFloat, this._extensionMap);
+                const _oes_element_index_uint = this._getExtension("OES_element_index_uint");
+                setExtensionMap(exports.WebGLExtension.OES_element_index_uint, _oes_element_index_uint, this._extensionMap);
+                const _extShaderTextureLod = this._getExtension("EXT_shader_texture_lod");
+                setExtensionMap(exports.WebGLExtension.EXT_shader_texture_lod, _extShaderTextureLod, this._extensionMap);
+                const _webgl_depth_texture = this._getExtension("WEBGL_depth_texture");
+                setExtensionMap(exports.WebGLExtension.WEBGL_depth_texture, _webgl_depth_texture, this._extensionMap);
+                const _sRGB = this._getExtension("EXT_sRGB");
+                setExtensionMap(exports.WebGLExtension.EXT_sRGB, _sRGB, this._extensionMap);
+                const OES_standard_derivatives = this._getExtension("OES_standard_derivatives");
+                setExtensionMap(exports.WebGLExtension.OES_standard_derivatives, OES_standard_derivatives, this._extensionMap);
+            }
+        }
+        getCapable(type) {
+            return this._capabilityMap.get(type);
+        }
+        getExtension(type) {
+            if (this._extensionMap.has(type))
+                return this._extensionMap.get(type);
+            else
+                return null;
+        }
+        _getExtension(name) {
+            const prefixes = this._extentionVendorPrefixes;
+            for (const k in prefixes) {
+                var ext = this._gl.getExtension(prefixes[k] + name);
+                if (ext)
+                    return ext;
+            }
+            return null;
+        }
+    }
+
+    class WebGLEngine extends Laya.EventDispatcher {
+        get lost() {
+            return this._lost;
+        }
+        constructor(config, webglMode = exports.WebGLMode.Auto) {
+            super();
+            this._lost = false;
+            this._propertyNameMap = {};
+            this._propertyNameCounter = 0;
+            this._IDCounter = 0;
+            this._isShaderDebugMode = true;
+            this._enableStatistics = false;
+            this._curUBOPointer = 0;
+            this._GLUBOPointerMap = new Map();
+            this._GLBindPointerUBOMap = new Map();
+            this._lastClearColor = new Laya.Color;
+            this._lastClearDepth = -1;
+            this._remapZ = true;
+            this._screenInvertY = false;
+            this._lodTextureSample = true;
+            this._breakTextureSample = true;
+            this._GLStatisticsInfo = new Map();
+            this._config = config;
+            this._isWebGL2 = false;
+            this._lastViewport = new Laya.Vector4(0, 0, 0, 0);
+            this._lastClearColor = new Laya.Color(0, 0, 0, 0);
+            this._lastScissor = new Laya.Vector4(0, 0, 0, 0);
+            this._webglMode = webglMode;
+            this._initStatisticsInfo();
+            WebGLEngine.instance = this;
+        }
+        endFrame() {
+            this.event("endFrame", null);
+        }
+        getInnerWidth() {
+            if (Laya.LayaEnv.isConch) {
+                return window.getInnerWidth();
+            }
+            else
+                return this._globalWidth;
+        }
+        getInnerHeight() {
+            if (Laya.LayaEnv.isConch) {
+                return window.getInnerHeight();
+            }
+            else
+                return this._globalHeight;
+        }
+        resizeOffScreen(width, height) {
+            this._globalWidth = width;
+            this._globalHeight = height;
+            if (Laya.LayaEnv.isConch) {
+                if (WebGLEngine._lastFrameBuffer) {
+                    WebGLEngine._lastFrameBuffer.dispose();
+                    WebGLEngine._lastFrameBuffer_WebGLOBJ = null;
+                }
+                WebGLEngine._lastFrameBuffer = this.getTextureContext().createRenderTargetInternal(width, height, Laya.RenderTargetFormat.R8G8B8A8, Laya.RenderTargetFormat.None, false, false, 1);
+                WebGLEngine._lastFrameBuffer_WebGLOBJ = WebGLEngine._lastFrameBuffer._framebuffer;
+            }
+        }
+        addTexGammaDefine(key, value) {
+            WebGLEngine._texGammaDefine[key] = value;
+        }
+        get gl() {
+            return this._context;
+        }
+        get isWebGL2() {
+            return this._isWebGL2;
+        }
+        get webglConfig() {
+            return this._config;
+        }
+        _initStatisticsInfo() {
+            for (var i = 0; i < Laya.GPUEngineStatisticsInfo.Count; i++) {
+                this._GLStatisticsInfo.set(i, 0);
+            }
+        }
+        _addStatisticsInfo(info, value) {
+            this._enableStatistics && this._GLStatisticsInfo.set(info, this._GLStatisticsInfo.get(info) + value);
+        }
+        clearStatisticsInfo() {
+            if (this._enableStatistics) {
+                for (var i = 0; i < Laya.GPUEngineStatisticsInfo.FrameClearCount; i++) {
+                    this._GLStatisticsInfo.set(i, 0);
+                }
+            }
+        }
+        getStatisticsInfo(info) {
+            return this._GLStatisticsInfo.get(info);
+        }
+        _getBindUBOBuffer(glPointer) {
+            return this._GLBindPointerUBOMap.get(glPointer);
+        }
+        _setBindUBOBuffer(glPointer, buffer) {
+            this._GLBindPointerUBOMap.set(glPointer, buffer);
+        }
+        initRenderEngine(canvas) {
+            let names;
+            let gl;
+            switch (this._webglMode) {
+                case exports.WebGLMode.Auto:
+                    names = ["webgl2", "experimental-webgl2", "webgl", "experimental-webgl"];
+                    break;
+                case exports.WebGLMode.WebGL1:
+                    names = ["webgl", "experimental-webgl"];
+                    break;
+                case exports.WebGLMode.WebGL2:
+                    names = ["webgl2", "experimental-webgl2"];
+                    break;
+            }
+            for (var i = 0; i < names.length; i++) {
+                try {
+                    gl = canvas.getContext(names[i], this._config);
+                }
+                catch (e) {
+                }
+                if (gl) {
+                    if (names[i] === 'webgl2' || names[i] === 'experimental-webgl2') {
+                        this._isWebGL2 = true;
+                    }
+                    break;
+                }
+            }
+            this._context = gl;
+            this.scissorTest(true);
+            this._initBindBufferMap();
+            this._supportCapatable = new GlCapable(this);
+            this._GLParams = new GLParams(this);
+            this._GLRenderState = new GLRenderState(this);
+            this._glTextureIDParams = [gl.TEXTURE0, gl.TEXTURE1, gl.TEXTURE2, gl.TEXTURE3, gl.TEXTURE4, gl.TEXTURE5, gl.TEXTURE6, gl.TEXTURE7, gl.TEXTURE8, gl.TEXTURE9, gl.TEXTURE10, gl.TEXTURE11, gl.TEXTURE12, gl.TEXTURE13, gl.TEXTURE14, gl.TEXTURE15, gl.TEXTURE16, gl.TEXTURE17, gl.TEXTURE18, gl.TEXTURE19, gl.TEXTURE20, gl.TEXTURE21, gl.TEXTURE22, gl.TEXTURE23, gl.TEXTURE24, gl.TEXTURE25, gl.TEXTURE26, gl.TEXTURE27, gl.TEXTURE28, gl.TEXTURE29, gl.TEXTURE30, gl.TEXTURE31];
+            this._activedTextureID = gl.TEXTURE0;
+            this._activeTextures = [];
+            this._GLTextureContext = this.isWebGL2 ? new GL2TextureContext(this) : new GLTextureContext(this);
+            this._GLRenderDrawContext = new GLRenderDrawContext(this);
+            canvas.addEventListener("webglcontextlost", this.webglContextLost);
+        }
+        webglContextLost(e) {
+            console.log("lost webgl context");
+            Laya.Laya.stage.event("GraphicContextLost", e);
+            this._lost = true;
+        }
+        _initBindBufferMap() {
+            this._GLBufferBindMap = {};
+            this._GLBufferBindMap[Laya.BufferTargetType.ARRAY_BUFFER] = null;
+            this._GLBufferBindMap[Laya.BufferTargetType.ELEMENT_ARRAY_BUFFER] = null;
+            this._GLBufferBindMap[Laya.BufferTargetType.UNIFORM_BUFFER] = null;
+        }
+        _getbindBuffer(target) {
+            return this._GLBufferBindMap[target];
+        }
+        _setbindBuffer(target, buffer) {
+            this._GLBufferBindMap[target] = buffer;
+        }
+        _bindTexture(target, texture) {
+            const texID = this._activedTextureID - this._context.TEXTURE0;
+            if (this._activeTextures[texID] !== texture) {
+                this._context.bindTexture(target, texture);
+                this._activeTextures[texID] = texture;
+            }
+        }
+        getCapable(capatableType) {
+            return this._supportCapatable.getCapable(capatableType);
+        }
+        viewport(x, y, width, height) {
+            const gl = this._context;
+            const lv = this._lastViewport;
+            if (Laya.LayaEnv.isConch) {
+                gl.viewport(x, y, width, height);
+            }
+            else if (x !== lv.x || y !== lv.y || width !== lv.z || height !== lv.w) {
+                gl.viewport(x, y, width, height);
+                lv.setValue(x, y, width, height);
+            }
+        }
+        scissor(x, y, width, height) {
+            const gl = this._context;
+            const lv = this._lastScissor;
+            if (Laya.LayaEnv.isConch) {
+                gl.scissor(x, y, width, height);
+            }
+            else if (x !== lv.x || y !== lv.y || width !== lv.z || height !== lv.w) {
+                gl.scissor(x, y, width, height);
+                lv.setValue(x, y, width, height);
+            }
+        }
+        scissorTest(value) {
+            if (this._scissorState == value)
+                return;
+            this._scissorState = value;
+            if (value)
+                this._context.enable(this._context.SCISSOR_TEST);
+            else
+                this._context.disable(this._context.SCISSOR_TEST);
+        }
+        clearRenderTexture(clearFlag, clearcolor = null, clearDepth = 1, clearStencilValue = 0) {
+            var flag;
+            if (clearFlag & Laya.RenderClearFlag.Color) {
+                if (clearcolor && !this._lastClearColor.equal(clearcolor)) {
+                    this._context.clearColor(clearcolor.r, clearcolor.g, clearcolor.b, clearcolor.a);
+                    clearcolor.cloneTo(this._lastClearColor);
+                }
+                flag |= this.gl.COLOR_BUFFER_BIT;
+            }
+            if (clearFlag & Laya.RenderClearFlag.Depth) {
+                if (this._lastClearDepth != clearDepth) {
+                    this._context.clearDepth(clearDepth);
+                    this._lastClearDepth = clearDepth;
+                }
+                this._GLRenderState.setDepthMask(true);
+                flag |= this._context.DEPTH_BUFFER_BIT;
+            }
+            if (clearFlag & Laya.RenderClearFlag.Stencil) {
+                this._context.clearStencil(clearStencilValue);
+                this._GLRenderState.setStencilMask(true);
+                flag |= this._context.STENCIL_BUFFER_BIT;
+            }
+            if (flag)
+                this._context.clear(flag);
+        }
+        copySubFrameBuffertoTex(texture, level, xoffset, yoffset, x, y, width, height) {
+            this._bindTexture(texture.target, texture.resource);
+            this._context.copyTexSubImage2D(texture.target, level, xoffset, yoffset, x, y, width, height);
+        }
+        colorMask(r, g, b, a) {
+            this._context.colorMask(r, g, b, a);
+        }
+        getParams(params) {
+            return this._GLParams.getParams(params);
+        }
+        createBuffer(targetType, bufferUsageType) {
+            return new GLBuffer(this, targetType, bufferUsageType);
+        }
+        createShaderInstance(vs, ps, attributeMap) {
+            return new GLShaderInstance(this, vs, ps, attributeMap);
+        }
+        createVertexState() {
+            return new GLVertexState(this);
+        }
+        getUBOPointer(name) {
+            if (!this._GLUBOPointerMap.has(name))
+                this._GLUBOPointerMap.set(name, this._curUBOPointer++);
+            return this._GLUBOPointerMap.get(name);
+        }
+        getTextureContext() {
+            return this._GLTextureContext;
+        }
+        getDrawContext() {
+            return this._GLRenderDrawContext;
+        }
+        getCreateRenderOBJContext() {
+            return this._renderOBJCreateContext;
+        }
+        propertyNameToID(name) {
+            if (this._propertyNameMap[name] != null) {
+                return this._propertyNameMap[name];
+            }
+            else {
+                var id = this._propertyNameCounter++;
+                this._propertyNameMap[name] = id;
+                this._propertyNameMap[id] = name;
+                return id;
+            }
+        }
+        propertyIDToName(id) {
+            return this._propertyNameMap[id];
+        }
+        getNamesByDefineData(defineData, out) {
+            var maskMap = WebGLEngine._maskMap;
+            var mask = defineData._mask;
+            out.length = 0;
+            for (var i = 0, n = defineData._length; i < n; i++) {
+                var subMaskMap = maskMap[i];
+                var subMask = mask[i];
+                for (var j = 0; j < 32; j++) {
+                    var d = 1 << j;
+                    if (subMask > 0 && d > subMask)
+                        break;
+                    if (subMask & d)
+                        out.push(subMaskMap[d]);
+                }
+            }
+        }
+        getDefineByName(name) {
+            var define = WebGLEngine._defineMap[name];
+            if (!define) {
+                var maskMap = WebGLEngine._maskMap;
+                var counter = WebGLEngine._defineCounter;
+                var index = Math.floor(counter / 32);
+                var value = 1 << counter % 32;
+                define = new Laya.ShaderDefine(index, value);
+                WebGLEngine._defineMap[name] = define;
+                if (index == maskMap.length) {
+                    maskMap.length++;
+                    maskMap[index] = {};
+                }
+                maskMap[index][value] = name;
+                WebGLEngine._defineCounter++;
+            }
+            return define;
+        }
+        uploadUniforms(shader, commandEncoder, shaderData, uploadUnTexture) {
+            shaderData.applyUBO && shaderData.applyUBOData();
+            var data = shaderData._data;
+            var shaderUniform = commandEncoder.getArrayData();
+            var shaderCall = 0;
+            for (var i = 0, n = shaderUniform.length; i < n; i++) {
+                var one = shaderUniform[i];
+                if (uploadUnTexture || one.textureID !== -1) {
+                    var value = data[one.dataOffset];
+                    if (value != null)
+                        shaderCall += one.fun.call(one.caller, one, value);
+                }
+            }
+            return shaderCall;
+        }
+        uploadCustomUniforms(shader, custom, index, data) {
+            shader.bind();
+            var shaderCall = 0;
+            var one = custom[index];
+            if (one && data != null)
+                shaderCall += one.fun.call(one.caller, one, data);
+            return shaderCall;
+        }
+        unbindVertexState() {
+            if (this.isWebGL2)
+                this._context.bindVertexArray(null);
+            else
+                this._supportCapatable.getExtension(exports.WebGLExtension.OES_vertex_array_object).bindVertexArrayOES(null);
+            this._GLBindVertexArray = null;
+        }
+    }
+    WebGLEngine._texGammaDefine = {};
+    WebGLEngine._lastFrameBuffer = null;
+    WebGLEngine._lastFrameBuffer_WebGLOBJ = null;
+    WebGLEngine._defineMap = {};
+    WebGLEngine._defineCounter = 0;
+    WebGLEngine._maskMap = [];
+
+    class WebGLShaderData extends Laya.ShaderData {
+        get uniformBufferDatas() {
+            return this._uniformBufferDatas;
+        }
+        get uniformBuffersMap() {
+            return this._uniformBuffersMap;
+        }
+        _releaseUBOData() {
+            if (!this._uniformBufferDatas) {
+                return;
+            }
+            for (let value of this._uniformBufferDatas.values()) {
+                value.ubo._updateDataInfo.destroy();
+                value.ubo.destroy();
+                value.ubo._updateDataInfo = null;
+            }
+            this._uniformBufferDatas.clear();
+            this._uniformBuffersMap.clear();
+        }
+        constructor(ownerResource = null) {
+            super(ownerResource);
+            this.applyUBO = false;
+            this._data = null;
+            this._defineDatas = new WebDefineDatas();
+            this._initData();
+            this._uniformBufferDatas = new Map();
+            this._uniformBuffersMap = new Map();
+        }
+        _addCheckUBO(key, ubo, uboData) {
+            this._uniformBufferDatas.set(key, { ubo: ubo, uboBuffer: uboData });
+            uboData._uniformParamsState.forEach((value, id) => {
+                this.uniformBuffersMap.set(id, ubo);
+            });
+            ubo.setDataByUniformBufferData(uboData);
+        }
+        _initData() {
+            this._data = {};
+            this._gammaColorMap = new Map();
+        }
+        getData() {
+            return this._data;
+        }
+        applyUBOData() {
+            this._uniformBufferDatas.forEach((value, key) => {
+                value.ubo.setDataByUniformBufferData(value.uboBuffer);
+            });
+            this.applyUBO = false;
+        }
+        addDefine(define) {
+            this._defineDatas.add(define);
+        }
+        addDefines(define) {
+            this._defineDatas.addDefineDatas(define);
+        }
+        removeDefine(define) {
+            this._defineDatas.remove(define);
+        }
+        hasDefine(define) {
+            return this._defineDatas.has(define);
+        }
+        clearDefine() {
+            this._defineDatas.clear();
+        }
+        getBool(index) {
+            return this._data[index];
+        }
+        setBool(index, value) {
+            this._data[index] = value;
+        }
+        getInt(index) {
+            return this._data[index];
+        }
+        setInt(index, value) {
+            this._data[index] = value;
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getInt(index));
+            }
+        }
+        getNumber(index) {
+            return this._data[index];
+        }
+        setNumber(index, value) {
+            this._data[index] = value;
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getNumber(index));
+                this.applyUBO = true;
+            }
+        }
+        getVector2(index) {
+            return this._data[index];
+        }
+        setVector2(index, value) {
+            if (this._data[index]) {
+                value.cloneTo(this._data[index]);
+            }
+            else
+                this._data[index] = value.clone();
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getVector2(index));
+                this.applyUBO = true;
+            }
+        }
+        getVector3(index) {
+            return this._data[index];
+        }
+        setVector3(index, value) {
+            if (this._data[index]) {
+                value.cloneTo(this._data[index]);
+            }
+            else
+                this._data[index] = value.clone();
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getVector3(index));
+                this.applyUBO = true;
+            }
+        }
+        getVector(index) {
+            return this._data[index];
+        }
+        setVector(index, value) {
+            if (this._data[index]) {
+                value.cloneTo(this._data[index]);
+            }
+            else
+                this._data[index] = value.clone();
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getVector(index));
+                this.applyUBO = true;
+            }
+        }
+        getColor(index) {
+            return this._gammaColorMap.get(index);
+        }
+        setColor(index, value) {
+            if (!value)
+                return;
+            if (this._data[index]) {
+                let gammaColor = this._gammaColorMap.get(index);
+                value.cloneTo(gammaColor);
+                let linearColor = this._data[index];
+                linearColor.x = Laya.Color.gammaToLinearSpace(value.r);
+                linearColor.y = Laya.Color.gammaToLinearSpace(value.g);
+                linearColor.z = Laya.Color.gammaToLinearSpace(value.b);
+                linearColor.w = value.a;
+            }
+            else {
+                let linearColor = new Laya.Vector4();
+                linearColor.x = Laya.Color.gammaToLinearSpace(value.r);
+                linearColor.y = Laya.Color.gammaToLinearSpace(value.g);
+                linearColor.z = Laya.Color.gammaToLinearSpace(value.b);
+                linearColor.w = value.a;
+                this._data[index] = linearColor;
+                this._gammaColorMap.set(index, value.clone());
+            }
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getLinearColor(index));
+                this.applyUBO = true;
+            }
+        }
+        getLinearColor(index) {
+            return this._data[index];
+        }
+        getMatrix4x4(index) {
+            return this._data[index];
+        }
+        setMatrix4x4(index, value) {
+            if (this._data[index]) {
+                value.cloneTo(this._data[index]);
+            }
+            else {
+                this._data[index] = value.clone();
+            }
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getMatrix4x4(index));
+                this.applyUBO = true;
+            }
+        }
+        getMatrix3x3(index) {
+            return this._data[index];
+        }
+        setMatrix3x3(index, value) {
+            if (this._data[index]) {
+                value.cloneTo(this._data[index]);
+            }
+            else {
+                this._data[index] = value.clone();
+            }
+            let ubo = this._uniformBuffersMap.get(index);
+            if (ubo) {
+                this._uniformBufferDatas.get(ubo._name).uboBuffer._setData(index, this.getMatrix3x3(index));
+            }
+        }
+        getBuffer(index) {
+            return this._data[index];
+        }
+        setBuffer(index, value) {
+            this._data[index] = value;
+        }
+        setTexture(index, value) {
+            var lastValue = this._data[index];
+            if (value) {
+                let shaderDefine = WebGLEngine._texGammaDefine[index];
+                if (shaderDefine && value && value.gammaCorrection > 1) {
+                    this.addDefine(shaderDefine);
+                }
+                else {
+                    shaderDefine && this.removeDefine(shaderDefine);
+                }
+            }
+            this._data[index] = value;
+            lastValue && lastValue._removeReference();
+            value && value._addReference();
+        }
+        _setInternalTexture(index, value) {
+            this._data[index];
+            if (value) {
+                let shaderDefine = WebGLEngine._texGammaDefine[index];
+                if (shaderDefine && value && value.gammaCorrection > 1) {
+                    this.addDefine(shaderDefine);
+                }
+                else {
+                    shaderDefine && this.removeDefine(shaderDefine);
+                }
+            }
+            this._data[index] = value;
+        }
+        getTexture(index) {
+            return this._data[index];
+        }
+        getSourceIndex(value) {
+            for (var i in this._data) {
+                if (this._data[i] == value)
+                    return Number(i);
+            }
+            return -1;
+        }
+        setUniformBuffer(index, value) {
+            this._data[index] = value;
+        }
+        getUniformBuffer(index) {
+            return this._data[index];
+        }
+        cloneTo(destObject) {
+            let destData = destObject._data;
+            for (let k in this._data) {
+                let value = this._data[k];
+                if (value != null) {
+                    if (typeof value == "number") {
+                        destData[k] = value;
+                    }
+                    else if (typeof value == "boolean") {
+                        destData[k] = value;
+                    }
+                    else if (value instanceof Laya.Vector2) {
+                        let v2 = destData[k] || (destData[k] = new Laya.Vector2());
+                        value.cloneTo(v2);
+                    }
+                    else if (value instanceof Laya.Vector3) {
+                        let v3 = destData[k] || (destData[k] = new Laya.Vector3());
+                        value.cloneTo(v3);
+                    }
+                    else if (value instanceof Laya.Vector4) {
+                        let color = this.getColor(parseInt(k));
+                        if (color) {
+                            let clonecolor = color.clone();
+                            destObject.setColor(parseInt(k), clonecolor);
+                        }
+                        else {
+                            let v4 = destData[k] || (destData[k] = new Laya.Vector4());
+                            value.cloneTo(v4);
+                        }
+                    }
+                    else if (value instanceof Laya.Matrix3x3) {
+                        let mat = destData[k] || (destData[k] = new Laya.Matrix3x3());
+                        value.cloneTo(mat);
+                    }
+                    else if (value instanceof Laya.Matrix4x4) {
+                        let mat = destData[k] || (destData[k] = new Laya.Matrix4x4());
+                        value.cloneTo(mat);
+                    }
+                    else if (value instanceof Laya.Resource) {
+                        destData[k] = value;
+                        value._addReference();
+                    }
+                }
+            }
+            this._defineDatas.cloneTo(destObject._defineDatas);
+            this._gammaColorMap.forEach((color, index) => {
+                destObject._gammaColorMap.set(index, color.clone());
+            });
+            this._cloneUBO(destObject._uniformBufferDatas);
+            destObject.applyUBO = true;
+        }
+        getDefineData() {
+            return this._defineDatas;
+        }
+        _cloneUBO(uboDatas) {
+            this._uniformBufferDatas.forEach((value, key) => {
+                uboDatas.has(key) && (value.uboBuffer.cloneTo(uboDatas.get(key).uboBuffer));
+            });
+        }
+        clone() {
+            var dest = new WebGLShaderData();
+            this.cloneTo(dest);
+            return dest;
+        }
+        reset() {
+            for (var k in this._data) {
+                var value = this._data[k];
+                if (value instanceof Laya.Resource) {
+                    value._removeReference();
+                }
+            }
+            this._data = {};
+            this._gammaColorMap.clear();
+            this._uniformBufferDatas.clear();
+            this.applyUBO = false;
+            this._uniformBuffersMap.clear();
+            this._defineDatas.clear();
+        }
+        destroy() {
+            this._defineDatas.destroy();
+            this._defineDatas = null;
+            for (var k in this._data) {
+                var value = this._data[k];
+                if (value instanceof Laya.Resource) {
+                    value._removeReference();
+                }
+            }
+            this._data = null;
+            this._gammaColorMap.clear();
+            this._gammaColorMap = null;
+            delete this._uniformBufferDatas;
+            delete this._uniformBuffersMap;
+            this._uniformBufferDatas = null;
+            this._uniformBuffersMap = null;
+        }
+    }
+
+    class WebShaderPass {
+        get renderState() {
+            return this._renderState;
+        }
+        set renderState(value) {
+            this._renderState = value;
+        }
+        get validDefine() {
+            return this._validDefine;
+        }
+        set validDefine(value) {
+            this._validDefine = value;
+        }
+        constructor(pass) {
+            this._cacheShaderHierarchy = 1;
+            this._cacheSharders = {};
+            this._renderState = new Laya.RenderState();
+            this._renderState.setNull();
+        }
+        _resizeCacheShaderMap(cacheMap, hierarchy, resizeLength) {
+            var end = this._cacheShaderHierarchy - 1;
+            if (hierarchy == end) {
+                for (var k in cacheMap) {
+                    var shader = cacheMap[k];
+                    for (var i = 0, n = resizeLength - end; i < n; i++) {
+                        if (i == n - 1)
+                            cacheMap[0] = shader;
+                        else
+                            cacheMap = cacheMap[i == 0 ? k : 0] = {};
+                    }
+                }
+            }
+            else {
+                ++hierarchy;
+                for (var k in cacheMap)
+                    this._resizeCacheShaderMap(cacheMap[k], hierarchy, resizeLength);
+            }
+        }
+        setCacheShader(compileDefine, shader) {
+            var cacheShaders = this._cacheSharders;
+            var mask = compileDefine._mask;
+            var endIndex = compileDefine._length - 1;
+            var maxEndIndex = this._cacheShaderHierarchy - 1;
+            for (var i = 0; i < maxEndIndex; i++) {
+                var subMask = endIndex < i ? 0 : mask[i];
+                var subCacheShaders = cacheShaders[subMask];
+                (subCacheShaders) || (cacheShaders[subMask] = subCacheShaders = {});
+                cacheShaders = subCacheShaders;
+            }
+            var cacheKey = endIndex < maxEndIndex ? 0 : mask[maxEndIndex];
+            cacheShaders[cacheKey] = shader;
+        }
+        getCacheShader(compileDefine) {
+            compileDefine._intersectionDefineDatas(this._validDefine);
+            var cacheShaders = this._cacheSharders;
+            var maskLength = compileDefine._length;
+            if (maskLength > this._cacheShaderHierarchy) {
+                this._resizeCacheShaderMap(cacheShaders, 0, maskLength);
+                this._cacheShaderHierarchy = maskLength;
+            }
+            var mask = compileDefine._mask;
+            var endIndex = compileDefine._length - 1;
+            var maxEndIndex = this._cacheShaderHierarchy - 1;
+            for (var i = 0; i < maxEndIndex; i++) {
+                var subMask = endIndex < i ? 0 : mask[i];
+                var subCacheShaders = cacheShaders[subMask];
+                (subCacheShaders) || (cacheShaders[subMask] = subCacheShaders = {});
+                cacheShaders = subCacheShaders;
+            }
+            var cacheKey = endIndex < maxEndIndex ? 0 : mask[maxEndIndex];
+            var shader = cacheShaders[cacheKey];
+            return shader;
+        }
+        destroy() {
+        }
+    }
+
+    class WebSubShader {
+        destroy() {
+            throw new Laya.NotImplementedError();
+        }
+        addShaderPass(pass) { }
+    }
+
+    class WebUnitRenderModuleDataFactory {
+        createSubShader() {
+            return new WebSubShader();
+        }
+        createShaderPass(pass) {
+            return new WebShaderPass(pass);
+        }
+        createRenderState() {
+            return new Laya.RenderState();
+        }
+        createDefineDatas() {
+            return new WebDefineDatas();
+        }
+    }
+    Laya.Laya.addBeforeInitCallback(() => {
+        if (!Laya.LayaGL.unitRenderModuleDataFactory)
+            Laya.LayaGL.unitRenderModuleDataFactory = new WebUnitRenderModuleDataFactory();
+    });
+
+    class WebGLVertexBuffer {
+        get vertexDeclaration() {
+            return this._vertexDeclaration;
+        }
+        set vertexDeclaration(value) {
+            this._vertexDeclaration = value;
+            this._shaderValues = this._vertexDeclaration._shaderValues;
+        }
+        constructor(targetType, bufferUsageType) {
+            this._glBuffer = WebGLEngine.instance.createBuffer(targetType, bufferUsageType);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_VertexBuffer, 1);
+        }
+        _changeMemory(bytelength) {
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_VertexBuffer, -this._glBuffer._byteLength + bytelength);
+        }
+        setDataLength(byteLength) {
+            this._changeMemory(byteLength);
+            this._glBuffer.setDataLength(byteLength);
+        }
+        setData(buffer, bufferOffset, dataStartIndex, dataCount) {
+            this.bind();
+            var needSubData = dataStartIndex !== 0 || dataCount !== Number.MAX_SAFE_INTEGER;
+            if (needSubData) {
+                var subData = new Uint8Array(buffer, dataStartIndex, dataCount);
+                this._glBuffer.setData(subData, bufferOffset);
+            }
+            else {
+                this._glBuffer.setData(buffer, bufferOffset);
+            }
+        }
+        bind() {
+            return this._glBuffer.bindBuffer();
+        }
+        unbind() {
+            return this._glBuffer.unbindBuffer();
+        }
+        orphanStorage() {
+            this.bind();
+            this._glBuffer.setDataLength(this._glBuffer._byteLength);
+        }
+        destroy() {
+            this._glBuffer.destroy();
+            this._vertexDeclaration = null;
+            this._changeMemory(0);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_VertexBuffer, -1);
+        }
+    }
+
+    class WebglRenderContext2D {
+        constructor() {
+            this._clearColor = new Laya.Color(0, 0, 0, 0);
+            this.invertY = false;
+            this.pipelineMode = "Forward";
+            this._globalConfigShaderData = Laya.Shader3D._configDefineValues;
+            if (Laya.LayaEnv.isConch && !WebglRenderContext2D.isCreateBlitScreenELement) {
+                (!WebglRenderContext2D.isCreateBlitScreenELement) && this.setBlitScreenElement();
+                WebglRenderContext2D.blitContext = new WebglRenderContext2D();
+                let engine = Laya.LayaGL.renderEngine;
+                engine.on("endFrame", () => {
+                    let last_main_frame_buffer = WebGLEngine._lastFrameBuffer_WebGLOBJ;
+                    let last_main_frame = WebGLEngine._lastFrameBuffer;
+                    WebGLEngine._lastFrameBuffer_WebGLOBJ = null;
+                    WebGLEngine._lastFrameBuffer = null;
+                    WebglRenderContext2D.blitContext.setOffscreenView(engine.getInnerWidth(), engine.getInnerHeight());
+                    WebglRenderContext2D.blitContext.setRenderTarget(null, true, Laya.Color.BLACK);
+                    WebglRenderContext2D.blitScreenElement.materialShaderData._setInternalTexture(Laya.Shader3D.propertyNameToID("u_MainTex"), last_main_frame._textures[0]);
+                    WebglRenderContext2D.blitContext.drawRenderElementOne(WebglRenderContext2D.blitScreenElement);
+                    WebGLEngine._lastFrameBuffer_WebGLOBJ = last_main_frame_buffer;
+                    WebGLEngine._lastFrameBuffer = last_main_frame;
+                    WebGLEngine.instance.getTextureContext().bindRenderTarget(last_main_frame);
+                });
+            }
+        }
+        setBlitScreenElement() {
+            let blitScreenElement = Laya.LayaGL.render2DRenderPassFactory.createRenderElement2D();
+            let shaderData = Laya.LayaGL.renderDeviceFactory.createShaderData();
+            let _vertices = new Float32Array([
+                1, 1, 1, 1,
+                1, -1, 1, 0,
+                -1, 1, 0, 1,
+                -1, -1, 0, 0
+            ]);
+            let _vertexBuffer = new WebGLVertexBuffer(Laya.BufferTargetType.ARRAY_BUFFER, Laya.BufferUsage.Dynamic);
+            _vertexBuffer.setDataLength(64);
+            _vertexBuffer.setData(_vertices.buffer, 0, 0, _vertices.buffer.byteLength);
+            let declaration = new Laya.VertexDeclaration(16, [new Laya.VertexElement(0, Laya.VertexElementFormat.Vector4, 0)]);
+            _vertexBuffer.vertexDeclaration = declaration;
+            let geometry = Laya.LayaGL.renderDeviceFactory.createRenderGeometryElement(Laya.MeshTopology.TriangleStrip, Laya.DrawType.DrawArray);
+            geometry.setDrawArrayParams(0, 4);
+            let bufferState = Laya.LayaGL.renderDeviceFactory.createBufferState();
+            bufferState.applyState([_vertexBuffer], null);
+            geometry.bufferState = bufferState;
+            let attributeMap = {
+                'a_PositionTexcoord': [0, Laya.ShaderDataType.Vector4]
+            };
+            let uniformMap = {
+                "u_MainTex": Laya.ShaderDataType.Texture2D,
+            };
+            let shader = Laya.Shader3D.add("GLESblitScreen", false, false);
+            shader.shaderType = Laya.ShaderFeatureType.D2;
+            let subShader = new Laya.SubShader(attributeMap, uniformMap, {});
+            shader.addSubShader(subShader);
+            let vs = `
+            #define SHADER_NAME GLESblitScreenVS
+
+            varying vec2 v_Texcoord0;
+
+            void main()
+            {
+                gl_Position = vec4(- 1.0 + (a_PositionTexcoord.x + 1.0), (1.0 - ((- 1.0 + (-a_PositionTexcoord.y + 1.0)) + 1.0) / 2.0) * 2.0 - 1.0, 0.0, 1.0);
+
+                v_Texcoord0 = a_PositionTexcoord.zw;
+            }
+        `;
+            let fs = `
+            #define SHADER_NAME GLESblitScreenFS
+
+            #include "Color.glsl";
+
+            varying vec2 v_Texcoord0;
+
+            void main()
+            {
+                vec4 mainColor = texture2D(u_MainTex, v_Texcoord0);
+               
+                gl_FragColor = mainColor;
+            }
+        `;
+            let pass = subShader.addShaderPass(vs, fs);
+            pass.statefirst = true;
+            let blitState = pass.renderState;
+            blitState.depthTest = Laya.RenderState.DEPTHTEST_ALWAYS;
+            blitState.depthWrite = false;
+            blitState.cull = Laya.RenderState.CULL_NONE;
+            blitState.blend = Laya.RenderState.BLEND_DISABLE;
+            blitState.stencilRef = 1;
+            blitState.stencilTest = Laya.RenderState.STENCILTEST_OFF;
+            blitState.stencilWrite = false;
+            blitState.stencilOp = new Laya.Vector3(Laya.RenderState.STENCILOP_KEEP, Laya.RenderState.STENCILOP_KEEP, Laya.RenderState.STENCILOP_REPLACE);
+            blitScreenElement.geometry = geometry;
+            blitScreenElement.materialShaderData = shaderData;
+            blitScreenElement.subShader = subShader;
+            blitScreenElement.renderStateIsBySprite = false;
+            WebglRenderContext2D.isCreateBlitScreenELement = true;
+            WebglRenderContext2D.blitScreenElement = blitScreenElement;
+        }
+        drawRenderElementList(list) {
+            for (var i = 0, n = list.length; i < n; i++) {
+                let element = list.elements[i];
+                element._prepare(this);
+            }
+            for (var i = 0, n = list.length; i < n; i++) {
+                let element = list.elements[i];
+                element._render(this);
+            }
+            return 0;
+        }
+        setOffscreenView(width, height) {
+            this._offscreenWidth = width;
+            this._offscreenHeight = height;
+        }
+        setRenderTarget(value, clear, clearColor) {
+            this._destRT = value;
+            clearColor.cloneTo(this._clearColor);
+            if (this._destRT) {
+                WebGLEngine.instance.getTextureContext().bindRenderTarget(this._destRT);
+                WebGLEngine.instance.viewport(0, 0, this._destRT._textures[0].width, this._destRT._textures[0].height);
+            }
+            else {
+                WebGLEngine.instance.getTextureContext().bindoutScreenTarget();
+                WebGLEngine.instance.viewport(0, 0, this._offscreenWidth, this._offscreenHeight);
+            }
+            WebGLEngine.instance.scissorTest(false);
+            WebGLEngine.instance.clearRenderTexture(clear ? Laya.RenderClearFlag.Color : Laya.RenderClearFlag.Nothing, this._clearColor);
+        }
+        drawRenderElementOne(node) {
+            node._prepare(this);
+            node._render(this);
+        }
+    }
+    WebglRenderContext2D.isCreateBlitScreenELement = false;
+
+    class WebGLRenderelement2D {
+        constructor() {
+            this.renderStateIsBySprite = true;
+            this._shaderInstances = new Laya.FastSinglelist();
+        }
+        _compileShader(context) {
+            var passes = this.subShader._passes;
+            this._shaderInstances.clear();
+            for (var j = 0, m = passes.length; j < m; j++) {
+                var pass = passes[j];
+                if (pass.pipelineMode !== context.pipelineMode)
+                    continue;
+                var comDef = WebGLRenderelement2D._compileDefine;
+                if (context.sceneData) {
+                    context.sceneData._defineDatas.cloneTo(comDef);
+                }
+                else {
+                    context._globalConfigShaderData.cloneTo(comDef);
+                }
+                let returnGamma = !(context._destRT) || ((context._destRT)._textures[0].gammaCorrection != 1);
+                if (returnGamma) {
+                    comDef.add(Laya.ShaderDefines2D.GAMMASPACE);
+                }
+                else {
+                    comDef.remove(Laya.ShaderDefines2D.GAMMASPACE);
+                }
+                if (context.invertY) {
+                    comDef.add(Laya.ShaderDefines2D.INVERTY);
+                }
+                else {
+                    comDef.remove(Laya.ShaderDefines2D.INVERTY);
+                }
+                if (this.value2DShaderData) {
+                    comDef.addDefineDatas(this.value2DShaderData.getDefineData());
+                }
+                if (this.materialShaderData)
+                    comDef.addDefineDatas(this.materialShaderData._defineDatas);
+                var shaderIns = pass.withCompile(comDef, true);
+                this._shaderInstances.add(shaderIns);
+            }
+        }
+        _prepare(context) {
+            this._compileShader(context);
+        }
+        _render(context) {
+            if (this._shaderInstances.length == 1) {
+                this.renderByShaderInstance(this._shaderInstances.elements[0], context);
+            }
+            else {
+                var passes = this._shaderInstances.elements;
+                for (var j = 0, m = this._shaderInstances.length; j < m; j++) {
+                    this.renderByShaderInstance(passes[j], context);
+                }
+            }
+        }
+        renderByShaderInstance(shader, context) {
+            if (!shader.complete)
+                return;
+            shader.bind();
+            this.value2DShaderData && shader.uploadUniforms(shader._sprite2DUniformParamsMap, this.value2DShaderData, true);
+            context.sceneData && shader.uploadUniforms(shader._sceneUniformParamsMap, context.sceneData, true);
+            this.materialShaderData && shader.uploadUniforms(shader._materialUniformParamsMap, this.materialShaderData, true);
+            if (this.renderStateIsBySprite || !this.materialShaderData) {
+                shader.uploadRenderStateBlendDepth(this.value2DShaderData);
+                shader.uploadRenderStateFrontFace(this.value2DShaderData, false, context.invertY);
+            }
+            else {
+                shader.uploadRenderStateBlendDepth(this.materialShaderData);
+                shader.uploadRenderStateFrontFace(this.materialShaderData, false, context.invertY);
+            }
+            WebGLEngine.instance.getDrawContext().drawGeometryElement(this.geometry);
+        }
+        destroy() {
+        }
+    }
+    WebGLRenderelement2D._compileDefine = new WebDefineDatas();
+
+    class WebGLRender2DProcess {
+        createRenderElement2D() {
+            return new WebGLRenderelement2D();
+        }
+        createRenderContext2D() {
+            return new WebglRenderContext2D();
+        }
+    }
+    Laya.Laya.addBeforeInitCallback(() => {
+        if (!Laya.LayaGL.render2DRenderPassFactory)
+            Laya.LayaGL.render2DRenderPassFactory = new WebGLRender2DProcess();
+    });
+
+    class WebGLBufferState {
+        constructor() {
+            this._glVertexState = WebGLEngine.instance.createVertexState();
+        }
+        applyVertexBuffers() {
+            this._glVertexState.applyVertexBuffer(this._vertexBuffers);
+        }
+        applyIndexBuffers() {
+            this._glVertexState.applyIndexBuffer(this._bindedIndexBuffer);
+        }
+        applyState(vertexBuffers, indexBuffer) {
+            this._vertexBuffers = vertexBuffers.slice();
+            this._bindedIndexBuffer = indexBuffer;
+            indexBuffer && indexBuffer._glBuffer.unbindBuffer();
+            this.bind();
+            this.applyVertexBuffers();
+            this.applyIndexBuffers();
+            this.unBind();
+            indexBuffer && indexBuffer._glBuffer.unbindBuffer();
+        }
+        bind() {
+            this._glVertexState.bindVertexArray();
+            WebGLBufferState._curBindedBufferState = this;
+        }
+        unBind() {
+            if (WebGLBufferState._curBindedBufferState == this) {
+                this._glVertexState.unbindVertexArray();
+                WebGLBufferState._curBindedBufferState = null;
+            }
+            else {
+                throw "BufferState: must call bind() function first.";
+            }
+        }
+        isBind() {
+            return (WebGLBufferState._curBindedBufferState == this);
+        }
+        destroy() {
+            if (WebGLBufferState._curBindedBufferState == this) {
+                this._glVertexState.unbindVertexArray();
+                WebGLBufferState._curBindedBufferState = null;
+            }
+            this._glVertexState.destroy();
+            this._vertexBuffers = null;
+            this._bindedIndexBuffer = null;
+        }
+    }
+
+    class WebGLCommandUniformMap extends Laya.CommandUniformMap {
+        constructor(stateName) {
+            super(stateName);
+            this._idata = {};
+            this._stateName = stateName;
+        }
+        hasPtrID(propertyID) {
+            return !!(this._idata[propertyID] != null);
+        }
+        addShaderUniform(propertyID, propertyKey, uniformtype, block = "") {
+            this._idata[propertyID] = { uniformtype: uniformtype, propertyName: propertyKey, arrayLength: 0, block: block, blockProperty: null };
+        }
+        addShaderUniformArray(propertyID, propertyName, uniformtype, arrayLength, block = "") {
+            if (uniformtype !== Laya.ShaderDataType.Matrix4x4 && uniformtype !== Laya.ShaderDataType.Vector4)
+                throw ('because of align rule, the engine does not support other types as arrays.');
+            this._idata[propertyID] = { uniformtype, propertyName, arrayLength, block, blockProperty: null };
+        }
+        addShaderBlockUniform(propertyID, blockname, blockProperty) {
+            this._idata[propertyID] = { propertyName: blockname, arrayLength: 0, blockProperty: blockProperty, uniformtype: Laya.ShaderDataType.None, block: "" };
+            blockProperty.forEach(element => {
+                this.addShaderUniform(element.id, element.propertyName, element.uniformtype, blockname);
+            });
+        }
+    }
+
+    class WebGLIndexBuffer {
+        constructor(targetType, bufferUsageType) {
+            this._glBuffer = this._glBuffer = WebGLEngine.instance.createBuffer(targetType, bufferUsageType);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_IndexBuffer, 1);
+        }
+        _changeMemory(bytelength) {
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.M_IndexBuffer, -this._glBuffer._byteLength + bytelength);
+        }
+        _setIndexDataLength(data) {
+            this._changeMemory(data);
+            var curBufSta = WebGLBufferState._curBindedBufferState;
+            if (curBufSta) {
+                curBufSta.unBind();
+                this._glBuffer.bindBuffer();
+                this._glBuffer.setDataLength(data);
+                curBufSta.bind();
+            }
+            else {
+                this._glBuffer.bindBuffer();
+                this._glBuffer.setDataLength(data);
+            }
+        }
+        _setIndexData(data, bufferOffset) {
+            var curBufSta = WebGLBufferState._curBindedBufferState;
+            if (curBufSta) {
+                curBufSta.unBind();
+                this._glBuffer.bindBuffer();
+                this._glBuffer.setData(data, bufferOffset);
+                curBufSta.bind();
+            }
+            else {
+                this._glBuffer.bindBuffer();
+                this._glBuffer.setData(data, bufferOffset);
+            }
+        }
+        destroy() {
+            this._glBuffer.destroy();
+            this._changeMemory(0);
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.RC_IndexBuffer, -1);
+        }
+    }
+
+    class WebGLRenderGeometryElement {
+        get indexFormat() {
+            return this._indexFormat;
+        }
+        set indexFormat(value) {
+            this._indexFormat = value;
+            this._glindexFormat = WebGLEngine.instance.getDrawContext().getIndexType(this._indexFormat);
+        }
+        get mode() {
+            return this._mode;
+        }
+        set mode(value) {
+            this._mode = value;
+            this._glmode = WebGLEngine.instance.getDrawContext().getMeshTopology(this._mode);
+        }
+        constructor(mode, drawType) {
+            this._id = ++WebGLRenderGeometryElement._idCounter;
+            this.mode = mode;
+            this.drawParams = new Laya.FastSinglelist();
+            this.drawType = drawType;
+        }
+        setDrawArrayParams(first, count) {
+            this.drawParams.add(first);
+            this.drawParams.add(count);
+        }
+        setDrawElemenParams(count, offset) {
+            this.drawParams.add(offset);
+            this.drawParams.add(count);
+        }
+        destroy() {
+            delete this.drawParams;
+        }
+        clearRenderParams() {
+            this.drawParams.length = 0;
+        }
+        cloneTo(obj) {
+            obj.mode = this.mode;
+            obj.drawType = this.drawType;
+            obj.indexFormat = this.indexFormat;
+            obj.instanceCount = this.instanceCount;
+            obj.drawParams.elements = this.drawParams.elements.slice();
+            obj.drawParams.length = this.drawParams.length;
+        }
+    }
+    WebGLRenderGeometryElement._idCounter = 0;
+
+    class WebGLShaderInstance {
+        constructor() {
+            this._customUniformParamsMap = [];
+            this._uploadMark = -1;
+            this._uploadRenderType = -1;
+        }
+        get complete() {
+            return this._renderShaderInstance._complete;
+        }
+        _create(shaderProcessInfo, shaderPass) {
+            let shaderObj = Laya.GLSLCodeGenerator.GLShaderLanguageProcess3D(shaderProcessInfo.defineString, shaderProcessInfo.attributeMap, shaderProcessInfo.uniformMap, shaderProcessInfo.vs, shaderProcessInfo.ps);
+            this._renderShaderInstance = WebGLEngine.instance.createShaderInstance(shaderObj.vs, shaderObj.fs, shaderProcessInfo.attributeMap);
+            if (this._renderShaderInstance._complete) {
+                this._shaderPass = shaderPass;
+                shaderProcessInfo.is2D ? this._create2D() : this._create3D();
+            }
+        }
+        _create3D() {
+            this._sceneUniformParamsMap = new Laya.CommandEncoder();
+            this._cameraUniformParamsMap = new Laya.CommandEncoder();
+            this._spriteUniformParamsMap = new Laya.CommandEncoder();
+            this._materialUniformParamsMap = new Laya.CommandEncoder();
+            const sceneParams = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap("Scene3D");
+            const cameraParams = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap("BaseCamera");
+            const customParams = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap("Custom");
+            let i, n;
+            let data = this._renderShaderInstance.getUniformMap();
+            for (i = 0, n = data.length; i < n; i++) {
+                let one = data[i];
+                if (sceneParams.hasPtrID(one.dataOffset)) {
+                    this._sceneUniformParamsMap.addShaderUniform(one);
+                }
+                else if (cameraParams.hasPtrID(one.dataOffset)) {
+                    this._cameraUniformParamsMap.addShaderUniform(one);
+                }
+                else if (this.hasSpritePtrID(one.dataOffset)) {
+                    this._spriteUniformParamsMap.addShaderUniform(one);
+                }
+                else if (customParams.hasPtrID(one.dataOffset)) {
+                    this._customUniformParamsMap || (this._customUniformParamsMap = []);
+                    this._customUniformParamsMap[one.dataOffset] = one;
+                }
+                else {
+                    this._materialUniformParamsMap.addShaderUniform(one);
+                }
+            }
+        }
+        _create2D() {
+            this._sprite2DUniformParamsMap = new Laya.CommandEncoder();
+            this._materialUniformParamsMap = new Laya.CommandEncoder();
+            this._sceneUniformParamsMap = new Laya.CommandEncoder();
+            const sprite2DParms = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap("Sprite2D");
+            const sceneParms = Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap("Sprite2DGlobal");
+            let i, n;
+            let data = this._renderShaderInstance.getUniformMap();
+            for (i = 0, n = data.length; i < n; i++) {
+                let one = data[i];
+                if (sprite2DParms.hasPtrID(one.dataOffset)) {
+                    this._sprite2DUniformParamsMap.addShaderUniform(one);
+                }
+                else if (sceneParms.hasPtrID(one.dataOffset)) {
+                    this._sceneUniformParamsMap.addShaderUniform(one);
+                }
+                else {
+                    this._materialUniformParamsMap.addShaderUniform(one);
+                }
+            }
+        }
+        hasSpritePtrID(dataOffset) {
+            let commap = this._shaderPass.nodeCommonMap;
+            if (!commap) {
+                return false;
+            }
+            else {
+                for (let i = 0, n = commap.length; i < n; i++) {
+                    if (Laya.LayaGL.renderDeviceFactory.createGlobalUniformMap(commap[i]).hasPtrID(dataOffset))
+                        return true;
+                }
+                return false;
+            }
+        }
+        _disposeResource() {
+            this._renderShaderInstance.destroy();
+            this._sceneUniformParamsMap = null;
+            this._cameraUniformParamsMap = null;
+            this._spriteUniformParamsMap = null;
+            this._materialUniformParamsMap = null;
+            this._customUniformParamsMap = null;
+            this._uploadMaterial = null;
+            this._uploadRender = null;
+            this._uploadCameraShaderValue = null;
+            this._uploadScene = null;
+        }
+        bind() {
+            return this._renderShaderInstance.bind();
+        }
+        uploadUniforms(shaderUniform, shaderDatas, uploadUnTexture) {
+            WebGLEngine.instance._addStatisticsInfo(Laya.GPUEngineStatisticsInfo.C_UniformBufferUploadCount, WebGLEngine.instance.uploadUniforms(this._renderShaderInstance, shaderUniform, shaderDatas, uploadUnTexture));
+        }
+        uploadRenderStateBlendDepth(shaderDatas) {
+            if (this._shaderPass.statefirst)
+                this.uploadRenderStateBlendDepthByShader(shaderDatas);
+            else
+                this.uploadRenderStateBlendDepthByMaterial(shaderDatas);
+        }
+        uploadRenderStateBlendDepthByShader(shaderDatas) {
+            var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7;
+            var datas = shaderDatas._data;
+            var renderState = this._shaderPass.renderState;
+            var depthWrite = (_b = ((_a = renderState.depthWrite) !== null && _a !== void 0 ? _a : datas[Laya.Shader3D.DEPTH_WRITE])) !== null && _b !== void 0 ? _b : Laya.RenderState.Default.depthWrite;
+            Laya.RenderStateContext.setDepthMask(depthWrite);
+            var depthTest = (_d = ((_c = renderState.depthTest) !== null && _c !== void 0 ? _c : datas[Laya.Shader3D.DEPTH_TEST])) !== null && _d !== void 0 ? _d : Laya.RenderState.Default.depthTest;
+            if (depthTest == Laya.RenderState.DEPTHTEST_OFF)
+                Laya.RenderStateContext.setDepthTest(false);
+            else {
+                Laya.RenderStateContext.setDepthTest(true);
+                Laya.RenderStateContext.setDepthFunc(depthTest);
+            }
+            var stencilWrite = (_f = ((_e = renderState.stencilWrite) !== null && _e !== void 0 ? _e : datas[Laya.Shader3D.STENCIL_WRITE])) !== null && _f !== void 0 ? _f : Laya.RenderState.Default.stencilWrite;
+            var stencilTest = (_h = ((_g = renderState.stencilTest) !== null && _g !== void 0 ? _g : datas[Laya.Shader3D.STENCIL_TEST])) !== null && _h !== void 0 ? _h : Laya.RenderState.Default.stencilTest;
+            Laya.RenderStateContext.setStencilMask(stencilWrite);
+            if (stencilWrite) {
+                var stencilOp = (_k = ((_j = renderState.stencilOp) !== null && _j !== void 0 ? _j : datas[Laya.Shader3D.STENCIL_Op])) !== null && _k !== void 0 ? _k : Laya.RenderState.Default.stencilOp;
+                Laya.RenderStateContext.setstencilOp(stencilOp.x, stencilOp.y, stencilOp.z);
+            }
+            if (stencilTest == Laya.RenderState.STENCILTEST_OFF) {
+                Laya.RenderStateContext.setStencilTest(false);
+            }
+            else {
+                var stencilRef = (_m = ((_l = renderState.stencilRef) !== null && _l !== void 0 ? _l : datas[Laya.Shader3D.STENCIL_Ref])) !== null && _m !== void 0 ? _m : Laya.RenderState.Default.stencilRef;
+                Laya.RenderStateContext.setStencilTest(true);
+                Laya.RenderStateContext.setStencilFunc(stencilTest, stencilRef);
+            }
+            var blend = (_p = ((_o = renderState.blend) !== null && _o !== void 0 ? _o : datas[Laya.Shader3D.BLEND])) !== null && _p !== void 0 ? _p : Laya.RenderState.Default.blend;
+            switch (blend) {
+                case Laya.RenderState.BLEND_DISABLE:
+                    Laya.RenderStateContext.setBlend(false);
+                    break;
+                case Laya.RenderState.BLEND_ENABLE_ALL:
+                    var blendEquation = (_r = ((_q = renderState.blendEquation) !== null && _q !== void 0 ? _q : datas[Laya.Shader3D.BLEND_EQUATION])) !== null && _r !== void 0 ? _r : Laya.RenderState.Default.blendEquation;
+                    var srcBlend = (_t = ((_s = renderState.srcBlend) !== null && _s !== void 0 ? _s : datas[Laya.Shader3D.BLEND_SRC])) !== null && _t !== void 0 ? _t : Laya.RenderState.Default.srcBlend;
+                    var dstBlend = (_v = ((_u = renderState.dstBlend) !== null && _u !== void 0 ? _u : datas[Laya.Shader3D.BLEND_DST])) !== null && _v !== void 0 ? _v : Laya.RenderState.Default.dstBlend;
+                    Laya.RenderStateContext.setBlend(true);
+                    Laya.RenderStateContext.setBlendEquation(blendEquation);
+                    Laya.RenderStateContext.setBlendFunc(srcBlend, dstBlend);
+                    break;
+                case Laya.RenderState.BLEND_ENABLE_SEPERATE:
+                    var blendEquationRGB = (_x = ((_w = renderState.blendEquationRGB) !== null && _w !== void 0 ? _w : datas[Laya.Shader3D.BLEND_EQUATION_RGB])) !== null && _x !== void 0 ? _x : Laya.RenderState.Default.blendEquationRGB;
+                    var blendEquationAlpha = (_z = ((_y = renderState.blendEquationAlpha) !== null && _y !== void 0 ? _y : datas[Laya.Shader3D.BLEND_EQUATION_ALPHA])) !== null && _z !== void 0 ? _z : Laya.RenderState.Default.blendEquationAlpha;
+                    var srcRGB = (_1 = ((_0 = renderState.srcBlendRGB) !== null && _0 !== void 0 ? _0 : datas[Laya.Shader3D.BLEND_SRC_RGB])) !== null && _1 !== void 0 ? _1 : Laya.RenderState.Default.srcBlendRGB;
+                    var dstRGB = (_3 = ((_2 = renderState.dstBlendRGB) !== null && _2 !== void 0 ? _2 : datas[Laya.Shader3D.BLEND_DST_RGB])) !== null && _3 !== void 0 ? _3 : Laya.RenderState.Default.dstBlendRGB;
+                    var srcAlpha = (_5 = ((_4 = renderState.srcBlendAlpha) !== null && _4 !== void 0 ? _4 : datas[Laya.Shader3D.BLEND_SRC_ALPHA])) !== null && _5 !== void 0 ? _5 : Laya.RenderState.Default.srcBlendAlpha;
+                    var dstAlpha = (_7 = ((_6 = renderState.dstBlendAlpha) !== null && _6 !== void 0 ? _6 : datas[Laya.Shader3D.BLEND_DST_ALPHA])) !== null && _7 !== void 0 ? _7 : Laya.RenderState.Default.dstBlendAlpha;
+                    Laya.RenderStateContext.setBlend(true);
+                    Laya.RenderStateContext.setBlendEquationSeparate(blendEquationRGB, blendEquationAlpha);
+                    Laya.RenderStateContext.setBlendFuncSeperate(srcRGB, dstRGB, srcAlpha, dstAlpha);
+                    break;
+            }
+        }
+        uploadRenderStateBlendDepthByMaterial(shaderDatas) {
+            var datas = shaderDatas.getData();
+            var depthWrite = datas[Laya.Shader3D.DEPTH_WRITE];
+            depthWrite = depthWrite !== null && depthWrite !== void 0 ? depthWrite : Laya.RenderState.Default.depthWrite;
+            Laya.RenderStateContext.setDepthMask(depthWrite);
+            var depthTest = datas[Laya.Shader3D.DEPTH_TEST];
+            depthTest = depthTest !== null && depthTest !== void 0 ? depthTest : Laya.RenderState.Default.depthTest;
+            if (depthTest === Laya.RenderState.DEPTHTEST_OFF) {
+                Laya.RenderStateContext.setDepthTest(false);
+            }
+            else {
+                Laya.RenderStateContext.setDepthTest(true);
+                Laya.RenderStateContext.setDepthFunc(depthTest);
+            }
+            var stencilWrite = datas[Laya.Shader3D.STENCIL_WRITE];
+            stencilWrite = stencilWrite !== null && stencilWrite !== void 0 ? stencilWrite : Laya.RenderState.Default.stencilWrite;
+            Laya.RenderStateContext.setStencilMask(stencilWrite);
+            if (stencilWrite) {
+                var stencilOp = datas[Laya.Shader3D.STENCIL_Op];
+                stencilOp = stencilOp !== null && stencilOp !== void 0 ? stencilOp : Laya.RenderState.Default.stencilOp;
+                Laya.RenderStateContext.setstencilOp(stencilOp.x, stencilOp.y, stencilOp.z);
+            }
+            var stencilTest = datas[Laya.Shader3D.STENCIL_TEST];
+            stencilTest = stencilTest !== null && stencilTest !== void 0 ? stencilTest : Laya.RenderState.Default.stencilTest;
+            if (stencilTest == Laya.RenderState.STENCILTEST_OFF) {
+                Laya.RenderStateContext.setStencilTest(false);
+            }
+            else {
+                var stencilRef = datas[Laya.Shader3D.STENCIL_Ref];
+                stencilRef = stencilRef !== null && stencilRef !== void 0 ? stencilRef : Laya.RenderState.Default.stencilRef;
+                Laya.RenderStateContext.setStencilTest(true);
+                Laya.RenderStateContext.setStencilFunc(stencilTest, stencilRef);
+            }
+            var blend = datas[Laya.Shader3D.BLEND];
+            blend = blend !== null && blend !== void 0 ? blend : Laya.RenderState.Default.blend;
+            switch (blend) {
+                case Laya.RenderState.BLEND_ENABLE_ALL:
+                    var blendEquation = datas[Laya.Shader3D.BLEND_EQUATION];
+                    blendEquation = blendEquation !== null && blendEquation !== void 0 ? blendEquation : Laya.RenderState.Default.blendEquation;
+                    var srcBlend = datas[Laya.Shader3D.BLEND_SRC];
+                    srcBlend = srcBlend !== null && srcBlend !== void 0 ? srcBlend : Laya.RenderState.Default.srcBlend;
+                    var dstBlend = datas[Laya.Shader3D.BLEND_DST];
+                    dstBlend = dstBlend !== null && dstBlend !== void 0 ? dstBlend : Laya.RenderState.Default.dstBlend;
+                    Laya.RenderStateContext.setBlend(true);
+                    Laya.RenderStateContext.setBlendEquation(blendEquation);
+                    Laya.RenderStateContext.setBlendFunc(srcBlend, dstBlend);
+                    break;
+                case Laya.RenderState.BLEND_ENABLE_SEPERATE:
+                    var blendEquationRGB = datas[Laya.Shader3D.BLEND_EQUATION_RGB];
+                    blendEquationRGB = blendEquationRGB !== null && blendEquationRGB !== void 0 ? blendEquationRGB : Laya.RenderState.Default.blendEquationRGB;
+                    var blendEquationAlpha = datas[Laya.Shader3D.BLEND_EQUATION_ALPHA];
+                    blendEquationAlpha = blendEquationAlpha !== null && blendEquationAlpha !== void 0 ? blendEquationAlpha : Laya.RenderState.Default.blendEquationAlpha;
+                    var srcRGB = datas[Laya.Shader3D.BLEND_SRC_RGB];
+                    srcRGB = srcRGB !== null && srcRGB !== void 0 ? srcRGB : Laya.RenderState.Default.srcBlendRGB;
+                    var dstRGB = datas[Laya.Shader3D.BLEND_DST_RGB];
+                    dstRGB = dstRGB !== null && dstRGB !== void 0 ? dstRGB : Laya.RenderState.Default.dstBlendRGB;
+                    var srcAlpha = datas[Laya.Shader3D.BLEND_SRC_ALPHA];
+                    srcAlpha = srcAlpha !== null && srcAlpha !== void 0 ? srcAlpha : Laya.RenderState.Default.srcBlendAlpha;
+                    var dstAlpha = datas[Laya.Shader3D.BLEND_DST_ALPHA];
+                    dstAlpha = dstAlpha !== null && dstAlpha !== void 0 ? dstAlpha : Laya.RenderState.Default.dstBlendAlpha;
+                    Laya.RenderStateContext.setBlend(true);
+                    Laya.RenderStateContext.setBlendEquationSeparate(blendEquationRGB, blendEquationAlpha);
+                    Laya.RenderStateContext.setBlendFuncSeperate(srcRGB, dstRGB, srcAlpha, dstAlpha);
+                    break;
+                case Laya.RenderState.BLEND_DISABLE:
+                default:
+                    Laya.RenderStateContext.setBlend(false);
+                    break;
+            }
+        }
+        uploadRenderStateFrontFace(shaderDatas, isTarget, invertFront) {
+            var _a;
+            var renderState = this._shaderPass.renderState;
+            var datas = shaderDatas.getData();
+            var cull = datas[Laya.Shader3D.CULL];
+            if (this._shaderPass.statefirst) {
+                cull = (_a = renderState.cull) !== null && _a !== void 0 ? _a : cull;
+            }
+            cull = cull !== null && cull !== void 0 ? cull : Laya.RenderState.Default.cull;
+            var forntFace;
+            switch (cull) {
+                case Laya.RenderState.CULL_NONE:
+                    Laya.RenderStateContext.setCullFace(false);
+                    if (isTarget != invertFront)
+                        forntFace = Laya.CullMode.Front;
+                    else
+                        forntFace = Laya.CullMode.Back;
+                    Laya.RenderStateContext.setFrontFace(forntFace);
+                    break;
+                case Laya.RenderState.CULL_FRONT:
+                    Laya.RenderStateContext.setCullFace(true);
+                    if (isTarget == invertFront)
+                        forntFace = Laya.CullMode.Front;
+                    else
+                        forntFace = Laya.CullMode.Back;
+                    Laya.RenderStateContext.setFrontFace(forntFace);
+                    break;
+                case Laya.RenderState.CULL_BACK:
+                default:
+                    Laya.RenderStateContext.setCullFace(true);
+                    if (isTarget != invertFront)
+                        forntFace = Laya.CullMode.Front;
+                    else
+                        forntFace = Laya.CullMode.Back;
+                    Laya.RenderStateContext.setFrontFace(forntFace);
+                    break;
+            }
+        }
+        uploadCustomUniform(index, data) {
+            WebGLEngine.instance.uploadCustomUniforms(this._renderShaderInstance, this._customUniformParamsMap, index, data);
+        }
+    }
+
+    class WebGLRenderDeviceFactory {
+        constructor() {
+            this.globalBlockMap = {};
+        }
+        createShaderData(ownerResource) {
+            return new WebGLShaderData(ownerResource);
+        }
+        createShaderInstance(shaderProcessInfo, shaderPass) {
+            let shaderIns = new WebGLShaderInstance();
+            shaderIns._create(shaderProcessInfo, shaderPass);
+            return shaderIns;
+        }
+        createIndexBuffer(bufferUsageType) {
+            return new WebGLIndexBuffer(Laya.BufferTargetType.ELEMENT_ARRAY_BUFFER, bufferUsageType);
+        }
+        createVertexBuffer(bufferUsageType) {
+            return new WebGLVertexBuffer(Laya.BufferTargetType.ARRAY_BUFFER, bufferUsageType);
+        }
+        createBufferState() {
+            return new WebGLBufferState();
+        }
+        createRenderGeometryElement(mode, drawType) {
+            return new WebGLRenderGeometryElement(mode, drawType);
+        }
+        createGlobalUniformMap(blockName) {
+            let comMap = this.globalBlockMap[blockName];
+            if (!comMap)
+                comMap = this.globalBlockMap[blockName] = new WebGLCommandUniformMap(blockName);
+            return comMap;
+        }
+        createEngine(config, canvas) {
+            let engine;
+            let glConfig = { stencil: Laya.Config.isStencil, alpha: Laya.Config.isAlpha, antialias: Laya.Config.isAntialias, premultipliedAlpha: Laya.Config.premultipliedAlpha, preserveDrawingBuffer: Laya.Config.preserveDrawingBuffer, depth: Laya.Config.isDepth, failIfMajorPerformanceCaveat: Laya.Config.isfailIfMajorPerformanceCaveat, powerPreference: Laya.Config.powerPreference };
+            const webglMode = Laya.Config.useWebGL2 ? exports.WebGLMode.Auto : exports.WebGLMode.WebGL1;
+            engine = new WebGLEngine(glConfig, webglMode);
+            engine.initRenderEngine(canvas._source);
+            var gl = engine._context;
+            if (Laya.Config.printWebglOrder)
+                this._replaceWebglcall(gl);
+            if (gl) {
+                new Laya.LayaGL();
+            }
+            Laya.LayaGL.renderEngine = engine;
+            Laya.LayaGL.textureContext = engine.getTextureContext();
+            return Promise.resolve();
+        }
+        _replaceWebglcall(gl) {
+            var tempgl = {};
+            for (const key in gl) {
+                if (typeof gl[key] == "function" && key != "getError" && key != "__SPECTOR_Origin_getError" && key != "__proto__") {
+                    tempgl[key] = gl[key];
+                    gl[key] = function () {
+                        let arr = [];
+                        for (let i = 0; i < arguments.length; i++) {
+                            arr.push(arguments[i]);
+                        }
+                        let result = tempgl[key].apply(gl, arr);
+                        let err = gl.getError();
+                        if (err) {
+                            debugger;
+                        }
+                        return result;
+                    };
+                }
+            }
+        }
+    }
+    Laya.Laya.addBeforeInitCallback(() => {
+        if (!Laya.LayaGL.renderDeviceFactory)
+            Laya.LayaGL.renderDeviceFactory = new WebGLRenderDeviceFactory();
+    });
+
+    class WebGLRenderEngineFactory {
+        constructor() {
+            this.globalBlockMap = {};
+        }
+        createUniformBufferObject(glPointer, name, bufferUsage, byteLength, isSingle) {
+            return new Laya.UniformBufferObject(glPointer, name, bufferUsage, byteLength, isSingle);
+        }
+        createEngine(config, canvas) {
+            let engine;
+            let glConfig = { stencil: Laya.Config.isStencil, alpha: Laya.Config.isAlpha, antialias: Laya.Config.isAntialias, premultipliedAlpha: Laya.Config.premultipliedAlpha, preserveDrawingBuffer: Laya.Config.preserveDrawingBuffer, depth: Laya.Config.isDepth, failIfMajorPerformanceCaveat: Laya.Config.isfailIfMajorPerformanceCaveat, powerPreference: Laya.Config.powerPreference };
+            const webglMode = Laya.Config.useWebGL2 ? exports.WebGLMode.Auto : exports.WebGLMode.WebGL1;
+            engine = new WebGLEngine(glConfig, webglMode);
+            engine.initRenderEngine(canvas._source);
+            var gl = engine._context;
+            if (Laya.Config.printWebglOrder)
+                this._replaceWebglcall(gl);
+            if (gl) {
+                new Laya.LayaGL();
+            }
+            Laya.LayaGL.renderEngine = engine;
+            Laya.LayaGL.textureContext = engine.getTextureContext();
+            return Promise.resolve();
+        }
+        _replaceWebglcall(gl) {
+            var tempgl = {};
+            for (const key in gl) {
+                if (typeof gl[key] == "function" && key != "getError" && key != "__SPECTOR_Origin_getError" && key != "__proto__") {
+                    tempgl[key] = gl[key];
+                    gl[key] = function () {
+                        let arr = [];
+                        for (let i = 0; i < arguments.length; i++) {
+                            arr.push(arguments[i]);
+                        }
+                        let result = tempgl[key].apply(gl, arr);
+                        let err = gl.getError();
+                        if (err) {
+                            debugger;
+                        }
+                        return result;
+                    };
+                }
+            }
+        }
+    }
+    Laya.Laya.addBeforeInitCallback(() => {
+        if (!Laya.LayaGL.renderOBJCreate)
+            Laya.LayaGL.renderOBJCreate = new WebGLRenderEngineFactory();
+    });
+
+    class WebGLConfig {
+    }
+
+    exports.GL2TextureContext = GL2TextureContext;
+    exports.GLBuffer = GLBuffer;
+    exports.GLObject = GLObject;
+    exports.GLParams = GLParams;
+    exports.GLRenderDrawContext = GLRenderDrawContext;
+    exports.GLRenderState = GLRenderState;
+    exports.GLShaderInstance = GLShaderInstance;
+    exports.GLTextureContext = GLTextureContext;
+    exports.GLVertexState = GLVertexState;
+    exports.GlCapable = GlCapable;
+    exports.VertexArrayObject = VertexArrayObject;
+    exports.WebDefineDatas = WebDefineDatas;
+    exports.WebGLBufferState = WebGLBufferState;
+    exports.WebGLCommandUniformMap = WebGLCommandUniformMap;
+    exports.WebGLConfig = WebGLConfig;
+    exports.WebGLEngine = WebGLEngine;
+    exports.WebGLIndexBuffer = WebGLIndexBuffer;
+    exports.WebGLInternalRT = WebGLInternalRT;
+    exports.WebGLInternalTex = WebGLInternalTex;
+    exports.WebGLRender2DProcess = WebGLRender2DProcess;
+    exports.WebGLRenderDeviceFactory = WebGLRenderDeviceFactory;
+    exports.WebGLRenderEngineFactory = WebGLRenderEngineFactory;
+    exports.WebGLRenderGeometryElement = WebGLRenderGeometryElement;
+    exports.WebGLRenderelement2D = WebGLRenderelement2D;
+    exports.WebGLShaderData = WebGLShaderData;
+    exports.WebGLShaderInstance = WebGLShaderInstance;
+    exports.WebGLVertexBuffer = WebGLVertexBuffer;
+    exports.WebShaderPass = WebShaderPass;
+    exports.WebSubShader = WebSubShader;
+    exports.WebUnitRenderModuleDataFactory = WebUnitRenderModuleDataFactory;
+    exports.WebglRenderContext2D = WebglRenderContext2D;
+
+})(window.Laya = window.Laya || {}, Laya);
+//# sourceMappingURL=laya.webgl_2D.js.map

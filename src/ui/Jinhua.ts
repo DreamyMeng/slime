@@ -48,13 +48,13 @@ export class Jinhua extends Laya.Script {
         }
     }
 
-    static ad_load(): void {
-        this.instance.ad.active = true;
+    ad_load(): void {
+        this.ad.active = true;
     }
 
-    static ad_success(): void {
-        this.instance.isAd = true;
-        this.instance.show(false);
+    ad_success(): void {
+        this.isAd = true;
+        this.show(false);
     }
 
     isAd: boolean = false;
@@ -209,7 +209,7 @@ export class Jinhua extends Laya.Script {
             });
 
             if (this.isAd) num += Jinhua.ad_rate;
-            if (roleData.qualityType === 'none' || roleData.qualityType === quality_type) map.set(roleData.id, Math.min(num, 1));
+            if (roleData.qualityType === quality_type) map.set(roleData.id, Math.min(num, 1));
             if (Save.data.game.roles[roleData.id]) map2.set(roleData.id, Math.min(num + 0.05, 1));
         });
 

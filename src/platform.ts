@@ -43,27 +43,25 @@ export function login() {
 window["onTapTapLogin"] = function (flag: boolean) {
     console.log('onTapTapLogin', flag);
     Login.isLogin = flag;
-    if (Login.instance) {
-        Login.instance.showLogin(flag);
-    }
+    Login.instance?.showLogin(flag);
 }
 
 window["onAdLoaded"] = function (state: number) {
     if (state == 1) {
-        Main.instance.fuhuo_load();
+        Main.instance?.fuhuo_load();
     }
     else if (state == 2) {
-        Jinhua.ad_load();
+        Jinhua.instance?.ad_load();
     }
 }
 
 window["onAdRewarded"] = function (state: number) {
     // MessageBox.show("恭喜获得奖励!");
     if (state == 1) {
-        Main.instance.fuhuo_success();
+        Main.instance?.fuhuo_success();
     }
     else if (state == 2) {
-        Jinhua.ad_success();
+        Jinhua.instance?.ad_success();
     }
 }
 

@@ -110,10 +110,13 @@ export function numberToChinese(num: number): string {
 
 export function getMaxKey(data: { [key: string]: number }): string | null {
     // 获取所有键值对，并找到值最大的键
-    let maxKey: string | null = null;
-    let maxValue: number = -Infinity;
+    if (data.ling === data.xian && data.ling === data.shen) return "none";
+
+    let maxKey: string = "none";
+    let maxValue: number = 0;
 
     for (const key in data) {
+        if (key === "none") continue;
         if (data[key] > maxValue) {
             maxValue = data[key];
             maxKey = key;

@@ -342,7 +342,7 @@
                 "_$tmpl": "itemRender"
               },
               "repeatX": 3,
-              "repeatY": 1,
+              "repeatY": 2,
               "elasticEnabled": true,
               "spaceX": 3,
               "spaceY": 5,
@@ -385,7 +385,7 @@
                 "_$tmpl": "itemRender"
               },
               "repeatX": 3,
-              "repeatY": 10,
+              "repeatY": 6,
               "elasticEnabled": true,
               "spaceX": 3,
               "spaceY": 5,

@@ -13,7 +13,10 @@ export interface RoleLevel {
  * @returns RoleLevel object with calculated attributes
  */
 export function getRoleLevelAttributes(id: number): RoleLevel {
-    if (id < 1) throw new Error("Level ID must be at least 1");
+    if (id < 1) {
+        console.error("Level ID must be at least 1");
+        id = 1;
+    }
 
     let need: number;
     let exp: number;

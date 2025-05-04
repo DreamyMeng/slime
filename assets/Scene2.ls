@@ -325,7 +325,7 @@
                 "_$tmpl": "itemRender"
               },
               "repeatX": 3,
-              "repeatY": 1,
+              "repeatY": 2,
               "elasticEnabled": true,
               "spaceX": 3,
               "spaceY": 5,
@@ -368,7 +368,7 @@
                 "_$tmpl": "itemRender"
               },
               "repeatX": 3,
-              "repeatY": 10,
+              "repeatY": 6,
               "elasticEnabled": true,
               "spaceX": 3,
               "spaceY": 5,
@@ -2170,6 +2170,7 @@
         },
         {
           "_$id": "ptry2h0x",
+          "_$index": 8,
           "_$type": "Image",
           "name": "Des",
           "x": 360,
@@ -2248,6 +2249,32 @@
                   "padding": "0,0,0,0"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "_$id": "u7n9emhi",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "name": "back",
+          "active": true,
+          "x": 470,
+          "y": 740,
+          "height": 60,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "color": "#ffffff"
+            },
+            {
+              "_$override": "au8mtcie",
+              "text": "不要",
+              "color": "rgba(0, 0, 0, 1)"
+            },
+            {
+              "_$override": "qnb9iybi",
+              "visible": true,
+              "text": ""
             }
           ]
         }

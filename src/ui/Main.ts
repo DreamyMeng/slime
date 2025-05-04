@@ -300,6 +300,12 @@ export class Main extends MainBase {
             // 处理平局逻辑
             console.log('the battle is a draw!');
             MessageBox.tip("大战100回合，精疲力尽了！");
+            // Save.data.setting.auto = false;
+            // this.update_auto();
+            if (Save.data.setting.auto) {
+                this.auto_fight();
+                return;
+            }
         }
         else {
             // 处理胜利失败逻辑

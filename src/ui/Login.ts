@@ -63,6 +63,9 @@ export class Login extends Laya.Script {
         this.Delete.onClick = () => {
             MessageBox.show("是否删除存档？", () => {
                 Save.data = Save.newGame();
+                Save.data.player.forget = 0;
+                Save.data.player.revive = 3;
+                Save.data.player.mimicry = 1;
                 Save.saveGame();
             });
         }

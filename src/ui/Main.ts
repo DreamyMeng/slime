@@ -40,6 +40,7 @@ export class Main extends MainBase {
 
         this.btn_login.onClick = () => {
             Laya.Scene.open("Login.ls");
+            OfflineManager.saveLeaveTime();
         }
 
         this.btn_jineng.onClick = () => {
@@ -167,25 +168,41 @@ export class Main extends MainBase {
         //     });
         // }
 
+        this.checkOfflineTime();
+
         OfflineManager.saveLeaveTime();
-        document.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-                this.hasCalculatedOffline = false;
-                OfflineManager.saveLeaveTime();
-            } else if (document.visibilityState === "visible") {
-                if (this.hasCalculatedOffline) return;
-                this.hasCalculatedOffline = true;
-                const offlineTime = OfflineManager.checkOfflineTime();
-                let time = Math.min(60 * 60, offlineTime);
-                let levelData = getRoleLevelAttributes(Save.data.player.level);
-                let exp = Math.floor(time / 10 * levelData.exp);
-                Main.addExp(exp);
-                MessageBox.show(`你离线了 * 秒（最多一小时），获得了 ^ 经验！`.toStr().replace("*", time.toString()).replace("^", exp.toString()), null, null, false);
-                this.update_player();
-                Save.saveGame();
-            }
-        });
+
+        if (!Main.visibilityListenerAdded) {
+            Main.visibilityListenerAdded = true;
+
+            document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === "hidden") {
+                    this.hasCalculatedOffline = false;
+                    OfflineManager.saveLeaveTime();
+                } else if (document.visibilityState === "visible") {
+                    if (this.hasCalculatedOffline) return;
+                    this.hasCalculatedOffline = true;
+
+                    this.checkOfflineTime();
+                }
+            });
+        }
     }
+
+    checkOfflineTime() {
+        if (Main.instance.constructor.name !== 'Main') return;
+        const offlineTime = OfflineManager.checkOfflineTime();
+        if (offlineTime < 1) return;
+        let time = Math.min(60 * 60, offlineTime);
+        let levelData = getRoleLevelAttributes(Save.data.player.level);
+        let exp = Math.floor(time / 10 * levelData.exp);
+        Main.addExp(exp);
+        MessageBox.show(`你离线了 * 秒（最多一小时），获得了 ^ 经验！`.toStr().replace("*", time.toString()).replace("^", exp.toString()), null, null, false);
+        this.update_player();
+        Save.saveGame();
+    }
+
+    static visibilityListenerAdded = false;
     hasCalculatedOffline: boolean;
     update_auto(): void {
         this.btn_zidong.title.text = (Save.data.setting.auto ? "停止" : "自动战斗").toStr();

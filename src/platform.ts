@@ -17,6 +17,10 @@ declare global {
     }
 }
 
+export function receiveData(data: string) {
+    window.Android.receiveData(data);
+}
+
 export function loadOldData() {
     window.Android.loadOldData();
     // window.changeData(null) // test

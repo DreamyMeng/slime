@@ -39,6 +39,9 @@
           "Delete": {
             "_$ref": "i5r139y1"
           },
+          "Restore": {
+            "_$ref": "wvipxycd"
+          },
           "settings": {
             "_$ref": "oei8erhu"
           },
@@ -205,7 +208,7 @@
           "_$type": "VBox",
           "name": "Login",
           "x": 360,
-          "y": 780,
+          "y": 760,
           "width": 720,
           "height": 100,
           "anchorX": 0.5,
@@ -213,7 +216,7 @@
           "visible": false,
           "left": 0,
           "right": 0,
-          "centerY": 140,
+          "centerY": 120,
           "space": 20,
           "align": "center",
           "_$child": [
@@ -333,6 +336,49 @@
                   "visible": true,
                   "width": 300,
                   "text": "处理存档不兼容问题，慎用",
+                  "color": "rgba(255, 255, 255, 1)",
+                  "y": 74
+                }
+              ]
+            },
+            {
+              "_$id": "wvipxycd",
+              "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+              "_$var": true,
+              "name": "Restore",
+              "active": true,
+              "x": 210,
+              "y": 300,
+              "width": 300,
+              "height": 80,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3mo5miu3",
+                  "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
+                  "width": 255.6336832434451,
+                  "height": 64,
+                  "x": 150,
+                  "y": 40,
+                  "sizeGrid": null,
+                  "color": "#ffffff"
+                },
+                {
+                  "_$override": "au8mtcie",
+                  "left": 0,
+                  "right": 0,
+                  "bottom": -3,
+                  "top": 3,
+                  "fontSize": 44,
+                  "color": "rgba(0, 0, 0, 1)",
+                  "text": "另存存档",
+                  "y": 3
+                },
+                {
+                  "_$override": "qnb9iybi",
+                  "visible": true,
+                  "width": 300,
+                  "text": "",
                   "color": "rgba(255, 255, 255, 1)",
                   "y": 74
                 }

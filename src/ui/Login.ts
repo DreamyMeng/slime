@@ -4,7 +4,7 @@ import { Language } from "../core/i18n";
 import { Save } from "../core/save";
 import { EndlessScene } from "../mod/endless/EndlessScene";
 import { loadGame, newData } from "../mod/endless/save";
-import { isAndroid, login } from "../platform";
+import { isAndroid, login, receiveData } from "../platform";
 import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
 import { PopUp } from "./PopUp";
@@ -18,6 +18,8 @@ export class Login extends Laya.Script {
     Scene2: MyButton;
     @property({ type: Laya.Sprite })
     Delete: MyButton;
+    @property({ type: Laya.Sprite })
+    Restore: MyButton;
     @property({ type: Laya.Sprite })
     settings: MyButton;
     @property({ type: Laya.ComboBox })
@@ -65,6 +67,12 @@ export class Login extends Laya.Script {
                 Save.data = Save.newGame();
                 Save.saveGame();
             });
+        }
+
+        this.Restore.onClick = () => {
+            if (!isAndroid()) return;
+            const jsonData = Laya.LocalStorage.getItem(Save.SAVE_KEY);
+            receiveData(jsonData);
         }
 
         this.Scene1.onClick = () => {

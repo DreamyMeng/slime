@@ -403,6 +403,7 @@
               "fontSize": 50,
               "color": "#FFFFFF",
               "valign": "middle",
+              "overflow": "shrink",
               "padding": "0,0,0,0",
               "_$comp": [
                 {
@@ -422,6 +423,7 @@
               "fontSize": 50,
               "color": "#FFFFFF",
               "valign": "middle",
+              "overflow": "shrink",
               "padding": "0,0,0,0",
               "_$comp": [
                 {
@@ -441,6 +443,7 @@
               "fontSize": 50,
               "color": "#FFFFFF",
               "valign": "middle",
+              "overflow": "shrink",
               "padding": "0,0,0,0",
               "_$comp": [
                 {
@@ -460,6 +463,7 @@
               "fontSize": 50,
               "color": "#FFFFFF",
               "valign": "middle",
+              "overflow": "shrink",
               "padding": "0,0,0,0",
               "_$comp": [
                 {
@@ -526,7 +530,7 @@
           "_mouseState": 2,
           "skin": "res://41488331-0ed3-4c38-959b-6ecc4fdac7e6",
           "label": "手机",
-          "labelSize": 40,
+          "labelSize": 28,
           "labelColors": "#ffffff,#f5131b,#32cc6b",
           "labelAlign": "center",
           "labelVAlign": "middle"
@@ -542,7 +546,7 @@
           "_mouseState": 2,
           "skin": "res://41488331-0ed3-4c38-959b-6ecc4fdac7e6",
           "label": "游戏",
-          "labelSize": 40,
+          "labelSize": 28,
           "labelColors": "#ffffff,#f5131b,#32cc6b",
           "labelAlign": "center",
           "labelVAlign": "middle"

@@ -61,11 +61,8 @@ export class Login extends Laya.Script {
         // }, null, false);
 
         this.Delete.onClick = () => {
-            MessageBox.show("是否删除存档？", () => {
+            MessageBox.show("是否删除存档？".toStr(), () => {
                 Save.data = Save.newGame();
-                Save.data.player.forget = 0;
-                Save.data.player.revive = 3;
-                Save.data.player.mimicry = 1;
                 Save.saveGame();
             });
         }
@@ -141,7 +138,7 @@ export class Login extends Laya.Script {
         this.Scene2.onClick = () => {
             let data = loadGame('endless');
             if (data) {
-                let box = MessageBox.show("发现存档，是否继续游戏进度？", () => {
+                let box = MessageBox.show("发现存档，是否继续游戏进度？".toStr(), () => {
                     func(newData());
                 }, () => {
                     func(data);
@@ -153,6 +150,8 @@ export class Login extends Laya.Script {
             }
         }
 
+        this.sys_tog.label = "手机".toStr();
+        this.sel_tog.label = "游戏".toStr();
     }
 
     // update_sound(): void {

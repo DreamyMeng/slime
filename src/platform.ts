@@ -28,7 +28,7 @@ export function loaded() {
 
 export function isAndroid() {
     return typeof window.Android !== 'undefined';
-    // return true; // test
+    // return false; // test
 }
 
 export function playAd(state: number) {

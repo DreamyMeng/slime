@@ -93,11 +93,6 @@ export class Save {
         });
 
         if (this.data?.game.rebirth >= 3) data.skills.push("jiexi");
-        if (this.data?.player) {
-            data.forget = this.data.player.forget;
-            data.revive = this.data.player.revive;
-            data.mimicry = this.data.player.mimicry;
-        }
         return data;
     }
 

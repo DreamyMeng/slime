@@ -27,15 +27,15 @@ export class BaseRole extends EventDispatcher {
             console.log(this.camp, ' health remain:', cur, per);
             view.hpBar?.setValue(per);
             if (this.isBoss) Main.instance.battle.bossHp?.setValue(per);
-            GameLog.log(`${Main.getRoleName(this.view.data)} 当前生命值:${getValueStr(cur)}`);
+            GameLog.log(`${Main.getRoleName(this.view.data)} ` + '当前生命值:'.toStr() + getValueStr(cur));
         });
         this.attack = new Attribute((cur, max) => {
             // console.log(this.camp, ' attack change:', cur - max, ' remian:', cur);
-            GameLog.log(`${Main.getRoleName(this.view.data)} 当前攻击力:${getValueStr(cur)}`);
+            GameLog.log(`${Main.getRoleName(this.view.data)} ` + '当前攻击力:'.toStr() + getValueStr(cur));
         });
         this.defence = new Attribute((cur, max) => {
             // console.log(this.camp, ' defence change:', cur - max, ' remian:', cur);
-            GameLog.log(`${Main.getRoleName(this.view.data)} 当前防御力:${getValueStr(cur)}`);
+            GameLog.log(`${Main.getRoleName(this.view.data)} ` + '当前防御力:'.toStr() + getValueStr(cur));
         });
     }
 
@@ -165,7 +165,7 @@ export class BaseRole extends EventDispatcher {
 
     takeDamage(owner: BaseRole, target: BaseRole, damage: number): void {
         if (damage === 0) return;
-       
+
         if (damage > 0) {
             DamagePool.showHeal(damage, this.view);
             let str;

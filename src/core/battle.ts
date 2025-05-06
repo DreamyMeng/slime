@@ -91,7 +91,7 @@ export class Battle {
     async round(role: BaseRole): Promise<void> {
         if (role.camp === 'player') {
             this.round_count++;
-            utils.GameLog.log(`第${this.round_count}回合`);
+            utils.GameLog.log(`第*回合`.toStr().replace('*', this.round_count.toString()));
             if (this.round_count > 100) {
                 this.round_count = 0;
                 this.draw = true;

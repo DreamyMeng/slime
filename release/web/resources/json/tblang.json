@@ -5326,5 +5326,239 @@
     "JP": "+5% 回数:",
     "KR": "+5% 횟수:",
     "VN": "+5% số lần:"
+  },
+  {
+    "key": "无尽挑战",
+    "CHS": "无尽挑战",
+    "EN": "Endless Challenge",
+    "CHT": "無盡挑戰",
+    "JP": "無限チャレンジ",
+    "KR": "무한 도전",
+    "VN": "Thử thách vô tận"
+  },
+  {
+    "key": "删除存档",
+    "CHS": "删除存档",
+    "EN": "Delete Save",
+    "CHT": "刪除存檔",
+    "JP": "セーブデータを削除",
+    "KR": "저장 데이터 삭제",
+    "VN": "Xóa dữ liệu lưu"
+  },
+  {
+    "key": "处理存档不兼容问题，慎用",
+    "CHS": "处理存档不兼容问题，慎用",
+    "EN": "Handle save incompatibility issues, use with caution",
+    "CHT": "處理存檔不兼容問題，慎用",
+    "JP": "セーブデータの互換性問題を処理、慎重に使用",
+    "KR": "저장 데이터 호환성 문제 처리, 신중히 사용",
+    "VN": "Xử lý vấn đề không tương thích dữ liệu lưu, sử dụng cẩn thận"
+  },
+  {
+    "key": "应用",
+    "CHS": "应用",
+    "EN": "Apply",
+    "CHT": "應用",
+    "JP": "適用",
+    "KR": "적용",
+    "VN": "Áp dụng"
+  },
+  {
+    "key": "语言",
+    "CHS": "语言",
+    "EN": "Language",
+    "CHT": "語言",
+    "JP": "言語",
+    "KR": "언어",
+    "VN": "Ngôn ngữ"
+  },
+  {
+    "key": "音乐",
+    "CHS": "音乐",
+    "EN": "Music",
+    "CHT": "音樂",
+    "JP": "音楽",
+    "KR": "음악",
+    "VN": "Âm nhạc"
+  },
+  {
+    "key": "音效",
+    "CHS": "音效",
+    "EN": "Sound",
+    "CHT": "音效",
+    "JP": "効果音",
+    "KR": "효과음",
+    "VN": "Hiệu ứng âm thanh"
+  },
+  {
+    "key": "字体",
+    "CHS": "字体",
+    "EN": "Font",
+    "CHT": "字體",
+    "JP": "フォント",
+    "KR": "폰트",
+    "VN": "Phông chữ"
+  },
+  {
+    "key": "提升拟态成功率5%",
+    "CHS": "提升拟态成功率5%",
+    "EN": "Increase mimicry success rate by 5%",
+    "CHT": "提升擬態成功率5%",
+    "JP": "擬態成功率を5%アップ",
+    "KR": "모방 성공률 5% 상승",
+    "VN": "Tăng tỷ lệ thành công biến hình 5%"
+  },
+  {
+    "key": "刷新",
+    "CHS": "刷新",
+    "EN": "Refresh",
+    "CHT": "刷新",
+    "JP": "リフレッシュ",
+    "KR": "새로고침",
+    "VN": "Làm mới"
+  },
+  {
+    "key": "详情",
+    "CHS": "详情",
+    "EN": "Details",
+    "CHT": "詳情",
+    "JP": "詳細",
+    "KR": "세부 정보",
+    "VN": "Chi tiết"
+  },
+  {
+    "key": "不要",
+    "CHS": "不要",
+    "EN": "Don't",
+    "CHT": "不要",
+    "JP": "しない",
+    "KR": "하지 마세요",
+    "VN": "Đừng"
+  },
+  {
+    "key": "重新开始",
+    "CHS": "重新开始",
+    "EN": "Restart",
+    "CHT": "重新開始",
+    "JP": "再スタート",
+    "KR": "다시 시작",
+    "VN": "Khởi động lại"
+  },
+  {
+    "key": "继续",
+    "CHS": "继续",
+    "EN": "Continue",
+    "CHT": "繼續",
+    "JP": "続ける",
+    "KR": "계속",
+    "VN": "Tiếp tục"
+  },
+  {
+    "key": "第*回合",
+    "CHS": "第*回合",
+    "EN": "Round *",
+    "CHT": "第*回合",
+    "JP": "第*ラウンド",
+    "KR": "제*라운드",
+    "VN": "Vòng thứ *"
+  },
+  {
+    "key": "当前生命值:",
+    "CHS": "当前生命值:",
+    "EN": "Current HP:",
+    "CHT": "當前生命值:",
+    "JP": "現在のHP:",
+    "KR": "현재 생명력:",
+    "VN": "Sinh lực hiện tại:"
+  },
+  {
+    "key": "当前攻击力:",
+    "CHS": "当前攻击力:",
+    "EN": "Current Attack:",
+    "CHT": "當前攻擊力:",
+    "JP": "現在の攻撃力:",
+    "KR": "현재 공격력:",
+    "VN": "Tấn công hiện tại:"
+  },
+  {
+    "key": "当前防御力:",
+    "CHS": "当前防御力:",
+    "EN": "Current Defense:",
+    "CHT": "當前防禦力:",
+    "JP": "現在の防御力:",
+    "KR": "현재 방어력:",
+    "VN": "Phòng thủ hiện tại:"
+  },
+  {
+    "key": "等级",
+    "CHS": "等级",
+    "EN": "Level",
+    "CHT": "等級",
+    "JP": "レベル",
+    "KR": "레벨",
+    "VN": "Cấp độ"
+  },
+  {
+    "key": "技能",
+    "CHS": "技能",
+    "EN": "Skills",
+    "CHT": "技能",
+    "JP": "スキル",
+    "KR": "스킬",
+    "VN": "Kỹ năng"
+  },
+  {
+    "key": "手机",
+    "CHS": "手机",
+    "EN": "Phone",
+    "CHT": "手機",
+    "JP": "携帯電話",
+    "KR": "휴대폰",
+    "VN": "Điện thoại"
+  },
+  {
+    "key": "游戏",
+    "CHS": "游戏",
+    "EN": "Game",
+    "CHT": "遊戲",
+    "JP": "ゲーム",
+    "KR": "게임",
+    "VN": "Trò chơi"
+  },
+  {
+    "key": "发现存档，是否继续游戏进度？",
+    "CHS": "发现存档，是否继续游戏进度？",
+    "EN": "Save file detected, continue game progress?",
+    "CHT": "發現存檔，是否繼續遊戲進度？",
+    "JP": "セーブデータが見つかりました、ゲームの進行を続けますか？",
+    "KR": "저장 파일이 발견되었습니다, 게임 진행을 계속하시겠습니까?",
+    "VN": "Phát hiện tệp lưu, có tiếp tục tiến độ trò chơi không?"
+  },
+  {
+    "key": "是否删除存档？",
+    "CHS": "是否删除存档？",
+    "EN": "Delete save file?",
+    "CHT": "是否刪除存檔？",
+    "JP": "セーブデータを削除しますか？",
+    "KR": "저장 파일을 삭제하시겠습니까?",
+    "VN": "Có xóa tệp lưu không?"
+  },
+  {
+    "key": "你失败了！",
+    "CHS": "你失败了！",
+    "EN": "You failed!",
+    "CHT": "你失敗了！",
+    "JP": "あなたは失敗しました！",
+    "KR": "당신은 실패했습니다!",
+    "VN": "Bạn đã thất bại!"
+  },
+  {
+    "key": "你离线了 * 秒（最多一小时），获得了 ^ 经验！",
+    "CHS": "你离线了 * 秒（最多一小时），获得了 ^ 经验！",
+    "EN": "You were offline for * seconds (up to one hour) and gained ^ experience!",
+    "CHT": "你離線了 * 秒（最多一小時），獲得了 ^ 經驗！",
+    "JP": "あなたは * 秒間（最大1時間）オフラインで、^ 経験値を獲得しました！",
+    "KR": "당신은 *초 동안 (최대 1시간) 오프라인이었으며, ^ 경험치를 획득했습니다!",
+    "VN": "Bạn đã ngắt kết nối * giây (tối đa một giờ) và nhận được ^ kinh nghiệm!"
   }
 ]

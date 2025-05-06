@@ -112,7 +112,7 @@ export class EndlessScene extends Main {
             this.labels[key].text = "";
             if (data.type === 'skill') {
                 let skillData = data.value;
-                btn.title.text = "技能".toStr() + "\n\n" + skillData.name;
+                btn.title.text = "技能".toStr() + "\n\n" + skillData.name.toStr();
                 btn.onClick = () => {
                     this.Reward.close();
                     EndlessScene.data.skills.push(skillData.id);

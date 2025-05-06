@@ -502,7 +502,7 @@
               "name": "btn_tujian",
               "active": true,
               "x": 30,
-              "y": 30,
+              "y": 20,
               "height": 60,
               "visible": true,
               "_$child": [
@@ -523,13 +523,17 @@
               "name": "btn_jinhua",
               "active": true,
               "x": 30,
-              "y": 100,
+              "y": 90,
               "height": 60,
               "visible": true,
               "_$child": [
                 {
                   "_$override": "au8mtcie",
                   "text": "拟态"
+                },
+                {
+                  "_$override": "qnb9iybi",
+                  "text": ""
                 }
               ]
             },
@@ -676,7 +680,7 @@
               "name": "player0",
               "active": true,
               "x": 100,
-              "y": 200,
+              "y": 185,
               "visible": true,
               "_mouseState": 1
             }

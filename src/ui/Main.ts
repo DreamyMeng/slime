@@ -4,6 +4,7 @@ import { color_config, Config, jinhua_need, shift_config, shuxing_config, skill_
 import { getRoleLevelAttributes, RoleLevel } from "../core/level";
 import { Save, SaveData_Player } from "../core/save";
 import * as utils from "../core/utils";
+import { OfflineManager } from "../offline";
 import { isAndroid, playAd } from "../platform";
 import * as cfg from "../table/schema";
 import { Chengjiu } from "./Chengjiu";
@@ -133,9 +134,6 @@ export class Main extends MainBase {
                     MessageBox.show("习得：".toStr() + `${skill.name.toStr()}`, null, null, false);
                 }
                 Save.data.player = Save.reset();
-                Save.data.player.forget = 0;
-                Save.data.player.revive = 3;
-                Save.data.player.mimicry = 1;
                 MessageBox.tip(xinximoban.zhuansheng.toStr().replace('^', color_config.xinximoban.huixue), false);
                 Chengjiu.addCount('rebirth');
                 Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
@@ -161,8 +159,34 @@ export class Main extends MainBase {
             this.update_auto();
         }
         this.update_auto();
-    }
 
+        // this.btn_guaji.onClick = () => {
+        //     MessageBox.show("离线挂机将退出游戏，下次上线获得经验奖励。(奖励最高上限为1小时)".toStr(), () => {
+        //         let time = Date.now();
+        //         Laya.LocalStorage.setItem("offline", time.toString());
+        //     });
+        // }
+
+        OfflineManager.saveLeaveTime();
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+                this.hasCalculatedOffline = false;
+                OfflineManager.saveLeaveTime();
+            } else if (document.visibilityState === "visible") {
+                if (this.hasCalculatedOffline) return;
+                this.hasCalculatedOffline = true;
+                const offlineTime = OfflineManager.checkOfflineTime();
+                let time = Math.min(60 * 60, offlineTime);
+                let levelData = getRoleLevelAttributes(Save.data.player.level);
+                let exp = Math.floor(time / 10 * levelData.exp);
+                Main.addExp(exp);
+                MessageBox.show(`你离线了 * 秒（最多一小时），获得了 ^ 经验！`.toStr().replace("*", time.toString()).replace("^", exp.toString()), null, null, false);
+                this.update_player();
+                Save.saveGame();
+            }
+        });
+    }
+    hasCalculatedOffline: boolean;
     update_auto(): void {
         this.btn_zidong.title.text = (Save.data.setting.auto ? "停止" : "自动战斗").toStr();
     }
@@ -441,10 +465,10 @@ export class Main extends MainBase {
         // 获取当前经验和等级
         let playerData = Save.data.player;
         let curExp = utils.toInt(playerData.exp + num);
-        let levelData = getRoleLevelAttributes(playerData.level);
-        let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
 
         while (true) {
+            let levelData = getRoleLevelAttributes(playerData.level);
+            let roleData: cfg.role = Config.table.Tbrole.get(playerData.id);
             // 获取当前等级的最大经验值
             const maxExp = levelData.need * roleData.expNeed;
 

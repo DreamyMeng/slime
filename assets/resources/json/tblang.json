@@ -5560,5 +5560,50 @@
     "JP": "あなたは * 秒間（最大1時間）オフラインで、^ 経験値を獲得しました！",
     "KR": "당신은 *초 동안 (최대 1시간) 오프라인이었으며, ^ 경험치를 획득했습니다!",
     "VN": "Bạn đã ngắt kết nối * giây (tối đa một giờ) và nhận được ^ kinh nghiệm!"
+  },
+  {
+    "key": "广告还未冷却!剩余时间：",
+    "CHS": "广告还未冷却!剩余时间：",
+    "EN": "Ad not yet cooled down! Remaining time:",
+    "CHT": "廣告尚未冷卻！剩餘時間：",
+    "JP": "広告がまだクールダウンしていません！残り時間：",
+    "KR": "광고가 아직 쿨다운되지 않았습니다! 남은 시간:",
+    "VN": "Quảng cáo chưa được làm mát! Thời gian còn lại:"
+  },
+  {
+    "key": "加载广告，请稍后...",
+    "CHS": "加载广告，请稍后...",
+    "EN": "Loading ad, please wait...",
+    "CHT": "加載廣告，請稍後...",
+    "JP": "広告をロード中です、しばらくお待ちください...",
+    "KR": "광고를 로드 중입니다, 잠시 기다려 주세요...",
+    "VN": "Đang tải quảng cáo, vui lòng đợi..."
+  },
+  {
+    "key": "广告冷却：",
+    "CHS": "广告冷却：",
+    "EN": "Ad cooldown:",
+    "CHT": "廣告冷卻：",
+    "JP": "広告クールダウン：",
+    "KR": "광고 쿨다운:",
+    "VN": "Thời gian làm mát quảng cáo:"
+  },
+  {
+    "key": "激活血脉可选择品质",
+    "CHS": "激活血脉可选择品质",
+    "EN": "Activating bloodline allows quality selection",
+    "CHT": "激活血脈可選擇品質",
+    "JP": "血脈を活性化すると品質を選択できます",
+    "KR": "혈맥을 활성화하면 품질을 선택할 수 있습니다",
+    "VN": "Kích hoạt huyết mạch cho phép chọn chất lượng"
+  },
+  {
+    "key": "另存存档",
+    "CHS": "另存存档",
+    "EN": "Save as a new file",
+    "CHT": "另存存檔",
+    "JP": "別名でセーブ",
+    "KR": "다른 이름으로 저장",
+    "VN": "Lưu dưới dạng tệp mới"
   }
 ]

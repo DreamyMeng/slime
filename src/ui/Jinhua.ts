@@ -18,9 +18,23 @@ export class Jinhua extends Laya.Script {
     dingxiang: Laya.Sprite;
     ad: MyButton;
     static ad_rate: number = 0.05; // 广告奖励
+    tab: Laya.Tab;
 
     onAwake(): void {
         Jinhua.instance = this;
+        this.tab = this.owner.getChildByName('Tab') as Laya.Tab;
+        this.tab.labels = `${'凡'.toStr()},${'灵'.toStr()},${'仙'.toStr()},${'神'.toStr()}`;
+
+        this.tab.selectHandler = Laya.Handler.create(this, (index: number) => {
+            if (index === this.curIndex) return;
+            if (!this.isAd) {
+                MessageBox.show('激活血脉'.toStr(), null, null, false);
+                this.tab.selectedIndex = index;
+            } else {
+                this.curIndex = index;
+                this.show_jinhua(index);
+            }
+        }, null, false);
 
         this.dingxiang = this.owner.getChildByName('dingxiang') as Laya.Sprite;
         this.dingxiang.visible = false; // 初始时隐藏
@@ -38,12 +52,11 @@ export class Jinhua extends Laya.Script {
         this.ad.onClick = () => {
             console.log('广告时刻');
             if (isAndroid()) {
+                if (!playAd(2)) return;
                 this.ad.active = false;
-                playAd(2);
             }
             else {
-                this.isAd = true;
-                this.show(false);
+                this.ad_success();
             }
         }
     }
@@ -54,6 +67,7 @@ export class Jinhua extends Laya.Script {
 
     ad_success(): void {
         this.isAd = true;
+        this.tab.visible = true;
         this.show(false);
     }
 
@@ -68,30 +82,52 @@ export class Jinhua extends Laya.Script {
         }
         else this.ad.active = !this.isAd;
         this.owner.ok.active = Save.data.game.rebirth > 1;
+        this.roles = this.list_jinhua();
+        this.curIndex = 0;
+        this.tab.visible = this.isAd;
 
-        let roles = this.list_jinhua();
+        var quality_type = getMaxKey(Save.data.player.quality);
+        if (quality_type === 'none') {
+            this.curIndex = 0;
+        } else if (quality_type === 'ling') {
+            this.curIndex = 1;
+        }
+        else if (quality_type === 'xian') {
+            this.curIndex = 2;
+        }
+        else if (quality_type === 'shen') {
+            this.curIndex = 3;
+        }
 
-        let list_role = this.owner.getChildByName('list_role') as Laya.List;
-        list_role.renderHandler?.clear();
-        list_role.array = roles[0];
-        list_role.array.length = Math.min(roles[0].length, 6);
-        list_role.renderHandler = Laya.Handler.create(this, (item: MyButton, index: number) => {
-            let data = roles[0][index];
-            item.title.text = Main.getRoleName(Config.table.Tbrole.get(data[0])) +
-                `\n<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
-            item.onClick = () => {
-                this.onClick(data[0], data[1]);
-            }
-        }, null, false);
+        this.show_jinhua(this.curIndex);
+        this.tab.selectedIndex = this.curIndex;
 
         let list_dingxiang = this.dingxiang.getChildByName('list_dingxiang') as Laya.List;
         list_dingxiang.scrollBar.autoHide = true;
         list_dingxiang.renderHandler?.clear();
-        list_dingxiang.array = roles[1];
+        list_dingxiang.array = this.roles[4];
         list_dingxiang.renderHandler = Laya.Handler.create(this, (item: MyButton, index: number) => {
-            let data = roles[1][index];
+            let data = this.roles[4][index];
             (item.getChildByName('Title') as Laya.Label).text = Main.getRoleName(Config.table.Tbrole.get(data[0]));
             item.tip.text = `<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
+            item.onClick = () => {
+                this.onClick(data[0], data[1]);
+            }
+        }, null, false);
+    }
+
+    roles: Array<[string, number][]> = [];
+    curIndex: number = 0;
+
+    show_jinhua(index: number): void {
+        let list_role = this.owner.getChildByName('list_role') as Laya.List;
+        list_role.renderHandler?.clear();
+        list_role.array = this.roles[index];
+        list_role.array.length = Math.min(this.roles[index].length, 6);
+        list_role.renderHandler = Laya.Handler.create(this, (item: MyButton, i: number) => {
+            let data = this.roles[index][i];
+            item.title.text = Main.getRoleName(Config.table.Tbrole.get(data[0])) +
+                `\n<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
             item.onClick = () => {
                 this.onClick(data[0], data[1]);
             }
@@ -175,7 +211,6 @@ export class Jinhua extends Laya.Script {
     list_jinhua(): Array<[string, number][]> {
         let playerData = Save.data.player;
         var rare = Config.table.Tbrole.get(playerData.id).rare;
-        var quality_type = getMaxKey(playerData.quality);
         var list = Config.table.Tbrole.getDataList();
 
         var sr = playerData.relation;
@@ -185,8 +220,12 @@ export class Jinhua extends Laya.Script {
             all += sr[key];
         });
 
-        var map: Map<string, number> = new Map<string, number>();
+        var map1: Map<string, number> = new Map<string, number>();
         var map2: Map<string, number> = new Map<string, number>();
+        var map3: Map<string, number> = new Map<string, number>();
+        var map4: Map<string, number> = new Map<string, number>();
+        var map5: Map<string, number> = new Map<string, number>();
+
         list.forEach((roleData) => {
             if (Main.isBoss(roleData) && Save.data.game.rewards['boss'] !== 2) return;
             if (roleData.rare <= rare) return;
@@ -209,14 +248,19 @@ export class Jinhua extends Laya.Script {
             });
 
             if (this.isAd) num += Jinhua.ad_rate;
-            if (roleData.qualityType === quality_type) map.set(roleData.id, Math.min(num, 1));
-            if (Save.data.game.roles[roleData.id]) map2.set(roleData.id, Math.min(num + 0.05, 1));
+            if (roleData.qualityType === 'none') map1.set(roleData.id, Math.min(num, 1));
+            else if (roleData.qualityType === 'ling') map2.set(roleData.id, Math.min(num, 1));
+            else if (roleData.qualityType === 'xian') map3.set(roleData.id, Math.min(num, 1));
+            else if (roleData.qualityType === 'shen') map4.set(roleData.id, Math.min(num, 1));
+            if (Save.data.game.roles[roleData.id]) map5.set(roleData.id, Math.min(num + 0.05, 1));
         });
 
         let array = [];
-        array.push(Array.from(map).sort((a, b) => b[1] - a[1]));
+        array.push(Array.from(map1).sort((a, b) => b[1] - a[1]));
         array.push(Array.from(map2).sort((a, b) => b[1] - a[1]));
-
+        array.push(Array.from(map3).sort((a, b) => b[1] - a[1]));
+        array.push(Array.from(map4).sort((a, b) => b[1] - a[1]));
+        array.push(Array.from(map5).sort((a, b) => b[1] - a[1]));
         return array;
     }
 }

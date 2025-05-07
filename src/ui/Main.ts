@@ -187,6 +187,8 @@ export class Main extends MainBase {
                 }
             });
         }
+
+        this.showAdTip();
     }
 
     checkOfflineTime() {
@@ -384,12 +386,12 @@ export class Main extends MainBase {
         this.update_auto();
         Save.saveGame();
         let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
-            this.fuhuo_tip.ok.active = false;
-            if (isAndroid()) playAd(1);
+            if (isAndroid()) if (!playAd(1)) return;
             else {
                 this.curPlayerData.revive--;
                 this.fuhuo_success();
             }
+            this.fuhuo_tip.ok.active = false;
         }, () => {
             this.fuhuo_fail();
         }, true, false);
@@ -411,6 +413,7 @@ export class Main extends MainBase {
     fuhuo_success(): void {
         Save.data.player = this.curPlayerData;
         this.update_map();
+        this.update_player();
         MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
         Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         Save.saveGame();
@@ -695,5 +698,31 @@ export class Main extends MainBase {
 
     static getLevel(scene: cfg.map_level): number {
         return Math.round(Math.random() * (scene.levelMax - scene.levelMin)) + scene.levelMin;
+    }
+
+    static isAd: boolean = false;
+    static adTime: number = 0;
+
+    static setAd() {
+        if (!isAndroid()) return;
+        Main.isAd = true;
+        Main.adTime = 60 * 3;
+    }
+
+    showAdTip() {
+        this.timer.loop(1000, this, () => {
+            if (Main.isAd) {
+                Main.adTime--;
+                if (Main.adTime <= 0) {
+                    Main.isAd = false;
+                    this.btn_login.tip.text = "";
+                } else
+                    this.btn_login.tip.text = "广告冷却：".toStr() + `${Main.adTime}`;
+            }
+        })
+    }
+
+    onDestroy(): void {
+        this.timer.clearAll(this);
     }
 }

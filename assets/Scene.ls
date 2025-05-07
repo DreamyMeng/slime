@@ -1675,6 +1675,11 @@
       ],
       "_$child": [
         {
+          "_$override": "63szkx1s",
+          "x": 3,
+          "y": 6
+        },
+        {
           "_$override": "ecyn9419",
           "centerX": null,
           "centerY": null,
@@ -1701,12 +1706,11 @@
           "_$index": 3,
           "_$type": "Label",
           "name": "Label2",
-          "x": 50,
-          "y": 150,
-          "width": 620,
+          "x": 60,
+          "y": 160,
+          "width": 600,
           "height": 30,
-          "visible": false,
-          "text": "转生、拟态成功可重置功能：[<font color=#fcdcaa>复活</font>]、[<font color=#fcdcaa>遗忘</font>]、[<font color=#fcdcaa>激活血脉</font>]",
+          "text": "激活血脉可选择品质",
           "fontSize": 28,
           "color": "rgba(255, 255, 255, 1)",
           "html": true,
@@ -1842,6 +1846,7 @@
         },
         {
           "_$id": "7qd5xzi0",
+          "_$index": 8,
           "_$type": "Sprite",
           "name": "dingxiang",
           "width": 100,
@@ -1997,6 +2002,28 @@
               ]
             }
           ]
+        },
+        {
+          "_$id": "vjjx93q4",
+          "_$type": "Tab",
+          "name": "Tab",
+          "x": 55,
+          "y": 160,
+          "width": 1024,
+          "height": 61.66666666666665,
+          "scaleX": 0.6,
+          "scaleY": 0.6,
+          "_mouseState": 2,
+          "skin": "res://c7ce584a-c256-462a-aa94-a9905f7185aa",
+          "labels": "凡,灵,仙,神",
+          "space": 0,
+          "selectedIndex": 0,
+          "labelFont": null,
+          "labelSize": 50,
+          "labelBold": true,
+          "labelStrokeColor": null,
+          "labelAlign": "left",
+          "strokeColors": null
         }
       ]
     }

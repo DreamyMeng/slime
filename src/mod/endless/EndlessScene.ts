@@ -34,7 +34,7 @@ export class EndlessScene extends Main {
             this.Tujian.getComponent(Tujian).show();
         }
 
-        this.btn_zhuansheng.onClick = () => {
+        this.btn_login.onClick = () => {
             Laya.Scene.open("Login.ls");
         }
 
@@ -281,12 +281,12 @@ export class EndlessScene extends Main {
             } else {
                 this.curEndlessData = JSON.parse(JSON.stringify(EndlessScene.data));
                 let tip = MessageBox.show(`你失败了！`.toStr(), () => {
-                    this.fuhuo_tip.ok.active = false;
                     if (this.curEndlessData.revive <= 0) {
-                        if (isAndroid()) playAd(1);
+                        if (isAndroid()) if (playAd(1)) this.fuhuo_tip.ok.active = false;
                         return;
                     }
                     // else {
+                    this.fuhuo_tip.ok.active = false;
                     this.curEndlessData.revive--;
                     this.fuhuo_success();
                     // }
@@ -313,6 +313,7 @@ export class EndlessScene extends Main {
 
     override fuhuo_success(): void {
         EndlessScene.data = this.curEndlessData;
+        this.update_player();
         MessageBox.tip(`<font color='^'>你复活了</font>`.toStr().replace('^', color_config.xinximoban.huixue), false);
         Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
         EndlessScene.data.curScene--;

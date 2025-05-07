@@ -35,8 +35,15 @@ export function isAndroid() {
     // return false; // test
 }
 
-export function playAd(state: number) {
+export function playAd(state: number): boolean {
+    if (Main.isAd) {
+        MessageBox.show("广告还未冷却!剩余时间：".toStr() + Main.adTime, null, null, false);
+        return false;
+    }
+
+    MessageBox.tip("加载广告，请稍后...");
     window.Android.playAd(state);
+    return true;
     // window.onAdRewarded(state) // test
 }
 
@@ -61,6 +68,7 @@ window["onAdLoaded"] = function (state: number) {
 
 window["onAdRewarded"] = function (state: number) {
     // MessageBox.show("恭喜获得奖励!");
+    Main.setAd();
     if (state == 1) {
         Main.instance?.fuhuo_success();
     }

@@ -18,7 +18,7 @@ export class EndlessSceneBase extends Laya.Scene {
     public list_guyou!: Laya.List;
     public list_xuexi!: Laya.List;
     public btn_shuxing!: MyButton;
-    public btn_zhuansheng!: MyButton;
+    public btn_login!: MyButton;
     public label_titile!: Laya.Label;
     public Map!: Laya.Sprite;
     public btn_tujian!: MyButton;
@@ -38,10 +38,7 @@ export class EndlessSceneBase extends Laya.Scene {
     public btn_taopao!: MyButton;
     public Damages!: Laya.Sprite;
     public List!: Laya.List;
-    public Cuilian!: PopUp;
     public Tujian!: PopUp;
-    public Jinhua!: PopUp;
-    public ad!: MyButton;
     public Reward!: PopUp;
 }
 

@@ -282,7 +282,9 @@ export class EndlessScene extends Main {
                 this.curEndlessData = JSON.parse(JSON.stringify(EndlessScene.data));
                 let tip = MessageBox.show(`你失败了！`.toStr(), () => {
                     if (this.curEndlessData.revive <= 0) {
-                        if (isAndroid()) if (playAd(1)) this.fuhuo_tip.ok.active = false;
+                        if (isAndroid()) {
+                            if (playAd(1)) { this.fuhuo_tip.ok.active = false; }
+                        }
                         return;
                     }
                     // else {
@@ -340,5 +342,9 @@ export class EndlessScene extends Main {
         utils.GameLog.log(xinximoban.zhandou.jieshu);
         this.show_map();
         saveGame('endless', EndlessScene.data);
+    }
+
+    override checkOfflineTime(): void {
+
     }
 }

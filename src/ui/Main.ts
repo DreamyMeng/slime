@@ -172,6 +172,8 @@ export class Main extends MainBase {
 
         OfflineManager.saveLeaveTime();
 
+        // if (!isAndroid()) {
+
         if (!Main.visibilityListenerAdded) {
             Main.visibilityListenerAdded = true;
 
@@ -187,12 +189,12 @@ export class Main extends MainBase {
                 }
             });
         }
-
-        this.showAdTip();
+        // }
+        this.timerLoop(1000, this, this.showAdTip);
     }
 
     checkOfflineTime() {
-        if (Main.instance.constructor.name !== 'Main') return;
+        // if (Main.instance.constructor.name !== 'Main') return;
         const offlineTime = OfflineManager.checkOfflineTime();
         if (offlineTime < 1) return;
         let time = Math.min(60 * 60, offlineTime);
@@ -386,7 +388,9 @@ export class Main extends MainBase {
         this.update_auto();
         Save.saveGame();
         let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
-            if (isAndroid()) if (!playAd(1)) return;
+            if (isAndroid()) {
+                if (!playAd(1)) return;
+            }
             else {
                 this.curPlayerData.revive--;
                 this.fuhuo_success();
@@ -710,19 +714,17 @@ export class Main extends MainBase {
     }
 
     showAdTip() {
-        this.timer.loop(1000, this, () => {
-            if (Main.isAd) {
-                Main.adTime--;
-                if (Main.adTime <= 0) {
-                    Main.isAd = false;
-                    this.btn_login.tip.text = "";
-                } else
-                    this.btn_login.tip.text = "广告冷却：".toStr() + `${Main.adTime}`;
-            }
-        })
+        if (Main.isAd) {
+            Main.adTime--;
+            if (Main.adTime <= 0) {
+                Main.isAd = false;
+                this.btn_login.tip.text = "";
+            } else
+                this.btn_login.tip.text = "广告冷却：".toStr() + `${Main.adTime}`;
+        }
     }
 
     onDestroy(): void {
-        this.timer.clearAll(this);
+        this.clearTimer(this, this.showAdTip);
     }
 }

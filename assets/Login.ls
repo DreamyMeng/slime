@@ -299,16 +299,16 @@
               ]
             },
             {
-              "_$id": "i5r139y1",
+              "_$id": "60ohkoh4",
               "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
               "_$var": true,
-              "name": "Delete",
+              "name": "Button3",
               "active": true,
               "x": 210,
               "y": 200,
               "width": 300,
               "height": 80,
-              "visible": true,
+              "visible": false,
               "_$child": [
                 {
                   "_$override": "3mo5miu3",
@@ -318,7 +318,7 @@
                   "x": 150,
                   "y": 40,
                   "sizeGrid": null,
-                  "color": "#ffffff"
+                  "color": "#aae540"
                 },
                 {
                   "_$override": "au8mtcie",
@@ -328,59 +328,12 @@
                   "top": 3,
                   "fontSize": 44,
                   "color": "rgba(0, 0, 0, 1)",
-                  "text": "删除存档",
+                  "text": "玩家挑战",
                   "y": 3
                 },
                 {
                   "_$override": "qnb9iybi",
-                  "visible": true,
-                  "width": 300,
-                  "text": "处理存档不兼容问题，慎用",
-                  "color": "rgba(255, 255, 255, 1)",
-                  "y": 74
-                }
-              ]
-            },
-            {
-              "_$id": "wvipxycd",
-              "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
-              "_$var": true,
-              "name": "Restore",
-              "active": true,
-              "x": 210,
-              "y": 300,
-              "width": 300,
-              "height": 80,
-              "visible": true,
-              "_$child": [
-                {
-                  "_$override": "3mo5miu3",
-                  "skin": "res://1f9bc5eb-2da6-40b7-9c01-8be9fd5cea58",
-                  "width": 255.6336832434451,
-                  "height": 64,
-                  "x": 150,
-                  "y": 40,
-                  "sizeGrid": null,
-                  "color": "#ffffff"
-                },
-                {
-                  "_$override": "au8mtcie",
-                  "left": 0,
-                  "right": 0,
-                  "bottom": -3,
-                  "top": 3,
-                  "fontSize": 44,
-                  "color": "rgba(0, 0, 0, 1)",
-                  "text": "另存存档",
-                  "y": 3
-                },
-                {
-                  "_$override": "qnb9iybi",
-                  "visible": true,
-                  "width": 300,
-                  "text": "",
-                  "color": "rgba(255, 255, 255, 1)",
-                  "y": 74
+                  "visible": false
                 }
               ]
             }
@@ -402,12 +355,16 @@
       "_$child": [
         {
           "_$override": "ecyn9419",
-          "height": 600,
+          "height": 700,
           "y": 600
         },
         {
+          "_$override": "3ny13ib3",
+          "y": 405
+        },
+        {
           "_$override": "jvphpq4p",
-          "y": 778
+          "y": 840
         },
         {
           "_$override": [
@@ -425,7 +382,7 @@
         },
         {
           "_$override": "y6ek77jm",
-          "y": 778
+          "y": 840
         },
         {
           "_$id": "s61f5oj9",
@@ -433,7 +390,7 @@
           "_$type": "VBox",
           "name": "VBox",
           "x": 140,
-          "y": 380,
+          "y": 325,
           "width": 122,
           "height": 200,
           "space": 30,
@@ -526,7 +483,7 @@
           "_$type": "ComboBox",
           "name": "ComboBox",
           "x": 270,
-          "y": 375,
+          "y": 320,
           "width": 300,
           "height": 64,
           "_mouseState": 2,
@@ -546,7 +503,7 @@
           "_$type": "HSlider",
           "name": "HSlider",
           "x": 270,
-          "y": 480,
+          "y": 425,
           "width": 300,
           "height": 100,
           "_mouseState": 2,
@@ -558,7 +515,7 @@
           "_$type": "HSlider",
           "name": "HSlider(1)",
           "x": 270,
-          "y": 570,
+          "y": 515,
           "width": 300,
           "height": 100,
           "_mouseState": 2,
@@ -570,7 +527,7 @@
           "_$type": "Radio",
           "name": "Radio",
           "x": 270,
-          "y": 650,
+          "y": 595,
           "width": 160,
           "height": 64,
           "_mouseState": 2,
@@ -583,10 +540,11 @@
         },
         {
           "_$id": "h45k0njh",
+          "_$index": 10,
           "_$type": "Radio",
           "name": "Radio(1)",
           "x": 450,
-          "y": 650,
+          "y": 595,
           "width": 160,
           "height": 64,
           "_mouseState": 2,
@@ -596,6 +554,140 @@
           "labelColors": "#ffffff,#f5131b,#32cc6b",
           "labelAlign": "center",
           "labelVAlign": "middle"
+        },
+        {
+          "_$id": "i5r139y1",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "_$var": true,
+          "_$index": 11,
+          "name": "Delete",
+          "active": true,
+          "x": 65,
+          "y": 700,
+          "width": 300,
+          "height": 80,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "skin": "res://10b83ef7-2d89-4e63-9679-ed75a12c0ca0",
+              "width": 255.6336832434451,
+              "height": 64,
+              "x": 150,
+              "y": 40,
+              "sizeGrid": null,
+              "color": "#ffffff"
+            },
+            {
+              "_$override": "au8mtcie",
+              "left": 0,
+              "right": 0,
+              "bottom": -3,
+              "top": 3,
+              "fontSize": 44,
+              "color": "rgba(0, 0, 0, 1)",
+              "text": "删除存档",
+              "y": 3
+            },
+            {
+              "_$override": "qnb9iybi",
+              "visible": true,
+              "width": 300,
+              "text": "处理存档不兼容问题，慎用",
+              "color": "rgba(255, 255, 255, 1)",
+              "y": 74
+            }
+          ]
+        },
+        {
+          "_$id": "wvipxycd",
+          "_$prefab": "5b9529ed-07c7-4674-b485-7620907dbe49",
+          "_$var": true,
+          "name": "Restore",
+          "active": true,
+          "x": 355,
+          "y": 700,
+          "width": 300,
+          "height": 80,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "3mo5miu3",
+              "skin": "res://10b83ef7-2d89-4e63-9679-ed75a12c0ca0",
+              "width": 255.6336832434451,
+              "height": 64,
+              "x": 150,
+              "y": 40,
+              "sizeGrid": null,
+              "color": "#ffffff"
+            },
+            {
+              "_$override": "au8mtcie",
+              "left": 0,
+              "right": 0,
+              "bottom": -3,
+              "top": 3,
+              "fontSize": 44,
+              "color": "rgba(0, 0, 0, 1)",
+              "text": "另存存档",
+              "y": 3
+            },
+            {
+              "_$override": "qnb9iybi",
+              "visible": true,
+              "width": 300,
+              "text": "",
+              "color": "rgba(255, 255, 255, 1)",
+              "y": 74
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "4z1b4r2c",
+      "_$prefab": "7ccb3cb4-0500-463b-9867-ef45865cfdeb",
+      "_$var": true,
+      "name": "Player",
+      "active": true,
+      "x": 360,
+      "y": 640,
+      "visible": false,
+      "centerX": 0,
+      "centerY": 0,
+      "_$child": [
+        {
+          "_$override": "jvphpq4p",
+          "y": 740
+        },
+        {
+          "_$override": "y6ek77jm",
+          "y": 740
+        },
+        {
+          "_$id": "kvj0swgc",
+          "_$type": "List",
+          "name": "List",
+          "x": 80,
+          "y": 460,
+          "width": 560,
+          "height": 260,
+          "repeatX": 1,
+          "repeatY": 1,
+          "_$child": [
+            {
+              "_$id": "9d14nemt",
+              "_$type": "Label",
+              "name": "Label",
+              "width": 560,
+              "height": 28,
+              "text": "Label",
+              "fontSize": 20,
+              "color": "#FFFFFF",
+              "valign": "middle",
+              "padding": "0,0,0,0"
+            }
+          ]
         }
       ]
     }

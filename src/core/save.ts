@@ -132,9 +132,12 @@ export class Save {
         return data;
     }
 
-    static init(): void {
+    static async init() {
         // this.deleteSave();
-        let data = this.loadGame();
+        let data: SaveData = null;
+        // let save = await Laya.loader.load('resources/slime_save.txt');
+        // if (save) data = JSON.parse(save.data); else
+        data = this.loadGame();
         if (!data) {
             if (isAndroid()) {
                 loadOldData();

@@ -1,7 +1,7 @@
 import * as cfg from "../table/schema";
 import { color_config, Config, xinximoban } from "../core/config";
 import { Save } from "../core/save";
-import { getMaxKey, getValueStr, toPerStr } from "../core/utils";
+import { getValueStr, toPerStr } from "../core/utils";
 import { Main } from "./Main";
 import { MessageBox } from "./MessageBox";
 import { MyButton } from "./MyButton";
@@ -44,7 +44,7 @@ export class Jinhua extends Laya.Script {
             this.isAd = false;
         }
         this.owner.ok.onClick = () => {
-            this.dingxiang.visible = true;
+            this.dingxiang.visible = !this.dingxiang.visible;
         }
 
         this.ad = this.owner.getChildByName('ad') as MyButton;
@@ -86,7 +86,7 @@ export class Jinhua extends Laya.Script {
         this.curIndex = 0;
         this.tab.visible = this.isAd;
 
-        var quality_type = getMaxKey(Save.data.player.quality);
+        var quality_type = this.getMaxKey(Save.data.player.quality);
         if (quality_type === 'none') {
             this.curIndex = 0;
         } else if (quality_type === 'ling') {
@@ -142,7 +142,6 @@ export class Jinhua extends Laya.Script {
         } else this.isAd = false;
 
         if (Math.random() < rate) {
-            this.owner.close();
             let old = Jinhua.getPower();
             Jinhua.mimicry(id);
             let power = Jinhua.getPower() - old;
@@ -151,6 +150,7 @@ export class Jinhua extends Laya.Script {
             else str = `<font color=green>+${getValueStr(power)}</font>`;
             MessageBox.show("战力：".toStr() + `${str}`, null, null, false);
             Laya.SoundManager.playSound(Config.sounds.get("upgrade"));
+            this.owner.close();
         } else {
             const siwang = 0.15;
             if (Math.random() < siwang) {
@@ -185,10 +185,14 @@ export class Jinhua extends Laya.Script {
     }
 
     static mimicry(id: string) {
+        var roleData = Config.table.Tbrole.get(id);
+        if (!roleData) {
+            MessageBox.show('角色不存在:' + id, null, null, false);
+            return;
+        }
         const relation = 1.2;
         const noRelation = 0.8;
         let playerData = Save.data.player;
-        var roleData = Config.table.Tbrole.get(id);
         var cr = roleData.relations as unknown as { [key: string]: number };
         var sr = playerData.relation;
         var keys = Object.keys(sr);
@@ -205,7 +209,17 @@ export class Jinhua extends Laya.Script {
             Main.unlockRole(id);
         }
 
-        MessageBox.tip(xinximoban.jinhua.chenggong.toStr().replace('*', Main.getRoleName(roleData)).replace('^', color_config.xinximoban.huixue), false);
+        let show = MessageBox.show(xinximoban.jinhua.chenggong.toStr().replace('*', Main.getRoleName(roleData)).replace('^', color_config.xinximoban.huixue), () => {
+            playerData.skills = [];
+            if (Save.data.game.rebirth >= 3) playerData.skills.push("jiexi");
+            Main.instance.update_skill();
+        }, () => {
+            let selfSkills = Config.table.Tbrole.get(id).skills;
+            playerData.skills = playerData.skills.filter(skill => selfSkills.indexOf(skill) === -1);
+            Main.instance.update_skill();
+        });
+        show.ok.title.text = '遗忘技能'.toStr();
+        show.no.title.text = '保留技能'.toStr();
     }
 
     list_jinhua(): Array<[string, number][]> {
@@ -227,7 +241,7 @@ export class Jinhua extends Laya.Script {
         var map5: Map<string, number> = new Map<string, number>();
 
         list.forEach((roleData) => {
-            if (Main.isBoss(roleData) && Save.data.game.rewards['boss'] !== 2) return;
+            if (Main.isBoss(roleData) && !Save.data.game.rewards['boss']) return;
             if (roleData.rare <= rare) return;
             var num = 1;
             var cr = roleData.relations as unknown as { [key: string]: number };
@@ -262,5 +276,23 @@ export class Jinhua extends Laya.Script {
         array.push(Array.from(map4).sort((a, b) => b[1] - a[1]));
         array.push(Array.from(map5).sort((a, b) => b[1] - a[1]));
         return array;
+    }
+
+    getMaxKey(data: { [key: string]: number }): string | null {
+        // 获取所有键值对，并找到值最大的键
+        if (getValueStr(data.ling) === getValueStr(data.xian) && getValueStr(data.ling) === getValueStr(data.shen)) return "none";
+
+        let maxKey: string = "none";
+        let maxValue: number = 0;
+
+        for (const key in data) {
+            if (key === "none") continue;
+            if (data[key] > maxValue) {
+                maxValue = data[key];
+                maxKey = key;
+            }
+        }
+
+        return maxKey;
     }
 }

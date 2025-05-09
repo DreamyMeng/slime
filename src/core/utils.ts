@@ -107,21 +107,3 @@ export function numberToChinese(num: number): string {
     let chineseNumbers: string[] = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
     return num.toString().split('').map(n => chineseNumbers[parseInt(n)]).join('');
 }
-
-export function getMaxKey(data: { [key: string]: number }): string | null {
-    // 获取所有键值对，并找到值最大的键
-    if (data.ling === data.xian && data.ling === data.shen) return "none";
-
-    let maxKey: string = "none";
-    let maxValue: number = 0;
-
-    for (const key in data) {
-        if (key === "none") continue;
-        if (data[key] > maxValue) {
-            maxValue = data[key];
-            maxKey = key;
-        }
-    }
-
-    return maxKey;
-}

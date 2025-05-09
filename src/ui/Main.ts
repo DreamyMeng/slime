@@ -66,6 +66,10 @@ export class Main extends MainBase {
         this.btn_shenru.onClick = () => {
             if (Save.data.player.curScene > Save.data.player.maxScene) return;
             Save.data.player.curScene++;
+            if (Save.data.player.curScene > Config.table.Tbmap_level.getDataList().length) {
+                Save.data.player.curScene--;
+                return;
+            }
             utils.GameLog.log(xinximoban.shenru.toStr().replace('*', utils.numberToChinese(Save.data.player.curScene)), false);
             this.update_map();
             Save.saveGame();
@@ -287,10 +291,14 @@ export class Main extends MainBase {
             item.getComponent(SkillView).show(roleData.skills[index]);
         }, null, false);
 
-        let list = playerData.skills.concat(new Array<string>(this.getSkillMax() - playerData.skills.length).fill(''));
-        this.list_xuexi.array = list;
+        let max = this.getSkillMax();
+        let skills = playerData.skills;
+        if (max > skills.length) {
+            skills = skills.concat(new Array<string>(max - skills.length).fill(''));
+        }
+        this.list_xuexi.array = skills;
         this.list_xuexi.renderHandler = Laya.Handler.create(this, (item: Laya.Sprite, index: number) => {
-            item.getComponent(SkillView).show(list[index], true);
+            item.getComponent(SkillView).show(skills[index], true);
         }, null, false);
     }
 
@@ -578,6 +586,8 @@ export class Main extends MainBase {
                 MessageBox.tip(xinximoban.tunshi.toStr().replace('*', Main.getRoleName(targetData)).replace('&', skillData.name.toStr()).replace('^', color_config.xinximoban.skill), false);
                 this.update_skill();
             }
+        } else {
+            MessageBox.tip("技能不可重复获得".toStr());
         }
     }
 

@@ -57,7 +57,10 @@ export class Battle {
 
         Main.instance.Enemy.getComponent(RoleView).show_skin(isBoss);
         this.bossHp.bg.visible = isBoss;
-        this.enemy.init(attack, defence, health, roleData.skills, isBoss);
+
+        let skills = roleData.skills;
+        if (playerData.curScene > 100) skills.push("chimei");
+        this.enemy.init(attack, defence, health, skills, isBoss);
     }
 
     async start(): Promise<void> {

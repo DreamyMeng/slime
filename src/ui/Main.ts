@@ -720,7 +720,7 @@ export class Main extends MainBase {
     static setAd() {
         if (!isAndroid()) return;
         Main.isAd = true;
-        Main.adTime = 60 * 3;
+        Main.adTime = 60;
     }
 
     showAdTip() {

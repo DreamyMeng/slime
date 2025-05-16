@@ -5591,11 +5591,11 @@
   {
     "key": "激活血脉可选择品质",
     "CHS": "激活血脉可选择品质。灵、仙、神一样可化凡。",
-    "EN": "Activating bloodline allows quality selection",
-    "CHT": "激活血脈可選擇品質",
-    "JP": "血脈を活性化すると品質を選択できます",
-    "KR": "혈맥을 활성화하면 품질을 선택할 수 있습니다",
-    "VN": "Kích hoạt huyết mạch cho phép chọn chất lượng"
+    "EN": "Activating bloodline allows quality selection. Spirit, Immortal, and Divine can all transform into Mortal.",
+    "CHT": "激活血脈可選擇品質。靈、仙、神一樣可化凡。",
+    "JP": "血脈を活性化すると品質を選択できます。霊、仙、神も凡に化けられます。",
+    "KR": "혈맥을 활성화하면 품질을 선택할 수 있습니다. 영, 선, 신 모두 범으로 변할 수 있습니다.",
+    "VN": "Kích hoạt huyết mạch cho phép chọn chất lượng. Linh, Tiên, Thần đều có thể hóa thành Phàm."
   },
   {
     "key": "另存存档",
@@ -5609,10 +5609,10 @@
   {
     "key": "技能不可重复获得",
     "CHS": "<font color='#FF0000'>技能不可重复获得</font>",
-    "EN": "",
-    "CHT": "",
-    "JP": "",
-    "KR": "",
-    "VN": ""
+    "EN": "<font color='#FF0000'>Skills cannot be obtained repeatedly</font>",
+    "CHT": "<font color='#FF0000'>技能不可重複獲得</font>",
+    "JP": "<font color='#FF0000'>スキルは重複して獲得できません</font>",
+    "KR": "<font color='#FF0000'>스킬은 중복으로 획득할 수 없습니다</font>",
+    "VN": "<font color='#FF0000'>Kỹ năng không thể nhận trùng lặp</font>"
   }
 ]

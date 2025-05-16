@@ -355,7 +355,8 @@ export class learn extends BaseSkill {
             let level = Save.data.player.curScene;
             console.log(`当前层数: ${level}`);
             value = level - 100;
-            value = Math.max(1, value);
+
+            value = Math.max(1, Math.min(5, value)); // 确保 value 在 1 到 5 之间
 
             let allSkills = Config.table.Tbskill.getDataList();
             let ownedSkills = SkillMgr.getList(target.camp);

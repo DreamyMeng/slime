@@ -70,6 +70,7 @@ export function toPerStr(value: number): string {
 }
 
 export function getValueStr(num: number): string {
+    if (!num) return "0";
     let list: string[];
     let units: { value: number, symbol: string }[];
     if (Language.key === "CHS") list = ['万', '亿', '兆'];

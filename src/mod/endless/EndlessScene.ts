@@ -49,7 +49,7 @@ export class EndlessScene extends Main {
 
         this.Reward.ok.onClick = () => {
             EndlessScene.data.refresh--;
-            this.show_rewards();
+            this.show_rewards(false);
         }
 
         this.Reward.no.onClick = () => {
@@ -99,8 +99,8 @@ export class EndlessScene extends Main {
 
     Reward: PopUp;
     Des: Laya.Sprite;
-    show_rewards(): void {
-        this.Reward.open();
+    show_rewards(isOpen: boolean = true): void {
+        if (isOpen) this.Reward.open();
         this.Reward.ok.visible = true;
         this.Reward.no.visible = true;
         this.Reward.ok.tip.text = EndlessScene.data.refresh > 0 ? "剩余次数:".toStr() + `${EndlessScene.data.refresh}` : "";

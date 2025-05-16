@@ -110,6 +110,11 @@ export class Jinhua extends Laya.Script {
             let data = this.roles[4][index];
             (item.getChildByName('Title') as Laya.Label).text = Main.getRoleName(Config.table.Tbrole.get(data[0]));
             item.tip.text = `<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
+
+            if (!Save.data.game.roles[data[0]]) {
+                item.title.text += ` <font color='#fcdcaa' size=18>New!</font>`;
+            }
+
             item.onClick = () => {
                 this.onClick(data[0], data[1]);
             }
@@ -128,6 +133,11 @@ export class Jinhua extends Laya.Script {
             let data = this.roles[index][i];
             item.title.text = Main.getRoleName(Config.table.Tbrole.get(data[0])) +
                 `\n<font color='#ffffff' size=24>${"成功率:".toStr()}${toPerStr(data[1])}</font>`;
+
+            if (!Save.data.game.roles[data[0]]) {
+                item.title.text += ` <font color='#fcdcaa' size=18>New!</font>`;
+            }
+
             item.onClick = () => {
                 this.onClick(data[0], data[1]);
             }

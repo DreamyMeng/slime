@@ -59,7 +59,7 @@ export class Battle {
         this.bossHp.bg.visible = isBoss;
 
         let skills = roleData.skills;
-        if (playerData.curScene > 100) skills.push("chimei");
+        if (playerData.curScene > 100) skills = skills.concat("chimei");
         this.enemy.init(attack, defence, health, skills, isBoss);
     }
 

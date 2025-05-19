@@ -336,39 +336,41 @@ export class learn extends BaseSkill {
         let target = this.getTarget();
         if (target.camp === 'player') return;
 
-        if (this.data.values.has("1")) {
-            value = Number(this.data.values.get("1"));
-            let allSkills = Config.table.Tbskill.getDataList();
-            let ownedSkills = SkillMgr.getList(target.camp);
+        if (this.data.id === 'chimei') {
+            if (this.data.values.has("2")) {
+                let level = Save.data.player.curScene;
+                console.log(`当前层数: ${level}`);
+                value = level - 100;
 
-            // 获取未拥有的技能
-            const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
+                value = Math.max(1, Math.min(5, value)); // 确保 value 在 1 到 5 之间
 
-            // 创建并添加新技能
-            newSkills.forEach(skillData => {
-                SkillMgr.createSkill(target, skillData);
-                GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
-            });
-        }
+                let allSkills = Config.table.Tbskill.getDataList();
+                let ownedSkills = SkillMgr.getList(target.camp);
 
-        if (this.data.values.has("2")) {
-            let level = Save.data.player.curScene;
-            console.log(`当前层数: ${level}`);
-            value = level - 100;
+                // 获取未拥有的技能
+                const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
 
-            value = Math.max(1, Math.min(5, value)); // 确保 value 在 1 到 5 之间
+                // 创建并添加新技能
+                newSkills.forEach(skillData => {
+                    SkillMgr.createSkill(target, skillData);
+                    GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
+                });
+            }
+        } else {
+            if (this.data.values.has("1")) {
+                value = Number(this.data.values.get("1"));
+                let allSkills = Config.table.Tbskill.getDataList();
+                let ownedSkills = SkillMgr.getList(target.camp);
 
-            let allSkills = Config.table.Tbskill.getDataList();
-            let ownedSkills = SkillMgr.getList(target.camp);
+                // 获取未拥有的技能
+                const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
 
-            // 获取未拥有的技能
-            const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
-
-            // 创建并添加新技能
-            newSkills.forEach(skillData => {
-                SkillMgr.createSkill(target, skillData);
-                GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
-            });
+                // 创建并添加新技能
+                newSkills.forEach(skillData => {
+                    SkillMgr.createSkill(target, skillData);
+                    GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
+                });
+            }
         }
     }
 }

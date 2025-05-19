@@ -51,6 +51,7 @@ export class EndlessScene extends Main {
             EndlessScene.data.refresh--;
             this.show_rewards(false);
         }
+        this.Reward.ok.cooldownEnabled = false;
 
         this.Reward.no.onClick = () => {
             this.Des.visible = !this.Des.visible;
@@ -68,6 +69,8 @@ export class EndlessScene extends Main {
             this.Reward.close();
             this.battle_end();
         }
+
+        this.onlySelect = false;
     }
 
     labels: Laya.Label[] = [];
@@ -85,6 +88,9 @@ export class EndlessScene extends Main {
             let roleName = Main.getRoleName(roleData);
             btn.title.text = roleName.replace('·', '\n·\n');
             btn.onClick = () => {
+                if (this.onlySelect) return;
+                this.onlySelect = true;
+
                 this.Reward.close();
                 EndlessScene.data.id = roleData.id;
                 EndlessScene.data.roles[roleData.id] = 1;
@@ -97,6 +103,8 @@ export class EndlessScene extends Main {
         });
     }
 
+    onlySelect: boolean = false;
+
     Reward: PopUp;
     Des: Laya.Sprite;
     show_rewards(isOpen: boolean = true): void {
@@ -106,6 +114,7 @@ export class EndlessScene extends Main {
         this.Reward.ok.tip.text = EndlessScene.data.refresh > 0 ? "剩余次数:".toStr() + `${EndlessScene.data.refresh}` : "";
         this.Reward.ok.active = EndlessScene.data.refresh > 0;
         this.Reward.no.title.text = this.Des.visible ? '关闭'.toStr() : '详情'.toStr();
+        this.onlySelect = false;
 
         drawGacha(EndlessScene.data).forEach((data, key) => {
             let btn = this.Reward.getChildByName(`${key}`) as MyButton;
@@ -114,6 +123,9 @@ export class EndlessScene extends Main {
                 let skillData = data.value;
                 btn.title.text = "技能".toStr() + "\n\n" + skillData.name.toStr();
                 btn.onClick = () => {
+                    if (this.onlySelect) return;
+                    this.onlySelect = true;
+
                     this.Reward.close();
                     EndlessScene.data.skills.push(skillData.id);
                     MessageBox.tip("习得：".toStr() + `${skillData.name.toStr()}`, false);
@@ -126,6 +138,9 @@ export class EndlessScene extends Main {
                 let roleName = Main.getRoleName(data.value);
                 btn.title.text = roleName.replace('·', '\n·\n');
                 btn.onClick = () => {
+                    if (this.onlySelect) return;
+                    this.onlySelect = true;
+
                     this.Reward.close();
                     EndlessScene.data.id = data.value.id;
                     EndlessScene.data.roles[data.value.id] = 1;
@@ -138,6 +153,9 @@ export class EndlessScene extends Main {
             else if (data.type === 'level') {
                 btn.title.text = "等级".toStr() + ` +${data.value}`;
                 btn.onClick = () => {
+                    if (this.onlySelect) return;
+                    this.onlySelect = true;
+
                     this.Reward.close();
                     EndlessScene.data.level += data.value;
                     MessageBox.tip(btn.title.text, false);
@@ -148,6 +166,9 @@ export class EndlessScene extends Main {
             else if (data.type === 'refresh') {
                 btn.title.text = "刷新".toStr() + ` +${data.value}`;
                 btn.onClick = () => {
+                    if (this.onlySelect) return;
+                    this.onlySelect = true;
+
                     this.Reward.close();
                     EndlessScene.data.refresh += data.value;
                     MessageBox.tip(btn.title.text, false);

@@ -56,6 +56,7 @@ export class Main extends MainBase {
         this.btn_sousuo.onClick = () => {
             this.update_map();
         }
+        this.btn_sousuo.cooldownEnabled = false;
 
         this.btn_boss.onClick = () => {
             let scene = Save.data.player.scenes[Save.data.player.curScene]
@@ -480,7 +481,7 @@ export class Main extends MainBase {
         list.forEach((skillId) => {
             let skillData = Config.table.Tbskill.get(skillId);
             if (skillData.type === cfg.SkillType.learn) {
-                num += skillData.values.get('1');
+                num += skillData.values.get('1') ?? 0;
             }
         });
 

@@ -10,6 +10,8 @@ export class MyButton extends MyButtonBase {
     onClick: () => void; // 新增点击事件回调
     private isPressed: boolean = false; // 新增按压状态标记
     private inCooldown: boolean = false;
+    // 新增属性：是否启用点击冷却
+    cooldownEnabled: boolean = true;
 
     onAwake(): void {
         this.image = this.getChildByName("Image") as Laya.Image;
@@ -44,7 +46,7 @@ export class MyButton extends MyButtonBase {
     private originalColor: string; // 记录原始颜色
 
     private onPress(): void {
-        if (this.inCooldown) return;
+        if (this.cooldownEnabled && this.inCooldown) return;
         this.inCooldown = true;
 
         this.isPressed = true;
@@ -71,7 +73,12 @@ export class MyButton extends MyButtonBase {
 
         // 恢复动画
         Laya.Tween.to(this.image, { scaleX: 1, scaleY: 1 }, 100, null, Laya.Handler.create(this, () => {
-            this.inCooldown = false;
+
+            // 冷却时间结束后，重置冷却状态
+            Laya.timer.once(1000, this, () => {
+                this.inCooldown = false;
+            });
+
         }));
     }
 }

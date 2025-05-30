@@ -1,5 +1,5 @@
 // buff.ts
-import { skill, SkillType } from "../table/schema";
+import { skill, SkillTrigger, SkillType, Target } from "../table/schema";
 import { BaseRole } from "./role";
 import { toInt } from "./utils";
 
@@ -184,7 +184,12 @@ export class BaseBuff {
      */
     constructor(public data: skill, public owner: BaseRole) {
         this.name = data.name;
-        this.duration = data.buffRound;
+        this.duration = this.data.buffRound;
+
+        if (this.data.buffRound > 0 && this.data.target === Target.enemy &&
+            (this.data.trigger === SkillTrigger.attack || this.data.trigger === SkillTrigger.attacking || this.data.trigger === SkillTrigger.attacked))
+            this.duration++;
+
         this.type = data.type;
         this.isForever = this.duration === -1;
         console.log(`${this.name} created with duration: ${this.duration} `);
@@ -206,6 +211,11 @@ export class BaseBuff {
 
     reapply(): boolean {
         this.duration = this.data.buffRound;
+
+        if (this.data.buffRound > 0 && this.data.target === Target.enemy &&
+            (this.data.trigger === SkillTrigger.attack || this.data.trigger === SkillTrigger.attacking || this.data.trigger === SkillTrigger.attacked))
+            this.duration++;
+
         return true;
     }
 

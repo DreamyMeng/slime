@@ -112,7 +112,7 @@ export class BaseRole extends EventDispatcher {
         let miss = false;
         if (BuffMgr.is(target, SkillType.miss)) {
             console.log(`${target.camp} miss!`);
-            if (BuffMgr.is(this, SkillType.hit)) console.log(`${this.camp} hit!`);
+            if (BuffMgr.is(this, SkillType.hit)) GameLog.log(`${Main.getRoleName(target.view.data)} ` + '闪避无效!'.toStr(), false);
             else miss = true;
         }
 

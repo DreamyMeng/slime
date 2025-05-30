@@ -77,7 +77,6 @@ export class RoleView extends Laya.Script {
         this.role.attackAction();
     }
     event_end(): void {
-        BuffMgr.clearTemp(); // 清除临时buff
         Main.instance.battle.round(this.role.target);
     }
     play_anim(name: string): void {

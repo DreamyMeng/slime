@@ -68,6 +68,10 @@ export enum SkillTrigger {
      * 受击后
      */
     hitted = 9,
+    /**
+     * 死亡时
+     */
+    dead = 10,
 }
 
  

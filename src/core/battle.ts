@@ -60,6 +60,7 @@ export class Battle {
 
         let skills = roleData.skills;
         if (playerData.curScene > 100) skills = skills.concat("chimei");
+        // this.enemy.init(attack, defence, health, ['keai'], isBoss);
         this.enemy.init(attack, defence, health, skills, isBoss);
     }
 
@@ -92,6 +93,7 @@ export class Battle {
     round_count: number = 0;
 
     async round(role: BaseRole): Promise<void> {
+        BuffMgr.updateBuffs(role);
         if (role.camp === 'player') {
             this.round_count++;
             utils.GameLog.log(`第*回合`.toStr().replace('*', this.round_count.toString()));
@@ -111,7 +113,6 @@ export class Battle {
             //     GameLog.log(`${role.camp} is stunned and skips the turn.`);
             // } else
             await role.round();
-
             // switch role and target
             // [role, target] = [target, role];
             return;

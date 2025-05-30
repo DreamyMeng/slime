@@ -303,17 +303,12 @@
     "id": "niepan",
     "name": "涅槃",
     "effect_str": "复活了",
-    "description": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
+    "description": "死亡时使自身+100%最大生命并清除buff，1次。",
     "rarity": 5,
     "type": 2,
     "target": 0,
-    "trigger": 9,
-    "condition": [
-      [
-        "hp",
-        0
-      ]
-    ],
+    "trigger": 10,
+    "condition": [],
     "rate": 1,
     "values": [
       [
@@ -1336,17 +1331,12 @@
     "id": "busi",
     "name": "不死",
     "effect_str": "从冥界归来",
-    "description": "受击后如果死亡，那么使自身+100%最大生命并清除buff，1次。",
+    "description": "死亡时使自身+100%最大生命并清除buff，1次。",
     "rarity": 5,
     "type": 2,
     "target": 0,
-    "trigger": 9,
-    "condition": [
-      [
-        "hp",
-        0
-      ]
-    ],
+    "trigger": 10,
+    "condition": [],
     "rate": 1,
     "values": [
       [
@@ -1359,17 +1349,12 @@
     "id": "jiuming",
     "name": "九命",
     "effect_str": "从冥界归来",
-    "description": "受击后如果死亡，那么50%的概率使自身+100%最大生命并清除buff，9次。",
+    "description": "死亡时50%的概率使自身+100%最大生命并清除buff，9次。",
     "rarity": 4,
     "type": 2,
     "target": 0,
-    "trigger": 9,
-    "condition": [
-      [
-        "hp",
-        0
-      ]
-    ],
+    "trigger": 10,
+    "condition": [],
     "rate": 0.5,
     "values": [
       [
@@ -1595,17 +1580,12 @@
     "id": "jiuwei",
     "name": "九尾",
     "effect_str": "舍弃一条尾巴复活了",
-    "description": "受击后如果死亡，那么使自身+100%最大生命并清除buff，9次。",
+    "description": "死亡时使自身+100%最大生命并清除buff，9次。",
     "rarity": 5,
     "type": 2,
     "target": 0,
-    "trigger": 9,
-    "condition": [
-      [
-        "hp",
-        0
-      ]
-    ],
+    "trigger": 10,
+    "condition": [],
     "rate": 1,
     "values": [
       [

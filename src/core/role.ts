@@ -101,20 +101,19 @@ export class BaseRole extends EventDispatcher {
     // }
 
     attackAction(): void {
-
         Laya.SoundManager.playSound(Config.sounds.get("att" + toInt(Math.random() * 3)));
 
         let target = this.target;
+        if (BuffMgr.is(this, SkillType.replace)) {
+            console.log(`${this.camp} replace!`);
+            target = target.target;
+        }
+
         let miss = false;
         if (BuffMgr.is(target, SkillType.miss)) {
             console.log(`${target.camp} miss!`);
             if (BuffMgr.is(this, SkillType.hit)) console.log(`${this.camp} hit!`);
             else miss = true;
-        }
-
-        if (BuffMgr.is(this, SkillType.replace)) {
-            console.log(`${this.camp} replace!`);
-            target = target.target;
         }
 
         // damage action
@@ -193,6 +192,7 @@ export class BaseRole extends EventDispatcher {
         }
 
         this.health.add(damage);
+        this.dispatchAsync(SkillTrigger.dead.toString());
     }
 
     isAlive(): boolean {
@@ -201,8 +201,8 @@ export class BaseRole extends EventDispatcher {
 }
 
 class Attribute {
-    protected cur: number = 0;
-    protected max: number = 0;
+    cur: number = 0;
+    max: number = 0;
     callback: (cur: number, max?: number) => void;
 
     constructor(callback?: (cur: number, max?: number) => void) {

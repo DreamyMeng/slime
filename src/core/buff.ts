@@ -1,7 +1,7 @@
 // buff.ts
 import { skill, SkillType } from "../table/schema";
 import { BaseRole } from "./role";
-import { GameLog, toInt } from "./utils";
+import { toInt } from "./utils";
 
 /**
  * Buff管理系统
@@ -19,11 +19,11 @@ export class BuffMgr {
     static enemyBuff: BaseBuff[] = [];
 
     /** 临时buff列表（每回合结束时清空） */
-    static tempBuff: BaseBuff[] = [];
+    // static tempBuff: BaseBuff[] = [];
     /** 永久生效的buff列表 */
-    static permanentBuff: BaseBuff[] = [];
+    // static permanentBuff: BaseBuff[] = [];
     /** 按触发条件分类的buff存储（键格式：阵营+技能名称） */
-    static buffs: Map<string, BaseBuff> = new Map();
+    // static buffs: Map<string, BaseBuff> = new Map();
 
     /**
      * 根据阵营获取对应的buff列表
@@ -75,81 +75,84 @@ export class BuffMgr {
         buff = this.createBuff(owner, data);
         if (buff == null) return;
         buff.apply();
-        if (data.buffRound === 0) {
-            this.tempBuff.push(buff);
-            return;
-        }
-        else if (data.buffRound === -1) {
-            this.permanentBuff.push(buff);
-            return;
-        }
+        // if (data.buffRound === 0) {
+        //     this.tempBuff.push(buff);
+        //     return;
+        // }
+        // else
+        // if (data.buffRound === -1) {
+        //     this.permanentBuff.push(buff);
+        //     return;
+        // }
 
-        let key = owner.camp + data.name;
-        if (!this.buffs.has(key)) {
-            this.buffs.set(key, buff);
-        }
-    }
-
-    /**
-     * 从指定阵营列表中移除特定buff
-     * @param owner 持有者角色（用于确定阵营）
-     * @param buff 要移除的buff实例
-     */
-    static removeBuffByOwner(owner: BaseRole, buff: BaseBuff) {
-        let list = this.getList(owner.camp);
-        for (let i = list.length - 1; i >= 0; i--) {
-            if (list[i] === buff) {
-                list.splice(i, 1);
-                break;
-            }
-        }
+        // let key = owner.camp + data.name;
+        // if (!this.buffs.has(key)) {
+        //     this.buffs.set(key, buff);
+        // }
     }
 
     static is(owner: BaseRole, type: SkillType): boolean {
         return this.getList(owner.camp)?.some(buff => buff.type === type) ?? false;
     }
 
-    static clearTemp() {
-        if (this.tempBuff.length === 0) return;
-        this.tempBuff.forEach(buff => buff.remove());
-        this.tempBuff.length = 0;// 清空数组
+    static clearOwnerBuffs(owner: BaseRole) {
+        this.getList(owner.camp).length = 0;
     }
 
     static clearByRevive(owner: BaseRole) {
-        this.clearTemp();
-
+        this.clearOwnerBuffs(owner);
         // 先收集需要删除的键
-        const keysToDelete: string[] = [];
-        for (const [key, buff] of this.buffs) {
-            if (buff.owner === owner) {
-                buff.remove();
-                keysToDelete.push(key);
-            }
-        }
+        // const keysToDelete: string[] = [];
+        // for (const [key, buff] of this.buffs) {
+        //     if (buff.owner === owner) {
+        //         buff.remove();
+        //         keysToDelete.push(key);
+        //     }
+        // }
 
         // 批量删除已收集的键
-        keysToDelete.forEach(key => this.buffs.delete(key));
+        // keysToDelete.forEach(key => this.buffs.delete(key));
     }
 
     static clear(): void {
         this.playerBuff.length = 0;
         this.enemyBuff.length = 0;
-        this.tempBuff.length = 0;
-        this.permanentBuff.length = 0;
-        this.buffs.clear();
+        // this.permanentBuff.length = 0;
+        // this.buffs.clear();
     }
 
-    static updateBuffs(key: string) {
-        if (this.buffs.has(key)) {
-            const currentBuff = this.buffs.get(key)!;
-            currentBuff.updateBuffs();
-            // // 直接检查单个buff是否需要更新
-            // if (currentBuff.updateBuffs()) {
-            //     // 需要移除时直接删除整个键值
-            //     // this.buffs.delete(key);
-            //     // currentBuff.remove();
-            // }
+    static updateBuffs(owner: BaseRole) {
+        let list = this.getList(owner.camp);
+        if (list.length === 0) return;
+        // 使用filter方法创建一个新数组，只保留不需要移除的buff
+        const updatedList = list.filter(buff => {
+            const shouldRemove = buff.updateBuffs();
+            if (shouldRemove) {
+                // 如果buff需要移除，可以在这里添加移除时的逻辑
+                console.log(`Removing buff: ${buff.name} from ${owner.camp}`);
+                // 如果buff有remove方法，可以在这里调用
+                buff.remove();
+                return false; // 从列表中移除
+            }
+            return true; // 保留在列表中
+        });
+
+        // 更新原始列表
+        if (owner.camp === 'player') {
+            this.playerBuff = updatedList;
+        } else {
+            this.enemyBuff = updatedList;
         }
+        // if (this.buffs.has(key)) {
+        //     const currentBuff = this.buffs.get(key)!;
+        //     currentBuff.updateBuffs();
+        //     // // 直接检查单个buff是否需要更新
+        //     // if (currentBuff.updateBuffs()) {
+        //     //     // 需要移除时直接删除整个键值
+        //     //     // this.buffs.delete(key);
+        //     //     // currentBuff.remove();
+        //     // }
+        // }
     }
     //   static updateBuffs(key: string) {
     //         if (this.buffs.has(key)) {
@@ -172,6 +175,8 @@ export class BaseBuff {
     /** buff类型 */
     type: SkillType;
 
+    isForever: boolean = false;
+
     /**
      * 初始化基础属性
      * @param data 配置表数据
@@ -181,6 +186,7 @@ export class BaseBuff {
         this.name = data.name;
         this.duration = data.buffRound;
         this.type = data.type;
+        this.isForever = this.duration === -1;
         console.log(`${this.name} created with duration: ${this.duration} `);
     }
 
@@ -190,12 +196,12 @@ export class BaseBuff {
     /** 移除buff的通用逻辑 */
     remove(): void {
         console.log(`${this.name} removed from ${this.owner.camp} `);
-        BuffMgr.removeBuffByOwner(this.owner, this);
-        // 同时移除BuffMgr.buffs中的引用
-        const key = this.owner.camp + this.name;
-        if (BuffMgr.buffs.has(key) && BuffMgr.buffs.get(key) === this) {
-            BuffMgr.buffs.delete(key);
-        }
+        // BuffMgr.removeBuffByOwner(this.owner, this);
+        // // 同时移除BuffMgr.buffs中的引用
+        // const key = this.owner.camp + this.name;
+        // if (BuffMgr.buffs.has(key) && BuffMgr.buffs.get(key) === this) {
+        //     BuffMgr.buffs.delete(key);
+        // }
     };
 
     reapply(): boolean {
@@ -207,10 +213,12 @@ export class BaseBuff {
      * 更新buff状态
      * @returns 是否需要移除（true表示已过期）
      */
-    updateBuffs(): void {
+    updateBuffs(): boolean {
+        if (this.isForever) return false;
         this.duration--;
         console.log(`${this.name} remaining duration: ${this.duration} `);
-        if (this.duration <= 0) this.remove();
+        if (this.duration <= 0) return true;
+        return false;
     };
 }
 
@@ -270,7 +278,7 @@ export class all extends BaseBuff {
             let per = Number(this.data.values.get("1"));
             this.attack = toInt(per * this.owner.attack.value) + temp;
             console.log(`${this.owner.camp} gains + ${this.attack} attack.`);
-            this.owner.attack.add(-temp);
+            this.owner.attack.cur -= temp;
             this.owner.attack.add(this.attack);
         }
         if (this.data.values.has("2")) {
@@ -278,7 +286,7 @@ export class all extends BaseBuff {
             let per = Number(this.data.values.get("2"));
             this.defence = toInt(per * this.owner.defence.value) + temp;
             console.log(`${this.owner.camp} gains + ${this.defence} defence.`);
-            this.owner.defence.add(-temp);
+            this.owner.defence.cur -= temp;
             this.owner.defence.add(this.defence);
         }
 

@@ -1,5 +1,5 @@
 // Skill.ts
-import { skill, SkillType, Target } from '../table/schema';
+import { map_level, role, skill, SkillType, Target } from '../table/schema';
 import { Main } from '../ui/Main';
 import { BuffMgr } from './buff';
 import { color_config, Config, xinximoban } from './config';
@@ -131,7 +131,7 @@ export class BaseSkill {
     }
 
     onTrigger() {
-        BuffMgr.updateBuffs(this.getTarget().camp + this.data.name);
+        // BuffMgr.updateBuffs(this.getTarget().camp + this.data.name);
         if (this.checkCondition()) this.trigger();
     }
 
@@ -144,7 +144,7 @@ export class BaseSkill {
         BuffMgr.addBuff(this.getTarget(), this.data);
     }
 
-    private checkCondition(): boolean {
+    checkCondition(): boolean {
         if (this.condition.check(this.owner)) {
             let str;
             if (this.owner.camp === 'player') str = xinximoban.zhandou.jineng1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.skill);
@@ -198,6 +198,28 @@ export class health extends BaseSkill {
 }
 
 export class revive extends BaseSkill {
+    checkCondition(): boolean {
+        if (!this.owner.isAlive()) {
+            if (this.count < 1) {
+                GameLog.log(`<font color='${color_config.xinximoban.skill}'>${this.data.name}</font>:` + `复活次数已用尽！`.toStr());
+                return;
+            }
+
+            let str;
+            if (this.owner.camp === 'player') str = xinximoban.zhandou.jineng1.toStr().replace('{p}', color_config.xinximoban.player).replace('{s}', color_config.xinximoban.skill);
+            else {
+                str = xinximoban.zhandou.jineng2.toStr().replace('{e}', color_config.xinximoban.enemy).replace('{s}', color_config.xinximoban.skill);
+                str = str.replace('^', Main.getRoleName(this.owner.view.data));
+            }
+            str = str.replace('*', this.data.name.toStr());
+            str = str.replace('&', this.data.effectStr.toStr());
+            GameLog.log(str, false);
+            return true;
+        }
+
+        return false;
+    }
+
     count: number = 0;
     constructor(data: skill, owner: BaseRole) {
         super(data, owner);
@@ -205,12 +227,8 @@ export class revive extends BaseSkill {
             this.count = Number(data.values.get("1"));
         }
     }
-    trigger(): void {
-        if (this.count < 1) {
-            GameLog.log(`可惜，复活次数已用尽！`);
-            return;
-        }
 
+    trigger(): void {
         this.count--;
         let target = this.getTarget();
         target.health.reset();
@@ -295,14 +313,15 @@ export class GetSkill extends BaseSkill {
 
         if (this.data.values.has("1")) {
             value = Number(this.data.values.get("1"));
-            let allSkills = Config.table.Tbskill.getDataList();
+            let allSkills = Config.table.Tbskill.getDataList().map(s => s.id);
             let ownedSkills = SkillMgr.getList(target.camp);
 
             // 获取未拥有的技能
             const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
 
             // 创建并添加新技能
-            newSkills.forEach(skillData => {
+            newSkills.forEach(id => {
+                let skillData = Config.table.Tbskill.get(id);
                 SkillMgr.createSkill(target, skillData);
                 GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
             });
@@ -310,16 +329,16 @@ export class GetSkill extends BaseSkill {
     }
 
     /** 从全部技能中筛选未拥有的 */
-    static getNewSkills(all: skill[], owned: BaseSkill[], count: number): skill[] {
+    static getNewSkills(all: string[], owned: BaseSkill[], count: number): string[] {
         const ownedIds = new Set(owned.map(s => s.data.id));
-        const available = all.filter(s => !ownedIds.has(s.id));
+        const available = all.filter(s => !ownedIds.has(s));
 
         // 随机选择指定数量的新技能
         return this.getRandomSkills(available, count);
     }
 
     /** 从数组随机获取n个不重复元素 */
-    static getRandomSkills(arr: skill[], n: number): skill[] {
+    static getRandomSkills(arr: string[], n: number): string[] {
         const shuffled = [...arr].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, Math.min(n, shuffled.length));
     }
@@ -336,41 +355,52 @@ export class learn extends BaseSkill {
         let target = this.getTarget();
         if (target.camp === 'player') return;
 
+        let mapLevel = Save.data.player.curScene;
+        let max = Config.table.Tbmap_level.getDataList().length;
+        if (mapLevel > max) mapLevel = max;
+
+        let allSkills: string[];
+        let ownedSkills = SkillMgr.getList(target.camp);
+
+        if (mapLevel > 100) {
+            allSkills = Config.table.Tbskill.getDataList().map(s => s.id);
+        } else {
+            allSkills = [];
+            for (let i = 1; i <= mapLevel; i++) {
+                let sceneData: map_level = Config.table.Tbmap_level.get(i);
+                for (const key in sceneData.monsters) {
+                    if (!sceneData.monsters[key as keyof typeof sceneData.monsters]) continue;
+                    let monster: role = Config.table.Tbrole.get(key);
+                    for (const key in monster.skills) {
+                        if (allSkills.indexOf(monster.skills[key]) === -1) {
+                            allSkills.push(monster.skills[key]);
+                        }
+                    }
+                }
+            }
+        }
+
         if (this.data.id === 'chimei') {
             if (this.data.values.has("2")) {
                 let level = Save.data.player.curScene;
                 console.log(`当前层数: ${level}`);
                 value = level - 100;
-
                 value = Math.max(1, Math.min(5, value)); // 确保 value 在 1 到 5 之间
-
-                let allSkills = Config.table.Tbskill.getDataList();
-                let ownedSkills = SkillMgr.getList(target.camp);
-
-                // 获取未拥有的技能
-                const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
-
-                // 创建并添加新技能
-                newSkills.forEach(skillData => {
-                    SkillMgr.createSkill(target, skillData);
-                    GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
-                });
             }
         } else {
             if (this.data.values.has("1")) {
                 value = Number(this.data.values.get("1"));
-                let allSkills = Config.table.Tbskill.getDataList();
-                let ownedSkills = SkillMgr.getList(target.camp);
-
-                // 获取未拥有的技能
-                const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
-
-                // 创建并添加新技能
-                newSkills.forEach(skillData => {
-                    SkillMgr.createSkill(target, skillData);
-                    GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
-                });
             }
         }
+
+        // 获取未拥有的技能
+        const newSkills = GetSkill.getNewSkills(allSkills, ownedSkills, value);
+
+        // 创建并添加新技能
+        newSkills.forEach(id => {
+            let skillData = Config.table.Tbskill.get(id);
+            SkillMgr.createSkill(target, skillData);
+            GameLog.log(`${Main.getRoleName(this.owner.view.data)} 获得技能: ${skillData.name}`);
+        });
     }
 }

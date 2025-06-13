@@ -1,0 +1,44 @@
+{
+  "_$ver": 1,
+  "_$id": "arwn3cgj",
+  "_$type": "Box",
+  "name": "Root",
+  "width": 720,
+  "height": 1280,
+  "_mouseState": 2,
+  "_$child": [
+    {
+      "_$id": "cfi7szwh",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 720,
+      "height": 1280,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1,
+          "percent": true,
+          "lineWidth": 1,
+          "fillColor": "rgba(20, 20, 20, 0.9019607843137255)"
+        }
+      ]
+    },
+    {
+      "_$id": "jadswner",
+      "_$type": "Label",
+      "name": "Label",
+      "y": 640,
+      "width": 720,
+      "height": 28,
+      "text": "广告加载中...",
+      "fontSize": 50,
+      "color": "#FFFFFF",
+      "align": "center",
+      "valign": "top",
+      "padding": "0,0,0,0"
+    }
+  ]
+}

@@ -139,11 +139,12 @@ export class Save {
         // if (save) data = JSON.parse(save.data); else
         data = this.loadGame();
         if (!data) {
-            if (isAndroid()) {
-                loadOldData();
-                return;
-            }
-            else data = this.newGame();
+            // if (isAndroid()) {
+            //     loadOldData();
+            //     return;
+            // }
+            // else
+            data = this.newGame();
         }
         start(data);
     }

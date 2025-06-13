@@ -14,6 +14,7 @@ import { MyButton } from "../../ui/MyButton";
 import { MessageBox } from "../../ui/MessageBox";
 import { getRoleLevelAttributes, RoleLevel } from "../../core/level";
 import { isAndroid, playAd } from "../../platform";
+import { AdMgr } from "../../ad";
 
 @regClass()
 export class EndlessScene extends Main {
@@ -303,13 +304,19 @@ export class EndlessScene extends Main {
                 this.curEndlessData = JSON.parse(JSON.stringify(EndlessScene.data));
                 let tip = MessageBox.show(`你失败了！`.toStr(), () => {
                     if (this.curEndlessData.revive <= 0) {
+                        // if (AdMgr.data.count < 1) {
+                        //     MessageBox.tip('今日广告次数已用完'.toStr());
+                        //     return;
+                        // }
+
                         if (isAndroid()) {
-                            if (playAd(1)) { this.fuhuo_tip.ok.active = false; }
+                            // if (playAd(1)) { this.fuhuo_tip.ok.active = false; }
+                            playAd(1);
                         }
                         return;
                     }
                     // else {
-                    this.fuhuo_tip.ok.active = false;
+                    // this.fuhuo_tip.ok.active = false;
                     this.curEndlessData.revive--;
                     this.fuhuo_success();
                     // }
@@ -319,7 +326,10 @@ export class EndlessScene extends Main {
                 this.fuhuo_tip = tip;
                 tip.ok.title.text = '复活'.toStr();
                 if (this.curEndlessData.revive <= 0) {
-                    if (isAndroid()) tip.ok.title.text = '观看广告'.toStr();
+                    if (isAndroid()) {
+                        if (AdMgr.data.count < 1) tip.ok.tip.text = "";
+                        else tip.ok.tip.text = "看广告".toStr() + " " + "今日剩余:".toStr() + AdMgr.data.count;
+                    }
                     else tip.ok.active = false;
                 } else {
                     tip.ok.active = true;

@@ -1,3 +1,4 @@
+import { AdMgr } from "./ad";
 import { Config, tishi } from "./core/config";
 import { Language } from "./core/i18n";
 import { Save, SaveData } from "./core/save";
@@ -16,6 +17,7 @@ export async function main() {
 
     GameLog.log("----------开局一只史莱姆----------");
     Save.init();
+    AdMgr.Load();
 }
 
 export function start(data?: SaveData) {

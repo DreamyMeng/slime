@@ -67,6 +67,7 @@ export class Config {
     static async load_prefab() {
         // 加载所有prefab资源
         this.prefabs.set("PopUp", "resources/prefab/PopUp.lh");
+        this.prefabs.set("Loading", "resources/prefab/Loading.lh");
         // this.prefabs.set("Damage", "resources/prefab/Damage.lh");
 
         await Laya.loader.load(Array.from(this.prefabs.values()));

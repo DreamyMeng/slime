@@ -1,3 +1,4 @@
+import { AdMgr } from "./ad";
 import { Config } from "./core/config";
 import { Save } from "./core/save";
 import { start } from "./Main";
@@ -36,12 +37,20 @@ export function isAndroid() {
 }
 
 export function playAd(state: number): boolean {
-    if (Main.isAd) {
-        MessageBox.show("广告还未冷却!剩余时间：".toStr() + Main.adTime, null, null, false);
-        return false;
+    // if (Main.isAd) {
+    //     MessageBox.show("广告还未冷却!剩余时间：".toStr() + Main.adTime, null, null, false);
+    //     return false;
+    // }
+    if (AdMgr.data.count < 1) {
+        if (state == 1) {
+            Main.instance?.fuhuo_success();
+        }
+        else if (state == 2) {
+            Jinhua.instance?.ad_success();
+        }
+        return true;
     }
-
-    MessageBox.tip("加载广告，请稍后...");
+    MessageBox.loading_open();
     window.Android.playAd(state);
     return true;
     // window.onAdRewarded(state) // test
@@ -58,17 +67,20 @@ window["onTapTapLogin"] = function (flag: boolean) {
 }
 
 window["onAdLoaded"] = function (state: number) {
-    if (state == 1) {
-        Main.instance?.fuhuo_load();
-    }
-    else if (state == 2) {
-        Jinhua.instance?.ad_load();
-    }
+    // if (state == 1) {
+    //     Main.instance?.fuhuo_load();
+    // }
+    // else if (state == 2) {
+    //     Jinhua.instance?.ad_load();
+    // }
+    MessageBox.loading_close();
 }
 
 window["onAdRewarded"] = function (state: number) {
     // MessageBox.show("恭喜获得奖励!");
-    Main.setAd();
+    // Main.setAd();
+    AdMgr.data.count--;
+    AdMgr.Save();
     if (state == 1) {
         Main.instance?.fuhuo_success();
     }
@@ -77,12 +89,12 @@ window["onAdRewarded"] = function (state: number) {
     }
 }
 
-window["onAdNotReady"] = function (state: number) {
-    let ui = MessageBox.show("广告未准备好!".toStr(), () => {
-        playAd(state);
-    });
-    ui.ok.title.text = "再次发送".toStr();
-}
+// window["onAdNotReady"] = function (state: number) {
+//     let ui = MessageBox.show("广告未准备好!".toStr(), () => {
+//         playAd(state);
+//     });
+//     ui.ok.title.text = "再次发送".toStr();
+// }
 
 window["changeData"] = function (old: any) {
     let data = Save.newGame();

@@ -87,4 +87,16 @@ export class MessageBox {
 
         return message;
     }
+
+    static loading_ui: Laya.Sprite;
+    static loading_open() {
+        if (this.loading_ui) return;
+        this.loading_ui = Laya.loader.getRes(Config.prefabs.get("Loading")).create();
+        Laya.stage.addChild(this.loading_ui);
+    }
+    static loading_close() {
+        if (!this.loading_ui) return;
+        this.loading_ui.removeSelf();
+        this.loading_ui = null;
+    }
 }

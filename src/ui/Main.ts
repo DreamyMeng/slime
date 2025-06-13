@@ -1,4 +1,5 @@
 const { regClass } = Laya;
+import { AdMgr } from "../ad";
 import { Battle } from "../core/battle";
 import { color_config, Config, jinhua_need, shift_config, shuxing_config, skill_rate, xinximoban } from "../core/config";
 import { getRoleLevelAttributes, RoleLevel } from "../core/level";
@@ -195,7 +196,7 @@ export class Main extends MainBase {
             });
         }
         // }
-        this.timerLoop(1000, this, this.showAdTip);
+        // this.timerLoop(1000, this, this.showAdTip);
     }
 
     checkOfflineTime() {
@@ -397,6 +398,11 @@ export class Main extends MainBase {
         this.update_auto();
         Save.saveGame();
         let tip = MessageBox.show(`<font color='^'>你死了</font>等级将降为1级`.toStr().replace('^', color_config.xinximoban.shanghai), () => {
+            // if (AdMgr.data.count < 1) {
+            //     MessageBox.tip('今日广告次数已用完'.toStr());
+            //     return;
+            // }
+
             if (isAndroid()) {
                 if (!playAd(1)) return;
             }
@@ -404,7 +410,7 @@ export class Main extends MainBase {
                 this.curPlayerData.revive--;
                 this.fuhuo_success();
             }
-            this.fuhuo_tip.ok.active = false;
+            // this.fuhuo_tip.ok.active = false;
         }, () => {
             this.fuhuo_fail();
         }, true, false);
@@ -412,7 +418,8 @@ export class Main extends MainBase {
         tip.ok.title.text = '复活'.toStr();
 
         if (isAndroid()) {
-            tip.ok.tip.text = "看广告".toStr();
+            if (AdMgr.data.count < 1) tip.ok.tip.text = "";
+            else tip.ok.tip.text = "看广告".toStr() + " " + "今日剩余:".toStr() + AdMgr.data.count;
         } else {
             if (this.curPlayerData.revive <= 0) {
                 tip.ok.active = false;
@@ -715,27 +722,27 @@ export class Main extends MainBase {
         return Math.round(Math.random() * (scene.levelMax - scene.levelMin)) + scene.levelMin;
     }
 
-    static isAd: boolean = false;
-    static adTime: number = 0;
+    // static isAd: boolean = false;
+    // static adTime: number = 0;
 
-    static setAd() {
-        if (!isAndroid()) return;
-        Main.isAd = true;
-        Main.adTime = 60;
-    }
+    // static setAd() {
+    //     if (!isAndroid()) return;
+    //     Main.isAd = true;
+    //     Main.adTime = 60;
+    // }
 
-    showAdTip() {
-        if (Main.isAd) {
-            Main.adTime--;
-            if (Main.adTime <= 0) {
-                Main.isAd = false;
-                this.btn_login.tip.text = "";
-            } else
-                this.btn_login.tip.text = "广告冷却：".toStr() + `${Main.adTime}`;
-        }
-    }
+    // showAdTip() {
+    //     if (Main.isAd) {
+    //         Main.adTime--;
+    //         if (Main.adTime <= 0) {
+    //             Main.isAd = false;
+    //             this.btn_login.tip.text = "";
+    //         } else
+    //             this.btn_login.tip.text = "广告冷却：".toStr() + `${Main.adTime}`;
+    //     }
+    // }
 
-    onDestroy(): void {
-        this.clearTimer(this, this.showAdTip);
-    }
+    // onDestroy(): void {
+    //     this.clearTimer(this, this.showAdTip);
+    // }
 }

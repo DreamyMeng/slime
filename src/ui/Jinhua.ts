@@ -8,6 +8,7 @@ import { MyButton } from "./MyButton";
 import { PopUp } from "./PopUp";
 import { isAndroid, playAd } from "../platform";
 import { getRoleLevelAttributes, RoleLevel } from "../core/level";
+import { AdMgr } from "../ad";
 
 const { regClass } = Laya;
 
@@ -48,12 +49,19 @@ export class Jinhua extends Laya.Script {
         }
 
         this.ad = this.owner.getChildByName('ad') as MyButton;
-        if (isAndroid()) this.ad.tip.text = `看广告 +5%`.toStr();
+        if (isAndroid()) {
+            if (AdMgr.data.count < 1) this.ad.tip.text = "+5%";
+            else this.ad.tip.text = `+5% ` + "今日剩余:".toStr() + AdMgr.data.count;
+        }
         this.ad.onClick = () => {
+            // if (AdMgr.data.count < 1) {
+            //     MessageBox.tip('今日广告次数已用完'.toStr());
+            //     return;
+            // }
             console.log('广告时刻');
             if (isAndroid()) {
                 if (!playAd(2)) return;
-                this.ad.active = false;
+                // this.ad.active = false;
             }
             else {
                 this.ad_success();
@@ -69,6 +77,7 @@ export class Jinhua extends Laya.Script {
         this.isAd = true;
         this.tab.visible = true;
         this.show(false);
+        this.ad.tip.text = `+5% ` + "今日剩余:".toStr() + AdMgr.data.count;
     }
 
     isAd: boolean = false;

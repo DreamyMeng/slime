@@ -772,8 +772,12 @@ export class role {
         this.qualityType = _json_.quality_type
         if (_json_.quality === undefined) { throw new Error() }
         this.quality = _json_.quality
+        if (_json_.quality_value === undefined) { throw new Error() }
+        this.qualityValue = _json_.quality_value
         if (_json_.race === undefined) { throw new Error() }
         this.race = _json_.race
+        if (_json_.race_value === undefined) { throw new Error() }
+        this.raceValue = _json_.race_value
         if (_json_.remain === undefined) { throw new Error() }
         this.remain = _json_.remain
         if (_json_.exp_need === undefined) { throw new Error() }
@@ -786,12 +790,24 @@ export class role {
         this.defenceRate = _json_.defence_rate
         if (_json_.health_rate === undefined) { throw new Error() }
         this.healthRate = _json_.health_rate
+        if (_json_.attack_value === undefined) { throw new Error() }
+        this.attackValue = _json_.attack_value
+        if (_json_.defence_value === undefined) { throw new Error() }
+        this.defenceValue = _json_.defence_value
+        if (_json_.health_value === undefined) { throw new Error() }
+        this.healthValue = _json_.health_value
         if (_json_.attack_add === undefined) { throw new Error() }
         this.attackAdd = _json_.attack_add
         if (_json_.defence_add === undefined) { throw new Error() }
         this.defenceAdd = _json_.defence_add
         if (_json_.health_add === undefined) { throw new Error() }
         this.healthAdd = _json_.health_add
+        if (_json_.attack_add_value === undefined) { throw new Error() }
+        this.attackAddValue = _json_.attack_add_value
+        if (_json_.defence_add_value === undefined) { throw new Error() }
+        this.defenceAddValue = _json_.defence_add_value
+        if (_json_.health_add_value === undefined) { throw new Error() }
+        this.healthAddValue = _json_.health_add_value
         if (_json_.relations === undefined) { throw new Error() }
         this.relations = new RoleRelation(_json_.relations)
         if (_json_.skills === undefined) { throw new Error() }
@@ -819,9 +835,17 @@ export class role {
      */
     readonly quality: number
     /**
+     * 品质修正
+     */
+    readonly qualityValue: number
+    /**
      * 种族
      */
     readonly race: number
+    /**
+     * 种族修正
+     */
+    readonly raceValue: number
     /**
      * 保留
      */
@@ -847,6 +871,18 @@ export class role {
      */
     readonly healthRate: number
     /**
+     * 攻击修正
+     */
+    readonly attackValue: number
+    /**
+     * 防御修正
+     */
+    readonly defenceValue: number
+    /**
+     * 血量修正
+     */
+    readonly healthValue: number
+    /**
      * 图鉴攻击
      */
     readonly attackAdd: number
@@ -858,10 +894,30 @@ export class role {
      * 图鉴血量
      */
     readonly healthAdd: number
+    /**
+     * 图鉴攻击修正
+     */
+    readonly attackAddValue: number
+    /**
+     * 图鉴防御修正
+     */
+    readonly defenceAddValue: number
+    /**
+     * 图鉴血量修正
+     */
+    readonly healthAddValue: number
     readonly relations: RoleRelation
     readonly skills: string[]
 
     resolve(tables:Tables) {
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         

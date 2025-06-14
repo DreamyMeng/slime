@@ -1,0 +1,13 @@
+{
+  "name": "slime",
+  "displayName": "开局一只史莱姆",
+  "icon": "res://dc372156-06a3-49d1-9295-230cd432f09e",
+  "minifyJS": true,
+  "startupScene": "res://25d614e4-2764-4989-b267-3e8e44ffd86a",
+  "includedScenes": [
+    "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
+    "res://bae9ad33-555c-404b-9947-d0ef33acca5c",
+    "res://25d614e4-2764-4989-b267-3e8e44ffd86a"
+  ],
+  "alwaysIncluded": []
+}
